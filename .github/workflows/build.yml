@@ -1,0 +1,54 @@
+#shopt -s globstar viene usato per usare il ./**/*.typ nella shell
+
+name: Deploy GitHub Page
+on:
+  - push
+  - pull_request
+jobs:
+  compile_typst:
+    name: PDF compilation
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Checkout codebase
+        uses: actions/checkout@v4.2.2
+        with:
+          fetch-depth: 0
+
+      - name: Setup Typst
+        uses: typst-community/setup-typst@v3
+
+      - name: Compile .typ files
+        run: |
+         shopt -s globstar
+         for file in ./**/*.typ; do typst compile "$file"; done
+         find . -name "*.pdf" -exec bash -c 'path="{}"; mkdir -p dist/$(dirname "$path") && cp "$path" dist/"$path"' \;
+                    
+      - name: Github Pages Directory Listing
+        uses: jayanta525/github-pages-directory-listing@v4.0.0
+        with:
+          FOLDER: dist
+      - name: Upload static files as artifact
+        id: deployment
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/
+
+  deploy_docs:
+    name: Deploy docs in Pages
+    needs: compile_typst
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+
+
+
+
