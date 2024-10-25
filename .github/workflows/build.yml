@@ -20,7 +20,7 @@ jobs:
       - name: Compile .typ files
         run: |
          shopt -s globstar
-         for file in ./**/*.typ; do typst compile "$file"; done
+         for file in ./**/*.typ; do typst compile --root . "$file"; done
          find . -name "*.pdf" -exec bash -c 'path="{}"; mkdir -p dist/$(dirname "$path") && cp "$path" dist/"$path"' \;
                     
       - name: Github Pages Directory Listing
