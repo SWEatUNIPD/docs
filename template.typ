@@ -73,3 +73,31 @@
   pagebreak()
   content
 }
+
+#let infoRiunione(
+  luogo: "",
+  data: "",
+  ora: "",
+  durata: "",
+  partecipanti: ("Andrea Perozzo", "Andrea Precoma", "Davide Marin", "Davide Martinelli", "Davide Picello", "Riccardo Milan", "Klaudio Merja"),
+  partecipantiEsterni: ()
+) = {
+  [
+    = Informazioni generali
+    == Luogo e data della riunione //FIXME: riunione o incontro
+    - *Luogo*: #luogo
+    - *Data*: #data
+    - *Ora*: #ora
+    - *Durata*: #durata
+    == Partecipanti #if partecipantiEsterni.len() != 0 {[interni]}
+    #for partecipante in partecipanti {
+      [- #partecipante]
+    }
+    #if (partecipantiEsterni.len() !=0){
+      [== Partecipanti esterni]
+      for partecipanteEsterno in partecipantiEsterni {
+        [- #partecipanteEsterno]
+      }
+    }
+  ]
+}
