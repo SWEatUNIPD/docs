@@ -30,7 +30,7 @@
 )
 
 #infoRiunione(
-  data: "16/10/2024", durata: "1 ora e mezza", luogo: "Chiamata Discord", ora: "16:30", partecipantiEsterni: (),
+  luogo: "Chiamata Discord", data: "16/10/2024", ora: "16:30", durata: "1 ora e mezza", partecipantiEsterni: (),
 )
 
 = Ordine del giorno

@@ -34,7 +34,7 @@
   content: content,
 )
 
-#infoRiunione(data: "23/10/2024", ora: "15:30", durata: "mezz'ora", partecipantiEsterni: ("Fabio Pallaro", "Andrea Dorigo", "Daniele Zorzi"))
+#infoRiunione(luogo: "Google Meet", data: "23/10/2024", ora: "15:30", durata: "mezz'ora", partecipantiEsterni: ("Fabio Pallaro", "Andrea Dorigo", "Daniele Zorzi"))
 
 = Sintesi dell'incontro
 I proponenti hanno chiarito tutti i punti che ci eravamo preparati e siamo stati molto soddisfatti dell'incontro. Abbiamo discusso circa le tecnologie da adottare, i metodi di comunicazione e le linee guida per il PoC e il MVP.
