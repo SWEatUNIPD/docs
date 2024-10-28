@@ -1,4 +1,4 @@
-#import "../../../templates/verbali-template.typ": *
+#import "../../../templates/template.typ": *
 
 #show: content=>verbale(
   data: "16 ottobre 2024", 
