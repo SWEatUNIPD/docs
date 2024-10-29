@@ -32,6 +32,7 @@ jobs:
 
       - name: Add dist PDFs
         run: |
+         shopt -s globstar
          cd dist
          cp -r * ${{runner.temp}}
         
