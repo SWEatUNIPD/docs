@@ -28,24 +28,26 @@ jobs:
             typst compile --root . "$file"
           fi
          done
-         find . -name "*.pdf" -exec bash -c 'path="{}"; mkdir -p ${{ runner.temp }}/$(dirname "$path") && cp "$path" dist/"$path"' \;
+         find . -name "*.pdf" -not -path "./dist/*" -exec bash -c 'path="{}"; mkdir -p artifact/$(dirname "$path") && mv "$path" artifact/"$path"' \;
 
       - name: Add dist PDFs
         run: |
          shopt -s globstar
          cd dist
-         cp -r * ${{runner.temp}}
+         if [ -n "$( ls )" ]; then
+          cp -r * ../artifact/
+         fi
         
       - name: Github Pages Directory Listing
         uses: jayanta525/github-pages-directory-listing@v4.0.0
         with:
-          FOLDER: ${{runner.temp}}
+          FOLDER: artifact
 
       - name: Upload static files as artifact
         id: deployment
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{runner.temp}}
+          path: artifact
 
   deploy_docs:
     name: Deploy docs in Pages
@@ -61,8 +63,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
-
-
-
-
