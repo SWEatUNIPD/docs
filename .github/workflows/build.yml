@@ -1,9 +1,12 @@
 #shopt -s globstar viene usato per usare il ./**/*.typ nella shell
 
 name: Deploy GitHub Page
+
 on:
-  - push
-  - pull_request
+  push:
+    branches:
+      - main
+
 jobs:
   compile_typst:
     name: PDF compilation
@@ -20,9 +23,13 @@ jobs:
       - name: Compile .typ files
         run: |
          shopt -s globstar
-         for file in ./**/*.typ; do typst compile --root . "$file"; done
+         for file in ./**/*.typ; do
+          if [[ "$file" != */esterni/* && "$file" != ./templates/* ]]; then
+            typst compile --root . "$file"
+          fi
+         done
          find . -name "*.pdf" -exec bash -c 'path="{}"; mkdir -p dist/$(dirname "$path") && cp "$path" dist/"$path"' \;
-                    
+        
       - name: Github Pages Directory Listing
         uses: jayanta525/github-pages-directory-listing@v4.0.0
         with:
