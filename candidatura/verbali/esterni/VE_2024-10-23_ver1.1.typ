@@ -11,6 +11,7 @@
   responsabile: "Klaudio Merja", 
   redattori: ("Andrea Precoma",), 
   verificatori: (
+    "Andrea Perozzo",
     "Davide Marin", 
     "Davide Martinelli", 
     "Davide Picello", 
