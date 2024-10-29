@@ -24,21 +24,27 @@ jobs:
         run: |
          shopt -s globstar
          for file in ./**/*.typ; do
-          if [[ "$file" != */esterni/* && "$file" != ./templates/* ]]; then
+          if [[ "$file" != ./templates/* ]]; then
             typst compile --root . "$file"
           fi
          done
-         find . -name "*.pdf" -exec bash -c 'path="{}"; mkdir -p dist/$(dirname "$path") && cp "$path" dist/"$path"' \;
+         find . -name "*.pdf" -exec bash -c 'path="{}"; mkdir -p ${{ runner.temp }}/$(dirname "$path") && cp "$path" dist/"$path"' \;
+
+      - name: Add dist PDFs
+        run: |
+         cd dist
+         cp -r * ${{runner.temp}}
         
       - name: Github Pages Directory Listing
         uses: jayanta525/github-pages-directory-listing@v4.0.0
         with:
-          FOLDER: dist
+          FOLDER: ${{runner.temp}}
+
       - name: Upload static files as artifact
         id: deployment
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/
+          path: ${{runner.temp}}
 
   deploy_docs:
     name: Deploy docs in Pages
