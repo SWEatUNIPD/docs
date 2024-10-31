@@ -1,4 +1,4 @@
-#import "../templates/template_documenti_ufficiali.typ": *
+#import "/templates/template.typ": *
 
 #show: content=>documentoUfficiale(
   data: "16 ottobre 2024", 
