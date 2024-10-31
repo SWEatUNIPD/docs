@@ -114,7 +114,7 @@
   verificatori: (),
   content: []
 ) = {
-  set text(lang: "it")
+  set text(lang: "it", font: "Inter 18pt")
   set page(margin: (x: 2.5cm, y: 2.5cm))
   set heading(numbering: "1.")
   set par(justify: true)
