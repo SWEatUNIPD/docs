@@ -44,7 +44,7 @@ A seguito di vari loghi proposti, il gruppo ha deciso l'utilizzo del seguente lo
 == Strumenti da utilizzare
 Il gruppo ha raggiunto la decisione finale di utilizzare i seguenti strumenti:
 - #strong[Discord] e #strong[Telegram] per le comunicazioni interne
-- #strong[Gmail] come provider di posta elettronica per le comunicazioni esterne, con la seguente email: #link("mailto:sweat.unipd@unipd.it", text(size: 10pt, weight: "bold", fill: rgb("#04E824"), [sweat.unipd\@gmail.com]))
+- #strong[Gmail] come provider di posta elettronica per le comunicazioni esterne, con la seguente email: #link("mailto:sweat.unipd@gmail.com", text(size: 10pt, weight: "bold", fill: rgb("#04E824"), [sweat.unipd\@gmail.com]))
 - #strong[Git] per il versionamento del codice, in particolar modo sfruttando la piattaforma GitHub. È stata creata inoltre un'organizzazione per la raccolta di tutti i repository inerenti al progetto: #text(weight: "bold", fill: rgb("#04E824"),link("https://github.com/SWEatUNIPD"))
 - #strong[Typst] per la stesura delle varie documentazioni inerenti al progetto
 == Scelta dei capitolati e invio e-mail proponenti
