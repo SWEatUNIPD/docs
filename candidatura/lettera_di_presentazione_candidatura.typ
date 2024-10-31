@@ -1,7 +1,7 @@
 #import "/templates/template.typ": *
 
 #show: content=>documentoUfficiale(
-  data: "16 ottobre 2024", 
+  data: "01 novembre 2024", 
   responsabile: "Andrea Precoma", 
   redattori: ("Riccardo Milan",), 
   titolo: "Lettera di presentazione candidatura", 
@@ -15,17 +15,21 @@
   content: content
 )
 
-Con la presente il gruppo Swe@ si candida alla realizzazione del progetto descritto nel capitolato C4 intitolato: *_NearYou - Smart custom advertising platform_*, proposto dall'azienda *Sync Lab*.
+Con la presente il gruppo SWE@ si candida alla realizzazione del progetto descritto nel capitolato C4 intitolato *_NearYou - Smart custom advertising platform_*, proposto dall'azienda *Sync Lab S.r.l*.
 #v(10pt)
-La documentazione è disponibile all'indirizzo https://sweatunipd.github.io/docs/, dove si possono consultare il documento di preventivo e assunzione di impegno, il documento di analisi e valutazione dei singoli capitolati e i verbali interni ed esterni che si sono tenuti fino ad ora.
+La documentazione viene resa disponibile all'indirizzo #text(weight: "bold", fill: rgb("04E824"),link("https://sweatunipd.github.io/docs/")), dove si possono consultare i seguenti documenti: 
+- Dichiarazione impegni e preventivo costi;
+- Valutazione dei capitolati;
+-  Verbali interni ed esterni
 #v(10pt)
-Come riportato nel documento _\"Preventivo costi\"_, il costo stimato del prodotto è di 12.670,00€ e la data prevista di consegna è il 21/03/2025.
+Come riportato nel documento _\"Dichiarazione impegni e preventivo costi\"_ il costo stimato del prodotto è di *12.670,00 €* e la data prevista di consegna è il *21/03/2025*.
 #v(10pt)
-Di seguito l'elenco dei componenti del gruppo con il relativo numero di matricola:
+Si riporta di seguito l'elenco dei componenti del gruppo con il relativo numero di matricola:
 #align(center,
 table(
   columns: (25%, 25%),
-  align: (center,center),
+  inset: 7pt,
+  align: (center, center),
   table.header([*Nominativo*], [*Matricola*]),
   "Davide Marin", "2068234",
   "Davide Martinelli", "2034341",
@@ -36,7 +40,7 @@ table(
   "Andrea Precoma", "2068227"
 ))
 #v(20pt)
-Cordiali Saluti,
-
-_Swe\@_.
+In attesa di un Vostro riscontro Vi porgiamo i nostri cordiali saluti.
+#v(5pt)
+_Gruppo SWE\@_.
 
