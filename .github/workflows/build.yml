@@ -25,7 +25,7 @@ jobs:
          shopt -s globstar
          for file in ./**/*.typ; do
           if [[ "$file" != ./templates/* ]]; then
-            typst compile --root . "$file"
+            typst compile --root . --font-path ./assets/font "$file"
           fi
          done
          find . -name "*.pdf" -not -path "./dist/*" -exec bash -c 'path="{}"; mkdir -p artifact/$(dirname "$path") && mv "$path" artifact/"$path"' \;
