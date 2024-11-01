@@ -20,7 +20,7 @@ Con la presente il gruppo SWE@ si candida alla realizzazione del progetto descri
 La documentazione viene resa disponibile all'indirizzo #text(weight: "bold", fill: rgb("04E824"),link("https://sweatunipd.github.io/docs/")), dove si possono consultare i seguenti documenti: 
 - Dichiarazione impegni e preventivo costi;
 - Valutazione dei capitolati;
--  Verbali interni ed esterni
+-  Verbali interni ed esterni.
 #v(10pt)
 Come riportato nel documento _\"Dichiarazione impegni e preventivo costi\"_ il costo stimato del prodotto è di *12.670,00 €* e la data prevista di consegna è il *21/03/2025*.
 #v(10pt)
