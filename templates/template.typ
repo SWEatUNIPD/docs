@@ -5,6 +5,7 @@
   destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin"),
   verificatori: (),
   responsabile: "",
+  riassunto: "",
   redattori: (),
   versioni: (),
   content: []
@@ -39,10 +40,10 @@
     )
   ])
   align(center+bottom, [
-    #figure(
-      image("/assets/img/unipd.png", width: 16%),
-    )
-    Corso di Ingegneria del Software\ A.A. 2024/25\
+    #if riassunto.len() > 0 {
+      heading([Riassunto del verbale], numbering: none, outlined: false)
+      riassunto
+    }
   ])
   pagebreak(weak: true)
 
@@ -53,13 +54,14 @@
       image("/assets/img/watermark.png", width: 70pt), titolo, grid.cell(colspan: 2, line(length: 100%, stroke: 1pt + rgb("#04E824")))
     )
   ])
-  heading([Registro delle versioni], numbering: none, outlined: false)
-  table(
-    columns: (15%, 15%, 23%, 47%),
+  heading([Registro delle modifiche], numbering: none, outlined: false)
+  
+  text(size: 10pt,table(
+    columns: (1.5fr, 0.7fr, 2fr, 2fr, 4fr),
     align: horizon+left,
-    table.header([*Data*], [*Versione*], [*Redattori*], [*Modifiche effettuate*]),
+    table.header([*Ver.*], [*Data*], [*Redattori*], [*Verificatori*], [*Descrizione*]),
     ..versioni
-  )
+  ))
 
   pagebreak(weak: true)
 
