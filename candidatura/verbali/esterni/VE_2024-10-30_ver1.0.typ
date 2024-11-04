@@ -11,22 +11,30 @@
   responsabile: "Klaudio Merja", 
   redattori: ("Davide Marin",), 
   verificatori: (
-    "Andrea Perozzo", 
-    "Andrea Precoma",
-    "Davide Martinelli", 
-    "Davide Picello", 
-    "Riccardo Milan"
+    "Andrea Perozzo",
+    "Davide Martinelli"
   ), 
   uso: "Esterno",
   versioni: (
-
-    "30/10/2024",
-    "1.0",
+    "1.1.0",
+    "04/11/2024",
     "Davide Marin",
+    "Andrea Perozzo\nDavide Martinelli",
+    [- Aggiunti riassunto e conclusioni],
+
+    "1.0.0",
+    "30/10/2024",
+    "Davide Marin",
+    "Andrea Perozzo\nDavide Martinelli",
     [- Stesura del verbale]
   ),
+
+  riassunto: "Colloquio conoscitivo con l'azienda proponente Var Group S.p.A. per chiarire i dubbi riguardo al capitolato C3",
+
   content: content,
 )
+
+
 
 #infoRiunione(luogo: "Google Meet", data: "30/10/2024", ora: "14:00", durata: "mezz'ora", partecipantiEsterni: ("Michele Massaro", "Stefano Dindo"))
 
@@ -58,3 +66,7 @@ I proponenti hanno inoltre chiarito i nostri dubbi sulla questione di "mappare l
 == Organizzazione lavoro
 Per quanto riguarda l'organizzazione del lavoro, i proponenti si sono innanzitutto resi disponibili, previa nostra richiesta, ad organizzare degli incontri di formazione online.
 Hanno inoltre specificato che saranno presenti review e feedback sul nostro lavoro per tutta la durata del progetto.
+
+= Conclusioni
+I proponenti hanno saputo chiarire tutti i nostri dubbi e hanno inoltre descritto come sarà strutturata l'organizzazione del lavoro e assistenza nei nostri confornti.
+Terremo in considerazione una possibile candidatura.
