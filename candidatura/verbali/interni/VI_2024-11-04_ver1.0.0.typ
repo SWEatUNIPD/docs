@@ -1,7 +1,7 @@
 #import "/templates/template.typ": *
 
 #show: content=>verbale(
-  data: "11 novembre 2024", 
+  data: "04 novembre 2024", 
   titolo: "Seconda riunione", 
   responsabile: "Andrea Perozzo", 
   redattori: ("Andrea Precoma",), 
@@ -11,7 +11,7 @@
   ),
   versioni: (
     "1.0.0", 
-    [11/04/2024], 
+    [04/11/2024], 
     "Andrea Precoma",
     "Davide Marin\nRiccardo Milan",
     [
@@ -23,7 +23,7 @@
 )
 
 #infoRiunione(
-  data: "11/04/2024", durata: "2 ore e 40 minuti", luogo: "Chiamata Discord", ora: "15:00", partecipantiEsterni: (),
+  data: "04/11/2024", durata: "2 ore e 40 minuti", luogo: "Chiamata Discord", ora: "15:00", partecipantiEsterni: (),
 )
 
 = Ordine del giorno
@@ -34,7 +34,7 @@ In seguito alla lezione dedicata all'aggiudicazione degli appalti e ai chiarimen
 Nel branch principale, denominato *main*, viene pubblicato il codice sorgente in linguaggio *typist* che è stato sottoposto a verifica e approvato. Qualora si debba apportare delle modifiche ai file viene creato un branch apposito nel quale si pubblicano i file modificati. I verificatori si occuperanno poi di visionarli e in caso approvarli unendoli al branch principale.
 
 === Automazione
-Per automatizzare il processo di pubblicazione dei documenti è stata configurata una *GitHub action* che compila i file .typ e li pubblica nel sito #link("https://sweatunipd.github.io/docs/")[#text(weight: "bold", fill: rgb("04E824"),link("https://sweatunipd.github.io/docs/"))]. Attualmente viene eseguita solo sui file nel branch main ma abbiamo in piano di estenderla anche ai branch temporanei per testare la compilazione anche sui documenti appena modificati. Poiché i verbali esterni devono essere firmati dalla controparte abbiamo pensato di pubblicare autoaticamente i documenti senza la firma in modo che possano essere visionati in qualsiasi momento dai docenti in caso di necessità; quando in un secondo momento la controparte restituisce il documento firmato, questo viene aggiunto manualmente nella cartella dist/candidatura/verbali/esterni in modo che la GitHub action sovrascriva nel sito il vecchio documento con quello firmato.
+Per automatizzare il processo di pubblicazione dei documenti è stata configurata una *GitHub action* che compila i file .typ e li pubblica nel sito #link("https://sweatunipd.github.io/docs/")[#text(weight: "bold", fill: rgb("04E824"),link("https://sweatunipd.github.io/docs/"))]. Attualmente viene eseguita solo sui file nel branch main ma abbiamo in piano di estenderla anche ai branch temporanei per testare la compilazione anche sui documenti appena modificati. Poiché i verbali esterni devono essere firmati dalla controparte abbiamo pensato di pubblicare automaticamente i documenti senza la firma in modo che possano essere visionati in qualsiasi momento dai docenti in caso di necessità; quando in un secondo momento la controparte restituisce il documento firmato, questo viene aggiunto manualmente nella cartella dist/candidatura/verbali/esterni in modo che la GitHub action sovrascriva nel sito il vecchio documento con quello firmato.
 
 === Sistema di ticketing
 Abbiamo creato una board con tre stati (todo, in progess, done) in modo da tracciare le azioni di stesura e modifica dei documenti con delle *issue*. Inoltre viene utilizzata la richiesta di verifica tramite *pull request*: i redattori che hanno apportato delle modifiche mandano delle pull request ai verificatori i quali, in caso di approvazione, chiudono la issue corrispondente. L'approvazione della pull request provoca la chiusura automatica del branch temporaneo utilizzato dai redattori.
