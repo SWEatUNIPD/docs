@@ -57,7 +57,7 @@
   heading([Registro delle modifiche], numbering: none, outlined: false)
   
   text(size: 10pt,table(
-    columns: (1.5fr, 0.7fr, 2fr, 2fr, 4fr),
+    columns: (0.7fr, 1.5fr, 2fr, 2fr, 4fr),
     align: horizon+left,
     table.header([*Ver.*], [*Data*], [*Redattori*], [*Verificatori*], [*Descrizione*]),
     ..versioni
