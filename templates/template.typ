@@ -74,6 +74,10 @@
   outline(indent: auto)
   pagebreak()
   content
+  if uso == "Esterno" {
+    v(25pt)
+    align(right, "Firma dell'azienda proponente")
+  }
 }
 
 #let infoRiunione(
