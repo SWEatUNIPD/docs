@@ -6,26 +6,25 @@
   responsabile: "Davide Marin", 
   redattori: ("Davide Picello", ""), 
   titolo: "Valutazione capitolati", 
-  riassunto: "Questo documento racchiude i pareri del gruppo riguardo ogni singolo capitolato, esprimendo la propria preferenza verso il C4.",
+  riassunto: "Questo documento racchiude i pareri del gruppo riguardo ogni singolo capitolato, esprimendo la propria preferenza per il quarto.",
   verificatori: (
     "Andrea Precoma",
     "Klaudio Merja",
   ),
   versioni: (
     "1.2.0",
-    "4/11/2024",    
+    "04/11/2024",    
     "Davide Picello",
     "Klaudio Merja",
     [
       - Correzione struttura in seguito a modifiche al template
       - Aggiunto riassunto nella prima pagina
-      - Modificato nome del file per essere coerente con il versionamento
     ],
 
     "1.1.0",
     "31/10/2024",
-    "Andrea Precoma",
     "Davide Picello",
+    "Andrea Precoma",
     [
       - Correzione della struttura del contenuto
       - Modifica dello stile
