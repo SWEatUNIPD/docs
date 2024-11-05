@@ -8,37 +8,48 @@
     "Prof. Riccardo Cardin", 
     "Sync Lab S.r.l."
   ), 
-  responsabile: "Klaudio Merja", 
+  responsabile: "Andrea Perozzo", 
   redattori: ("Andrea Precoma",), 
   verificatori: (
-    "Andrea Perozzo",
-    "Davide Marin", 
-    "Davide Martinelli", 
-    "Davide Picello", 
-    "Riccardo Milan"
+    "Klaudio Merja",
+    "Davide Picello",
   ), 
   uso: "Esterno",
   versioni: (
-    "27/10/2024",
-    "1.1",
+    "1.2.0",
+    "05/11/2024",
     "Andrea Precoma",
+    "Klaudio Merja\nDavide Picello",
     [
-      - Correzione degli errori presenti all'interno del documento
-      - Aggiunto registro delle versioni
+      - Aggiunta riassunto in prima pagina
+      - Aggiunto paragrafo delle conclusioni
+      - Aggiornamento struttura del registro delle modifiche
     ],
 
-    "23/10/2024",
-    "1.0",
+    "1.1.0",
+    "27/10/2024",
     "Andrea Precoma",
+    "Klaudio Merja\nDavide Picello",
+    [
+      - Correzione errori ortografici
+      - Aggiunto registro delle modifiche
+    ],
+
+    "1.0.0",
+    "23/10/2024",
+    "Andrea Precoma",
+    "Klaudio Merja\nDavide Picello",
     [- Stesura del verbale]
   ),
+  firmaRichiesta: true,
   content: content,
 )
 
 #infoRiunione(luogo: "Google Meet", data: "23/10/2024", ora: "15:30", durata: "mezz'ora", partecipantiEsterni: ("Fabio Pallaro", "Andrea Dorigo", "Daniele Zorzi"))
 
 = Sintesi dell'incontro
-I proponenti hanno chiarito tutti i punti che ci eravamo preparati e siamo stati molto soddisfatti dell'incontro. Abbiamo discusso circa le tecnologie da adottare, i metodi di comunicazione e le linee guida per il PoC e il MVP.
+
+I proponenti hanno chiarito tutti i punti che ci eravamo preparati. Abbiamo discusso circa le tecnologie da adottare, i metodi di comunicazione e le linee guida per il PoC e il MVP.
 
 = Risposte alle domande
 == Presentazione capitolato e funzionamento del software
@@ -61,3 +72,6 @@ Riguardo al MVP ci è stato specificato che sarà richiesto di aumentare l'ambie
 
 == Organizzazione lavoro
 Riguardo la parte logistica hanno espresso il desiderio di mantenere per tutto il corso del progetto un SAL a settimana in remoto e un ultimo conclusivo a fine progetto in presenza. Mettono a disposizione anche delle sessioni di "deep dive" con le quali si intende aiutare il gruppo nei casi in cui riscontri difficoltà a superare certe attività o a trovare sufficiente documentazione riguardo le tecnologie adottate.
+
+== Conclusioni
+Ringraziamo i proponenti per la disponibilità. Siamo stati soddisfatti delle risposte e di come si è presentata l'azienda proponente. Sebbene abbiamo in programma di ricevere in colloquio anche l'azienda VarGroup S.p.a. valuteremo l'opzione di candidarci per il capitolato C4.
