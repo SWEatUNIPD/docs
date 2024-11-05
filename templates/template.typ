@@ -2,6 +2,7 @@
   data: "",
   titolo: "",
   uso: "Interno",
+  firmaRichiesta: false,
   destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin"),
   verificatori: (),
   responsabile: "",
@@ -74,7 +75,7 @@
   outline(indent: auto)
   pagebreak()
   content
-  if uso == "Esterno" {
+  if uso == "Esterno" and firmaRichiesta == true {
     v(25pt)
     align(right, "Firma dell'azienda proponente")
   }

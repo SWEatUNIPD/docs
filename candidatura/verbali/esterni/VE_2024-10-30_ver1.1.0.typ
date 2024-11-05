@@ -32,6 +32,7 @@
   riassunto: "Colloquio conoscitivo con l'azienda proponente Var Group S.p.A. per chiarire i dubbi riguardo al capitolato C3",
 
   content: content,
+  firmaRichiesta: true,
 )
 
 
