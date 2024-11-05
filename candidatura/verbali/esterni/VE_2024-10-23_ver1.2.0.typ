@@ -21,7 +21,7 @@
     "Andrea Precoma",
     "Klaudio Merja\nDavide Picello",
     [
-      - Aggiunta riassunto in prima pagina
+      - Aggiunto riassunto in prima pagina
       - Aggiunto paragrafo delle conclusioni
       - Aggiornamento struttura del registro delle modifiche
     ],
@@ -75,4 +75,4 @@ Riguardo al MVP ci è stato specificato che sarà richiesto di aumentare l'ambie
 Riguardo la parte logistica hanno espresso il desiderio di mantenere per tutto il corso del progetto un SAL a settimana in remoto e un ultimo conclusivo a fine progetto in presenza. Mettono a disposizione anche delle sessioni di "deep dive" con le quali si intende aiutare il gruppo nei casi in cui riscontri difficoltà a superare certe attività o a trovare sufficiente documentazione riguardo le tecnologie adottate.
 
 == Conclusioni
-Ringraziamo i proponenti per la disponibilità. Siamo stati soddisfatti delle risposte e di come si è presentata l'azienda proponente. Sebbene abbiamo in programma di ricevere in colloquio anche l'azienda VarGroup S.p.a. valuteremo l'opzione di candidarci per il capitolato C4.
+Ringraziamo i proponenti per la disponibilità. Siamo stati soddisfatti delle risposte e di come si è presentata l'azienda proponente. Sebbene abbiamo in programma di ricevere in colloquio anche l'azienda VarGroup S.p.a., valuteremo l'opzione di candidarci per il capitolato C4.
