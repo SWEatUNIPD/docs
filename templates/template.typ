@@ -107,13 +107,11 @@
 
 
 
-#let documentoUfficiale(
+#let Lettera(
   data: "",
   titolo: "",
   destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin"),
-  responsabile: "",
-  redattori: (),
-  verificatori: (),
+  mittenti: ("Andrea Precoma", "Andrea Perozzo", "Davide Marin", "Davide Martinelli", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
   content: []
 ) = {
   set text(lang: "it", font: "Inter 18pt")
@@ -139,9 +137,7 @@
 
       grid.cell(colspan: 2, []),
 
-      "Responsabile", responsabile,
-      "Redattori", redattori.join([\ ]),
-      "Verificatori", verificatori.join([\ ])
+      "Mittenti", mittenti.join([\ ])
     )
   ])
 
