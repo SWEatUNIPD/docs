@@ -42,10 +42,11 @@
     [- Stesura del verbale]
   ),
   firmaRichiesta: true,
+  riassunto: "Il colloquio ha chiarito in maniera esaustiva tutti i punti che il gruppo si era posto di chiedere riguardo al capitolato C4.",
   content: content,
 )
 
-#infoRiunione(luogo: "Google Meet", data: "23/10/2024", ora: "15:30", durata: "mezz'ora", partecipantiEsterni: ("Fabio Pallaro", "Andrea Dorigo", "Daniele Zorzi"))
+#infoRiunione(luogo: "Google Meet", data: "23/10/2024", ora: "15:30", durata: "30 minuti", partecipantiEsterni: ("Fabio Pallaro", "Andrea Dorigo", "Daniele Zorzi"))
 
 = Sintesi dell'incontro
 
