@@ -27,7 +27,7 @@
     "Riccardo Milan",
     [
       - Correzione degli errori presenti all'interno del documento
-      - Aggiunto registro delle versioni
+      - Aggiunto registro delle modifiche
     ],
 
     "1.0.0", 

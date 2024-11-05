@@ -43,6 +43,10 @@ jobs:
         with:
           FOLDER: artifact
 
+      - name: Modify HTML Links
+        run: |
+          find artifact -name "*.html" -exec sed -i 's/<a\([^>]*\)href="\([^"]*\.pdf\)"/<a\1target="_blank" href="\2"/g' {} +
+
       - name: Upload static files as artifact
         id: deployment
         uses: actions/upload-pages-artifact@v3
