@@ -31,10 +31,10 @@ In seguito alla lezione dedicata all'aggiudicazione degli appalti e ai chiarimen
 
 == Ridefinizione della struttura della GitHub repository
 === Branches
-Nel branch principale, denominato *main*, viene pubblicato il codice sorgente in linguaggio *typist* che è stato sottoposto a verifica e approvato. Qualora si debba apportare delle modifiche ai file viene creato un branch apposito nel quale si pubblicano i file modificati. I verificatori si occuperanno poi di visionarli e in caso approvarli unendoli al branch principale.
+Nel branch principale, denominato *main*, viene pubblicato il codice sorgente in linguaggio *Typst* che è stato sottoposto a verifica e approvato. Qualora si debba apportare delle modifiche ai file viene creato un branch apposito nel quale si pubblicano i file modificati. I verificatori si occuperanno poi di visionarli e in caso approvarli unendoli al branch principale.
 
 === Automazione
-Per automatizzare il processo di pubblicazione dei documenti è stata configurata una *GitHub action* che compila i file .typ e li pubblica nel sito #link("https://sweatunipd.github.io/docs/")[#text(weight: "bold", fill: rgb("04E824"),underline("https://sweatunipd.github.io/docs/"))]. Attualmente viene eseguita solo sui file nel branch main ma abbiamo in piano di estenderla anche ai branch temporanei per testare la compilazione anche sui documenti appena modificati. Poiché i verbali esterni devono essere firmati dalla controparte abbiamo pensato di pubblicare automaticamente i documenti senza la firma in modo che possano essere visionati in qualsiasi momento dai docenti in caso di necessità; quando in un secondo momento la controparte restituisce il documento firmato, questo viene aggiunto manualmente nella cartella dist/candidatura/verbali/esterni in modo che la GitHub action sovrascriva nel sito il vecchio documento con quello firmato.
+Per automatizzare il processo di pubblicazione dei documenti è stata configurata una *GitHub Action* che compila i file .typ e li pubblica nel sito #link("https://sweatunipd.github.io/docs/")[#text(weight: "bold", fill: rgb("04E824"),underline("https://sweatunipd.github.io/docs/"))]. Attualmente viene eseguita solo sui file nel branch main ma abbiamo in piano di estenderla anche ai branch temporanei per testare la compilazione anche sui documenti appena modificati. Poiché i verbali esterni devono essere firmati dalla controparte abbiamo pensato di pubblicare automaticamente i documenti senza la firma in modo che possano essere visionati in qualsiasi momento dai docenti in caso di necessità; quando in un secondo momento la controparte restituisce il documento firmato, questo viene aggiunto manualmente nella cartella dist/candidatura/verbali/esterni in modo che la GitHub Action sovrascriva nel sito il vecchio documento con quello firmato.
 
 === Sistema di ticketing
 Abbiamo creato una board con tre stati (todo, in progess, done) in modo da tracciare le azioni di stesura e modifica dei documenti con delle *issue*. Inoltre viene utilizzata la richiesta di verifica tramite *pull request*: i redattori che hanno apportato delle modifiche mandano delle pull request ai verificatori i quali, in caso di approvazione, chiudono la issue corrispondente. L'approvazione della pull request provoca la chiusura automatica del branch temporaneo utilizzato dai redattori.
@@ -44,7 +44,7 @@ Al momento è presente la cartella *Candidatura* ma abbiamo in programma di crea
 
 La cartella *assets* è dedicata alle risorse usate nei documenti quali immagini e font.
 
-Nella cartella *templates* sono presenti i file template usati per i documenti in typist e per i diari di bordo, quest'ultimi non pubblicati nella repository perché hanno uno scopo "usa e getta".
+Nella cartella *templates* sono presenti i file template usati per i documenti in Typst e per i diari di bordo, quest'ultimi non pubblicati nella repository perché hanno uno scopo "usa e getta".
 
 La cartella *dist/candidatura/verbali/esterni* viene utilizzata per pubblicare i verbali esterni firmati come è spiegato dettagliatamente nella sezione Automazione.
 
