@@ -2,7 +2,7 @@
     <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./assets/img/logo_dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="./assets/img/logo.svg">
-    <img style="width: 60%;" alt="Shows a black logo in light color mode and a white one in dark color mode." src="./assets/img/logo_dark.svg">
+    <img width="400" alt="Shows a black logo in light color mode and a white one in dark color mode." src="./assets/img/logo_dark.svg">
     </picture>
 </p>
 
