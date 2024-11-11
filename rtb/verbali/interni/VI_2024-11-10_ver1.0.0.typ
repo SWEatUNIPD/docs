@@ -34,7 +34,7 @@ Dopo alcune proposte stilistiche riguardo al sito dove pubblicare la documentazi
 
 == Backlog
 Abbiamo deciso di utilizzare il sistema di GitHub composto da *board* e *issue* come backlog. Poiché abbiamo pianificato di creare più repository a seconda dell'area di azione, ad esempio una per la documentazione e una per il sito che visualizzi i documenti, abbiamo convenuto a creare una sola board che contenesse tutte le issue. In base alle attività vengono create le issue nelle rispettive repository, così da mantenere la separazione strutturale e poterle collegare alle "commit", ma vengono inserite nella stessa board così da essere tracciabili nello stesso spazio. Per mantenere questa metodologia abbiamo adottato le seguenti regole:
-- Dopo che si ha ragionato sulle azioni future, sempre durante la riunione si andranno a creare le issue in modo che tutti siano allineati sulle attività del backlog.
+- Dopo aver ragionato sulle azioni future, sempre durante la riunione si andranno a creare le issue in modo che tutti siano allineati sulle attività del backlog.
 - Le issue vanno create come già in accordo dal gruppo (descritto nel verbale interno del 04 novembre 2024 in mancanza al momento delle Norme di Progetto).
 - Il redattore del verbale dovrà popolare la tabella delle decisioni collegando i codici delle attività con le rispettive issue.
 - I nomi delle issue devono essere ben descrittivi perché saranno inseriti nella Tabella delle decisioni.
@@ -57,7 +57,9 @@ Come molte riunioni nel primo periodo del progetto questa è servita a modellare
 = Tabella delle decisioni
 #backlog(
   content: (
-    "ORG", "Andrea Precoma", "Invito di un incontro all'azienda proponente via e-mail",
+    "ORG", "Andrea Precoma", "Richiesta di un incontro con l'azienda proponente via e-mail",
+
+    "ORG", "Gruppo", "Assegnazione dei ruoli per cominciare il progetto",
 
     link("https://github.com/SWEatUNIPD/docs/issues/17")[#text(underline("D0017"))],
     "Riccardo Milan", "Redazione glossario",
