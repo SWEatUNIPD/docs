@@ -1,0 +1,55 @@
+name: Generate Pull Request's PDF Artifacts
+
+on: pull_request
+
+jobs:
+  diff_compilation:
+    permissions:
+      contents: write
+      pull-requests: write
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout codebase
+        uses: actions/checkout@v4.2.2
+        with:
+          fetch-depth: 0
+
+      - name: Setup Typst
+        uses: typst-community/setup-typst@v3
+
+      - name: Compile diffed files
+        run: |
+          shopt -s globstar
+          git diff --name-only -r HEAD~1 HEAD -X '*.typ' > diffs.txt
+          for line in $(cat diffs.txt); do
+            if [[ "$line" != templates/* ]]; then
+              typst compile --root . --font-path ./assets/font/ "$line"
+            fi 
+          done
+
+      - name: Extract artifacts
+        run: find . -name "*.pdf" -not -path "./dist/*" -exec bash -c 'path="{}"; mkdir -p artifact/$(dirname "$path") && mv "$path" artifact/"$path"' \;
+
+      - name: Upload a Build Artifact
+        id: upload-artifact
+        uses: actions/upload-artifact@v4.4.3
+        with:
+          name: gen_${{github.event.pull_request.head.sha}}
+          path: artifact/
+          if-no-files-found: ignore
+          overwrite: true
+          retention-days: 3
+
+      - name: Comment artifact link to PR
+        if: ${{steps.upload-artifact.outputs.artifact-url}}
+        run: |
+          echo "${{steps.upload-artifact.outputs.artifact-url}}"
+          gh pr comment $PR_NUMBER --body "# 🗂️ Artefatti della PR
+          $ARTIFACT_LINK
+          NB: il link scade tra 3 giorni
+          "
+        env:
+          GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          PR_NUMBER: ${{github.event.pull_request.number}}
+          ARTIFACT_LINK: ${{steps.upload-artifact.outputs.artifact-url}}

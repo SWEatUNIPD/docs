@@ -24,19 +24,11 @@ jobs:
         run: |
          shopt -s globstar
          for file in ./**/*.typ; do
-          if [[ "$file" != ./templates/* ]]; then
+          if [[ "$file" != ./templates/* && "$file" != ./*/verbali/esterni/* && "$file" != ./*/esteri/verbali/* ]]; then
             typst compile --root . --font-path ./assets/font "$file"
           fi
          done
-         find . -name "*.pdf" -not -path "./dist/*" -exec bash -c 'path="{}"; mkdir -p artifact/$(dirname "$path") && mv "$path" artifact/"$path"' \;
-
-      - name: Add dist PDFs
-        run: |
-         shopt -s globstar
-         cd dist
-         if [ -n "$( ls )" ]; then
-          cp -r * ../artifact/
-         fi
+         find . -name "*.pdf" -exec bash -c 'path="{}"; mkdir -p artifact/$(dirname "$path") && mv "$path" artifact/"$path"' \;
         
       - name: Github Pages Directory Listing
         uses: jayanta525/github-pages-directory-listing@v4.0.0
