@@ -157,7 +157,7 @@ Piattaforma open-source di business intelligence per esplorare e visualizzare da
 #v(10pt)
 
 - #text(weight: "bold", "SAL")
-Stato avanzamento lavori per misurare il progresso delle attività rispetto alla pianificazione
+Stato Avanzamento Lavori per misurare il progresso delle attività rispetto alla pianificazione
 #v(10pt)
 
 #pagebreak()
