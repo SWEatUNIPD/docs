@@ -23,9 +23,9 @@
 )
 
 = Introduzione
-Il seguente documento ha lo scopo di disambiguare e definire i termini specifici e non banali del dominio d'uso e perciò presenti nella documentazione.
+Il seguente documento ha lo scopo di disambiguare e definire correttamente i termini specifici e non banali del dominio d'uso, presenti nella documentazione.
 \
-La presenza di un termine all'interno del `Glossario` negli altri documenti viene indicata sottolineando il vocabolo.
+La presenza di un termine all'interno del `Glossario` negli altri documenti viene indicata aggiungendogli un apice con la lettera "g" (es. SAL#rifGlossario).
 
 #pagebreak()
 = A
@@ -75,14 +75,6 @@ Rappresentazione grafica di dati e informazioni, al fine di facilitarne la compr
 #v(10pt)
 
 #pagebreak()
-= E
-#v(10pt)
-
-#pagebreak()
-= F
-#v(10pt)
-
-#pagebreak()
 = G
 #v(10pt)
 - #text(weight: "bold", "Grafana")
@@ -97,18 +89,6 @@ Broker MQTT open-source ad alte prestazioni per l'IoT.
 #v(10pt)
 
 #pagebreak()
-= I 
-#v(10pt)
-
-#pagebreak()
-= J
-#v(10pt)
-
-#pagebreak()
-= K
-#v(10pt)
-
-#pagebreak()
 = L
 #v(10pt)
 - #text(weight: "bold", "LangChain")
@@ -116,26 +96,10 @@ Framework open-source per la creazione di applicazioni basate su LLM, che consen
 #v(10pt)
 
 #pagebreak()
-= M 
-#v(10pt)
-
-#pagebreak()
-= N
-#v(10pt)
-
-#pagebreak()
-= O
-#v(10pt)
-
-#pagebreak()
 = P
 #v(10pt)
 - #text(weight: "bold", "PostGIS")
 Estensione open-source di PostgreSQL per la gestione di dati spaziali.
-#v(10pt)
-
-#pagebreak()
-= Q
 #v(10pt)
 
 #pagebreak()
@@ -158,36 +122,6 @@ Piattaforma open-source di business intelligence per esplorare e visualizzare da
 
 - #text(weight: "bold", "SAL")
 Stato Avanzamento Lavori per misurare il progresso delle attività rispetto alla pianificazione
-#v(10pt)
-
-#pagebreak()
-= T
-#v(10pt)
-
-#pagebreak()
-= U
-#v(10pt)
-
-#pagebreak()
-= V
-#v(10pt)
-
-#pagebreak()
-= W
-#v(10pt)
-
-#pagebreak()
-= X
-#v(10pt)
-
-
-#pagebreak()
-= Y
-#v(10pt)
-
-
-#pagebreak()
-= Z
 #v(10pt)
 
 
