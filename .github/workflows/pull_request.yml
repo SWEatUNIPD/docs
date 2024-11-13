@@ -21,6 +21,7 @@ jobs:
       - name: Compile diffed files
         run: |
           shopt -s globstar
+          find . -name "*.pdf" -type f -delete
           git diff --name-only -r HEAD~1 HEAD -X '*.typ' > diffs.txt
           for line in $(cat diffs.txt); do
             if [[ "$line" != templates/* ]]; then
