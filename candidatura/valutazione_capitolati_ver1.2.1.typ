@@ -12,6 +12,14 @@
     "Klaudio Merja",
   ),
   versioni: (
+    "1.2.1",
+    "12/11/2024",
+    "Davide Picello",
+    "Klaudio Merja",
+    [
+      - Aggiunta della convenzione inerente ai termini presenti sul glossario
+    ],
+
     "1.2.0",
     "04/11/2024",    
     "Davide Picello",
@@ -116,7 +124,7 @@ Nel documento non è stato specificato alcun requisito per quanto riguarda il Po
 == Criticità e fattori di rischio
 
 - MVP corposo.
-- SAL bisettimanali di un'ora.
+- #underline[sal]#rifGlossario bisettimanali di un'ora.
 
 == Conclusioni
 
@@ -180,14 +188,14 @@ Il progetto richiede la creazione di un sistema che sfrutti il LLM per generare 
 Il proponente non impone particolari vincoli sulle specifiche tecnologie, ma più una struttura/schema che il sistema deve rispettare, ovvero:
 
 - Simulatore GPS per la generazione di dati geospaziali che permette di simulare un effettivo utilizzo del sistema. Si consiglia uno script in Python (con l’utilizzo di librerie di generazione dati come Faker). I dati generati dovranno essere quanto più realistici.
-- Message broker/MQTT broker/Event streaming per gli stream di dati provenienti dai vari simulatori GPS. Vengono fornite tecnologie come Apache Kafka, RabbitMQ e molte altre.
-- Strumenti di data stream processing per prelevare e processare i vari dati provenienti dagli stream. Si consiglia l’utilizzo di strumenti come Apache Airflow, Apache NiFi o altri.
-- Strumenti per processare i messaggi in input e fornire una risposta tramite LLM come LangChain e altri.
+- Message broker/MQTT broker/Event streaming per gli stream di dati provenienti dai vari simulatori GPS. Vengono fornite tecnologie come #underline[Apache Kafka]#rifGlossario, #underline[RabbitMQ]#rifGlossario e molte altre.
+- Strumenti di data #underline[stream processing]#rifGlossario per prelevare e processare i vari dati provenienti dagli stream. Si consiglia l’utilizzo di strumenti come #underline[Apache Airflow]#rifGlossario, #underline[Apache NiFi]#rifGlossario o altri.
+- Strumenti per processare i messaggi in input e fornire una risposta tramite LLM come #underline[LangChain]#rifGlossario e altri.
 - Database per lo storage dei dati di profilazione, che supporti un elevato numero di dati in entrata e che permetta l’elaborazione di dati geospaziali,
-- Strumenti per la data visualization come Grafana o Apache Superset.
+- Strumenti per la #underline[data visualization]#rifGlossario come #underline[Grafana]#rifGlossario o #underline[Apache Superset]#rifGlossario.
 
 == Aspetti positivi
-- SAL settimanali.
+- #underline[sal]#rifGlossario settimanali.
 - Sostegno di professionisti per quanto riguarda le varie fasi del progetto.
 - Sessioni di “deep dive” tecnologico ed architetturale a disposizione dei componenti del gruppo.
 
@@ -260,7 +268,7 @@ Il progetto richiede l'utilizzo delle seguenti tecnologie:
 - Frontend: Angular per interfaccia utente.
 - Orchestrazione: Google Cloud Platform con Kubernetes per la gestione centralizzata.
 - Database: MongoDB per dati non strutturati, PostgreSQL per dati strutturati, Redis per caching.
-- Comunicazione: NATS o Apache Kafka per messaggi asincroni tra microservizi.
+- Comunicazione: NATS o #underline[Apache Kafka]#rifGlossario per messaggi asincroni tra microservizi.
 
 == Aspetti positivi
 - Opportunità di applicare tecnologie avanzate e molto in voga, come microservizi e machine learning.
@@ -370,7 +378,7 @@ Il progetto richiede lo sviluppo delle seguenti funzionalità:
 == Tecnologie interessate
 Il proponente consiglia l'utilizzo delle seguenti tecnologie:
 - OpenAI: motore per le funzionalità di comprensione e generazione del testo.
-- Langchain: progetto che permette di integrare modelli di AI.
+- #underline[LangChain]#rifGlossario: progetto che permette di integrare modelli di AI.
 - Node/NestJS: framework per lo sviluppo di applicazioni server-side.
 - Angular: framework front-end per lo sviluppo di applicazioni web.
 - Spring Boot: framework Java per creare applicazioni standalone.

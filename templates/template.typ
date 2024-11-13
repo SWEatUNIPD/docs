@@ -222,3 +222,5 @@
     ..content
   )
 }
+
+#let rifGlossario = [#super[#text(size:9pt)[g]]]
