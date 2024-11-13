@@ -5,8 +5,7 @@
   uso: "Interno",
   responsabile: "Klaudio Merja", 
   redattori: ("Riccardo Milan", ), 
-  titolo: "Glossario", 
-  riassunto: "Glossario con tutti i termini del dominio d'uso del progetto.",
+  titolo: "Glossario",
   verificatori: (
     "Andrea Perozzo",
   ),
