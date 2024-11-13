@@ -24,7 +24,7 @@
 = Introduzione
 Il seguente documento ha lo scopo di disambiguare e definire correttamente i termini specifici e non banali del dominio d'uso, presenti nella documentazione.
 \
-La presenza di un termine all'interno del `Glossario` negli altri documenti viene indicata aggiungendogli un apice con la lettera "g" (es. SAL#rifGlossario).
+La presenza di un termine o espressione all'interno del `Glossario` negli altri documenti viene indicata aggiungendogli un apice con la lettera "g" (es. SAL#rifGlossario) e sottolineando l'intera espressione (es. #underline[Apache Superset#rifGlossario]) per indicare chiaramente l'intero costrutto da cercare nel glossario.
 
 #pagebreak()
 = A
