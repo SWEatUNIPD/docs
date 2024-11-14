@@ -56,11 +56,5 @@ Ci è stata confermata l'autonomia del team, si sono offerti disponibili a forni
 
     link("https://github.com/SWEatUNIPD/docs/issues/24")[#text(underline("D0024"))],
     "Andrea Perozzo", "Verbale Esterno del 2024-11-13",
-
-    link("https://github.com/SWEatUNIPD/docs/issues/26")[#text(underline("D0026"))],
-    "Andrea Perozzo", "Verbale Interno del 2024-11-13",
-
-    link("https://github.com/SWEatUNIPD/docs/issues/25")[#text(underline("D0025"))],
-    "Klaudio Merja", "Struttura Norme di Progetto",
   )
 )
