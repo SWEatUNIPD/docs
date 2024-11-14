@@ -62,7 +62,7 @@ Inizialmente i proponenti hanno esposto il capitolato con maggiori dettagli, ris
 == PoC
 Successivamente abbiamo concordato alcuni punti da sviluppare riguardo al PoC; tuttavia ci è stato detto che potrà essere definito con maggiori dettagli in seguito all'aggiudicazione dell'appalto. Il PoC, per come lo abbiamo descritto in colloquio, dovrà contenere:
 - dati GPS di un utente (generati o statici)
-- datastream processor che analizza i dati dell'utente
+- stream processor che analizza i dati dell'utente
 - un punto di interesse
 - dashboard per visualizzare gli annunci (utilizzando Grafana o Apache Superset)
 
