@@ -11,7 +11,7 @@
   riassunto: "Riunione interna per definire compiti, organizzazione delle call, tracciabilità delle decisioni e preparazione alla prossima call con Sync Lab.",
   versioni: (
     "1.0.0", 
-    [10/11/2024], 
+    [13/11/2024], 
     "Andrea Perozzo", 
     "Davide Marin",
     [- Stesura del verbale],
@@ -36,9 +36,9 @@ La riunione interna aveva l'obiettivo di:
 == Discussione dei Suggerimenti Tecnici e di Project Management
 Abbiamo analizzato i suggerimenti forniti dall'azienda sui concetti di data streaming, data processing, e event-driven architecture. Visti i numerosi strumenti consigliati (Kafka Streams, Nifi, Flink, Spring), abbiamo concordato di dedicare il tempo iniziale a documentarci per poi selezionare le tecnologie che meglio si integrano con il nostro obiettivo, soprattutto considerando la possibile integrazione con LangChain.
 == Richiesta di Supporto e Confronto per l'Analisi dei Requisiti
-Abbiamo discusso l'importanza dell'analisi dei requisiti, specialmente per chi era meno esperto. Poiché l'analisi dei requisiti è una fase fondamentale ma nuova per alcuni, abbiamo concordato di chiedere un confronto con i referenti, per chiarire meglio il nostro approccio e definire le esigenze principali. Inoltre, abbiamo deciso di organizzare incontri ricorrenti con i referenti per verificare i requisiti, con il primo meeting fissato per la settimana successiva.
+Abbiamo discusso l'importanza dell'analisi dei requisiti, specialmente per chi era meno esperto. Poiché l'analisi dei requisiti è una fase fondamentale ma nuova per alcuni, abbiamo concordato di chiedere un confronto con i referenti, per chiarire meglio il nostro approccio e definire le esigenze principali. Inoltre, abbiamo deciso di organizzare incontri ricorrenti con i referenti per verificare i requisiti, con il primo meeting fissato per la settimana prossima.
 == Organizzazione degli Incontri di Aggiornamento e Tracciabilità delle Decisioni
-Per mantenere coerenza e tracciabilità, abbiamo stabilito di fissare una call di aggiornamento ogni mercoledì. Durante queste call, saranno discusse le questioni aperte e si annoteranno le decisioni prese, che verranno riportate all'interno delle descrizioni delle relative issue su GitHub, con riferimento alla data della riunione per rintracciare i verbali e documentare l'avanzamento.
+Per mantenere coerenza e tracciabilità, abbiamo stabilito di fissare una call di aggiornamento ogni mercoledì. Queste call si alternano di settimana in settimana: una settimana sarà dedicata a brevi aggiornamenti rapidi, mentre la settimana successiva si terrà un incontro di fine sprint più strutturato, dove si discuteranno i progressi e le questioni aperte. Durante queste call, saranno annotate le decisioni prese, che verranno riportate all'interno delle descrizioni delle relative issue su GitHub, con riferimento alla data della riunione per rintracciare i verbali e documentare l'avanzamento.
 = Decisioni operative
 == Note operative
 - Frequenza delle Call: Ogni mercoledì, con eventuali aggiustamenti settimanali.
@@ -54,7 +54,7 @@ Per mantenere coerenza e tracciabilità, abbiamo stabilito di fissare una call d
 - Studio delle modalità di processamento dei messaggi in input e formulazione di risposte tramite LLM.
 *Obiettivo di completamento per tutti i compiti di studio e documentazione:* martedì, giorno precedente alla prossima call di aggiornamento con Sync Lab.
 == Azioni specifiche di redazione e verifica
-Redazione della prima versione del documento “Norme di Progetto", questa attività verrà registrata in una tabella dedicata e collegata alla relativa issue per tracciabilità, e sarà completata per il prossimo incontro.
+Redazione della prima versione del documento "Norme di Progetto", questa attività verrà registrata in una tabella dedicata e collegata alla relativa issue per tracciabilità, e sarà completata per il prossimo incontro.
 = Conclusioni
 Abbiamo definito le linee operative e i compiti di ricerca per comprendere meglio le tecnologie e i framework suggeriti. L'approccio scelto include uno studio iniziale dettagliato, seguito da un confronto diretto con i referenti per l'analisi dei requisiti, per procedere con sicurezza. Tutto questo per assicurare chiarezza operativa e facilitare l'allineamento nelle fasi successive del progetto.
 
@@ -62,8 +62,6 @@ Abbiamo definito le linee operative e i compiti di ricerca per comprendere megli
 #backlog(
   content: (
     "ORG", "Andrea Precoma", "Aggiungere una descrizione delle issue, includendo i verbali in cui sono state sollevate e i ruoli coinvolti",
-
-    "ORG", "Gruppo", "Riunione con Sync Lab S.r.L. fissata per Mercoledì 20/11",
 
     link("https://github.com/SWEatUNIPD/docs/issues/24")[#text(underline("D0017"))],
     "Andrea Perozzo", "Verbale Esterno del 2024-11-13",
