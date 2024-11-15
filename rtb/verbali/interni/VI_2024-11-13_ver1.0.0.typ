@@ -63,13 +63,13 @@ Abbiamo definito le linee operative e i compiti di ricerca per comprendere megli
   content: (
     "ORG", "Andrea Precoma", "Aggiungere una descrizione delle issue, includendo i verbali in cui sono state sollevate e i ruoli coinvolti",
 
-    link("https://github.com/SWEatUNIPD/docs/issues/24")[#text(underline("D0017"))],
+    link("https://github.com/SWEatUNIPD/docs/issues/24")[#text(underline("D0024"))],
     "Andrea Perozzo", "Verbale Esterno del 2024-11-13",
 
-    link("https://github.com/SWEatUNIPD/docs/issues/26")[#text(underline("D0018"))],
+    link("https://github.com/SWEatUNIPD/docs/issues/26")[#text(underline("D0026"))],
     "Andrea Perozzo", "Verbale Interno del 2024-11-13",
 
-    link("https://github.com/SWEatUNIPD/docs/issues/25")[#text(underline("D0019"))],
+    link("https://github.com/SWEatUNIPD/docs/issues/25")[#text(underline("D0025"))],
     "Klaudio Merja", "Struttura Norme di Progetto",
   )
 )
