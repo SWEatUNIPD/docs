@@ -2,7 +2,7 @@
 
 #show: content=>verbale(
   data: "13 novembre 2024", 
-  responsabile: "Davide Marin", 
+  responsabile: "Andrea Perozzo", 
   destinatari: (
     "Prof. Tullio Vardanega",
     "Prof. Riccardo Cardin",
@@ -53,8 +53,5 @@ Ci è stata confermata l'autonomia del team, si sono offerti disponibili a forni
 #backlog(
   content: (
     "ORG", "Gruppo", "Riunione con Sync Lab S.r.L. fissata per Mercoledì 20/11",
-
-    link("https://github.com/SWEatUNIPD/docs/issues/24")[#text(underline("D0024"))],
-    "Andrea Perozzo", "Verbale Esterno del 2024-11-13",
   )
 )
