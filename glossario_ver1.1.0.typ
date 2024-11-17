@@ -1,24 +1,25 @@
 #import "/templates/template.typ": *
 
-#show: content=>verbale(
-  data: "11 Novembre 2024", 
+#show: content => verbale(
+  data: "11 Novembre 2024",
   uso: "Interno",
-  responsabile: "Klaudio Merja", 
-  redattori: ("Riccardo Milan", ), 
+  responsabile: "Klaudio Merja",
+  redattori: ("Riccardo Milan", "Klaudio Merja"),
   titolo: "Glossario",
-  verificatori: (
-    "Andrea Perozzo",
-  ),
+  verificatori: ("Andrea Precoma", "Andrea Perozzo"),
   versioni: (
-
+    "1.1.0",
+    "14/11/2024",
+    "Klaudio Merja",
+    "Andrea Precoma",
+    [- Aggiunti i termini "Way of Working", "GenIA", "prompt" e "ROI"],
     "1.0.0",
-    "11/11/2024",    
+    "11/11/2024",
     "Riccardo Milan",
     "Andrea Perozzo",
     [- Redazione glossario con termini del capitolato],
-
   ),
-  content: content
+  content: content,
 )
 
 = Introduzione
@@ -81,6 +82,11 @@ Rappresentazione grafica di dati e informazioni, al fine di facilitarne la compr
 #pagebreak()
 = G
 #v(10pt)
+#text(weight: "bold", size: 12pt, "GenIA")
+
+Acronimo di "Generative Artificial Intelligence", si intende tutte le tecnologie di intelligenza artificiale capaci di generare contenuti come testo, immagini, codice, idee ed altro con l'obiettivo di simulare le attività di un essere umano.
+#v(10pt)
+
 #text(weight: "bold", size: 12pt, "Git")
 
 Sistema di controllo di versione distribuito open-source, che permette di tracciare e gestire le modifiche al codice sorgente in progetti software, supportando il lavoro collaborativo.
@@ -139,12 +145,22 @@ Acronimo di Proof of Concept, è un prototipo o un modello iniziale creato per d
 Estensione open-source di PostgreSQL per la gestione di dati spaziali.
 #v(10pt)
 
+#text(weight: "bold", size: 12pt, "Prompt")
+
+Testo in linguaggio naturale richiesto in input dall'IA generativa con lo scopo di generare un output dalla stessa.
+#v(10pt)
+
 #pagebreak()
 = R
 #v(10pt)
 #text(weight: "bold", size: 12pt, "Rabbit MQ")
 
 Broker di messaggi open-source AMQP utilizzato per creare sistemi di messaggistica asincrona.
+#v(10pt)
+
+#text(weight: "bold", size: 12pt, "ROI")
+
+Acronimo di "Return On Investment", è un indice economico che misura la redditività di un investimento, calcolato dal rapporto tra i risultati economici ottenuti e il capitale investito.
 #v(10pt)
 
 #pagebreak()
@@ -172,3 +188,12 @@ Stato Avanzamento Lavori per misurare il progresso delle attività rispetto alla
 
 Linguaggio di markup per la formattazione dei documenti e strumento di typesetting, simile a LaTeX, progettato per creare documenti complessi con sintassi moderna e funzionalità avanzate.
 #v(10pt)
+
+#pagebreak()
+= W
+#v(10pt)
+#text(weight: "bold", size: 12pt, "Way of Working")
+
+Letteralmente "modo di lavorare", si intende l'insieme di regole, best practice e strumenti utilizzati per organizzare al meglio le attività del gruppo. Permette al gruppo di svolgere il proprio lavoro in maniera efficiente e professionale e di operare allo stato dell'arte.
+#v(10pt)
+
