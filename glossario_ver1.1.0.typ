@@ -12,7 +12,7 @@
     "14/11/2024",
     "Klaudio Merja",
     "Andrea Precoma",
-    [- Aggiunti i termini "Way of Working", "GenIA", "prompt" e "ROI"],
+    [- Aggiunti i termini "Way of Working", "GenAI", "prompt" e "ROI"],
     "1.0.0",
     "11/11/2024",
     "Riccardo Milan",
@@ -82,7 +82,7 @@ Rappresentazione grafica di dati e informazioni, al fine di facilitarne la compr
 #pagebreak()
 = G
 #v(10pt)
-#text(weight: "bold", size: 12pt, "GenIA")
+#text(weight: "bold", size: 12pt, "GenAI")
 
 Acronimo di "Generative Artificial Intelligence", si intende tutte le tecnologie di intelligenza artificiale capaci di generare contenuti come testo, immagini, codice, idee ed altro con l'obiettivo di simulare le attività di un essere umano.
 #v(10pt)
