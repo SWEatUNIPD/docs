@@ -33,11 +33,11 @@ La riunione interna aveva l'obiettivo di:
 - Stabilire azioni specifiche di redazione e verifica per la documentazione iniziale del progetto.
 - Chiarire i dubbi e organizzare la collaborazione con i referenti aziendali, considerando la complessità dei requisiti e delle tecnologie suggerite.
 = Ordine del giorno
-== Discussione dei Suggerimenti Tecnici e di Project Management
+== Discussione dei suggerimenti tecnici e di Project Management
 Abbiamo analizzato i suggerimenti forniti dall'azienda sui concetti di data streaming, data processing, e event-driven architecture. Visti i numerosi strumenti consigliati (Kafka Streams, Nifi, Flink, Spring), abbiamo concordato di dedicare il tempo iniziale a documentarci per poi selezionare le tecnologie che meglio si integrano con il nostro obiettivo, soprattutto considerando la possibile integrazione con LangChain.
-== Richiesta di Supporto e Confronto per l'Analisi dei Requisiti
+== Richiesta di supporto e confronto per l'Analisi dei Requisiti
 Abbiamo discusso l'importanza dell'analisi dei requisiti, specialmente per chi era meno esperto. Poiché l'analisi dei requisiti è una fase fondamentale ma nuova per alcuni, abbiamo concordato di chiedere un confronto con i referenti, per chiarire meglio il nostro approccio e definire le esigenze principali. Inoltre, abbiamo deciso di organizzare incontri ricorrenti con i referenti per verificare i requisiti, con il primo meeting fissato per la settimana prossima.
-== Organizzazione degli Incontri di Aggiornamento e Tracciabilità delle Decisioni
+== Organizzazione degli incontri di aggiornamento e tracciabilità delle decisioni
 Per mantenere coerenza e tracciabilità, abbiamo stabilito di fissare una call di aggiornamento ogni mercoledì. Queste call si alternano di settimana in settimana: una settimana sarà dedicata a brevi aggiornamenti rapidi, mentre la settimana successiva si terrà un incontro di fine sprint più strutturato, dove si discuteranno i progressi e le questioni aperte. Durante queste call, saranno annotate le decisioni prese, che verranno riportate all'interno delle descrizioni delle relative issue su GitHub, con riferimento alla data della riunione per rintracciare i verbali e documentare l'avanzamento.
 = Decisioni operative
 == Note operative
