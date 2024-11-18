@@ -1,26 +1,33 @@
 #import "/templates/template.typ": *
 
-#show: content=>verbale(
-  data: "13 novembre 2024", 
-  responsabile: "Andrea Perozzo", 
-  redattori: ("Andrea Perozzo",), 
-  titolo: "Quarta riunione", 
-  verificatori: (
-    "Davide Marin",
-  ),
+#show: content => verbale(
+  data: "13 novembre 2024",
+  responsabile: "Andrea Perozzo",
+  redattori: ("Andrea Perozzo",),
+  titolo: "Quarta riunione",
+  verificatori: ("Davide Marin",),
   riassunto: "Riunione interna per definire compiti, organizzazione delle call, tracciabilità delle decisioni e preparazione alla prossima call con Sync Lab.",
   versioni: (
-    "1.0.0", 
-    [13/11/2024], 
-    "Andrea Perozzo", 
+    "1.0.1",
+    [18/11/2024],
+    "Andrea Perozzo",
+    "Davide Marin",
+    [- Rimozione del camel-case dai paragrafi presenti nell'Ordine del giorno],
+    "1.0.0",
+    [13/11/2024],
+    "Andrea Perozzo",
     "Davide Marin",
     [- Stesura del verbale],
   ),
-  content: content
+  content: content,
 )
 
 #infoRiunione(
-  data: "13/11/2024", durata: "1 ora e 30 minuti", luogo: "Chiamata Discord", ora: "16:30", partecipantiEsterni: (),
+  data: "13/11/2024",
+  durata: "1 ora e 30 minuti",
+  luogo: "Chiamata Discord",
+  ora: "16:30",
+  partecipantiEsterni: (),
 )
 
 = Sintesi
@@ -59,17 +66,17 @@ Redazione della prima versione del documento "Norme di Progetto", questa attivit
 Abbiamo definito le linee operative e i compiti di ricerca per comprendere meglio le tecnologie e i framework suggeriti. L'approccio scelto include uno studio iniziale dettagliato, seguito da un confronto diretto con i referenti per l'analisi dei requisiti, per procedere con sicurezza. Tutto questo per assicurare chiarezza operativa e facilitare l'allineamento nelle fasi successive del progetto.
 
 = Tabella delle decisioni
-#backlog(
-  content: (
-    "ORG", "Andrea Precoma", "Aggiungere una descrizione delle issue, includendo i verbali in cui sono state sollevate e i ruoli coinvolti",
-
-    link("https://github.com/SWEatUNIPD/docs/issues/24")[#text(underline("D0024"))],
-    "Andrea Perozzo", "Verbale Esterno del 2024-11-13",
-
-    link("https://github.com/SWEatUNIPD/docs/issues/26")[#text(underline("D0026"))],
-    "Andrea Perozzo", "Verbale Interno del 2024-11-13",
-
-    link("https://github.com/SWEatUNIPD/docs/issues/25")[#text(underline("D0025"))],
-    "Klaudio Merja", "Struttura Norme di Progetto",
-  )
-)
+#backlog(content: (
+  "ORG",
+  "Andrea Precoma",
+  "Aggiungere una descrizione delle issue, includendo i verbali in cui sono state sollevate e i ruoli coinvolti",
+  link("https://github.com/SWEatUNIPD/docs/issues/24")[#text(underline("D0024"))],
+  "Andrea Perozzo",
+  "Verbale Esterno del 2024-11-13",
+  link("https://github.com/SWEatUNIPD/docs/issues/26")[#text(underline("D0026"))],
+  "Andrea Perozzo",
+  "Verbale Interno del 2024-11-13",
+  link("https://github.com/SWEatUNIPD/docs/issues/25")[#text(underline("D0025"))],
+  "Klaudio Merja",
+  "Struttura Norme di Progetto",
+))
