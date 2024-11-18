@@ -58,6 +58,6 @@ Ci è stata confermata l'autonomia del team, si sono offerti disponibili a forni
 = Tabella delle decisioni
 #backlog(
   content: (
-    "ORG", "Gruppo", "Riunione con Sync Lab S.r.L. fissata per Mercoledì 20/11",
+    "ORG", "Gruppo", "Riunione con Sync Lab S.r.l. fissata per Mercoledì 20/11",
   )
 )
