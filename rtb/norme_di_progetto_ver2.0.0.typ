@@ -9,7 +9,19 @@
   verificatori: ("Andrea Precoma",),
   titolo: "Norme di progetto",
   uso: "Interno",
-  versioni: ("1.0", "14-11-2024", "Klaudio Merja", "Andrea Precoma", "Struttura e introduzione del documento"),
+  versioni: (
+  "2.0.0", "20/11/2024", "Andrea Precoma", "Davide Marin",
+  [
+    - Struttura della sezione "Processi di supporto"
+    - Stesura dei principali paragrafi
+  ],
+
+  "1.0.0", 
+  "10/11/2024", 
+  "Klaudio Merja", 
+  "Andrea Precoma",
+  [- Struttura e introduzione del documento]
+  ),
   content: content,
 )
 
@@ -177,7 +189,8 @@ Nei documenti vengono applicate le seguenti regole di stile testuali:
 	- Nomi dei documenti
 
 === Elenchi puntati
-Se le voci dell'elenco sono costituite da delle frasi vengono chiuse da ".", se invece possiedono solo poche parole, che ad esempio indicano il nome di una tecnologia, non viene messo nessun segno di punteggiatura al termine.
+Una lista è preferibile a un elenco narrativo, da valutare se renderlo numerato o meno a seconda della circostanza. I punti della descrizione nel registro delle modifiche vengono sempre rappresentati in un elenco.
+Se le voci dell'elenco sono costituite da delle frasi vengono chiuse da ".", se invece possiedono solo poche parole, che ad esempio indicano il nome di una tecnologia, non viene messo nessun segno di punteggiatura al termine. Le voci dell'elenco della descrizione nel registro delle modifche non vengono chiuse da punteggiatura.
 
 === Formato delle date
 Sotto il titolo nella prima pagine dei verbali viene indicata la data per iscritto, quindi nel formato "DD mese YYYY". Le date nei documenti vengono scritte nel formato DD/MM/YYYY, nei nomi dei documenti invece YYYY-MM-DD per mantenere l'ordine cronologico. In tutti i casi si segue la seguente convenzione:
