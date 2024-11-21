@@ -56,11 +56,14 @@ Kafka gestirà l'invio e la ricezione di grandi quantità di dati in tempo reale
 == PostGIS e Time Scale  
 È possibile utilizzarli in combinazione. PostGIS sarà utile per gestire dati spaziali e Time Scale per ottimizzare la gestione di dati temporali, mantenendo una visione relazionale classica con un database aggiuntivo.  
 
-== PoC  
-Il PoC dovrebbe essere completato e consegnato entro la prossima settimana, includendo codice per la simulazione dati, rappresentazioni iniziali su Grafana e casi d'uso documentati.  
+== PoC (Proof of Concept)
+Il PoC dovrebbe essere strutturato in modo da includere:
+- Il codice necessario per la simulazione dei dati.
+- Prevedere alcune rappresentazioni iniziali su Grafana, in modo da offrire una visualizzazione dei dati simulati. 
+- Documentare i casi d'uso principali, così da chiarire come il sistema potrebbe essere applicato nella pratica.
 
 == Strumento per diagrammi  
-Non è stato specificato uno strumento preferito, ma si raccomanda l'utilizzo di tool consolidati come *Lucidchart*, *Draw.io* o altri strumenti simili per creare diagrammi di flusso e analisi di sistema.  
+Non è stato specificato uno strumento preferito, ma si raccomanda l'utilizzo di tool consolidati come *Draw.io*, *Lucidchart* o altri strumenti simili per creare diagrammi di flusso e analisi di sistema.  
 
 = Conclusioni  
 *Priorità:*
