@@ -17,7 +17,7 @@
   riassunto: "Durante l'incontro sono state discusse le tecnologie che utilizzeremo e i dubbi riguardo al PoC inoltre sono state definite le priorità, tra cui simulazione dati, visualizzazione su Grafana e casi d'uso.",
   versioni: (
     "1.0.0", 
-    [20/11/2024], 
+    [22/11/2024], 
     "Andrea Perozzo", 
     "Davide Picello",
     [- Stesura del verbale],
@@ -56,14 +56,11 @@ Kafka gestirà l'invio e la ricezione di grandi quantità di dati in tempo reale
 == PostGIS e Time Scale  
 È possibile utilizzarli in combinazione. PostGIS sarà utile per gestire dati spaziali e Time Scale per ottimizzare la gestione di dati temporali, mantenendo una visione relazionale classica con un database aggiuntivo.  
 
-== PoC (Proof of Concept)
+== PoC
 Il PoC dovrebbe essere strutturato in modo da includere:
 - Il codice necessario per la simulazione dei dati.
 - Prevedere alcune rappresentazioni iniziali su Grafana, in modo da offrire una visualizzazione dei dati simulati. 
-- Documentare i casi d'uso principali, così da chiarire come il sistema potrebbe essere applicato nella pratica.
-
-== Strumento per diagrammi  
-Non è stato specificato uno strumento preferito, ma si raccomanda l'utilizzo di tool consolidati come *Draw.io*, *Lucidchart* o altri strumenti simili per creare diagrammi di flusso e analisi di sistema.  
+- Documentare i casi d'uso principali, così da chiarire come il sistema potrebbe essere applicato nella pratica.  
 
 = Conclusioni  
 *Priorità:*
@@ -80,6 +77,6 @@ Non è stato specificato uno strumento preferito, ma si raccomanda l'utilizzo di
 = Tabella delle decisioni
 #backlog(
   content: (
-    "ORG", "Gruppo", "SAL fissato per Mercoledì 27/11",
+    "ORG", "Gruppo", "SAL fissato per mercoledì 27/11",
   )
 )
