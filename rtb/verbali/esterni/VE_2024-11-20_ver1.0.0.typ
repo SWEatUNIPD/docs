@@ -10,11 +10,11 @@
   ),
   uso: "Esterno",
   redattori: ("Andrea Perozzo",), 
-  titolo: "SAL: Sweat", 
+  titolo: "SAL intermedio primo sprint", 
   verificatori: (
     "Davide Picello",
   ),
-  riassunto: "Durante l'incontro sono state discusse le tecnologie da utilizzare, chiariti i dubbi sul PoC e definite le priorità immediate, tra cui simulazione dati, visualizzazione su Grafana e casi d'uso.",
+  riassunto: "Durante l'incontro sono state discusse le tecnologie che utilizzeremo e i dubbi riguardo al PoC inoltre sono state definite le priorità, tra cui simulazione dati, visualizzazione su Grafana e casi d'uso.",
   versioni: (
     "1.0.0", 
     [20/11/2024], 
@@ -33,7 +33,7 @@
 L'incontro aveva l'obiettivo di fare il punto della situazione a metà sprint, valutare l'implementazione delle tecnologie individuate, definire i prossimi step e risolvere eventuali dubbi.  
 Durante la call, sono state discusse le tecnologie scelte per il progetto, poste alcune domande chiave per chiarire punti critici, e condivisi appunti sulle esperienze utente, casi d'uso e priorità per il PoC (Proof of Concept).  
 
-Le tecnologie discusse durante la riunione sono:  
+Le tecnologie che abbiamo scelto di utilizzare e che abbiamo discusso durante la riunione sono:  
 - Data generator: *Faker* o *Simpy*.  
 - Database: *PostGIS* e/o *Time Scale*.  
 - Data broker: *Kafka* (ottima gestione di grandi volumi di dati).  
@@ -45,7 +45,7 @@ Focus particolare è stato dato all'utilizzo di Grafana per visualizzare dati GP
 
 = Risposte alle domande  
 == Grafana
-Nel Proof of Concept (PoC), è sufficiente ricevere la notifica. Tuttavia, per rappresentare visivamente i dati su Grafana, si ipotizza di mostrare punti in movimento su una mappa: quando un punto raggiunge una determinata posizione, viene visualizzato un messaggio o un annuncio.  
+Nel Proof of Concept (PoC), sarà sufficiente ricevere la notifica riguardante l'annuncio pertinente. Tuttavia, per rappresentare visivamente i dati su Grafana, si ipotizza di mostrare punti in movimento su una mappa: quando un punto raggiunge una determinata posizione, verrà visualizzato un messaggio o un annuncio.  
 
 == Logica del sistema 
 La logica del sistema, che comprende incrocio dati, profilazione utenti, verifica della vicinanza a negozi e valutazione di interessi, potrebbe essere integrata direttamente in NiFi. Questo approccio valorizzerebbe le capacità di NiFi come tool per elaborazioni complesse.  
