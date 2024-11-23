@@ -8,6 +8,12 @@
   titolo: "Glossario",
   verificatori: ("Andrea Precoma", "Andrea Perozzo"),
   versioni: (
+    "1.2.0",
+    "23/11/2024",
+    "Picello Davide",
+    "Andrea Precoma",
+    [- Aggiunto il termine "Deep dive"],
+
     "1.1.0",
     "14/11/2024",
     "Klaudio Merja",
@@ -77,6 +83,11 @@ ClickHouse è un database di analisi open source orientato alle colonne per casi
 #text(weight: "bold", size: 12pt, "Data Visualization")
 
 Rappresentazione grafica di dati e informazioni, al fine di facilitarne la comprensione e l'interpretazione.
+#v(10pt)
+
+#text(weight: "bold", size: 12pt, "Deep dive")
+
+Una sessione deep dive è un incontro in cui esperti esterni al gruppo si mettono a disposizione per approfondire specifiche tecnologie e strumenti legati a un progetto. Questi incontri sono progettati per affrontare temi complessi o aree in cui il team destinatario potrebbe non avere esperienza sufficiente o sta incontrando difficoltà.
 #v(10pt)
 
 #pagebreak()
