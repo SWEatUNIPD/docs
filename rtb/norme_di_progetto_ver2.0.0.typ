@@ -5,22 +5,23 @@
   data: "14 Novembre 2024",
   destinatari: ("Gruppo SWE@",),
   responsabile: "Riccardo Milan",
-  redattori: ("Klaudio Merja",),
-  verificatori: ("Andrea Precoma",),
+  redattori: ("Klaudio Merja", "Andrea Precoma", "Davide Picello"),
+  verificatori: ("Andrea Precoma", "Davide Marin"),
   titolo: "Norme di progetto",
   uso: "Interno",
   versioni: (
 
-  "3.0.0", 
-  "23/11/2024", 
-  "Picello Davide", 
-  "Marin Davide",
-  [- Prima scrittura del capitolo "Processi primari"],
-
-  "2.0.0", "20/11/2024", "Andrea Precoma", "Davide Marin",
+  "2.0.0", "23/11/2024", 
+  [ 
+    Andrea Precoma\ Davide Picello
+  ], "Davide Marin",
   [
+    *Precoma:*
     - Struttura della sezione "Processi di supporto"
     - Stesura dei principali paragrafi
+    
+    *Picello:*
+    - Scrittura del capitolo "Processi primari"
   ],
 
   "1.0.0", 

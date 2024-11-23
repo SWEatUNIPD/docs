@@ -4,14 +4,14 @@
   data: "11 Novembre 2024",
   uso: "Interno",
   responsabile: "Klaudio Merja",
-  redattori: ("Riccardo Milan", "Klaudio Merja"),
+  redattori: ("Riccardo Milan", "Klaudio Merja", "Davide Picello"),
   titolo: "Glossario",
-  verificatori: ("Andrea Precoma", "Andrea Perozzo"),
+  verificatori: ("Andrea Precoma", "Andrea Perozzo", "Davide Marin"),
   versioni: (
     "1.2.0",
     "23/11/2024",
-    "Picello Davide",
-    "Andrea Precoma",
+    "Davide Picello",
+    "Davide Marin",
     [- Aggiunto il termine "Deep dive"],
 
     "1.1.0",
