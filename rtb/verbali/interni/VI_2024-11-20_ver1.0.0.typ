@@ -38,10 +38,10 @@ A seguito della call con l'azienda, è emerso che per preparare un #rifGlossario
 - *Avviare il Piano di Progetto:* L'organizzazione in sprint è fondamentale per il monitoraggio delle attività. Inoltre, qualora un membro terminasse anticipatamente i propri compiti, potrà svolgerne altri ricoprendo un ruolo diverso da quello principale, questo per evitare rallentamenti. Ad esempio, chi è coinvolto nella programmazione potrà contribuire alle Norme di Progetto sotto il ruolo di amministratore nel caso terminasse anticipatamente i suoi compiti come programmatore.
 
 == Generazione dei dati GPS
-Si è deciso di partire con la simulazione di dati GPS utilizzando librerie Python come Faker o simpy, per garantire in futuro la creazione di percorsi realistici e lo storico degli spostamenti. Questa attività è molto importante per poter costruire un PoC che dimostri i processi chiave.
+Si è deciso di partire con la simulazione di dati GPS utilizzando librerie Python come Faker o SimPy, per garantire in futuro la creazione di percorsi realistici e lo storico degli spostamenti. Questa attività è molto importante per poter costruire un PoC che dimostri i processi chiave.
 
 == Norme di Progetto
-Le Norme di Progetto verranno redatte in parallelo alle altre attività, poiché rappresentano il riferimento organizzativo per l'intero progetto. Si è deciso che tutto il gruppo sarà coinvolto nella loro stesura, sotto il ruolo di amministratore. I processi che verranno redatti questa settimana sono:
+Le Norme di Progetto rappresentano la base organizzativa del lavoro e saranno redatte e modificate progressivamente durante tutta la durata del progetto. Poiché queste norme richiedono un contributo continuo, è stato deciso che tutti i membri del gruppo contribuiranno alla loro stesura sotto il ruolo di amministratore. In questa settimana, il focus sarà sull'avvio dei seguenti processi:
 - *Processi primari*
 - *Processi di supporto* 
 
@@ -58,7 +58,7 @@ Per mantenere tracciabilità, creeremo un foglio Excel condiviso in cui ogni mem
 *Motivazioni delle scelte:*
 Le decisioni prese sono state guidate dai suggerimenti ricevuti dall'azienda e dalle esigenze pratiche del progetto:
 - La generazione dei dati GPS permetterà di iniziare a lavorare su aspetti concreti.
-- La redazione delle Norme di Progetto è importante per strutturare il lavoro e deve procederà parallelamente alle altre attività.
+- La redazione delle Norme di Progetto è importante per strutturare il lavoro e deve procede parallelamente alle altre attività.
 - La flessibilità nei ruoli permette di ottimizzare le risorse disponibili e di avanzare senza troppe interruzioni.
 *Obiettivi per il prossimo SAL (27 novembre 2024):*
 - *Codice per simulazione dati GPS:* Studio di una prima versione funzionale per la generazione di dati verosimili.
