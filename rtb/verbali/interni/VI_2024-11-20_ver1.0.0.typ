@@ -38,7 +38,7 @@ A seguito della call con l'azienda, è emerso che per preparare un #rifGlossario
 - *Avviare il Piano di Progetto:* L'organizzazione in sprint è fondamentale per il monitoraggio delle attività. Inoltre, qualora un membro terminasse anticipatamente i propri compiti, potrà svolgerne altri ricoprendo un ruolo diverso da quello principale, questo per evitare rallentamenti. Ad esempio, chi è coinvolto nella programmazione potrà contribuire alle Norme di Progetto sotto il ruolo di amministratore nel caso terminasse anticipatamente i suoi compiti come programmatore.
 
 == Generazione dei dati GPS
-Si è deciso di partire con la simulazione di dati GPS utilizzando librerie Python come Faker o simpy, per garantire in futuro la creazione di percorsi realistici e lo storico degli spostamenti. Questa attività è molto importante per poter costruire un #rifGlossario("PoC") che dimostri i processi chiave.
+Si è deciso di partire con la simulazione di dati GPS utilizzando librerie Python come Faker o simpy, per garantire in futuro la creazione di percorsi realistici e lo storico degli spostamenti. Questa attività è molto importante per poter costruire un PoC che dimostri i processi chiave.
 
 == Norme di Progetto
 Le Norme di Progetto verranno redatte in parallelo alle altre attività, poiché rappresentano il riferimento organizzativo per l'intero progetto. Si è deciso che tutto il gruppo sarà coinvolto nella loro stesura, sotto il ruolo di amministratore. I processi che verranno redatti questa settimana sono:
@@ -51,13 +51,16 @@ Definire i casi d'uso iniziali è essenziale per modellare i requisiti del proge
 == Rendicontazione ore
 Per mantenere tracciabilità, creeremo un foglio Excel condiviso in cui ogni membro annoterà le ore dedicate a ciascun ruolo. Questo ci consentirà un monitoraggio preciso per distribuirci omogeneamente tutti i ruoli per ogni membro.
 
+== Revisione del Glossario
+È stato deciso di rivedere e aggiornare il glossario del progetto, in modo da supportare sia i test che la futura pubblicazione sul sito.
+
 = Conclusioni
 *Motivazioni delle scelte:*
 Le decisioni prese sono state guidate dai suggerimenti ricevuti dall'azienda e dalle esigenze pratiche del progetto:
 - La generazione dei dati GPS permetterà di iniziare a lavorare su aspetti concreti.
 - La redazione delle Norme di Progetto è importante per strutturare il lavoro e deve procederà parallelamente alle altre attività.
 - La flessibilità nei ruoli permette di ottimizzare le risorse disponibili e di avanzare senza troppe interruzioni.
-*Obiettivi per il prossimo #rifGlossario("SAL") (27 novembre 2024):*
+*Obiettivi per il prossimo SAL (27 novembre 2024):*
 - *Codice per simulazione dati GPS:* Studio di una prima versione funzionale per la generazione di dati verosimili.
 - *Analisi dei requisiti:* Documentazione iniziale di alcuni casi d'uso chiave.
 - *Norme di Progetto:* Redazione di una prima bozza, includendo processi primari e di supporto.
@@ -82,8 +85,11 @@ Le decisioni prese sono state guidate dai suggerimenti ricevuti dall'azienda e d
   "Klaudio Merja",
   "Redazione del Piano di Progetto",
   link("https://github.com/SWEatUNIPD/docs/issues/38")[#text(underline("D0038"))],
-  "Andrea Precoma \nDavide Picello", 
-  "Inizio redazione processi primari e di supporto in Norme di Progetto",
+  "Davide Picello", 
+  "Inizio redazione processi primari in Norme di Progetto",
+  link("https://github.com/SWEatUNIPD/docs/issues/44")[#text(underline("D0044"))],
+  "Andrea Precoma", 
+  "Redazione dei processi di supporto in Norme di Progetto",
   link("https://github.com/SWEatUNIPD/docs/issues/39")[#text(underline("D0039"))],
   "Davide Martinelli \nRiccardo Milan",
   "Prima analisi dei requisiti e degli use-case",
