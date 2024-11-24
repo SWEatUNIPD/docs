@@ -1,4 +1,4 @@
-#import "/docs/templates/template.typ": *
+#import "/templates/template.typ": *
 
 #show: content => verbale(
   data: "25 Novembre 2024",
@@ -20,27 +20,29 @@
   content: content,
 )
 
-= 1 Introduzione
-== 1.1 Scopo del documento
+#set heading(numbering: "1.1.1")
+
+= Introduzione
+== Scopo del documento
 
 Lo scopo principale di questo documento è quello di fornire una descrizione dettagliata dei casi d'uso e dei requisiti previsti dal progetto _NearYou - Smart custom advertising platform_, emersi in seguito ad un'attenta analisi del capitolato C4 e successivamente approfonditi durante gli incontri con la proponente Sync Lab S.r.l..
 
 Il documento quindi è rivolto ai membri del gruppo di progetto e ai committenti, con lo scopo di fornire una visione chiara e dettagliata dei requisiti del prodotto e delle funzionalità che esso dovrà avere.
 
 
-== 1.2 Scopo del prodotto
+== Scopo del prodotto
 
 Il prodotto _NearYou - Smart custom advertising platform_ è una piattaforma che sfrutta la tecnologia #rifGlossario("GenAI") per la creazione di pubblicità personalizzate da mostrare a ciascun utente, sfruttando dati come la posizione in tempo reale, le informazioni personali e i dati di profilazione, in modo da migliorare l'esperienza dell'utente e aumentando contemporaneamente l'efficacia delle campagne pubblicitarie.
 
 /*L'obiettivo del prodotto è quello di rendere le campagne pubblicitarie delle aziende interessate il più personalizzate e ottimizzate possibili ed aumentare il coinvolgimento dell'utente finale, con lo scopo di ridurre la disconnessione tra messaggio e destinatario e portare un miglioramento sul #rifGlossario("ROI") della campagna stessa. */
 
-== 1.3 Glossario
+== Glossario
 
 Al fine di evitare eventuali ambiguità e incomprensioni riguardo la terminologia adottata nel documento, viene fornito un glossario.
 La prima occorrenza all'interno del documento di un termine definito nel glossario viene indicata tramite sottolineatura e una lettera g posta ad apice (e.g. #rifGlossario("termine")).
 
-== 1.4 Riferimenti
-=== 1.4.1 Riferimenti normativi
+== Riferimenti
+=== Riferimenti normativi
 
 - Capitolato C4 (Sync Lab)\ #text(weight: "bold", fill: rgb("#04E824"))[#underline[#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf]]]
 
@@ -48,7 +50,7 @@ La prima occorrenza all'interno del documento di un termine definito nel glossar
 
 - Regolamento del progetto didattico\ #text(weight: "bold", fill: rgb("#04E824"))[#underline[#link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf]]]
 
-=== 1.4.2 Riferimenti informativi
+=== Riferimenti informativi
 
 - T5 - Analisi dei Requisiti\ #text(weight: "bold", fill: rgb("#04E824"))[#underline[#link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf]]]
 
@@ -56,8 +58,8 @@ La prima occorrenza all'interno del documento di un termine definito nel glossar
 
 - `Glossario`
 
-= 2 Descrizione del prodotto
-== 2.1 Obiettivi
+= Descrizione del prodotto
+== Obiettivi
 
 Il prodotto ha come obiettivo quello di fornire un servizio di pubblicità personalizzata integrato in una mappa, accessibile agli utenti di un mezzo a noleggio, che sfrutta la tecnologia #rifGlossario("GenAI") per la creazione di pubblicità mirate sui singoli utenti. Il gestore del servizio di noleggio avrà accesso a una dashboard che gli permetterà di monitorare in tempo reale la posizione degli utenti e la visualizzazione degli annunci pubblicitari.
 Per fare ciò la proponente chiede di simulare lo spostamento degli utenti lungo un percorso/* casuale o predefinito? */, in modo da poter testare il funzionamento del sistema.
@@ -65,7 +67,7 @@ I dati riguardanti gli annunci pubblicitari visualizzati dagli utenti devono ess
 
 Il benefit atteso è quello di rendere le campagne pubblicitarie delle aziende interessate il più efficaci possibili, riducendo la disconnessione tra messaggio e destinatario e aumentando il coinvolgimento di quest'ultimo, migliorando di conseguenza il #rifGlossario("ROI") della campagna stessa.
 
-== 2.2 Funzionalità
+== Funzionalità
 
 Il prodotto dovrà fornire le seguenti funzionalità:
 
@@ -77,7 +79,7 @@ Il prodotto dovrà fornire le seguenti funzionalità:
 
 - *Visualizzazione nella dashboard dello storico degli annunci pubblicitari*: il sistema dovrà essere in grado di mostrare uno storico degli annunci pubblicitari visualizzati dagli utenti.
 
-== 2.3 Utenti e loro caratteristiche
+== Utenti e loro caratteristiche
 
 Il prodotto si rivolge a due tipologie di utenti:
 
@@ -85,15 +87,15 @@ Il prodotto si rivolge a due tipologie di utenti:
 
 - *Utente*: utente che utilizza il servizio di noleggio e che ha accesso solo alla funzionalità di visualizzazione degli annunci pubblicitari.
 
-== 2.4 Tecnologie
+== Tecnologie
 
-= 3 Casi d'uso
+= Casi d'uso
 
-== 3.1 Introduzione
+== Introduzione
 
 Lo scopo di questa sezione è quello di elencare e descrivere tutti i casi d'uso indentificati a seguito dell'analisi del capitolato e dei confronti con la proponente (sez. 3.3), a cui si farà precedere la descrizione degli attori coinvolti (sez. 3.2).
 
-== 3.2 Attori
+== Attori
 
 Gli attori coinvolti nei casi d'uso sono i seguenti:
 
@@ -101,7 +103,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 - *Utente*: utente che utilizza il servizio di noleggio
 
-== 3.3 Elenco dei casi d'uso
+== Elenco dei casi d'uso
 
 === UC1 - Trasmissione dati di localizzazione
 
