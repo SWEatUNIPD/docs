@@ -39,7 +39,6 @@ jobs:
           cat output.json | jq . > index.json
           rm output.json
           mv index.json ../index.json
-          mkdir websiteRepo
 
       - name: Checkout website repository
         uses: actions/checkout@v4.2.2
