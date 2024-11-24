@@ -60,12 +60,12 @@ La prima occorrenza di un termine definito all'interno del glossario presente al
 
 #pagebreak()
 = Processi primari
-Lo standard _ISO/IEC 12207:1995_, riferimento internazionale per i processi del ciclo di vita del software, definisce come processi primari le attività di: acquisizione, fornitura, sviluppo, gestione operativa e di manutenzione.
+Lo standard ISO/IEC 12207:1995, riferimento internazionale per i processi del ciclo di vita del software, definisce come processi primari le attività di: acquisizione, fornitura, sviluppo, gestione operativa e di manutenzione.
 
 Tuttavia, data la natura didattica del progetto, saremo tenuti ad occuparci solo delle parti di fornitura e sviluppo.
 
 == Fornitura
-Il processo di fornitura contiene le attività e i compiti del fornitore, il quale dovrà accordarsi con il proponente per stabilire ufficialmente, tramite un contratto, i vari vincoli e requisiti del progetto. Successivamente si procede con la relazione del documento _Piano di progetto_, il quale avrà il compito di pianificare e monitorare le attività da svolgere, nel tempo.
+Il processo di fornitura contiene le attività e i compiti del fornitore, il quale dovrà accordarsi con il proponente per stabilire ufficialmente, tramite un contratto, i vari vincoli e requisiti del progetto. Successivamente si procede con la relazione del documento Piano di progetto, il quale avrà il compito di pianificare e monitorare le attività da svolgere, nel tempo.
 
 Le attività che compongono questo processo sono:
 - Iniziazione
@@ -77,31 +77,31 @@ Le attività che compongono questo processo sono:
 - Consegna e completamento
 
 === Comunicazioni con il proponente
-L'azienda si è resa raggiungibile, per via testuale, tramite e-mail, per le comunicazioni ufficiali, e tramite la piattaforma di messaggistica istantanea _Discord_ per le comunicazioni più veloci. È stato deciso, inoltre, di utilizzare l'applicazione di teleconferenza _Google meet_ per le riunioni in cui è prevista la presenza di tutto il gruppo. L'azienda, comunque, si è resa disponibile anche ad accoglierci nei loro uffici.
+L'azienda si è resa raggiungibile, per via testuale, tramite e-mail, per le comunicazioni ufficiali, e tramite la piattaforma di messaggistica istantanea Discord per le comunicazioni più veloci. È stato deciso, inoltre, di utilizzare l'applicazione di teleconferenza Google meet per le riunioni in cui è prevista la presenza di tutto il gruppo. L'azienda, comunque, si è resa disponibile anche ad accoglierci nei loro uffici.
 
-Per ogni incontro, verrà redatto un verbale riguardante le discussioni e decisioni avvenute nello stesso. Questi verbali, dopo essere stati approvati e firmati dall'azienda, saranno disponibili presso la _repository_ _GitHub_ del gruppo, nella sezione "Verbali esterni".
+Per ogni incontro, verrà redatto un verbale riguardante le discussioni e decisioni avvenute nello stesso. Questi verbali, dopo essere stati approvati e firmati dall'azienda, saranno disponibili presso la repository GitHub del gruppo, nella sezione Verbali esterni.
 
 ==== SAL
-È stato anche concordato un incontro settimanale di 45 minuti, tendenzialmente il mercoledì pomeriggio, riguardo allo Stato di Avanzamento dei Lavori (_SAL_) in cui il gruppo esporrà i progressi, ed i dubbi, dell'ultima settimana di lavoro, confrontandosi con il proponente e delineando le attività da svolgere nella settimana a venire.
+È stato anche concordato un incontro settimanale di 45 minuti, tendenzialmente il mercoledì pomeriggio, riguardo allo Stato di Avanzamento dei Lavori (SAL) in cui il gruppo esporrà i progressi, ed i dubbi, dell'ultima settimana di lavoro, confrontandosi con il proponente e delineando le attività da svolgere nella settimana a venire.
 
 ==== Sessioni deep dive
-Il proponente si è anche reso disponibile per organizzare delle sessioni di #underline[_deep dive_]#rifGlossario per approfondire l'utilizzo di alcune tecnologie che potrebbero rivelarsi particolarmente ostiche, in quanto, nuove per il gruppo e, per loro natura, non semplici da imparare.
+Il proponente si è anche reso disponibile per organizzare delle sessioni di #underline[deep dive]#rifGlossario per approfondire l'utilizzo di alcune tecnologie che potrebbero rivelarsi particolarmente ostiche, in quanto, nuove per il gruppo e, per loro natura, non semplici da imparare.
 
 Queste verranno fissate a bisogno e non, quindi, a cadenza regolare.
 
 
 === Documentazione fornita
-Di seguito l'elenco dei documenti che il gruppo consegnerà all'azienda proponente, _Sync Lab_, ed ai committenti _Prof. Tullio Vardanega_ e _Prof. Riccardo Cardin_
+Di seguito l'elenco dei documenti che il gruppo consegnerà all'azienda proponente, Sync Lab, ed ai committenti Prof. Tullio Vardanega e Prof. Riccardo Cardin
 
 ==== Analisi dei requisiti
-L'_analisi dei requisiti_ è un documento redatto dagli Analisti che definisce le funzionalità necessarie per soddisfare le richieste del proponente.
+L'analisi dei requisiti è un documento redatto dagli Analisti che definisce le funzionalità necessarie per soddisfare le richieste del proponente.
 
 //Ancora da scrivere
 
 ==== Piano di progetto
-Il _Piano di progetto_ è un documento il cui scopo è quello di definire in modo dettagliato l'organizzazione, le attività, le risorse, i tempi e i criteri necessari per completare con successo il progetto. 
+Il Piano di progetto è un documento il cui scopo è quello di definire in modo dettagliato l'organizzazione, le attività, le risorse, i tempi e i criteri necessari per completare con successo il progetto. 
 
-Viene redatto e aggiornato dal Responsabile, con il supporto degli Amministratori, durante l'intera durata del progetto.
+Viene redatto e aggiornato dal responsabile, con il supporto degli amministratori, durante l'intera durata del progetto.
 
 /*
   Dovrebbe contenere le seguenti informazioni/sessioni:
@@ -113,9 +113,9 @@ Viene redatto e aggiornato dal Responsabile, con il supporto degli Amministrator
 */
 
 ==== Piano di Qualifica
-Il _Piano di Qualifica_ è un documento formale che definisce le strategie, le attività e gli approcci necessari per garantire la qualità del prodotto software, durante tutto il ciclo di vita del progetto. 
+Il Piano di Qualifica è un documento formale che definisce le strategie, le attività e gli approcci necessari per garantire la qualità del prodotto software, durante tutto il ciclo di vita del progetto. 
 
-Redatto tipicamente dal Verificatore o dall'Amministratore, descrive le modalità di verifica e validazione, gli standard adottati e le procedure di qualità da seguire. 
+Redatto tipicamente dal verificatore o dall'amministratore, descrive le modalità di verifica e validazione, gli standard adottati e le procedure di qualità da seguire. 
 
 Il suo scopo principale è assicurare che il prodotto finale sia conforme alle specifiche richieste e alle aspettative del committente, monitorando il progresso rispetto agli obiettivi prefissati. Ogni membro del team coinvolto nello sviluppo farà riferimento a questo documento per mantenere e garantire i livelli di qualità stabiliti.
 
@@ -148,17 +148,17 @@ Il gruppo la utilizza per comunicare internamente, tramite delle chiamate, e per
 App di messaggistica istantanea utilizzata per comunicazioni rapide e brevi all'interno del gruppo.
 
 ==== Fogli di Google (Google Sheets)
-Applicazione online per la creazione e la gestione di fogli di calcolo. Il gruppo la utilizza per tenere traccia in modo informale delle ore lavorate settimanalmente, che saranno successivamente riportate nel documento ufficiale "Piano di Progetto".
+Applicazione online per la creazione e la gestione di fogli di calcolo. Il gruppo la utilizza per tenere traccia in modo informale delle ore lavorate settimanalmente, che saranno successivamente riportate nel documento ufficiale Piano di Progetto.
 
 ==== GitHub
-Piattaforma per il controllo di versione e la collaborazione su progetti software. Il gruppo la utilizza come _repository_ per codice e documenti, ma anche per monitorare le attività del progetto, assegnarle ai membri e seguirne lo stato di avanzamento.
+Piattaforma per il controllo di versione e la collaborazione su progetti software. Il gruppo la utilizza come repository per codice e documenti, ma anche per monitorare le attività del progetto, assegnarle ai membri e seguirne lo stato di avanzamento.
 
 ==== Typst
 Un nuovo sistema di impaginazione basato su markup, progettato per essere potente quanto LaTeX ma molto più facile da imparare e utilizzare.
 
 #pagebreak()
 == Sviluppo
-Sempre secondo lo standard _ISO/IEC 12207:1995_: lo scopo del processo di sviluppo è di descrivere le attività e i compiti necessari per creare e mantenere un sistema software, garantendo che il prodotto finale soddisfi i requisiti specificati nel contratto.
+Sempre secondo lo standard ISO/IEC 12207:1995: lo scopo del processo di sviluppo è di descrivere le attività e i compiti necessari per creare e mantenere un sistema software, garantendo che il prodotto finale soddisfi i requisiti specificati nel contratto.
 
 Il processo di sviluppo è composto dalle seguenti attività:
 
