@@ -24,7 +24,8 @@
     "Grafana": "Piattaforma interattiva open source per la visualizzazione dei dati. Permette agli utenti di visualizzare i dati attraverso diagrammi e grafici unificati in una singola dashboard."
   },
   "H": {
-    "Hive MQ": "Broker MQTT open-source ad alte prestazioni per l'IoT."
+    "Hive MQ": "Broker MQTT open-source ad alte prestazioni per l'IoT.",
+    "Hosting": "Servizio che fornisce uno spazio online per archiviare, gestire e condividere dei documenti. Nel contesto attuale viene riferito ad un hosting di repository, un ambiente dove versionare codice sorgente e documentazione."
   },
   "L": {
     "LangChain": "Framework open-source per la creazione di applicazioni basate su LLM, che consente di collegare questi modelli a diverse fonti di dati e API."

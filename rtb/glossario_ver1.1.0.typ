@@ -8,6 +8,11 @@
   titolo: "Glossario",
   verificatori: ("Andrea Precoma", "Andrea Perozzo"),
   versioni: (
+    "1.2.0",
+    "24/11/2024",
+    "Andrea Precoma",
+    "Davide Marin\nDavide Picello",
+    [- Aggiunto il termine "Hosting"],
     "1.1.0",
     "14/11/2024",
     "Klaudio Merja",
