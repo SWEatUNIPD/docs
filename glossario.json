@@ -1,0 +1,54 @@
+{
+  "A": {
+    "Apache Kafka": "Piattaforma di broker e data streaming che consente di gestire e trasferire big data in tempo reale.",
+    "Apache Airflow": "Orchestratore di flussi di lavoro opensource per applicazioni data-intensive",
+    "Apache Nifi": "Sistema di integrazione di dati open-source per l'elaborazione e la distribuzione di flussi di dati.",
+    "Apache Spark": "Elaborazione dati in-memory opensource, ad alte prestazioni, progettato per eseguire elaborazioni complesse su grandi volumi di dati in modo rapido e scalabile.",
+    "Apache Flink": "Framework di elaborazione dati a flusso open-source, ottimizzato per applicazioni in tempo reale.",
+    "Apache Superset": "Piattaforma open-source di business intelligence per esplorare e visualizzare dati in modo interattivo."
+  },
+  "B": {
+    "Broker di Eventi": "Componente software che funge da intermediario per lo scambio asincrono di eventi tra diversi sistemi o applicazioni."
+  },
+  "C": {
+    "ClickHouse": "ClickHouse è un database di analisi open source orientato alle colonne per casi di utilizzo in ambito big data."
+  },
+  "D": {
+    "Data Visualization": "Rappresentazione grafica di dati e informazioni, al fine di facilitarne la comprensione e l'interpretazione."
+  },
+  "G": {
+    "GenAI": "Acronimo di \"Generative Artificial Intelligence\", si intende tutte le tecnologie di intelligenza artificiale capaci di generare contenuti come testo, immagini, codice, idee ed altro con l'obiettivo di simulare le attività di un essere umano.",
+    "Git": "Sistema di controllo di versione distribuito open-source, che permette di tracciare e gestire le modifiche al codice sorgente in progetti software, supportando il lavoro collaborativo.",
+    "GitHub": "Piattaforma basata su Git che offre strumenti per la gestione del codice sorgente e la collaborazione, con funzionalità avanzate come il tracking delle issues, le pull requests e l'integrazione continua.",
+    "GPX": "Formato di file XML standard per la memorizzazione di dati di localizzazione GPS, come punti di interesse, tracce e percorsi, utilizzato in applicazioni geospaziali.",
+    "Grafana": "Piattaforma interattiva open source per la visualizzazione dei dati. Permette agli utenti di visualizzare i dati attraverso diagrammi e grafici unificati in una singola dashboard."
+  },
+  "H": {
+    "Hive MQ": "Broker MQTT open-source ad alte prestazioni per l'IoT."
+  },
+  "L": {
+    "LangChain": "Framework open-source per la creazione di applicazioni basate su LLM, che consente di collegare questi modelli a diverse fonti di dati e API."
+  },
+  "M": {
+    "MVP": "Acronimo di Minimum Viable Product, rappresenta la versione iniziale di un prodotto con le funzionalità minime indispensabili per essere testato dagli utenti e validato sul mercato."
+  },
+  "P": {
+    "PoC": "Acronimo di Proof of Concept, è un prototipo o un modello iniziale creato per dimostrare la fattibilità di un'idea o concetto, senza dover sviluppare un prodotto completo.",
+    "PostGIS": "Estensione open-source di PostgreSQL per la gestione di dati spaziali.",
+    "Prompt": "Testo in linguaggio naturale richiesto in input dall'IA generativa con lo scopo di generare un output dalla stessa."
+  },
+  "R": {
+    "Rabbit MQ": "Broker di messaggi open-source AMQP utilizzato per creare sistemi di messaggistica asincrona.",
+    "ROI": "Acronimo di \"Return On Investment\", è un indice economico che misura la redditività di un investimento, calcolato dal rapporto tra i risultati economici ottenuti e il capitale investito."
+  },
+  "S": {
+    "Stream Processing": "Paradigma di programmazione parallela di tipo SIMD che permette ad alcune applicazioni di sfruttare semplicemente una forma limitata di elaborazione parallela di dati in tempo reale, man mano che vengono generati.",
+    "SAL": "Stato Avanzamento Lavori per misurare il progresso delle attività rispetto alla pianificazione."
+  },
+  "T": {
+    "Typst": "Linguaggio di markup per la formattazione dei documenti e strumento di typesetting, simile a LaTeX, progettato per creare documenti complessi con sintassi moderna e funzionalità avanzate."
+  },
+  "W": {
+    "Way of Working": "Letteralmente \"modo di lavorare\", si intende l'insieme di regole, best practice e strumenti utilizzati per organizzare al meglio le attività del gruppo. Permette al gruppo di svolgere il proprio lavoro in maniera efficiente e professionale e di operare allo stato dell'arte."
+  }
+}

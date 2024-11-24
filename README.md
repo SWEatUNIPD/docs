@@ -14,6 +14,15 @@ La seguente repository contiene i sorgenti `Typst` della documentazione del GRUP
 
 È possibile consultare la documentazione anche mediante il [sito principale del gruppo](https://sweatunipd.github.io/).
 
+## Come eseguire il test del glossario in locale
+
+Per avviare il test in locale e verificare riferimenti mancanti al glossario, è necessario avere installato NodeJS sul proprio computer (https://nodejs.org/en).
+
+Il comando per poter eseguire lo script di test sulla root del repository è:
+```sh
+node test.js
+```
+
 ## Componenti del gruppo
 
 | Nominativo        | Matricola |
