@@ -1,0 +1,12 @@
+on: push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout codebase
+        uses: actions/checkout@v4.2.2
+        with:
+          fetch-depth: 0
+      - name: Run script of test
+        run: node test.js
