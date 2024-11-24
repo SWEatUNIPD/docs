@@ -15,6 +15,7 @@
   set page(margin: (x: 2.5cm, y: 2.5cm))
   set heading(numbering: "1.")
   set par(justify: true)
+  set list(marker: [•])
 
   align(
     center + top,
@@ -131,8 +132,6 @@
 }
 
 
-
-
 #let Lettera(
   data: "",
   titolo: "",
@@ -223,4 +222,16 @@
   )
 }
 
-#let rifGlossario = [#super[#text(size:9pt)[g]]]
+#let rifGlossario(content) = underline[#content#super[#text(size: 9pt)[g]]]
+
+#let formatLink(label: "", url: "") = {
+  if label.len() == 0 {
+    underline[#text(
+        weight: "bold",
+        fill: rgb("#04E824"),
+        link(url),
+      )]
+  } else {
+    text(weight: "bold", fill: rgb("#04E824"), link(url)[#underline[#label]])
+  }
+}//TODO: Verificare che i link a capo non siano buggati

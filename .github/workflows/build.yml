@@ -11,7 +11,7 @@ jobs:
   compile_typst:
     name: PDF compilation
     runs-on: ubuntu-latest
-    steps: 
+    steps:
       - name: Checkout codebase
         uses: actions/checkout@v4.2.2
         with:
@@ -22,28 +22,52 @@ jobs:
 
       - name: Compile .typ files
         run: |
-         shopt -s globstar
-         for file in ./**/*.typ; do
-          if [[ "$file" != ./templates/* && "$file" != ./*/verbali/esterni/* && "$file" != ./*/esteri/verbali/* ]]; then
-            typst compile --root . --font-path ./assets/font "$file"
-          fi
-         done
-         find . -name "*.pdf" -exec bash -c 'path="{}"; mkdir -p artifact/$(dirname "$path") && mv "$path" artifact/"$path"' \;
-        
+          shopt -s globstar
+          for file in ./**/*.typ; do
+           if [[ "$file" != ./templates/* && "$file" != ./*/verbali/esterni/* && "$file" != ./*/esteri/verbali/* ]]; then
+             typst compile --root . --font-path ./assets/font "$file"
+           fi
+          done
+          find . -name "*.pdf" -exec bash -c 'path="{}"; mkdir -p dist/$(dirname "$path") && mv "$path" dist/"$path"' \;
+
+      - name: Generate JSON index
+        run: |
+          cd dist
+          node ../script.js
+          mv index.json ../index.json
+          mkdir websiteRepo
+
+      - name: Checkout website repository
+        uses: actions/checkout@v4.2.2
+        with:
+          repository: SWEatUNIPD/sweatunipd.github.io
+          token: ${{ secrets.PAT }}
+          path: websiteRepo
+
+      - name: Push index.json in website repository
+        run: |
+          mv index.json websiteRepo/
+          cd websiteRepo
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add .
+          git commit -m "Update index.json"
+          git push
+
       - name: Github Pages Directory Listing
         uses: jayanta525/github-pages-directory-listing@v4.0.0
         with:
-          FOLDER: artifact
+          FOLDER: dist
 
       - name: Modify HTML Links
         run: |
-          find artifact -name "*.html" -exec sed -i 's/<a\([^>]*\)href="\([^"]*\.pdf\)"/<a\1target="_blank" href="\2"/g' {} +
+          find dist -name "*.html" -exec sed -i 's/<a\([^>]*\)href="\([^"]*\.pdf\)"/<a\1target="_blank" href="\2"/g' {} +
 
       - name: Upload static files as artifact
         id: deployment
         uses: actions/upload-pages-artifact@v3
         with:
-          path: artifact
+          path: dist
 
   deploy_docs:
     name: Deploy docs in Pages
