@@ -36,6 +36,8 @@ jobs:
         run: |
           cd dist
           node ../script.js
+          cat output.json | jq . > index.json
+          rm output.json
           mv index.json ../index.json
           mkdir websiteRepo
 
@@ -52,9 +54,13 @@ jobs:
           cd websiteRepo
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
-          git add .
-          git commit -m "Update index.json"
-          git push
+          if [[ -n $(git status --porcelain) ]];then 
+            git add .
+            git commit -m "Update index.json"
+            git push
+          else
+            echo "No changes"
+          fi
           cd ..
           rm -rf websiteRepo
 
