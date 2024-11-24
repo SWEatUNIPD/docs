@@ -58,7 +58,7 @@ Per mantenere tracciabilità, creeremo un foglio Excel condiviso in cui ogni mem
 *Motivazioni delle scelte:*
 Le decisioni prese sono state guidate dai suggerimenti ricevuti dall'azienda e dalle esigenze pratiche del progetto:
 - La generazione dei dati GPS permetterà di iniziare a lavorare su aspetti concreti.
-- La redazione delle Norme di Progetto è importante per strutturare il lavoro e deve procede parallelamente alle altre attività.
+- La redazione delle Norme di Progetto è importante per strutturare il lavoro e deve procedere parallelamente alle altre attività.
 - La flessibilità nei ruoli permette di ottimizzare le risorse disponibili e di avanzare senza troppe interruzioni.
 *Obiettivi per il prossimo SAL (27 novembre 2024):*
 - *Codice per simulazione dati GPS:* Studio di una prima versione funzionale per la generazione di dati verosimili.
