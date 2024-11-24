@@ -17,7 +17,7 @@
   riassunto: "Durante l'incontro sono state discusse le tecnologie che utilizzeremo e i dubbi riguardo al PoC inoltre sono state definite le priorità, tra cui simulazione dati, visualizzazione su Grafana e casi d'uso.",
   versioni: (
     "1.0.0", 
-    [22/11/2024], 
+    [24/11/2024], 
     "Andrea Perozzo", 
     "Davide Picello",
     [- Stesura del verbale],
@@ -31,48 +31,48 @@
 
 = Sintesi dell'incontro 
 L'incontro aveva l'obiettivo di fare il punto della situazione a metà sprint, valutare l'implementazione delle tecnologie individuate, definire i prossimi step e risolvere eventuali dubbi.  
-Durante la call, sono state discusse le tecnologie scelte per il progetto, poste alcune domande chiave per chiarire punti critici, e condivisi appunti sulle esperienze utente, casi d'uso e priorità per il PoC (Proof of Concept).  
+Durante la call, sono state discusse le tecnologie scelte per il progetto, poste alcune domande chiave per chiarire punti critici, e condivisi appunti sulle esperienze utente, casi d'uso e priorità per il #rifGlossario("PoC").  
 
 Le tecnologie che abbiamo scelto di utilizzare e che abbiamo discusso durante la riunione sono:  
 - Data generator: *Faker* o *Simpy*.  
-- Database: *PostGIS* e/o *Time Scale*.  
-- Data broker: *Kafka* (ottima gestione di grandi volumi di dati).  
-- Stream processor: *NiFi* (versatile e adatto a integrare logica).  
-- Data visualisation: *Grafana* (intuitivo e ben documentato).  
-- LLM: *LangChain*.  
+- Database: *#rifGlossario("PostGIS")* e/o *Time Scale*.  
+- Data broker: *#rifGlossario("Apache Kafka")* (ottima gestione di grandi volumi di dati).  
+- #rifGlossario("Stream Processing"): *#rifGlossario("Apache Nifi")* (versatile e adatto a integrare logica).  
+- #rifGlossario("Data visualization"): *#rifGlossario("Grafana")* (intuitivo e ben documentato).  
+- LLM: *#rifGlossario("LangChain")*.  
 
-Focus particolare è stato dato all'utilizzo di Grafana per visualizzare dati GPS e annunci pubblicitari e all'integrazione logica all'interno del sistema tramite NiFi.  
+Focus particolare è stato dato all'utilizzo di #rifGlossario("Grafana") per visualizzare dati GPS e annunci pubblicitari e all'integrazione logica all'interno del sistema tramite #rifGlossario("NiFi").  
 
 = Risposte alle domande  
-== Grafana
-Nel Proof of Concept (PoC), sarà sufficiente ricevere la notifica riguardante l'annuncio pertinente. Tuttavia, per rappresentare visivamente i dati su Grafana, si ipotizza di mostrare punti in movimento su una mappa: quando un punto raggiunge una determinata posizione, verrà visualizzato un messaggio o un annuncio.  
+== #rifGlossario("Grafana")
+Nel #rifGlossario("PoC"), sarà sufficiente ricevere la notifica riguardante l'annuncio pertinente. Tuttavia, per rappresentare visivamente i dati su #rifGlossario("Grafana"), si ipotizza di mostrare punti in movimento su una mappa: quando un punto raggiunge una determinata posizione, verrà visualizzato un messaggio o un annuncio.  
 
 == Logica del sistema 
-La logica del sistema, che comprende incrocio dati, profilazione utenti, verifica della vicinanza a negozi e valutazione di interessi, potrebbe essere integrata direttamente in NiFi. Questo approccio valorizzerebbe le capacità di NiFi come tool per elaborazioni complesse.  
+La logica del sistema, che comprende incrocio dati, profilazione utenti, verifica della vicinanza a negozi e valutazione di interessi, potrebbe essere integrata direttamente in #rifGlossario("NiFi"). Questo approccio valorizzerebbe le capacità di #rifGlossario("NiFi") come tool per elaborazioni complesse.  
 
-== Kafka e NiFi
-Kafka gestirà l'invio e la ricezione di grandi quantità di dati in tempo reale. NiFi sarà utilizzato per elaborare questi dati, integrando logica personalizzata per analizzare i percorsi GPS, generare notifiche, e gestire gli annunci pubblicitari.  
+== #rifGlossario("Kafka") e #rifGlossario("NiFi")
+#rifGlossario("Kafka") gestirà l'invio e la ricezione di grandi quantità di dati in tempo reale. #rifGlossario("NiFi") sarà utilizzato per elaborare questi dati, integrando logica personalizzata per analizzare i percorsi GPS, generare notifiche, e gestire gli annunci pubblicitari.  
 
-== PostGIS e Time Scale  
-È possibile utilizzarli in combinazione. PostGIS sarà utile per gestire dati spaziali e Time Scale per ottimizzare la gestione di dati temporali, mantenendo una visione relazionale classica con un database aggiuntivo.  
+== #rifGlossario("PostGIS") e #rifGlossario("Time Scale")  
+È possibile utilizzarli in combinazione. #rifGlossario("PostGIS") sarà utile per gestire dati spaziali e #rifGlossario("Time Scale") per ottimizzare la gestione di dati temporali, mantenendo una visione relazionale classica con un database aggiuntivo.  
 
-== PoC
-Il PoC dovrebbe essere strutturato in modo da includere:
+== #rifGlossario("PoC")
+Il #rifGlossario("PoC") dovrebbe essere strutturato in modo da includere:
 - Il codice necessario per la simulazione dei dati.
-- Prevedere alcune rappresentazioni iniziali su Grafana, in modo da offrire una visualizzazione dei dati simulati. 
+- Prevedere alcune rappresentazioni iniziali su #rifGlossario("Grafana"), in modo da offrire una visualizzazione dei dati simulati. 
 - Documentare i casi d'uso principali, così da chiarire come il sistema potrebbe essere applicato nella pratica.  
 
 = Conclusioni  
 *Priorità:*
-- *Simulazione dati:* Avviare lo sviluppo di un simulatore di dati GPS, generando percorsi realistici e mantenendo lo storico degli spostamenti.  
-- *Confidenza con strumenti:* Gestire parallelamente l'integrazione con Kafka e NiFi.  
-- *Visualizzazione su Grafana:* Creare una rappresentazione iniziale con punti in movimento su una mappa.  
+- *Simulazione dati:* Iniziare a studiare l'avvio dello sviluppo di un simulatore di dati GPS, generando percorsi realistici e mantenendo lo storico degli spostamenti.  
+- *Confidenza con strumenti:* Gestire parallelamente l'integrazione con #rifGlossario("Kafka") e #rifGlossario("NiFi").  
+- *Visualizzazione su #rifGlossario("Grafana"):* Creare una rappresentazione iniziale con punti in movimento su una mappa.  
 - *Casi d'uso:* Documentare almeno due casi d'uso pratici, pensando al percorso dell'utente tra due punti e all'interazione con i messaggi/annunci.  
 
-*Nel prossimo SAL programmato per il prossimo mercoledì, si presenterà:*  
+*Nel prossimo #rifGlossario("SAL") programmato per il prossimo mercoledì, si presenterà:*  
 - Codice iniziale del simulatore.  
-- Mock-up dei dati su Grafana.  
-- Casi d'uso definiti.  
+- Mock-up dei dati su #rifGlossario("Grafana").  
+- Primi casi d'uso definiti.  
 
 = Tabella delle decisioni
 #backlog(
