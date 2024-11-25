@@ -10,7 +10,7 @@
   titolo: "Norme di progetto",
   uso: "Interno",
   versioni: (
-  "2.0.0", "24/11/2024", "Andrea Precoma", "Davide Marin\nDavide Picello",
+  "2.0.0", "25/11/2024", "Andrea Precoma", "Davide Marin\nDavide Picello",
   [
     - Struttura della sezione "Processi di supporto"
     - Stesura dei principali paragrafi
@@ -35,15 +35,15 @@ Lo scopo principale del documento Norme di Progetto è quello di documentare il 
 Il documento adotta un approccio di tipo incrementale, ovvero è frutto di una serie di fasi di modifica che avvengono durante il suo ciclo di vita. È quindi soggetto durante lo svolgimento del progetto didattico a continui aggiornamenti, a seguito delle decisioni prese dal gruppo, volti a migliorare il _Way of Working_ stesso. I membri del gruppo sono quindi tenuti a prendere visione del documento ogni qual volta esso sia oggetto di modifiche.
 
 == Scopo del progetto didattico
-Lo scopo principale del progetto "NearYou - Smart custom advertising platform" proposto dall'azienda Sync Lab S.r.l. è quello di sviluppare un prodotto che sfrutti la _#rifGlossario("GenAI")_ per la creazione di pubblicità mirate sui singoli utenti, sfruttando come _#rifGlossario("prompt")_ dati come la posizione in tempo reale, le informazioni personali e i dati di profilazione degli utenti stessi.
+Lo scopo principale del progetto _NearYou - Smart custom advertising platform_ proposto dall'azienda Sync Lab S.r.l. è quello di sviluppare un prodotto che sfrutti la _#rifGlossario("GenAI")_ per la creazione di pubblicità mirate sui singoli utenti, sfruttando come _#rifGlossario("prompt")_ dati come la posizione in tempo reale, le informazioni personali e i dati di profilazione degli utenti stessi.
 
 
 L'obiettivo del prodotto è quello di rendere le campagne pubblicitarie delle aziende interessate il più personalizzate e ottimizzate possibili ed aumentare il coinvolgimento dell'utente finale, con lo scopo di ridurre la disconnessione tra messaggio e destinatario e portare un miglioramento sul #rifGlossario("ROI") della campagna stessa.
 
-== Glossario
+== Glossario <glossario>
 Per evitare eventuali ambiguità e incomprensioni sulla terminologia adottata nella documentazione redatta dal gruppo, viene fornito un glossario.
 
-Per ogni documento viene individuata la prima occorrenza dei termini definiti nel glossario. Questi vengono quindi sottolineati e seguiti dalla lettera "g" posta ad apice (ad esempio #rifGlossario([termine])).
+Per ogni documento viene individuata la prima occorrenza dei termini definiti nel Glossario. Questi vengono quindi sottolineati e seguiti dalla lettera "g" posta ad apice (ad esempio #rifGlossario([termine])).
 
 == Riferimenti
 === Riferimenti normativi
@@ -58,13 +58,13 @@ Per ogni documento viene individuata la prima occorrenza dei termini definiti ne
 = Processi di supporto
 
 == Documentazione
-Il processo di documentazione è necessario per il tracciamento di tutte le attività relative al progetto, sia dal lato software che dal lato organizzativo. Tutti i membri del gruppo si impegnano a rispettare le norme delineate nel capitolo corrente per la stesura di ogni documento.
+Il processo di documentazione è necessario per il tracciamento di tutte le attività relative al progetto, sia dal lato _software_ che dal lato organizzativo. Tutti i membri del gruppo si impegnano a rispettare le norme delineate nel capitolo corrente per la stesura di ogni documento.
 
 === Preparazione dell'ambiente
 ==== Tracciamento
-Alla fine di ogni riunione si aggiorna il _#rifGlossario("backlog")_ con le nuove _issue_(corrispondenti alle decisioni prese durante la riunione). Esse devono specificare in modo esaustivo il compito da svolgere nel titolo, arricchite da una breve descrizione, i verificatori incaricati di visionare il lavoro e dal verbale nel quale è scaturita quella decisione in modo che in futuro sia sempre tracciabile il motivo dell'inserimento di quella _issue_. Devono inoltre essere collegate alla _board_ (corrispondente al _backlog_), ad una _milestone_ e ad un assegnatario. Una volta create si deve generare, sempre da interfaccia _web_, il _branch_ temporaneo nel quale si andrà a lavorare.
+Alla fine di ogni riunione si aggiorna il _#rifGlossario("backlog")_ con le nuove _issue_ (corrispondenti alle decisioni prese durante la riunione). Esse devono specificare in modo esaustivo il compito da svolgere nel titolo, arricchite da una breve descrizione, i verificatori incaricati di visionare il lavoro e dal verbale nel quale è scaturita quella decisione in modo che in futuro sia sempre tracciabile il motivo dell'inserimento di quella _issue_. Devono inoltre essere collegate alla _board_ (corrispondente al _backlog_), ad una _milestone_ e ad un assegnatario. Una volta create si deve generare, sempre da interfaccia _web_, il _branch_ temporaneo nel quale si andrà a lavorare.
 
-==== Lavoro sul documento
+==== Lavoro sul documento <lavoro_doc>
 Per lavorare su un documento bisogna attenersi ai seguenti passaggi utilizzando il sistema #rifGlossario("Git"):
 + Posizionarsi sulla cartella della _repository_ nella macchina locale e scaricare le eventuali modifiche in tutti i _branch_ locali eliminando gli eventuali rami che in remoto sono stati eliminati. Se si vuole sincronizzare solo il ramo corrente si deve omettere il _flag_ *`--all`*. \
 	*`git pull -p --all`*
@@ -74,8 +74,8 @@ Per lavorare su un documento bisogna attenersi ai seguenti passaggi utilizzando 
 	*`git add .`* \
 	*`git commit -m "[commento del commit]"`* \
 	*`git push`* \
-+ Dall'interfaccia _web_ bisogna spostarsi nella sezione _*pull request*_ e crearne una nuova assicurandosi di assegnare il verificatore.
-+ In caso il verificatore richieda delle correzioni è sufficiente ripetere i passaggi citati senza questa volta creare una nuova _pull request_ perché è già esistente. Si ricorda che si può evitare di scaricare le modifiche su tutti i _branch_ e che se si è già posizionati sul ramo corretto si può evitare il comando *`git checkout [nome_branch]`*.
++ Dall'interfaccia _web_ bisogna spostarsi nella sezione _*pull request*_ e crearne una nuova assicurandosi di assegnare il verificatore e una _label_.
++ In caso il verificatore richieda delle correzioni è sufficiente ripetere i passaggi citati senza questa volta creare una nuova _pull request_ perché già esistente. Si ricorda che si può evitare di scaricare le modifiche su tutti i _branch_ e che se si è già posizionati sul ramo corretto si può evitare il comando *`git checkout [nome_branch]`*.
 
 Si noti che la modifica di un documento già verificato e approvato deve essere tracciata da una _issue_, quindi i procedimenti per redigere o aggiornare un documento sono gli stessi. Una volta terminato il lavoro si deve aggiornare anche la corrispondenza ruolo-persona nella prima pagina segnando il nuovo redattore, il verificatore e sostituendo il responsabile col compagno che in quel momento sta ricoprendovi il ruolo. In questo modo il responsabile è colui che è al corrente dell'ultima versione, nel caso in cui bisognasse contattarlo per dei chiarimenti.
 
@@ -116,7 +116,7 @@ La seconda pagina è dedicata al registro delle modifiche. Le informazioni sono 
 Nella pagina successiva all'ultima occupata dal registro delle modifiche è posto un indice per facilitare la navigazione. Questo viene aggiornato automaticamente con la modifica dei paragrafi nel documento.
 
 ==== Corpo dei verbali
-Nei verbali è importante non limitarsi a descrivere cosa si è discusso bensì enfatizzare sulle decisioni prese e sulle motivazioni che hanno mosso le stesse. Così facendo si agevola la comprensione dei compagni che in futuro dovranno consultare i documenti. I verbali condividono una struttura di base comune generata dal _template_:
+Nei verbali è importante non limitarsi a descrivere cosa si è discusso bensì enfatizzare sulle decisioni prese e sulle motivazioni che hanno mosso le stesse. Così facendo si agevola la comprensione dei colleghi che in futuro dovranno consultare i documenti. I verbali condividono una struttura di base comune generata dal _template_:
 - *Informazioni generali*
 	- *Luogo e data della riunione*
 		- *Luogo*
@@ -146,7 +146,7 @@ Una tabella che racchiude le informazioni necessarie per rintracciare gli elemen
 		- *S*: sweatunipd.github.io
 	- *ORG* nel caso fosse una decisione di natura organizzativa, ad esempio contattare il proponente.
 - *Assegnatari*: Il membro del gruppo incaricato di svolgere quel compito. Si assegna "Gruppo" nel caso in cui coinvolgesse tutti i membri.
-- *Descrizione*: Il titolo della issue se esistente, altrimenti una breve descrizione delle azioni da compiere.
+- *Descrizione*: Il titolo della _issue_ se esistente, altrimenti una breve descrizione delle azioni da compiere.
 
 === Documenti del progetto
 Alla conclusione del progetto dovranno essere stati prodotti i seguenti documenti:
@@ -159,13 +159,13 @@ Alla conclusione del progetto dovranno essere stati prodotti i seguenti document
 - Verbali Esterni
 
 === Versionamento
-Il versionamento dei documenti soggetti a un ciclo di vita è indicato dalla dicitura a tre indici X.Y.Z descritta nel seguente modo:
+Per i documenti soggetti ad un ciclo di vita abbiamo deciso di adottare il _semantic versioning_ adattando però lo schema al contesto della documentazione. Sono stati quindi ridefiniti gli indici X.Y.Z come segue:
 - *X (_Major_)*: Aggiunta di nuovi contenuti, paragrafi o cambiamenti consistenti al testo;
 - *Y (_Minor_)*: Aggiornamento di porzioni di testo consistente ma che era già presente;
 - *Z (_Patch_)*: Aggiustamento dello stile del testo, ortografico e decorativo.
 
 === Nomenclatura
-Per la nomenclatura di tutti i file e cartelle si è scelto lo stile _snake case_ ad eccezione delle date, scritte in formato YYYY-MM-DD per mantenere l'ordine cronologico, separate dal trattino.
+Per la nomenclatura di tutti i file e cartelle si è scelto lo stile _snake case_ ad eccezione delle date, scritte in formato YYYY-MM-DD per mantenere l'ordine cronologico, separate dal trattino. \
 Le cartelle sono divise per _milestone_ (candidatura, RTB e PB) ciascuna contenente i verbali interni ed esterni, il Piano di Progetto, il Piano di Qualifica, le Norme di Progetto e il Glossario. I documenti si dividono quindi in tre categorie:
 - *verbali*: [VI/VE]\_[YYYY-MM-DD]\_ver[X.Y.Z] dove VI e VE indicano rispettivamente verbali interni ed esterni
 - *documenti soggetti a ciclo di vita*: [nome]\_ver[X.Y.Z]
@@ -180,63 +180,73 @@ I titoli dei documenti devono seguire le seguenti indicazioni:
   - Nel caso non si trattasse di un SAL si deve cercare un titolo breve ma efficace.
 - *Documenti*: Per documenti che non sono verbali il titolo deve semplicemente indicare lo scopo del documento (ad esempio Norme di Progetto).
 
-Notare che nei titoli dei documenti e dei paragrafi lo stile rimane quello di _default_ di #rifGlossario("Typst"), non vanno aggiunti quindi corsivi o altre personalizzazioni
+Notare che nei titoli dei documenti e dei paragrafi lo stile rimane quello di _default_ di #rifGlossario("Typst"), non vanno aggiunti quindi corsivi o altre personalizzazioni.
 
-=== Stile del testo
+=== Stile del testo <stile_testo>
 Nei documenti vengono applicate le seguenti regole di stile testuali:
 - *Grassetto* col comando `*termine*`:
 	- Parole importanti.
-- #underline([Sottolineatura]) col comando `#underline([termine])`:
-	- ID issue nella tabella delle decisioni.
-	- Con apice "g" col comando `#rifGlossario("termine")`:
-		- Termini presenti nel Glossario.
+- #underline([Riferimenti]) col comando `#link("url")[#text(underline("label"))]`:
+  - ID _issue_ nella tabella delle decisioni.
+  - Riferimenti contestuali segnando la destinazione con `<dest>` e modificando il comando `#link(<dest>)[#text(underline("label"))]`.
+- #rifGlossario("Termini con apice") col comando `#rifGlossario("termine")`:
+  - Termini presenti nel Glossario.
 - "Virgolette" col comando `"termine"`:
 	- Enfatizzare singoli caratteri.
 	- Espressioni tecnicamente imprecise (ad esempio "usa e getta")
 - _Corsivo_ col comando `_termine_`:
   - Termini in lingua inglese (esclusi se si tratta di nomi di prodotti _software_ o simili)
+  - Titolo del capitolato _NearYou - Smart custom advertising platform_
 - `Monospace` col comando \``termine`\`:
   - Nomi di file.
   - Nomi di cartelle.
   - Estensioni file.
 - #formatLink(label: "Sottolineato in grassetto e di colore verde") col comando `#formatLink(label:"label", url:"url")`:
-  - Link contestuali.
+  - Link ipertestuali.
 - Maiuscole:
 	- Iniziali di nomi propri.
 	- Acronimi (ad esempio "Proof of Concept (#rifGlossario("PoC"))").
 	- Prima lettera dei paragrafi se citati nel testo.
 	- Nomi dei documenti.
 
+=== Riferimenti
+==== Contestuali
+Per riferirsi ad una sezione del documento per una spiegazione più dettagliata si adotta la dicitura "(sez. [I])" dove I indica l'indice della sezione (ad esempio "(sez. 3.2").
+
+==== Ipertestuali
+Per esporre un _link_ ad una pagina esterna al docuento si utilizza la funzione `#formatLink` (#link(<stile_testo>)[#text(underline("sez. 3.1.9"))]) esplicitando l'interezza dell'_url_ anche nella _label_. Unica eccezione di stile per i riferimenti alle _issue_ nella tabella delle decisioni (#link(<stile_testo>)[#text(underline("sez. 3.1.9"))]).
+
 === Elenchi puntati
 Una lista è preferibile a un elenco narrativo, da valutare se renderlo numerato o meno a seconda della circostanza. I punti della descrizione nel registro delle modifiche vengono sempre rappresentati in un elenco. Se le voci dell'elenco sono costituite da delle frasi vengono chiuse da ".", se invece possiedono solo poche parole, che ad esempio indicano il nome di una tecnologia, non viene messo nessun segno di punteggiatura al termine. Le voci dell'elenco della descrizione nel registro delle modifche non vengono chiuse da punteggiatura.
 
 === Formato delle date
-Sotto il titolo nella prima pagine dei verbali viene indicata la data per iscritto, quindi nel formato "DD mese YYYY". Le date nei documenti vengono scritte nel formato DD/MM/YYYY, nei nomi dei documenti invece YYYY-MM-DD per mantenere l'ordine cronologico. In tutti i casi si segue la seguente convenzione:
+Sotto il titolo nella prima pagina dei verbali viene indicata la data per iscritto, quindi nel formato "DD mese YYYY". Le date nei documenti vengono scritte nel formato DD/MM/YYYY, nei nomi dei documenti invece YYYY-MM-DD per mantenere l'ordine cronologico. In tutti i casi si segue la seguente convenzione:
 - YYYY: anno con quattro cifre.
 - MM: mese con due cifre.
 - DD: giorno con due cifre.
 
 === Strumenti
 Sono stati scelti i seguenti strumenti per redigere e mantenere la documentazione:
-- *Typst*: linguaggio per la stesura dei documenti, consigliata l'estensione Tinymist Typst per Visual Studio Code
-- *GitHub*: servizio di _#rifGlossario("hosting")_ di _repository_
+- *Typst*: linguaggio per la stesura dei documenti, consigliata l'estensione Tinymist Typst se si usa Visual Studio Code.
+- *GitHub*: servizio di _#rifGlossario("hosting")_ di _repository_.
 
 
 
 == Gestione della configurazione
-Per gestire la documentazione è stato creata una _repository_ contenente tutti i _file_ Typst aggiornati e verificati. Gli stessi documenti in formato `.pdf` sono consultabili al sito \ #formatLink(label: "https://sweatunipd.github.io", url: "https://sweatunipd.github.io").
+Per gestire la documentazione è stato creata una _repository_ contenente tutti i _file_ Typst aggiornati e verificati. Gli stessi documenti in formato `.pdf` sono consultabili al sito \ #formatLink(label: "https://sweatunipd.github.io", url: "https://sweatunipd.github.io"). \
+L'operazione di _directory listing_ di GitHub offre una visione degli artefatti strutturata in cartelle, seguente quindi la composizione della _repository_, all'indirizzo #formatLink(label: "https://sweatunipd.github.io/docs", url: "https://sweatunipd.github.io/docs").
 
 === Repository
 Il gruppo utilizza due _repository_ all'interno della propria organizzazione GitHub:
 - *docs* (#formatLink(label: "https://github.com/SWEatUNIPD/docs", url: "https://github.com/SWEatUNIPD/docs")) contenente tutta la documentazione del progetto.
-- *sweatunipd.github.io* (#formatLink(label: "https://github.com/SWEatUNIPD/sweatunipd.github.io", url: "https://github.com/SWEatUNIPD/sweatunipd.github.io")) contenente i file necessari alla struttura e presentazione del sito _web_.
+- *sweatunipd.github.io* (#formatLink(label: "https://github.com/SWEatUNIPD/sweatunipd.github.io", url: "https://github.com/SWEatUNIPD/sweatunipd.github.io")) contenente i _file_ necessari alla struttura e presentazione del sito _web_.
 - TODO: codice
 
 ==== Struttura della repository docs
-La _repository_ è strutturata da un unico _branch_ adibito al mantenimento di tutti i documenti Typst verificati. All'occorenza di svolgere azioni dettate dal _backlog_ si crea un _branch_ temporaneo che, successivamente alla verifica e all'approvazione, viene unito nel ramo principale. La _repository_ è presentata dal _file_ `README.md`, contiene il _file_ `.gitignore` usato dalla Action per la compilazione dei documenti e il _file_ `script.js` usato per pubblicare la documentazione nel sito _web_. Le cartelle sono strutturate nel seguente modo: \
+La _repository_ è strutturata da un unico _branch_ adibito al mantenimento di tutti i documenti Typst verificati. All'occorenza di svolgere azioni dettate dal _backlog_ si crea un _branch_ temporaneo che, successivamente alla verifica e all'approvazione, viene unito nel ramo principale. La _repository_ è presentata dal _file_ `README.md`, contiene il _file_ `.gitignore` usato dalla Action per la compilazione dei documenti e il _file_ `script.js` usato per pubblicare la documentazione nel sito _web_. `test.js` è utilizzato per controllare la presenza dei termini del Glossario all'interno dei documenti, mentre `glossario.json` è una struttura dati che contiene i termini e la loro definizione, usato per la stesura del documento dal _file_ `glossario_verX.Y.Z.typ`. Le cartelle sono strutturate nel seguente modo: \
 #tree-list()[
   - *`.github`*
-    - *`workflows`*: contiene i _file_ `.yml` per le Action.
+    - *`workflows`*: contiene i _file_ `.yml` per la Action.
   - *`.vscode`*: contiene le impostazioni Visual Studio Code per i _font_ dei documenti.
   - *`assets`*
     - *`font`*: contiene i _file_ `.ttf` dei _font_ usati nei documenti.
@@ -266,7 +276,7 @@ La _repository_ è strutturata da un unico _branch_ adibito al mantenimento di t
 La _repository_ è costituita da un unico _branch_ nel quale è caricato tutto il materiale necessario per strutturare il sito _web_ e popolarlo dinamicamente con la documentazione della _repository_ docs. La _repository_ è presentata dal _file_ `README.md` e contiene il _file_ `.gitignore` usato da ...?. Le cartelle sono strutturate nel seguente modo: \
 #tree-list()[
   - *`.github`*
-    - *`workflows`*: contiene i _file_ `.yml` per le Action (?).
+    - *`workflows`*: contiene i _file_ `.yml` per la Action.
   - *`app`*
     - *`fonts`*: contiene i _file_ `.woff` dei _font_ usati nel sito.
     - `global.css`
@@ -274,7 +284,7 @@ La _repository_ è costituita da un unico _branch_ nel quale è caricato tutto i
     - `page.tsx`
   - *`components`*
     - *`ui`*: contiene i _file_ `.tsx` usati per la parte grafica.
-  - *`lib`*: contiene le librerie utilizzate da ... (?).
+  - *`lib`*: contiene funzioni di _utility_ di una libreria esterna.
   - *`logo`*
     - `logo.svg`
     - `logo_dark.svg`
@@ -305,7 +315,7 @@ Alla fine di ogni riunione interna si aggiorna il _backlog_ con le nuove _issue_
 | \
 | [VI/VE]\_[YYYY-MM-DD]
 
-Devono inoltre essere collegate alla _board_ (corrispondente al _backlog_), ad una _milestone_, ad una _label_ e ad un assegnatario. Una volta create si deve generare, sempre da interfaccia _web_, il _branch_ temporaneo nel quale si andrà a lavorare. In questa operzione è sufficiente rinominare il _branch_ e collegarci l'assegnatario.
+Devono inoltre essere collegate alla _board_ (corrispondente al _backlog_), ad una _milestone_, ad una _label_ e ad un assegnatario. Una volta create si deve generare, sempre da interfaccia _web_, il _branch_ temporaneo nel quale si andrà a lavorare. In questa operazione è sufficiente rinominare il _branch_ e collegarci l'assegnatario.
 
 === Label
 Sono state create le seguenti _label_ per migliorare l'organizzazione delle _issue_ e facilitarne la ricerca tramite filtro:
@@ -320,8 +330,8 @@ Sono state create le seguenti _label_ per migliorare l'organizzazione delle _iss
 - *Verbale*
 
 === GitHub Action
-Viene adoperata una Action per facilitare il processo di verifica in quanto crea un _file_ `.zip` con i documenti in formato `.pdf` ad ogni _commit_, e automatizza la pubblicazione dei documenti approvati nel sito del gruppo. Per i verbali esterni si è scelto un'approccio differente in quanto bisogna aspettare la firma del proponente per presa visione. Non potendo quindi essere pubblicati direttamente nel sito i verbali esterni vanno compilati localmente e mandati alla controparte. Una volta restituiti firmati vanno caricati manualmente nella stessa cartella dove risiede il codice sorgente e la Action si occuperà di pubblicarli nel sito. Per caricare i documenti firmati bisogna forzare l'operazione col seguente comando: \
-*`git add . --force`*
+Viene adoperata una Action per facilitare il processo di verifica in quanto crea un _file_ `.zip` con i documenti in formato `.pdf` ad ogni _commit_, e automatizza la pubblicazione dei documenti approvati nel sito del gruppo. Per i verbali esterni si è scelto un approccio differente in quanto bisogna aspettare la firma del proponente per presa visione. Non potendo quindi essere pubblicati direttamente nel sito i verbali esterni vanno compilati localmente e mandati alla controparte. Una volta restituiti firmati vanno caricati manualmente nella stessa cartella dove risiede il codice sorgente e la Action si occuperà di pubblicarli nel sito. Per caricare i documenti firmati bisogna forzare l'operazione col seguente comando: \
+*`git add [file_name] --force`*
 
 
 
@@ -331,15 +341,15 @@ TODO: Cosa controllare per mantenere la qualità attesa (durante la verifica e v
 
 
 == Verifica
-Ogni documento creato o modificato necessita l'approvazione da uno o più verificatori. Questo processo viene automatizzato il più possibile con l'utilizzo delle pull request, il sistema di ticketing tramite _issue_ e una Action dedicata.
+Ogni documento creato o modificato necessita l'approvazione da uno o più verificatori. Questo processo viene automatizzato il più possibile con l'utilizzo delle _pull request_, il sistema di _ticketing_ tramite _issue_ e una Action dedicata.
 
 === Pull request
-Le _pull request_ velocizzano e automatizzano la verifica dei documenti. Una volta organizzate nel modo corretto come spiegato nel paragrafo Lavoro sul documento, il verificatore può aggiungere una _review_ da interfaccia _web_ commentando, chiedendo una modifica o approvando la _pull request_. Una volta soddisfatti i requisiti spetterà al responsabile confermare la nuova versione del documento e unire il _branch_ al principale tramite il pulsante "_squash and merge_".
+Le _pull request_ velocizzano e automatizzano la verifica dei documenti. Una volta organizzate nel modo corretto (#link(<lavoro_doc>)[#text(underline("sez. 3.1.1.2"))]), il verificatore può aggiungere una _review_ da interfaccia _web_ commentando, chiedendo una modifica o approvando la _pull request_. Una volta soddisfatti i requisiti spetterà al responsabile confermare la nuova versione del documento e unire il _branch_ al principale tramite il pulsante "_squash and merge_".
 
 === Analisi statica
 Al completamento di ogni _commit_ una Action compila i _file_ Typst modificati e genera un _file_ `.zip` contenente i documenti in formato `.pdf`. Così facendo si è sicuri che il codice è privo di errore sintattici e genera correttamente un prodotto finale e distribuibile.
 
-È stato messo a disposizione un _test_ il quale controlla che la prima occorrenza dei termini del Glossario venga identificata come spiegato nella sezione omonima. Per eseguirlo è sufficiente aver installato NodeJS sul proprio _computer_ ed eseguire il comando *`node test.js`* nella _root_ della _repository_ locale. Il _test_ esamina tutti i documenti e ritorna degli avvisi in caso fallisse.
+È stato messo a disposizione un _test_ il quale controlla che la prima occorrenza dei termini del Glossario venga identificata (#link(<glossario>)[#text(underline("sez. 1.3"))]). Viene effetuato automanticamente dalla Action ad ogni _push_, tuttavia è preferibile eseguirlo prima in locale così da efficientare il lavoro. È sufficiente quindi aver installato NodeJS sulla propria macchina ed eseguire il comando *`node test.js`* nella _root_ della _repository_ locale. Il _test_ esamina tutti i documenti e ritorna degli avvisi in caso fallisse.
 
 === Analisi dinamica
 Il verificatore può consultare sia il documento in formato `.pdf` per maggiore leggibilità sia il codice sorgente. Nel caso trovasse degli errori può segnalarli tramite la _pull request_, oppure pubblicare un commento per avviare una discussione riguardo una correzione più complessa.

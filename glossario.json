@@ -50,6 +50,9 @@
   "T": {
     "Typst": "Linguaggio di markup per la formattazione dei documenti e strumento di typesetting, simile a LaTeX, progettato per creare documenti complessi con sintassi moderna e funzionalità avanzate."
   },
+  "U": {
+    "Utility": "Insieme di funzioni predefinite per facilitare compiti comuni, spesso abbinato al contesto delle librerie che integrano metodi riutilizzabili in molti programmi."
+  },
   "W": {
     "Way of Working": "Letteralmente \"modo di lavorare\", si intende l'insieme di regole, best practice e strumenti utilizzati per organizzare al meglio le attività del gruppo. Permette al gruppo di svolgere il proprio lavoro in maniera efficiente e professionale e di operare allo stato dell'arte."
   }

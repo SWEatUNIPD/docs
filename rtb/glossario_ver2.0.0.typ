@@ -8,16 +8,19 @@
   titolo: "Glossario",
   verificatori: ("Andrea Precoma", "Andrea Perozzo"),
   versioni: (
-    "1.2.0",
-    "24/11/2024",
+    "2.0.0",
+    "25/11/2024",
     "Andrea Precoma",
     "Davide Marin\nDavide Picello",
-    [- Aggiunto il termine "Hosting"],
+    [
+      - Creato paragrafo per i termini che iniziano con "U"
+      - Aggiunto i termini "Hosting" e "Utility"
+    ],
     "1.1.0",
     "14/11/2024",
     "Klaudio Merja",
     "Andrea Precoma",
-    [- Aggiunti i termini "Way of Working", "GenAI", "prompt" e "ROI"],
+    [- Aggiunti i termini "Way of Working", "GenAI", "Prompt" e "ROI"],
     "1.0.0",
     "11/11/2024",
     "Riccardo Milan",
