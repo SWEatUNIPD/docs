@@ -20,6 +20,14 @@
   content: content,
 )
 
+// Sotto l'inidce è bene mettere la lista delle immagini (quando ci saranno anche delle tabelle), forse vale la pena integrarla nel template
+#outline(
+  title: [Lista delle figure],
+  target: figure.where(kind: image),
+)
+#pagebreak()
+
+
 #set heading(numbering: "1.1.1")
 
 = Introduzione
@@ -88,6 +96,13 @@ Il prodotto si rivolge a due tipologie di utenti:
 - *Utente*: utente che utilizza il servizio di noleggio e che ha accesso solo alla funzionalità di visualizzazione degli annunci pubblicitari.
 
 == Tecnologie
+Il sistema utilizzerà un’architettura modulare, includendo le seguenti tecnologie:
+
+- Simulatori di dati: Script Python per generare dati GPS e simulare spostamenti.
+- Data streaming: Apache Kafka per gestire flussi di dati in tempo reale.
+- LangChain: LangChain per la generazione di annunci tramite LLM.
+- PostGIS: per l’archiviazione di dati geolocalizzati.
+- Grafana: per il monitoraggio dei dati.
 
 = Casi d'uso
 
@@ -105,6 +120,10 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 == Elenco dei casi d'uso
 
+// CASI D'USO UTENTE 
+
+//probabilmente ci sarà un altro caso d'uso: log in utente, in questo modo quando usa il mezzo in prestito il mezzo userà i suoi dati per la profilazione. Penso che non ci sarà il caso d'uso registrazione, dato che i dati dell'utente con la profilazione viene fornito a priori come scritto nel capitolato.
+
 === UC1 - Trasmissione dati di localizzazione
 
 - *Attore principale*: Utente
@@ -116,6 +135,8 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   1. L'utente noleggia un mezzo
   2. Il sistema riceve a intervalli di tempo regolari i dati di localizzazione GPS del mezzo 
+
+- *User story*:
 
 /* === UC2 - Generazione annuncio personalizzato
 
@@ -143,5 +164,51 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   2. Il sistema stabilisce tramite un modello #rifGlossario("GenAI") se l'utente può essere interessato ai servizi offerti dal punto di interesse
   3. In caso positivo l'utente visualizza un annuncio pubblicitario personalizzato, generato tramite un modello #rifGlossario("GenAI")
 
+- *User story*:
+
+#pagebreak()
+
+// CASI D'USO POWERUSER
+
+// probabilmente ci saranno due casi d'uso: autenticazione admin, accesso alla dashboard admin.
+
+=== UC3 - Visualizzazione mappa amministratore
+
+- *Attore principale*: Admin
+
+- *Precondizioni*: l'amministratore del sistema è autenticato e ha accesso alla dashboard grafana.
+
+- *Postcondizioni*: l'admin ottiene una visione chiara della posizione e del movimento delle biciclette attualmente in uso.
+
+// eventualmente potranno esserci una o più estensioni (caso d'uso 3.x) per applicare dei filtri e visualizzare nella mappa ad esempio un solo tipo di bicicletta o un solo tipo di utenti (es. filtrare in base all'età)
+
+- *Scenario principale*:
+  1. L'amministratore è collegato e autenticato nella dashboard grafana
+  2. La dashboard mette a disposizione una mappa interattiva con i mezzi attualmente a noleggio che si muovono indicati attraverso dei marker.
+
+- *User story*:
+#figure(image("../assets/use_cases/UC3.svg", width: 80%), caption: [UC3 - Visualizzazione mappa amministratore])
+
+#pagebreak()
+
+=== UC4 - Visualizzazione storico amministratore
+
+- *Attore principale*: Admin
+
+- *Precondizioni*: l'amministratore del sistema è autenticato e ha accesso alla dashboard grafana.
+
+- *Postcondizioni*: l'admin ha una visione dello storico degli annunci pubblicitari comparsi associato al rispettivo utente, con un feedback indicante il successo o l'insuccesso che l'annuncio ha avuto.
+
+- *Scenario principale*:
+  1. L'amministratore è collegato e autenticato nella dashboard grafana
+  2. La dashboard mette a disposizione una sezione con lo storico degli annunci prodotti dal sistema e il relativo esito.
+
+- *User story*:
+#figure(image("../assets/use_cases/UC4.svg", width: 80%), caption: [UC4 - Visualizzazione storico amministratore])
+
 #pagebreak()
 = 4 Requisiti
+
+
+
+
