@@ -99,10 +99,10 @@ Il prodotto si rivolge a due tipologie di utenti:
 Il sistema utilizzerà un’architettura modulare, includendo le seguenti tecnologie:
 
 - Simulatori di dati: Script Python per generare dati GPS e simulare spostamenti.
-- Data streaming: Apache Kafka per gestire flussi di dati in tempo reale.
-- LangChain: LangChain per la generazione di annunci tramite LLM.
-- PostGIS: per l’archiviazione di dati geolocalizzati.
-- Grafana: per il monitoraggio dei dati.
+- Data streaming: #rifGlossario("Apache Kafka") per gestire flussi di dati in tempo reale.
+- #rifGlossario("LangChain"): per la generazione di annunci tramite LLM.
+- #rifGlossario("PostGIS"): per l’archiviazione di dati geolocalizzati.
+- #rifGlossario("Grafana"): per il monitoraggio dei dati.
 
 = Casi d'uso
 
@@ -114,7 +114,7 @@ Lo scopo di questa sezione è quello di elencare e descrivere tutti i casi d'uso
 
 Gli attori coinvolti nei casi d'uso sono i seguenti:
 
-- *Cliente*: gestore di un servizio di noleggio che, perciò, avrà accesso alla dashboard, senza bisogno di autenticazione.
+- *Amministratore*: gestore di un servizio di noleggio che, perciò, avrà accesso alla dashboard, senza bisogno di autenticazione.
 
 - *Utente*: utente che utilizza il servizio di noleggio
 
@@ -123,6 +123,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 // CASI D'USO UTENTE 
 
 //probabilmente ci sarà un altro caso d'uso: log in utente, in questo modo quando usa il mezzo in prestito il mezzo userà i suoi dati per la profilazione. Penso che non ci sarà il caso d'uso registrazione, dato che i dati dell'utente con la profilazione viene fornito a priori come scritto nel capitolato.
+//ragionamento analogo si può fare per l'amministratore
 
 === UC1 - Trasmissione dati di localizzazione
 
@@ -162,15 +163,15 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 // CASI D'USO POWERUSER
 
-// probabilmente ci saranno due casi d'uso: autenticazione admin, accesso alla dashboard admin.
+// probabilmente ci saranno due casi d'uso: autenticazione amministratore, accesso alla dashboard amministratore.
 
 === UC3 - Visualizzazione mappa amministratore
 
-- *Attore principale*: Admin
+- *Attore principale*: amministratore
 
 - *Precondizioni*: l'amministratore del sistema è autenticato e ha accesso alla dashboard grafana.
 
-- *Postcondizioni*: l'admin ottiene una visione chiara della posizione e del movimento delle biciclette attualmente in uso.
+- *Postcondizioni*: l'amministratore ottiene una visione chiara della posizione e del movimento delle biciclette attualmente in uso.
 
 // eventualmente potranno esserci una o più estensioni (caso d'uso 3.x) per applicare dei filtri e visualizzare nella mappa ad esempio un solo tipo di bicicletta o un solo tipo di utenti (es. filtrare in base all'età)
 
@@ -185,11 +186,11 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 === UC4 - Visualizzazione storico amministratore
 
-- *Attore principale*: Admin
+- *Attore principale*: amministratore
 
 - *Precondizioni*: l'amministratore del sistema è autenticato e ha accesso alla dashboard grafana.
 
-- *Postcondizioni*: l'admin ha una visione dello storico degli annunci pubblicitari comparsi associato al rispettivo utente, con un feedback indicante il successo o l'insuccesso che l'annuncio ha avuto.
+- *Postcondizioni*: l'amministratore ha una visione dello storico degli annunci pubblicitari comparsi associato al rispettivo utente, con un feedback indicante il successo o l'insuccesso che l'annuncio ha avuto.
 
 - *Scenario principale*:
   1. L'amministratore è collegato e autenticato nella dashboard grafana
