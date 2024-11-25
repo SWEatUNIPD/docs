@@ -235,3 +235,21 @@
     text(weight: "bold", fill: rgb("#04E824"), link(url)[#underline[#label]])
   }
 }//TODO: Verificare che i link a capo non siano buggati
+
+#let generaGlossario(glossario) = {
+  for key in glossario.keys() {
+    [
+      = #key
+      #v(10pt)
+    ]
+    for word in glossario.at(key).keys() {
+      [
+        #text(weight: "bold", size: 12pt, word)
+
+        #glossario.at(key).at(word)
+        #v(10pt)
+      ]
+    }
+    pagebreak()
+  }
+}
