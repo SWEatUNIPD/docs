@@ -173,7 +173,7 @@ Le cartelle sono divise per _milestone_ (candidatura, RTB e PB) ciascuna contene
 
 === Stile dei titoli
 I titoli dei documenti devono seguire le seguenti indicazioni:
-- *Verbali Interni*: [NOR] riunione, dove NOR indica il numero ordinale della rionione (ad esempio Prima o Dodicesima).
+- *Verbali Interni*: [NOR] riunione, dove NOR indica il numero ordinale della riunione (ad esempio Prima o Dodicesima).
 - *Verbali Esterni*:
   - #rifGlossario("SAL") [NOS] sprint, dove NOS indica il numero ordinale dello _sprint_ (ad esempio primo o dodicesimo) nel caso si trattasse del SAL di fine _sprint_.
   - SAL intermedio [NOS] sprint, dove NOS indica il numero ordinale dello _sprint_ (ad esempio primo o dodicesimo) nel caso si trattasse di un SAL informativo a metà dello _sprint_.
