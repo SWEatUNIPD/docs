@@ -284,7 +284,7 @@ La _repository_ è costituita da un unico _branch_ nel quale è caricato tutto i
     - `page.tsx`
   - *`components`*
     - *`ui`*: contiene i _file_ `.tsx` usati per la parte grafica.
-  - *`lib`*: contiene funzioni di _utility_ di una libreria esterna.
+  - *`lib`*: contiene funzioni di _#rifGlossario("utility")_ di una libreria esterna.
   - *`logo`*
     - `logo.svg`
     - `logo_dark.svg`
