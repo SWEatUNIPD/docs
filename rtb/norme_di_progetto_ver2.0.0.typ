@@ -10,25 +10,25 @@
   titolo: "Norme di progetto",
   uso: "Interno",
   versioni: (
+    "2.0.0",
+    "23/11/2024",
+    [
+      Andrea Precoma\ Davide Picello
+    ],
+    "Davide Marin",
+    [
+      *Precoma:*
+      - Struttura della sezione "Processi di supporto"
+      - Stesura dei principali paragrafi
 
-  "2.0.0", "23/11/2024", 
-  [ 
-    Andrea Precoma\ Davide Picello
-  ], "Davide Marin",
-  [
-    *Precoma:*
-    - Struttura della sezione "Processi di supporto"
-    - Stesura dei principali paragrafi
-    
-    *Picello:*
-    - Scrittura del capitolo "Processi primari"
-  ],
-
-  "1.0.0", 
-  "14/11/2024", 
-  "Klaudio Merja", 
-  "Andrea Precoma",
-  [- Struttura e introduzione del documento]
+      *Picello:*
+      - Scrittura del capitolo "Processi primari"
+    ],
+    "1.0.0",
+    "14/11/2024",
+    "Klaudio Merja",
+    "Andrea Precoma",
+    [- Struttura e introduzione del documento],
   ),
   content: content,
 )
@@ -37,26 +37,26 @@
 
 = Introduzione
 == Scopo del documento
-Lo scopo principale del documento `Norme di Progetto` è quello di documentare il #underline[Way of Working#rifGlossario] che deve essere adottato dai membri del gruppo per garantire la coerenza nel lavoro svolto.
+Lo scopo principale del documento `Norme di Progetto` è quello di documentare il #rifGlossario("Way of Working") che deve essere adottato dai membri del gruppo per garantire la coerenza nel lavoro svolto.
 
 Il documento adotta un approccio di tipo incrementale, ovvero è frutto di una serie di fasi di modifica che avvengono durante il suo ciclo di vita. È quindi soggetto durante lo svolgimento del progetto didattico a continui aggiornamenti, a seguito delle decisioni prese dal gruppo, volti a migliorare il Way of Working stesso. I membri del gruppo sono quindi tenuti a prendere visione del documento ogni qual volta esso sia oggetto di modifiche.
 
 == Scopo del progetto didattico
-Lo scopo principale del progetto _NearYou - Smart custom advertising platform_ proposto dall'azienda Sync Lab S.r.l. è quello di sviluppare un prodotto che sfrutti la #underline[GenAI#rifGlossario] per la creazione di pubblicità mirate sui singoli utenti, sfruttando come #underline[prompt#rifGlossario] dati come la posizione in tempo reale, le informazioni personali e i dati di profilazione degli utenti stessi.
+Lo scopo principale del progetto _NearYou - Smart custom advertising platform_ proposto dall'azienda Sync Lab S.r.l. è quello di sviluppare un prodotto che sfrutti la #rifGlossario("GenAI") per la creazione di pubblicità mirate sui singoli utenti, sfruttando come #rifGlossario("prompt") dati come la posizione in tempo reale, le informazioni personali e i dati di profilazione degli utenti stessi.
 
 
-L'obiettivo del prodotto è quello di rendere le campagne pubblicitarie delle aziende interessate il più personalizzate e ottimizzate possibili ed aumentare il coinvolgimento dell'utente finale, con lo scopo di ridurre la disconnessione tra messaggio e destinatario e portare un miglioramento sul #underline[ROI#rifGlossario] della campagna stessa.
+L'obiettivo del prodotto è quello di rendere le campagne pubblicitarie delle aziende interessate il più personalizzate e ottimizzate possibili ed aumentare il coinvolgimento dell'utente finale, con lo scopo di ridurre la disconnessione tra messaggio e destinatario e portare un miglioramento sul #rifGlossario("ROI") della campagna stessa.
 
 == Glossario
 Per evitare eventuali ambiguità e incomprensioni sulla terminologia adottata nella documentazione redatta dal gruppo, viene fornito un glossario.
 
-La prima occorrenza di un termine definito all'interno del glossario presente all'interno di un documento viene sottolineato e seguito dalla lettera g posta ad apice (e.g. #underline[termine#rifGlossario]).
+La prima occorrenza di un termine definito all'interno del glossario presente all'interno di un documento viene sottolineato e seguito dalla lettera g posta ad apice (e.g. #rifGlossario("termine").
 
 == Riferimenti
 === Riferimenti normativi
-- Regolamento del progetto didattico\ #text(weight: "bold", fill: rgb("#04E824"))[#underline[#link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf]]]
+- Regolamento del progetto didattico\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")
 === Riferimenti informativi
-- Capitolato C4 (Sync Lab)\ #text(weight: "bold", fill: rgb("#04E824"))[#underline[#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf]]]
+- Capitolato C4 (Sync Lab)\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
 
 #pagebreak()
 = Processi primari
@@ -85,7 +85,7 @@ Per ogni incontro, verrà redatto un verbale riguardante le discussioni e decisi
 È stato anche concordato un incontro settimanale di 45 minuti, tendenzialmente il mercoledì pomeriggio, riguardo allo Stato di Avanzamento dei Lavori (SAL) in cui il gruppo esporrà i progressi, ed i dubbi, dell'ultima settimana di lavoro, confrontandosi con il proponente e delineando le attività da svolgere nella settimana a venire.
 
 ==== Sessioni deep dive
-Il proponente si è anche reso disponibile per organizzare delle sessioni di #underline[deep dive]#rifGlossario per approfondire l'utilizzo di alcune tecnologie che potrebbero rivelarsi particolarmente ostiche, in quanto, nuove per il gruppo e, per loro natura, non semplici da imparare.
+Il proponente si è anche reso disponibile per organizzare delle sessioni di #rifGlossario("deep dive") per approfondire l'utilizzo di alcune tecnologie che potrebbero rivelarsi particolarmente ostiche, in quanto, nuove per il gruppo e, per loro natura, non semplici da imparare.
 
 Queste verranno fissate a bisogno e non, quindi, a cadenza regolare.
 
@@ -99,39 +99,39 @@ L'analisi dei requisiti è un documento redatto dagli Analisti che definisce le 
 //Ancora da scrivere
 
 ==== Piano di progetto
-Il Piano di progetto è un documento il cui scopo è quello di definire in modo dettagliato l'organizzazione, le attività, le risorse, i tempi e i criteri necessari per completare con successo il progetto. 
+Il Piano di progetto è un documento il cui scopo è quello di definire in modo dettagliato l'organizzazione, le attività, le risorse, i tempi e i criteri necessari per completare con successo il progetto.
 
 Viene redatto e aggiornato dal responsabile, con il supporto degli amministratori, durante l'intera durata del progetto.
 
 /*
-  Dovrebbe contenere le seguenti informazioni/sessioni:
-  - Analisi dei risci
-  - Modello di sviluppo
-  - Pianificazione
-  - Preventivo
-  - Consuntivo
+Dovrebbe contenere le seguenti informazioni/sessioni:
+- Analisi dei risci
+- Modello di sviluppo
+- Pianificazione
+- Preventivo
+- Consuntivo
 */
 
 ==== Piano di Qualifica
-Il Piano di Qualifica è un documento formale che definisce le strategie, le attività e gli approcci necessari per garantire la qualità del prodotto software, durante tutto il ciclo di vita del progetto. 
+Il Piano di Qualifica è un documento formale che definisce le strategie, le attività e gli approcci necessari per garantire la qualità del prodotto software, durante tutto il ciclo di vita del progetto.
 
-Redatto tipicamente dal verificatore o dall'amministratore, descrive le modalità di verifica e validazione, gli standard adottati e le procedure di qualità da seguire. 
+Redatto tipicamente dal verificatore o dall'amministratore, descrive le modalità di verifica e validazione, gli standard adottati e le procedure di qualità da seguire.
 
 Il suo scopo principale è assicurare che il prodotto finale sia conforme alle specifiche richieste e alle aspettative del committente, monitorando il progresso rispetto agli obiettivi prefissati. Ogni membro del team coinvolto nello sviluppo farà riferimento a questo documento per mantenere e garantire i livelli di qualità stabiliti.
 
 /*
-  Dovrebbe contenere le seguenti informazioni/sessioni:
-  - Qualità di processo
-  - Qualità di prodotto
-  - Test
-  - Cruscotto delle metriche/ Valutazioni per il miglioramento
+Dovrebbe contenere le seguenti informazioni/sessioni:
+- Qualità di processo
+- Qualità di prodotto
+- Test
+- Cruscotto delle metriche/ Valutazioni per il miglioramento
 */
 
 ==== Glossario
-Il Glossario è un documento di supporto che raccoglie i termini tecnici e specifici utilizzati all’interno del progetto, fornendone definizioni chiare e univoche. È destinato a tutti gli stakeholder, compresi i membri del team, i committenti e l’azienda proponente, con l’obiettivo di prevenire ambiguità e incomprensioni, garantendo una comprensione condivisa della terminologia. Questo strumento è fondamentale per migliorare la coerenza e la qualità della documentazione prodotta.  
+Il Glossario è un documento di supporto che raccoglie i termini tecnici e specifici utilizzati all’interno del progetto, fornendone definizioni chiare e univoche. È destinato a tutti gli stakeholder, compresi i membri del team, i committenti e l’azienda proponente, con l’obiettivo di prevenire ambiguità e incomprensioni, garantendo una comprensione condivisa della terminologia. Questo strumento è fondamentale per migliorare la coerenza e la qualità della documentazione prodotta.
 
 ==== Lettera di presentazione
-La Lettera di Presentazione è un documento formale attraverso il quale il gruppo esprime la propria intenzione di partecipare alla fase di revisione del progetto. Include la documentazione prodotta dal gruppo e, se necessario, un aggiornamento sui costi e sulle tempistiche. 
+La Lettera di Presentazione è un documento formale attraverso il quale il gruppo esprime la propria intenzione di partecipare alla fase di revisione del progetto. Include la documentazione prodotta dal gruppo e, se necessario, un aggiornamento sui costi e sulle tempistiche.
 
 La lettera sottolinea l’impegno del team nel rispettare le scadenze e le aspettative fissate.
 
@@ -140,7 +140,7 @@ La lettera sottolinea l’impegno del team nel rispettare le scadenze e le aspet
 Gli strumenti adottati per il processo di fornitura sono i seguenti:
 
 ==== Discord
-Piattaforma di messaggistica in tempo reale che consente chat testuali, vocali e video. 
+Piattaforma di messaggistica in tempo reale che consente chat testuali, vocali e video.
 
 Il gruppo la utilizza per comunicare internamente, tramite delle chiamate, e per interagire velocemente con l'azienda tramite il loro server dedicato.
 

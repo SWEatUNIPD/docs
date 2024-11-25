@@ -14,7 +14,8 @@
     "ClickHouse": "ClickHouse è un database di analisi open source orientato alle colonne per casi di utilizzo in ambito big data."
   },
   "D": {
-    "Data Visualization": "Rappresentazione grafica di dati e informazioni, al fine di facilitarne la comprensione e l'interpretazione."
+    "Data Visualization": "Rappresentazione grafica di dati e informazioni, al fine di facilitarne la comprensione e l'interpretazione.",
+    "Deep dive": "Una sessione deep dive è un incontro in cui esperti esterni al gruppo si mettono a disposizione per approfondire specifiche tecnologie e strumenti legati a un progetto. Questi incontri sono progettati per affrontare temi complessi o aree in cui il team destinatario potrebbe non avere esperienza sufficiente o stia incontrando difficoltà."
   },
   "G": {
     "GenAI": "Acronimo di \"Generative Artificial Intelligence\", si intende tutte le tecnologie di intelligenza artificiale capaci di generare contenuti come testo, immagini, codice, idee ed altro con l'obiettivo di simulare le attività di un essere umano.",
