@@ -1,25 +1,27 @@
 const fs = require("fs");
 const path = require("path");
 const baseUrl = "https://sweatunipd.github.io/docs/";
-const outPath = "./index.json";
+const outPath = "./output.json";
 
 function getFiles(dir) {
   try {
     const files = fs.readdirSync(dir);
     const out = [];
-    files.filter(file=>path.parse(file).ext === ".pdf").forEach((file) => {
-      const link = baseUrl.concat(path.join(dir, file));
-      const fileName = path.parse(file).name;
-      const regex = /_ver\d+\.\d+(\.\d+)?/g;
-      const match = fileName.match(regex);
-      const versione = match ? match[0].replace("_ver", "") : null;
-      const nome = fileName.replace(regex, "").replaceAll("_", " ");
-      out.push({
-        nome,
-        versione,
-        link,
+    files
+      .filter((file) => path.parse(file).ext === ".pdf")
+      .forEach((file) => {
+        const link = baseUrl.concat(path.join(dir, file));
+        const fileName = path.parse(file).name;
+        const regex = /_ver\d+\.\d+(\.\d+)?/g;
+        const match = fileName.match(regex);
+        const versione = match ? match[0].replace("_ver", "") : null;
+        const nome = fileName.replace(regex, "").replaceAll("_", " ");
+        out.push({
+          nome,
+          versione,
+          link,
+        });
       });
-    });
     return out;
   } catch (err) {
     return [];

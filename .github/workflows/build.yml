@@ -16,6 +16,8 @@ jobs:
         uses: actions/checkout@v4.2.2
         with:
           fetch-depth: 0
+      - name: Check missing glossary references
+        run: node test.js
 
       - name: Setup Typst
         uses: typst-community/setup-typst@v3
@@ -34,8 +36,9 @@ jobs:
         run: |
           cd dist
           node ../script.js
+          cat output.json | jq . > index.json
+          rm output.json
           mv index.json ../index.json
-          mkdir websiteRepo
 
       - name: Checkout website repository
         uses: actions/checkout@v4.2.2
@@ -50,9 +53,15 @@ jobs:
           cd websiteRepo
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
-          git add .
-          git commit -m "Update index.json"
-          git push
+          if [[ -n $(git status --porcelain) ]];then 
+            git add .
+            git commit -m "Update index.json"
+            git push
+          else
+            echo "No changes"
+          fi
+          cd ..
+          rm -rf websiteRepo
 
       - name: Github Pages Directory Listing
         uses: jayanta525/github-pages-directory-listing@v4.0.0
