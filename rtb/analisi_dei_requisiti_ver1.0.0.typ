@@ -137,34 +137,26 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   2. Il sistema riceve a intervalli di tempo regolari i dati di localizzazione GPS del mezzo 
 
 - *User story*:
-
-/* === UC2 - Generazione annuncio personalizzato
-
-- *Attore principale*: Sistema
-
-- *Precondizioni*: il sistema ha ricevuto i dati di localizzazione GPS del mezzo in uso dall'utente
-
-- *Postcondizioni*: il sistema ha generato un annuncio pubblicitario personalizzato per l'utente
-
-- *Scenario principale*:
-  1. Il sistema riceve i dati di localizzazione GPS del mezzo in uso dall'utente
-  2. Il sistema stabilisce tramite un modello AI se l'utente può essere interessato ai servizi offerti da un punto di interesse
-  3. In caso positivo il sistema genera un annuncio pubblicitario personalizzato per l'utente*/
+#figure(image("../assets/use_cases/UC1.svg", width: 80%), caption: [UC1 - Trasmissione dati di localizzazione])
 
 === UC2 - Visualizzazione annuncio personalizzato
 
 - *Attore principale*: Utente
 
-- *Precondizioni*: l'utente si trova in prossimità di un punto di interesse
+- *Precondizioni*: l'utente ha un noleggio attivo e sta inviando dati di localizzazione al sistema 
 
 - *Postcondizioni*: se l'utente è considerato interessato ai servizi offerti dal punto di interesse, visualizza l'annuncio pubblicitario sul display del mezzo
+
+- *Trigger*: l'utente si trova in prossimità di un punto di interesse e il sistema, tramite i dati di profilazione, giudica l'utente idoneo a ricevere l'annuncio
 
 - *Scenario principale*:
   1. L'utente si trova in prossimità di un punto di interesse
   2. Il sistema stabilisce tramite un modello #rifGlossario("GenAI") se l'utente può essere interessato ai servizi offerti dal punto di interesse
-  3. In caso positivo l'utente visualizza un annuncio pubblicitario personalizzato, generato tramite un modello #rifGlossario("GenAI")
+  3. In caso positivo l'utente visualizza un annuncio pubblicitario personalizzato, generato tramite un modello GenAI
 
 - *User story*:
+#figure(image("../assets/use_cases/UC2.svg", width: 80%), caption: [UC2 - Visualizzazione annuncio personalizzato])
+
 
 #pagebreak()
 
@@ -205,6 +197,42 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 - *User story*:
 #figure(image("../assets/use_cases/UC4.svg", width: 80%), caption: [UC4 - Visualizzazione storico amministratore])
+
+=== UC5 - Interazione con l'annuncio pubblicitario
+
+- *Attore principale*: Utente
+
+- *Precondizioni*: l'utente visualizza un annuncio pubblicitario
+
+- *Postcondizioni*: se l'utente interagisce con l'annuncio pubblicitario, il sistema memorizza l'interazione come feedback sull'annuncio generato
+
+- *Scenario principale*:
+  1. L'utente visualizza un annuncio pubblicitario
+  2. L'utente interagisce con l'annuncio pubblicitario
+  3. Il sistema memorizza un feedback associato all'annuncio visualizzato
+
+- *User story*:
+#figure(image("../assets/use_cases/UC5.svg", width: 80%), caption: [UC5 - Interazione con l'annuncio pubblicitario])
+
+// Il caso d'uso sottostante rappresenta un'interazione alternativa al caso d'uso UC5, in cui l'utente si ferma presso il punto d'interesse pubblicizzato per un periodo di tempo prolungato
+// Da valutare se implementarla in quanto risulterebbe ridondante
+
+/*=== UC5.1 - Sosta presso il punto d'interesse pubblicizzato
+
+- *Attore principale*: Utente
+
+- *Precondizioni*: l'utente visualizza un annuncio pubblicitario
+
+- *Postcondizioni*: se l'utente si ferma presso il punto di interesse pubblicizzato, il sistema memorizza l'interazione come feedback positivo sull'annuncio generato
+
+- *Scenario principale*:
+  1. L'utente visualizza un annuncio pubblicitario
+  2. L'utente si ferma presso il punto di interesse pubblicizzato per un periodo di tempo prolungato
+  3. Il sistema memorizza un feedback positivo associato all'annuncio visualizzato
+
+- *User story*:
+#figure(image("../assets/use_cases/UC5.1.svg", width: 80%), caption: [UC5.1 - Sosta presso il punto d'interesse pubblicizzato])
+*/
 
 #pagebreak()
 = 4 Requisiti
