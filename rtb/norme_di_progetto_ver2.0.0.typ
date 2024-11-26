@@ -10,7 +10,7 @@
   titolo: "Norme di progetto",
   uso: "Interno",
   versioni: (
-  "2.0.0", "25/11/2024", "Andrea Precoma", "Davide Marin\nDavide Picello",
+  "2.0.0", "26/11/2024", "Andrea Precoma", "Davide Marin\nDavide Picello",
   [
     - Struttura della sezione "Processi di supporto"
     - Stesura dei principali paragrafi

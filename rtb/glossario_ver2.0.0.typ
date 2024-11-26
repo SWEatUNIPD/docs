@@ -9,7 +9,7 @@
   verificatori: ("Andrea Precoma", "Andrea Perozzo"),
   versioni: (
     "2.0.0",
-    "25/11/2024",
+    "26/11/2024",
     "Andrea Precoma",
     "Davide Marin\nDavide Picello",
     [
