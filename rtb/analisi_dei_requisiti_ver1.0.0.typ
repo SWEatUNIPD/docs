@@ -248,7 +248,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 
 #pagebreak()
-= 4 Requisiti
+= Requisiti
 
 
 
