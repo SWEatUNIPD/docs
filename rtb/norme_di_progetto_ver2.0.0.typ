@@ -43,7 +43,7 @@ L'obiettivo del prodotto è quello di rendere le campagne pubblicitarie delle az
 == Glossario <glossario>
 Per evitare eventuali ambiguità e incomprensioni sulla terminologia adottata nella documentazione redatta dal gruppo, viene fornito un glossario.
 
-Per ogni documento viene individuata la prima occorrenza dei termini definiti nel Glossario. Questi vengono quindi sottolineati e seguiti dalla lettera "g" posta ad apice (ad esempio #rifGlossario([termine])).
+Per ogni documento viene individuata la prima occorrenza dei termini definiti nel Glossario. Questi vengono quindi sottolineati e seguiti dalla lettera "g" posta ad apice (ad esempio #rifGlossario([termine])). Oltre al _file_ `glossario_verX.Y.Z.typ` che contiene la struttura di base del documento è stato integrato un _file_ `glossario.json` per due motivi: in primo luogo per rendere dinamico il caricameto del documento sul sito _web_, in secondo luogo per permettere dei test statici che controllino le occorrenze dei termini all'interno degli altri documenti.
 
 == Riferimenti
 === Riferimenti normativi
@@ -79,7 +79,7 @@ Per lavorare su un documento bisogna attenersi ai seguenti passaggi utilizzando 
 
 Si noti che la modifica di un documento già verificato e approvato deve essere tracciata da una _issue_, quindi i procedimenti per redigere o aggiornare un documento sono gli stessi. Una volta terminato il lavoro si deve aggiornare anche la corrispondenza ruolo-persona nella prima pagina segnando il nuovo redattore, il verificatore e sostituendo il responsabile col compagno che in quel momento sta ricoprendovi il ruolo. In questo modo il responsabile è colui che è al corrente dell'ultima versione, nel caso in cui bisognasse contattarlo per dei chiarimenti.
 
-Se si individuano dei nuovi termini da aggiungere al Glossario si inseriscono mantenendo i procedimenti descritti dal documento corrente. Il verificatore deve quindi controllare anche che siano stati inseriti nel modo corretto all'interno del Glossario.
+Se si individuano dei nuovi termini da aggiungere al Glossario si inseriscono secondo le norme decise dal documento corrente (#link(<glossario>)[#text(underline("sez. 1.3"))]). Il verificatore deve quindi controllare anche che siano stati inseriti nel modo corretto.
 
 === Ciclo di vita
 Il ciclo di vita di un documento è composto da 6 fasi:
@@ -165,7 +165,8 @@ Per i documenti soggetti ad un ciclo di vita abbiamo deciso di adottare il _sema
 - *Z (_Patch_)*: Aggiustamento dello stile del testo, ortografico e decorativo.
 
 === Nomenclatura
-Per la nomenclatura di tutti i file e cartelle si è scelto lo stile _snake case_ ad eccezione delle date, scritte in formato YYYY-MM-DD per mantenere l'ordine cronologico, separate dal trattino. \
+Per la nomenclatura di tutti i file e cartelle si è scelto lo stile _snake case_ ad eccezione delle date, scritte in formato YYYY-MM-DD per mantenere l'ordine cronologico, separate dal trattino.
+
 Le cartelle sono divise per _milestone_ (candidatura, RTB e PB) ciascuna contenente i verbali interni ed esterni, il Piano di Progetto, il Piano di Qualifica, le Norme di Progetto e il Glossario. I documenti si dividono quindi in tre categorie:
 - *verbali*: [VI/VE]\_[YYYY-MM-DD]\_ver[X.Y.Z] dove VI e VE indicano rispettivamente verbali interni ed esterni
 - *documenti soggetti a ciclo di vita*: [nome]\_ver[X.Y.Z]
@@ -233,7 +234,8 @@ Sono stati scelti i seguenti strumenti per redigere e mantenere la documentazion
 
 
 == Gestione della configurazione
-Per gestire la documentazione è stato creata una _repository_ contenente tutti i _file_ Typst aggiornati e verificati. Gli stessi documenti in formato `.pdf` sono consultabili al sito \ #formatLink(label: "https://sweatunipd.github.io", url: "https://sweatunipd.github.io"). \
+Per gestire la documentazione è stato creata una _repository_ contenente tutti i _file_ Typst aggiornati e verificati. Gli stessi documenti in formato `.pdf` sono consultabili al sito \ #formatLink(label: "https://sweatunipd.github.io", url: "https://sweatunipd.github.io").
+
 L'operazione di _directory listing_ di GitHub offre una visione degli artefatti strutturata in cartelle, seguente quindi la composizione della _repository_, all'indirizzo #formatLink(label: "https://sweatunipd.github.io/docs", url: "https://sweatunipd.github.io/docs").
 
 === Repository
@@ -243,7 +245,7 @@ Il gruppo utilizza due _repository_ all'interno della propria organizzazione Git
 - TODO: codice
 
 ==== Struttura della repository docs
-La _repository_ è strutturata da un unico _branch_ adibito al mantenimento di tutti i documenti Typst verificati. All'occorenza di svolgere azioni dettate dal _backlog_ si crea un _branch_ temporaneo che, successivamente alla verifica e all'approvazione, viene unito nel ramo principale. La _repository_ è presentata dal _file_ `README.md`, contiene il _file_ `.gitignore` usato dalla Action per la compilazione dei documenti e il _file_ `script.js` usato per pubblicare la documentazione nel sito _web_. `test.js` è utilizzato per controllare la presenza dei termini del Glossario all'interno dei documenti, mentre `glossario.json` è una struttura dati che contiene i termini e la loro definizione, usato per la stesura del documento dal _file_ `glossario_verX.Y.Z.typ`. Le cartelle sono strutturate nel seguente modo: \
+La _repository_ è strutturata da un unico _branch_ adibito al mantenimento di tutti i documenti Typst verificati. All'occorenza di svolgere azioni dettate dal _backlog_ si crea un _branch_ temporaneo che, successivamente alla verifica e all'approvazione, viene unito nel ramo principale. La _repository_ è presentata dal `README.md`, contiene il _file_ `.gitignore` usato dalla Action per escludere alcuni _file_ dalla compilazione e il _file_ `script.js` usato per pubblicare la documentazione nel sito _web_. `test.js` è utilizzato per controllare la presenza dei termini del Glossario all'interno dei documenti, mentre `glossario.json` è una struttura dati che contiene i termini e la loro definizione, usato per la stesura del documento dal _file_ `glossario_verX.Y.Z.typ`. Le cartelle sono strutturate nel seguente modo: \
 #tree-list()[
   - *`.github`*
     - *`workflows`*: contiene i _file_ `.yml` per la Action.
@@ -273,7 +275,7 @@ La _repository_ è strutturata da un unico _branch_ adibito al mantenimento di t
 ]
 
 ==== Struttura della repository sweatunipd.github.io
-La _repository_ è costituita da un unico _branch_ nel quale è caricato tutto il materiale necessario per strutturare il sito _web_ e popolarlo dinamicamente con la documentazione della _repository_ docs. La _repository_ è presentata dal _file_ `README.md` e contiene il _file_ `.gitignore` usato da ...?. Le cartelle sono strutturate nel seguente modo: \
+La _repository_ è costituita da un unico _branch_ nel quale è caricato tutto il materiale necessario per strutturare il sito _web_ e popolarlo dinamicamente con la documentazione della _repository_ docs. La _repository_ è presentata dal `README.md` e contiene il _file_ `.gitignore` necessario per escludere alcuni _file_ dal lavoro della Action. Le cartelle sono strutturate nel seguente modo: \
 #tree-list()[
   - *`.github`*
     - *`workflows`*: contiene i _file_ `.yml` per la Action.
@@ -315,7 +317,9 @@ Alla fine di ogni riunione interna si aggiorna il _backlog_ con le nuove _issue_
 | \
 | [VI/VE]\_[YYYY-MM-DD]
 
-Devono inoltre essere collegate alla _board_ (corrispondente al _backlog_), ad una _milestone_, ad una _label_ e ad un assegnatario. Una volta create si deve generare, sempre da interfaccia _web_, il _branch_ temporaneo nel quale si andrà a lavorare. In questa operazione è sufficiente rinominare il _branch_ e collegarci l'assegnatario.
+Devono inoltre essere collegate alla _board_ (corrispondente al _backlog_) assicurandosi appaiano nella colonna "Todo", ad una _milestone_, ad una _label_ e ad un assegnatario. Una volta create si deve generare, sempre da interfaccia _web_, il _branch_ temporaneo nel quale si andrà a lavorare. In questa operazione è sufficiente rinominare il _branch_, collegarci l'assegnatario e assegnarci una _label_.
+
+Si ricorda di aggiornare lo stato di avanzamento della _issue_ nel _backlog_ alla sezione "In progress" quando la si sta risolvendo. Una volta approvata la _pull request_ il sistema chiude in automatico la _issue_ posizionandola nella colonna "Done".
 
 === Label
 Sono state create le seguenti _label_ per migliorare l'organizzazione delle _issue_ e facilitarne la ricerca tramite filtro:
