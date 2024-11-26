@@ -17,7 +17,7 @@
   riassunto: "Durante l'incontro sono state discusse le tecnologie che utilizzeremo e i dubbi riguardo al PoC inoltre sono state definite le priorità, tra cui simulazione dati, visualizzazione su Grafana e casi d'uso.",
   versioni: (
     "1.0.0", 
-    [24/11/2024], 
+    [25/11/2024], 
     "Andrea Perozzo", 
     "Davide Picello",
     [- Stesura del verbale],
@@ -34,14 +34,14 @@ L'incontro aveva l'obiettivo di fare il punto della situazione a metà sprint, v
 Durante la call, sono state discusse le tecnologie scelte per il progetto, poste alcune domande chiave per chiarire punti critici, e condivisi appunti sulle esperienze utente, casi d'uso e priorità per il #rifGlossario("PoC").  
 
 Le tecnologie che abbiamo scelto di utilizzare e che abbiamo discusso durante la riunione sono:  
-- Data generator: *Faker* o *Simpy*.  
-- Database: *#rifGlossario("PostGIS")* e/o *Time Scale*.  
-- Data broker: *#rifGlossario("Apache Kafka")* (ottima gestione di grandi volumi di dati).  
+- #rifGlossario("Data generator"): *#rifGlossario("Faker")* o *#rifGlossario("SimPy")*.  
+- #rifGlossario("Database"): *#rifGlossario("PostGIS")* e/o *Time Scale*.  
+- #rifGlossario("Data broker"): *#rifGlossario("Apache Kafka")* (ottima gestione di grandi volumi di dati).  
 - #rifGlossario("Stream Processing"): *#rifGlossario("Apache Nifi")* (versatile e adatto a integrare logica).  
 - #rifGlossario("Data visualization"): *#rifGlossario("Grafana")* (intuitivo e ben documentato).  
-- LLM: *#rifGlossario("LangChain")*.  
+- #rifGlossario("LLM"): *#rifGlossario("LangChain")*.  
 
-Focus particolare è stato dato all'utilizzo di Grafana per visualizzare dati GPS e annunci pubblicitari e all'integrazione logica all'interno del sistema tramite Apache NiFi.  
+Focus particolare è stato dato all'utilizzo di Grafana per visualizzare dati #rifGlossario("GPS") e annunci pubblicitari e all'integrazione logica all'interno del sistema tramite Apache NiFi.  
 
 = Risposte alle domande  
 == Grafana
