@@ -54,7 +54,7 @@ La prima occorrenza all'interno del documento di un termine definito nel glossar
 
 - Capitolato C4 (Sync Lab)\ #text(weight: "bold", fill: rgb("#04E824"))[#underline[#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf]]]
 
-- `Norme di Progetto`
+- Norme di Progetto
 
 - Regolamento del progetto didattico\ #text(weight: "bold", fill: rgb("#04E824"))[#underline[#link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf]]]
 
@@ -64,14 +64,14 @@ La prima occorrenza all'interno del documento di un termine definito nel glossar
 
 - P2 - I Diagrammi dei Casi d'Uso\ #text(weight: "bold", fill: rgb("#04E824"))[#underline[#link("https://www.math.unipd.it/~rcardin/swea/2023/Diagrammi%20delle%20Classi.pdf")[https://www.math.unipd.it/~rcardin/swea/2023/Diagrammi%20delle%20Classi.pdf]]]
 
-- `Glossario`
+- Glossario
 
 = Descrizione del prodotto
 == Obiettivi
 
-Il prodotto ha come obiettivo quello di fornire un servizio di pubblicità personalizzata integrato in una mappa, accessibile agli utenti di un mezzo a noleggio, che sfrutta la tecnologia GenAI per la creazione di pubblicità mirate sui singoli utenti. Il gestore del servizio di noleggio avrà accesso a una dashboard che gli permetterà di monitorare in tempo reale la posizione degli utenti e la visualizzazione degli annunci pubblicitari.
+Il prodotto ha come obiettivo quello di fornire un servizio di pubblicità personalizzata integrato in una mappa, accessibile agli utenti di un mezzo a noleggio, che sfrutta la tecnologia GenAI per la creazione di pubblicità mirate sui singoli utenti. Il gestore del servizio di noleggio avrà accesso a una _dashboard_ che gli permetterà di monitorare in tempo reale la posizione degli utenti e la visualizzazione degli annunci pubblicitari.
 Per fare ciò la proponente chiede di simulare lo spostamento degli utenti lungo un percorso/* casuale o predefinito? */, in modo da poter testare il funzionamento del sistema.
-I dati riguardanti gli annunci pubblicitari visualizzati dagli utenti devono essere memorizzati in un database (storicizzazione) in modo da poter essere consultati successivamente dalla dashboard, al fine di consentire analisi reportistiche.
+I dati riguardanti gli annunci pubblicitari visualizzati dagli utenti devono essere memorizzati in un _database_ (storicizzazione) in modo da poter essere consultati successivamente dalla _dashboard_, al fine di consentire analisi reportistiche.
 
 Il benefit atteso è quello di rendere le campagne pubblicitarie delle aziende interessate il più efficaci possibili, riducendo la disconnessione tra messaggio e destinatario e aumentando il coinvolgimento di quest'ultimo, migliorando di conseguenza il #rifGlossario("ROI") della campagna stessa.
 
@@ -83,15 +83,15 @@ Il prodotto dovrà fornire le seguenti funzionalità:
 
 - *Creazione di annunci pubblicitari personalizzati*: il sistema dovrà essere in grado di creare annunci pubblicitari personalizzati per gli utenti, sfruttando i dati di profilazione e la posizione in tempo reale. Quando un utente si trova in prossimità di un punto di interesse il sistema dovrà essere in grado di stimare se l'utente possa essere interessato ai servizi offerti dall'attività e, in tal caso, generare un annuncio pubblicitario personalizzato per quell'utente.
 
-- *Visualizzazione nella dashboard degli annunci pubblicitari generati*: il sistema dovrà essere in grado di mostrare in tempo reale gli annunci pubblicitari che vengono visualizzati dagli utenti.
+- *Visualizzazione nella _dashboard_ degli annunci pubblicitari generati*: il sistema dovrà essere in grado di mostrare in tempo reale gli annunci pubblicitari che vengono visualizzati dagli utenti.
 
-- *Visualizzazione nella dashboard dello storico degli annunci pubblicitari*: il sistema dovrà essere in grado di mostrare uno storico degli annunci pubblicitari visualizzati dagli utenti.
+- *Visualizzazione nella _dashboard_ dello storico degli annunci pubblicitari*: il sistema dovrà essere in grado di mostrare uno storico degli annunci pubblicitari visualizzati dagli utenti.
 
 == Utenti e loro caratteristiche
 
 Il prodotto si rivolge a due tipologie di utenti:
 
-- *Gestore servizio di noleggio*: utente che gestisce il servizio di noleggio, ovvero un nostro cliente, che ha accesso tramite dashboard a tutte le funzionalità del sistema ed è interessato quindi, oltre che al monitoraggio della flotta, anche all'andamento delle campagne pubblicitarie nel tempo.
+- *Gestore servizio di noleggio*: utente che gestisce il servizio di noleggio, ovvero un nostro cliente, che ha accesso tramite _dashboard_ a tutte le funzionalità del sistema ed è interessato quindi, oltre che al monitoraggio della flotta, anche all'andamento delle campagne pubblicitarie nel tempo.
 
 - *Utente*: utente che utilizza il servizio di noleggio e che ha accesso solo alla funzionalità di visualizzazione degli annunci pubblicitari.
 
@@ -108,13 +108,13 @@ Il sistema utilizzerà un’architettura modulare, includendo le seguenti tecnol
 
 == Introduzione
 
-Lo scopo di questa sezione è quello di elencare e descrivere tutti i casi d'uso indentificati a seguito dell'analisi del capitolato e dei confronti con la proponente (sez. 3.3), a cui si farà precedere la descrizione degli attori coinvolti (sez. 3.2).
+Lo scopo di questa sezione è quello di elencare e descrivere tutti i casi d'uso indentificati a seguito dell'analisi del capitolato e dei confronti con la proponente (#link(<use_cases>)[#text(underline("sez. 3.3"))]), a cui si farà precedere la descrizione degli attori coinvolti (#link(<actors>)[#text(underline("sez. 3.2"))]).
 
-== Attori
+== Attori <actors>
 
 Gli attori coinvolti nei casi d'uso sono i seguenti:
 
-- *Amministratore*: gestore di un servizio di noleggio che, perciò, avrà accesso alla dashboard, senza bisogno di autenticazione;
+- *Amministratore*: gestore di un servizio di noleggio che, perciò, avrà accesso alla _dashboard_, senza bisogno di autenticazione;
 
 - *Utente*: utente che utilizza il servizio di noleggio;
 
@@ -123,7 +123,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 // TODO: capire se l'attore è langchain o LLM
 - *#rifGlossario("LangChain")*: LangChain è la tecnologia esterna al sistema che interagisce con esso attraverso delle API con le quali generiamo i messaggi pubblicitari.
 
-== Elenco dei casi d'uso
+== Elenco dei casi d'uso <use_cases>
 
 // CASI D'USO UTENTE 
 
@@ -142,6 +142,8 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 // TODO: modificare il diagramma dei casi d'suo UC1 perché l'attore deve essere il sensore e non l'utente
 - *User story*:
 #figure(image("../assets/use_cases/UC1.svg", width: 80%), caption: [UC1 - Trasmissione dati di localizzazione])
+
+#pagebreak()
 
 === UC2 - Visualizzazione annuncio personalizzato
 
@@ -166,7 +168,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 
 // NOTA PER I PROSSIMI ANALISTI
-// alcuni use cases forse si posso "ampliare", detro a un rettangolo più ovali, ad esempio visualizzazione dashboard amministratore può diventare visualizzazione interazioni e dentro lì il singolo ovale può essere visualizza dettaglio singola interazione (aggiungere commento nel file adr)
+// alcuni use cases forse si posso "ampliare", detro a un rettangolo più ovali, ad esempio visualizzazione _dashboard_ amministratore può diventare visualizzazione interazioni e dentro lì il singolo ovale può essere visualizza dettaglio singola interazione (aggiungere commento nel file adr)
 
 
 
@@ -176,13 +178,13 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 - *Attore principale*: amministratore
 
-- *Precondizioni*: l'amministratore del sistema è autenticato e ha accesso alla dashboard Grafana.
+- *Precondizioni*: l'amministratore del sistema è autenticato e ha accesso alla _dashboard_ Grafana.
 
 - *Postcondizioni*: l'amministratore ottiene una visione chiara della posizione e del movimento delle biciclette attualmente in uso.
 
 - *Scenario principale*:
-  1. L'amministratore è collegato e autenticato nella dashboard Grafana
-  2. La dashboard mette a disposizione una mappa interattiva con i mezzi attualmente a noleggio che si muovono indicati attraverso dei marker.
+  1. L'amministratore è collegato e autenticato nella _dashboard_ Grafana
+  2. La _dashboard_ mette a disposizione una mappa interattiva con i mezzi attualmente a noleggio che si muovono indicati attraverso dei marker.
 
 - *User story*:
 #figure(image("../assets/use_cases/UC3.svg", width: 80%), caption: [UC3 - Visualizzazione mappa amministratore])
@@ -193,13 +195,13 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 - *Attore principale*: amministratore
 
-- *Precondizioni*: l'amministratore del sistema è autenticato e ha accesso alla dashboard grafana.
+- *Precondizioni*: l'amministratore del sistema è autenticato e ha accesso alla _dashboard_ grafana.
 
 - *Postcondizioni*: l'amministratore ha una visione dello storico degli annunci pubblicitari comparsi associato al rispettivo utente, con un feedback indicante il successo o l'insuccesso che l'annuncio ha avuto.
 
 - *Scenario principale*:
-  1. L'amministratore è collegato e autenticato nella dashboard grafana
-  2. La dashboard mette a disposizione una sezione con lo storico degli annunci prodotti dal sistema e il relativo esito.
+  1. L'amministratore è collegato e autenticato nella _dashboard_ grafana
+  2. La _dashboard_ mette a disposizione una sezione con lo storico degli annunci prodotti dal sistema e il relativo esito.
 
 - *User story*:
 #figure(image("../assets/use_cases/UC4.svg", width: 80%), caption: [UC4 - Visualizzazione storico amministratore])
@@ -242,7 +244,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 
 
-// TODO: per i prossimi analisti, idee per i prossimi casi d'uso potrebbero essere: l'admin può filtrare (da decidere filtrare per cosa) e forse potrebbero essere estensioni del caso d'uso visualizzazione dashboard. Sicuramente LLM come attore può processare i dati e generare il messaggio.
+// TODO: per i prossimi analisti, idee per i prossimi casi d'uso potrebbero essere: l'admin può filtrare (da decidere filtrare per cosa) e forse potrebbero essere estensioni del caso d'uso visualizzazione _dashboard_. Sicuramente LLM come attore può processare i dati e generare il messaggio.
 
 
 
