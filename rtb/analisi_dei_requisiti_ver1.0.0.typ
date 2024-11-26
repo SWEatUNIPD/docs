@@ -69,7 +69,7 @@ La prima occorrenza all'interno del documento di un termine definito nel glossar
 = Descrizione del prodotto
 == Obiettivi
 
-Il prodotto ha come obiettivo quello di fornire un servizio di pubblicità personalizzata integrato in una mappa, accessibile agli utenti di un mezzo a noleggio, che sfrutta la tecnologia #rifGlossario("GenAI") per la creazione di pubblicità mirate sui singoli utenti. Il gestore del servizio di noleggio avrà accesso a una dashboard che gli permetterà di monitorare in tempo reale la posizione degli utenti e la visualizzazione degli annunci pubblicitari.
+Il prodotto ha come obiettivo quello di fornire un servizio di pubblicità personalizzata integrato in una mappa, accessibile agli utenti di un mezzo a noleggio, che sfrutta la tecnologia GenAI per la creazione di pubblicità mirate sui singoli utenti. Il gestore del servizio di noleggio avrà accesso a una dashboard che gli permetterà di monitorare in tempo reale la posizione degli utenti e la visualizzazione degli annunci pubblicitari.
 Per fare ciò la proponente chiede di simulare lo spostamento degli utenti lungo un percorso/* casuale o predefinito? */, in modo da poter testare il funzionamento del sistema.
 I dati riguardanti gli annunci pubblicitari visualizzati dagli utenti devono essere memorizzati in un database (storicizzazione) in modo da poter essere consultati successivamente dalla dashboard, al fine di consentire analisi reportistiche.
 
@@ -114,20 +114,22 @@ Lo scopo di questa sezione è quello di elencare e descrivere tutti i casi d'uso
 
 Gli attori coinvolti nei casi d'uso sono i seguenti:
 
-- *Amministratore*: gestore di un servizio di noleggio che, perciò, avrà accesso alla dashboard, senza bisogno di autenticazione.
+- *Amministratore*: gestore di un servizio di noleggio che, perciò, avrà accesso alla dashboard, senza bisogno di autenticazione;
 
-- *Utente*: utente che utilizza il servizio di noleggio
+- *Utente*: utente che utilizza il servizio di noleggio;
+
+- *Sensore*: il sensore serve a registrare la posizione geografica ed è fisicamente collegato al mezzo noleggiato;
+
+// TODO: capire se l'attore è langchain o LLM
+- *#rifGlossario("LangChain")*: LangChain è la tecnologia esterna al sistema che interagisce con esso attraverso delle API con le quali generiamo i messaggi pubblicitari.
 
 == Elenco dei casi d'uso
 
 // CASI D'USO UTENTE 
 
-//probabilmente ci sarà un altro caso d'uso: log in utente, in questo modo quando usa il mezzo in prestito il mezzo userà i suoi dati per la profilazione. Penso che non ci sarà il caso d'uso registrazione, dato che i dati dell'utente con la profilazione viene fornito a priori come scritto nel capitolato.
-//ragionamento analogo si può fare per l'amministratore
-
 === UC1 - Trasmissione dati di localizzazione
 
-- *Attore principale*: Utente
+- *Attore principale*: Sensore
 
 - *Precondizioni*: l'utente ha noleggiato un mezzo e il noleggio è ancora attivo
 
@@ -135,8 +137,9 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 - *Scenario principale*:
   1. L'utente noleggia un mezzo
-  2. Il sistema riceve a intervalli di tempo regolari i dati di localizzazione GPS del mezzo 
+  2. Il sensore invia a intervalli di tempo regolari i dati di localizzazione GPS del mezzo 
 
+// TODO: modificare il diagramma dei casi d'suo UC1 perché l'attore deve essere il sensore e non l'utente
 - *User story*:
 #figure(image("../assets/use_cases/UC1.svg", width: 80%), caption: [UC1 - Trasmissione dati di localizzazione])
 
@@ -152,7 +155,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 - *Scenario principale*:
   1. L'utente si trova in prossimità di un punto di interesse
-  2. Il sistema stabilisce tramite un modello #rifGlossario("GenAI") se l'utente può essere interessato ai servizi offerti dal punto di interesse
+  2. Il sistema stabilisce tramite un modello GenAI se l'utente può essere interessato ai servizi offerti dal punto di interesse
   3. In caso positivo l'utente visualizza un annuncio pubblicitario personalizzato, generato tramite un modello GenAI
 
 - *User story*:
@@ -161,22 +164,24 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #pagebreak()
 
-// CASI D'USO POWERUSER
 
-// probabilmente ci saranno due casi d'uso: autenticazione amministratore, accesso alla dashboard amministratore.
+// NOTA PER I PROSSIMI ANALISTI
+// alcuni use cases forse si posso "ampliare", detro a un rettangolo più ovali, ad esempio visualizzazione dashboard amministratore può diventare visualizzazione interazioni e dentro lì il singolo ovale può essere visualizza dettaglio singola interazione (aggiungere commento nel file adr)
+
+
+
+// CASI D'USO POWERUSER
 
 === UC3 - Visualizzazione mappa amministratore
 
 - *Attore principale*: amministratore
 
-- *Precondizioni*: l'amministratore del sistema è autenticato e ha accesso alla dashboard grafana.
+- *Precondizioni*: l'amministratore del sistema è autenticato e ha accesso alla dashboard Grafana.
 
 - *Postcondizioni*: l'amministratore ottiene una visione chiara della posizione e del movimento delle biciclette attualmente in uso.
 
-// eventualmente potranno esserci una o più estensioni (caso d'uso 3.x) per applicare dei filtri e visualizzare nella mappa ad esempio un solo tipo di bicicletta o un solo tipo di utenti (es. filtrare in base all'età)
-
 - *Scenario principale*:
-  1. L'amministratore è collegato e autenticato nella dashboard grafana
+  1. L'amministratore è collegato e autenticato nella dashboard Grafana
   2. La dashboard mette a disposizione una mappa interattiva con i mezzi attualmente a noleggio che si muovono indicati attraverso dei marker.
 
 - *User story*:
@@ -234,6 +239,13 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *User story*:
 #figure(image("../assets/use_cases/UC5.1.svg", width: 80%), caption: [UC5.1 - Sosta presso il punto d'interesse pubblicizzato])
 */
+
+
+
+// TODO: per i prossimi analisti, idee per i prossimi casi d'uso potrebbero essere: l'admin può filtrare (da decidere filtrare per cosa) e forse potrebbero essere estensioni del caso d'uso visualizzazione dashboard. Sicuramente LLM come attore può processare i dati e generare il messaggio.
+
+
+
 
 #pagebreak()
 = 4 Requisiti
