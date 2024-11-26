@@ -2,20 +2,26 @@
 
 #show: content => verbale(
   data: "25 Novembre 2024",
-  destinatari: ("Gruppo SWE@",),
+  destinatari: ("Gruppo SWE@", "Prof. Tullio Vardanega", "Prof. Riccardo Cardin",),
   responsabile: "Andrea Perozzo",
   redattori: ("Riccardo Milan", "Davide Martinelli",),
-  verificatori: ("Davide Picello",),
+  verificatori: ("Davide Picello", "Davide Marin",),
   titolo: "Analisi dei Requisiti",
   uso: "Esterno",
   versioni: (
     "1.0.0", 
     [25/11/2024], 
     "Riccardo Milan\nDavide Martinelli", 
-    "Davide Picello", 
+    "Davide Picello\nDavide Marin", 
     [- Struttura e introduzione del documento 
      - Descrizione del prodotto
      - Primi casi d'uso],
+    "1.0.1",
+    [26/11/2024],
+    "Riccardo Milan\nDavide Martinelli",
+    "Davide Picello\nDavide Marin",
+    [- Modifiche stile in accordo con le norme di progetto,
+     - Modifiche alle sez. Attori e UC1: aggiunto sensore],
   ),
   content: content,
 )
