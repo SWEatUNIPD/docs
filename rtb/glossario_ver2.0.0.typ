@@ -4,18 +4,23 @@
   data: "11 Novembre 2024",
   uso: "Interno",
   responsabile: "Klaudio Merja",
-  redattori: ("Riccardo Milan", "Klaudio Merja"),
+  redattori: ("Andrea Perozzo", "Andrea Precoma", "Riccardo Milan", "Klaudio Merja"),
   titolo: "Glossario",
-  verificatori: ("Andrea Precoma", "Andrea Perozzo"),
+  verificatori: ("Andrea Perozzo", "Andrea Precoma", "Davide Picello"),
   versioni: (
-    "2.0.0",
-    "26/11/2024",
+    "3.0.0",
+    "25/11/2024",
     "Andrea Precoma",
     "Davide Marin\nDavide Picello",
     [
       - Creato paragrafo per i termini che iniziano con "U"
       - Aggiunto i termini "Hosting" e "Utility"
     ],
+    "2.0.0",
+    "25/11/2024",
+    "Andrea Perozzo",
+    "Davide Picello",
+    [- Aggiunti i termini "Database", "Data Broker", "Data Generator", "Faker", "GPS", "LLM", "SimPy", "TimeScale"],
     "1.1.0",
     "14/11/2024",
     "Klaudio Merja",
