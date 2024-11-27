@@ -9,6 +9,18 @@
   titolo: "Analisi dei Requisiti",
   uso: "Esterno",
   versioni: (
+    "1.0.2",
+    [27/11/2024],
+    "Davide Martinelli",
+    "Davide Picello\nDavide Marin",
+    [- Modifiche stile in accordo con le norme di progetto,
+     - Aggiunto NiFi alle tecnologie utilizzate],
+    "1.0.1",
+    [26/11/2024],
+    "Riccardo Milan\nDavide Martinelli",
+    "Davide Picello\nDavide Marin",
+    [- Modifiche stile in accordo con le norme di progetto,
+     - Modifiche alle sez. Attori e UC1: aggiunto sensore],
     "1.0.0", 
     [25/11/2024], 
     "Riccardo Milan\nDavide Martinelli", 
@@ -16,12 +28,7 @@
     [- Struttura e introduzione del documento 
      - Descrizione del prodotto
      - Primi casi d'uso],
-    "1.0.1",
-    [26/11/2024],
-    "Riccardo Milan\nDavide Martinelli",
-    "Davide Picello\nDavide Marin",
-    [- Modifiche stile in accordo con le norme di progetto,
-     - Modifiche alle sez. Attori e UC1: aggiunto sensore],
+    
   ),
   content: content,
 )
@@ -34,7 +41,7 @@
 #pagebreak()
 
 
-#set heading(numbering: "1.1.1")
+#set heading(numbering: "1.1")
 
 = Introduzione
 == Scopo del documento
@@ -77,7 +84,7 @@ La prima occorrenza all'interno del documento di un termine definito nel glossar
 
 Il prodotto ha come obiettivo quello di fornire un servizio di pubblicità personalizzata integrato in una mappa, accessibile agli utenti di un mezzo a noleggio, che sfrutta la tecnologia GenAI per la creazione di pubblicità mirate sui singoli utenti. Il gestore del servizio di noleggio avrà accesso a una _dashboard_ che gli permetterà di monitorare in tempo reale la posizione degli utenti e la visualizzazione degli annunci pubblicitari.
 Per fare ciò la proponente chiede di simulare lo spostamento degli utenti lungo un percorso/* casuale o predefinito? */, in modo da poter testare il funzionamento del sistema.
-I dati riguardanti gli annunci pubblicitari visualizzati dagli utenti devono essere memorizzati in un _database_ (storicizzazione) in modo da poter essere consultati successivamente dalla _dashboard_, al fine di consentire analisi reportistiche.
+I dati riguardanti gli annunci pubblicitari visualizzati dagli utenti devono essere memorizzati in un #rifGlossario("_database_") (storicizzazione) in modo da poter essere consultati successivamente dalla _dashboard_, al fine di consentire analisi reportistiche.
 
 Il benefit atteso è quello di rendere le campagne pubblicitarie delle aziende interessate il più efficaci possibili, riducendo la disconnessione tra messaggio e destinatario e aumentando il coinvolgimento di quest'ultimo, migliorando di conseguenza il #rifGlossario("ROI") della campagna stessa.
 
@@ -104,11 +111,14 @@ Il prodotto si rivolge a due tipologie di utenti:
 == Tecnologie
 Il sistema utilizzerà un’architettura modulare, includendo le seguenti tecnologie:
 
-- Simulatori di dati: Script Python per generare dati GPS e simulare spostamenti.
+- Simulatori di dati: Script Python per generare dati #rifGlossario("GPS") e simulare spostamenti.
 - Data streaming: #rifGlossario("Apache Kafka") per gestire flussi di dati in tempo reale.
-- #rifGlossario("LangChain"): per la generazione di annunci tramite LLM.
+- #rifGlossario("Apache NiFi"): per processare e distribuire i dati.
+- #rifGlossario("LangChain"): per la generazione di annunci tramite #rifGlossario("LLM").
 - #rifGlossario("PostGIS"): per l’archiviazione di dati geolocalizzati.
-- #rifGlossario("Grafana"): per il monitoraggio dei dati.
+- #rifGlossario("Grafana"): per il monitoraggio dei dati tramite interfaccia grafica.
+
+// Si potrebbe pensare di rappresentare questo elenco come un flusso di dati, con le tecnologie come nodi collegati tra loro da una freccia
 
 = Casi d'uso
 
@@ -127,7 +137,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Sensore*: il sensore serve a registrare la posizione geografica ed è fisicamente collegato al mezzo noleggiato;
 
 // TODO: capire se l'attore è langchain o LLM
-- *#rifGlossario("LangChain")*: LangChain è la tecnologia esterna al sistema che interagisce con esso attraverso delle API con le quali generiamo i messaggi pubblicitari.
+- *LangChain*: LangChain è la tecnologia esterna al sistema che interagisce con esso attraverso delle API con le quali generiamo i messaggi pubblicitari.
 
 == Elenco dei casi d'uso <use_cases>
 
@@ -190,7 +200,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 - *Scenario principale*:
   1. L'amministratore è collegato e autenticato nella _dashboard_ Grafana
-  2. La _dashboard_ mette a disposizione una mappa interattiva con i mezzi attualmente a noleggio che si muovono indicati attraverso dei marker.
+  2. La _dashboard_ mette a disposizione una mappa interattiva con i mezzi attualmente a noleggio che si muovono indicati attraverso dei _marker_.
 
 - *User story*:
 #figure(image("../assets/use_cases/UC3.svg", width: 80%), caption: [UC3 - Visualizzazione mappa amministratore])
@@ -203,7 +213,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 - *Precondizioni*: l'amministratore del sistema è autenticato e ha accesso alla _dashboard_ grafana.
 
-- *Postcondizioni*: l'amministratore ha una visione dello storico degli annunci pubblicitari comparsi associato al rispettivo utente, con un feedback indicante il successo o l'insuccesso che l'annuncio ha avuto.
+- *Postcondizioni*: l'amministratore ha una visione dello storico degli annunci pubblicitari comparsi associato al rispettivo utente, con un _feedback_ indicante il successo o l'insuccesso che l'annuncio ha avuto.
 
 - *Scenario principale*:
   1. L'amministratore è collegato e autenticato nella _dashboard_ grafana
@@ -218,12 +228,12 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 - *Precondizioni*: l'utente visualizza un annuncio pubblicitario
 
-- *Postcondizioni*: se l'utente interagisce con l'annuncio pubblicitario, il sistema memorizza l'interazione come feedback sull'annuncio generato
+- *Postcondizioni*: se l'utente interagisce con l'annuncio pubblicitario, il sistema memorizza l'interazione come _feedback_ sull'annuncio generato
 
 - *Scenario principale*:
   1. L'utente visualizza un annuncio pubblicitario
   2. L'utente interagisce con l'annuncio pubblicitario
-  3. Il sistema memorizza un feedback associato all'annuncio visualizzato
+  3. Il sistema memorizza un _feedback_ associato all'annuncio visualizzato
 
 - *User story*:
 #figure(image("../assets/use_cases/UC5.svg", width: 80%), caption: [UC5 - Interazione con l'annuncio pubblicitario])
