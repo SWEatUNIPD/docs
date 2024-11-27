@@ -1,12 +1,12 @@
 #import "/templates/template.typ": *
 
 #show: content => verbale(
-  data: "25 Novembre 2024",
+  data: "27 Novembre 2024",
   destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "Sync Lab S.r.l.", "Gruppo SWE@"),
   responsabile: "Andrea Perozzo",
   redattori: ("Klaudio Merja",),
   verificatori: ("Davide Marin",),
-  titolo: "Norme di progetto",
+  titolo: "Piano di progetto",
   uso: "Esterno",
   versioni: (
     "1.0.0",
@@ -35,7 +35,7 @@ In particolare vengono approfonditi aspetti come:
 
 == Scopo del prodotto
 L'obiettivo principale che si pone il prodotto commissionato al nostro gruppo è quello di fornire un sistema, installato
-su prodotti/servizi come il _bike-sharing_, che sfrutta le informazioni e gli interessi personali degli utenti come #rifGlossario("prompt") per
+su prodotti/servizi come il _#rifGlossario("bike-sharing")_, che sfrutta le informazioni e gli interessi personali degli utenti come #rifGlossario("prompt") per
 la generazioni di inserzioni personalizzate, a seconda di dove l'utente si trovi nel determinato istante, con lo scopo
 finale di massimizzare le interazioni tra utenti e inserzioni per massimizzare il #rifGlossario("ROI") e l'efficacia
 delle campagne pubblicitarie.
@@ -170,12 +170,12 @@ Le attività che il gruppo si è preoccupato di concludere durante queste due se
 - Test automatico per individuare i riferimenti mancanti al Glossario nei vari documenti
 - Inizio della stesura dell'Analisi dei requisiti
 - Studio sulla generazione dei dati #rifGlossario("GPS")
-- Creazione del file Excel condiviso per la rendicontazione delle ore produttive
+- Creazione del _file_ Excel condiviso per la rendicontazione delle ore produttive
 ==== Preventivo orario
 #rendicontazioneOre((
   (4, 0, 0, 0, 0, 0),
   (0, 4, 0, 0, 1.5, 0),
-  (0, 0, 0, 0, 5, 0),
+  (0, 0, 0, 0, 0, 5),
   (0, 0, 5, 0, 0, 0),
   (0, 3, 0, 0, 0, 3),
   (0, 4, 0, 0, 1, 0),
@@ -197,10 +197,10 @@ Le attività che il gruppo si è preoccupato di concludere durante queste due se
 ==== Retrospettiva
 In queste due settimane di lavoro, è apparso evidente l'impatto che le Norme di progetto hanno avuto all'interno del gruppo, adottando una serie di convenzioni e regole che hanno permesso di uniformare il lavoro svolto dai vari redattori. Tuttavia, essendo la prima versione delle Norme di progetto, a causa dei frequenti cambiamenti all'interno del documento, si è reso necessario più volte dover rivedere e correggere in corso d'opera alcuni documenti più volte. Nonostante ciò, il gruppo ritiene il lavoro del gruppo in linea con le aspettative.
 
-Si evidenzia come difetto la possibilità di lavorare su una stessa branch a più memrbi in quanto questa causerebbe problemi di conflitti tra i file modificati.
+Si evidenzia come difetto la possibilità di lavorare su una stessa _#rifGlossario("branch")_ a più memrbi in quanto questa causerebbe problemi di conflitti tra i file modificati.
 
 Gli analisti evidenziano le difficoltà e i dubbi relativa alla comprensione dei casi d'uso del prodotto richiesto dal proponente, che hanno però trovato risposta dalla riunione di fine primo _sprint_ da parte del proponente e che verranno approffonditi in quello successivo. Incentivano inoltre a lavorare in maniera più collaborativa alla fase di analisi e non limitarsi semplicemente all'esecuzione delle attività di analisi in maniera parallela.
 
-I verificatori sottolineano in oltre che incaricare uno solo di loro per documenti ad alto contenuto tecnico, come possono essere le Norme di progetto, può portare ad una verifica non del tutto ottimale.
+I verificatori suggeriscono infine di incaricare più di una persona alla verifica dei documenti ad alto contenuto, quali possono essere le Norme del progetto ed il Piano di progetto, al fine di garantire una verifica ottimale.
 
 
