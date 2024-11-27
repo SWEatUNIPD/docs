@@ -149,9 +149,9 @@ Il gruppo si pone come milestone del progetto le due consegne previste dai commi
 - *RTB* con data di consegna xx/01/2025
 - *PB* con data di consegna 21/03/2025
 
-I _sprint_ vengono quindi divisi nelle due milestone precedentemente elencate, per garantire una seperazione netta degli stessi e delle attività che ne comportano.
+Gli _sprint_ vengono quindi divisi nelle due milestone precedentemente elencate, per garantire una seperazione netta degli stessi e delle attività che ne comportano.
 == RTB
-=== _sprint_ 1
+=== _Sprint_ 1
 - *Inizio*: 13/11/2024
 - *Fine*: 27/11/2024
 - *Rischi attesi*: #underline[#link(<RO-2>)[RO-2]], #underline[#link(<RO-3>)[RO-3]], #underline[#link(<RT-1>)[RT-1]]
@@ -185,7 +185,7 @@ Le attività che il gruppo si è preoccupato di concludere durante queste due se
 #consuntivoOre((
   (4, 0, 0, 0, 0, 0),
   (0, 4, 0, 0, 1.5, 0),
-  (0, 0, 0, 0, 5, 0),
+  (0, 0, 0, 0, 0, 5),
   (0, 0, 5, 0, 0, 0),
   (0, 3, 0, 0, 0, 3),
   (0, 4, 0, 0, 1, 0),
