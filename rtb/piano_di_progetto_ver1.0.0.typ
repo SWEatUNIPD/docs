@@ -5,7 +5,7 @@
   destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "Sync Lab S.r.l.", "Gruppo SWE@"),
   responsabile: "Andrea Perozzo",
   redattori: ("Klaudio Merja",),
-  verificatori: ("Davide Marin",),
+  verificatori: ("Davide Marin", "Davide Picello"),
   titolo: "Piano di progetto",
   uso: "Esterno",
   versioni: (
