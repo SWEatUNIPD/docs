@@ -192,6 +192,8 @@ Le attività che il gruppo si è preoccupato di concludere durante queste due se
   (0, 0, 5, 0, 0, 0),
 ))
 
+#figure(image("../assets/img/PdP/Periodo1.png", width: 60%))
+
 ==== Retrospettiva
 In queste due settimane di lavoro, è apparso evidente l'impatto che le Norme di progetto hanno avuto all'interno del gruppo, adottando una serie di convenzioni e regole che hanno permesso di uniformare il lavoro svolto dai vari redattori. Tuttavia, essendo la prima versione delle Norme di progetto, a causa dei frequenti cambiamenti all'interno del documento, si è reso necessario più volte dover rivedere e correggere in corso d'opera alcuni documenti più volte. Nonostante ciò, il gruppo ritiene il lavoro del gruppo in linea con le aspettative.
 

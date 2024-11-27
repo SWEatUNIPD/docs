@@ -8,6 +8,12 @@
   titolo: "Glossario",
   verificatori: ("Andrea Perozzo", "Andrea Precoma", "Davide Picello"),
   versioni: (
+    "3.2.0",
+    "27/11/2024",
+    "Klaudio Merja",
+    "Davide Marin\nDavide Picello",
+    [- Aggiunti i termini "Bike-sharing", "Feedback" e "Sprint"],
+    
     "3.1.0",
     "23/11/2024",
     "Davide Picello",
