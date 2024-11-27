@@ -162,7 +162,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 - *Precondizioni*: l'utente ha un noleggio attivo e sta inviando dati di localizzazione al sistema 
 
-- *Postcondizioni*: se l'utente è considerato interessato ai servizi offerti dal punto di interesse, visualizza l'annuncio pubblicitario sul display del mezzo
+- *Postcondizioni*: se l'utente è considerato interessato ai servizi offerti dal punto di interesse, visualizza l'annuncio pubblicitario sul _display_ del mezzo
 
 - *Trigger*: l'utente si trova in prossimità di un punto di interesse e il sistema, tramite i dati di profilazione, giudica l'utente idoneo a ricevere l'annuncio
 
