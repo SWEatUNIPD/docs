@@ -13,6 +13,7 @@
     "Andrea Perozzo",
     "Davide Marin",
     [- Rimozione del camel-case dai paragrafi presenti nell'Ordine del giorno],
+    
     "1.0.0",
     [13/11/2024],
     "Andrea Perozzo",

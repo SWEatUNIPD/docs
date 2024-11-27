@@ -8,6 +8,12 @@
   titolo: "Glossario",
   verificatori: ("Andrea Perozzo", "Andrea Precoma", "Davide Picello"),
   versioni: (
+    "3.1.0",
+    "23/11/2024",
+    "Davide Picello",
+    "Davide Marin",
+    [- Aggiunto il termine "Deep dive"],
+
     "3.0.0",
     "25/11/2024",
     "Andrea Precoma",
