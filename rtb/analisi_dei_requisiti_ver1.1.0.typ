@@ -81,7 +81,7 @@ Il prodotto ha come obiettivo quello di fornire un servizio di pubblicità perso
 Per fare ciò la proponente chiede di simulare lo spostamento degli utenti lungo un percorso/* casuale o predefinito? */, in modo da poter testare il funzionamento del sistema.
 I dati riguardanti gli annunci pubblicitari visualizzati dagli utenti devono essere memorizzati in un _#rifGlossario("database")_ (storicizzazione) in modo da poter essere consultati successivamente dalla _dashboard_, al fine di consentire analisi reportistiche.
 
-Il benefit atteso è quello di rendere le campagne pubblicitarie delle aziende interessate il più efficaci possibili, riducendo la disconnessione tra messaggio e destinatario e aumentando il coinvolgimento di quest'ultimo, migliorando di conseguenza il #rifGlossario("ROI") della campagna stessa.
+Il _benefit_ atteso è quello di rendere le campagne pubblicitarie delle aziende interessate il più efficaci possibili, riducendo la disconnessione tra messaggio e destinatario e aumentando il coinvolgimento di quest'ultimo, migliorando di conseguenza il #rifGlossario("ROI") della campagna stessa.
 
 == Funzionalità
 
@@ -106,7 +106,7 @@ Il prodotto si rivolge a due tipologie di utenti:
 == Tecnologie
 Il sistema utilizzerà un’architettura modulare, includendo le seguenti tecnologie:
 
-- Simulatori di dati: Script Python per generare dati #rifGlossario("GPS") e simulare spostamenti.
+- Simulatori di dati: _script_ Python per generare dati #rifGlossario("GPS") e simulare spostamenti.
 - Data streaming: #rifGlossario("Apache Kafka") per gestire flussi di dati in tempo reale.
 - #rifGlossario("Apache NiFi"): per processare e distribuire i dati.
 - #rifGlossario("LangChain"): per la generazione di annunci tramite #rifGlossario("LLM").
@@ -125,11 +125,11 @@ Lo scopo di questa sezione è quello di elencare e descrivere tutti i casi d'uso
 
 Gli attori coinvolti nei casi d'uso sono i seguenti:
 
-- *Amministratore*: gestore di un servizio di noleggio che, perciò, avrà accesso alla _dashboard_, senza bisogno di autenticazione;
+- *Amministratore*: gestore di un servizio di noleggio, che avrà quindi accesso alla _dashboard_.
 
-- *Utente*: utente che utilizza il servizio di noleggio;
+- *Utente*: utente che utilizza il servizio di noleggio.
 
-- *Sensore*: il sensore serve a registrare la posizione geografica ed è fisicamente collegato al mezzo noleggiato;
+- *Sensore*: il sensore serve a registrare la posizione geografica ed è fisicamente collegato al mezzo noleggiato.
 
 // TODO: capire se l'attore è langchain o LLM
 - *LangChain*: LangChain è la tecnologia esterna al sistema che interagisce con esso attraverso delle API con le quali generiamo i messaggi pubblicitari.
@@ -142,13 +142,13 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 - *Attore principale*: Sensore
 
-- *Precondizioni*: l'utente ha noleggiato un mezzo e il noleggio è ancora attivo
+- *Precondizioni*: l'utente ha noleggiato un mezzo e il noleggio è ancora attivo.
 
-- *Postcondizioni*: il sistema riceve i dati di localizzazione GPS del mezzo in uso dall'utente
+- *Postcondizioni*: il sistema riceve i dati di localizzazione GPS del mezzo in uso dall'utente.
 
 - *Scenario principale*:
-  1. L'utente noleggia un mezzo
-  2. Il sensore invia a intervalli di tempo regolari i dati di localizzazione GPS del mezzo 
+  1. L'utente noleggia un mezzo;
+  2. Il sensore invia a intervalli di tempo regolari i dati di localizzazione GPS del mezzo.
 
 // TODO: modificare il diagramma dei casi d'suo UC1 perché l'attore deve essere il sensore e non l'utente
 - *User story*:
@@ -160,16 +160,16 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 - *Attore principale*: Utente
 
-- *Precondizioni*: l'utente ha un noleggio attivo e sta inviando dati di localizzazione al sistema 
+- *Precondizioni*: l'utente ha un noleggio attivo e sta inviando dati di localizzazione al sistema.
 
-- *Postcondizioni*: se l'utente è considerato interessato ai servizi offerti dal punto di interesse, visualizza l'annuncio pubblicitario sul _display_ del mezzo
+- *Postcondizioni*: se l'utente è considerato interessato ai servizi offerti dal punto di interesse, visualizza l'annuncio pubblicitario sul _display_ del mezzo.
 
-- *Trigger*: l'utente si trova in prossimità di un punto di interesse e il sistema, tramite i dati di profilazione, giudica l'utente idoneo a ricevere l'annuncio
+- *Trigger*: l'utente si trova in prossimità di un punto di interesse e il sistema, tramite i dati di profilazione, giudica l'utente idoneo a ricevere l'annuncio.
 
 - *Scenario principale*:
-  1. L'utente si trova in prossimità di un punto di interesse
-  2. Il sistema stabilisce tramite un modello GenAI se l'utente può essere interessato ai servizi offerti dal punto di interesse
-  3. In caso positivo l'utente visualizza un annuncio pubblicitario personalizzato, generato tramite un modello GenAI
+  1. L'utente si trova in prossimità di un punto di interesse;
+  2. Il sistema stabilisce tramite un modello GenAI se l'utente può essere interessato ai servizi offerti dal punto di interesse;
+  3. In caso positivo l'utente visualizza un annuncio pubblicitario personalizzato, generato tramite un modello GenAI.
 
 - *User story*:
 #figure(image("../assets/use_cases/UC2.svg", width: 80%), caption: [UC2 - Visualizzazione annuncio personalizzato])
@@ -187,15 +187,15 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 === UC3 - Visualizzazione mappa amministratore
 
-- *Attore principale*: amministratore
+- *Attore principale*: Amministratore
 
 - *Precondizioni*: l'amministratore del sistema è autenticato e ha accesso alla _dashboard_ Grafana.
 
-- *Postcondizioni*: l'amministratore ottiene una visione chiara della posizione e del movimento delle biciclette attualmente in uso.
+- *Postcondizioni*: l'amministratore ottiene una visione chiara della posizione e del movimento dei mezzi attualmente in uso.
 
 - *Scenario principale*:
-  1. L'amministratore è collegato e autenticato nella _dashboard_ Grafana
-  2. La _dashboard_ mette a disposizione una mappa interattiva con i mezzi attualmente a noleggio che si muovono indicati attraverso dei _marker_.
+  1. L'amministratore è collegato e autenticato nella _dashboard_ Grafana;
+  2. La _dashboard_ mette a disposizione una mappa interattiva con i mezzi attualmente a noleggio, la cui posizione viene indicata attraverso dei _marker_.
 
 - *User story*:
 #figure(image("../assets/use_cases/UC3.svg", width: 80%), caption: [UC3 - Visualizzazione mappa amministratore])
@@ -204,14 +204,14 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 === UC4 - Visualizzazione storico amministratore
 
-- *Attore principale*: amministratore
+- *Attore principale*: Amministratore
 
-- *Precondizioni*: l'amministratore del sistema è autenticato e ha accesso alla _dashboard_ grafana.
+- *Precondizioni*: l'amministratore del sistema è autenticato e ha accesso alla _dashboard_ Grafana.
 
 - *Postcondizioni*: l'amministratore ha una visione dello storico degli annunci pubblicitari comparsi associato al rispettivo utente, con un _feedback_ indicante il successo o l'insuccesso che l'annuncio ha avuto.
 
 - *Scenario principale*:
-  1. L'amministratore è collegato e autenticato nella _dashboard_ grafana
+  1. L'amministratore è collegato e autenticato nella _dashboard_ Grafana;
   2. La _dashboard_ mette a disposizione una sezione con lo storico degli annunci prodotti dal sistema e il relativo esito.
 
 - *User story*:
@@ -221,14 +221,14 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 - *Attore principale*: Utente
 
-- *Precondizioni*: l'utente visualizza un annuncio pubblicitario
+- *Precondizioni*: l'utente visualizza un annuncio pubblicitario.
 
-- *Postcondizioni*: se l'utente interagisce con l'annuncio pubblicitario, il sistema memorizza l'interazione come _feedback_ sull'annuncio generato
+- *Postcondizioni*: se l'utente interagisce con l'annuncio pubblicitario, il sistema memorizza l'interazione come _feedback_ sull'annuncio generato.
 
 - *Scenario principale*:
-  1. L'utente visualizza un annuncio pubblicitario
-  2. L'utente interagisce con l'annuncio pubblicitario
-  3. Il sistema memorizza un _feedback_ associato all'annuncio visualizzato
+  1. L'utente visualizza un annuncio pubblicitario;
+  2. L'utente interagisce con l'annuncio pubblicitario;
+  3. Il sistema memorizza un _feedback_ associato all'annuncio visualizzato.
 
 - *User story*:
 #figure(image("../assets/use_cases/UC5.svg", width: 80%), caption: [UC5 - Interazione con l'annuncio pubblicitario])
