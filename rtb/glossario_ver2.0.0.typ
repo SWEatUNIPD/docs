@@ -4,10 +4,18 @@
   data: "11 Novembre 2024",
   uso: "Interno",
   responsabile: "Klaudio Merja",
-  redattori: ("Andrea Perozzo", "Riccardo Milan", "Klaudio Merja"),
+  redattori: ("Andrea Perozzo", "Andrea Precoma", "Riccardo Milan", "Klaudio Merja"),
   titolo: "Glossario",
   verificatori: ("Andrea Perozzo", "Andrea Precoma", "Davide Picello"),
   versioni: (
+    "3.0.0",
+    "25/11/2024",
+    "Andrea Precoma",
+    "Davide Marin\nDavide Picello",
+    [
+      - Creato paragrafo per i termini che iniziano con "U"
+      - Aggiunto i termini "Hosting" e "Utility"
+    ],
     "2.0.0",
     "25/11/2024",
     "Andrea Perozzo",
@@ -17,7 +25,7 @@
     "14/11/2024",
     "Klaudio Merja",
     "Andrea Precoma",
-    [- Aggiunti i termini "Way of Working", "GenAI", "prompt" e "ROI"],
+    [- Aggiunti i termini "Way of Working", "GenAI", "Prompt" e "ROI"],
     "1.0.0",
     "11/11/2024",
     "Riccardo Milan",

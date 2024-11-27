@@ -8,6 +8,7 @@
     "Apache Superset": "Piattaforma open-source di business intelligence per esplorare e visualizzare dati in modo interattivo."
   },
   "B": {
+    "Backlog": "Il backlog, concetto fondamentale nella metodologia Agile, è un elenco ordinato e dinamico di tutti gli elementi necessari per lo sviluppo e il miglioramento di un prodotto. Questi elementi possono includere nuove funzionalità, modifiche a quelle esistenti, correzioni di bug e attività tecniche.",
     "Broker di Eventi": "Componente software che funge da intermediario per lo scambio asincrono di eventi tra diversi sistemi o applicazioni."
   },
   "C": {
@@ -31,7 +32,8 @@
     "Grafana": "Piattaforma interattiva open source per la visualizzazione dei dati. Permette agli utenti di visualizzare i dati attraverso diagrammi e grafici unificati in una singola dashboard."
   },
   "H": {
-    "Hive MQ": "Broker MQTT open-source ad alte prestazioni per l'IoT."
+    "Hive MQ": "Broker MQTT open-source ad alte prestazioni per l'IoT.",
+    "Hosting": "Servizio che fornisce uno spazio online per archiviare, gestire e condividere dei documenti. Nel contesto attuale viene riferito ad un hosting di repository, un ambiente dove versionare codice sorgente e documentazione."
   },
   "L": {
     "LangChain": "Framework open-source per la creazione di applicazioni basate su LLM, che consente di collegare questi modelli a diverse fonti di dati e API.",
@@ -57,6 +59,9 @@
   "T": {
     "TimeScale": "Database relazionale basato su PostgreSQL, progettato per gestire e analizzare dati temporali (time-series) in modo efficiente, ideale per applicazioni IoT, monitoraggio e analisi di dati in tempo reale.",
     "Typst": "Linguaggio di markup per la formattazione dei documenti e strumento di typesetting, simile a LaTeX, progettato per creare documenti complessi con sintassi moderna e funzionalità avanzate."
+  },
+  "U": {
+    "Utility": "Insieme di funzioni predefinite per facilitare compiti comuni, spesso abbinato al contesto delle librerie che integrano metodi riutilizzabili in molti programmi."
   },
   "W": {
     "Way of Working": "Letteralmente \"modo di lavorare\", si intende l'insieme di regole, best practice e strumenti utilizzati per organizzare al meglio le attività del gruppo. Permette al gruppo di svolgere il proprio lavoro in maniera efficiente e professionale e di operare allo stato dell'arte."
