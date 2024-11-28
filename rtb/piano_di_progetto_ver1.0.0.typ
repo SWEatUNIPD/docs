@@ -61,7 +61,7 @@ Lo scopo principale dell'analisi dei rischi è quello di individuare le possibil
 
 Ogni rischio riportato successivamente è caratterizzato da:
 - *ID rischio*: identificativo univoco del rischio;
-- *Descrizione*: descrive brevemente le cause e gli effetti del rischio in questione all'interno della probabilità;
+- *Descrizione*: descrive brevemente le cause e gli effetti del rischio in questione all'interno del progetto;
 - *Probabilità*: indica la probabilità che il rischio si verifichi all'interno di un progetto, sia essa bassa, media o alta;
 - *Impatto negativo*: quantifica l'impatto negativo che il rischio può avere all'interno del progetto, sia esso basso, medio o alto;
 - *Piano di contingenza*: descrive i processi che il gruppo può o deve attuare al fine di mitigare i danni causati dal rischio.
