@@ -59,7 +59,8 @@
     "SimPy": "Libreria Python per la simulazione di eventi discreti, ideale per modellare sistemi come code, risorse condivise e processi, permettendo di analizzare il comportamento di sistemi complessi.",
     "Stream Processing": "Paradigma di programmazione parallela di tipo SIMD che permette ad alcune applicazioni di sfruttare semplicemente una forma limitata di elaborazione parallela di dati in tempo reale, man mano che vengono generati.",
     "SAL": "Stato Avanzamento Lavori per misurare il progresso delle attività rispetto alla pianificazione.",
-    "Sprint": "Periodo di tempo di durata fissa, nel caso del nostro gruppo di 2 settimane, entro il quale il gruppo si impegna a portare a termine una serie di attività prefissate."
+    "Sprint": "Periodo di tempo di durata fissa, nel caso del nostro gruppo di 2 settimane, entro il quale il gruppo si impegna a portare a termine una serie di attività prefissate.",
+    "Stakeholder": "Conosciuto anche come portatore di interesse, è una persona o un insieme di persone coinvolte all'interno del progetto che hanno degli interessi verso lo stesso."
   },
   "T": {
     "TimeScale": "Database relazionale basato su PostgreSQL, progettato per gestire e analizzare dati temporali (time-series) in modo efficiente, ideale per applicazioni IoT, monitoraggio e analisi di dati in tempo reale.",

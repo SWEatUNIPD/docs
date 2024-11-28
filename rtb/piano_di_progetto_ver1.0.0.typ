@@ -29,9 +29,9 @@ del progetto e l'allocazione delle risorse all'interno del progetto stesso, come
 gruppo.
 
 In particolare vengono approfonditi aspetti come:
-- Analisi dei rischi
-- Modello di sviluppo
-- Pianificazione delle attività
+- analisi dei rischi
+- modello di sviluppo
+- pianificazione delle attività
 
 == Scopo del prodotto
 L'obiettivo principale che si pone il prodotto commissionato al nostro gruppo è quello di fornire un sistema, installato
@@ -42,9 +42,9 @@ delle campagne pubblicitarie.
 
 == Glossario
 Per evitare eventuali ambiguità e incomprensioni sulla terminologia adottata nella documentazione redatta dal gruppo,
-viene fornito un glossario.
+viene fornito un Glossario.
 
-La prima occorrenza di un termine definito all'interno del glossario presente all'interno di un documento viene
+La prima occorrenza di un termine definito all'interno del Glossario presente all'interno di un documento viene
 sottolineato e seguito dalla lettera g posta ad apice (e.g. #rifGlossario("termine")).
 
 == Riferimenti
@@ -57,7 +57,7 @@ sottolineato e seguito dalla lettera g posta ad apice (e.g. #rifGlossario("termi
 #pagebreak()
 
 = Analisi dei rischi
-Lo scopo principale dell'Analisi dei rischi è quello di individuare le possibili difficoltà o problemi che il gruppo, sia nella sua interezza che a livello individuale, può incontrare con una certa probabilità, causando rallentamenti che possono avere un impatto negativo più o meno rilevante all'interno del progetto
+Lo scopo principale dell'analisi dei rischi è quello di individuare le possibili difficoltà o problemi che il gruppo, sia nella sua interezza che a livello individuale, può incontrare con una certa probabilità, causando rallentamenti che possono avere un impatto negativo più o meno rilevante all'interno del progetto
 
 Ogni rischio riportato successivamente è caratterizzato da:
 - *ID rischio*: identificativo univoco del rischio;
@@ -71,28 +71,27 @@ Ogni ID rischio segue la seguente convenzione per quanto riguarda la loro strutt
 dove *`[X]`* indica la tipologia di rischio, che si può distinguere in *`O`*-Organizzativo oppure *`T`*-Tecnologico, e *`[Y]`* indica un numero progressivo, univoco per tipologia di rischio.
 
 Per il processo di gestione dei rischi il gruppo adotta il modello fornito da Ian Sommerville nel libro _Software Engineering_, caratterizzato dai seguenti passi:
-1. *Identificazione del rischio*
-2. *Analisi e classificazione del rischio*
-3. *Processi di mitigazione del rischio*
-4. *Controllo del rischio*
+1. *Identificazione del rischio*;
+2. *Analisi e classificazione del rischio*;
+3. *Processi di mitigazione del rischio*;
+4. *Controllo del rischio*.
 
 == Rischi organizzativi
 === Riunione con l'azienda proponente
 #tabellaRischio(
   ID: [RO-1],
-  descrizione: [A causa di impegni personali dei membri del gruppo o per impossibilità dell'azienda proponente, può risultare difficile fissare una riunione circa lo stato di avanzamento dei lavori (o #rifGlossario("SAL")), ritardando così il _#rifGlossario("feedback")_ su quanto svolto dal gruppo.],
+  descrizione: [A causa di impegni personali dei membri del gruppo o per impossibilità dell'azienda proponente può risultare difficile fissare una riunione di #rifGlossario("SAL"), ritardando così il _#rifGlossario("feedback")_ su quanto svolto dal gruppo.],
   probabilità: [Bassa],
   impatto: [Medio],
-  piano: [È possibile chiedere un giorno fisso all'azienda in cui svolgere le riunioni di SAL, in modo da evitare eventuali
-    indisponibilità nel lungo periodo.],
+  piano: [È possibile chiedere un giorno fisso all'azienda in cui svolgere le riunioni di SAL in modo da evitare eventuali indisponibilità nel lungo periodo.],
 )
 === Sovrastima della durata delle attività <RO-2>
 #tabellaRischio(
   ID: [RO-2],
-  descrizione: [Data l'inesperienza del gruppo, specie ad inizio progetto, è possibile che alcune attività possano essere sottostimate in termini di tempo. Ciò porta ad un termine anticipato dell'attività stessa rispetto a quanto preventivato in precedenza],
+  descrizione: [Data l'inesperienza del gruppo, specie ad inizio progetto, è possibile che alcune attività possano essere sottostimate in termini di tempo. Ciò porta ad un termine anticipato dell'attività stessa rispetto a quanto preventivato.],
   probabilità: [Alta],
   impatto: [Basso],
-  piano: [Nonostante il rischio abbia probabilità elevata, si ritiene l'impatto negativo del rischio sia basso, se non nullo, in quanto il gruppo può allocare la risorsa in un'altra attività al fine di liberare il prima possibile il "TO-DO" del _#rifGlossario("backlog")_.],
+  piano: [Nonostante il rischio abbia probabilità elevata si ritiene l'impatto negativo del rischio sia basso, se non nullo, in quanto il gruppo può allocare la risorsa in un'altra attività al fine di liberare il prima possibile il "TO-DO" del _#rifGlossario("backlog")_.],
 )
 
 === Sottostima della durata delle attività <RO-3>
@@ -101,21 +100,21 @@ Per il processo di gestione dei rischi il gruppo adotta il modello fornito da Ia
   descrizione: [Come specificato nel rischio *RO-2*, a causa dell'inesperienza del gruppo è possibile che alcune attività vengano sottostimate in termini di tempo, portando così a rallentamenti l'iterazione in corso.],
   probabilità: [Alta],
   impatto: [Alto],
-  piano: [Il rischio è inevitabile, ma può essere mitigato tramite l'allocazione di risorse disponibili a supporto di quelle già allocate per accelerare lo svolgimento dell'attività],
+  piano: [Il rischio è inevitabile, ma può essere mitigato tramite l'allocazione di risorse disponibili a supporto di quelle già allocate per accelerare lo svolgimento dell'attività.],
 )
 == Rischi tecnologici
 === Inesperienza <RT-1>
 #tabellaRischio(
   ID: [RT-1],
-  descrizione: "A causa dell'elevato numero di tecnologie richieste dal progetto, alcuni membri del gruppo potrebbero non avere le competenze necessarie, dovendo quindi investire tempo per apprendere le stesse, portando quindi ad una riduzione del tempo produttivo nel corso del progetto, che si traduce a sua volta in ritardi.",
+  descrizione: [A causa dell'elevato numero di tecnologie richieste dal progetto alcuni membri del gruppo potrebbero non avere le competenze necessarie, dovendo quindi investire tempo per apprendere le stesse, portando così ad una riduzione del tempo produttivo nel corso del progetto.],
   probabilità: [Alta],
   impatto: [Alto],
-  piano: [Il rischio non può essere evitato, ma può essere mitigato/limitato/marginato tramite il confronto con i membri più esperti del gruppo oppure tramite delle sessioni di _#rifGlossario("deep dive")_ tecnologico che l'azienda proponente fornisce al gruppo.],
+  piano: [Il rischio non può essere evitato, ma può essere limitato tramite il confronto con i membri più esperti del gruppo oppure tramite delle sessioni di _#rifGlossario("deep dive")_ tecnologico che l'azienda proponente fornisce al gruppo.],
 )
 
 #pagebreak()
 = Modello di sviluppo
-Il modello di sviluppo che viene adottato dal gruppo è il modello Agile che, a differenza dei modelli di sviluppo più rigidi come il modello a cascata dove si predilige una stretta sequenzialità delle fasi e, soprattutto, non ammette modifiche nei requisiti in corso d'opera, permette maggiore flessibilità e un coinvolgimento maggiore dello _stakeholder_ (nel nostro caso l'azienda proponente) all'interno del progetto grazie alla sua natura iterativa e incrementale.
+Il modello di sviluppo che viene adottato dal gruppo è il modello Agile che, a differenza dei modelli di sviluppo più rigidi come il modello a cascata dove si predilige una stretta sequenzialità delle fasi e, soprattutto, non ammette modifiche nei requisiti in corso d'opera, permette maggiore flessibilità e un coinvolgimento maggiore dello _#rifGlossario("stakeholder")_ (nel nostro caso l'azienda proponente) all'interno del progetto grazie alla sua natura iterativa e incrementale.
 
 Il modello Agile prevede la suddivisione del progetto in iterazioni chiamate _#rifGlossario("sprint")_ durante il quale il gruppo si impegna a completare un insieme di attività prefissate al fine di produrre un incremento del prodotto finale. La serie di _sprint_ permette quindi di ottenere un prodotto finale che più si avvicina alle aspettative del proponente.
 
@@ -125,16 +124,16 @@ L'approccio a _sprint_ permette di avere dei _feedback_ a cadenza regolare da pa
 
 Grazie alla flessibilità del modello Agile è possibile modificare i requisiti in corso d'opera, cosa fondamentale all'interno del nostro progetto dove il rischio di individuare dei requisiti sbagliati è molto alto e che il modello a cascata, data la sua rigidità, non permetterebbe di fare.
 
-Inoltre il modello permette un increnemento parallelo dell'attività di analisi e dello sviluppo del prodotto, non limitando quindi il progetto alla sola documentazione, ma permettendo di avere un prodotto già funzionante dai primi _sprint_ a prova di quanto documentato.
+Inoltre il modello permette un incremento parallelo dell'attività di analisi e dello sviluppo del prodotto, non limitando quindi il progetto alla sola documentazione, ma permettendo di avere un prodotto già funzionante dai primi _sprint_ a prova di quanto documentato.
 
 #pagebreak()
 
 = Pianificazione
-Come frutto della scelta del modello Agile, la pianificazione delle attività da svolgere all'interno del progetto sono suddivise in degli _sprint_, ovvero delle iterazioni della durata di due settimana ciascuna, in cui vengono pianificate le attività da svolgere per raggiungere gli obiettivi prefissati.
+Come frutto della scelta del modello Agile la pianificazione delle attività da svolgere all'interno del progetto sono suddivise in degli _sprint_, ovvero delle iterazioni della durata di due settimana ciascuna in cui vengono pianificate le attività da svolgere per raggiungere gli obiettivi prefissati.
 
-Alla fine di ogni _sprint_, viene svolto una riunione con l'azienda proponente, in cui si analizza quanto prodotto durante l'iterazione, si effettua una retrospettiva su quanto avvenuto, analizzando difficoltà e problemi riscontrati, e si pianifica il lavoro da svolgere e gli obiettivi da raggiungere per la seguente iterazione.
+Alla fine di ogni _sprint_ viene svolta una riunione con l'azienda proponente in cui si analizza quanto prodotto durante l'iterazione, si effettua una retrospettiva su quanto avvenuto analizzando difficoltà e problemi riscontrati e si pianifica il lavoro da svolgere e gli obiettivi da raggiungere per la seguente iterazione.
 
-A metà di ogni iterazione, l'azienda si rende disponibile al gruppo per eventuali chiarimenti o dubbi che possono venire a galla durante lo svolgimento dell'attività da parte dei membri del gruppo.
+A metà di ogni _sprint_ l'azienda si rende disponibile al gruppo per eventuali chiarimenti o dubbi che possono venire a galla durante lo svolgimento dell'attività da parte dei membri del gruppo.
 
 Ogni iterazione è caratterizzata da:
 - *Inizio*: data in cui ha inizio un determinato _sprint_;
@@ -143,30 +142,30 @@ Ogni iterazione è caratterizzata da:
 - *Attività dello _sprint_*: attività che il gruppo si impone di raggiungere durante la durata dello _sprint_ al fine di raggiungere determinati obiettivi;
 - *Preventivo orario*: stima delle ore che ciascun membro deve dedicare nelle vesti di un determinato ruolo al fine di concludere le attività;
 - *Consuntivo orario e di spesa*: ore produttive dedicate da parte di ogni membro nei vari ruoli ricoperti durante l'iterazione al fine di concludere le attività previste e breve schema su quanto speso durante l'iterazione;
-- *Retrospettiva*: analisi svolta alla fine di ogni _sprint_, con lo scopo di evidenziare ciò che ha funzionato e ciò che non ha funzionato durante l'iterazione, sottolineando i vari problemi e difficoltà riscontrati che hanno causato rallentamenti, con il fine di migliorare le prossime iterazioni a venire.
+- *Retrospettiva*: analisi svolta alla fine di ogni _sprint_ con lo scopo di evidenziare ciò che ha funzionato e ciò che non ha funzionato durante l'iterazione, sottolineando i vari problemi e difficoltà riscontrati che hanno causato rallentamenti, con il fine di migliorare le prossime iterazioni.
 
 Il gruppo si pone come milestone del progetto le due consegne previste dai committenti, nonché i Prof.ssori Tullio Vardanega e Riccardo Cardin, ovvero:
 - *RTB* con data di consegna xx/01/2025
 - *PB* con data di consegna 21/03/2025
 
-Gli _sprint_ vengono quindi divisi nelle due milestone precedentemente elencate, per garantire una seperazione netta degli stessi e delle attività che ne comportano.
+Gli _sprint_ vengono quindi divisi nelle due milestone precedentemente elencate per garantire una seperazione netta degli stessi e delle attività che ne comportano.
 == RTB
-=== _Sprint_ 1
+=== Sprint 1
 - *Inizio*: 13/11/2024
 - *Fine*: 27/11/2024
 - *Rischi attesi*: #underline[#link(<RO-2>)[RO-2]], #underline[#link(<RO-3>)[RO-3]], #underline[#link(<RT-1>)[RT-1]]
-==== Attività dello _sprint_
+==== Attività dello sprint
 Le attività che il gruppo si è preoccupato di concludere durante queste due settimane sono:
 - Inizio stesura delle Norme di progetto, in particolare:
-  - Introduzione
-  - Processi primari
-  - Processi di supporto
+  - introduzione
+  - processi primari
+  - processi di supporto
 - Redazioni dei verbali interni ed esterni del 13/11/2024 e del 20/11/2024
-- Inizio della stesura del Piano di Progetto, in particolare:
-  - Analisi dei rischi
-  - Modello di sviluppo
-  - Pianificazione
-  - Primo _sprint_
+- Inizio della stesura del Piano di progetto, in particolare:
+  - analisi dei rischi
+  - modello di sviluppo
+  - pianificazione
+  - primo _sprint_
 - Test automatico per individuare i riferimenti mancanti al Glossario nei vari documenti
 - Inizio della stesura dell'Analisi dei requisiti
 - Studio sulla generazione dei dati #rifGlossario("GPS")
@@ -195,12 +194,12 @@ Le attività che il gruppo si è preoccupato di concludere durante queste due se
 #figure(image("../assets/img/PdP/Periodo1.png", width: 60%))
 
 ==== Retrospettiva
-In queste due settimane di lavoro, è apparso evidente l'impatto che le Norme di progetto hanno avuto all'interno del gruppo, adottando una serie di convenzioni e regole che hanno permesso di uniformare il lavoro svolto dai vari redattori. Tuttavia, essendo la prima versione delle Norme di progetto, a causa dei frequenti cambiamenti all'interno del documento, si è reso necessario più volte dover rivedere e correggere in corso d'opera alcuni documenti più volte. Nonostante ciò, il gruppo ritiene il lavoro del gruppo in linea con le aspettative.
+In queste due settimane di lavoro è apparso evidente l'impatto che le Norme di progetto hanno avuto all'interno del gruppo, adottando una serie di convenzioni e regole che hanno permesso di uniformare il lavoro svolto dai vari redattori. Tuttavia, essendo la prima versione delle Norme di progetto, a causa dei frequenti cambiamenti all'interno del documento, si è reso necessario più volte dover rivedere e correggere in corso d'opera alcuni documenti più volte. Nonostante ciò, il gruppo ritiene il lavoro svolto in linea con le aspettative.
 
-Si evidenzia come difetto la possibilità di lavorare su una stessa _#rifGlossario("branch")_ a più memrbi in quanto questa causerebbe problemi di conflitti tra i file modificati.
+Si evidenzia come difetto la possibilità di lavorare su una stessa _#rifGlossario("branch")_ a più membri in quanto questa causerebbe problemi di conflitti tra i file modificati.
 
 Gli analisti evidenziano le difficoltà e i dubbi relativa alla comprensione dei casi d'uso del prodotto richiesto dal proponente, che hanno però trovato risposta dalla riunione di fine primo _sprint_ da parte del proponente e che verranno approffonditi in quello successivo. Incentivano inoltre a lavorare in maniera più collaborativa alla fase di analisi e non limitarsi semplicemente all'esecuzione delle attività di analisi in maniera parallela.
 
-I verificatori suggeriscono infine di incaricare più di una persona alla verifica dei documenti ad alto contenuto, quali possono essere le Norme del progetto ed il Piano di progetto, al fine di garantire una verifica ottimale.
+I verificatori suggeriscono infine di incaricare più di una persona alla verifica dei documenti ad alto contenuto, quali possono essere le Norme di progetto ed il Piano di progetto, al fine di garantire una verifica ottimale.
 
 

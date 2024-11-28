@@ -256,9 +256,9 @@
 
 #let tabellaRischio(ID: "", descrizione: "", probabilità: "", impatto: "", piano: "") = {
   table(
-    fill: (_, y) => if calc.even(y) {
-      rgb("04E82420")
-    }, //TODO: mantenere la colorazione della tabella in questo modo?
+    // fill: (_, y) => if calc.even(y) {
+    //   rgb("04E82420")
+    // },
     columns: (27%, 73%),
     [*ID Rischio*], [#ID],
     [*Descrizione*], [#descrizione],

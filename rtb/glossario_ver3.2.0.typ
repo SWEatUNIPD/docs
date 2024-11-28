@@ -12,7 +12,7 @@
     "27/11/2024",
     "Klaudio Merja",
     "Davide Marin\nDavide Picello",
-    [- Aggiunti i termini "Bike-sharing", "Branch", "Feedback" e "Sprint"],
+    [- Aggiunti i termini "Bike-sharing", "Branch", "Feedback", "Sprint" e "Stakeholder"],
     "3.1.0",
     "23/11/2024",
     "Davide Picello",
