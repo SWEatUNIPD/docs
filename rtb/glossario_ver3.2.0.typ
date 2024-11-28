@@ -11,7 +11,7 @@
     "3.3.0",
     "28/11/2024",
     "Davide Picello",
-    "Ricacrdo Milan",
+    "Riccardo Milan",
     [- Aggiunto il termine "Docker"],
 
     "3.2.0",
