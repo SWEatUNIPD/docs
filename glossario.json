@@ -9,6 +9,8 @@
   },
   "B": {
     "Backlog": "Il backlog, concetto fondamentale nella metodologia Agile, è un elenco ordinato e dinamico di tutti gli elementi necessari per lo sviluppo e il miglioramento di un prodotto. Questi elementi possono includere nuove funzionalità, modifiche a quelle esistenti, correzioni di bug e attività tecniche.",
+    "Bike-sharing": "Servizio di noleggio bici a tariffa oraria, che permette all'utente di noleggiare e restituire la bici in una serie di punti di raccolta distribuiti in una città in maniera autonoma, solitamente tramite l'ausilio di un'applicazione fornita dal fornitore del servizio.",
+    "Branch": "In ambito di versionamento del codice, rappresenta un flusso di sviluppo.",
     "Broker di Eventi": "Componente software che funge da intermediario per lo scambio asincrono di eventi tra diversi sistemi o applicazioni."
   },
   "C": {
@@ -22,7 +24,8 @@
     "Deep dive": "Una sessione deep dive è un incontro in cui esperti esterni al gruppo si mettono a disposizione per approfondire specifiche tecnologie e strumenti legati a un progetto. Questi incontri sono progettati per affrontare temi complessi o aree in cui il team destinatario potrebbe non avere esperienza sufficiente o stia incontrando difficoltà."
   },
   "F": {
-    "Faker": "Libreria Python utilizzata per generare dati fittizi, come nomi, indirizzi, numeri di telefono e altri tipi di informazioni, utili per test, sviluppo o simulazioni senza utilizzare dati reali."
+    "Faker": "Libreria Python utilizzata per generare dati fittizi, come nomi, indirizzi, numeri di telefono e altri tipi di informazioni, utili per test, sviluppo o simulazioni senza utilizzare dati reali.",
+    "Feedback": "Solitamente si intende l'opinione di una persona. Nel nostro caso, il termine trova utilizzo quando il proponente condivide le proprie idee e le proprie opinione circa l'avanzamento dei lavori e sull'incremento effettuato in una determinata iterazione."
   },
   "G": {
     "GenAI": "Acronimo di \"Generative Artificial Intelligence\", si intende tutte le tecnologie di intelligenza artificiale capaci di generare contenuti come testo, immagini, codice, idee ed altro con l'obiettivo di simulare le attività di un essere umano.",
@@ -55,7 +58,9 @@
   "S": {
     "SimPy": "Libreria Python per la simulazione di eventi discreti, ideale per modellare sistemi come code, risorse condivise e processi, permettendo di analizzare il comportamento di sistemi complessi.",
     "Stream Processing": "Paradigma di programmazione parallela di tipo SIMD che permette ad alcune applicazioni di sfruttare semplicemente una forma limitata di elaborazione parallela di dati in tempo reale, man mano che vengono generati.",
-    "SAL": "Stato Avanzamento Lavori per misurare il progresso delle attività rispetto alla pianificazione."
+    "SAL": "Stato Avanzamento Lavori per misurare il progresso delle attività rispetto alla pianificazione.",
+    "Sprint": "Periodo di tempo di durata fissa, nel caso del nostro gruppo di 2 settimane, entro il quale il gruppo si impegna a portare a termine una serie di attività prefissate.",
+    "Stakeholder": "Conosciuto anche come portatore di interesse, è una persona o un insieme di persone coinvolte all'interno del progetto che hanno degli interessi verso lo stesso."
   },
   "T": {
     "TimeScale": "Database relazionale basato su PostgreSQL, progettato per gestire e analizzare dati temporali (time-series) in modo efficiente, ideale per applicazioni IoT, monitoraggio e analisi di dati in tempo reale.",

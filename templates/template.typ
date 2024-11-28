@@ -253,3 +253,96 @@
     pagebreak()
   }
 }
+
+#let tabellaRischio(ID: "", descrizione: "", probabilità: "", impatto: "", piano: "") = {
+  table(
+    // fill: (_, y) => if calc.even(y) {
+    //   rgb("04E82420")
+    // },
+    columns: (27%, 73%),
+    [*ID Rischio*], [#ID],
+    [*Descrizione*], [#descrizione],
+    [*Probabilità*], [#probabilità],
+    [*Impatto negativo*], [#impatto],
+    [*Piano di contingenza*], [#piano],
+  )
+}
+
+#let rendicontazioneOre(content) = {
+  let membri = (
+    "Andrea Perozzo",
+    "Andrea Precoma",
+    "Davide Marin",
+    "Davide Martinelli",
+    "Davide Picello",
+    "Klaudio Merja",
+    "Riccardo Milan",
+  )
+
+  let data = {
+    (
+      ..membri
+        .enumerate()
+        .map(((index, value)) => {
+            (
+              membri.at(index),
+              ..content.at(index).map(elem => str(elem)),
+              str(content.at(index).sum()),
+            )
+          })
+        .flatten(),
+      [*Totale per ruolo*],
+      ..(0, 1, 2, 3, 4, 5).map(idx => {
+        let sum = 0
+        for i in range(0, 7) {
+          sum += content.at(i).at(idx)
+        }
+        return str(sum)
+      }),
+    )
+  }
+
+  table(
+    columns: (2.2fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
+    table.header([*Membro*], [*Resp.*], [*Amm.*], [*Ana.*], [*Proge.*], [*Progr*], [*Ver.*], [*Totale*]),
+    ..data,
+    str(content.flatten().sum())
+  )
+}
+
+#let consuntivoOre(content) = {
+  rendicontazioneOre(content)
+  let ruoli = (
+    ("Responsabile", 30),
+    ("Amministratore", 20),
+    ("Analista", 25),
+    ("Progettista", 25),
+    ("Programmatore", 15),
+    ("Verificatore", 15),
+  )
+
+  let data = ruoli.enumerate().map(((index, value)) => {
+    let costo = 0
+    for i in range(0, 7) {
+      costo += content.at(i).at(index)
+    }
+    return (ruoli.at(index).at(0), [#str(costo * ruoli.at(index).at(1)) €])
+  })
+
+  let costoFinale = {
+    let somma = 0
+    for i in range(0, 7) {
+      for j in range(0, 6) {
+        somma += content.at(i).at(j) * ruoli.at(j).at(1)
+      }
+    }
+    str(somma)
+  }
+
+  align(center)[#table(
+      columns: (25%, 25%),
+      table.header([*Ruolo*], [*Costo*]),
+      ..data.flatten(),
+      [*Totale*], [#costoFinale €]
+    )]
+}
