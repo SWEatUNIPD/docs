@@ -8,6 +8,12 @@
   titolo: "Glossario",
   verificatori: ("Andrea Perozzo", "Andrea Precoma", "Davide Picello"),
   versioni: (
+    "4.0.0",
+    "23/11/2024",
+    "Andrea Perozzo",
+    "Davide Picello",
+    [- Aggiunti i termini "Data Streaming", "Data Processing", "Event-Driven", "Spring", "ClickUp", "Trello", "GitLab", "Docker", "Kubernetes"],
+
     "3.1.0",
     "23/11/2024",
     "Davide Picello",

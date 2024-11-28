@@ -16,6 +16,12 @@
   ),
   riassunto: "Durante l'incontro sono state discusse le tecnologie che utilizzeremo e i dubbi riguardo al PoC inoltre sono state definite le priorità, tra cui simulazione dati, visualizzazione su Grafana e casi d'uso.",
   versioni: (
+    "1.0.1", 
+    [28/11/2024], 
+    "Andrea Perozzo", 
+    "Davide Picello",
+    [- Fix riferimenti glossario],
+
     "1.0.0", 
     [25/11/2024], 
     "Andrea Perozzo", 
@@ -35,7 +41,7 @@ Durante la call, sono state discusse le tecnologie scelte per il progetto, poste
 
 Le tecnologie che abbiamo scelto di utilizzare e che abbiamo discusso durante la riunione sono:  
 - #rifGlossario("Data generator"): *#rifGlossario("Faker")* o *#rifGlossario("SimPy")*.  
-- #rifGlossario("Database"): *#rifGlossario("PostGIS")* e/o *Time Scale*.  
+- #rifGlossario("Database"): *#rifGlossario("PostGIS")* e/o *#rifGlossario("TimeScale")*.  
 - #rifGlossario("Data broker"): *#rifGlossario("Apache Kafka")* (ottima gestione di grandi volumi di dati).  
 - #rifGlossario("Stream Processing"): *#rifGlossario("Apache Nifi")* (versatile e adatto a integrare logica).  
 - #rifGlossario("Data visualization"): *#rifGlossario("Grafana")* (intuitivo e ben documentato).  
@@ -53,8 +59,8 @@ La logica del sistema, che comprende incrocio dati, profilazione utenti, verific
 == Apache Kafka e Apache NiFi
 Apache Kafka gestirà l'invio e la ricezione di grandi quantità di dati in tempo reale. Apache NiFi sarà utilizzato per elaborare questi dati, integrando logica personalizzata per analizzare i percorsi GPS, generare notifiche, e gestire gli annunci pubblicitari.  
 
-== PostGIS e Time Scale  
-È possibile utilizzarli in combinazione. PostGIS sarà utile per gestire dati spaziali e Time Scale per ottimizzare la gestione di dati temporali, mantenendo una visione relazionale classica con un database aggiuntivo.  
+== PostGIS e TimeScale  
+È possibile utilizzarli in combinazione. PostGIS sarà utile per gestire dati spaziali e TimeScale per ottimizzare la gestione di dati temporali, mantenendo una visione relazionale classica con un database aggiuntivo.  
 
 == PoC
 Il PoC dovrebbe essere strutturato in modo da includere:
