@@ -7,7 +7,7 @@
   responsabile: "Riccardo Milan",
   redattori: ("Klaudio Merja", "Andrea Precoma", "Davide Picello"),
   verificatori: ("Andrea Precoma", "Davide Marin"),
-  titolo: "Norme di progetto",
+  titolo: "Norme di Progetto",
   uso: "Interno",
   versioni: (
     "3.0.0",
@@ -42,7 +42,7 @@
 
 = Introduzione
 == Scopo del documento
-Lo scopo principale del documento `Norme di Progetto` è quello di documentare il #rifGlossario("Way of Working") che deve essere adottato dai membri del gruppo per garantire la coerenza nel lavoro svolto.
+Lo scopo principale del documento Norme di Progetto è quello di documentare il #rifGlossario("Way of Working") che deve essere adottato dai membri del gruppo per garantire la coerenza nel lavoro svolto.
 
 Il documento adotta un approccio di tipo incrementale, ovvero è frutto di una serie di fasi di modifica che avvengono durante il suo ciclo di vita. È quindi soggetto durante lo svolgimento del progetto didattico a continui aggiornamenti, a seguito delle decisioni prese dal gruppo, volti a migliorare il Way of Working stesso. I membri del gruppo sono quindi tenuti a prendere visione del documento ogni qual volta esso sia oggetto di modifiche.
 

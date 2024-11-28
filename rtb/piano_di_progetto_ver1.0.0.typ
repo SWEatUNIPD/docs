@@ -6,7 +6,7 @@
   responsabile: "Andrea Perozzo",
   redattori: ("Klaudio Merja",),
   verificatori: ("Davide Marin", "Davide Picello"),
-  titolo: "Piano di progetto",
+  titolo: "Piano di Progetto",
   uso: "Esterno",
   versioni: (
     "1.0.0",
@@ -15,16 +15,16 @@
     "Davide Marin\nDavide Picello",
     [
       - Struttura iniziale e introduzione del documento
-      - Stesura dell'Analisi dei rischi
-      - Stesura del Modello di sviluppo
-      - Stesura della Pianificazione e del primo _sprint_],
+      - Stesura dell'analisi dei rischi
+      - Stesura del modello di sviluppo
+      - Stesura della pianificazione e del primo _sprint_],
   ),
   content: content,
 )
 
 = Introduzione
 == Scopo del documento
-Lo scopo del documento Piano di progetto è quello di definire e pianificare le attività necessarie allo svolgimento
+Lo scopo del documento Piano di Progetto è quello di definire e pianificare le attività necessarie allo svolgimento
 del progetto e l'allocazione delle risorse all'interno del progetto stesso, come ruoli e ore per ciascun componente del
 gruppo.
 
@@ -49,7 +49,7 @@ sottolineato e seguito dalla lettera g posta ad apice (e.g. #rifGlossario("termi
 
 == Riferimenti
 === Riferimenti normativi
-- Norme di progetto
+- Norme di Progetto
 - Regolamento del progetto didattico\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")
 === Riferimenti informativi
 - Lezione T03 - Il ciclo di vita del software\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T03.pdf")
@@ -156,18 +156,18 @@ Gli _sprint_ vengono quindi divisi nelle due milestone precedentemente elencate 
 - *Rischi attesi*: #underline[#link(<RO-2>)[RO-2]], #underline[#link(<RO-3>)[RO-3]], #underline[#link(<RT-1>)[RT-1]]
 ==== Attività dello sprint
 Le attività che il gruppo si è preoccupato di concludere durante queste due settimane sono:
-- Inizio stesura delle Norme di progetto, in particolare:
+- Inizio stesura delle Norme di Progetto, in particolare:
   - introduzione
   - processi primari
   - processi di supporto
 - Redazioni dei verbali interni ed esterni del 13/11/2024 e del 20/11/2024
-- Inizio della stesura del Piano di progetto, in particolare:
+- Inizio della stesura del Piano di Progetto, in particolare:
   - analisi dei rischi
   - modello di sviluppo
   - pianificazione
   - primo _sprint_
 - Test automatico per individuare i riferimenti mancanti al Glossario nei vari documenti
-- Inizio della stesura dell'Analisi dei requisiti
+- Inizio della stesura dell'Analisi dei Requisiti
 - Studio sulla generazione dei dati #rifGlossario("GPS")
 - Creazione del _file_ Excel condiviso per la rendicontazione delle ore produttive
 ==== Preventivo orario
@@ -194,12 +194,12 @@ Le attività che il gruppo si è preoccupato di concludere durante queste due se
 #figure(image("../assets/img/PdP/Periodo1.png", width: 60%))
 
 ==== Retrospettiva
-In queste due settimane di lavoro è apparso evidente l'impatto che le Norme di progetto hanno avuto all'interno del gruppo, adottando una serie di convenzioni e regole che hanno permesso di uniformare il lavoro svolto dai vari redattori. Tuttavia, essendo la prima versione delle Norme di progetto, a causa dei frequenti cambiamenti all'interno del documento, si è reso necessario più volte dover rivedere e correggere in corso d'opera alcuni documenti più volte. Nonostante ciò, il gruppo ritiene il lavoro svolto in linea con le aspettative.
+In queste due settimane di lavoro è apparso evidente l'impatto che le Norme di Progetto hanno avuto all'interno del gruppo, adottando una serie di convenzioni e regole che hanno permesso di uniformare il lavoro svolto dai vari redattori. Tuttavia, essendo la prima versione delle Norme di Progetto, a causa dei frequenti cambiamenti all'interno del documento, si è reso necessario più volte dover rivedere e correggere in corso d'opera alcuni documenti più volte. Nonostante ciò, il gruppo ritiene il lavoro svolto in linea con le aspettative.
 
 Si evidenzia come difetto la possibilità di lavorare su una stessa _#rifGlossario("branch")_ a più membri in quanto questa causerebbe problemi di conflitti tra i file modificati.
 
 Gli analisti evidenziano le difficoltà e i dubbi relativa alla comprensione dei casi d'uso del prodotto richiesto dal proponente, che hanno però trovato risposta dalla riunione di fine primo _sprint_ da parte del proponente e che verranno approfonditi in quello successivo. Incentivano inoltre a lavorare in maniera più collaborativa alla fase di analisi e non limitarsi semplicemente all'esecuzione delle attività di analisi in maniera parallela.
 
-I verificatori suggeriscono infine di incaricare più di una persona alla verifica dei documenti ad alto contenuto, quali possono essere le Norme di progetto e il Piano di progetto, al fine di garantire una verifica ottimale.
+I verificatori suggeriscono infine di incaricare più di una persona alla verifica dei documenti ad alto contenuto, quali possono essere le Norme di Progetto e il Piano di Progetto, al fine di garantire una verifica ottimale.
 
 
