@@ -36,7 +36,7 @@ In particolare vengono approfonditi aspetti come:
 == Scopo del prodotto
 L'obiettivo principale che si pone il prodotto commissionato al nostro gruppo è quello di fornire un sistema, installato
 su prodotti/servizi come il _#rifGlossario("bike-sharing")_, che sfrutta le informazioni e gli interessi personali degli utenti come #rifGlossario("prompt") per
-la generazioni di inserzioni personalizzate, a seconda di dove l'utente si trovi nel determinato istante, con lo scopo
+la generazione di inserzioni personalizzate, a seconda di dove l'utente si trovi nel determinato istante, con lo scopo
 finale di massimizzare le interazioni tra utenti e inserzioni per massimizzare il #rifGlossario("ROI") e l'efficacia
 delle campagne pubblicitarie.
 
@@ -66,7 +66,7 @@ Ogni rischio riportato successivamente è caratterizzato da:
 - *Impatto negativo*: quantifica l'impatto negativo che il rischio può avere all'interno del progetto, sia esso basso, medio o alto;
 - *Piano di contingenza*: descrive i processi che il gruppo può o deve attuare al fine di mitigare i danni causati dal rischio.
 
-Ogni ID rischio segue la seguente convenzione per quanto riguarda la loro struttura
+Ogni ID rischio segue la seguente convenzione per quanto riguarda la sua struttura
 #text(weight: "bold", align(center)[`R[X]-[Y]`])
 dove *`[X]`* indica la tipologia di rischio, che si può distinguere in *`O`*-Organizzativo oppure *`T`*-Tecnologico, e *`[Y]`* indica un numero progressivo, univoco per tipologia di rischio.
 
@@ -198,8 +198,8 @@ In queste due settimane di lavoro è apparso evidente l'impatto che le Norme di 
 
 Si evidenzia come difetto la possibilità di lavorare su una stessa _#rifGlossario("branch")_ a più membri in quanto questa causerebbe problemi di conflitti tra i file modificati.
 
-Gli analisti evidenziano le difficoltà e i dubbi relativa alla comprensione dei casi d'uso del prodotto richiesto dal proponente, che hanno però trovato risposta dalla riunione di fine primo _sprint_ da parte del proponente e che verranno approffonditi in quello successivo. Incentivano inoltre a lavorare in maniera più collaborativa alla fase di analisi e non limitarsi semplicemente all'esecuzione delle attività di analisi in maniera parallela.
+Gli analisti evidenziano le difficoltà e i dubbi relativa alla comprensione dei casi d'uso del prodotto richiesto dal proponente, che hanno però trovato risposta dalla riunione di fine primo _sprint_ da parte del proponente e che verranno approfonditi in quello successivo. Incentivano inoltre a lavorare in maniera più collaborativa alla fase di analisi e non limitarsi semplicemente all'esecuzione delle attività di analisi in maniera parallela.
 
-I verificatori suggeriscono infine di incaricare più di una persona alla verifica dei documenti ad alto contenuto, quali possono essere le Norme di progetto ed il Piano di progetto, al fine di garantire una verifica ottimale.
+I verificatori suggeriscono infine di incaricare più di una persona alla verifica dei documenti ad alto contenuto, quali possono essere le Norme di progetto e il Piano di progetto, al fine di garantire una verifica ottimale.
 
 
