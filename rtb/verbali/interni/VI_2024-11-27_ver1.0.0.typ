@@ -26,24 +26,29 @@
 )
 
 = Sintesi
-Dopo l'incontro di fine #rifGlossario("Sprint") con l'azienda, il 27 novembre 2024 (`VE_2024-11-27`), in cui sono stati chiariti vari dubbi, ci siamo confrontati internamente per fare il punto della situazione in vista del nuovo sprint 28 Novembre - 11 Dicembre 2024.
+Dopo l'incontro di fine #rifGlossario("Sprint") con l'azienda, il 27 novembre 2024 (`VE_2024-11-27`), in cui sono stati chiariti vari dubbi, il gruppo si è confrontato internamente. In questo incontro è stato fatto il punto della situazione in vista del nuovo sprint previsto dal 28 Novembre all'11 Dicembre 2024. 
+
+Sono stati analizzati i progressi raggiunti e discusse le attività da completare nel prossimo sprint.
 
 = Ordine del giorno
-Durante la discussione interna sono emerse varie attività da completare nel prossimo sprint, la maggior parte legate alla documentazione. In particolare:
-- Informarsi rigardo a programmi da utilizzare per il diagramma di Gantt in quanto, #rifGlossario("Github") offre la possibilità di avere quel tipo di diagramma, ma non offre alcune funzionalità di cui abbiamo bisogno.
+Durante la discussione interna sono emerse varie attività da completare nel prossimo sprint, principalmente legate alla documentazione. 
+In particolare:
+
+- Informarsi riguardo a strumenti da utilizzare per il diagramma di Gantt alternativi a  #rifGlossario("Github"). In quanto quest'ultimo offre la possibilità di avere quel tipo di diagramma, ma non di avere alcune funzionalità di cui abbiamo bisogno, come la gestione delle dipendenze.
 - Creare una prima versione del simulatore utilizzando #rifGlossario("Docker")
 - Redigere il verbale esterno del 2024-11-27
 - Redigere il verbale interno del 2024-11-27
 - Migliorare i casi d'uso dopo il confronto con l'azienda
 - Scrivere ulteriori casi d'uso
-- Redarre la sezione inerente al secondo sprint nelle Norme di progetto
-- Scrivere la retrospettiva inerente al primo sprint
+- Redigere  la sezione relativa al secondo sprint nelle Norme di progetto
+- Scrivere la retrospettiva relativa al primo sprint
 - Iniziare la stesura del Piano di qualifica
 
 = Conclusioni
-Per questo sprint si punta, quindi, ad avanzare significativamente con la documentazione e cercare di implementare al processo organizzativo un modo per creare il diagramma di Gantt.
-
-Un altro obbiettivo è di persentare, al prossimo #rifGlossario("SAL") fissato il 4 Dicembre, una prima versione del simulatore dati, utilizzando Docker.
+Per il prossimo sprint si punta, quindi, ad:
+- Avanzare significativamente con la documentazione 
+- Cercare di integrare nel processo organizzativo uno strumento relativo ai diagramma di Gantt.
+- Ultimare e presentare al prossimo #rifGlossario("SAL"), fissato il 4 Dicembre, una prima versione del simulatore dati utilizzando Docker.
 
 #pagebreak()
 = Tabella delle decisioni
@@ -82,5 +87,5 @@ Un altro obbiettivo è di persentare, al prossimo #rifGlossario("SAL") fissato i
 
   link("https://github.com/SWEatUNIPD/docs/issues/55")[#text(underline("D0055"))],
   "Davide Marin",
-  "Inizio stestura del Piano di Qualifica",
+  "Inizio stesura del Piano di Qualifica",
 ))
