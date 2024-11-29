@@ -21,7 +21,8 @@
     "Data Broker": "Tipo di tecnologia che facilita la raccolta, l'integrazione e la distribuzione di dati tra diverse fonti e utenti, garantendo accesso sicuro e scalabile per analisi e applicazioni.",
     "Data Generator": "Strumento o un software che produce dati sintetici o simulati, utilizzati per testare applicazioni, addestrare modelli di machine learning o simulare scenari realistici.",
     "Data Visualization": "Rappresentazione grafica di dati e informazioni, al fine di facilitarne la comprensione e l'interpretazione.",
-    "Deep dive": "Una sessione deep dive è un incontro in cui esperti esterni al gruppo si mettono a disposizione per approfondire specifiche tecnologie e strumenti legati a un progetto. Questi incontri sono progettati per affrontare temi complessi o aree in cui il team destinatario potrebbe non avere esperienza sufficiente o stia incontrando difficoltà."
+    "Deep dive": "Una sessione deep dive è un incontro in cui esperti esterni al gruppo si mettono a disposizione per approfondire specifiche tecnologie e strumenti legati a un progetto. Questi incontri sono progettati per affrontare temi complessi o aree in cui il team destinatario potrebbe non avere esperienza sufficiente o stia incontrando difficoltà.",
+    "Diagramma di Gantt": "Strumento di supporto alla gestione di progetti, usato principalmente nelle attività di _project management_. È costruito partendo da un asse orizzontale, che rappresenta l'arco temporale, e da un asse verticale che rappresenta le mansioni o attività che costituiscono il progetto."
   },
   "F": {
     "Faker": "Libreria Python utilizzata per generare dati fittizi, come nomi, indirizzi, numeri di telefono e altri tipi di informazioni, utili per test, sviluppo o simulazioni senza utilizzare dati reali.",
