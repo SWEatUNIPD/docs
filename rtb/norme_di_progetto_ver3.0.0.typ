@@ -420,8 +420,10 @@ La _repository_ è strutturata da un unico _branch_ adibito al mantenimento di t
     - *`verbali`*
       - *`esterni`*: contiene i `.typ` e i `.pdf` dei verbali esterni.
       - *`interni`*: contiene i `.typ` dei verbali interni.
-      - `glossario_ver1.1.0.typ`
+      - `analisi_dei_requisiti_ver1.0.0.typ`
+      - `glossario_ver1.0.0.typ`
       - `norme_di_progetto_ver1.0.0.typ`
+      - `piano_di_progetto_ver1.0.0.typ`
   - *`templates`*
     - `diario_di_bordo.pptx`
     - `template.typ`
