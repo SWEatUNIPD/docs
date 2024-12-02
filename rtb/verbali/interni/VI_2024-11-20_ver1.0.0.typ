@@ -26,13 +26,13 @@
 )
 
 = Sintesi
-Dopo aver analizzato le informazioni raccolte nella call con l'azienda, abbiamo discusso come strutturare il lavoro per raggiungere gli obiettivi del prossimo #rifGlossario("SAL"), previsto per mercoledì 27 novembre 2024. Si è deciso di affrontare simultaneamente lo studio per la generazione dei dati #rifGlossario("GPS"), l'analisi dei primi casi d'uso e la redazione delle Norme di Progetto e del Piano di Progetto, poiché rappresentano le fondamenta organizzative e tecniche del progetto. Abbiamo stabilito i ruoli e i compiti per garantire un avanzamento omogeneo.
+Dopo aver analizzato le informazioni raccolte nella _call_ con l'azienda, abbiamo discusso come strutturare il lavoro per raggiungere gli obiettivi del prossimo #rifGlossario("SAL"), previsto per mercoledì 27 novembre 2024. Si è deciso di affrontare simultaneamente lo studio per la generazione dei dati #rifGlossario("GPS"), l'analisi dei primi casi d'uso e la redazione delle Norme di Progetto e del Piano di Progetto, poiché rappresentano le fondamenta organizzative e tecniche del progetto. Abbiamo stabilito i ruoli e i compiti per garantire un avanzamento omogeneo.
 
 = Ordine del giorno
 
 == Motivo delle scelte sui ruoli e priorità
-A seguito della call con l'azienda, è emerso che per preparare un #rifGlossario("PoC") coerente con gli obiettivi del progetto, è necessario:
-- *Iniziare pragmaticamente con la simulazione dei dati GPS:* Questo è un punto importante in quanto ci servirà in futuro per costruire i test su #rifGlossario("Grafana") e analizzare i percorsi utenti.
+A seguito della _call_ con l'azienda, è emerso che per preparare un #rifGlossario("PoC") coerente con gli obiettivi del progetto, è necessario:
+- *Iniziare pragmaticamente con la simulazione dei dati GPS:* Questo è un punto importante in quanto ci servirà in futuro per costruire i _test_ su #rifGlossario("Grafana") e analizzare i percorsi utenti.
 - *Analizzare e decidere i primi casi d'uso:* Definire i possibili scenari principali aiuterà a capire meglio quale direzione intraprendere.
 - *Lavorare alle Norme di Progetto:* Essendo le basi per strutturare il lavoro, vanno redatte con priorità e coinvolgendo tutto il gruppo, inizieremo con la redazione dei processi primari e di supporto.
 - *Avviare il Piano di Progetto:* L'organizzazione in #rifGlossario("sprint") è fondamentale per il monitoraggio delle attività. Inoltre, qualora un membro terminasse anticipatamente i propri compiti, potrà svolgerne altri ricoprendo un ruolo diverso da quello principale, questo per evitare rallentamenti. Ad esempio, chi è coinvolto nella programmazione potrà contribuire alle Norme di Progetto sotto il ruolo di amministratore nel caso terminasse anticipatamente i suoi compiti come programmatore.

@@ -41,7 +41,7 @@ function checkOccurrence(filePath, word) {
   const titlesPattern = /^=+\s.*/gm;
   const backlogFuncPattern = /#backlog\(.*\)[\s\n]*\)/gs;
   const formatLinkPattern =
-    /⁠#formatlink\([\s\n]*(label:[\s\n]*"[^\s\n]*",[\s\n]*)?url:[\s\n]*"[^\s\n]*"(,[\s\n]*label:[\s\n]*”[^\s\n]*”)?[\s\n]*\)⁠/gs;
+    /#formatLink\([\s\n]*(label:[\s\n]*"[^\s\n]*",[\s\n]*)?url:[\s\n]*"[^\s\n]*"(,[\s\n]*label:[\s\n]*"[^\s\n]*")?[\s\n]*\)/gm;
 
   const content = blob
     .toString()

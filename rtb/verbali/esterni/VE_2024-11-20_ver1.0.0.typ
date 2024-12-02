@@ -30,8 +30,8 @@
 #infoRiunione(luogo: "Google Meet", data: "20/11/2024", ora: "16:00", durata: "40 minuti", partecipantiEsterni: ("Fabio Pallaro", "Andrea Dorigo"))
 
 = Sintesi dell'incontro 
-L'incontro aveva l'obiettivo di fare il punto della situazione a metà #rifGlossario("sprint"), valutare l'implementazione delle tecnologie individuate, definire i prossimi step e risolvere eventuali dubbi.  
-Durante la call, sono state discusse le tecnologie scelte per il progetto, poste alcune domande chiave per chiarire punti critici, e condivisi appunti sulle esperienze utente, casi d'uso e priorità per il #rifGlossario("PoC").  
+L'incontro aveva l'obiettivo di fare il punto della situazione a metà _#rifGlossario("sprint")_, valutare l'implementazione delle tecnologie individuate, definire i prossimi step e risolvere eventuali dubbi.  
+Durante la _call_, sono state discusse le tecnologie scelte per il progetto, poste alcune domande chiave per chiarire punti critici, e condivisi appunti sulle esperienze utente, casi d'uso e priorità per il #rifGlossario("PoC").  
 
 Le tecnologie che abbiamo scelto di utilizzare e che abbiamo discusso durante la riunione sono:  
 - #rifGlossario("Data generator"): *#rifGlossario("Faker")* o *#rifGlossario("SimPy")*.  
@@ -48,7 +48,7 @@ Focus particolare è stato dato all'utilizzo di Grafana per visualizzare dati #r
 Nel PoC, sarà sufficiente ricevere la notifica riguardante l'annuncio pertinente. Tuttavia, per rappresentare visivamente i dati su Grafana, si ipotizza di mostrare punti in movimento su una mappa: quando un punto raggiunge una determinata posizione, verrà visualizzato un messaggio o un annuncio.  
 
 == Logica del sistema 
-La logica del sistema, che comprende incrocio dati, profilazione utenti, verifica della vicinanza a negozi e valutazione di interessi, potrebbe essere integrata direttamente in Apache NiFi. Questo approccio valorizzerebbe le capacità di Apache NiFi come tool per elaborazioni complesse.  
+La logica del sistema, che comprende incrocio dati, profilazione utenti, verifica della vicinanza a negozi e valutazione di interessi, potrebbe essere integrata direttamente in Apache NiFi. Questo approccio valorizzerebbe le capacità di Apache NiFi come _tool_ per elaborazioni complesse.  
 
 == Apache Kafka e Apache NiFi
 Apache Kafka gestirà l'invio e la ricezione di grandi quantità di dati in tempo reale. Apache NiFi sarà utilizzato per elaborare questi dati, integrando logica personalizzata per analizzare i percorsi GPS, generare notifiche, e gestire gli annunci pubblicitari.  

@@ -1,5 +1,4 @@
 {
   "tinymist.fontPaths": ["${workspaceFolder}/assets/font/"],
   "tinymist.formatterMode": "typstyle",
-  "editor.renderWhitespace": "all"
 }
