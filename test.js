@@ -38,23 +38,24 @@ function checkOccurrence(filePath, word) {
   const commentPattern = /\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$/gm; //https://stackoverflow.com/questions/5989315/regex-for-match-replacing-javascript-comments-both-multiline-and-inline
   const importPattern = /#import ".*"\s*:\s*\*/g;
   const functionPattern = /#show:[\s\S]*?content\s*:\s*content[\s\S]*?\)/g;
+  const titlesPattern = /^=+\s.*/gm;
 
   const content = blob
     .toString()
     .replaceAll(commentPattern, "")
     .replaceAll(importPattern, "")
     .replaceAll(functionPattern, "")
+    .replaceAll(titlesPattern, "")
     .toLowerCase();
 
-  if (content.indexOf(word.toLowerCase()) === -1) return true;
-  else {
-    const glossaryRefPattern = new RegExp(
-      `#rifglossario\\("${word.toLowerCase()}"\\)`
-    );
-    const match = content.match(glossaryRefPattern);
-    if (match !== null)
-      return match.index < content.indexOf(word.toLowerCase()); //TODO: capire se vogliamo verificare che la prima vera occorrenza sia riferita, o anche la prima qualsiasi
-    return false;
+  const glossaryRefPattern = new RegExp(
+    `\\b${word.toLowerCase()}\\b|#rifglossario\\("${word.toLowerCase()}"\\)`
+  );
+  const match = content.match(glossaryRefPattern);
+  if (match === null) {
+    return true;
+  } else {
+    return match[0].length == word.length + 17;
   }
 }
 

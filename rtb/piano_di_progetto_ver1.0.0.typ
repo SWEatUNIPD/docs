@@ -153,7 +153,7 @@ Gli _sprint_ vengono quindi divisi nelle due milestone precedentemente elencate 
 === Sprint 1
 - *Inizio*: 13/11/2024
 - *Fine*: 27/11/2024
-- *Rischi attesi*: #underline[#link(<RO-2>)[RO-2]], #underline[#link(<RO-3>)[RO-3]], #underline[#link(<RT-1>)[RT-1]]
+- *Rischi attesi*: #link(<RO-2>)[RO-2], #link(<RO-3>)[RO-3], #link(<RT-1>)[RT-1]
 ==== Attività dello sprint
 Le attività che il gruppo si è preoccupato di concludere durante queste due settimane sono:
 - Inizio stesura delle Norme di Progetto, in particolare:

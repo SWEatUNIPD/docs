@@ -61,19 +61,19 @@ Come molte riunioni nel primo periodo del progetto questa è servita a modellare
 
     "ORG", "Gruppo", "Assegnazione dei ruoli per cominciare il progetto",
 
-    link("https://github.com/SWEatUNIPD/docs/issues/17")[#text(underline("D0017"))],
+    link("https://github.com/SWEatUNIPD/docs/issues/17")[D0017],
     "Riccardo Milan", "Redazione glossario",
 
-    link("https://github.com/SWEatUNIPD/docs/issues/18")[#text(underline("D0018"))],
+    link("https://github.com/SWEatUNIPD/docs/issues/18")[D0018],
     "Andrea Precoma", "Verbale Interno del 2024-11-10",
 
-    link("https://github.com/SWEatUNIPD/docs/issues/19")[#text(underline("D0019"))],
+    link("https://github.com/SWEatUNIPD/docs/issues/19")[D0019],
     "Klaudio Merja", "ReadMe del repository",
 
-    link("https://github.com/SWEatUNIPD/docs/issues/20")[#text(underline("D0020"))],
+    link("https://github.com/SWEatUNIPD/docs/issues/20")[D0020],
     "Klaudio Merja", "Modificare la Action per la compilazione dei verbali da firmare e per la visualizzazione artefatti della PR",
 
-    link("https://github.com/SWEatUNIPD/sweatunipd.github.io/issues/1")[#text(underline("S0001"))],
+    link("https://github.com/SWEatUNIPD/sweatunipd.github.io/issues/1")[S0001],
     "Klaudio Merja\nDavide Marin", "Creazione sito",
   )
 )

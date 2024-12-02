@@ -16,12 +16,15 @@
   set heading(numbering: "1.")
   set par(justify: true)
   set list(marker: [•])
+  show link: underline
 
   align(
     center + top,
     [
       #figure(
         image("/assets/img/logo.svg", width: 50%),
+        outlined: false,
+        numbering: none,
       )
       #v(10pt);
       #text(size: 23pt, weight: "bold", titolo) \
@@ -88,6 +91,16 @@
   }
   outline(indent: auto)
   pagebreak()
+  context {
+    let numFigures = query(figure.where(kind: image, outlined: true)).len()
+    if numFigures > 0 {
+      outline(
+        title: "Elenco delle immagini",
+        target: figure.where(kind: image, outlined: true),
+      )
+      pagebreak()
+    }
+  }
   content
   if uso == "Esterno" and firmaRichiesta == true {
     v(25pt)
@@ -151,6 +164,7 @@
   set page(margin: (x: 2.5cm, y: 2.5cm))
   set heading(numbering: "1.")
   set par(justify: true)
+  show link: underline
 
   align(
     center + top,

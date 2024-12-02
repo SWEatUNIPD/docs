@@ -2,10 +2,10 @@
 
 #show: content => verbale(
   data: "25 Novembre 2024",
-  destinatari: ("Gruppo SWE@", "Prof. Tullio Vardanega", "Prof. Riccardo Cardin",),
+  destinatari: ("Gruppo SWE@", "Prof. Tullio Vardanega", "Prof. Riccardo Cardin"),
   responsabile: "Andrea Perozzo",
-  redattori: ("Riccardo Milan", "Davide Martinelli",),
-  verificatori: ("Davide Picello", "Davide Marin",),
+  redattori: ("Riccardo Milan", "Davide Martinelli"),
+  verificatori: ("Davide Picello", "Davide Marin"),
   titolo: "Analisi dei Requisiti",
   uso: "Esterno",
   versioni: (
@@ -14,26 +14,18 @@
     "Riccardo Milan\nDavide Martinelli",
     "Davide Picello\nDavide Marin",
     [- Modifiche stile in accordo con le norme di progetto,
-     - Modifiche alle sez. Attori e UC1: aggiunto sensore,
-     - Aggiunto NiFi alle tecnologie utilizzate],
-    "1.0.0", 
-    [25/11/2024], 
-    "Riccardo Milan\nDavide Martinelli", 
-    "Davide Picello\nDavide Marin", 
-    [- Struttura e introduzione del documento 
-     - Descrizione del prodotto
-     - Primi casi d'uso],
-    
+        - Modifiche alle sez. Attori e UC1: aggiunto sensore,
+        - Aggiunto NiFi alle tecnologie utilizzate],
+    "1.0.0",
+    [25/11/2024],
+    "Riccardo Milan\nDavide Martinelli",
+    "Davide Picello\nDavide Marin",
+    [- Struttura e introduzione del documento
+        - Descrizione del prodotto
+        - Primi casi d'uso],
   ),
   content: content,
 )
-
-// Sotto l'inidce è bene mettere la lista delle immagini (quando ci saranno anche delle tabelle), forse vale la pena integrarla nel template
-#outline(
-  title: [Lista delle figure],
-  target: figure.where(kind: image),
-)
-#pagebreak()
 
 
 #set heading(numbering: "1.1")
@@ -59,19 +51,13 @@ La prima occorrenza all'interno del documento di un termine definito nel glossar
 
 == Riferimenti
 === Riferimenti normativi
-
-- Capitolato C4 (Sync Lab)\ #text(weight: "bold", fill: rgb("#04E824"))[#underline[#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf]]]
-
 - Norme di Progetto
-
-- Regolamento del progetto didattico\ #text(weight: "bold", fill: rgb("#04E824"))[#underline[#link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf]]]
+- Capitolato C4 (Sync Lab)\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
+- Regolamento del progetto didattico\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")
 
 === Riferimenti informativi
-
-- T5 - Analisi dei Requisiti\ #text(weight: "bold", fill: rgb("#04E824"))[#underline[#link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf]]]
-
-- P2 - I Diagrammi dei Casi d'Uso\ #text(weight: "bold", fill: rgb("#04E824"))[#underline[#link("https://www.math.unipd.it/~rcardin/swea/2023/Diagrammi%20delle%20Classi.pdf")[https://www.math.unipd.it/~rcardin/swea/2023/Diagrammi%20delle%20Classi.pdf]]]
-
+- T5 - Analisi dei Requisiti\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf")
+- P2 - I Diagrammi dei Casi d'Uso\ #formatLink(url: "https://www.math.unipd.it/~rcardin/swea/2023/Diagrammi%20delle%20Classi.pdf")
 - Glossario
 
 = Descrizione del prodotto
@@ -119,7 +105,7 @@ Il sistema utilizzerà un’architettura modulare, includendo le seguenti tecnol
 
 == Introduzione
 
-Lo scopo di questa sezione è quello di elencare e descrivere tutti i casi d'uso indentificati a seguito dell'analisi del capitolato e dei confronti con la proponente (#link(<use_cases>)[#text(underline("sez. 3.3"))]), a cui si farà precedere la descrizione degli attori coinvolti (#link(<actors>)[#text(underline("sez. 3.2"))]).
+Lo scopo di questa sezione è quello di elencare e descrivere tutti i casi d'uso indentificati a seguito dell'analisi del capitolato e dei confronti con la proponente (#link(<use_cases>)[sez. 3.3]), a cui si farà precedere la descrizione degli attori coinvolti (#link(<actors>)[sez. 3.2]).
 
 == Attori <actors>
 
@@ -136,7 +122,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 == Elenco dei casi d'uso <use_cases>
 
-// CASI D'USO UTENTE 
+// CASI D'USO UTENTE
 
 === UC1 - Trasmissione dati di localizzazione
 
@@ -245,9 +231,9 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Postcondizioni*: se l'utente si ferma presso il punto di interesse pubblicizzato, il sistema memorizza l'interazione come feedback positivo sull'annuncio generato
 
 - *Scenario principale*:
-  1. L'utente visualizza un annuncio pubblicitario
-  2. L'utente si ferma presso il punto di interesse pubblicizzato per un periodo di tempo prolungato
-  3. Il sistema memorizza un feedback positivo associato all'annuncio visualizzato
+1. L'utente visualizza un annuncio pubblicitario
+2. L'utente si ferma presso il punto di interesse pubblicizzato per un periodo di tempo prolungato
+3. Il sistema memorizza un feedback positivo associato all'annuncio visualizzato
 
 - *User story*:
 #figure(image("../assets/use_cases/UC5.1.svg", width: 80%), caption: [UC5.1 - Sosta presso il punto d'interesse pubblicizzato])
