@@ -194,7 +194,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 - *Precondizioni*: l'amministratore del sistema è autenticato e ha accesso alla _dashboard_ Grafana.
 
-- *Postcondizioni*: l'amministratore ha una visione dello storico degli annunci pubblicitari comparsi associato al rispettivo utente, con un _feedback_ indicante il successo o l'insuccesso che l'annuncio ha avuto.
+- *Postcondizioni*: l'amministratore ha una visione dello storico degli annunci pubblicitari comparsi associato al rispettivo utente, con un _#rifGlossario("feedback")_ indicante il successo o l'insuccesso che l'annuncio ha avuto.
 
 - *Scenario principale*:
   1. L'amministratore è collegato e autenticato nella _dashboard_ Grafana;

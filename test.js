@@ -54,12 +54,9 @@ function checkOccurrence(filePath, word) {
     .toLowerCase();
 
   const glossaryRefPattern = new RegExp(
-    `\\b${word.toLowerCase()}\\b|#rifglossario\\("${word.toLowerCase()}"\\)`
+    `\\b${word.toLowerCase()}\\b|\\*${word.toLowerCase()}\\*|_${word.toLowerCase()}_|#rifglossario\\("${word.toLowerCase()}"\\)` //FIXME: matchava *word* ma non _word_, verificare perché
   );
   const match = content.match(glossaryRefPattern);
-  if (match && match[0].length != word.length + 17) {
-    console.log(content.slice(match.index - 30, match.index + 30));
-  }
   return match ? match[0].length == word.length + 17 : true;
 }
 
