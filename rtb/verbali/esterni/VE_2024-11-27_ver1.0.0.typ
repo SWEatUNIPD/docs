@@ -77,5 +77,8 @@ Al prossimo incontro, previsto per mercoledì 4 dicembre, sarà presentata la pr
 #backlog(
   content: (
     "ORG", "Gruppo", "SAL fissato per mercoledì 4/12",
+    "ORG",
+    "Andrea Precoma, \nRiccardo Milan",
+    "Prima bozza del simulatore con Docker",
   )
 )
