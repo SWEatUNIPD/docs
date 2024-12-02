@@ -39,24 +39,28 @@ function checkOccurrence(filePath, word) {
   const importPattern = /#import ".*"\s*:\s*\*/g;
   const functionPattern = /#show:[\s\S]*?content\s*:\s*content[\s\S]*?\)/g;
   const titlesPattern = /^=+\s.*/gm;
+  const backlogFuncPattern = /#backlog\(.*\)[\s\n]*\)/gs;
+  const formatLinkPattern =
+    /⁠#formatlink\([\s\n]*(label:[\s\n]*"[^\s\n]*",[\s\n]*)?url:[\s\n]*"[^\s\n]*"(,[\s\n]*label:[\s\n]*”[^\s\n]*”)?[\s\n]*\)⁠/gs;
 
   const content = blob
     .toString()
+    .replaceAll(formatLinkPattern, "")
     .replaceAll(commentPattern, "")
     .replaceAll(importPattern, "")
     .replaceAll(functionPattern, "")
     .replaceAll(titlesPattern, "")
+    .replaceAll(backlogFuncPattern, "")
     .toLowerCase();
 
   const glossaryRefPattern = new RegExp(
     `\\b${word.toLowerCase()}\\b|#rifglossario\\("${word.toLowerCase()}"\\)`
   );
   const match = content.match(glossaryRefPattern);
-  if (match === null) {
-    return true;
-  } else {
-    return match[0].length == word.length + 17;
+  if (match && match[0].length != word.length + 17) {
+    console.log(content.slice(match.index - 30, match.index + 30));
   }
+  return match ? match[0].length == word.length + 17 : true;
 }
 
 const glossario = require("./glossario.json");

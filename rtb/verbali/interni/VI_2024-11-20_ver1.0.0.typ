@@ -26,7 +26,7 @@
 )
 
 = Sintesi
-Dopo aver analizzato le informazioni raccolte nella call con l'azienda, abbiamo discusso come strutturare il lavoro per raggiungere gli obiettivi del prossimo #rifGlossario("SAL"), previsto per mercoledì 27 novembre 2024. Si è deciso di affrontare simultaneamente lo studio per la generazione dei dati GPS, l'analisi dei primi casi d'uso e la redazione delle Norme di Progetto e del Piano di Progetto, poiché rappresentano le fondamenta organizzative e tecniche del progetto. Abbiamo stabilito i ruoli e i compiti per garantire un avanzamento omogeneo.
+Dopo aver analizzato le informazioni raccolte nella call con l'azienda, abbiamo discusso come strutturare il lavoro per raggiungere gli obiettivi del prossimo #rifGlossario("SAL"), previsto per mercoledì 27 novembre 2024. Si è deciso di affrontare simultaneamente lo studio per la generazione dei dati #rifGlossario("GPS"), l'analisi dei primi casi d'uso e la redazione delle Norme di Progetto e del Piano di Progetto, poiché rappresentano le fondamenta organizzative e tecniche del progetto. Abbiamo stabilito i ruoli e i compiti per garantire un avanzamento omogeneo.
 
 = Ordine del giorno
 
@@ -35,10 +35,10 @@ A seguito della call con l'azienda, è emerso che per preparare un #rifGlossario
 - *Iniziare pragmaticamente con la simulazione dei dati GPS:* Questo è un punto importante in quanto ci servirà in futuro per costruire i test su #rifGlossario("Grafana") e analizzare i percorsi utenti.
 - *Analizzare e decidere i primi casi d'uso:* Definire i possibili scenari principali aiuterà a capire meglio quale direzione intraprendere.
 - *Lavorare alle Norme di Progetto:* Essendo le basi per strutturare il lavoro, vanno redatte con priorità e coinvolgendo tutto il gruppo, inizieremo con la redazione dei processi primari e di supporto.
-- *Avviare il Piano di Progetto:* L'organizzazione in sprint è fondamentale per il monitoraggio delle attività. Inoltre, qualora un membro terminasse anticipatamente i propri compiti, potrà svolgerne altri ricoprendo un ruolo diverso da quello principale, questo per evitare rallentamenti. Ad esempio, chi è coinvolto nella programmazione potrà contribuire alle Norme di Progetto sotto il ruolo di amministratore nel caso terminasse anticipatamente i suoi compiti come programmatore.
+- *Avviare il Piano di Progetto:* L'organizzazione in #rifGlossario("sprint") è fondamentale per il monitoraggio delle attività. Inoltre, qualora un membro terminasse anticipatamente i propri compiti, potrà svolgerne altri ricoprendo un ruolo diverso da quello principale, questo per evitare rallentamenti. Ad esempio, chi è coinvolto nella programmazione potrà contribuire alle Norme di Progetto sotto il ruolo di amministratore nel caso terminasse anticipatamente i suoi compiti come programmatore.
 
 == Generazione dei dati GPS
-Si è deciso di partire con la simulazione di dati GPS utilizzando librerie Python come Faker o SimPy, per garantire in futuro la creazione di percorsi realistici e lo storico degli spostamenti. Questa attività è molto importante per poter costruire un PoC che dimostri i processi chiave.
+Si è deciso di partire con la simulazione di dati GPS utilizzando librerie Python come #rifGlossario("Faker") o #rifGlossario("SimPy"), per garantire in futuro la creazione di percorsi realistici e lo storico degli spostamenti. Questa attività è molto importante per poter costruire un PoC che dimostri i processi chiave.
 
 == Norme di Progetto
 Le Norme di Progetto rappresentano la base organizzativa del lavoro e saranno redatte e modificate progressivamente durante tutta la durata del progetto. Poiché queste norme richiedono un contributo continuo, è stato deciso che tutti i membri del gruppo contribuiranno alla loro stesura sotto il ruolo di amministratore. In questa settimana, il focus sarà sull'avvio dei seguenti processi:

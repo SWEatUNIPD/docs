@@ -2,7 +2,7 @@
   "A": {
     "Apache Kafka": "Piattaforma di broker e data streaming che consente di gestire e trasferire big data in tempo reale.",
     "Apache Airflow": "Orchestratore di flussi di lavoro opensource per applicazioni data-intensive",
-    "Apache Nifi": "Sistema di integrazione di dati open-source per l'elaborazione e la distribuzione di flussi di dati.",
+    "Apache NiFi": "Sistema di integrazione di dati open-source per l'elaborazione e la distribuzione di flussi di dati.",
     "Apache Spark": "Elaborazione dati in-memory opensource, ad alte prestazioni, progettato per eseguire elaborazioni complesse su grandi volumi di dati in modo rapido e scalabile.",
     "Apache Flink": "Framework di elaborazione dati a flusso open-source, ottimizzato per applicazioni in tempo reale.",
     "Apache Superset": "Piattaforma open-source di business intelligence per esplorare e visualizzare dati in modo interattivo."

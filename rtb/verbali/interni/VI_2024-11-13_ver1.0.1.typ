@@ -42,24 +42,24 @@ La riunione interna aveva l'obiettivo di:
 - Chiarire i dubbi e organizzare la collaborazione con i referenti aziendali, considerando la complessità dei requisiti e delle tecnologie suggerite.
 = Ordine del giorno
 == Discussione dei suggerimenti tecnici e di Project Management
-Abbiamo analizzato i suggerimenti forniti dall'azienda sui concetti di data streaming, data processing, e event-driven architecture. Visti i numerosi strumenti consigliati (Kafka Streams, Nifi, Flink, Spring), abbiamo concordato di dedicare il tempo iniziale a documentarci per poi selezionare le tecnologie che meglio si integrano con il nostro obiettivo, soprattutto considerando la possibile integrazione con LangChain.
+Abbiamo analizzato i suggerimenti forniti dall'azienda sui concetti di data streaming, data processing, e event-driven architecture. Visti i numerosi strumenti consigliati (Kafka Streams, Nifi, Flink, Spring), abbiamo concordato di dedicare il tempo iniziale a documentarci per poi selezionare le tecnologie che meglio si integrano con il nostro obiettivo, soprattutto considerando la possibile integrazione con #rifGlossario("LangChain").
 == Richiesta di supporto e confronto per l'Analisi dei Requisiti
 Abbiamo discusso l'importanza dell'analisi dei requisiti, specialmente per chi era meno esperto. Poiché l'analisi dei requisiti è una fase fondamentale ma nuova per alcuni, abbiamo concordato di chiedere un confronto con i referenti, per chiarire meglio il nostro approccio e definire le esigenze principali. Inoltre, abbiamo deciso di organizzare incontri ricorrenti con i referenti per verificare i requisiti, con il primo meeting fissato per la settimana prossima.
 == Organizzazione degli incontri di aggiornamento e tracciabilità delle decisioni
-Per mantenere coerenza e tracciabilità, abbiamo stabilito di fissare una call di aggiornamento ogni mercoledì. Queste call si alternano di settimana in settimana: una settimana sarà dedicata a brevi aggiornamenti rapidi, mentre la settimana successiva si terrà un incontro di fine sprint più strutturato, dove si discuteranno i progressi e le questioni aperte. Durante queste call, saranno annotate le decisioni prese, che verranno riportate all'interno delle descrizioni delle relative issue su GitHub, con riferimento alla data della riunione per rintracciare i verbali e documentare l'avanzamento.
+Per mantenere coerenza e tracciabilità, abbiamo stabilito di fissare una call di aggiornamento ogni mercoledì. Queste call si alternano di settimana in settimana: una settimana sarà dedicata a brevi aggiornamenti rapidi, mentre la settimana successiva si terrà un incontro di fine #rifGlossario("sprint") più strutturato, dove si discuteranno i progressi e le questioni aperte. Durante queste call, saranno annotate le decisioni prese, che verranno riportate all'interno delle descrizioni delle relative issue su #rifGlossario("GitHub"), con riferimento alla data della riunione per rintracciare i verbali e documentare l'avanzamento.
 = Decisioni operative
 == Note operative
 - Frequenza delle Call: Ogni mercoledì, con eventuali aggiustamenti settimanali.
 - Tracciabilità delle Decisioni: In ogni issue su GitHub, nella descrizione sarà indicata la decisione presa con riferimento al verbale del giorno di discussione, facilitando la ricerca delle decisioni passate.
 == Compiti di documentazione e studio
 === Klaudio Merja, Andrea Precoma e Davide Marin:
-- Studio su data visualization.
-- Studio su stream processing.
+- Studio su #rifGlossario("data visualization").
+- Studio su #rifGlossario("stream processing").
 - Analisi sull'utilizzo di un broker per disaccoppiare lo stream di informazioni provenienti dai simulatori.
 === Riccardo Milan, Davide Picello, Davide Martinelli e Andrea Perozzo:
 - Ricerca su framework per la simulazione dei dati.
-- Approfondimento sull'utilizzo di database o storage adatti per i dati del progetto.
-- Studio delle modalità di processamento dei messaggi in input e formulazione di risposte tramite LLM.
+- Approfondimento sull'utilizzo di #rifGlossario("database") o storage adatti per i dati del progetto.
+- Studio delle modalità di processamento dei messaggi in input e formulazione di risposte tramite #rifGlossario("LLM").
 *Obiettivo di completamento per tutti i compiti di studio e documentazione:* martedì, giorno precedente alla prossima call di aggiornamento con Sync Lab.
 == Azioni specifiche di redazione e verifica
 Redazione della prima versione del documento "Norme di Progetto", questa attività verrà registrata in una tabella dedicata e collegata alla relativa issue per tracciabilità, e sarà completata per il prossimo incontro.

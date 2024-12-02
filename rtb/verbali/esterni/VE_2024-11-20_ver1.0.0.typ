@@ -30,7 +30,7 @@
 #infoRiunione(luogo: "Google Meet", data: "20/11/2024", ora: "16:00", durata: "40 minuti", partecipantiEsterni: ("Fabio Pallaro", "Andrea Dorigo"))
 
 = Sintesi dell'incontro 
-L'incontro aveva l'obiettivo di fare il punto della situazione a metà sprint, valutare l'implementazione delle tecnologie individuate, definire i prossimi step e risolvere eventuali dubbi.  
+L'incontro aveva l'obiettivo di fare il punto della situazione a metà #rifGlossario("sprint"), valutare l'implementazione delle tecnologie individuate, definire i prossimi step e risolvere eventuali dubbi.  
 Durante la call, sono state discusse le tecnologie scelte per il progetto, poste alcune domande chiave per chiarire punti critici, e condivisi appunti sulle esperienze utente, casi d'uso e priorità per il #rifGlossario("PoC").  
 
 Le tecnologie che abbiamo scelto di utilizzare e che abbiamo discusso durante la riunione sono:  
