@@ -46,9 +46,9 @@ Durante l'incontro è stato deciso di modificare il sistema di _versioning_. Si 
 - _Minor_: aggiunta o modifica del contenuto;
 - _Patch_: per modifiche di stile e correzioni grammaticali (no modifiche di contenuto).
 
-Questo cambaimento è scaturito da un dubbio del gruppo: se la stesura di un documento impiega più di uno _sprint_ di tempo, dobbiamo aggiornare il responsabile o rimane sempre lo stesso ?
+Questo cambaimento è scaturito da un dubbio del gruppo: se la stesura di un documento impiega più di uno _sprint_, dobbiamo aggiornare il responsabile o rimane sempre lo stesso ?
 
-Dopo un confronto, anche con il professor Vardanega, abbiamo capito che il responsabile di un documento è colui che ricopre tale ruolo al momento dell'approvazione finale del documento. Proprio per questo motivo è necessario modificare il sistema di _versioning_, cambiando il significato degli indici.
+Dopo un confronto, anche con il professor Vardanega, abbiamo capito che il responsabile di un documento è colui che ricopre tale ruolo al momento dell'approvazione finale del documento. Proprio per questo motivo è necessario modificare il sistema di _versioning_, cambiando il significato degli indici. In questo modo l'incremento del primo indice avverrà solo nei momenti di approvazione finale del documento, e non più ad ogni modifica.
 
 È quindi necessario modificare il documento Norme di Progetto.
 
