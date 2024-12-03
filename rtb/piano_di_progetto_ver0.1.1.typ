@@ -64,13 +64,13 @@ sottolineato e seguito dalla lettera g posta ad apice (e.g. #rifGlossario("termi
 #pagebreak()
 
 = Analisi dei rischi
-Lo scopo principale dell'analisi dei rischi è quello di individuare le possibili difficoltà o problemi che il gruppo, sia nella sua interezza che a livello individuale, può incontrare con una certa probabilità, causando rallentamenti che possono avere un impatto negativo più o meno rilevante all'interno del progetto
+Lo scopo principale dell'analisi dei rischi è quello di individuare le possibili difficoltà o problemi che il gruppo, sia nella sua interezza che a livello individuale, può incontrare con una certa probabilità, causando rallentamenti che possono avere un impatto negativo più o meno rilevante all'interno del progetto.
 
 Ogni rischio riportato successivamente è caratterizzato da:
-- *ID rischio*: identificativo univoco del rischio;
-- *Descrizione*: descrive brevemente le cause e gli effetti del rischio in questione all'interno del progetto;
+- *ID rischio*: identificativo univoco del rischio.
+- *Descrizione*: descrive brevemente le cause e gli effetti del rischio in questione all'interno del progetto.
 - *Probabilità*: indica la probabilità che il rischio si verifichi all'interno di un progetto, sia essa bassa, media o alta;
-- *Impatto negativo*: quantifica l'impatto negativo che il rischio può avere all'interno del progetto, sia esso basso, medio o alto;
+- *Impatto negativo*: quantifica l'impatto negativo che il rischio può avere all'interno del progetto, sia esso basso, medio o alto.
 - *Piano di contingenza*: descrive i processi che il gruppo può o deve attuare al fine di mitigare i danni causati dal rischio.
 
 Ogni ID rischio segue la seguente convenzione per quanto riguarda la sua struttura
@@ -78,10 +78,10 @@ Ogni ID rischio segue la seguente convenzione per quanto riguarda la sua struttu
 dove *`[X]`* indica la tipologia di rischio, che si può distinguere in *`O`*-Organizzativo oppure *`T`*-Tecnologico, e *`[Y]`* indica un numero progressivo, univoco per tipologia di rischio.
 
 Per il processo di gestione dei rischi il gruppo adotta il modello fornito da Ian Sommerville nel libro _Software Engineering_, caratterizzato dai seguenti passi:
-1. *Identificazione del rischio*;
-2. *Analisi e classificazione del rischio*;
-3. *Processi di mitigazione del rischio*;
-4. *Controllo del rischio*.
+1. *Identificazione del rischio*
+2. *Analisi e classificazione del rischio*
+3. *Processi di mitigazione del rischio*
+4. *Controllo del rischio*
 
 == Rischi organizzativi
 === Riunione con l'azienda proponente
@@ -147,12 +147,12 @@ Alla fine di ogni _sprint_ viene svolta una riunione con l'azienda proponente in
 A metà di ogni _sprint_ l'azienda si rende disponibile al gruppo per eventuali chiarimenti o dubbi che possono venire a galla durante lo svolgimento dell'attività da parte dei membri del gruppo.
 
 Ogni iterazione è caratterizzata da:
-- *Inizio*: data in cui ha inizio un determinato _sprint_;
-- *Fine*: data in cui termina lo _sprint_;
-- *Rischi attesi*: elenco degli identificativi che il gruppo si aspetta di incontrare durante lo _sprint_;
-- *Attività dello _sprint_*: attività che il gruppo si impone di raggiungere durante la durata dello _sprint_ al fine di raggiungere determinati obiettivi;
-- *Preventivo orario*: stima delle ore che ciascun membro deve dedicare nelle vesti di un determinato ruolo al fine di concludere le attività;
-- *Consuntivo orario e di spesa*: ore produttive dedicate da parte di ogni membro nei vari ruoli ricoperti durante l'iterazione al fine di concludere le attività previste e breve schema su quanto speso durante l'iterazione;
+- *Inizio*: data in cui ha inizio un determinato _sprint_.
+- *Fine*: data in cui termina lo _sprint_.
+- *Rischi attesi*: elenco degli identificativi che il gruppo si aspetta di incontrare durante lo _sprint_.
+- *Attività dello _sprint_*: attività che il gruppo si impone di raggiungere durante la durata dello _sprint_ al fine di raggiungere determinati obiettivi.
+- *Preventivo orario*: stima delle ore che ciascun membro deve dedicare nelle vesti di un determinato ruolo al fine di concludere le attività.
+- *Consuntivo orario e di spesa*: ore produttive dedicate da parte di ogni membro nei vari ruoli ricoperti durante l'iterazione al fine di concludere le attività previste e breve schema su quanto speso durante l'iterazione.
 - *Retrospettiva*: analisi svolta alla fine di ogni _sprint_ con lo scopo di evidenziare ciò che ha funzionato e ciò che non ha funzionato durante l'iterazione, sottolineando i vari problemi e difficoltà riscontrati che hanno causato rallentamenti, con il fine di migliorare le prossime iterazioni.
 
 Il gruppo si pone come _milestone_ del progetto le due consegne previste dai committenti, nonché i Prof.ssori Tullio Vardanega e Riccardo Cardin, ovvero:
@@ -185,7 +185,7 @@ Le attività che il gruppo si è preoccupato di concludere durante queste due se
 #rendicontazioneOre(
   (
     (4, 0, 0, 0, 0, 0),
-    (0, 4, 0, 0, 1.5, 0),
+    (0, 4, 0, 0, 1, 0),
     (0, 0, 0, 0, 0, 5),
     (0, 0, 5, 0, 0, 0),
     (0, 3, 0, 0, 0, 3),
@@ -198,7 +198,7 @@ Le attività che il gruppo si è preoccupato di concludere durante queste due se
 #consuntivoOre(
   (
     (4, 0, 0, 0, 0, 0),
-    (0, 4, 0, 0, 1.5, 0),
+    (0, 4, 0, 0, 1, 0),
     (0, 0, 0, 0, 0, 5),
     (0, 0, 5, 0, 0, 0),
     (0, 3, 0, 0, 0, 3),
