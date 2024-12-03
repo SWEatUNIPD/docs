@@ -14,7 +14,7 @@
   verificatori: (
     "Riccardo Milan",
   ),
-  riassunto: "Incontro di fine sprint dove sono stati chiariti molti dubbi, e fissati alcuni obiettivi per lo sprint a venire",
+  riassunto: "Incontro di fine sprint dove sono stati chiariti molti dubbi, e fissati alcuni obiettivi per lo sprint a venire.",
   versioni: (
     "1.0.0", 
     [28/11/2024], 
@@ -41,14 +41,14 @@ Successivamente l'azienda ha risposto alle domande del gruppo.
 
 
 = Risposte alle domande  
-Durante la stesura del documento Analisi dei requisiti, sono sorti vari dubbi a cui il gruppo non era sicuro di saper dare una risposta corretta. Sono riportati, in dettaglio, qui di seguito.
+Durante la stesura del documento Analisi dei Requisiti, sono sorti vari dubbi a cui il gruppo non era sicuro di saper dare una risposta corretta. Sono riportati, in dettaglio, qui di seguito.
 == Sensori come attori
 Il gruppo non comprendeva se i sensori dovessero essere interpretati come attori.
 
 Il partecipante esterno di Sync Lab, Andrea Dorigo, ha chiarito che, poiché il prodotto comprende esclusivamente il _software_, i sensori devono essere considerati attori esterni. Se il prodotto avesse incluso sia il sensore che il _software_ integrato, la situazione sarebbe stata diversa, ma non è questo il caso.
 
 == Registrazione utenti
-Un altro dubbio sorto durante l'Analisi dei requisiti era: è necessario creare una logica di _login_ per gli utenti e per l'amministratore ?
+Un altro dubbio sorto durante l'Analisi dei Requisiti era: è necessario creare una logica di _login_ per gli utenti e per l'amministratore ?
 
 Dialogando insieme abbiamo capito che:
 - Non è necessario prevedere un sistema di _login_ per gli utenti, dato che il prodotto attuale prevede esclusivamente l'accesso alla _dashboard_ da parte dell'amministratore.
@@ -61,11 +61,11 @@ Ci è stato quindi riconfermato che il focus del prodotto sarà sull'utilizzo la
 == Nifi
 Sono stati richiesti, da parte del gruppo, alcuni consigli riguardo ad #rifGlossario("Apache Nifi"), in quanto nessun membro del gruppo ne è particolarmente esperto.
 
-L'azienda si è dimostrata ancora una volta molto disponibile, condividendo subito del materiale web e proponendo di fissare una sessione di #rifGlossario("Deep Dive") a riguardo, più avanti.
+L'azienda si è dimostrata ancora una volta molto disponibile, condividendo subito del materiale _web_ e proponendo di fissare una sessione di _#rifGlossario("deep dive")_ a riguardo, più avanti.
 
 Il materiale fornito è il seguente:
-- #link("https://www.youtube.com/watch?v=RjWstt7nRVY&list=PLu5bSZv1aox0fbEZ4uGIY4cMiZzBMkmY0&ab_channel=NiFiNotes")[#text(underline("Video YouTube: Apache NiFi Anti-Patterns, Part 1"))]
-- #link("https://github.com/lifan0127/nifi-langchain")[#text(underline("Repository Github NiFi LangChain Processors"))]
+- #formatLink(label:"Video YouTube: Apache NiFi Anti-Patterns, Part 1", url:"https://www.youtube.com/watch?v=RjWstt7nRVY&list=PLu5bSZv1aox0fbEZ4uGIY4cMiZzBMkmY0&ab_channel=NiFiNotes")
+- #formatLink(label:"Repository Github NiFi LangChain Processors", url:"https://github.com/lifan0127/nifi-langchain")
 
 = Conclusioni  
 L'incontro è stato utile: confrontarsi sui vari dubbi permette sempre di comprendere al meglio la direzione ottimale per il progetto.
