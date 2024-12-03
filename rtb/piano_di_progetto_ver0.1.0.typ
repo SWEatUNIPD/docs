@@ -9,6 +9,13 @@
   titolo: "Piano di Progetto",
   uso: "Esterno",
   versioni: (
+    "0.1.1",
+    "03/12/2024",
+    "Klaudio Merja",
+    "Andrea Precoma\nRiccardo Milan",
+    [
+      - Generazione dei grafici automatica
+    ],
     "0.1.0",
     "27/11/2024",
     "Klaudio Merja",
@@ -84,6 +91,7 @@ Per il processo di gestione dei rischi il gruppo adotta il modello fornito da Ia
   probabilità: [Bassa],
   impatto: [Medio],
   piano: [È possibile chiedere un giorno fisso all'azienda in cui svolgere le riunioni di SAL in modo da evitare eventuali indisponibilità nel lungo periodo.],
+  caption: [RO-1 - Riunione con l'azienda proponente],
 )
 === Sovrastima della durata delle attività <RO-2>
 #tabellaRischio(
@@ -92,6 +100,7 @@ Per il processo di gestione dei rischi il gruppo adotta il modello fornito da Ia
   probabilità: [Alta],
   impatto: [Basso],
   piano: [Nonostante il rischio abbia probabilità elevata si ritiene l'impatto negativo del rischio sia basso, se non nullo, in quanto il gruppo può allocare la risorsa in un'altra attività al fine di liberare il prima possibile il "TO-DO" del _#rifGlossario("backlog")_.],
+  caption: [RO-2 - Sovrastima della durata delle attività],
 )
 
 === Sottostima della durata delle attività <RO-3>
@@ -101,6 +110,7 @@ Per il processo di gestione dei rischi il gruppo adotta il modello fornito da Ia
   probabilità: [Alta],
   impatto: [Alto],
   piano: [Il rischio è inevitabile, ma può essere mitigato tramite l'allocazione di risorse disponibili a supporto di quelle già allocate per accelerare lo svolgimento dell'attività.],
+  caption: [RO-3 - Sottostima della durata delle attività],
 )
 == Rischi tecnologici
 === Inesperienza <RT-1>
@@ -110,6 +120,7 @@ Per il processo di gestione dei rischi il gruppo adotta il modello fornito da Ia
   probabilità: [Alta],
   impatto: [Alto],
   piano: [Il rischio non può essere evitato, ma può essere limitato tramite il confronto con i membri più esperti del gruppo oppure tramite delle sessioni di _#rifGlossario("deep dive")_ tecnologico che l'azienda proponente fornisce al gruppo.],
+  caption: [RT-1 - Inesperienza],
 )
 
 #pagebreak()
@@ -171,27 +182,33 @@ Le attività che il gruppo si è preoccupato di concludere durante queste due se
 - Studio sulla generazione dei dati #rifGlossario("GPS")
 - Creazione del _file_ Excel condiviso per la rendicontazione delle ore produttive
 ==== Preventivo orario
-#rendicontazioneOre((
-  (4, 0, 0, 0, 0, 0),
-  (0, 4, 0, 0, 1.5, 0),
-  (0, 0, 0, 0, 0, 5),
-  (0, 0, 5, 0, 0, 0),
-  (0, 3, 0, 0, 0, 3),
-  (2, 2, 0, 0, 1, 0),
-  (0, 0, 5, 0, 0, 0),
-))
+#rendicontazioneOre(
+  (
+    (4, 0, 0, 0, 0, 0),
+    (0, 4, 0, 0, 1.5, 0),
+    (0, 0, 0, 0, 0, 5),
+    (0, 0, 5, 0, 0, 0),
+    (0, 3, 0, 0, 0, 3),
+    (2, 2, 0, 0, 1, 0),
+    (0, 0, 5, 0, 0, 0),
+  ),
+  caption: [Preventivo delle ore nel primo _sprint_ per membro e per ruolo],
+)
 ==== Consuntivo orario e di spesa
-#consuntivoOre((
-  (4, 0, 0, 0, 0, 0),
-  (0, 4, 0, 0, 1.5, 0),
-  (0, 0, 0, 0, 0, 5),
-  (0, 0, 5, 0, 0, 0),
-  (0, 3, 0, 0, 0, 3),
-  (2, 2, 0, 0, 1, 0),
-  (0, 0, 5, 0, 0, 0),
-))
-
-#figure(image("../assets/img/PdP/Periodo1.png", width: 60%))
+#consuntivoOre(
+  (
+    (4, 0, 0, 0, 0, 0),
+    (0, 4, 0, 0, 1.5, 0),
+    (0, 0, 0, 0, 0, 5),
+    (0, 0, 5, 0, 0, 0),
+    (0, 3, 0, 0, 0, 3),
+    (2, 2, 0, 0, 1, 0),
+    (0, 0, 5, 0, 0, 0),
+  ),
+  tabCaption: [Consutivo delle ore nel primo _sprint_ per membro e per ruolo],
+  costTabCaption: [Costi sostenuti nel primo _sprint_],
+  chartCaption: [Grafico percentuale dell'allocazione delle ore per ruolo nel primo _sprint_],
+)
 
 ==== Retrospettiva
 In queste due settimane di lavoro è apparso evidente l'impatto che le Norme di Progetto hanno avuto all'interno del gruppo, adottando una serie di convenzioni e regole che hanno permesso di uniformare il lavoro svolto dai vari redattori. Tuttavia, essendo la prima versione delle Norme di Progetto, a causa dei frequenti cambiamenti all'interno del documento, si è reso necessario più volte dover rivedere e correggere in corso d'opera alcuni documenti più volte. Nonostante ciò, il gruppo ritiene il lavoro svolto in linea con le aspettative.

@@ -1,3 +1,6 @@
+#import "@preview/cetz:0.3.1"
+#import "@preview/cetz-plot:0.1.0": chart
+
 #let verbale(
   data: "",
   titolo: "",
@@ -50,7 +53,7 @@
   align(
     center + bottom,
     [
-      #if repr(riassunto)!="\"\"" and repr(riassunto)!="[]" {
+      #if repr(riassunto) != "\"\"" and repr(riassunto) != "[]" {
         heading([Riassunto del verbale], numbering: none, outlined: false)
         riassunto
       }
@@ -91,7 +94,18 @@
   }
   outline(indent: auto)
   pagebreak()
+
   context {
+
+    let numTables = query(figure.where(kind: table, outlined: true)).len()
+    if numTables > 0 {
+      outline(
+        title: "Elenco delle tabelle",
+        target: figure.where(kind: table, outlined: true),
+      )
+      pagebreak()
+    }
+
     let numFigures = query(figure.where(kind: image, outlined: true)).len()
     if numFigures > 0 {
       outline(
@@ -100,6 +114,7 @@
       )
       pagebreak()
     }
+
   }
   content
   if uso == "Esterno" and firmaRichiesta == true {
@@ -107,43 +122,6 @@
     align(right, "Firma dell'azienda proponente")
   }
 }
-
-#let infoRiunione(
-  luogo: "",
-  data: "",
-  ora: "",
-  durata: "",
-  partecipanti: (
-    "Andrea Perozzo",
-    "Andrea Precoma",
-    "Davide Marin",
-    "Davide Martinelli",
-    "Davide Picello",
-    "Riccardo Milan",
-    "Klaudio Merja",
-  ),
-  partecipantiEsterni: (),
-) = {
-  [
-    = Informazioni generali
-    == Luogo e data della riunione
-    - *Luogo*: #luogo
-    - *Data*: #data
-    - *Ora*: #ora
-    - *Durata*: #durata
-    == Partecipanti #if partecipantiEsterni.len() != 0 {[interni]}
-    #for partecipante in partecipanti {
-      [- #partecipante]
-    }
-    #if (partecipantiEsterni.len() != 0) {
-      [== Partecipanti esterni]
-      for partecipanteEsterno in partecipantiEsterni {
-        [- #partecipanteEsterno]
-      }
-    }
-  ]
-}
-
 
 #let Lettera(
   data: "",
@@ -236,6 +214,42 @@
   )
 }
 
+#let infoRiunione(
+  luogo: "",
+  data: "",
+  ora: "",
+  durata: "",
+  partecipanti: (
+    "Andrea Perozzo",
+    "Andrea Precoma",
+    "Davide Marin",
+    "Davide Martinelli",
+    "Davide Picello",
+    "Riccardo Milan",
+    "Klaudio Merja",
+  ),
+  partecipantiEsterni: (),
+) = {
+  [
+    = Informazioni generali
+    == Luogo e data della riunione
+    - *Luogo*: #luogo
+    - *Data*: #data
+    - *Ora*: #ora
+    - *Durata*: #durata
+    == Partecipanti #if partecipantiEsterni.len() != 0 {[interni]}
+    #for partecipante in partecipanti {
+      [- #partecipante]
+    }
+    #if (partecipantiEsterni.len() != 0) {
+      [== Partecipanti esterni]
+      for partecipanteEsterno in partecipantiEsterni {
+        [- #partecipanteEsterno]
+      }
+    }
+  ]
+}
+
 #let rifGlossario(content) = underline[#content#super[#text(size: 9pt)[g]]]
 
 #let formatLink(label: "", url: "") = {
@@ -268,21 +282,23 @@
   }
 }
 
-#let tabellaRischio(ID: "", descrizione: "", probabilità: "", impatto: "", piano: "") = {
-  table(
-    // fill: (_, y) => if calc.even(y) {
-    //   rgb("04E82420")
-    // },
-    columns: (27%, 73%),
-    [*ID Rischio*], [#ID],
-    [*Descrizione*], [#descrizione],
-    [*Probabilità*], [#probabilità],
-    [*Impatto negativo*], [#impatto],
-    [*Piano di contingenza*], [#piano],
+#let tabellaRischio(ID: "", descrizione: "", probabilità: "", impatto: "", piano: "", caption: "") = {
+  figure(
+    kind: table,
+    caption: caption,
+    table(
+      columns: (27%, 73%),
+      align: left,
+      [*ID Rischio*], [#ID],
+      [*Descrizione*], [#descrizione],
+      [*Probabilità*], [#probabilità],
+      [*Impatto negativo*], [#impatto],
+      [*Piano di contingenza*], [#piano],
+    ),
   )
 }
 
-#let rendicontazioneOre(content) = {
+#let rendicontazioneOre(content, caption: "") = {
   let membri = (
     "Andrea Perozzo",
     "Andrea Precoma",
@@ -315,17 +331,21 @@
       }),
     )
   }
-
-  table(
-    columns: (2.2fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
-    table.header([*Membro*], [*Resp.*], [*Amm.*], [*Ana.*], [*Proge.*], [*Progr*], [*Ver.*], [*Totale*]),
-    ..data,
-    str(content.flatten().sum())
+  figure(
+    caption: caption,
+    kind: table,
+    table(
+      columns: (2.2fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
+      align: left,
+      table.header([*Membro*], [*Resp.*], [*Amm.*], [*Ana.*], [*Proge.*], [*Progr*], [*Ver.*], [*Totale*]),
+      ..data,
+      str(content.flatten().sum()),
+    ),
   )
 }
 
-#let consuntivoOre(content) = {
-  rendicontazioneOre(content)
+#let consuntivoOre(content, tabCaption: "", costTabCaption: "", chartCaption: "") = {
+  rendicontazioneOre(content, caption: tabCaption)
   let ruoli = (
     ("Responsabile", 30),
     ("Amministratore", 20),
@@ -353,10 +373,50 @@
     str(somma)
   }
 
-  align(center)[#table(
-      columns: (25%, 25%),
-      table.header([*Ruolo*], [*Costo*]),
-      ..data.flatten(),
-      [*Totale*], [#costoFinale €]
+
+  align(center)[#figure(
+      kind: table,
+      caption: costTabCaption,
+      table(
+        columns: (25%, 25%),
+        table.header([*Ruolo*], [*Costo*]),
+        ..data.flatten(),
+        [*Totale*], [#costoFinale €]
+      ),
+    )]
+
+  let oreRuolo(i) = {
+    let ore = 0
+    for j in range(0, 7) {
+      ore += content.at(j).at(i)
+    }
+    return ore
+  }
+  let chartData = (
+    ("Responsabile", oreRuolo(0)),
+    ("Amministratore", oreRuolo(1)),
+    ("Analista", oreRuolo(2)),
+    ("Progettista", oreRuolo(3)),
+    ("Programmatore", oreRuolo(4)),
+    ("Verificatore", oreRuolo(5)),
+  )
+
+  align(center)[
+    #figure(
+      kind: image,
+      caption: chartCaption,
+      cetz.canvas({
+        let colors = gradient.linear(red, yellow, green, blue)
+
+        chart.piechart(
+          chartData,
+          value-key: 1,
+          label-key: 0,
+          radius: 3,
+          slice-style: colors,
+          gap: 0,
+          outer-label: (content: "%"),
+        )
+      }),
     )]
 }
