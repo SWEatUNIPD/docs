@@ -50,7 +50,7 @@
   align(
     center + bottom,
     [
-      #if riassunto.len() > 0 {
+      #if repr(riassunto)!="\"\"" and repr(riassunto)!="[]" {
         heading([Riassunto del verbale], numbering: none, outlined: false)
         riassunto
       }

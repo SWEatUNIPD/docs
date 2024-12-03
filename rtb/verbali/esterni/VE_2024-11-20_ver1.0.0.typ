@@ -2,7 +2,7 @@
 
 #show: content => verbale(
   data: "20 novembre 2024",
-  responsabile: "Andrea Perozzo",
+  responsabile: "Klaudio Merja",
   destinatari: (
     "Prof. Tullio Vardanega",
     "Prof. Riccardo Cardin",
