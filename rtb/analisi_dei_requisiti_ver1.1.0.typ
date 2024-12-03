@@ -96,7 +96,7 @@ Il sistema utilizzerà un’architettura modulare, includendo le seguenti tecnol
 - Data streaming: #rifGlossario("Apache Kafka") per gestire flussi di dati in tempo reale.
 - #rifGlossario("Apache NiFi"): per processare e distribuire i dati.
 - #rifGlossario("LangChain"): per la generazione di annunci tramite #rifGlossario("LLM").
-- #rifGlossario("PostGIS"): per l’archiviazione di dati geolocalizzati.
+- #rifGlossario("PostGIS"): per l'archiviazione di dati geolocalizzati.
 - #rifGlossario("Grafana"): per il monitoraggio dei dati tramite interfaccia grafica.
 
 // Si potrebbe pensare di rappresentare questo elenco come un flusso di dati, con le tecnologie come nodi collegati tra loro da una freccia

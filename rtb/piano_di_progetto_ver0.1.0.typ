@@ -9,7 +9,7 @@
   titolo: "Piano di Progetto",
   uso: "Esterno",
   versioni: (
-    "1.0.0",
+    "0.1.0",
     "27/11/2024",
     "Klaudio Merja",
     "Davide Marin\nDavide Picello",
