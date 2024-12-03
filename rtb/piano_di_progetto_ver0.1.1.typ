@@ -9,7 +9,14 @@
   titolo: "Piano di Progetto",
   uso: "Esterno",
   versioni: (
-    "1.0.0",
+    "0.1.1",
+    "03/12/2024",
+    "Klaudio Merja",
+    "Andrea Precoma\nRiccardo Milan",
+    [
+      - Generazione dei grafici automatica
+    ],
+    "0.1.0",
     "27/11/2024",
     "Klaudio Merja",
     "Davide Marin\nDavide Picello",
@@ -57,13 +64,13 @@ sottolineato e seguito dalla lettera g posta ad apice (e.g. #rifGlossario("termi
 #pagebreak()
 
 = Analisi dei rischi
-Lo scopo principale dell'analisi dei rischi è quello di individuare le possibili difficoltà o problemi che il gruppo, sia nella sua interezza che a livello individuale, può incontrare con una certa probabilità, causando rallentamenti che possono avere un impatto negativo più o meno rilevante all'interno del progetto
+Lo scopo principale dell'analisi dei rischi è quello di individuare le possibili difficoltà o problemi che il gruppo, sia nella sua interezza che a livello individuale, può incontrare con una certa probabilità, causando rallentamenti che possono avere un impatto negativo più o meno rilevante all'interno del progetto.
 
 Ogni rischio riportato successivamente è caratterizzato da:
-- *ID rischio*: identificativo univoco del rischio;
-- *Descrizione*: descrive brevemente le cause e gli effetti del rischio in questione all'interno del progetto;
+- *ID rischio*: identificativo univoco del rischio.
+- *Descrizione*: descrive brevemente le cause e gli effetti del rischio in questione all'interno del progetto.
 - *Probabilità*: indica la probabilità che il rischio si verifichi all'interno di un progetto, sia essa bassa, media o alta;
-- *Impatto negativo*: quantifica l'impatto negativo che il rischio può avere all'interno del progetto, sia esso basso, medio o alto;
+- *Impatto negativo*: quantifica l'impatto negativo che il rischio può avere all'interno del progetto, sia esso basso, medio o alto.
 - *Piano di contingenza*: descrive i processi che il gruppo può o deve attuare al fine di mitigare i danni causati dal rischio.
 
 Ogni ID rischio segue la seguente convenzione per quanto riguarda la sua struttura
@@ -71,10 +78,10 @@ Ogni ID rischio segue la seguente convenzione per quanto riguarda la sua struttu
 dove *`[X]`* indica la tipologia di rischio, che si può distinguere in *`O`*-Organizzativo oppure *`T`*-Tecnologico, e *`[Y]`* indica un numero progressivo, univoco per tipologia di rischio.
 
 Per il processo di gestione dei rischi il gruppo adotta il modello fornito da Ian Sommerville nel libro _Software Engineering_, caratterizzato dai seguenti passi:
-1. *Identificazione del rischio*;
-2. *Analisi e classificazione del rischio*;
-3. *Processi di mitigazione del rischio*;
-4. *Controllo del rischio*.
+1. *Identificazione del rischio*
+2. *Analisi e classificazione del rischio*
+3. *Processi di mitigazione del rischio*
+4. *Controllo del rischio*
 
 == Rischi organizzativi
 === Riunione con l'azienda proponente
@@ -84,6 +91,7 @@ Per il processo di gestione dei rischi il gruppo adotta il modello fornito da Ia
   probabilità: [Bassa],
   impatto: [Medio],
   piano: [È possibile chiedere un giorno fisso all'azienda in cui svolgere le riunioni di SAL in modo da evitare eventuali indisponibilità nel lungo periodo.],
+  caption: [RO-1 - Riunione con l'azienda proponente],
 )
 === Sovrastima della durata delle attività <RO-2>
 #tabellaRischio(
@@ -92,6 +100,7 @@ Per il processo di gestione dei rischi il gruppo adotta il modello fornito da Ia
   probabilità: [Alta],
   impatto: [Basso],
   piano: [Nonostante il rischio abbia probabilità elevata si ritiene l'impatto negativo del rischio sia basso, se non nullo, in quanto il gruppo può allocare la risorsa in un'altra attività al fine di liberare il prima possibile il "TO-DO" del _#rifGlossario("backlog")_.],
+  caption: [RO-2 - Sovrastima della durata delle attività],
 )
 
 === Sottostima della durata delle attività <RO-3>
@@ -101,6 +110,7 @@ Per il processo di gestione dei rischi il gruppo adotta il modello fornito da Ia
   probabilità: [Alta],
   impatto: [Alto],
   piano: [Il rischio è inevitabile, ma può essere mitigato tramite l'allocazione di risorse disponibili a supporto di quelle già allocate per accelerare lo svolgimento dell'attività.],
+  caption: [RO-3 - Sottostima della durata delle attività],
 )
 == Rischi tecnologici
 === Inesperienza <RT-1>
@@ -110,6 +120,7 @@ Per il processo di gestione dei rischi il gruppo adotta il modello fornito da Ia
   probabilità: [Alta],
   impatto: [Alto],
   piano: [Il rischio non può essere evitato, ma può essere limitato tramite il confronto con i membri più esperti del gruppo oppure tramite delle sessioni di _#rifGlossario("deep dive")_ tecnologico che l'azienda proponente fornisce al gruppo.],
+  caption: [RT-1 - Inesperienza],
 )
 
 #pagebreak()
@@ -136,62 +147,77 @@ Alla fine di ogni _sprint_ viene svolta una riunione con l'azienda proponente in
 A metà di ogni _sprint_ l'azienda si rende disponibile al gruppo per eventuali chiarimenti o dubbi che possono venire a galla durante lo svolgimento dell'attività da parte dei membri del gruppo.
 
 Ogni iterazione è caratterizzata da:
-- *Inizio*: data in cui ha inizio un determinato _sprint_;
-- *Fine*: data in cui termina lo _sprint_;
-- *Rischi attesi*: elenco degli identificativi che il gruppo si aspetta di incontrare durante lo _sprint_;
-- *Attività dello _sprint_*: attività che il gruppo si impone di raggiungere durante la durata dello _sprint_ al fine di raggiungere determinati obiettivi;
-- *Preventivo orario*: stima delle ore che ciascun membro deve dedicare nelle vesti di un determinato ruolo al fine di concludere le attività;
-- *Consuntivo orario e di spesa*: ore produttive dedicate da parte di ogni membro nei vari ruoli ricoperti durante l'iterazione al fine di concludere le attività previste e breve schema su quanto speso durante l'iterazione;
+- *Inizio*: data in cui ha inizio un determinato _sprint_.
+- *Fine*: data in cui termina lo _sprint_.
+- *Rischi attesi*: elenco degli identificativi che il gruppo si aspetta di incontrare durante lo _sprint_.
+- *Attività dello _sprint_*: attività che il gruppo si impone di raggiungere durante la durata dello _sprint_ al fine di raggiungere determinati obiettivi.
+- *Preventivo orario*: stima delle ore che ciascun membro deve dedicare nelle vesti di un determinato ruolo al fine di concludere le attività.
+- *Consuntivo orario e di spesa*: ore produttive dedicate da parte di ogni membro nei vari ruoli ricoperti durante l'iterazione al fine di concludere le attività previste e breve schema su quanto speso durante l'iterazione.
 - *Retrospettiva*: analisi svolta alla fine di ogni _sprint_ con lo scopo di evidenziare ciò che ha funzionato e ciò che non ha funzionato durante l'iterazione, sottolineando i vari problemi e difficoltà riscontrati che hanno causato rallentamenti, con il fine di migliorare le prossime iterazioni.
 
-Il gruppo si pone come milestone del progetto le due consegne previste dai committenti, nonché i Prof.ssori Tullio Vardanega e Riccardo Cardin, ovvero:
+Il gruppo si pone come _milestone_ del progetto le due consegne previste dai committenti, nonché i Prof.ssori Tullio Vardanega e Riccardo Cardin, ovvero:
 - *RTB* con data di consegna xx/01/2025
 - *PB* con data di consegna 21/03/2025
 
-Gli _sprint_ vengono quindi divisi nelle due milestone precedentemente elencate per garantire una seperazione netta degli stessi e delle attività che ne comportano.
+Gli _sprint_ vengono quindi divisi nelle due _milestone_ precedentemente elencate per garantire una seperazione netta degli stessi e delle attività che ne comportano.
 == RTB
 === Sprint 1
 - *Inizio*: 13/11/2024
 - *Fine*: 27/11/2024
-- *Rischi attesi*: #underline[#link(<RO-2>)[RO-2]], #underline[#link(<RO-3>)[RO-3]], #underline[#link(<RT-1>)[RT-1]]
+- *Rischi attesi*: #link(<RO-2>)[RO-2], #link(<RO-3>)[RO-3], #link(<RT-1>)[RT-1]
 ==== Attività dello sprint
 Le attività che il gruppo si è preoccupato di concludere durante queste due settimane sono:
 - Inizio stesura delle Norme di Progetto, in particolare:
   - introduzione
   - processi primari
   - processi di supporto
-- Redazioni dei verbali interni ed esterni del 13/11/2024 e del 20/11/2024
+- Redazioni dei verbali interni ed esterni del 13/11/2024 e del 20/11/2024.
 - Inizio della stesura del Piano di Progetto, in particolare:
   - analisi dei rischi
   - modello di sviluppo
   - pianificazione
   - primo _sprint_
-- Test automatico per individuare i riferimenti mancanti al Glossario nei vari documenti
-- Inizio della stesura dell'Analisi dei Requisiti
-- Studio sulla generazione dei dati #rifGlossario("GPS")
-- Creazione del _file_ Excel condiviso per la rendicontazione delle ore produttive
+- Test automatico per individuare i riferimenti mancanti al Glossario nei vari documenti.
+- Inizio della stesura dell'Analisi dei Requisiti.
+- Studio sulla generazione dei dati #rifGlossario("GPS").
+- Creazione del _file_ Excel condiviso per la rendicontazione delle ore produttive.
 ==== Preventivo orario
-#rendicontazioneOre((
-  (4, 0, 0, 0, 0, 0),
-  (0, 4, 0, 0, 1.5, 0),
-  (0, 0, 0, 0, 0, 5),
-  (0, 0, 5, 0, 0, 0),
-  (0, 3, 0, 0, 0, 3),
-  (0, 4, 0, 0, 1, 0),
-  (0, 0, 5, 0, 0, 0),
-))
+#rendicontazioneOre(
+  (
+    (4, 0, 0, 0, 0, 0),
+    (0, 4, 0, 0, 1, 0),
+    (0, 0, 0, 0, 0, 5),
+    (0, 0, 5, 0, 0, 0),
+    (0, 3, 0, 0, 0, 3),
+    (2, 2, 0, 0, 1, 0),
+    (0, 0, 5, 0, 0, 0),
+  ),
+  caption: [Preventivo delle ore nel primo _sprint_ per membro e per ruolo],
+)
 ==== Consuntivo orario e di spesa
-#consuntivoOre((
-  (4, 0, 0, 0, 0, 0),
-  (0, 4, 0, 0, 1.5, 0),
-  (0, 0, 0, 0, 0, 5),
-  (0, 0, 5, 0, 0, 0),
-  (0, 3, 0, 0, 0, 3),
-  (0, 4, 0, 0, 1, 0),
-  (0, 0, 5, 0, 0, 0),
-))
-
-#figure(image("../assets/img/PdP/Periodo1.png", width: 60%))
+#consuntivoOre(
+  preventivo: (
+    (4, 0, 0, 0, 0, 0),
+    (0, 4, 0, 0, 1, 0),
+    (0, 0, 0, 0, 0, 5),
+    (0, 0, 5, 0, 0, 0),
+    (0, 3, 0, 0, 0, 3),
+    (2, 2, 0, 0, 1, 0),
+    (0, 0, 5, 0, 0, 0),
+  ),
+  consuntivo: (
+    (4, 0, 0, 0, 0, 0),
+    (0, 4, 0, 0, 1.5, 0),
+    (0, 0, 0, 0, 0, 5),
+    (0, 0, 5, 0, 0, 0),
+    (0, 3, 0, 0, 0, 3),
+    (2, 2, 0, 0, 1, 0),
+    (0, 0, 5, 0, 0, 0),
+  ),
+  tabCaption: [Consutivo delle ore nel primo _sprint_ per membro e per ruolo],
+  costTabCaption: [Costi sostenuti nel primo _sprint_],
+  chartCaption: [Grafico percentuale dell'allocazione delle ore per ruolo nel primo _sprint_],
+)
 
 ==== Retrospettiva
 In queste due settimane di lavoro è apparso evidente l'impatto che le Norme di Progetto hanno avuto all'interno del gruppo, adottando una serie di convenzioni e regole che hanno permesso di uniformare il lavoro svolto dai vari redattori. Tuttavia, essendo la prima versione delle Norme di Progetto, a causa dei frequenti cambiamenti all'interno del documento, si è reso necessario più volte dover rivedere e correggere in corso d'opera alcuni documenti più volte. Nonostante ciò, il gruppo ritiene il lavoro svolto in linea con le aspettative.
