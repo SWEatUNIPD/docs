@@ -88,30 +88,44 @@
 
   pagebreak(weak: true)
 
-  show outline.entry.where(level: 1): it => {
-    v(12pt, weak: true)
-    strong(it)
+  {
+    show outline.entry.where(level: 1): it => {
+      v(12pt, weak: true)
+      strong(it)
+    }
+    outline(indent: auto)
   }
-  outline(indent: auto)
   pagebreak()
 
   context {
 
     let numTables = query(figure.where(kind: table, outlined: true)).len()
     if numTables > 0 {
-      outline(
-        title: "Elenco delle tabelle",
-        target: figure.where(kind: table, outlined: true),
-      )
+      {
+        show outline.entry.where(level: 1): it => {
+          v(12pt, weak: true)
+          it
+        }
+        outline(
+          title: "Elenco delle tabelle",
+          target: figure.where(kind: table, outlined: true),
+        )
+      }
       pagebreak()
     }
 
     let numFigures = query(figure.where(kind: image, outlined: true)).len()
     if numFigures > 0 {
-      outline(
-        title: "Elenco delle immagini",
-        target: figure.where(kind: image, outlined: true),
-      )
+      {
+        show outline.entry.where(level: 1): it => {
+          v(12pt, weak: true)
+          it
+        }
+        outline(
+          title: "Elenco delle immagini",
+          target: figure.where(kind: image, outlined: true),
+        )
+      }
       pagebreak()
     }
 
