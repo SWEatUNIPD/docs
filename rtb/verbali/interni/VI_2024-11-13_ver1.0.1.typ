@@ -41,7 +41,7 @@ La riunione interna aveva l'obiettivo di:
 - Chiarire i dubbi e organizzare la collaborazione con i referenti aziendali, considerando la complessità dei requisiti e delle tecnologie suggerite.
 = Ordine del giorno
 == Discussione dei suggerimenti tecnici e di Project Management
-Abbiamo analizzato i suggerimenti forniti dall'azienda sui concetti di _#rifGlossario("stream processing")_, ed _#rifGlossario("event-driven architecture")_. Visti i numerosi strumenti consigliati (Kafka Streams, #rifGlossario("Apache NiFi"), #rifGlossario("Apache Flink"), Spring), abbiamo concordato di dedicare il tempo iniziale a documentarci per poi selezionare le tecnologie che meglio si integrano con il nostro obiettivo, soprattutto considerando la possibile integrazione con #rifGlossario("LangChain").
+Abbiamo analizzato i suggerimenti forniti dall'azienda sui concetti di _#rifGlossario("stream processing")_, ed _#rifGlossario("event-driven architecture")_. Visti i numerosi strumenti consigliati (Kafka Streams, #rifGlossario("Apache NiFi"), #rifGlossario("Apache Flink"), #rifGlossario("Spring")), abbiamo concordato di dedicare il tempo iniziale a documentarci per poi selezionare le tecnologie che meglio si integrano con il nostro obiettivo, soprattutto considerando la possibile integrazione con #rifGlossario("LangChain").
 == Richiesta di supporto e confronto per l'Analisi dei Requisiti
 Abbiamo discusso l'importanza dell'analisi dei requisiti, specialmente per chi era meno esperto. Poiché l'analisi dei requisiti è una fase fondamentale ma nuova per alcuni, abbiamo concordato di chiedere un confronto con i referenti, per chiarire meglio il nostro approccio e definire le esigenze principali. Inoltre, abbiamo deciso di organizzare incontri ricorrenti con i referenti per verificare i requisiti, con il primo _meeting_ fissato per la settimana prossima.
 == Organizzazione degli incontri e tracciabilità delle decisioni
@@ -54,7 +54,7 @@ Per mantenere coerenza e tracciabilità, abbiamo stabilito di fissare una _call_
 === Klaudio Merja, Andrea Precoma e Davide Marin:
 - Studio su _#rifGlossario("data visualization")_.
 - Studio su _#rifGlossario("stream processing")_.
-- Analisi sull'utilizzo di un _broker_ per disaccoppiare lo _stream_ di informazioni provenienti dai simulatori.
+- Analisi sull'utilizzo di un _#rifGlossario("data broker")_ per disaccoppiare lo _stream_ di informazioni provenienti dai simulatori.
 === Riccardo Milan, Davide Picello, Davide Martinelli e Andrea Perozzo:
 - Ricerca su _framework_ per la simulazione dei dati.
 - Approfondimento sull'utilizzo di _#rifGlossario("database")_ o _storage_ adatti per i dati del progetto.

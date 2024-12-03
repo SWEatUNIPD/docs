@@ -144,11 +144,11 @@ Ogni iterazione è caratterizzata da:
 - *Consuntivo orario e di spesa*: ore produttive dedicate da parte di ogni membro nei vari ruoli ricoperti durante l'iterazione al fine di concludere le attività previste e breve schema su quanto speso durante l'iterazione;
 - *Retrospettiva*: analisi svolta alla fine di ogni _sprint_ con lo scopo di evidenziare ciò che ha funzionato e ciò che non ha funzionato durante l'iterazione, sottolineando i vari problemi e difficoltà riscontrati che hanno causato rallentamenti, con il fine di migliorare le prossime iterazioni.
 
-Il gruppo si pone come milestone del progetto le due consegne previste dai committenti, nonché i Prof.ssori Tullio Vardanega e Riccardo Cardin, ovvero:
+Il gruppo si pone come _milestone_ del progetto le due consegne previste dai committenti, nonché i Prof.ssori Tullio Vardanega e Riccardo Cardin, ovvero:
 - *RTB* con data di consegna xx/01/2025
 - *PB* con data di consegna 21/03/2025
 
-Gli _sprint_ vengono quindi divisi nelle due milestone precedentemente elencate per garantire una seperazione netta degli stessi e delle attività che ne comportano.
+Gli _sprint_ vengono quindi divisi nelle due _milestone_ precedentemente elencate per garantire una seperazione netta degli stessi e delle attività che ne comportano.
 == RTB
 === Sprint 1
 - *Inizio*: 13/11/2024

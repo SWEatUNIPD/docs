@@ -10,12 +10,12 @@
   versioni: (
     "0.7.0",
     "29/11/2024",
-    "Klaudio Merja",
+    "Andrea Perozzo\nKlaudio Merja",
     "Andrea Precoma\nRiccardo Milan",
     [
       - Creato paragrafo per i termini che iniziano con "K"
       - Creato paragrafo per i termini che iniziano con "E"
-      - Aggiunti i termini "Docker Compose", "Event-driven architecture", "Mockup" e "Kubernetes"
+      - Aggiunti i termini "ClickUp", "Docker Compose", "GitLab", "Event-driven architecture", "Mockup", "Kubernetes", "Spring" e "Trello"
     ],
     "0.6.0",
     "27/11/2024",
