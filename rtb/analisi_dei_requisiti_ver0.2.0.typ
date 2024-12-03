@@ -40,13 +40,6 @@
   content: content,
 )
 
-// Sotto l'inidce è bene mettere la lista delle immagini (quando ci saranno anche delle tabelle), forse vale la pena integrarla nel template
-#outline(
-  title: [Lista delle figure],
-  target: figure.where(kind: image),
-)
-#pagebreak()
-
 
 #set heading(numbering: "1.1")
 
@@ -317,9 +310,9 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Postcondizioni*: se l'utente si ferma presso il punto di interesse pubblicizzato, il sistema memorizza l'interazione come feedback positivo sull'annuncio generato
 
 - *Scenario principale*:
-  1. L'utente visualizza un annuncio pubblicitario
-  2. L'utente si ferma presso il punto di interesse pubblicizzato per un periodo di tempo prolungato
-  3. Il sistema memorizza un feedback positivo associato all'annuncio visualizzato
+1. L'utente visualizza un annuncio pubblicitario
+2. L'utente si ferma presso il punto di interesse pubblicizzato per un periodo di tempo prolungato
+3. Il sistema memorizza un feedback positivo associato all'annuncio visualizzato
 
 - *User story*:
 #figure(image("../assets/use_cases/UC5.1.svg", width: 80%), caption: [UC5.1 - Sosta presso il punto d'interesse pubblicizzato])
