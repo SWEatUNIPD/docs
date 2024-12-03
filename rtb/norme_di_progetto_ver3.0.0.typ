@@ -9,16 +9,18 @@
   verificatori: ("Andrea Precoma", "Davide Marin"),
   titolo: "Norme di Progetto",
   uso: "Interno",
-// TODO: DA SISTEMARE VERSIONING
   versioni: (
-    "3.1.0",
+    "0.4.0",
     "30/11/2024",
     "Andrea Precoma",
     "Riccardo Milan",
     [
-      - cose
+      - Modifica del _versioning_
+      - Modifica delle regole di stile
+      - Aggiunta struttura della _repository_ Near NearYou
+      - Correzione ortografica e di stile
     ],
-    "3.0.0",
+    "0.3.0",
     "27/11/2024",
     "Davide Picello",
     "Davide Marin",
@@ -26,7 +28,7 @@
       - Scrittura del capitolo "Processi primari"
     ],
 
-    "2.0.0",
+    "0.2.0",
     "26/11/2024",
     "Andrea Precoma",
     "Davide Marin\nDavide Picello",
@@ -35,7 +37,7 @@
       - Stesura dei principali paragrafi
     ],
     
-    "1.0.0",
+    "0.1.0",
     "14/11/2024",
     "Klaudio Merja",
     "Andrea Precoma",
@@ -331,8 +333,8 @@ Le cartelle sono divise per _milestone_ (candidatura, RTB e PB) ciascuna contene
 I titoli dei documenti devono seguire le seguenti indicazioni:
 - *Verbali Interni*: [NOR] riunione, dove NOR indica il numero ordinale della riunione (ad esempio Prima o Dodicesima).
 - *Verbali Esterni*:
-  - SAL [NOS] #rifGlossario("sprint"), dove NOS indica il numero ordinale dello _sprint_ (ad esempio primo o dodicesimo) nel caso si trattasse del SAL di fine _sprint_.
-  - SAL intermedio [NOS] sprint, dove NOS indica il numero ordinale dello _sprint_ (ad esempio primo o dodicesimo) nel caso si trattasse di un SAL informativo a metà dello _sprint_.
+  - *SAL fine [NOS] #rifGlossario("sprint")*, dove NOS indica il numero ordinale dello _sprint_ (ad esempio primo o dodicesimo) nel caso si trattasse del SAL di fine _sprint_.
+  - *SAL intermedio [NOS] sprint*, dove NOS indica il numero ordinale dello _sprint_ (ad esempio primo o dodicesimo) nel caso si trattasse di un SAL informativo a metà dello _sprint_.
   - Nel caso non si trattasse di un SAL si deve cercare un titolo breve ma efficace.
 - *Documenti*: Per documenti che non sono verbali il titolo deve semplicemente indicare lo scopo del documento (ad esempio Norme di Progetto).
 
@@ -342,10 +344,12 @@ Notare che nei titoli dei documenti e dei paragrafi lo stile rimane quello di _d
 Nei documenti vengono applicate le seguenti regole di stile testuali:
 - *Grassetto* col comando `*termine*`:
 	- Termini importanti.
-- #underline([Riferimenti]) col comando `#link("url")[#text(underline("label"))]`:
+- #underline([Sottolineato]) col comando `#link("url")[label]`:
   - ID _issue_ nella tabella delle decisioni.
-  - Riferimenti contestuali segnando la destinazione con `<dest>` e modificando il comando `#link(<dest>)[#text(underline("label"))]`.
-- #rifGlossario("Termini con apice") col comando `#rifGlossario("termine")`:
+  - Riferimenti contestuali segnando la destinazione con `<dest>` e modificando il comando `#link(<dest>)[label]`.
+- #formatLink(label: "Sottolineato, in grassetto e di colore verde") col comando `#formatLink(label:"label", url:"url")`:
+  - Link ipertestuali.
+- #rifGlossario("Sottolineato con apice") col comando `#rifGlossario("termine")`:
   - Termini presenti nel Glossario.
 - "Virgolette" col comando `"termine"`:
 	- Enfatizzare singoli caratteri.
@@ -357,8 +361,6 @@ Nei documenti vengono applicate le seguenti regole di stile testuali:
   - Nomi di file (ad esempio "`norme_di_progetto_verX.Y.Z.typ`").
   - Nomi di cartelle.
   - Estensioni file.
-- #formatLink(label: "Sottolineato in grassetto e di colore verde") col comando `#formatLink(label:"label", url:"url")`:
-  - Link ipertestuali.
 - Maiuscole:
 	- Iniziali di nomi propri.
 	- Acronimi (ad esempio "Proof of Concept (#rifGlossario("PoC"))").
