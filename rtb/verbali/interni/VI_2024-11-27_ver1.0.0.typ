@@ -6,10 +6,10 @@
   redattori: ("Davide Picello",),
   titolo: "Sesta riunione",
   verificatori: ("Andrea Precoma",),
-  riassunto: "Riunione interna di fine primo sprint, dove ci si è allineati ed accordati sugli obbiettivi da perseguire durante il secondo sprint",
+  riassunto: "Riunione interna di fine primo sprint, dove ci si è allineati ed accordati sugli obbiettivi da perseguire durante il secondo sprint.",
   versioni: (
     "1.0.0",
-    [28/11/2024],
+    [3/12/2024],
     "Davide Picello",
     "Andrea Precoma",
     [- Stesura del verbale],
@@ -42,8 +42,8 @@ Imparare queste tecnologie è necessario per facilitare la collaborazione sul co
 
 == Nuovo sistema di versioning
 Durante l'incontro è stato deciso di modificare il sistema di _versioning_. Si terranno sempre 3 numeri per _major_, _minor_ e _patch_ ma viene modificato il significato di questi:
-- _Major_: cambierà con le approvazioni, quindi in corrispondenza di RTB e PB;
-- _Minor_: aggiunta o modifica del contenuto;
+- _Major_: cambierà con le approvazioni, quindi in corrispondenza di RTB e PB.
+- _Minor_: aggiunta o modifica del contenuto.
 - _Patch_: per modifiche di stile e correzioni grammaticali (no modifiche di contenuto).
 
 Questo cambaimento è scaturito da un dubbio del gruppo: se la stesura di un documento impiega più di uno _sprint_, dobbiamo aggiornare il responsabile o rimane sempre lo stesso ?
@@ -62,7 +62,7 @@ Rivedere e migliorare i casi d'uso sulla base del confronto con l'azienda, dispo
 
 == Secondo sprint Piano di Progetto
 Nel documento Piano di Progetto:
-- Completare il capitolo del primo _sprint_, scrivendo l'ultima sezione relativa alla retrospettiva: momento in cui il team riflette su come è andato il lavoro durante lo _sprint_ appena concluso, individuando aspetti positivi, aree di miglioramento e azioni concrete per ottimizzare i processi futuri.
+- Completare il capitolo del primo _sprint_, scrivendo l'ultima sezione relativa alla retrospettiva: momento in cui il _team_ riflette su come è andato il lavoro durante lo _sprint_ appena concluso, individuando aspetti positivi, aree di miglioramento e azioni concrete per ottimizzare i processi futuri.
 
 - Scrivere la sezione relativa al secondo _sprint_.
 
@@ -86,9 +86,7 @@ Infine si punta a completare e presentare, durante il prossimo #rifGlossario("SA
   [Informarsi riguardo a programmi da utilizzare per il diagramma di Gantt],
 
   [ORG],
-  [Andrea Precoma, 
-  
-  Riccardo Milan],
+  [Andrea Precoma,\ Riccardo Milan],
   [Prima bozza del simulatore con Docker],
 
   link("https://github.com/SWEatUNIPD/docs/issues/48")[#text(underline("D0048"))],
@@ -100,15 +98,11 @@ Infine si punta a completare e presentare, durante il prossimo #rifGlossario("SA
   [Stesura VI_2024-11-27],
 
   link("https://github.com/SWEatUNIPD/docs/issues/50")[#text(underline("D0050"))],
-  [Klaudio Merja, 
-  
-  Davide Marin],
+  [Klaudio Merja,\ Davide Marin],
   [Migliorare casi d'uso],
 
   link("https://github.com/SWEatUNIPD/docs/issues/51")[#text(underline("D0051"))],
-  [Klaudio Merja,
-  
-  Davide Marin],
+  [Klaudio Merja,\ Davide Marin],
   [Scrivere nuovi casi d'uso],
 
   link("https://github.com/SWEatUNIPD/docs/issues/53")[#text(underline("D0053"))],
