@@ -349,7 +349,7 @@
     caption: caption,
     kind: table,
     table(
-      columns: (2.2fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
+      columns: (1.9fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
       align: left,
       table.header([*Membro*], [*Resp.*], [*Amm.*], [*Ana.*], [*Proge.*], [*Progr*], [*Ver.*], [*Totale*]),
       ..data,
@@ -358,8 +358,61 @@
   )
 }
 
-#let consuntivoOre(content, tabCaption: "", costTabCaption: "", chartCaption: "") = {
-  rendicontazioneOre(content, caption: tabCaption)
+#let consuntivoOre(preventivo: (), consuntivo: (), tabCaption: "", costTabCaption: "", chartCaption: "") = {
+  let membri = (
+    "Andrea Perozzo",
+    "Andrea Precoma",
+    "Davide Marin",
+    "Davide Martinelli",
+    "Davide Picello",
+    "Klaudio Merja",
+    "Riccardo Milan",
+  )
+
+  let ore(i) = {
+    [#membri.at(i)]
+  }
+
+  let data = {
+    (
+      ..membri
+        .enumerate()
+        .map(((i, _)) => {
+            (
+              membri.at(i),
+              ..consuntivo.at(i).enumerate().map(((j, _)) => {
+                let diff = consuntivo.at(i).at(j) - preventivo.at(i).at(j)
+                return [#str(
+                    consuntivo.at(i).at(j),
+                  ) #if diff > 0 [(#text(red)[+#str(diff)])] else if diff < 0 [(#text(green)[#str(diff)])]]
+              }),
+              [#str(consuntivo.at(i).sum())],
+            )
+          })
+        .flatten(),
+      [*Totale per ruolo*],
+      ..range(6).map(idx => {
+        let sum = 0
+        for i in range(0, 7) {
+          sum += consuntivo.at(i).at(idx)
+        }
+        return str(sum)
+      }),
+    )
+  }
+  figure(
+    caption: tabCaption,
+    kind: table,
+    table(
+      columns: (1.9fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
+      align: left,
+      table.header([*Membro*], [*Resp.*], [*Amm.*], [*Ana.*], [*Proge.*], [*Progr*], [*Ver.*], [*Totale*]),
+      ..data,
+      str(consuntivo.flatten().sum()),
+    ),
+  )
+
+
   let ruoli = (
     ("Responsabile", 30),
     ("Amministratore", 20),
@@ -372,7 +425,7 @@
   let data = ruoli.enumerate().map(((index, value)) => {
     let costo = 0
     for i in range(0, 7) {
-      costo += content.at(i).at(index)
+      costo += consuntivo.at(i).at(index)
     }
     return (ruoli.at(index).at(0), [#str(costo * ruoli.at(index).at(1)) €])
   })
@@ -381,7 +434,7 @@
     let somma = 0
     for i in range(0, 7) {
       for j in range(0, 6) {
-        somma += content.at(i).at(j) * ruoli.at(j).at(1)
+        somma += consuntivo.at(i).at(j) * ruoli.at(j).at(1)
       }
     }
     str(somma)
@@ -402,7 +455,7 @@
   let oreRuolo(i) = {
     let ore = 0
     for j in range(0, 7) {
-      ore += content.at(j).at(i)
+      ore += consuntivo.at(j).at(i)
     }
     return ore
   }

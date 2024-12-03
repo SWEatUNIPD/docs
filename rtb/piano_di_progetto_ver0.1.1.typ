@@ -171,16 +171,16 @@ Le attività che il gruppo si è preoccupato di concludere durante queste due se
   - introduzione
   - processi primari
   - processi di supporto
-- Redazioni dei verbali interni ed esterni del 13/11/2024 e del 20/11/2024
+- Redazioni dei verbali interni ed esterni del 13/11/2024 e del 20/11/2024.
 - Inizio della stesura del Piano di Progetto, in particolare:
   - analisi dei rischi
   - modello di sviluppo
   - pianificazione
   - primo _sprint_
-- Test automatico per individuare i riferimenti mancanti al Glossario nei vari documenti
-- Inizio della stesura dell'Analisi dei Requisiti
-- Studio sulla generazione dei dati #rifGlossario("GPS")
-- Creazione del _file_ Excel condiviso per la rendicontazione delle ore produttive
+- Test automatico per individuare i riferimenti mancanti al Glossario nei vari documenti.
+- Inizio della stesura dell'Analisi dei Requisiti.
+- Studio sulla generazione dei dati #rifGlossario("GPS").
+- Creazione del _file_ Excel condiviso per la rendicontazione delle ore produttive.
 ==== Preventivo orario
 #rendicontazioneOre(
   (
@@ -196,9 +196,18 @@ Le attività che il gruppo si è preoccupato di concludere durante queste due se
 )
 ==== Consuntivo orario e di spesa
 #consuntivoOre(
-  (
+  preventivo: (
     (4, 0, 0, 0, 0, 0),
     (0, 4, 0, 0, 1, 0),
+    (0, 0, 0, 0, 0, 5),
+    (0, 0, 5, 0, 0, 0),
+    (0, 3, 0, 0, 0, 3),
+    (2, 2, 0, 0, 1, 0),
+    (0, 0, 5, 0, 0, 0),
+  ),
+  consuntivo: (
+    (4, 0, 0, 0, 0, 0),
+    (0, 4, 0, 0, 1.5, 0),
     (0, 0, 0, 0, 0, 5),
     (0, 0, 5, 0, 0, 0),
     (0, 3, 0, 0, 0, 3),
