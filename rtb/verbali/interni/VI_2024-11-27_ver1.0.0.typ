@@ -2,11 +2,11 @@
 
 #show: content => verbale(
   data: "27 novembre 2024",
-  responsabile: "Davide Picello",
+  responsabile: "Riccardo Milan",
   redattori: ("Davide Picello",),
   titolo: "Sesta riunione",
   verificatori: ("Andrea Precoma",),
-  riassunto: "Riunione interna di fine primo sprint, dove ci si è allineati ed accordati sugli obbiettivi da perseguire durante il secondo sprint.",
+  riassunto: [Riunione interna di fine primo _sprint_, dove ci si è allineati ed accordati sugli obbiettivi da perseguire durante il secondo _sprint_.],
   versioni: (
     "1.0.0",
     [3/12/2024],
@@ -50,7 +50,7 @@ Questo cambaimento è scaturito da un dubbio del gruppo: se la stesura di un doc
 
 Dopo un confronto, anche con il professor Vardanega, abbiamo capito che il responsabile di un documento è colui che ricopre tale ruolo al momento dell'approvazione finale del documento. Proprio per questo motivo è necessario modificare il sistema di _versioning_, cambiando il significato degli indici. In questo modo l'incremento del primo indice avverrà solo nei momenti di approvazione finale del documento, e non più ad ogni modifica.
 
-È quindi necessario modificare il documento Norme di Progetto.
+È quindi necessario modificare il contenuto del documento Norme di Progetto e la versione di alcuni file.
 
 == Inizio stesura Piano di Qualifica
 Iniziare la stesura del Piano di Qualifica: un documento che presenta le procedure di verifica e validazione che implementeremo nel progetto, per garantirne la qualità.
@@ -60,15 +60,19 @@ La scrittura di questo documento inizia ora in quanto si è preferito dare prior
 == Casi d'uso
 Rivedere e migliorare i casi d'uso sulla base del confronto con l'azienda, disponibili in dettaglio nel documento VE_2024-11-27. Inoltre, durante questo _sprint_, il _team_ si propone di elaborare e documentare nuovi casi d'uso, ampliando così la copertura delle possibili interazioni e scenari. 
 
-== Secondo sprint Piano di Progetto
+== Secondo _sprint_ Piano di Progetto
 Nel documento Piano di Progetto:
 - Completare il capitolo del primo _sprint_, scrivendo l'ultima sezione relativa alla retrospettiva: momento in cui il _team_ riflette su come è andato il lavoro durante lo _sprint_ appena concluso, individuando aspetti positivi, aree di miglioramento e azioni concrete per ottimizzare i processi futuri.
 
 - Scrivere la sezione relativa al secondo _sprint_.
 
-== Miglioramento del template
-???
+== Miglioramento del _template_
+È stato deciso di modificare leggermente il _template_ #rifGlossario("Typst") in seguito ad alcune problematiche sorte durante la scrittura di alcuni documenti. In particolare:
+- Aggiungere la generazione automatica dei grafici.
+- Aggiungere l'indice delle immagini e delle tabelle al template.
 
+== Miglioramento _test_ del glossario
+Si è notata anche la necessità di modificare il _test_ del glossario in quanto segnala dei falsi positivi. Un esempio è la segnalazione di parole appartenenti al glossario contenute in altre parole (per esempio, il _test_, dalla parola "Github" segnalava la presenza della parola "Git"), oppure la segnalazione della parola "_backlog_" quando questa era, però, usata come comando Typst "\#backlog()".
 
 = Conclusioni
 Durante questo incontro è stata presa la decisione di aggiornare il meccanismo di _versioning _e di apportare modifiche al _template_.
@@ -123,5 +127,5 @@ Infine si punta a completare e presentare, durante il prossimo #rifGlossario("SA
 
   link("https://github.com/SWEatUNIPD/docs/issues/60")[#text(underline("D0060"))],
   [Klaudio Merja],
-  [Modifica al _template_ ed al test del glossario]
+  [Modifica al _template_, al _test_ del Glossario e _versioning_ di alcuni documenti]
 ))

@@ -4,23 +4,31 @@
 #show: content => verbale(
   data: "14 Novembre 2024",
   destinatari: ("Gruppo SWE@",),
-  responsabile: "Riccardo Milan",
+  responsabile: "-",
   redattori: ("Klaudio Merja", "Andrea Precoma", "Davide Picello"),
   verificatori: ("Andrea Precoma", "Davide Marin"),
   titolo: "Norme di Progetto",
   uso: "Interno",
   versioni: (
-    "3.0.0",
-    "27/11/2024",
+    "0.4.0",
+    "30/11/2024",
+    "Andrea Precoma",
+    "Riccardo Milan",
     [
-      Davide Picello
+      - Modifica del _versioning_
+      - Modifica delle regole di stile
+      - Aggiunta struttura della _repository_ Near NearYou
+      - Correzione ortografica e di stile
     ],
+    "0.3.0",
+    "27/11/2024",
+    "Davide Picello",
     "Davide Marin",
     [
       - Scrittura del capitolo "Processi primari"
     ],
 
-    "2.0.0",
+    "0.2.0",
     "26/11/2024",
     "Andrea Precoma",
     "Davide Marin\nDavide Picello",
@@ -29,7 +37,7 @@
       - Stesura dei principali paragrafi
     ],
     
-    "1.0.0",
+    "0.1.0",
     "14/11/2024",
     "Klaudio Merja",
     "Andrea Precoma",
@@ -42,12 +50,12 @@
 
 = Introduzione
 == Scopo del documento
-Lo scopo principale del documento Norme di Progetto è quello di documentare il #rifGlossario("Way of Working") che deve essere adottato dai membri del gruppo per garantire la coerenza nel lavoro svolto.
+Lo scopo principale del documento Norme di Progetto è quello di documentare il _#rifGlossario("way of working")_ che deve essere adottato dai membri del gruppo per garantire la coerenza nel lavoro svolto.
 
-Il documento adotta un approccio di tipo incrementale, ovvero è frutto di una serie di fasi di modifica che avvengono durante il suo ciclo di vita. È quindi soggetto durante lo svolgimento del progetto didattico a continui aggiornamenti, a seguito delle decisioni prese dal gruppo, volti a migliorare il Way of Working stesso. I membri del gruppo sono quindi tenuti a prendere visione del documento ogni qual volta esso sia oggetto di modifiche.
+Il documento adotta un approccio di tipo incrementale, ovvero è frutto di una serie di fasi di modifica che avvengono durante il suo ciclo di vita. È quindi soggetto durante lo svolgimento del progetto didattico a continui aggiornamenti, a seguito delle decisioni prese dal gruppo, volti a migliorare il _way of working_ stesso. I membri del gruppo sono quindi tenuti a prendere visione del documento ogni qual volta esso sia oggetto di modifiche.
 
 == Scopo del progetto didattico
-Lo scopo principale del progetto _NearYou - Smart custom advertising platform_ proposto dall'azienda Sync Lab S.r.l. è quello di sviluppare un prodotto che sfrutti la #rifGlossario("GenAI") per la creazione di pubblicità mirate sui singoli utenti, sfruttando come #rifGlossario("prompt") dati come la posizione in tempo reale, le informazioni personali e i dati di profilazione degli utenti stessi.
+Lo scopo principale del progetto _NearYou - Smart custom advertising platform_ proposto dall'azienda Sync Lab S.r.l. è quello di sviluppare un prodotto che sfrutti la #rifGlossario("GenAI") per la creazione di pubblicità mirate sui singoli utenti, sfruttando come _#rifGlossario("prompt")_ dati come la posizione in tempo reale, le informazioni personali e i dati di profilazione degli utenti stessi.
 
 
 L'obiettivo del prodotto è quello di rendere le campagne pubblicitarie delle aziende interessate il più personalizzate e ottimizzate possibili ed aumentare il coinvolgimento dell'utente finale, con lo scopo di ridurre la disconnessione tra messaggio e destinatario e portare un miglioramento sul #rifGlossario("ROI") della campagna stessa.
@@ -55,7 +63,7 @@ L'obiettivo del prodotto è quello di rendere le campagne pubblicitarie delle az
 == Glossario <glossario>
 Per evitare eventuali ambiguità e incomprensioni sulla terminologia adottata nella documentazione redatta dal gruppo, viene fornito un glossario.
 
-La prima occorrenza di un termine definito all'interno del glossario presente all'interno di un documento viene sottolineato e seguito dalla lettera g posta ad apice (e.g. #rifGlossario("termine").
+La prima occorrenza di un termine definito all'interno del glossario presente all'interno di un documento viene sottolineato e seguito dalla lettera "g" posta ad apice (e.g. #rifGlossario("termine")).
 
 == Riferimenti
 === Riferimenti normativi
@@ -70,7 +78,7 @@ Lo standard ISO/IEC 12207:1995, riferimento internazionale per i processi del ci
 Tuttavia, data la natura didattica del progetto, saremo tenuti ad occuparci solo delle parti di fornitura e sviluppo.
 
 == Fornitura
-Il processo di fornitura contiene le attività e i compiti del fornitore, il quale dovrà accordarsi con il proponente per stabilire ufficialmente, tramite un contratto, i vari vincoli e requisiti del progetto. Successivamente si procede con la relazione del documento Piano di progetto, il quale avrà il compito di pianificare e monitorare le attività da svolgere, nel tempo.
+Il processo di fornitura contiene le attività e i compiti del fornitore, il quale dovrà accordarsi con il proponente per stabilire ufficialmente, tramite un contratto, i vari vincoli e requisiti del progetto. Successivamente si procede con la redazione del documento Piano di Progetto, il quale avrà il compito di pianificare e monitorare le attività da svolgere durante i periodi del progetto.
 
 Le attività che compongono questo processo sono:
 - Iniziazione
@@ -84,33 +92,32 @@ Le attività che compongono questo processo sono:
 === Comunicazioni con il proponente
 L'azienda si è resa raggiungibile, per via testuale, tramite e-mail per le comunicazioni ufficiali. Tramite la piattaforma di messaggistica istantanea Discord, invece, per le comunicazioni più veloci. È stato deciso, inoltre, di utilizzare l'applicazione di teleconferenza Google Meet per le riunioni in cui è prevista la presenza di tutto il gruppo. L'azienda, comunque, si è resa disponibile anche ad accogliere il gruppo nei loro uffici.
 
-Per ogni incontro, verrà redatto un verbale riguardante le discussioni e decisioni avvenute nello stesso. Questi verbali, dopo essere stati approvati e firmati dall'azienda, saranno disponibili presso la _repository_ #rifGlossario("GitHub") del gruppo, nella sezione Verbali esterni.
+Per ogni incontro, verrà redatto un verbale riguardante le discussioni e decisioni avvenute nello stesso. Questi verbali, dopo essere stati approvati e firmati dall'azienda, saranno disponibili presso il sito _web_ del gruppo #formatLink(label: "https://sweatunipd.github.io", url: "https://sweatunipd.github.io").
 
 ==== SAL
-È stato anche concordato un incontro settimanale di 45 minuti, tendenzialmente il mercoledì pomeriggio, riguardo allo Stato di Avanzamento dei Lavori #rifGlossario("SAL") in cui il gruppo esporrà i progressi, ed i dubbi, dell'ultima settimana di lavoro, confrontandosi con il proponente e delineando le attività da svolgere nella settimana a venire.
+È stato anche concordato un incontro settimanale di 45 minuti, tendenzialmente il mercoledì pomeriggio, riguardo allo Stato di Avanzamento dei Lavori #rifGlossario("SAL"). Il gruppo esporrà i progressi e i dubbi dell'ultima settimana di lavoro, confrontandosi con il proponente e delineando le attività da svolgere nella settimana a venire.
 
 ==== Sessioni deep dive
-Il proponente si è anche reso disponibile per organizzare delle sessioni di #rifGlossario("deep dive") per approfondire l'utilizzo di alcune tecnologie che potrebbero rivelarsi particolarmente ostiche, in quanto, nuove per il gruppo e, per loro natura, non semplici da imparare.
-
-Queste verranno fissate a bisogno e non, quindi, a cadenza regolare.
+Il proponente si è anche reso disponibile per organizzare delle sessioni di #rifGlossario("deep dive") per approfondire l'utilizzo di alcune tecnologie che potrebbero rivelarsi particolarmente ostiche per il gruppo.
+Queste verranno fissate quando necessarie.
 
 
 === Documentazione fornita
-Di seguito l'elenco dei documenti che il gruppo consegnerà all'azienda proponente, Sync Lab, ed ai committenti Prof. Tullio Vardanega e Prof. Riccardo Cardin
+Di seguito l'elenco dei documenti che il gruppo consegnerà all'azienda proponente Sync Lab e ai committenti Prof. Tullio Vardanega e Prof. Riccardo Cardin.
 
-==== Analisi dei requisiti
-L'analisi dei requisiti è un documento redatto dagli Analisti che definisce le funzionalità necessarie per soddisfare le richieste del proponente.
+==== Analisi dei Requisiti
+L'Analisi dei Requisiti è un documento redatto dagli analisti che definisce le funzionalità necessarie per soddisfare le richieste del proponente.
 
 //Ancora da scrivere
 
-==== Piano di progetto
-Il Piano di progetto è un documento il cui scopo è quello di definire in modo dettagliato l'organizzazione, le attività, le risorse, i tempi e i criteri necessari per completare con successo il progetto.
+==== Piano di Progetto
+Il Piano di Progetto è un documento il cui scopo è quello di definire in modo dettagliato l'organizzazione, le attività, le risorse, i tempi e i criteri necessari per completare con successo il progetto.
 
 Viene redatto e aggiornato dal responsabile, con il supporto degli amministratori, durante l'intera durata del progetto.
 
 /*
 Dovrebbe contenere le seguenti informazioni/sessioni:
-- Analisi dei risci
+- Analisi dei rischi
 - Modello di sviluppo
 - Pianificazione
 - Preventivo
@@ -118,9 +125,7 @@ Dovrebbe contenere le seguenti informazioni/sessioni:
 */
 
 ==== Piano di Qualifica
-Il Piano di Qualifica è un documento formale che definisce le strategie, le attività e gli approcci necessari per garantire la qualità del prodotto _software_, durante tutto il ciclo di vita del progetto.
-
-Redatto tipicamente dal verificatore o dall'amministratore, descrive le modalità di verifica e validazione, gli standard adottati e le procedure di qualità da seguire.
+Il Piano di Qualifica è un documento formale che definisce le strategie, le attività e gli approcci necessari per garantire la qualità del prodotto _software_, durante tutto il corso del progetto. Descrive le modalità di verifica e validazione, gli standard adottati e le procedure di qualità da seguire.
 
 Il suo scopo principale è assicurare che il prodotto finale sia conforme alle specifiche richieste e alle aspettative del committente, monitorando il progresso rispetto agli obiettivi prefissati. Ogni membro del _team_ coinvolto nello sviluppo farà riferimento a questo documento per mantenere e garantire i livelli di qualità stabiliti.
 
@@ -133,21 +138,19 @@ Dovrebbe contenere le seguenti informazioni/sessioni:
 */
 
 ==== Glossario
-Il Glossario è un documento di supporto che raccoglie i termini tecnici e specifici utilizzati all’interno del progetto, fornendone definizioni chiare e univoche. È destinato a tutti gli _stakeholder_, compresi i membri del _team_, i committenti e l’azienda proponente, con l’obiettivo di prevenire ambiguità e incomprensioni, garantendo una comprensione condivisa della terminologia. Questo strumento è fondamentale per migliorare la coerenza e la qualità della documentazione prodotta.
+Il Glossario è un documento di supporto che raccoglie i termini tecnici e specifici utilizzati all'interno del progetto, fornendone definizioni chiare e univoche. È destinato a tutti gli _#rifGlossario("stakeholder")_, i membri del _team_, i committenti e l'azienda proponente, con l'obiettivo di prevenire ambiguità e incomprensioni. Questo strumento è fondamentale per migliorare la coerenza e la qualità della documentazione prodotta.
 
 ==== Lettera di presentazione
 La Lettera di Presentazione è un documento formale attraverso il quale il gruppo esprime la propria intenzione di partecipare alla fase di revisione del progetto. Include la documentazione prodotta dal gruppo e, se necessario, un aggiornamento sui costi e sulle tempistiche.
 
-La lettera sottolinea l’impegno del _team_ nel rispettare le scadenze e le aspettative fissate.
+La lettera sottolinea l'impegno del _team_ nel rispettare le scadenze e le aspettative fissate.
 
 
 === Strumenti
 Gli strumenti adottati per il processo di fornitura sono i seguenti:
 
 ==== Discord
-Piattaforma di messaggistica in tempo reale che consente chat testuali, vocali e video.
-
-Il gruppo la utilizza per comunicare internamente, tramite delle chiamate, e per interagire velocemente con l'azienda tramite il loro server dedicato.
+Piattaforma di messaggistica in tempo reale che consente _chat_ testuali, vocali e video. Il gruppo la utilizza per comunicare internamente tramite delle chiamate e per interagire velocemente con l'azienda tramite il loro _server_ dedicato.
 
 ==== Telegram
 Applicazione di messaggistica istantanea utilizzata per comunicazioni rapide e brevi all'interno del gruppo.
@@ -156,14 +159,13 @@ Applicazione di messaggistica istantanea utilizzata per comunicazioni rapide e b
 Applicazione web per la creazione e la gestione di fogli di calcolo. Il gruppo la utilizza per tenere traccia in modo informale delle ore lavorate settimanalmente, che saranno successivamente riportate nel documento ufficiale Piano di Progetto.
 
 ==== GitHub
-Piattaforma per il controllo di versione e la collaborazione su progetti _software_. Il gruppo la utilizza come _repository_ per codice e documenti, ma anche per monitorare le attività del progetto, assegnarle ai membri e seguirne lo stato di avanzamento.
+Piattaforma per il controllo di versione e la collaborazione su progetti _software_. Il gruppo lo utilizza come strumento per gestire le _repository_ per codice e documentazione, monitorare le attività del progetto, assegnarle ai membri e seguirne lo stato di avanzamento.
 
 ==== Typst
-#rifGlossario("Typst") un nuovo sistema di impaginazione basato su _markup_, progettato per essere potente quanto LaTeX ma molto più facile da imparare e utilizzare.
+#rifGlossario("Typst") è un nuovo sistema di impaginazione basato su _markup_, progettato per essere potente quanto LaTeX ma molto più facile da imparare e utilizzare.
 
-#pagebreak()
 == Sviluppo
-Sempre secondo lo standard ISO/IEC 12207:1995: lo scopo del processo di sviluppo è di descrivere le attività e i compiti necessari per creare e mantenere un sistema _software_, garantendo che il prodotto finale soddisfi i requisiti specificati nel contratto.
+Sempre secondo lo standard ISO/IEC 12207:1995 lo scopo del processo di sviluppo è di descrivere le attività e i compiti necessari per creare e mantenere un sistema _software_, garantendo che il prodotto finale soddisfi i requisiti specificati nel contratto.
 
 Il processo di sviluppo è composto dalle seguenti attività:
 
@@ -215,7 +217,7 @@ Il processo di documentazione è necessario per il tracciamento di tutte le atti
 
 === Preparazione dell'ambiente
 ==== Tracciamento
-Alla fine di ogni riunione si aggiorna il _#rifGlossario("backlog")_ con le nuove _issue_ (corrispondenti alle decisioni prese durante la riunione). Esse devono specificare in modo esaustivo il compito da svolgere nel titolo, arricchite da una breve descrizione, i verificatori incaricati di visionare il lavoro e dal verbale nel quale è scaturita quella decisione in modo che in futuro sia sempre tracciabile il motivo dell'inserimento di quella _issue_. Devono inoltre essere collegate alla _board_ (corrispondente al _backlog_), ad una _milestone_ e ad un assegnatario. Una volta create si deve generare, sempre da interfaccia _web_, il _branch_ temporaneo nel quale si andrà a lavorare.
+Alla fine di ogni riunione si aggiorna il _#rifGlossario("backlog")_ con le nuove _issue_ (corrispondenti alle decisioni prese durante la riunione). Esse devono specificare in modo esaustivo il compito da svolgere nel titolo, arricchite da una breve descrizione, i verificatori incaricati di visionare il lavoro e dal verbale nel quale è scaturita quella decisione in modo che in futuro sia sempre tracciabile il motivo dell'inserimento di quella _issue_. Devono inoltre essere collegate alla _board_ (corrispondente al _backlog_), ad una _milestone_ e ad un assegnatario. Una volta create si deve generare, sempre da interfaccia _web_, il _#rifGlossario("branch")_ temporaneo nel quale si andrà a lavorare.
 
 ==== Lavoro sul documento <lavoro_doc>
 Per lavorare su un documento bisogna attenersi ai seguenti passaggi utilizzando il sistema #rifGlossario("Git"):
@@ -227,12 +229,12 @@ Per lavorare su un documento bisogna attenersi ai seguenti passaggi utilizzando 
 	*`git add .`* \
 	*`git commit -m "[commento del commit]"`* \
 	*`git push`* \
-+ Dall'interfaccia _web_ bisogna spostarsi nella sezione _*pull request*_ e crearne una nuova assicurandosi di assegnare il verificatore e una _label_.
++ Dall'interfaccia _web_ bisogna spostarsi nella sezione _*pull request*_ e crearne una nuova assicurandosi di assegnare il verificatore e una _label_. Se si desidera sottoporre le modifiche a un rapido controllo si può creare un _*draft*_.
 + In caso il verificatore richieda delle correzioni è sufficiente ripetere i passaggi citati senza questa volta creare una nuova _pull request_ perché già esistente. Si ricorda che si può evitare di scaricare le modifiche su tutti i _branch_ e che se si è già posizionati sul ramo corretto si può evitare il comando *`git checkout [nome_branch]`*.
 
 Si noti che la modifica di un documento già verificato e approvato deve essere tracciata da una _issue_, quindi i procedimenti per redigere o aggiornare un documento sono gli stessi. Una volta terminato il lavoro si deve aggiornare anche la corrispondenza ruolo-persona nella prima pagina segnando il nuovo redattore, il verificatore e sostituendo il responsabile col compagno che in quel momento sta ricoprendovi il ruolo. In questo modo il responsabile è colui che è al corrente dell'ultima versione, nel caso in cui bisognasse contattarlo per dei chiarimenti.
 
-Se si individuano dei nuovi termini da aggiungere al Glossario si inseriscono secondo le norme decise dal documento corrente (#link(<glossario>)[#text(underline("sez. 1.3"))]). Il verificatore deve quindi controllare anche che siano stati inseriti nel modo corretto.
+Se si individuano dei nuovi termini da aggiungere al Glossario si inseriscono secondo le norme decise dal documento corrente (#link(<glossario>)[sez. 1.3]). Il verificatore deve quindi controllare anche che siano stati inseriti nel modo corretto.
 
 === Ciclo di vita
 Il ciclo di vita di un documento è composto da 6 fasi:
@@ -313,24 +315,26 @@ Alla conclusione del progetto dovranno essere stati prodotti i seguenti document
 
 === Versionamento
 Per i documenti soggetti ad un ciclo di vita abbiamo deciso di adottare il _semantic versioning_ adattando però lo schema al contesto della documentazione. Sono stati quindi ridefiniti gli indici X.Y.Z come segue:
-- *X (_Major_)*: Aggiunta di nuovi contenuti, paragrafi o cambiamenti consistenti al testo;
-- *Y (_Minor_)*: Aggiornamento di porzioni di testo consistente ma che era già presente;
-- *Z (_Patch_)*: Aggiustamento dello stile del testo, ortografico e decorativo.
+- *X (_major_)*: Approvazione da parte del responsabile.
+- *Y (_minor_)*: Aggiornamento o aggiunta di porzioni di testo consistente.
+- *Z (_patch_)*: Aggiustamento dello stile del testo, ortografico e decorativo.
+
+I documenti vengono approvati solo al termine del proprio ciclo di vita. In particolare Piano di Progetto, Norme di Progetto, Piano di Qualifica e Analisi dei Requisiti vengono approvati al termine di ciascuna _milestone_. Nelle fasi intermedie ogni modifica, sottoposta a verifica, incrementa la _minor_ o la _patch_.
 
 === Nomenclatura
 Per la nomenclatura di tutti i file e cartelle si è scelto lo stile _snake case_ ad eccezione delle date, scritte in formato YYYY-MM-DD per mantenere l'ordine cronologico, separate dal trattino.
 
 Le cartelle sono divise per _milestone_ (candidatura, RTB e PB) ciascuna contenente i verbali interni ed esterni, il Piano di Progetto, il Piano di Qualifica, le Norme di Progetto e il Glossario. I documenti si dividono quindi in tre categorie:
-- *verbali*: [VI/VE]\_[YYYY-MM-DD]\_ver[X.Y.Z] dove VI e VE indicano rispettivamente verbali interni ed esterni
-- *documenti soggetti a ciclo di vita*: [nome]\_ver[X.Y.Z]
-- *documenti non soggetti a ciclo di vita*: [nome]
+- *verbali*: [VI/VE]\_[YYYY-MM-DD]\_ver[X.Y.Z] dove VI e VE indicano rispettivamente verbali interni ed esterni.
+- *documenti soggetti a ciclo di vita*: [nome]\_ver[X.Y.Z].
+- *documenti non soggetti a ciclo di vita*: [nome].
 
 === Stile dei titoli
 I titoli dei documenti devono seguire le seguenti indicazioni:
 - *Verbali Interni*: [NOR] riunione, dove NOR indica il numero ordinale della riunione (ad esempio Prima o Dodicesima).
 - *Verbali Esterni*:
-  - #rifGlossario("SAL") [NOS] sprint, dove NOS indica il numero ordinale dello _sprint_ (ad esempio primo o dodicesimo) nel caso si trattasse del SAL di fine _sprint_.
-  - SAL intermedio [NOS] sprint, dove NOS indica il numero ordinale dello _sprint_ (ad esempio primo o dodicesimo) nel caso si trattasse di un SAL informativo a metà dello _sprint_.
+  - *SAL fine [NOS] #rifGlossario("sprint")*, dove NOS indica il numero ordinale dello _sprint_ (ad esempio primo o dodicesimo) nel caso si trattasse del SAL di fine _sprint_.
+  - *SAL intermedio [NOS] sprint*, dove NOS indica il numero ordinale dello _sprint_ (ad esempio primo o dodicesimo) nel caso si trattasse di un SAL informativo a metà dello _sprint_.
   - Nel caso non si trattasse di un SAL si deve cercare un titolo breve ma efficace.
 - *Documenti*: Per documenti che non sono verbali il titolo deve semplicemente indicare lo scopo del documento (ad esempio Norme di Progetto).
 
@@ -339,11 +343,13 @@ Notare che nei titoli dei documenti e dei paragrafi lo stile rimane quello di _d
 === Stile del testo <stile_testo>
 Nei documenti vengono applicate le seguenti regole di stile testuali:
 - *Grassetto* col comando `*termine*`:
-	- Parole importanti.
-- #underline([Riferimenti]) col comando `#link("url")[#text(underline("label"))]`:
+	- Termini importanti.
+- #underline([Sottolineato]) col comando `#link("url")[label]`:
   - ID _issue_ nella tabella delle decisioni.
-  - Riferimenti contestuali segnando la destinazione con `<dest>` e modificando il comando `#link(<dest>)[#text(underline("label"))]`.
-- #rifGlossario("Termini con apice") col comando `#rifGlossario("termine")`:
+  - Riferimenti contestuali segnando la destinazione con `<dest>` e modificando il comando `#link(<dest>)[label]`.
+- #formatLink(label: "Sottolineato, in grassetto e di colore verde") col comando `#formatLink(label:"label", url:"url")`:
+  - Link ipertestuali.
+- #rifGlossario("Sottolineato con apice") col comando `#rifGlossario("termine")`:
   - Termini presenti nel Glossario.
 - "Virgolette" col comando `"termine"`:
 	- Enfatizzare singoli caratteri.
@@ -352,23 +358,21 @@ Nei documenti vengono applicate le seguenti regole di stile testuali:
   - Termini in lingua inglese (esclusi se si tratta di nomi di prodotti _software_ o simili)
   - Titolo del capitolato _NearYou - Smart custom advertising platform_
 - `Monospace` col comando \``termine`\`:
-  - Nomi di file.
+  - Nomi di file (ad esempio "`norme_di_progetto_verX.Y.Z.typ`").
   - Nomi di cartelle.
   - Estensioni file.
-- #formatLink(label: "Sottolineato in grassetto e di colore verde") col comando `#formatLink(label:"label", url:"url")`:
-  - Link ipertestuali.
 - Maiuscole:
 	- Iniziali di nomi propri.
 	- Acronimi (ad esempio "Proof of Concept (#rifGlossario("PoC"))").
 	- Prima lettera dei paragrafi se citati nel testo.
-	- Nomi dei documenti.
+	- Nomi dei documenti (ad esempio "Norme di Progetto").
 
 === Riferimenti
 ==== Contestuali
-Per riferirsi ad una sezione del documento per una spiegazione più dettagliata si adotta la dicitura "(sez. [I])" dove I indica l'indice della sezione (ad esempio "(sez. 3.2").
+Per riferirsi ad una sezione del documento per una spiegazione più dettagliata si adotta la dicitura "(sez. [I])" dove I indica l'indice della sezione (ad esempio "(sez. 3.2)").
 
 ==== Ipertestuali
-Per esporre un _link_ ad una pagina esterna al docuento si utilizza la funzione `#formatLink` (#link(<stile_testo>)[#text(underline("sez. 3.1.9"))]) esplicitando l'interezza dell'_url_ anche nella _label_. Unica eccezione di stile per i riferimenti alle _issue_ nella tabella delle decisioni (#link(<stile_testo>)[#text(underline("sez. 3.1.9"))]).
+Per esporre un _link_ ad una pagina esterna al docuento si utilizza la funzione `#formatLink` (#link(<stile_testo>)[sez. 3.1.9]) esplicitando l'interezza dell'_url_ anche nella _label_. Unica eccezione di stile per i riferimenti alle _issue_ nella tabella delle decisioni (#link(<stile_testo>)[sez. 3.1.9]).
 
 === Elenchi puntati
 Una lista è preferibile a un elenco narrativo, da valutare se renderlo numerato o meno a seconda della circostanza. I punti della descrizione nel registro delle modifiche vengono sempre rappresentati in un elenco. Se le voci dell'elenco sono costituite da delle frasi vengono chiuse da ".", se invece possiedono solo poche parole, che ad esempio indicano il nome di una tecnologia, non viene messo nessun segno di punteggiatura al termine. Le voci dell'elenco della descrizione nel registro delle modifche non vengono chiuse da punteggiatura.
@@ -382,6 +386,7 @@ Sotto il titolo nella prima pagina dei verbali viene indicata la data per iscrit
 === Strumenti
 Sono stati scelti i seguenti strumenti per redigere e mantenere la documentazione:
 - *Typst*: linguaggio per la stesura dei documenti, consigliata l'estensione Tinymist Typst se si usa Visual Studio Code.
+- *Draw.io*: sito _web_ che offre un'interfaccia grafica per creare i diagrammi utili all'analisi e alla progettazione.
 - *GitHub*: servizio di _#rifGlossario("hosting")_ di _repository_.
 
 
@@ -395,10 +400,10 @@ L'operazione di _directory listing_ di GitHub offre una visione degli artefatti 
 Il gruppo utilizza due _repository_ all'interno della propria organizzazione GitHub:
 - *docs* (#formatLink(label: "https://github.com/SWEatUNIPD/docs", url: "https://github.com/SWEatUNIPD/docs")) contenente tutta la documentazione del progetto.
 - *sweatunipd.github.io* (#formatLink(label: "https://github.com/SWEatUNIPD/sweatunipd.github.io", url: "https://github.com/SWEatUNIPD/sweatunipd.github.io")) contenente i _file_ necessari alla struttura e presentazione del sito _web_.
-- TODO: codice
+- *NearYou* (#formatLink(label: "https://github.com/SWEatUNIPD/NearYou", url: "https://github.com/SWEatUNIPD/NearYou")) contenente il codice sorgente dell'applicativo.
 
 ==== Struttura della repository docs
-La _repository_ è strutturata da un unico _branch_ adibito al mantenimento di tutti i documenti Typst verificati. All'occorenza di svolgere azioni dettate dal _backlog_ si crea un _branch_ temporaneo che, successivamente alla verifica e all'approvazione, viene unito nel ramo principale. La _repository_ è presentata dal `README.md`, contiene il _file_ `.gitignore` usato dalla Action per escludere alcuni _file_ dalla compilazione e il _file_ `script.js` usato per pubblicare la documentazione nel sito _web_. `test.js` è utilizzato per controllare la presenza dei termini del Glossario all'interno dei documenti, mentre `glossario.json` è una struttura dati che contiene i termini e la loro definizione, usato per la stesura del documento dal _file_ `glossario_verX.Y.Z.typ`. Le cartelle sono strutturate nel seguente modo: \
+La _repository_ è strutturata da un unico _branch_ adibito al mantenimento di tutti i documenti Typst verificati. All'occorenza di svolgere azioni dettate dal _backlog_ si crea un _branch_ temporaneo che, successivamente alla verifica, viene unito nel ramo principale. La _repository_ è presentata dal `README.md`, contiene il _file_ `.gitignore` usato dalla Action per escludere alcuni _file_ dalla compilazione e il _file_ `script.js` usato per pubblicare la documentazione nel sito _web_. `test.js` è utilizzato per controllare la presenza dei termini del Glossario all'interno dei documenti, mentre `glossario.json` è una struttura dati che contiene i termini e la loro definizione, usato per la stesura del documento dal _file_ `glossario_verX.Y.Z.typ`. Le cartelle sono strutturate nel seguente modo: \
 #tree-list()[
   - *`.github`*
     - *`workflows`*: contiene i _file_ `.yml` per la Action.
@@ -417,8 +422,10 @@ La _repository_ è strutturata da un unico _branch_ adibito al mantenimento di t
     - *`verbali`*
       - *`esterni`*: contiene i `.typ` e i `.pdf` dei verbali esterni.
       - *`interni`*: contiene i `.typ` dei verbali interni.
-      - `glossario_ver1.1.0.typ`
+      - `analisi_dei_requisiti_ver1.0.0.typ`
+      - `glossario_ver1.0.0.typ`
       - `norme_di_progetto_ver1.0.0.typ`
+      - `piano_di_progetto_ver1.0.0.typ`
   - *`templates`*
     - `diario_di_bordo.pptx`
     - `template.typ`
@@ -450,8 +457,12 @@ La _repository_ è costituita da un unico _branch_ nel quale è caricato tutto i
   - _File_ utili alla configurazione e al trasferimento dati.
 ]
 
-=== Branch
-Nella _repository_ è presente solo il _branch_ principale "main" nel quale vengono pubblicati i _file_ sorgente della documentazione verificati all'ultima versione. Nel caso in cui si dovesse apportare delle modifiche a un documento, questo viene lavorato in un nuovo _branch_ temporaneo collegato ad una _issue_. Una volta verificati i cambiamenti il _branch_ temporaneo viene unito al principale e successivamente eliminato in modo automatico.
+==== Struttura della repository NearYou
+
+
+// TODO: al massimo aggiungere un paragrafo branch per ogni repo (cambia da docs a codice)
+// === Branch
+// Nella _repository_ è presente solo il _branch_ principale "main" nel quale vengono pubblicati i _file_ sorgente della documentazione verificati all'ultima versione. Nel caso in cui si dovesse apportare delle modifiche a un documento, questo viene lavorato in un nuovo _branch_ temporaneo collegato ad una _issue_. Una volta verificati i cambiamenti il _branch_ temporaneo viene unito al principale e successivamente eliminato in modo automatico.
 
 === Backlog
 Il _product backlog_ è rappresentato da una GitHub _board_ con tre sezioni:
@@ -468,7 +479,7 @@ Alla fine di ogni riunione interna si aggiorna il _backlog_ con le nuove _issue_
 | \
 | Verificatore: \@Nickame \
 | \
-| [VI/VE]\_[YYYY-MM-DD]
+| Decisione presa nel [VI/VE]\_[YYYY-MM-DD]
 
 Devono inoltre essere collegate alla _board_ (corrispondente al _backlog_) assicurandosi appaiano nella colonna "Todo", ad una _milestone_, ad una _label_ e ad un assegnatario. Una volta create si deve generare, sempre da interfaccia _web_, il _branch_ temporaneo nel quale si andrà a lavorare. In questa operazione è sufficiente rinominare il _branch_, collegarci l'assegnatario e assegnarci una _label_.
 
@@ -498,15 +509,15 @@ TODO: Cosa controllare per mantenere la qualità attesa (durante la verifica e v
 
 
 == Verifica
-Ogni documento creato o modificato necessita l'approvazione da uno o più verificatori. Questo processo viene automatizzato il più possibile con l'utilizzo delle _pull request_, il sistema di _ticketing_ tramite _issue_ e una Action dedicata.
+Ogni documento creato o modificato necessita la revisione da uno o più verificatori. Questo processo viene automatizzato il più possibile con l'utilizzo delle _pull request_, il sistema di _ticketing_ tramite _issue_ e una Action dedicata. Quando possibile è preferibile richiedere la revisione a tutti i verificatori per i documenti di carattere generale perché fondamentali per il corretto svolgimento del progetto.
 
 === Pull request
-Le _pull request_ velocizzano e automatizzano la verifica dei documenti. Una volta organizzate nel modo corretto (#link(<lavoro_doc>)[#text(underline("sez. 3.1.1.2"))]), il verificatore può aggiungere una _review_ da interfaccia _web_ commentando, chiedendo una modifica o approvando la _pull request_. Una volta soddisfatti i requisiti spetterà al responsabile confermare la nuova versione del documento e unire il _branch_ al principale tramite il pulsante "_squash and merge_".
+Le _pull request_ velocizzano e automatizzano la verifica dei documenti. Una volta organizzate nel modo corretto (#link(<lavoro_doc>)[sez. 3.1.1.2]), il verificatore può aggiungere una _review_ da interfaccia _web_ commentando, chiedendo una modifica o approvando la _pull request_. Una volta soddisfatti i requisiti spetterà al responsabile confermare la nuova versione del documento e unire il _branch_ al principale tramite il pulsante "_squash and merge_".
 
 === Analisi statica
 Al completamento di ogni _commit_ una Action compila i _file_ Typst modificati e genera un _file_ `.zip` contenente i documenti in formato `.pdf`. Così facendo si è sicuri che il codice è privo di errore sintattici e genera correttamente un prodotto finale e distribuibile.
 
-È stato messo a disposizione un _test_ il quale controlla che la prima occorrenza dei termini del Glossario venga identificata (#link(<glossario>)[#text(underline("sez. 1.3"))]). Viene effetuato automanticamente dalla Action ad ogni _push_, tuttavia è preferibile eseguirlo prima in locale così da efficientare il lavoro. È sufficiente quindi aver installato NodeJS sulla propria macchina ed eseguire il comando *`node test.js`* nella _root_ della _repository_ locale. Il _test_ esamina tutti i documenti e ritorna degli avvisi in caso fallisse.
+È stato messo a disposizione un _test_ il quale controlla che la prima occorrenza dei termini del Glossario venga identificata (#link(<glossario>)[sez. 1.3]). Viene effetuato automanticamente dalla Action ad ogni _push_, tuttavia è preferibile eseguirlo prima in locale così da efficientare il lavoro. È sufficiente quindi aver installato NodeJS sulla propria macchina ed eseguire il comando *`node test.js`* nella _root_ della _repository_ locale. Il _test_ esamina tutti i documenti e ritorna degli avvisi in caso fallisse.
 
 === Analisi dinamica
 Il verificatore può consultare sia il documento in formato `.pdf` per maggiore leggibilità sia il codice sorgente. Nel caso trovasse degli errori può segnalarli tramite la _pull request_, oppure pubblicare un commento per avviare una discussione riguardo una correzione più complessa.
