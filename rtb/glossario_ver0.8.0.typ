@@ -8,23 +8,32 @@
   titolo: "Glossario",
   verificatori: ("Andrea Perozzo", "Andrea Precoma", "Davide Picello"),
   versioni: (
-    "3.3.0",
-    "28/11/2024",
+    "0.8.0",
+    "4/12/2024",
     "Davide Picello",
     "Riccardo Milan",
     [- Aggiunto il termine "Docker"],
 
-    "3.2.0",
+    "0.7.0",
+    "29/11/2024",
+    "Andrea Perozzo\nKlaudio Merja",
+    "Andrea Precoma\nRiccardo Milan",
+    [
+      - Creato paragrafo per i termini che iniziano con "K"
+      - Creato paragrafo per i termini che iniziano con "E"
+      - Aggiunti i termini "ClickUp", "Docker Compose", "GitLab", "Event-driven architecture", "Mockup", "Kubernetes", "Spring" e "Trello"
+    ],
+    "0.6.0",
     "27/11/2024",
     "Klaudio Merja",
     "Davide Marin\nDavide Picello",
     [- Aggiunti i termini "Bike-sharing", "Branch", "Feedback", "Sprint" e "Stakeholder"],
-    "3.1.0",
+    "0.5.0",
     "23/11/2024",
     "Davide Picello",
     "Davide Marin",
     [- Aggiunto il termine "Deep dive"],
-    "3.0.0",
+    "0.4.0",
     "25/11/2024",
     "Andrea Precoma",
     "Davide Marin\nDavide Picello",
@@ -32,17 +41,17 @@
       - Creato paragrafo per i termini che iniziano con "U"
       - Aggiunto i termini "Hosting" e "Utility"
     ],
-    "2.0.0",
+    "0.3.0",
     "25/11/2024",
     "Andrea Perozzo",
     "Davide Picello",
     [- Aggiunti i termini "Database", "Data Broker", "Data Generator", "Faker", "GPS", "LLM", "SimPy", "TimeScale"],
-    "1.1.0",
+    "0.2.0",
     "14/11/2024",
     "Klaudio Merja",
     "Andrea Precoma",
     [- Aggiunti i termini "Way of Working", "GenAI", "Prompt" e "ROI"],
-    "1.0.0",
+    "0.1.0",
     "11/11/2024",
     "Riccardo Milan",
     "Andrea Perozzo",
@@ -54,7 +63,7 @@
 = Introduzione
 Il seguente documento ha lo scopo di disambiguare e definire correttamente i termini specifici e non banali del dominio d'uso, presenti nella documentazione.
 \
-La presenza di un termine o espressione all'interno del `Glossario` negli altri documenti viene indicata aggiungendogli un apice con la lettera "g" e sottolineando l'intera espressione (es. #rifGlossario("Apache Superset")) per indicare chiaramente l'intero costrutto da cercare nel glossario.
+La presenza di un termine o espressione all'interno del Glossario negli altri documenti viene indicata aggiungendogli un apice con la lettera "g" e sottolineando l'intera espressione (es. #rifGlossario("Apache Superset")) per indicare chiaramente l'intero costrutto da cercare nel glossario.
 
 #pagebreak()
 #generaGlossario(json("../glossario.json"))

@@ -2,7 +2,7 @@
 
 #show: content=>verbale(
   data: "27 novembre 2024", 
-  responsabile: "Davide Picello", 
+  responsabile: "Andrea Precoma", 
   destinatari: (
     "Prof. Tullio Vardanega",
     "Prof. Riccardo Cardin",
@@ -14,10 +14,10 @@
   verificatori: (
     "Riccardo Milan",
   ),
-  riassunto: "Incontro di fine sprint dove sono stati chiariti molti dubbi, e fissati alcuni obiettivi per lo sprint a venire.",
+  riassunto: [Incontro di fine _sprint_ dove sono stati chiariti molti dubbi, e fissati alcuni obiettivi per lo _sprint_ a venire.],
   versioni: (
     "1.0.0", 
-    [28/11/2024], 
+    [4/12/2024], 
     "Davide Picello", 
     "Riccardo Milan",
     [- Stesura del verbale],
@@ -27,12 +27,12 @@
 )
 
 
-#infoRiunione(luogo: "Google Meet", data: "27/11/2024", ora: "16:10", durata: "40 minuti", partecipantiEsterni: ("Fabio Pallaro", "Andrea Dorigo"))
+#infoRiunione(luogo: "Google Meet", data: "27/11/2024", ora: "16:10", durata: "30 minuti", partecipantiEsterni: ("Fabio Pallaro", "Andrea Dorigo"))
 
 = Sintesi dell'incontro 
-L'incontro si è svolto tra la conclusione del primo #rifGlossario("sprint") e l'inizio del secondo, ed è stato di carattere prevalentemente discorsivo. Durante il _meeting_ si è discusso principalmente dei vari punti:
+L'incontro si è svolto tra la conclusione del primo _#rifGlossario("sprint")_ e l'inizio del secondo, ed è stato di carattere prevalentemente discorsivo. Durante il _meeting_ si è discusso principalmente dei vari punti:
 
-- È stata aggiornata l'azienda sui progressi compiuti nello sprint precedente, che ha avuto come focus la redazione della documentazione.
+- È stata aggiornata l'azienda sui progressi compiuti nello _sprint_ precedente, che ha avuto come focus la redazione della documentazione.
 - Sono stati definiti congiuntamente gli obiettivi per il prossimo periodo.
 
 Andrea Precoma aveva pronta una prima bozza del simulatore dati. L'azienda, tuttavia, ha preferito rimandare al prossimo incontro, consigliando di implementare una tecnica di "containerizzazione" con #rifGlossario("Docker"). Questo principalmente per permetterci di iniziare a sperimentare con questa tecnologia, nuova a molti membri del gruppo, ma anche per facilitare la collaborazione sul codice.

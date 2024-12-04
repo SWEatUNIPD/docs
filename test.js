@@ -38,24 +38,26 @@ function checkOccurrence(filePath, word) {
   const commentPattern = /\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$/gm; //https://stackoverflow.com/questions/5989315/regex-for-match-replacing-javascript-comments-both-multiline-and-inline
   const importPattern = /#import ".*"\s*:\s*\*/g;
   const functionPattern = /#show:[\s\S]*?content\s*:\s*content[\s\S]*?\)/g;
+  const titlesPattern = /^=+\s.*/gm;
+  const backlogFuncPattern = /#backlog\(.*\)[\s\n]*\)/gs;
+  const formatLinkPattern =
+    /#formatLink\([\s\n]*(label:[\s\n]*"[^\s\n]*",[\s\n]*)?url:[\s\n]*"[^\s\n]*"(,[\s\n]*label:[\s\n]*"[^\s\n]*")?[\s\n]*\)/gm;
 
   const content = blob
     .toString()
+    .replaceAll(formatLinkPattern, "")
     .replaceAll(commentPattern, "")
     .replaceAll(importPattern, "")
     .replaceAll(functionPattern, "")
+    .replaceAll(titlesPattern, "")
+    .replaceAll(backlogFuncPattern, "")
     .toLowerCase();
 
-  if (content.indexOf(word.toLowerCase()) === -1) return true;
-  else {
-    const glossaryRefPattern = new RegExp(
-      `#rifglossario\\("${word.toLowerCase()}"\\)`
-    );
-    const match = content.match(glossaryRefPattern);
-    if (match !== null)
-      return match.index < content.indexOf(word.toLowerCase()); //TODO: capire se vogliamo verificare che la prima vera occorrenza sia riferita, o anche la prima qualsiasi
-    return false;
-  }
+  const glossaryRefPattern = new RegExp(
+    `\\b${word.toLowerCase()}\\b|\\*${word.toLowerCase()}\\*|_${word.toLowerCase()}_|#rifglossario\\("${word.toLowerCase()}"\\)` //FIXME: matchava *word* ma non _word_, verificare perché
+  );
+  const match = content.match(glossaryRefPattern);
+  return match ? match[0].length == word.length + 17 : true;
 }
 
 const glossario = require("./glossario.json");
