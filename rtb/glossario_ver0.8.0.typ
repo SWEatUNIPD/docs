@@ -8,6 +8,12 @@
   titolo: "Glossario",
   verificatori: ("Andrea Perozzo", "Andrea Precoma", "Davide Picello"),
   versioni: (
+    "0.8.0",
+    "4/12/2024",
+    "Davide Picello",
+    "Riccardo Milan",
+    [- Aggiunto il termine "Docker"],
+
     "0.7.0",
     "29/11/2024",
     "Andrea Perozzo\nKlaudio Merja",
