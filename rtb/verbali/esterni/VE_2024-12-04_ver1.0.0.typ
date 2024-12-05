@@ -15,7 +15,7 @@
   riassunto: [Durante l'incontro sono state pianificate attività chiave, tra cui la creazione del _database_, l'integrazione con _Grafana_ e l'avanzamento del progetto.],
   versioni: (
     "1.0.0",
-    [04/12/2024],
+    [05/12/2024],
     "Andrea Perozzo",
     "Riccardo Milan",
     [- Stesura del verbale],
