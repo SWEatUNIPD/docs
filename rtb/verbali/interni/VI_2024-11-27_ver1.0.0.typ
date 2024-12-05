@@ -60,19 +60,19 @@ La scrittura di questo documento inizia ora in quanto si è preferito dare prior
 == Casi d'uso
 Rivedere e migliorare i casi d'uso sulla base del confronto con l'azienda, disponibili in dettaglio nel documento VE_2024-11-27. Inoltre, durante questo _sprint_, il _team_ si propone di elaborare e documentare nuovi casi d'uso, ampliando così la copertura delle possibili interazioni e scenari. 
 
-== Secondo _sprint_ Piano di Progetto
+== Secondo sprint Piano di Progetto
 Nel documento Piano di Progetto:
 - Completare il capitolo del primo _sprint_, scrivendo l'ultima sezione relativa alla retrospettiva: momento in cui il _team_ riflette su come è andato il lavoro durante lo _sprint_ appena concluso, individuando aspetti positivi, aree di miglioramento e azioni concrete per ottimizzare i processi futuri.
 
 - Scrivere la sezione relativa al secondo _sprint_.
 
-== Miglioramento del _template_
+== Miglioramento del template
 È stato deciso di modificare leggermente il _template_ #rifGlossario("Typst") in seguito ad alcune problematiche sorte durante la scrittura di alcuni documenti. In particolare:
 - Aggiungere la generazione automatica dei grafici.
 - Aggiungere l'indice delle immagini e delle tabelle al template.
 
-== Miglioramento _test_ del glossario
-Si è notata anche la necessità di modificare il _test_ del glossario in quanto segnala dei falsi positivi. Un esempio è la segnalazione di parole appartenenti al glossario contenute in altre parole (per esempio, il _test_, dalla parola "Github" segnalava la presenza della parola "Git"), oppure la segnalazione della parola "_backlog_" quando questa era, però, usata come comando Typst "\#backlog()".
+== Miglioramento test del glossario
+Si è notata anche la necessità di modificare il _test_ del glossario in quanto segnala dei falsi positivi. Un esempio è la segnalazione di parole appartenenti al glossario contenute in altre parole (per esempio, il _test_, dalla parola "#rifGlossario("Github")" segnalava la presenza della parola "#rifGlossario("Git")"), oppure la segnalazione della parola "_#rifGlossario("backlog")_" quando questa era, però, usata come comando Typst "`#backlog()`".
 
 = Conclusioni
 Durante questo incontro è stata presa la decisione di aggiornare il meccanismo di _versioning _e di apportare modifiche al _template_.
