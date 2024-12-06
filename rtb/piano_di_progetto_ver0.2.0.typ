@@ -9,6 +9,12 @@
   titolo: "Piano di Progetto",
   uso: "Esterno",
   versioni: (
+    "0.2.0",
+    "12/12/2025",
+    "Davide Picello",
+    "Andrea Precoma\nRiccardo Milan",
+    [- Stesura secondo _sprint_],
+
     "0.1.1",
     "03/12/2024",
     "Klaudio Merja",
@@ -16,6 +22,7 @@
     [
       - Generazione dei grafici automatica
     ],
+    
     "0.1.0",
     "27/11/2024",
     "Klaudio Merja",
@@ -140,7 +147,7 @@ Inoltre il modello permette un incremento parallelo dell'attività di analisi e 
 #pagebreak()
 
 = Pianificazione
-Come frutto della scelta del modello Agile la pianificazione delle attività da svolgere all'interno del progetto sono suddivise in degli _sprint_, ovvero delle iterazioni della durata di due settimana ciascuna in cui vengono pianificate le attività da svolgere per raggiungere gli obiettivi prefissati.
+Come frutto della scelta del modello Agile la pianificazione delle attività da svolgere all'interno del progetto sono suddivise in degli _sprint_, ovvero delle iterazioni della durata di due settimane ciascuna in cui vengono pianificate le attività da svolgere per raggiungere gli obiettivi prefissati.
 
 Alla fine di ogni _sprint_ viene svolta una riunione con l'azienda proponente in cui si analizza quanto prodotto durante l'iterazione, si effettua una retrospettiva su quanto avvenuto analizzando difficoltà e problemi riscontrati e si pianifica il lavoro da svolgere e gli obiettivi da raggiungere per la seguente iterazione.
 
@@ -229,3 +236,76 @@ Gli analisti evidenziano le difficoltà e i dubbi relativa alla comprensione dei
 I verificatori suggeriscono infine di incaricare più di una persona alla verifica dei documenti ad alto contenuto, quali possono essere le Norme di Progetto e il Piano di Progetto, al fine di garantire una verifica ottimale.
 
 
+#pagebreak()
+
+=== Sprint 2
+- *Inizio*: 28/11/2024
+- *Fine*: 13/12/2024
+- *Rischi attesi*: #link(<RO-2>)[RO-2], #link(<RO-3>)[RO-3], #link(<RT-1>)[RT-1]
+
+==== Attività dello sprint
+//Quello che è stato fatto o quello che è da fare ?
+Le attività che il _team_ ha portato a termine durante la durata del secondo _sprint_ sono le seguenti:
+- Creare una prima versione del simulatore dati utilizzando #rifGlossario("Docker").
+- Redazione verbale esterno ed interno del 27/11/2024.
+- Avanzamento nel documento Analisi dei Requisiti, in particolare: 
+  - Migliorando i vecchi casi d'uso dopo aver risolto alcuni dubbi.
+  - Scrivendo nuovi casi d'uso.
+- Continuazione stesura Piano di Progetto, in particolare:
+  - Scrittura retrospettiva primo _sprint_.
+  - Scrittura secondo _sprint_.
+- Inizio stesura del Piano di Qualifica.
+- Modifica alle Norme di Progetto, per via del nuovo aggiornamento riguardo al sistema di _versioning_.
+- Modifica delle versioni dei seguenti documenti, per coerenza con il nuovo sistema di versionamento:
+  - Glossario
+  - Analisi dei Requisiti
+  - Piano di Progetto
+  - Norme di Progetto
+- Modifica al _template_ ed al _test_ del Glossario
+
+/*
+Non ancora finite:
+- Informarsi ed eventualmente dotarsi di un _software_ per la creazione e gestione di un #rifGlossario("diagramma di Gantt") per coordinare le attività del gruppo.
+
+*/
+
+==== Preventivo orario
+#rendicontazioneOre(
+  (
+    (0, 0, 0, 0, 0, 0),
+    (0, 0, 0, 0, 0, 0),
+    (0, 0, 0, 0, 0, 0),
+    (0, 0, 0, 0, 0, 0),
+    (0, 0, 0, 0, 0, 0),
+    (0, 0, 0, 0, 0, 0),
+    (0, 0, 0, 0, 0, 0),
+  ),
+  caption: [Preventivo delle ore nel secondo _sprint_ per membro e per ruolo],
+)
+
+==== Consuntivo orario e di spesa
+#consuntivoOre(
+  preventivo: (
+    (0, 0, 0, 0, 0, 0),
+    (0, 0, 0, 0, 0, 0),
+    (0, 0, 0, 0, 0, 0),
+    (0, 0, 0, 0, 0, 0),
+    (0, 0, 0, 0, 0, 0),
+    (0, 0, 0, 0, 0, 0),
+    (0, 0, 0, 0, 0, 0),
+  ),
+  consuntivo: (
+    (0, 0, 0, 0, 0, 0),
+    (0.5, 0, 0, 0, 2, 0),
+    (0, 0, 0, 0, 0, 0),
+    (0, 0, 0, 0, 0, 0),
+    (4, 0, 0, 0, 0, 0),
+    (0, 0, 0, 0, 0, 0),
+    (0, 0, 0, 0, 0, 0),
+  ),
+  tabCaption: [Consutivo delle ore nel secondo _sprint_ per membro e per ruolo],
+  costTabCaption: [Costi sostenuti nel secondo _sprint_],
+  chartCaption: [Grafico percentuale dell'allocazione delle ore per ruolo nel secondo _sprint_],
+)
+
+==== Retrospettiva
