@@ -8,6 +8,11 @@
   titolo: "Glossario",
   verificatori: ("Andrea Perozzo", "Andrea Precoma", "Davide Picello"),
   versioni: (
+    "0.7.1",
+    "06/12/2024",
+    "Andrea Perozzo",
+    "Riccardo Milan",
+    [- Aggiunti i termini "API" e "Processor"],
     "0.7.0",
     "29/11/2024",
     "Andrea Perozzo\nKlaudio Merja",
