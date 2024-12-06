@@ -6,7 +6,7 @@
   responsabile: "Klaudio Merja",
   redattori: ("Andrea Perozzo", "Andrea Precoma", "Riccardo Milan", "Klaudio Merja"),
   titolo: "Glossario",
-  verificatori: ("Andrea Perozzo", "Andrea Precoma", "Davide Picello"),
+  verificatori: ("Andrea Perozzo", "Andrea Precoma", "Davide Picello", "Riccardo Milan"),
   versioni: (
     "0.7.1",
     "06/12/2024",
