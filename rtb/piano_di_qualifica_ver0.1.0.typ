@@ -1,7 +1,7 @@
 #import "/templates/template.typ": *
 
 #show: content => verbale(
-  data: "7 Dicembre 2024",
+  data: "7 dicembre 2024",
   destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "Sync Lab S.r.l.", "Gruppo SWE@"),
   responsabile: "-",
   redattori: ("Davide Martinelli",),
@@ -22,15 +22,15 @@
 
 = Introduzione
 == Scopo del documento
-Il presente documento ha lo scopo di definire le strategie di verifica e validazione implementate dal gruppo al fine di garantire la qualità dei processi legati allo svolgimento del capitolato e quella del prodotto finale, fungendo quindi da guida per il _team_ lungo tutta la durata del progetto, secondo un'ottica di miglioramento continuo. Per tale motivo il documento avrà natura evolutiva e verrà quindi aggiornato periodicamente per riflettere le modifiche apportate ai processi coinvolti nello sviluppo al fine di migliorarne l'efficacia e l'efficienza.
-Nell'ultima sezione del documento (#link(<cruscotto>)[sez. 4]) viene analizzato l'andamento delle metriche presenti nel cruscotto di monitoraggio della qualità durante l'arco di svolgimento del progetto.
+Il presente documento ha lo scopo di definire le strategie di verifica e validazione implementate dal gruppo al fine di garantire la qualità dei processi e del prodotto finale, guidando il _team_ lungo tutta la durata del progetto secondo un'ottica di miglioramento continuo. Per tale motivo il documento ha natura mutevole ed evolutiva e verrà aggiornato periodicamente per riflettere le modifiche apportate ai processi al fine di migliorarne l'efficacia e l'efficienza.
+L'ultima sezione del documento (#link(<cruscotto>)[sez. 4]) è dedicata all'analisi dell'andamento delle metriche presenti nel cruscotto di monitoraggio della qualità durante l'arco di svolgimento del progetto.
 
 == Scopo del prodotto
-L'obiettivo principale del prodotto è quello di fornire un sistema che monitori la posizione in tempo reale di ciascun utente e in base a questa crei, sfruttando la #rifGlossario("GenAI"), inserzioni pubblicitarie personalizzate sulla base dei suoi dati di profilazione. Il fine ultimo è quello di migliorare l'esperienza pubblicitaria degli utenti, massimizzando di conseguenza anche l'efficacia delle campagne pubblicitarie (il cosiddetto #rifGlossario("ROI")).
+L'obiettivo principale del prodotto è quello di fornire un sistema che monitori la posizione in tempo reale di ciascun utente e in base a questa crei, sfruttando la #rifGlossario("GenAI"), inserzioni pubblicitarie personalizzate sulla base dei suoi dati di profilazione. Il fine ultimo è quello di migliorare l'esperienza pubblicitaria degli utenti, massimizzando di conseguenza il #rifGlossario("ROI").
 
 == Glossario
 Per chiarire il significato di alcuni termini tecnici, abbreviazioni e acronimi utilizzati all'interno della documentazione viene fornito un glossario.
-Nel documento i termini presenti nel Glossario verranno segnalati, ad ogni prima occorrenza, tramite una sottolineatura e una "g" posta ad apice (e.g. #rifGlossario("termine")).
+Nel documento i termini che, alla loro prima occorrenza, vengono contrassegnati da una sottolineatura e una "g" posta ad apice (e.g. #rifGlossario("termine")) avranno una corrispettiva descrizione dettagliata all'interno del Glossario.
 
 == Riferimenti
 
