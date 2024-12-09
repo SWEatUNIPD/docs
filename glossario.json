@@ -5,7 +5,8 @@
     "Apache Kafka": "Piattaforma di broker e data streaming che consente di gestire e trasferire big data in tempo reale.",
     "Apache NiFi": "Sistema di integrazione di dati open-source per l'elaborazione e la distribuzione di flussi di dati.",
     "Apache Spark": "Elaborazione dati in-memory opensource, ad alte prestazioni, progettato per eseguire elaborazioni complesse su grandi volumi di dati in modo rapido e scalabile.",
-    "Apache Superset": "Piattaforma open-source di business intelligence per esplorare e visualizzare dati in modo interattivo."
+    "Apache Superset": "Piattaforma open-source di business intelligence per esplorare e visualizzare dati in modo interattivo.",
+    "API": "Acronimo di Application Programming Interface, sono un insieme di regole e strumenti che permette a software diversi di comunicare e interagire tra loro."
   },
   "B": {
     "Backlog": "Il backlog, concetto fondamentale nella metodologia Agile, è un elenco ordinato e dinamico di tutti gli elementi necessari per lo sviluppo e il miglioramento di un prodotto. Questi elementi possono includere nuove funzionalità, modifiche a quelle esistenti, correzioni di bug e attività tecniche.",
@@ -61,6 +62,7 @@
   "P": {
     "PoC": "Acronimo di Proof of Concept, è un prototipo o un modello iniziale creato per dimostrare la fattibilità di un'idea o concetto, senza dover sviluppare un prodotto completo.",
     "PostGIS": "Estensione open-source di PostgreSQL per la gestione di dati spaziali.",
+    "Processor": "Componente che elabora dati o istruzioni, eseguendo operazioni specifiche in un sistema o flusso di lavoro.",
     "Prompt": "Testo in linguaggio naturale richiesto in input dall'IA generativa con lo scopo di generare un output dalla stessa."
   },
   "R": {
