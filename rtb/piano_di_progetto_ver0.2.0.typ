@@ -10,7 +10,7 @@
   uso: "Esterno",
   versioni: (
     "0.2.0",
-    "12/12/2025",
+    "12/12/2024",
     "Davide Picello",
     "Andrea Precoma\nRiccardo Milan",
     [- Stesura secondo _sprint_],
@@ -245,11 +245,11 @@ I verificatori suggeriscono infine di incaricare più di una persona alla verifi
 
 ==== Attività dello sprint
 //Quello che è stato fatto o quello che è da fare ?
-Le attività che il _team_ si è prefissato di portare a termine durante la durata del secondo _sprint_ sono le seguenti:
+Le attività che il _team_ si è prefissato di portare a termine durante il secondo _sprint_ sono le seguenti:
 - Redazione verbale esterno ed interno del 27/11/2024.
 - Creare una prima versione del simulatore dati.
-  - È stato deciso di dedicare la prima settimana dello _spint_ allo studio ed all'approfondimento delle tecnologie: #rifGlossario("Docker"), #rifGlossario("Apache Kafka") ed #rifGlossario("Apache Nifi")
-  - Mentre di dedicare la seconda settimana all'implementazione concreta del simulatore, utilizzando le tecnologie studiate.
+  - È stato deciso di dedicare la prima settimana dello _sprint_ allo studio e approfondimento delle tecnologie: #rifGlossario("Docker"), #rifGlossario("Apache Kafka"), #rifGlossario("Apache Nifi") e #rifGlossario("PostgresSQL").
+  - La seconda settimana sarà invece riservata all'implementazione concreta del simulatore e del _database_ dove verranno salvati i dati generati, grazie all'utilizzo delle tecnologie studiate.
 - Avanzamento nel documento Analisi dei Requisiti, in particolare: 
   - Migliorando i vecchi casi d'uso dopo aver risolto alcuni dubbi in seguito al confronto con l'azienda.
   - Scrivendo nuovi casi d'uso.
@@ -264,8 +264,10 @@ Le attività che il _team_ si è prefissato di portare a termine durante la dura
   - Piano di Progetto
   - Norme di Progetto
 - Modifica al _template_ ed al _test_ del Glossario.
-  - La modifica al _template_ vedrà l'implementazione della generazione automatica dei grafici e dell'aggiunta automatica dell'indice delle immagini, e delle tabelle, al _template_.
-  - La modifica al _test_ del glossario è necessaria in quanto, attualmente, segnala dei falsi positivi. Per esempio quando abbiamo parole appartenenti al glossario contenute in altre parole, oppure la segnalazione di termini del glossario, che in realtà sono comandi #rifGlossario("Typst").
+  - La modfica al _template_ vedrà l'implementazione di:
+    - Una funzione per automatizzare la generazione dei grafici relativi al preventivo ed al consuntivo orario richiesti per ogni sprint, nel Piano di Progetto.
+    - Aggiunta dell'indice delle immagini e delle tabelle, generato automaticamente, su tutti i file.
+  - La modifica al _test_ del glossario è necessaria in quanto, attualmente, segnala dei falsi positivi. Per esempio quando abbiamo parole appartenenti al glossario contenute in altre parole, oppure la segnalazione di termini del Glossario che in realtà sono comandi #rifGlossario("Typst").
 - Informarsi ed eventualmente dotarsi di un _software_ per la creazione e gestione di un #rifGlossario("diagramma di Gantt") per coordinare le attività del gruppo.
 
 ==== Preventivo orario
