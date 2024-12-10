@@ -8,6 +8,12 @@
   titolo: "Glossario",
   verificatori: ("Andrea Perozzo", "Andrea Precoma", "Davide Picello"),
   versioni: (
+    "0.9.0",
+    "12/12/2024",
+    "Davide Picello",
+    "Andrea Precoma",
+    [- Aggiunto il termine "PostgresSQL"],
+
     "0.8.0",
     "4/12/2024",
     "Davide Picello",
