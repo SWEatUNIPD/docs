@@ -5,7 +5,8 @@
     "Apache Kafka": "Piattaforma di broker e data streaming che consente di gestire e trasferire big data in tempo reale.",
     "Apache NiFi": "Sistema di integrazione di dati open-source per l'elaborazione e la distribuzione di flussi di dati.",
     "Apache Spark": "Elaborazione dati in-memory opensource, ad alte prestazioni, progettato per eseguire elaborazioni complesse su grandi volumi di dati in modo rapido e scalabile.",
-    "Apache Superset": "Piattaforma open-source di business intelligence per esplorare e visualizzare dati in modo interattivo."
+    "Apache Superset": "Piattaforma open-source di business intelligence per esplorare e visualizzare dati in modo interattivo.",
+    "API": "Acronimo di Application Programming Interface, sono un insieme di regole e strumenti che permette a software diversi di comunicare e interagire tra loro."
   },
   "B": {
     "Backlog": "Il backlog, concetto fondamentale nella metodologia Agile, è un elenco ordinato e dinamico di tutti gli elementi necessari per lo sviluppo e il miglioramento di un prodotto. Questi elementi possono includere nuove funzionalità, modifiche a quelle esistenti, correzioni di bug e attività tecniche.",
@@ -23,6 +24,7 @@
     "Data Generator": "Strumento o un software che produce dati sintetici o simulati, utilizzati per testare applicazioni, addestrare modelli di machine learning o simulare scenari realistici.",
     "Data Visualization": "Rappresentazione grafica di dati e informazioni, al fine di facilitarne la comprensione e l'interpretazione.",
     "Deep dive": "Una sessione deep dive è un incontro in cui esperti esterni al gruppo si mettono a disposizione per approfondire specifiche tecnologie e strumenti legati a un progetto. Questi incontri sono progettati per affrontare temi complessi o aree in cui il team destinatario potrebbe non avere esperienza sufficiente o stia incontrando difficoltà.",
+    "Diagramma di Gantt": "Strumento di supporto alla gestione di progetti, usato principalmente nelle attività di _project management_. È costruito partendo da un asse orizzontale, che rappresenta l'arco temporale, e da un asse verticale che rappresenta le mansioni o attività che costituiscono il progetto.",
     "Docker": "Piattaforma software open-source che consente di sviluppare, distribuire ed eseguire applicazioni in container, unità leggere e portatili che includono tutto il necessario per eseguire un'applicazione, garantendo che funzionino in modo coerente su qualsiasi ambiente.",
     "Docker Compose": "È uno strumento di Docker che permette la creazione e condivisione di applicazioni composte da più container. Lo strumento permette di definire i servizi in un file YAML e di avviare l'intera applicazione mediante un singolo comando."
   },
@@ -61,6 +63,7 @@
     "PoC": "Acronimo di Proof of Concept, è un prototipo o un modello iniziale creato per dimostrare la fattibilità di un'idea o concetto, senza dover sviluppare un prodotto completo.",
     "PostGIS": "Estensione open-source di PostgreSQL per la gestione di dati spaziali.",
     "PostgreSQL": "Sistema di gestione di basi di dati (in inglese: Database Management System) open source conforme agli standard SQL. Supporta una vasta gamma di funzionalità e vanta una grande stabilità grazie ai 20 anni di sviluppo della community",
+    "Processor": "Componente che elabora dati o istruzioni, eseguendo operazioni specifiche in un sistema o flusso di lavoro.",
     "Prompt": "Testo in linguaggio naturale richiesto in input dall'IA generativa con lo scopo di generare un output dalla stessa."
   },
   "R": {
