@@ -84,9 +84,9 @@ sottolineato e seguito dalla lettera g posta ad apice (e.g. #rifGlossario("termi
 #pagebreak()
 
 = Descrizione del prodotto
-== Obiettivi del prodotto //FIXME: non sono totalmente d'accordo con questa sezione, forse andrebbe riscritta
-Il prodotto ha come obiettivo quello di fornire un servizio di pubblicità personalizzata integrato in una mappa, accessibile agli utenti di un mezzo a noleggio, che sfrutta la tecnologia GenAI per la creazione di pubblicità mirate sui singoli utenti. Il gestore del servizio di noleggio avrà accesso ad una _dashboard_ che gli permetterà di monitorare in tempo wreale la posizione degli utenti e la visualizzazione degli annunci pubblicitari.
-Per fare ciò l'azienda proponente chiede di simulare lo spostamento degli utenti lungo un percorso/* casuale o predefinito? */, in modo da poter testare il funzionamento del sistema.
+== Obiettivi del prodotto
+Il prodotto ha come obiettivo quello di fornire un servizio di pubblicità personalizzata integrato in una mappa, accessibile agli utenti di un mezzo a noleggio, che sfrutta la tecnologia GenAI per la creazione di pubblicità mirate sui singoli utenti. Il gestore del servizio di noleggio avrà accesso ad una _dashboard_ che gli permetterà di monitorare in tempo reale la posizione degli utenti e la visualizzazione degli annunci pubblicitari.
+Per fare ciò l'azienda proponente chiede di simulare lo spostamento degli utenti lungo un percorso, in modo da poter testare il funzionamento del sistema.
 I dati riguardanti gli annunci pubblicitari visualizzati dagli utenti devono essere memorizzati in un _#rifGlossario("database")_ (storicizzazione) in modo da poter essere consultati successivamente dalla _dashboard_, al fine di consentire analisi reportistiche.
 
 Il _benefit_ atteso è quello di rendere le campagne pubblicitarie delle aziende interessate il più efficaci possibili, riducendo la disconnessione tra messaggio e destinatario e aumentando il coinvolgimento di quest'ultimo, migliorando di conseguenza il #rifGlossario("ROI") della campagna stessa.
@@ -122,17 +122,25 @@ Il prodotto si rivolge a due tipologie di utenti:
 
 = Casi d'uso
 == Introduzione
+La seguente sezione descrive i casi d'uso individuati per il progetto _Near You - Smart custom advertising platform_ all'interno del capitolato d'appalto e a seguito delle varie riunioni sostenute con l'azienda proponente Sync Lab S.r.l..
+Ogni caso d'uso è identificato da un codice univoco, che segue la nomenclatura *UC[numero_use_case]*, e da una serie di informazioni:
+- *Attori principali*
+- *Attori secondari* (se presenti)
+- *Precondizioni*
+- *Postcondizioni*
+- *Trigger*
+- *Scenario principale*
+- *Estensioni* (se presenti)
 
 == Attori <actors>
 Gli attori coinvolti nei casi d'uso sono i seguenti:
-- *Amministratore*: gestore di un servizio di noleggio, che avrà quindi accesso alla _dashboard_.
+- *Amministratore*: gestore di un servizio di noleggio.
 - *Utente*: utente che utilizza il servizio di noleggio.
-- *Sensore*: il sensore serve a registrare la posizione geografica ed è fisicamente collegato al mezzo noleggiato.
-/*- *LangChain*: LangChain è la tecnologia esterna al sistema che interagisce con esso attraverso delle API con le quali generiamo i messaggi pubblicitari.*/ // TODO: capire se l'attore è langchain o LLM
+- *Utente non autenticato*: un qualsiasi individuo che intende accedere al sistema, sia esso un utente inteso come utilizzatore del servizio di noleggio o un amministratore.
+- *Sensore*: strumento attraverso il quale il mezzo noleggiato da uno specifico utente trasmette la sua posizione in tempo reale.
+- *LLM*: è il servizio esterno che si occupa della generazione degli annunci pubblicitari personalizzati tramite i prompt forniti dal sistema.
 
 == Elenco dei casi d'uso <use_cases>
-
-// CASI D'USO UTENTE
 
 === UC1 - Trasmissione dei dati di localizzazione
 
@@ -148,103 +156,106 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #pagebreak()
 
-=== UC2 - Autenticazione alla _dashboard_ di Grafana //TODO: use case di Merja
-//FIXME: ha senso mettere Grafana come use case (si ok, utilizzeremo Grafana in quanto è veloce e più comprensibile rispetto a superset, però non so a quanto serva. Consiglio di chiedere a Cardin)
-- *Attori principali*:
-  - Utente
-  - Amministratore
-- *Precondizioni*: l'utente o l'amministratore deve essere registrato al servizio di Grafana installato all'interno del sistema.
-- *Postcondizioni*: l'utente o l'amministratore accede alla _dashboard_ personale di Grafana, con le relative funzionalità (a seconda dei loro privilegi).
+=== UC4 - Autenticazione alla _dashboard_ del sistema
+- *Attori principali*: Utente non autenticato.
+- *Precondizioni*: l'individuo che intende accedere alla dashboard deve essere registrato all'interno del sistema per poter accedere.
+- *Postcondizioni*: l'utente o l'amministratore che si è appena autenticato accede alla _dashboard_ personale, con le relative funzionalità (a seconda dei loro privilegi).
 - *Trigger*: l'utente o l'amministratore intende accedere alla _dashboard_ personale di Grafana.
 - *Scenario principale*:
-  1. L'utente o l'amministratore accede alla pagina di login di Grafana.
-  2. L'utente o l'amministratore inserisce le proprie credenziali di accesso.
+  1. L'utente non autenticato accede alla pagina di login di Grafana.
+  2. L'utente non autenticato inserisce le proprie credenziali di accesso.
   3. Il sistema verifica se le credenziali inserite sono valide o meno.
-  4. Nel caso in cui le credenziali fossero valide, l'utente o l'amministratore accede alla propria _dashboard_ personale.
+  4. Nel caso in cui le credenziali fossero valide, l'utente o l'amministratore (a seconda del ruolo all'interno del sistema) accede alla propria _dashboard_ personale.
 - *Estensione*: Visualizzazione del messaggio di credenziali errate (UC3).
 
-=== UC3 - Visualizzazione del messaggio di errore
-- *Attori principali*:
-  - Utente
-  - Amministratore
-- *Precondizioni*: l'utente o l'amministratore tenta di accedere alla dashboard di Grafana con delle credenziali errate.
-- *Postcondizioni*: l'utente o l'amministratore riceve un messaggio di errore.
-- *Trigger*: l'utente o l'amministratore inserisce delle credenziali errate.
+=== UC5 - Visualizzazione del messaggio di errore
+- *Attori principali*: Utente non autenticato
+- *Precondizioni*: l'utente non autenticato tenta di accedere alla dashboard di Grafana con delle credenziali errate.
+- *Postcondizioni*: l'utente non autenticato riceve un messaggio di errore.
+- *Trigger*: l'utente non autenticato inserisce delle credenziali errate.
 - *Scenario principale*:
   1. L'utente inserisce delle credenziali errate durante la fase di autenticazione alla _dashboard_.
   2. L'utente riceve un messaggio di errore, segnalando il fatto che le credenziali di accesso inserite siano invalide e invitando a riprovare l'autenticazione.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC2-3.svg"),
-  caption: [UC2 e UC3 - Autenticazione alla _dashboard_ di Grafana e inserimento delle credenziali errate],
+  image("../assets/use_cases/UC4-5.svg"),
+  caption: [Diagramma dei casi d'uso UC4 e UC5],
 )
 
 #pagebreak()
 
-=== UC4 - Visualizzazione della mappa dei mezzi noleggiati //FIXME: chiedere a Cardin se ha senso mettere l'autenticazione alla dashboard di Grafana in inclusione alla visualizzazione della mappa dell'admin
+=== UC6 - Visualizzazione della mappa dei mezzi noleggiati
 - *Attore principale*: Amministratore
-- *Precondizioni*: l'amministratore del sistema è autenticato e ha accesso alla _dashboard_ Grafana.
-- *Postcondizioni*: l'amministratore ottiene una visione chiara della posizione e del movimento dei mezzi attualmente in uso.
+- *Precondizioni*: l'amministratore del sistema è autenticato e ha accesso alla _dashboard_ del sistema.
+- *Postcondizioni*: l'amministratore ottiene una visione chiara della posizione e del movimento dei mezzi attualmente in uso all'interno di una mappa.
 - *Trigger*: l'amministratore intende visualizzare la posizione dei mezzi noleggiati.
 - *Scenario principale*:
-  1. L'amministratore è collegato e autenticato nella _dashboard_ Grafana.
+  1. L'amministratore è collegato e autenticato nella _dashboard_ del sistema.
   2. La _dashboard_ mette a disposizione una mappa interattiva con i mezzi attualmente a noleggio, la cui posizione viene indicata attraverso dei _marker_. //TODO: mettere marker a glossario
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC4_Merja.svg"),
-  caption: [UC3 - Visualizzazione della mappa dei mezzi noleggiati],
+  image("../assets/use_cases/UC6.svg"),
+  caption: [Diagramma del caso d'uso UC6],
 )
 
 #pagebreak()
 
-=== UC5 - Generazione dell'annuncio tramite LLM
+=== UC7 - Invio del'annuncio pubblicitario generato
 - *Attore principale*: LLM
-- *Attore secondario*: Sensore
-- *Precondizioni*: il sistema riceve i dati di localizzazione GPS del mezzo in uso dall'utente e si trova in prossimità di un punto di interesse.
+- *Precondizioni*: l'LLM, tramite una richiesta API, deve aver ricevuto i prompt di generazione dell'annuncio, come la profilazione dell'utente e il punto di interesse per cui si vuole generare l'annuncio.
 - *Postcondizioni*: l'LLM genera l'annuncio basandosi sulla profilazione dell'utente.
-- *Trigger*: l'utente del noleggio si trova in prossimità di un punto di interesse presente in database.
+- *Trigger*: il sistema ha fatto una richiesta di generazione tramite le API dell'LLM.
+- *Scenario principale*:
+  1. L'LLM riceve la richiesta da parte del sistema
+  2. L'LLM genera l'annuncio pubblicitario basandosi sui dati ricevuti come prompt.
+  3. L'LLM invia l'annuncio pubblicitario generato al sistema.
+- *Estensione*: Annuncio non generato (UC8).
+=== UC8 - Annuncio non generato
+- *Attore principale*: LLM
+- *Precondizioni*: l'LLM considera il punto di interesse non pertinente in base alla profilazione dell'utente per cui si vuole generare l'annuncio.
+- *Postcondizioni*: l'LLM non genera alcun annuncio pubblicitario.
+- *Trigger*: l'utente del noleggio si trova in prossimità di un punto di interesse non pertinente.
 - *Scenario principale*:
   1. L'utente si trova in prossimità di un punto di interesse.
-  2. Il sistema, sfruttando i dati di profilazione dell'utente, decide in primis se l'utente possa essere interessato o meno al punto di interesse.
-- *Estensione*:
+  2. L'LLM verifica che il punto di interesse non è pertinente per l'utente.
+  3. L'LLM decide di non generare alcun annuncio pubblicitario
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC5-6.svg"), //FIXME: è la generazione che include la trasmissione dei dati o la trasmissione che include la generazione?
-  caption: [UC5 e UC6 - Generazione dell'annuncio e Annuncio non generato],
+  image("../assets/use_cases/UC7-8.svg"),
+  caption: [Diagramma dei casi d'uso UC7 e UC8],
 )
 #pagebreak()
 
-=== UC2 - Visualizzazione dell'annuncio generato dalla LLM //FIXME: questo non è necessario al momento, dovrebbe essere opzionale -> capire se da eliminare o meno
-
-- *Attore principale*: Utente
-
-- *Precondizioni*: l'utente ha un noleggio attivo ed il sensore del mezzo sta inviando i dati di localizzazione al sistema.
-- *Postcondizioni*: se l'utente è considerato interessato ai servizi offerti dal punto di interesse, visualizza l'annuncio pubblicitario sul _display_ del mezzo.
-
-- *Trigger*: l'utente si trova in prossimità di un punto di interesse e il sistema, tramite i dati di profilazione, giudica l'utente idoneo a ricevere l'annuncio.
-
-- *Scenario principale*:
-  1. L'utente si trova in prossimità di un punto di interesse.
-  2. Il sistema stabilisce tramite la LLM se l'utente può essere interessato ai servizi offerti dal punto di interesse.
-  3. In caso positivo l'utente visualizza un annuncio pubblicitario personalizzato, generato tramite l'LLM.
-- *Diagramma*:
-#figure(
-  image("../assets/use_cases/UC2.svg", width: 80%),
-  caption: [UC2 - Visualizzazione dell'annuncio generato dalla LLM],
-)
-
-#pagebreak()
-
-=== UC4 - Visualizzazione storico amministratore
-
+=== UC9 - Visualizzazione degli annunci pubblicitari generati dalla LLM
 - *Attore principale*: Amministratore
-- *Precondizioni*: l'amministratore del sistema è autenticato e ha accesso alla _dashboard_ Grafana.
-- *Postcondizioni*: l'amministratore ha una visione dello storico degli annunci pubblicitari comparsi associato al rispettivo utente, con un _feedback_ indicante il successo o l'insuccesso che l'annuncio ha avuto.
+
+- *Precondizioni*: l'amministratore ha accesso alla _dashboard_ del sistema.
+- *Postcondizioni*: l'amministratore visualizza gli annunci generati dalla LLM per ogni utente con un noleggio attivo all'interno della mappa.
+
+- *Trigger*: l'amministratore vuole prendere visione di quanto generato da parte dell'LLM per i clienti del noleggio e per i punti di interesse convenzionati.
+
 - *Scenario principale*:
-  1. L'amministratore è collegato e autenticato nella _dashboard_ Grafana;
-  2. La _dashboard_ mette a disposizione una sezione con lo storico degli annunci prodotti dal sistema e il relativo esito.
-- *User story*:
-#figure(image("../assets/use_cases/UC4.svg", width: 80%), caption: [UC4 - Visualizzazione storico amministratore])
+  1. L'amministratore accede alla mappa dei mezzi noleggiati.
+  2. L'amministratore, tramite un click sul _marker_ che indica la posizione di un mezzo, visualizza l'annuncio pubblicitario generato per l'utente che ha attualmente in uso il mezzo.
+#v(20pt)
+#figure(
+  image("../assets/use_cases/UC9.svg"),
+  caption: [Diagramma del caso d'uso UC9],
+)
+
+
+#pagebreak()
+
+// === UC4 - Visualizzazione storico amministratore
+
+// - *Attore principale*: Amministratore
+// - *Precondizioni*: l'amministratore del sistema è autenticato e ha accesso alla _dashboard_ Grafana.
+// - *Postcondizioni*: l'amministratore ha una visione dello storico degli annunci pubblicitari comparsi associato al rispettivo utente, con un _feedback_ indicante il successo o l'insuccesso che l'annuncio ha avuto.
+// - *Scenario principale*:
+//   1. L'amministratore è collegato e autenticato nella _dashboard_ Grafana;
+//   2. La _dashboard_ mette a disposizione una sezione con lo storico degli annunci prodotti dal sistema e il relativo esito.
+// - *User story*:
+// #figure(image("../assets/use_cases/oldUC4.svg", width: 80%), caption: [UC4 - Visualizzazione storico amministratore])
 
 // === UC5 - Interazione con l'annuncio pubblicitario //FIXME: questo caso d'uso è da capire sempre se mantenere o meno in quanto è opzionale e non necessario ai fini del PoC
 // - *Attore principale*: Utente
@@ -255,7 +266,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 //   2. L'utente interagisce con l'annuncio pubblicitario;
 //   3. Il sistema memorizza un _feedback_ associato all'annuncio visualizzato.
 // - *User story*:
-// #figure(image("../assets/use_cases/UC5.svg", width: 80%), caption: [UC5 - Interazione con l'annuncio pubblicitario])
+// #figure(image("../assets/use_cases/oldUC5.svg", width: 80%), caption: [UC5 - Interazione con l'annuncio pubblicitario])
 
 // Il caso d'uso sottostante rappresenta un'interazione alternativa al caso d'uso UC5, in cui l'utente si ferma presso il punto d'interesse pubblicizzato per un periodo di tempo prolungato
 // Da valutare se implementarla in quanto risulterebbe ridondante
