@@ -151,10 +151,47 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   1. L'utente noleggia un mezzo.
   2. Il sensore invia a intervalli di tempo regolari i dati di localizzazione GPS del mezzo.
+- *Inclusioni*:
+  1. Controllo della posizione in prossimità di un punto di interesse (UC2).
+
+=== UC2 - Controllo della posizione in prossimità di un punto di interesse
+
+- *Attore principale*: Sensore
+- *Precondizioni*: il sensore ha inviato dei dati di localizzazione.
+- *Postcondizioni*: il sistema verifica che il sensore sia in prossimità di un punto di interesse.
+- *Trigger*: il sensore invia al sistema la localizzazione GPS del mezzo.
+- *Scenario principale*:
+  1. Il sensore invia al sistema la localizzazione GPS del mezzo.
+  2. Il sistema verifica che il sensore sia in porssimità di un punto di interesse.
+- *Estensione*:
+  1. Il sensore non è in prossimità di un punto di interesse (UC3).
+
+=== UC3 - Il sensore non è in prossimità di un punto di interesse
+
+- *Attore principale*: Sensore
+- *Precondizioni*: il sensore ha inviato dei dati di localizzazione.
+- *Postcondizioni*: il sistema verifica che il sensore non si trova in prossimità di un punto di interesse.
+- *Trigger*: il sensore invia al sistema la localizzazione GPS del mezzo.
+- *Scenario principale*:
+  1. Il sensore invia al sistema la localizzazione GPS del mezzo.
+  2. Il sistema verifica che il sensore non è in porssimità di un punto di interesse.
+
+=== UC4 - Invio richiesta di annuncio personalizzato al LLM
+
+- *Attore principale*: Sensore
+- *Attore secondario*: LLM
+- *Precondizioni*: il sensore si trova in prossimità di un punto di interesse.
+- *Postcondizioni*: il sistema invia al LLM una richiesta di annuncio personalizzato in caso la profilazione dell'utente risulti idonea al punto di interesse.
+- *Trigger*: il sensore si trova in prossimità di un punto di interesse.
+- *Scenario principale*:
+  1. Il sensore si trova in prossimità di un punto di interesse.
+  2. Il sistema invia al LLM una richiesta di annuncio personalizzato in caso la profilazione dell'utente risulti idonea al punto di interesse.
+
 #v(20pt)
-#figure(image("../assets/use_cases/UC1.svg", width: 80%), caption: [UC1 - Trasmissione dei dati di localizzazione])
+#figure(image("../assets/use_cases/UC1-2-3-4.svg", width: 80%), caption: [Diagramma dei casi d'uso UC1, UC2, UC3 e UC4])
 
 #pagebreak()
+
 
 === UC4 - Autenticazione alla _dashboard_ del sistema
 - *Attori principali*: Utente non autenticato.
