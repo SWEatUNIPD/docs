@@ -1,7 +1,7 @@
 #import "/templates/template.typ": *
 
 #show: content => verbale(
-  data: "05 dicembre 2024",
+  data: "25 novembre 2024",
   destinatari: ("Gruppo SWE@", "Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "Sync Lab S.r.L."),
   responsabile: "Andrea Perozzo",
   redattori: ("Davide Marin", "Davide Martinelli", "Klaudio Merja", "Riccardo Milan"),
@@ -14,7 +14,7 @@
     "Davide Marin\nKlaudio Merja",
     "Andrea Precoma\nRiccardo Milan",
     [
-      -
+      - Aggiunta di nuovi casi d'uso relativi all'autenticazione alla _dashboard_, alla prossimità dell'utente ad un punto di interesse e alla generazione degli annunci pubblicitari tramite l'LLM
     ],
     "0.2.1",
     [05/12/2024],
@@ -23,7 +23,7 @@
     [
       - Modifica di stile per quanto riguarda la sintassi delle frasi
       - Modifica dei casi d'uso a seguito di una riunione con Sync Lab S.r.L.
-      - Aggiunta del trigger mancanti ai casi d'uso presenti
+      - Aggiunta del _trigger_ mancanti ai casi d'uso presenti
     ],
     "0.2.0",
     [27/11/2024],
@@ -53,16 +53,14 @@
 = Introduzione
 == Scopo del documento
 
-Lo scopo principale del documento Analisi dei Requisiti è quello di fornire una descrizione dettagliata dei casi d'uso e dei requisiti del progetto _NearYou - Smart custom advertising platform_ dell'azienda proponente Sync Lab S.r.l., frutto di uno studio approffondito del capitolato d'appalto e degli incontri con l'azienda proponente stessa.
+Lo scopo principale del documento Analisi dei Requisiti è quello di fornire una descrizione dettagliata dei casi d'uso e dei requisiti del progetto _NearYou - Smart custom advertising platform_ dell'azienda proponente Sync Lab S.r.l., frutto di uno studio approfondito del capitolato d'appalto e degli incontri con l'azienda proponente stessa.
 
-Il documento risulta di fondamentale importanza in quanto costituisce una chiara visione delle funzionalità e i requisiti attesi dalla Proponente riguardo al prodotto e facilita ai fornitori, ovvero il gruppo, nel processo di validazione del prodotto finale.
+Il documento risulta di fondamentale importanza in quanto costituisce una chiara visione delle funzionalità e i requisiti attesi riguardo al prodotto e facilita ai fornitori, ovvero il gruppo, nel processo di validazione del prodotto finale.
 
 
 == Scopo del prodotto
 
-Il prodotto _NearYou - Smart custom advertising platform_ è una piattaforma che sfrutta la tecnologia #rifGlossario("GenAI") per la creazione di pubblicità personalizzate da mostrare a ciascun utente, sfruttando dati come la posizione in tempo reale, le informazioni personali e i dati di profilazione, in modo da migliorare l'esperienza dell'utente e aumentando contemporaneamente il #rifGlossario("ROI") e l'efficacia delle campagne pubblicitarie.
-
-/*L'obiettivo del prodotto è quello di rendere le campagne pubblicitarie delle aziende interessate il più personalizzate e ottimizzate possibili ed aumentare il coinvolgimento dell'utente finale, con lo scopo di ridurre la disconnessione tra messaggio e destinatario e portare un miglioramento sul #rifGlossario("ROI") della campagna stessa. */
+Il prodotto _NearYou - Smart custom advertising platform_ è una piattaforma che sfrutta la #rifGlossario("GenAI") per la creazione di pubblicità personalizzate da mostrare a ciascun utente, sfruttando dati come la posizione in tempo reale, le informazioni personali e i dati di profilazione, in modo da migliorare l'esperienza dell'utente e aumentando contemporaneamente il #rifGlossario("ROI") e l'efficacia delle campagne pubblicitarie.
 
 == Glossario
 Per evitare eventuali ambiguità e incomprensioni sulla terminologia adottata nella documentazione redatta dal gruppo,
@@ -85,7 +83,7 @@ sottolineato e seguito dalla lettera g posta ad apice (e.g. #rifGlossario("termi
 
 = Descrizione del prodotto
 == Obiettivi del prodotto
-Il prodotto ha come obiettivo quello di fornire un servizio di pubblicità personalizzata integrato in una mappa, accessibile agli utenti di un mezzo a noleggio, che sfrutta la tecnologia GenAI per la creazione di pubblicità mirate sui singoli utenti. Il gestore del servizio di noleggio avrà accesso ad una _dashboard_ che gli permetterà di monitorare in tempo reale la posizione degli utenti e la visualizzazione degli annunci pubblicitari.
+Il prodotto ha come obiettivo quello di fornire un servizio di pubblicità personalizzata integrato in una mappa, accessibile agli utenti di un mezzo a noleggio, che sfrutta la GenAI per la creazione di pubblicità mirate sui singoli utenti. Il gestore del servizio di noleggio avrà accesso ad una _dashboard_ che gli permetterà di monitorare in tempo reale la posizione degli utenti e la visualizzazione degli annunci pubblicitari.
 Per fare ciò l'azienda proponente chiede di simulare lo spostamento degli utenti lungo un percorso, in modo da poter testare il funzionamento del sistema.
 I dati riguardanti gli annunci pubblicitari visualizzati dagli utenti devono essere memorizzati in un _#rifGlossario("database")_ (storicizzazione) in modo da poter essere consultati successivamente dalla _dashboard_, al fine di consentire analisi reportistiche.
 
@@ -103,20 +101,8 @@ L'azienda proponente richiede inoltre la dimostrazione del corretto funzionament
 == Utenti e loro caratteristiche
 
 Il prodotto si rivolge a due tipologie di utenti:
-- *Gestore servizio di noleggio*: utente che gestisce il servizio di noleggio, ovvero un nostro cliente, che ha accesso tramite _dashboard_ a tutte le funzionalità del sistema ed è interessato quindi, oltre che al monitoraggio della flotta, anche all'andamento delle campagne pubblicitarie nel tempo.
-- *Utente*: utente che utilizza il servizio di noleggio e che ha accesso solo alla funzionalità di visualizzazione degli annunci pubblicitari.
-
-// == Tecnologie
-// Il sistema utilizzerà un'architettura modulare, includendo le seguenti tecnologie:
-// - Simulatori di dati: _script_ Python per generare dati #rifGlossario("GPS") e simulare spostamenti.
-// - Data streaming: #rifGlossario("Apache Kafka") per gestire flussi di dati in tempo reale.
-// - #rifGlossario("Apache NiFi"): per processare e distribuire i dati.
-// - #rifGlossario("LangChain"): per la generazione di annunci tramite #rifGlossario("LLM").
-// - #rifGlossario("PostGIS"): per l’archiviazione di dati geolocalizzati.
-// - #rifGlossario("Grafana"): per il monitoraggio dei dati tramite interfaccia grafica.
-
-// Si potrebbe pensare di rappresentare questo elenco come un flusso di dati, con le tecnologie come nodi collegati tra loro da una freccia
-//FIXME: non è possibile parlare di architettura in PoC, quindi già quello non può essere citato. Come le tecnologie da utilizzare onestamente: non hanno nulla a che fare coi vincoli
+- *Gestore del servizio di noleggio*: utente che gestisce il servizio di noleggio, ovvero un nostro cliente, che ha accesso tramite _dashboard_ a tutte le funzionalità del sistema ed è interessato quindi, oltre che al monitoraggio della flotta, anche all'andamento delle campagne pubblicitarie nel tempo.
+- *Utente*: utente che utilizza il servizio di noleggio e che ha accesso solo alla funzionalità di visualizzazione degli annunci pubblicitari. //FIXME: da rivedere per quanto riguarda i voleri di Sync Lab
 
 #pagebreak()
 
@@ -132,7 +118,7 @@ Ogni caso d'uso è identificato da un codice univoco, che segue la nomenclatura 
 - *Scenario principale*
 - *Estensioni* (se presenti)
 
-== Attori <actors>
+== Attori
 Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Amministratore*: gestore di un servizio di noleggio.
 - *Utente*: utente che utilizza il servizio di noleggio.
@@ -140,11 +126,11 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Sensore*: strumento attraverso il quale il mezzo noleggiato da uno specifico utente trasmette la sua posizione in tempo reale.
 - *#rifGlossario("LLM")*: è il servizio esterno che si occupa della generazione degli annunci pubblicitari personalizzati tramite i #rifGlossario("prompt") forniti dal sistema.
 
-== Elenco dei casi d'uso <use_cases>
+== Elenco dei casi d'uso
 
 === UC1 - Trasmissione dei dati di localizzazione
 
-- *Attore principale*: Sensore
+- *Attore principale*: Sensore.
 - *Precondizioni*: il mezzo in cui è installato il sensore ha un noleggio attivo.
 - *Postcondizioni*: il sistema riceve i dati di localizzazione #rifGlossario("GPS") del mezzo in uso dall'utente.
 - *Trigger*: il sensore intende notificare al sistema la localizzazione GPS del mezzo.
@@ -156,7 +142,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 === UC2 - Controllo della posizione in prossimità di un punto di interesse
 
-- *Attore principale*: Sensore
+- *Attore principale*: Sensore.
 - *Precondizioni*: il sensore ha inviato dei dati di localizzazione.
 - *Postcondizioni*: il sistema verifica che il sensore sia in prossimità di un punto di interesse.
 - *Trigger*: il sensore invia al sistema la localizzazione GPS del mezzo.
@@ -168,28 +154,29 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 === UC3 - Il sensore non è in prossimità di un punto di interesse
 
-- *Attore principale*: Sensore
+- *Attore principale*: Sensore.
 - *Precondizioni*: il sensore ha inviato dei dati di localizzazione.
 - *Postcondizioni*: il sistema verifica che il sensore non si trova in prossimità di un punto di interesse.
 - *Trigger*: il sensore invia al sistema la localizzazione GPS del mezzo.
 - *Scenario principale*:
   1. Il sensore invia al sistema la localizzazione GPS del mezzo.
   2. Il sistema verifica che il sensore non è in prossimità di un punto di interesse.
+#v(20pt)
+#figure(image("../assets/use_cases/UC1-2-3.svg"), caption: [Diagramma dei casi d'uso UC1, UC2 e UC3])
 
-=== UC4 - Invio richiesta di annuncio personalizzato al LLM
+#pagebreak()
 
-- *Attore principale*: Sensore
-- *Attore secondario*: LLM
+=== UC4 - Invio richiesta di annuncio personalizzato alla LLM
+- *Attore principale*: Sensore.
+- *Attore secondario*: LLM.
 - *Precondizioni*: il sensore si trova in prossimità di un punto di interesse.
-- *Postcondizioni*: il sistema invia al LLM una richiesta di annuncio personalizzato in caso la profilazione dell'utente risulti idonea al punto di interesse.
+- *Postcondizioni*: il sistema invia alla LLM una richiesta di annuncio personalizzato in caso la profilazione dell'utente risulti idonea al punto di interesse.
 - *Trigger*: il sensore si trova in prossimità di un punto di interesse.
 - *Scenario principale*:
   1. Il sensore si trova in prossimità di un punto di interesse.
-  2. Il sistema invia al LLM una richiesta di annuncio personalizzato in caso la profilazione dell'utente risulti idonea al punto di interesse.
-
+  2. Il sistema invia alla LLM una richiesta di annuncio personalizzato in caso la profilazione dell'utente risulti idonea al punto di interesse.
 #v(20pt)
-#figure(image("../assets/use_cases/UC1-2-3-4.svg"), caption: [Diagramma dei casi d'uso UC1, UC2, UC3 e UC4])
-
+#figure(image("../assets/use_cases/UC4.svg", width: 90%), caption: [Diagramma del caso d'uso UC4])
 #pagebreak()
 
 
@@ -206,7 +193,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Estensione*: Visualizzazione del messaggio di credenziali errate (UC6).
 
 === UC6 - Visualizzazione del messaggio di errore
-- *Attori principali*: Utente non autenticato
+- *Attori principali*: Utente non autenticato.
 - *Precondizioni*: l'utente non autenticato tenta di accedere alla _dashboard_ con delle credenziali errate.
 - *Postcondizioni*: l'utente non autenticato riceve un messaggio di errore.
 - *Trigger*: l'utente non autenticato inserisce delle credenziali errate.
@@ -222,7 +209,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 #pagebreak()
 
 === UC7 - Visualizzazione della mappa dei mezzi noleggiati
-- *Attore principale*: Amministratore
+- *Attore principale*: Amministratore.
 - *Precondizioni*: l'amministratore del sistema è autenticato e ha accesso alla _dashboard_ del sistema.
 - *Postcondizioni*: l'amministratore ottiene una visione chiara della posizione e del movimento dei mezzi attualmente in uso all'interno di una mappa.
 - *Trigger*: l'amministratore intende visualizzare la posizione dei mezzi noleggiati.
@@ -238,7 +225,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 #pagebreak()
 
 === UC8 - Invio del'annuncio pubblicitario generato
-- *Attore principale*: LLM
+- *Attore principale*: LLM.
 - *Precondizioni*: l'LLM, tramite una richiesta #rifGlossario("API"), deve aver ricevuto i _prompt_ di generazione dell'annuncio, come la profilazione dell'utente e il punto di interesse per cui si vuole generare l'annuncio.
 - *Postcondizioni*: l'LLM genera l'annuncio basandosi sulla profilazione dell'utente.
 - *Trigger*: il sistema ha fatto una richiesta di generazione tramite le API dell'LLM.
@@ -264,13 +251,10 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 #pagebreak()
 
 === UC10 - Visualizzazione degli annunci pubblicitari generati dalla LLM
-- *Attore principale*: Amministratore
-
+- *Attore principale*: Amministratore.
 - *Precondizioni*: l'amministratore ha accesso alla _dashboard_ del sistema.
 - *Postcondizioni*: l'amministratore visualizza gli annunci generati dalla LLM per ogni utente con un noleggio attivo all'interno della mappa.
-
 - *Trigger*: l'amministratore vuole prendere visione di quanto generato da parte dell'LLM per i clienti del noleggio e per i punti di interesse convenzionati.
-
 - *Scenario principale*:
   1. L'amministratore accede alla mappa dei mezzi noleggiati.
   2. L'amministratore, tramite un "_click_" sul _marker_ che indica la posizione di un mezzo, visualizza l'annuncio pubblicitario generato per l'utente che ha attualmente in uso il mezzo.
@@ -280,8 +264,16 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   caption: [Diagramma del caso d'uso UC10],
 )
 
+//TODO: valutare se raffinare i casi d'uso con dei sottocasi
 
-#pagebreak()
+
+
+
+/**
+ * ========
+ * Vecchi casi d'uso
+ * ========
+ **/
 
 // === UC4 - Visualizzazione storico amministratore
 
@@ -324,13 +316,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *User story*:
 #figure(image("../assets/use_cases/UC5.1.svg", width: 80%), caption: [UC5.1 - Sosta presso il punto d'interesse pubblicizzato])
 */
-
-
-
-// TODO: per i prossimi analisti, idee per i prossimi casi d'uso potrebbero essere: l'admin può filtrare (da decidere filtrare per cosa) e forse potrebbero essere estensioni del caso d'uso visualizzazione _dashboard_. Sicuramente LLM come attore può processare i dati e generare il messaggio.
-
-
-
 
 #pagebreak()
 = Requisiti
