@@ -6,20 +6,30 @@
   responsabile: "Klaudio Merja",
   redattori: ("Andrea Perozzo", "Andrea Precoma", "Riccardo Milan", "Klaudio Merja"),
   titolo: "Glossario",
-  verificatori: ("Andrea Perozzo", "Andrea Precoma", "Davide Picello", "Riccardo Milan"),
+  verificatori: ("Andrea Perozzo", "Andrea Precoma", "Davide Picello"),
   versioni: (
-    "0.7.1",
+    "0.10.0",
+    "10/12/2024",
+    "Davide Marin\nKlaudio Merja",
+    "Andrea Precoma\nRiccardo Milan",
+    [
+      - Aggiunto il termine "Marker"
+    ],
+    "0.9.0",
     "06/12/2024",
     "Andrea Perozzo",
     "Riccardo Milan",
     [- Aggiunti i termini "API" e "Processor"],
+    "0.8.0",
+    "04/12/2024",
+    "Davide Picello",
+    "Riccardo Milan",
+    [- Aggiunto il termine "Docker"],
     "0.7.0",
     "29/11/2024",
     "Andrea Perozzo\nKlaudio Merja",
     "Andrea Precoma\nRiccardo Milan",
     [
-      - Creato paragrafo per i termini che iniziano con "K"
-      - Creato paragrafo per i termini che iniziano con "E"
       - Aggiunti i termini "ClickUp", "Docker Compose", "GitLab", "Event-driven architecture", "Mockup", "Kubernetes", "Spring" e "Trello"
     ],
     "0.6.0",

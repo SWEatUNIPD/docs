@@ -9,6 +9,13 @@
   titolo: "Analisi dei Requisiti",
   uso: "Esterno",
   versioni: (
+    "0.3.0",
+    [10/12/2024],
+    "Davide Marin\nKlaudio Merja",
+    "Andrea Precoma\nRiccardo Milan",
+    [
+      -
+    ],
     "0.2.1",
     [05/12/2024],
     "Davide Marin\nKlaudio Merja",
@@ -53,7 +60,7 @@ Il documento risulta di fondamentale importanza in quanto costituisce una chiara
 
 == Scopo del prodotto
 
-Il prodotto _NearYou - Smart custom advertising platform_ è una piattaforma che sfrutta la tecnologia #rifGlossario("GenAI") per la creazione di pubblicità personalizzate da mostrare a ciascun utente, sfruttando dati come la posizione in tempo reale, le informazioni personali e i dati di profilazione, in modo da migliorare l'esperienza dell'utente e aumentando contemporaneamente il ROI e l'efficacia delle campagne pubblicitarie.
+Il prodotto _NearYou - Smart custom advertising platform_ è una piattaforma che sfrutta la tecnologia #rifGlossario("GenAI") per la creazione di pubblicità personalizzate da mostrare a ciascun utente, sfruttando dati come la posizione in tempo reale, le informazioni personali e i dati di profilazione, in modo da migliorare l'esperienza dell'utente e aumentando contemporaneamente il #rifGlossario("ROI") e l'efficacia delle campagne pubblicitarie.
 
 /*L'obiettivo del prodotto è quello di rendere le campagne pubblicitarie delle aziende interessate il più personalizzate e ottimizzate possibili ed aumentare il coinvolgimento dell'utente finale, con lo scopo di ridurre la disconnessione tra messaggio e destinatario e portare un miglioramento sul #rifGlossario("ROI") della campagna stessa. */
 
@@ -82,7 +89,7 @@ Il prodotto ha come obiettivo quello di fornire un servizio di pubblicità perso
 Per fare ciò l'azienda proponente chiede di simulare lo spostamento degli utenti lungo un percorso, in modo da poter testare il funzionamento del sistema.
 I dati riguardanti gli annunci pubblicitari visualizzati dagli utenti devono essere memorizzati in un _#rifGlossario("database")_ (storicizzazione) in modo da poter essere consultati successivamente dalla _dashboard_, al fine di consentire analisi reportistiche.
 
-Il _benefit_ atteso è quello di rendere le campagne pubblicitarie delle aziende interessate il più efficaci possibili, riducendo la disconnessione tra messaggio e destinatario e aumentando il coinvolgimento di quest'ultimo, migliorando di conseguenza il #rifGlossario("ROI") della campagna stessa.
+Il _benefit_ atteso è quello di rendere le campagne pubblicitarie delle aziende interessate il più efficaci possibili, riducendo la disconnessione tra messaggio e destinatario e aumentando il coinvolgimento di quest'ultimo, migliorando di conseguenza il ROI della campagna stessa.
 
 == Funzionalità e vincoli del prodotto
 Il prodotto dovrà fornire le seguenti funzionalità:
@@ -131,7 +138,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Utente*: utente che utilizza il servizio di noleggio.
 - *Utente non autenticato*: un qualsiasi individuo che intende accedere al sistema, sia esso un utente inteso come utilizzatore del servizio di noleggio o un amministratore.
 - *Sensore*: strumento attraverso il quale il mezzo noleggiato da uno specifico utente trasmette la sua posizione in tempo reale.
-- *LLM*: è il servizio esterno che si occupa della generazione degli annunci pubblicitari personalizzati tramite i prompt forniti dal sistema.
+- *#rifGlossario("LLM")*: è il servizio esterno che si occupa della generazione degli annunci pubblicitari personalizzati tramite i #rifGlossario("prompt") forniti dal sistema.
 
 == Elenco dei casi d'uso <use_cases>
 
@@ -139,7 +146,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 - *Attore principale*: Sensore
 - *Precondizioni*: il mezzo in cui è installato il sensore ha un noleggio attivo.
-- *Postcondizioni*: il sistema riceve i dati di localizzazione GPS del mezzo in uso dall'utente.
+- *Postcondizioni*: il sistema riceve i dati di localizzazione #rifGlossario("GPS") del mezzo in uso dall'utente.
 - *Trigger*: il sensore intende notificare al sistema la localizzazione GPS del mezzo.
 - *Scenario principale*:
   1. L'utente noleggia un mezzo.
@@ -190,9 +197,9 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Attori principali*: Utente non autenticato.
 - *Precondizioni*: l'individuo che intende accedere alla dashboard deve essere registrato all'interno del sistema per poter accedere.
 - *Postcondizioni*: l'utente o l'amministratore che si è appena autenticato accede alla _dashboard_ personale, con le relative funzionalità (a seconda dei loro privilegi).
-- *Trigger*: l'utente o l'amministratore intende accedere alla _dashboard_ personale di Grafana.
+- *Trigger*: l'utente o l'amministratore intende accedere alla _dashboard_ personale.
 - *Scenario principale*:
-  1. L'utente non autenticato accede alla pagina di login di Grafana.
+  1. L'utente non autenticato accede alla pagina di login del sistema.
   2. L'utente non autenticato inserisce le proprie credenziali di accesso.
   3. Il sistema verifica se le credenziali inserite sono valide o meno.
   4. Nel caso in cui le credenziali fossero valide, l'utente o l'amministratore (a seconda del ruolo all'interno del sistema) accede alla propria _dashboard_ personale.
@@ -200,7 +207,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 === UC6 - Visualizzazione del messaggio di errore
 - *Attori principali*: Utente non autenticato
-- *Precondizioni*: l'utente non autenticato tenta di accedere alla dashboard di Grafana con delle credenziali errate.
+- *Precondizioni*: l'utente non autenticato tenta di accedere alla dashboard con delle credenziali errate.
 - *Postcondizioni*: l'utente non autenticato riceve un messaggio di errore.
 - *Trigger*: l'utente non autenticato inserisce delle credenziali errate.
 - *Scenario principale*:
@@ -221,7 +228,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Trigger*: l'amministratore intende visualizzare la posizione dei mezzi noleggiati.
 - *Scenario principale*:
   1. L'amministratore è collegato e autenticato nella _dashboard_ del sistema.
-  2. La _dashboard_ mette a disposizione una mappa interattiva con i mezzi attualmente a noleggio, la cui posizione viene indicata attraverso dei _marker_. //TODO: mettere marker a glossario
+  2. La _dashboard_ mette a disposizione una mappa interattiva con i mezzi attualmente a noleggio, la cui posizione viene indicata attraverso dei _#rifGlossario("marker")_.
 #v(20pt)
 #figure(
   image("../assets/use_cases/UC7.svg"),
@@ -232,7 +239,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 === UC8 - Invio del'annuncio pubblicitario generato
 - *Attore principale*: LLM
-- *Precondizioni*: l'LLM, tramite una richiesta API, deve aver ricevuto i prompt di generazione dell'annuncio, come la profilazione dell'utente e il punto di interesse per cui si vuole generare l'annuncio.
+- *Precondizioni*: l'LLM, tramite una richiesta #rifGlossario("API"), deve aver ricevuto i prompt di generazione dell'annuncio, come la profilazione dell'utente e il punto di interesse per cui si vuole generare l'annuncio.
 - *Postcondizioni*: l'LLM genera l'annuncio basandosi sulla profilazione dell'utente.
 - *Trigger*: il sistema ha fatto una richiesta di generazione tramite le API dell'LLM.
 - *Scenario principale*:
