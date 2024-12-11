@@ -1,7 +1,7 @@
 #import "/templates/template.typ": *
 
 #show: content => verbale(
-  data: "11 Novembre 2024",
+  data: "11 novembre 2024",
   uso: "Interno",
   responsabile: "Klaudio Merja",
   redattori: ("Andrea Perozzo", "Andrea Precoma", "Riccardo Milan", "Klaudio Merja"),

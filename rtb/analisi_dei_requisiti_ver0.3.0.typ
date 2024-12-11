@@ -1,7 +1,7 @@
 #import "/templates/template.typ": *
 
 #show: content => verbale(
-  data: "05 Dicembre 2024",
+  data: "05 dicembre 2024",
   destinatari: ("Gruppo SWE@", "Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "Sync Lab S.r.L."),
   responsabile: "Andrea Perozzo",
   redattori: ("Riccardo Milan", "Davide Martinelli"),
