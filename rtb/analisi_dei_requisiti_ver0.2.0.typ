@@ -162,7 +162,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Trigger*: il sensore invia al sistema la localizzazione GPS del mezzo.
 - *Scenario principale*:
   1. Il sensore invia al sistema la localizzazione GPS del mezzo.
-  2. Il sistema verifica che il sensore sia in porssimità di un punto di interesse.
+  2. Il sistema verifica che il sensore sia in prossimità di un punto di interesse.
 - *Estensione*:
   1. Il sensore non è in prossimità di un punto di interesse (UC3).
 
@@ -174,7 +174,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Trigger*: il sensore invia al sistema la localizzazione GPS del mezzo.
 - *Scenario principale*:
   1. Il sensore invia al sistema la localizzazione GPS del mezzo.
-  2. Il sistema verifica che il sensore non è in porssimità di un punto di interesse.
+  2. Il sistema verifica che il sensore non è in prossimità di un punto di interesse.
 
 === UC4 - Invio richiesta di annuncio personalizzato al LLM
 
@@ -195,7 +195,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 === UC5 - Autenticazione alla _dashboard_ del sistema
 - *Attori principali*: Utente non autenticato.
-- *Precondizioni*: l'individuo che intende accedere alla dashboard deve essere registrato all'interno del sistema per poter accedere.
+- *Precondizioni*: l'individuo che intende accedere alla _dashboard_ deve essere registrato all'interno del sistema per poter accedere.
 - *Postcondizioni*: l'utente o l'amministratore che si è appena autenticato accede alla _dashboard_ personale, con le relative funzionalità (a seconda dei loro privilegi).
 - *Trigger*: l'utente o l'amministratore intende accedere alla _dashboard_ personale.
 - *Scenario principale*:
@@ -207,7 +207,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 === UC6 - Visualizzazione del messaggio di errore
 - *Attori principali*: Utente non autenticato
-- *Precondizioni*: l'utente non autenticato tenta di accedere alla dashboard con delle credenziali errate.
+- *Precondizioni*: l'utente non autenticato tenta di accedere alla _dashboard_ con delle credenziali errate.
 - *Postcondizioni*: l'utente non autenticato riceve un messaggio di errore.
 - *Trigger*: l'utente non autenticato inserisce delle credenziali errate.
 - *Scenario principale*:
@@ -239,12 +239,12 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 === UC8 - Invio del'annuncio pubblicitario generato
 - *Attore principale*: LLM
-- *Precondizioni*: l'LLM, tramite una richiesta #rifGlossario("API"), deve aver ricevuto i prompt di generazione dell'annuncio, come la profilazione dell'utente e il punto di interesse per cui si vuole generare l'annuncio.
+- *Precondizioni*: l'LLM, tramite una richiesta #rifGlossario("API"), deve aver ricevuto i _prompt_ di generazione dell'annuncio, come la profilazione dell'utente e il punto di interesse per cui si vuole generare l'annuncio.
 - *Postcondizioni*: l'LLM genera l'annuncio basandosi sulla profilazione dell'utente.
 - *Trigger*: il sistema ha fatto una richiesta di generazione tramite le API dell'LLM.
 - *Scenario principale*:
   1. L'LLM riceve la richiesta da parte del sistema
-  2. L'LLM genera l'annuncio pubblicitario basandosi sui dati ricevuti come prompt.
+  2. L'LLM genera l'annuncio pubblicitario basandosi sui dati ricevuti come _prompt_.
   3. L'LLM invia l'annuncio pubblicitario generato al sistema.
 - *Estensione*: Annuncio non generato (UC9).
 === UC9 - Annuncio non generato
@@ -273,7 +273,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 - *Scenario principale*:
   1. L'amministratore accede alla mappa dei mezzi noleggiati.
-  2. L'amministratore, tramite un click sul _marker_ che indica la posizione di un mezzo, visualizza l'annuncio pubblicitario generato per l'utente che ha attualmente in uso il mezzo.
+  2. L'amministratore, tramite un "_click_" sul _marker_ che indica la posizione di un mezzo, visualizza l'annuncio pubblicitario generato per l'utente che ha attualmente in uso il mezzo.
 #v(20pt)
 #figure(
   image("../assets/use_cases/UC10.svg"),
