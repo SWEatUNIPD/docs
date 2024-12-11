@@ -4,8 +4,8 @@
   data: "05 dicembre 2024",
   destinatari: ("Gruppo SWE@", "Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "Sync Lab S.r.L."),
   responsabile: "Andrea Perozzo",
-  redattori: ("Riccardo Milan", "Davide Martinelli"),
-  verificatori: ("Davide Picello", "Davide Marin"),
+  redattori: ("Davide Marin", "Davide Martinelli", "Klaudio Merja", "Riccardo Milan"),
+  verificatori: ("Andrea Precoma", "Davide Picello", "Davide Marin", "Riccardo Milan"),
   titolo: "Analisi dei Requisiti",
   uso: "Esterno",
   versioni: (
