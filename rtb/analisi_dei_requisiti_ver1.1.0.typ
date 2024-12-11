@@ -188,12 +188,12 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   2. Il sistema invia al LLM una richiesta di annuncio personalizzato in caso la profilazione dell'utente risulti idonea al punto di interesse.
 
 #v(20pt)
-#figure(image("../assets/use_cases/UC1-2-3-4.svg", width: 80%), caption: [Diagramma dei casi d'uso UC1, UC2, UC3 e UC4])
+#figure(image("../assets/use_cases/UC1-2-3-4.svg"), caption: [Diagramma dei casi d'uso UC1, UC2, UC3 e UC4])
 
 #pagebreak()
 
 
-=== UC4 - Autenticazione alla _dashboard_ del sistema
+=== UC5 - Autenticazione alla _dashboard_ del sistema
 - *Attori principali*: Utente non autenticato.
 - *Precondizioni*: l'individuo che intende accedere alla dashboard deve essere registrato all'interno del sistema per poter accedere.
 - *Postcondizioni*: l'utente o l'amministratore che si è appena autenticato accede alla _dashboard_ personale, con le relative funzionalità (a seconda dei loro privilegi).
@@ -203,9 +203,9 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   2. L'utente non autenticato inserisce le proprie credenziali di accesso.
   3. Il sistema verifica se le credenziali inserite sono valide o meno.
   4. Nel caso in cui le credenziali fossero valide, l'utente o l'amministratore (a seconda del ruolo all'interno del sistema) accede alla propria _dashboard_ personale.
-- *Estensione*: Visualizzazione del messaggio di credenziali errate (UC3).
+- *Estensione*: Visualizzazione del messaggio di credenziali errate (UC6).
 
-=== UC5 - Visualizzazione del messaggio di errore
+=== UC6 - Visualizzazione del messaggio di errore
 - *Attori principali*: Utente non autenticato
 - *Precondizioni*: l'utente non autenticato tenta di accedere alla dashboard di Grafana con delle credenziali errate.
 - *Postcondizioni*: l'utente non autenticato riceve un messaggio di errore.
@@ -215,13 +215,13 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   2. L'utente riceve un messaggio di errore, segnalando il fatto che le credenziali di accesso inserite siano invalide e invitando a riprovare l'autenticazione.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC4-5.svg"),
-  caption: [Diagramma dei casi d'uso UC4 e UC5],
+  image("../assets/use_cases/UC5-6.svg"),
+  caption: [Diagramma dei casi d'uso UC5 e UC6],
 )
 
 #pagebreak()
 
-=== UC6 - Visualizzazione della mappa dei mezzi noleggiati
+=== UC7 - Visualizzazione della mappa dei mezzi noleggiati
 - *Attore principale*: Amministratore
 - *Precondizioni*: l'amministratore del sistema è autenticato e ha accesso alla _dashboard_ del sistema.
 - *Postcondizioni*: l'amministratore ottiene una visione chiara della posizione e del movimento dei mezzi attualmente in uso all'interno di una mappa.
@@ -231,13 +231,13 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   2. La _dashboard_ mette a disposizione una mappa interattiva con i mezzi attualmente a noleggio, la cui posizione viene indicata attraverso dei _marker_. //TODO: mettere marker a glossario
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC6.svg"),
-  caption: [Diagramma del caso d'uso UC6],
+  image("../assets/use_cases/UC7.svg"),
+  caption: [Diagramma del caso d'uso UC7],
 )
 
 #pagebreak()
 
-=== UC7 - Invio del'annuncio pubblicitario generato
+=== UC8 - Invio del'annuncio pubblicitario generato
 - *Attore principale*: LLM
 - *Precondizioni*: l'LLM, tramite una richiesta API, deve aver ricevuto i prompt di generazione dell'annuncio, come la profilazione dell'utente e il punto di interesse per cui si vuole generare l'annuncio.
 - *Postcondizioni*: l'LLM genera l'annuncio basandosi sulla profilazione dell'utente.
@@ -246,8 +246,8 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   1. L'LLM riceve la richiesta da parte del sistema
   2. L'LLM genera l'annuncio pubblicitario basandosi sui dati ricevuti come prompt.
   3. L'LLM invia l'annuncio pubblicitario generato al sistema.
-- *Estensione*: Annuncio non generato (UC8).
-=== UC8 - Annuncio non generato
+- *Estensione*: Annuncio non generato (UC9).
+=== UC9 - Annuncio non generato
 - *Attore principale*: LLM
 - *Precondizioni*: l'LLM considera il punto di interesse non pertinente in base alla profilazione dell'utente per cui si vuole generare l'annuncio.
 - *Postcondizioni*: l'LLM non genera alcun annuncio pubblicitario.
@@ -258,12 +258,12 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   3. L'LLM decide di non generare alcun annuncio pubblicitario
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC7-8.svg"),
-  caption: [Diagramma dei casi d'uso UC7 e UC8],
+  image("../assets/use_cases/UC8-9.svg"),
+  caption: [Diagramma dei casi d'uso UC8 e UC9],
 )
 #pagebreak()
 
-=== UC9 - Visualizzazione degli annunci pubblicitari generati dalla LLM
+=== UC10 - Visualizzazione degli annunci pubblicitari generati dalla LLM
 - *Attore principale*: Amministratore
 
 - *Precondizioni*: l'amministratore ha accesso alla _dashboard_ del sistema.
@@ -276,8 +276,8 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   2. L'amministratore, tramite un click sul _marker_ che indica la posizione di un mezzo, visualizza l'annuncio pubblicitario generato per l'utente che ha attualmente in uso il mezzo.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC9.svg"),
-  caption: [Diagramma del caso d'uso UC9],
+  image("../assets/use_cases/UC10.svg"),
+  caption: [Diagramma del caso d'uso UC10],
 )
 
 
