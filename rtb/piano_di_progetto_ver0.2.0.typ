@@ -233,7 +233,7 @@ Ciononostante il gruppo ha riscontrato alcune difficoltà. In particolare, in qu
 
 Si evidenzia come difetto la possibilità di lavorare su una stessa _#rifGlossario("branch")_ a più membri in quanto questa causerebbe problemi di conflitti tra i file modificati.
 
-Gli analisti evidenziano le difficoltà e i dubbi relativi alla comprensione dei casi d'uso del prodotto richiesto dal proponente, che hanno però trovato risposta dalla riunione di fine primo _sprint_ da parte del proponente e che verranno approfonditi in quello successivo. Incentivano inoltre a lavorare in maniera più collaborativa alla fase di analisi e non limitarsi semplicemente all'esecuzione delle attività di analisi in maniera parallela.
+Gli analisti evidenziano le difficoltà e i dubbi relativi alla comprensione dei casi d'uso del prodotto richiesto dal proponente, che hanno però trovato risposta nella riunione di fine primo _sprint_ da parte del proponente e che verranno approfonditi in quello successivo. Incentivano a lavorare in maniera più collaborativa nella fase di analisi e non limitarsi semplicemente all'esecuzione delle attività in maniera parallela.
 
 I verificatori suggeriscono infine di incaricare più di una persona alla verifica dei documenti ad alto contenuto, quali possono essere le Norme di Progetto e il Piano di Progetto, al fine di garantire una verifica ottimale.
 
@@ -250,11 +250,11 @@ I verificatori suggeriscono infine di incaricare più di una persona alla verifi
 Le attività che il _team_ si è prefissato di portare a termine durante il secondo _sprint_ sono le seguenti:
 - Redazione verbale esterno ed interno del 27/11/2024.
 - Creare una prima versione del simulatore dati.
-  - È stato deciso di dedicare la prima settimana dello _sprint_ allo studio e approfondimento delle tecnologie: #rifGlossario("Docker"), #rifGlossario("Apache Kafka"), #rifGlossario("Apache Nifi") e #rifGlossario("PostgresSQL").
+  - È stato deciso di dedicare la prima settimana dello _sprint_ allo studio e approfondimento delle tecnologie: #rifGlossario("Docker"), #rifGlossario("Apache Kafka"), #rifGlossario("Apache Nifi") e #rifGlossario("PostgreSQL").
   - La seconda settimana sarà invece riservata all'implementazione concreta del simulatore e del _database_ dove verranno salvati i dati generati, grazie all'utilizzo delle tecnologie studiate.
 - Avanzamento nel documento Analisi dei Requisiti, in particolare: 
-  - Migliorando i vecchi casi d'uso dopo aver risolto alcuni dubbi in seguito al confronto con l'azienda.
-  - Scrivendo nuovi casi d'uso.
+  - Migliorare i vecchi casi d'uso dopo aver risolto alcuni dubbi in seguito al confronto con l'azienda.
+  - Scrivere nuovi casi d'uso.
 - Continuazione stesura Piano di Progetto, in particolare:
   - Scrittura retrospettiva primo _sprint_.
   - Scrittura pianificazione secondo _sprint_.
@@ -267,9 +267,9 @@ Le attività che il _team_ si è prefissato di portare a termine durante il seco
   - Norme di Progetto
 - Modifica al _template_ ed al _test_ del Glossario.
   - La modfica al _template_ vedrà l'implementazione di:
-    - Una funzione per automatizzare la generazione dei grafici relativi al preventivo ed al consuntivo orario richiesti per ogni sprint, nel Piano di Progetto.
-    - Aggiunta dell'indice delle immagini e delle tabelle, generato automaticamente, su tutti i file.
-  - La modifica al _test_ del glossario è necessaria in quanto, attualmente, segnala dei falsi positivi. Per esempio quando abbiamo parole appartenenti al glossario contenute in altre parole, oppure la segnalazione di termini del Glossario che in realtà sono comandi #rifGlossario("Typst").
+    - Una funzione per automatizzare la generazione dei grafici relativi al preventivo ed al consuntivo orario richiesti per ogni _sprint_, nel Piano di Progetto.
+    - Aggiunta dell'indice delle immagini e delle tabelle, generato automaticamente, su tutti i _file_.
+  - La modifica al _test_ del Glossario è necessaria in quanto, attualmente, segnala dei falsi positivi. Per esempio quando abbiamo parole appartenenti al Glossario contenute in altre parole, oppure la segnalazione di termini del Glossario che in realtà sono comandi #rifGlossario("Typst").
 - Informarsi ed eventualmente dotarsi di un _software_ per la creazione e gestione di un #rifGlossario("diagramma di Gantt") per coordinare le attività del gruppo.
 
 ==== Preventivo orario
