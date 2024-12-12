@@ -16,7 +16,7 @@
     [
       - Aggiunta di nuovi casi d'uso relativi all'autenticazione alla _dashboard_, alla prossimità dell'utente ad un punto di interesse e alla generazione degli annunci pubblicitari tramite l'LLM
     ],
-    "0.2.1",
+    "0.3.0",
     [05/12/2024],
     "Davide Marin\nKlaudio Merja",
     "Andrea Precoma\nRiccardo Milan",
@@ -55,7 +55,7 @@
 
 Lo scopo principale del documento Analisi dei Requisiti è quello di fornire una descrizione dettagliata dei casi d'uso e dei requisiti del progetto _NearYou - Smart custom advertising platform_ dell'azienda proponente Sync Lab S.r.l., frutto di uno studio approfondito del capitolato d'appalto e degli incontri con l'azienda proponente stessa.
 
-Il documento risulta di fondamentale importanza in quanto costituisce una chiara visione delle funzionalità e i requisiti attesi riguardo al prodotto e facilita ai fornitori, ovvero il gruppo, nel processo di validazione del prodotto finale.
+Il documento risulta di fondamentale importanza in quanto costituisce una chiara visione delle funzionalità e dei requisiti attesi riguardo al prodotto e facilita i fornitori, ovvero il gruppo, nel processo di validazione del prodotto finale.
 
 
 == Scopo del prodotto
@@ -83,7 +83,7 @@ sottolineato e seguito dalla lettera g posta ad apice (e.g. #rifGlossario("termi
 
 = Descrizione del prodotto
 == Obiettivi del prodotto
-Il prodotto ha come obiettivo quello di fornire un servizio di pubblicità personalizzata integrato in una mappa, accessibile agli utenti di un mezzo a noleggio, che sfrutta la GenAI per la creazione di pubblicità mirate sui singoli utenti. Il gestore del servizio di noleggio avrà accesso ad una _dashboard_ che gli permetterà di monitorare in tempo reale la posizione degli utenti e la visualizzazione degli annunci pubblicitari.
+Il prodotto ha come obiettivo quello di fornire un servizio di pubblicità personalizzata, accessibile agli utenti di un mezzo a noleggio, che sfrutta la GenAI e i dati di profilazione degli utenti come prompt della GenAI stessa per la creazione di pubblicità mirate sui singoli utenti. Il gestore del servizio di noleggio avrà accesso ad una _dashboard_ che gli permetterà di monitorare in tempo reale la posizione degli utenti e gli annunci generati.
 Per fare ciò l'azienda proponente chiede di simulare lo spostamento degli utenti lungo un percorso, in modo da poter testare il funzionamento del sistema.
 I dati riguardanti gli annunci pubblicitari visualizzati dagli utenti devono essere memorizzati in un _#rifGlossario("database")_ (storicizzazione) in modo da poter essere consultati successivamente dalla _dashboard_, al fine di consentire analisi reportistiche.
 
@@ -116,6 +116,7 @@ Ogni caso d'uso è identificato da un codice univoco, che segue la nomenclatura 
 - *Postcondizioni*
 - *Trigger*
 - *Scenario principale*
+- *Inclusioni* (se presenti)
 - *Estensioni* (se presenti)
 
 == Attori
@@ -138,9 +139,9 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   1. L'utente noleggia un mezzo.
   2. Il sensore invia a intervalli di tempo regolari i dati di localizzazione GPS del mezzo.
 - *Inclusioni*:
-  1. Controllo della posizione in prossimità di un punto di interesse (UC2).
+  1. Controllo della posizione in prossimità di un punto di interesse (#link(<uc2>)[UC2]).
 
-=== UC2 - Controllo della posizione in prossimità di un punto di interesse
+=== UC2 - Controllo della posizione in prossimità di un punto di interesse <uc2>
 
 - *Attore principale*: Sensore.
 - *Precondizioni*: il sensore ha inviato dei dati di localizzazione.
@@ -150,9 +151,9 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   1. Il sensore invia al sistema la localizzazione GPS del mezzo.
   2. Il sistema verifica che il sensore sia in prossimità di un punto di interesse.
 - *Estensione*:
-  1. Il sensore non è in prossimità di un punto di interesse (UC3).
+  1. Il sensore non è in prossimità di un punto di interesse (#link(<uc3>)[UC3]).
 
-=== UC3 - Il sensore non è in prossimità di un punto di interesse
+=== UC3 - Il sensore non è in prossimità di un punto di interesse<uc3>
 
 - *Attore principale*: Sensore.
 - *Precondizioni*: il sensore ha inviato dei dati di localizzazione.
@@ -190,9 +191,9 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   2. L'utente non autenticato inserisce le proprie credenziali di accesso.
   3. Il sistema verifica se le credenziali inserite sono valide o meno.
   4. Nel caso in cui le credenziali fossero valide, l'utente o l'amministratore (a seconda del ruolo all'interno del sistema) accede alla propria _dashboard_ personale.
-- *Estensione*: Visualizzazione del messaggio di credenziali errate (UC6).
+- *Estensione*: Visualizzazione del messaggio di credenziali errate (#link(<uc6>)[UC6]).
 
-=== UC6 - Visualizzazione del messaggio di errore
+=== UC6 - Visualizzazione del messaggio di errore <uc6>
 - *Attori principali*: Utente non autenticato.
 - *Precondizioni*: l'utente non autenticato tenta di accedere alla _dashboard_ con delle credenziali errate.
 - *Postcondizioni*: l'utente non autenticato riceve un messaggio di errore.
@@ -233,8 +234,8 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   1. L'LLM riceve la richiesta da parte del sistema
   2. L'LLM genera l'annuncio pubblicitario basandosi sui dati ricevuti come _prompt_.
   3. L'LLM invia l'annuncio pubblicitario generato al sistema.
-- *Estensione*: Annuncio non generato (UC9).
-=== UC9 - Annuncio non generato
+- *Estensione*: Annuncio non generato (#link(<uc9>)[UC9]).
+=== UC9 - Annuncio non generato <uc9>
 - *Attore principale*: LLM
 - *Precondizioni*: l'LLM considera il punto di interesse non pertinente in base alla profilazione dell'utente per cui si vuole generare l'annuncio.
 - *Postcondizioni*: l'LLM non genera alcun annuncio pubblicitario.
