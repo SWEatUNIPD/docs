@@ -27,7 +27,7 @@
 
 #infoRiunione(
   luogo: "Google Meet",
-  data: "20/11/2024",
+  data: "04/12/2024",
   ora: "16:00",
   durata: "40 minuti",
   partecipanti: (
@@ -45,13 +45,13 @@ Durante l'incontro si è discusso di diversi aspetti per l'avanzamento del proge
 
 Abbiamo anche discusso delle difficoltà riscontrate nell'uso delle chiavi _#rifGlossario("API")_ per #rifGlossario("LangChain"), sulle quali ci sarà un supporto dedicato per sbloccare la situazione.
 
-Per quanto riguarda i Casi d'uso, continueremo a migliorarli e ne verranno scritti di nuovi. Parallelamente, verranno proseguite le seguenti attività di redazione:
+Per quanto riguarda i casi d'uso, continueremo a migliorarli e ne verranno scritti di nuovi. Parallelamente verranno proseguite le seguenti attività di redazione:
 - _#rifGlossario("Sprint")_ 2 nel Piano di Progetto
 - Piano di Qualifica
-- Norme di Progetto.
+- Norme di Progetto
 
 = Risposte alle domande
-Durante l'incontro sono stati affrontati alcuni dubbi, parte dei quali rimangono aperti. Per quanto riguarda la gestione del _database_, è emerso il quesito se sia più opportuno suddividere i dati tra due _database_ distinti (uno per la profilazione e uno per le posizioni _#rifGlossario("GPS")_) oppure se convenga concentrare tutto in un unico _database_. La questione richiede ancora ulteriori approfondimenti. 
+Durante l'incontro sono stati affrontati alcuni dubbi, parte dei quali rimangono aperti. Per quanto riguarda la gestione del _database_, è emerso il quesito se sia più opportuno suddividere i dati tra due _database_ distinti (uno per la profilazione e uno per le posizioni _#rifGlossario("GPS")_) oppure se convenga concentrare tutto in un unico _database_. La questione richiede ancora ulteriori approfondimenti.
 
 Sul fronte delle _API_ di LangChain, abbiamo riscontrato problemi di funzionamento, probabilmente legati al fatto che il _#rifGlossario("processor")_ utilizzato è molto recente e con documentazione limitata, quindi abbiamo chiesto supporto. Infine, ci è stato condiviso un _#rifGlossario("feedback")_ positivo sull'approccio adottato per lavorare con #rifGlossario("Apache Kafka") e #rifGlossario("Apache NiFi"), apprezzando la metodologia e i progressi fatti finora.
 
@@ -62,7 +62,7 @@ Le attività da svolgere saranno:
 - Creazione del _database_ e popolamento con dati fittizi.
 - Migliorare la struttura creata con Docker Compose.
 - Integrazione iniziale del _database_ con #rifGlossario("Grafana").
-- Revisione e completamento dei Casi d'uso.
+- Revisione e completamento dei casi d'uso.
 - Prosecuzione della redazione dello _sprint_ 2, del Piano di Qualifica e delle Norme di Progetto.
 Il supporto per le _API_ di LangChain e la questione del _database_ saranno affrontati nei prossimi giorni. Il prossimo incontro si terrà venerdì prossimo e sarà dedicato alla valutazione dei progressi e alla pianificazione dei passi successivi.
 
