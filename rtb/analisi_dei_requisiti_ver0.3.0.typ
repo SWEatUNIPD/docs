@@ -180,8 +180,34 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 #figure(image("../assets/use_cases/UC4.svg", width: 90%), caption: [Diagramma del caso d'uso UC4])
 #pagebreak()
 
+=== UC5 - Invio del'annuncio pubblicitario generato
+- *Attore principale*: LLM.
+- *Precondizioni*: l'LLM, tramite una richiesta #rifGlossario("API"), deve aver ricevuto i _prompt_ di generazione dell'annuncio, come la profilazione dell'utente e il punto di interesse per cui si vuole generare l'annuncio.
+- *Postcondizioni*: l'LLM genera l'annuncio basandosi sulla profilazione dell'utente.
+- *Trigger*: il sistema ha fatto una richiesta di generazione tramite le API dell'LLM.
+- *Scenario principale*:
+  1. L'LLM riceve la richiesta da parte del sistema
+  2. L'LLM genera l'annuncio pubblicitario basandosi sui dati ricevuti come _prompt_.
+  3. L'LLM invia l'annuncio pubblicitario generato al sistema.
+- *Estensione*: Annuncio non generato (#link(<uc9>)[UC9]).
+=== UC6 - Annuncio non generato <uc9>
+- *Attore principale*: LLM
+- *Precondizioni*: l'LLM considera il punto di interesse non pertinente in base alla profilazione dell'utente per cui si vuole generare l'annuncio.
+- *Postcondizioni*: l'LLM non genera alcun annuncio pubblicitario.
+- *Trigger*: l'utente del noleggio si trova in prossimità di un punto di interesse non pertinente.
+- *Scenario principale*:
+  1. L'utente si trova in prossimità di un punto di interesse.
+  2. L'LLM verifica che il punto di interesse non è pertinente per l'utente.
+  3. L'LLM decide di non generare alcun annuncio pubblicitario
+#v(20pt)
+#figure(
+  image("../assets/use_cases/UC5-6.svg"),
+  caption: [Diagramma dei casi d'uso UC5 e UC6],
+)
+#pagebreak()
 
-=== UC5 - Autenticazione alla _dashboard_ del sistema
+
+=== UC7 - Autenticazione alla _dashboard_ del sistema
 - *Attori principali*: Utente non autenticato.
 - *Precondizioni*: l'individuo che intende accedere alla _dashboard_ deve essere registrato all'interno del sistema per poter accedere.
 - *Postcondizioni*: l'utente o l'amministratore che si è appena autenticato accede alla _dashboard_ personale, con le relative funzionalità (a seconda dei loro privilegi).
@@ -193,7 +219,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   4. Nel caso in cui le credenziali fossero valide, l'utente o l'amministratore (a seconda del ruolo all'interno del sistema) accede alla propria _dashboard_ personale.
 - *Estensione*: Visualizzazione del messaggio di credenziali errate (#link(<uc6>)[UC6]).
 
-=== UC6 - Visualizzazione del messaggio di errore <uc6>
+=== UC8 - Visualizzazione del messaggio di errore <uc6>
 - *Attori principali*: Utente non autenticato.
 - *Precondizioni*: l'utente non autenticato tenta di accedere alla _dashboard_ con delle credenziali errate.
 - *Postcondizioni*: l'utente non autenticato riceve un messaggio di errore.
@@ -203,13 +229,13 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   2. L'utente riceve un messaggio di errore, segnalando il fatto che le credenziali di accesso inserite siano invalide e invitando a riprovare l'autenticazione.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC5-6.svg"),
-  caption: [Diagramma dei casi d'uso UC5 e UC6],
+  image("../assets/use_cases/UC7-8.svg"),
+  caption: [Diagramma dei casi d'uso UC7 e UC8],
 )
 
 #pagebreak()
 
-=== UC7 - Visualizzazione della mappa dei mezzi noleggiati
+=== UC9 - Visualizzazione della mappa dei mezzi noleggiati
 - *Attore principale*: Amministratore.
 - *Precondizioni*: l'amministratore del sistema è autenticato e ha accesso alla _dashboard_ del sistema.
 - *Postcondizioni*: l'amministratore ottiene una visione chiara della posizione e del movimento dei mezzi attualmente in uso all'interno di una mappa.
@@ -219,36 +245,10 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   2. La _dashboard_ mette a disposizione una mappa interattiva con i mezzi attualmente a noleggio, la cui posizione viene indicata attraverso dei _#rifGlossario("marker")_.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC7.svg"),
-  caption: [Diagramma del caso d'uso UC7],
+  image("../assets/use_cases/UC9.svg"),
+  caption: [Diagramma del caso d'uso UC9],
 )
 
-#pagebreak()
-
-=== UC8 - Invio del'annuncio pubblicitario generato
-- *Attore principale*: LLM.
-- *Precondizioni*: l'LLM, tramite una richiesta #rifGlossario("API"), deve aver ricevuto i _prompt_ di generazione dell'annuncio, come la profilazione dell'utente e il punto di interesse per cui si vuole generare l'annuncio.
-- *Postcondizioni*: l'LLM genera l'annuncio basandosi sulla profilazione dell'utente.
-- *Trigger*: il sistema ha fatto una richiesta di generazione tramite le API dell'LLM.
-- *Scenario principale*:
-  1. L'LLM riceve la richiesta da parte del sistema
-  2. L'LLM genera l'annuncio pubblicitario basandosi sui dati ricevuti come _prompt_.
-  3. L'LLM invia l'annuncio pubblicitario generato al sistema.
-- *Estensione*: Annuncio non generato (#link(<uc9>)[UC9]).
-=== UC9 - Annuncio non generato <uc9>
-- *Attore principale*: LLM
-- *Precondizioni*: l'LLM considera il punto di interesse non pertinente in base alla profilazione dell'utente per cui si vuole generare l'annuncio.
-- *Postcondizioni*: l'LLM non genera alcun annuncio pubblicitario.
-- *Trigger*: l'utente del noleggio si trova in prossimità di un punto di interesse non pertinente.
-- *Scenario principale*:
-  1. L'utente si trova in prossimità di un punto di interesse.
-  2. L'LLM verifica che il punto di interesse non è pertinente per l'utente.
-  3. L'LLM decide di non generare alcun annuncio pubblicitario
-#v(20pt)
-#figure(
-  image("../assets/use_cases/UC8-9.svg"),
-  caption: [Diagramma dei casi d'uso UC8 e UC9],
-)
 #pagebreak()
 
 === UC10 - Visualizzazione degli annunci pubblicitari generati dalla LLM
@@ -285,7 +285,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 //   1. L'amministratore è collegato e autenticato nella _dashboard_ Grafana;
 //   2. La _dashboard_ mette a disposizione una sezione con lo storico degli annunci prodotti dal sistema e il relativo esito.
 // - *User story*:
-// #figure(image("../assets/use_cases/oldUC4.svg", width: 80%), caption: [UC4 - Visualizzazione storico amministratore])
+// #figure(image("../assets/use_cases/old/oldUC4.svg", width: 80%), caption: [UC4 - Visualizzazione storico amministratore])
 
 // === UC5 - Interazione con l'annuncio pubblicitario //FIXME: questo caso d'uso è da capire sempre se mantenere o meno in quanto è opzionale e non necessario ai fini del PoC
 // - *Attore principale*: Utente
@@ -296,7 +296,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 //   2. L'utente interagisce con l'annuncio pubblicitario;
 //   3. Il sistema memorizza un _feedback_ associato all'annuncio visualizzato.
 // - *User story*:
-// #figure(image("../assets/use_cases/oldUC5.svg", width: 80%), caption: [UC5 - Interazione con l'annuncio pubblicitario])
+// #figure(image("../assets/use_cases/old/oldUC5.svg", width: 80%), caption: [UC5 - Interazione con l'annuncio pubblicitario])
 
 // Il caso d'uso sottostante rappresenta un'interazione alternativa al caso d'uso UC5, in cui l'utente si ferma presso il punto d'interesse pubblicizzato per un periodo di tempo prolungato
 // Da valutare se implementarla in quanto risulterebbe ridondante
