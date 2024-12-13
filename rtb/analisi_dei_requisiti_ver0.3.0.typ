@@ -14,7 +14,7 @@
     "Davide Marin\nKlaudio Merja",
     "Andrea Precoma\nRiccardo Milan",
     [
-      - Aggiunta di nuovi casi d'uso relativi all'autenticazione alla _dashboard_, alla prossimità dell'utente ad un punto di interesse e alla generazione degli annunci pubblicitari tramite l'LLM
+      - Aggiunta di nuovi casi d'uso relativi all'autenticazione alla _dashboard_, alla prossimità dell'utente ad un punto di interesse e alla generazione degli annunci pubblicitari tramite la LLM
     ],
     "0.3.0",
     [05/12/2024],
@@ -85,7 +85,7 @@ sottolineato e seguito dalla lettera g posta ad apice (e.g. #rifGlossario("termi
 == Obiettivi del prodotto
 Il prodotto ha come obiettivo quello di fornire un servizio di pubblicità personalizzata, accessibile agli utenti di un mezzo a noleggio, che sfrutta la GenAI e i dati di profilazione degli utenti come prompt della GenAI stessa per la creazione di pubblicità mirate sui singoli utenti. Il gestore del servizio di noleggio avrà accesso ad una _dashboard_ che gli permetterà di monitorare in tempo reale la posizione degli utenti e gli annunci generati.
 Per fare ciò l'azienda proponente chiede di simulare lo spostamento degli utenti lungo un percorso, in modo da poter testare il funzionamento del sistema.
-I dati riguardanti gli annunci pubblicitari visualizzati dagli utenti devono essere memorizzati in un _#rifGlossario("database")_ (storicizzazione) in modo da poter essere consultati successivamente dalla _dashboard_, al fine di consentire analisi reportistiche.
+I dati riguardanti gli annunci pubblicitari visualizzati dagli utenti devono essere memorizzati in un _#rifGlossario("database")_ (storicizzazione) in modo da poter essere consultati successivamente dalla _dashboard_.
 
 Il _benefit_ atteso è quello di rendere le campagne pubblicitarie delle aziende interessate il più efficaci possibili, riducendo la disconnessione tra messaggio e destinatario e aumentando il coinvolgimento di quest'ultimo, migliorando di conseguenza il ROI della campagna stessa.
 
@@ -94,7 +94,7 @@ Il prodotto dovrà fornire le seguenti funzionalità:
 - *Monitoraggio in tempo reale della posizione degli utenti*: il sistema dovrà essere in grado di mostrare su una mappa interattiva la posizione degli utenti attivi.
 - *Creazione di annunci pubblicitari personalizzati*: il sistema dovrà essere in grado di creare annunci pubblicitari personalizzati per gli utenti, sfruttando i dati di profilazione e la posizione in tempo reale. Quando un utente si trova in prossimità di un punto di interesse il sistema dovrà essere in grado di stimare se l'utente possa essere interessato ai servizi offerti dall'attività e, in tal caso, generare un annuncio pubblicitario personalizzato per quell'utente.
 - *Visualizzazione nella _dashboard_ degli annunci pubblicitari generati*: il sistema dovrà essere in grado di mostrare in tempo reale gli annunci pubblicitari che vengono visualizzati dagli utenti.
-- *Visualizzazione nella _dashboard_ dello storico degli annunci pubblicitari*: il sistema dovrà essere in grado di mostrare uno storico degli annunci pubblicitari visualizzati dagli utenti.
+- *Visualizzazione nella _dashboard_ dello storico degli annunci pubblicitari*: il sistema dovrà essere in grado di mostrare uno storico degli annunci pubblicitari visualizzati dagli utenti a disposizione degli amministratori del sistema.
 
 L'azienda proponente richiede inoltre la dimostrazione del corretto funzionamento dei servizi e delle funzionalità del sitema, garantendo una copertura di test di più dell'80% e correlata da report. Viene richiesto inoltre che il prodotto sia in grado di mantenere un elevato flusso di dati in entrata dovuto ai dati di localizzazione emessi dai sensori.
 
@@ -154,7 +154,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   1. Il sensore non è in prossimità di un punto di interesse (#link(<uc3>)[UC3]).
 
 === UC3 - Il sensore non è in prossimità di un punto di interesse<uc3>
-
+//TODO: https://github.com/SWEatUNIPD/docs/pull/67#discussion_r1882217372
 - *Attore principale*: Sensore.
 - *Precondizioni*: il sensore ha inviato dei dati di localizzazione.
 - *Postcondizioni*: il sistema verifica che il sensore non si trova in prossimità di un punto di interesse.
@@ -182,22 +182,23 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 === UC5 - Invio dell'annuncio pubblicitario generato
 - *Attore principale*: LLM.
-- *Precondizioni*: l'LLM deve aver ricevuto dal sistema il _prompt_ di generazione dell'annuncio, come la profilazione dell'utente e il punto di interesse per cui si vuole generare l'annuncio.
+- *Precondizioni*: la LLM deve aver ricevuto dal sistema il _prompt_ di generazione dell'annuncio, come la profilazione dell'utente e il punto di interesse per cui si vuole generare l'annuncio.
 - *Postcondizioni*: il sistema riceve l'annuncio pubblicitario generato dalla LLM.
-- *Trigger*: il sistema ha fatto una richiesta di generazione tramite le API dell'LLM.
+- *Trigger*: il sistema ha fatto una richiesta di generazione tramite le API della LLM.
 - *Scenario principale*:
-  1. L'LLM riceve la richiesta da parte del sistema
-  2. L'LLM genera l'annuncio pubblicitario basandosi sui dati ricevuti come _prompt_.
-  3. L'LLM invia l'annuncio pubblicitario generato al sistema.
+  1. La LLM riceve la richiesta da parte del sistema
+  2. La LLM genera l'annuncio pubblicitario basandosi sui dati ricevuti come _prompt_.
+  3. La LLM invia l'annuncio pubblicitario generato al sistema.
 - *Estensione*: Annuncio pubblicitario non generato (#link(<uc6>)[UC6]).
 === UC6 - Annuncio pubblicitario non generato <uc6>
+//TODO: https://github.com/SWEatUNIPD/docs/pull/67#discussion_r1882335589
 - *Attore principale*: LLM
-- *Precondizioni*: l'LLM considera il punto di interesse non pertinente in base alla profilazione dell'utente per cui si vuole generare l'annuncio.
-- *Postcondizioni*: il sistema non riceve l'annuncio pubblicitario generato dall'LLM.
+- *Precondizioni*: La LLM considera il punto di interesse non pertinente in base alla profilazione dell'utente per cui si vuole generare l'annuncio.
+- *Postcondizioni*: il sistema non riceve l'annuncio pubblicitario generato dalla LLM.
 - *Trigger*: l'utente del noleggio si trova in prossimità di un punto di interesse non pertinente.
 - *Scenario principale*:
-  1. L'LLM verifica che il punto di interesse non è pertinente per l'utente.
-  2. L'LLM decide di non generare alcun annuncio pubblicitario
+  1. La LLM verifica che il punto di interesse non è pertinente per l'utente.
+  2. La LLM decide di non generare alcun annuncio pubblicitario
 #v(20pt)
 #figure(
   image("../assets/use_cases/UC5-6.svg"),
@@ -254,7 +255,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Attore principale*: Amministratore.
 - *Precondizioni*: l'amministratore è autenticato al sistema.
 - *Postcondizioni*: l'amministratore visualizza gli annunci generati dalla LLM per ogni utente con un noleggio attivo all'interno della mappa.
-- *Trigger*: l'amministratore vuole prendere visione di quanto generato da parte dell'LLM per i clienti del noleggio e per i punti di interesse convenzionati.
+- *Trigger*: l'amministratore vuole prendere visione di quanto generato da parte della LLM per i clienti del noleggio e per i punti di interesse convenzionati.
 - *Scenario principale*:
   1. L'amministratore accede alla mappa dei mezzi noleggiati.
   2. L'amministratore, tramite un "_click_" sul _marker_ che indica la posizione di un mezzo, visualizza l'annuncio pubblicitario generato per l'utente che ha attualmente in uso il mezzo.
