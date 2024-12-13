@@ -189,16 +189,15 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   1. L'LLM riceve la richiesta da parte del sistema
   2. L'LLM genera l'annuncio pubblicitario basandosi sui dati ricevuti come _prompt_.
   3. L'LLM invia l'annuncio pubblicitario generato al sistema.
-- *Estensione*: Annuncio pubblicitario non generato (#link(<uc9>)[UC9]).
-=== UC6 - Annuncio pubblicitario non generato <uc9>
+- *Estensione*: Annuncio pubblicitario non generato (#link(<uc6>)[UC6]).
+=== UC6 - Annuncio pubblicitario non generato <uc6>
 - *Attore principale*: LLM
 - *Precondizioni*: l'LLM considera il punto di interesse non pertinente in base alla profilazione dell'utente per cui si vuole generare l'annuncio.
-- *Postcondizioni*: l'LLM non genera alcun annuncio pubblicitario.
+- *Postcondizioni*: il sistema non riceve l'annuncio pubblicitario generato dall'LLM.
 - *Trigger*: l'utente del noleggio si trova in prossimità di un punto di interesse non pertinente.
 - *Scenario principale*:
-  1. L'utente si trova in prossimità di un punto di interesse.
-  2. L'LLM verifica che il punto di interesse non è pertinente per l'utente.
-  3. L'LLM decide di non generare alcun annuncio pubblicitario
+  1. L'LLM verifica che il punto di interesse non è pertinente per l'utente.
+  2. L'LLM decide di non generare alcun annuncio pubblicitario
 #v(20pt)
 #figure(
   image("../assets/use_cases/UC5-6.svg"),
@@ -217,9 +216,9 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   2. L'utente non autenticato inserisce le proprie credenziali di accesso.
   3. Il sistema verifica se le credenziali inserite sono valide o meno.
   4. Nel caso in cui le credenziali fossero valide, l'utente o l'amministratore (a seconda del ruolo all'interno del sistema) accede alla propria _dashboard_ personale.
-- *Estensione*: Visualizzazione del messaggio di credenziali errate (#link(<uc6>)[UC6]).
+- *Estensione*: Errore "Credenziali errate" (#link(<uc8>)[UC8]).
 
-=== UC8 - Visualizzazione del messaggio di autenticazione fallita <uc6>
+=== UC8 - Errore "Credenziali errate" <uc8>
 - *Attori principali*: Utente non autenticato.
 - *Precondizioni*: l'utente non autenticato tenta di accedere alla _dashboard_ con delle credenziali errate.
 - *Postcondizioni*: l'utente non autenticato riceve un messaggio di errore.
@@ -251,9 +250,9 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #pagebreak()
 
-=== UC10 - Visualizzazione degli annunci pubblicitari generati dalla LLM
+=== UC10 - Visualizzazione degli annunci pubblicitari generati lato amministratore
 - *Attore principale*: Amministratore.
-- *Precondizioni*: l'amministratore ha accesso alla _dashboard_ del sistema.
+- *Precondizioni*: l'amministratore è autenticato al sistema.
 - *Postcondizioni*: l'amministratore visualizza gli annunci generati dalla LLM per ogni utente con un noleggio attivo all'interno della mappa.
 - *Trigger*: l'amministratore vuole prendere visione di quanto generato da parte dell'LLM per i clienti del noleggio e per i punti di interesse convenzionati.
 - *Scenario principale*:
