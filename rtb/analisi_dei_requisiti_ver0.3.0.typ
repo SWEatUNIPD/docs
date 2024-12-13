@@ -125,7 +125,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Utente*: utente che utilizza il servizio di noleggio.
 - *Utente non autenticato*: un qualsiasi individuo che intende accedere al sistema, sia esso un utente inteso come utilizzatore del servizio di noleggio o un amministratore.
 - *Sensore*: strumento attraverso il quale il mezzo noleggiato da uno specifico utente trasmette la sua posizione in tempo reale.
-- *#rifGlossario("LLM")*: è il servizio esterno che si occupa della generazione degli annunci pubblicitari personalizzati tramite i #rifGlossario("prompt") forniti dal sistema.
+- *#rifGlossario("LLM")*: servizio esterno che si occupa della generazione degli annunci pubblicitari personalizzati tramite #rifGlossario("prompt") fornito dal sistema.
 
 == Elenco dei casi d'uso
 
@@ -145,7 +145,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 - *Attore principale*: Sensore.
 - *Precondizioni*: il sensore ha inviato dei dati di localizzazione.
-- *Postcondizioni*: il sistema verifica che il sensore sia in prossimità di un punto di interesse.
+- *Postcondizioni*: il sensore si trova in prossimità di un punto di interesse.
 - *Trigger*: il sensore invia al sistema la localizzazione GPS del mezzo.
 - *Scenario principale*:
   1. Il sensore invia al sistema la localizzazione GPS del mezzo.
@@ -171,7 +171,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Attore principale*: Sensore.
 - *Attore secondario*: LLM.
 - *Precondizioni*: il sensore si trova in prossimità di un punto di interesse.
-- *Postcondizioni*: il sistema invia alla LLM una richiesta di annuncio personalizzato in caso la profilazione dell'utente risulti idonea al punto di interesse.
+- *Postcondizioni*: il sistema ha inviato alla LLM la richiesta per la generazione di un annuncio personalizzato.
 - *Trigger*: il sensore si trova in prossimità di un punto di interesse.
 - *Scenario principale*:
   1. Il sensore si trova in prossimità di un punto di interesse.
@@ -180,17 +180,17 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 #figure(image("../assets/use_cases/UC4.svg", width: 90%), caption: [Diagramma del caso d'uso UC4])
 #pagebreak()
 
-=== UC5 - Invio del'annuncio pubblicitario generato
+=== UC5 - Invio dell'annuncio pubblicitario generato
 - *Attore principale*: LLM.
-- *Precondizioni*: l'LLM, tramite una richiesta #rifGlossario("API"), deve aver ricevuto i _prompt_ di generazione dell'annuncio, come la profilazione dell'utente e il punto di interesse per cui si vuole generare l'annuncio.
-- *Postcondizioni*: l'LLM genera l'annuncio basandosi sulla profilazione dell'utente.
+- *Precondizioni*: l'LLM deve aver ricevuto dal sistema il _prompt_ di generazione dell'annuncio, come la profilazione dell'utente e il punto di interesse per cui si vuole generare l'annuncio.
+- *Postcondizioni*: il sistema riceve l'annuncio pubblicitario generato dalla LLM.
 - *Trigger*: il sistema ha fatto una richiesta di generazione tramite le API dell'LLM.
 - *Scenario principale*:
   1. L'LLM riceve la richiesta da parte del sistema
   2. L'LLM genera l'annuncio pubblicitario basandosi sui dati ricevuti come _prompt_.
   3. L'LLM invia l'annuncio pubblicitario generato al sistema.
-- *Estensione*: Annuncio non generato (#link(<uc9>)[UC9]).
-=== UC6 - Annuncio non generato <uc9>
+- *Estensione*: Annuncio pubblicitario non generato (#link(<uc9>)[UC9]).
+=== UC6 - Annuncio pubblicitario non generato <uc9>
 - *Attore principale*: LLM
 - *Precondizioni*: l'LLM considera il punto di interesse non pertinente in base alla profilazione dell'utente per cui si vuole generare l'annuncio.
 - *Postcondizioni*: l'LLM non genera alcun annuncio pubblicitario.
@@ -210,7 +210,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 === UC7 - Autenticazione alla _dashboard_ del sistema
 - *Attori principali*: Utente non autenticato.
 - *Precondizioni*: l'individuo che intende accedere alla _dashboard_ deve essere registrato all'interno del sistema per poter accedere.
-- *Postcondizioni*: l'utente o l'amministratore che si è appena autenticato accede alla _dashboard_ personale, con le relative funzionalità (a seconda dei loro privilegi).
+- *Postcondizioni*: l'utente o l'amministratore che si è appena autenticato accede alla _dashboard_ personale con le relative funzionalità (a seconda dei loro privilegi).
 - *Trigger*: l'utente o l'amministratore intende accedere alla _dashboard_ personale.
 - *Scenario principale*:
   1. L'utente non autenticato accede alla pagina di login del sistema.
@@ -219,7 +219,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   4. Nel caso in cui le credenziali fossero valide, l'utente o l'amministratore (a seconda del ruolo all'interno del sistema) accede alla propria _dashboard_ personale.
 - *Estensione*: Visualizzazione del messaggio di credenziali errate (#link(<uc6>)[UC6]).
 
-=== UC8 - Visualizzazione del messaggio di errore <uc6>
+=== UC8 - Visualizzazione del messaggio di autenticazione fallita <uc6>
 - *Attori principali*: Utente non autenticato.
 - *Precondizioni*: l'utente non autenticato tenta di accedere alla _dashboard_ con delle credenziali errate.
 - *Postcondizioni*: l'utente non autenticato riceve un messaggio di errore.
@@ -238,10 +238,10 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 === UC9 - Visualizzazione della mappa dei mezzi noleggiati
 - *Attore principale*: Amministratore.
 - *Precondizioni*: l'amministratore del sistema è autenticato e ha accesso alla _dashboard_ del sistema.
-- *Postcondizioni*: l'amministratore ottiene una visione chiara della posizione e del movimento dei mezzi attualmente in uso all'interno di una mappa.
+- *Postcondizioni*: l'amministratore ottiene una visione della posizione e del movimento dei mezzi attualmente in uso all'interno di una mappa.
 - *Trigger*: l'amministratore intende visualizzare la posizione dei mezzi noleggiati.
 - *Scenario principale*:
-  1. L'amministratore è collegato e autenticato nella _dashboard_ del sistema.
+  1. L'amministratore è collegato e autenticato alla _dashboard_ del sistema.
   2. La _dashboard_ mette a disposizione una mappa interattiva con i mezzi attualmente a noleggio, la cui posizione viene indicata attraverso dei _#rifGlossario("marker")_.
 #v(20pt)
 #figure(
