@@ -9,11 +9,17 @@
   titolo: "Piano di Progetto",
   uso: "Esterno",
   versioni: (
-    "0.2.0",
-    "12/12/2024",
+    "0.3.0",
+    "14/12/2024",
     "Davide Picello",
     "Andrea Precoma\nRiccardo Milan",
-    [- Stesura secondo _sprint_],
+    [- Stesura retrospettiva secondo _sprint_],
+
+    "0.2.0",
+    "1/12/2024",
+    "Davide Picello",
+    "Andrea Precoma\nRiccardo Milan",
+    [- Stesura pianificazione secondo _sprint_],
 
     "0.1.1",
     "03/12/2024",
@@ -246,7 +252,6 @@ I verificatori suggeriscono infine di incaricare più di una persona alla verifi
 - *Rischi attesi*: #link(<RO-2>)[RO-2], #link(<RO-3>)[RO-3], #link(<RT-1>)[RT-1]
 
 ==== Attività dello sprint
-//Quello che è stato fatto o quello che è da fare ?
 Le attività che il _team_ si è prefissato di portare a termine durante il secondo _sprint_ sono le seguenti:
 - Redazione verbale esterno ed interno del 27/11/2024.
 - Creare una prima versione del simulatore dati.
@@ -275,13 +280,13 @@ Le attività che il _team_ si è prefissato di portare a termine durante il seco
 ==== Preventivo orario
 #rendicontazioneOre(
   (
-    (0, 0, 0, 0, 0, 0),
-    (0, 0, 0, 0, 0, 0),
-    (0, 0, 0, 0, 0, 0),
-    (0, 0, 0, 0, 0, 0),
-    (0, 0, 0, 0, 0, 0),
-    (0, 0, 0, 0, 0, 0),
-    (0, 0, 0, 0, 0, 0),
+    (0, 4, 0, 0, 0, 0),
+    (0, 0, 0, 0, 2, 3),
+    (0, 0, 5, 0, 0, 0),
+    (0, 4, 0, 0, 0, 0),
+    (4, 0, 0, 0, 0, 0),
+    (0, 0, 5, 0, 0, 0),
+    (0, 0, 0, 0, 2, 3),
   ),
   caption: [Preventivo delle ore nel secondo _sprint_ per membro e per ruolo],
 )
@@ -289,22 +294,22 @@ Le attività che il _team_ si è prefissato di portare a termine durante il seco
 ==== Consuntivo orario e di spesa
 #consuntivoOre(
   preventivo: (
-    (0, 0, 0, 0, 0, 0),
-    (0, 0, 0, 0, 0, 0),
-    (0, 0, 0, 0, 0, 0),
-    (0, 0, 0, 0, 0, 0),
-    (0, 0, 0, 0, 0, 0),
-    (0, 0, 0, 0, 0, 0),
-    (0, 0, 0, 0, 0, 0),
+    (0, 4, 0, 0, 0, 0),
+    (0, 0, 0, 0, 2, 3),
+    (0, 0, 5, 0, 0, 0),
+    (0, 4, 0, 0, 0, 0),
+    (4, 0, 0, 0, 0, 0),
+    (0, 0, 5, 0, 0, 0),
+    (0, 0, 0, 0, 2, 3),
   ),
   consuntivo: (
-    (0, 0, 0, 0, 0, 0),
-    (0.5, 0, 0, 0, 2, 0),
-    (0, 0, 0, 0, 0, 0),
-    (0, 0, 0, 0, 0, 0),
-    (4, 0, 0, 0, 0, 0),
-    (0, 0, 0, 0, 0, 0),
-    (0, 0, 0, 0, 0, 0),
+    (0, 4, 0, 0, 0, 0),
+    (0.5, 0, 0, 0, 4, 3),
+    (0, 0, 6, 0, 0, 0),
+    (0, 3, 0, 0, 0, 0),
+    (5, 0, 0, 0, 0, 0),
+    (0, 1.5, 6, 0, 1, 0),
+    (0, 0, 0, 0, 4, 3),
   ),
   tabCaption: [Consutivo delle ore nel secondo _sprint_ per membro e per ruolo],
   costTabCaption: [Costi sostenuti nel secondo _sprint_],
@@ -312,3 +317,21 @@ Le attività che il _team_ si è prefissato di portare a termine durante il seco
 )
 
 ==== Retrospettiva
+/*Fatto tutto quello che ci aveva chiesto l'azienda*/
+Il secondo _sprint_ è stato un periodo proficuo, in cui il _team_ è riuscito a portare a completamento tutte le attività prefissate.
+
+/*Problemi comunicativi all'inizio, poi migliorati (tipo chi rilevava problemi e poi non li diceva).*/
+Tuttavia sono state notate alcune problematiche, soprattutto ad inizio periodo, ma che con il tempo il gruppo è riuscito progressivamente a migliorare.
+
+//Problemi con le tecnologie: utilizzare le nuove tecnologie ma risolti problemi/concordato con Dorigo
+Una difficoltà inevitabile è stata riscontrata durante lo studio e l'applicazione delle nuove tecnologie, per molti membri del gruppo mai viste. Fortunatamente si è arrivati comunque al livello di implementazione desiderato, anche grazie al confronto con l'azienda che ci ha messo in comunicazione con un loro dipendente specializzato nell'utilizzo di Apache Nifi, una delle tecnologie con cui abbiamo riscontrato maggiormente difficoltà.
+
+//Creare una prima versione del simulatore dati -> fatta e fatto anche interfaccia con Grafana
+La prima versione del simulatore dati è stata implementata con successo, tanto che è stata mostrata ed apprezzata durante l'incontro di fine _sprint_ con l'azienda. Infatti, oltre a rispettare la pianificazione, siamo riusciti a presentare anche l'interfaccia del simulatore realizzata con Grafana.
+
+//Casi d'uso ok, ma solite difficoltà nel capire come farli, ma colloquio per Cardin per chiarirle
+I casi d'uso sono stati migliorati ed aumentati come pianificato. Tuttavia il gruppo ha riscontrato delle difficoltà durante la scrittura, evidenziando alcuni dubbi a cui non si è riusciti a dare una risposta certa. Per questo abbiamo chiesto al professor Cardin un incontro per confrontarci su queste problematiche, auspicando vengano risolte.
+
+//Usiamo Gantt di GitHub perché non siamo riusciti a trovarne uno buono
+L'unica attività che non è andata come preventivato è stata l'indagine relativa al _software_ per la gestione di un diagramma di Gantt. L'esigenza era nata in seguito all'utilizzo del sistema di GitHub, che però abbiamo notato avere alcune limitazioni, tra cui principalmente l'assenza della possibilità di segnalare le dipendenze tra le attività.
+Molte delle soluzioni vagliate, alcune anche a pagamento, presentavano dei difetti che ci hanno fatto desistere dal migrare verso un altro applicativo, decidendo quindi, almeno momentaneamente, di restare sul sistema di GitHub. 
