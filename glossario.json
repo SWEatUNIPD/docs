@@ -57,7 +57,8 @@
   },
   "M": {
     "Mockup": "Modello o replica di un prodotto o di un sistema (come l'interfaccia utente) utilizzato a scopo di test o presentazione.",
-    "MVP": "Acronimo di Minimum Viable Product, rappresenta la versione iniziale di un prodotto con le funzionalità minime indispensabili per essere testato dagli utenti e validato sul mercato."
+    "MVP": "Acronimo di Minimum Viable Product, rappresenta la versione iniziale di un prodotto con le funzionalità minime indispensabili per essere testato dagli utenti e validato sul mercato.",
+    "Marker": "Punto di riferimento utilizzato per identificare una posizione specifica all'interno della mappa."
   },
   "P": {
     "PoC": "Acronimo di Proof of Concept, è un prototipo o un modello iniziale creato per dimostrare la fattibilità di un'idea o concetto, senza dover sviluppare un prodotto completo.",

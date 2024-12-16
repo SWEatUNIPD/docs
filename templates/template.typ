@@ -292,7 +292,7 @@
         #v(10pt)
       ]
     }
-    pagebreak()
+    pagebreak(weak: true)
   }
 }
 
