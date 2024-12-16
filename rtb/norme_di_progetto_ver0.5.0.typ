@@ -697,7 +697,7 @@ Secondo lo standardG ISO/IEC 12207:1995, il processo di miglioramento nel ciclo 
 Innanzitutto occorre stabilire una serie di processi organizzativi per l'intero ciclo di vita del software applicabili alle varie attività di progetto. Quest'ultimi devono essere documentati, come viene fatto proprio qui, e va implementato un meccanismo di controllo per sviluppare, monitorare e migliorare i processi stessi. Per garantire efficacia e continuo miglioramento dei processi il responsabile guiderà una retrospettiva di gruppo da effettuare alla fine di ogni sprint e da mettere nero su bianco per ogni sprint nel documento Piano di Progetto.
 
 ==== Miglioramento dei processi
-Una volta identificati i potenziali miglioramenti questi vanno effettivamente implementati secondo le corrette a adeguate metodologie. Nella retrospettiva seguente all'applicazione di queste migliorie verrà effettuato un altro feedback a riguardo per progredire ciclicamente.
+Una volta identificati i potenziali miglioramenti questi vanno effettivamente implementati secondo le corrette a adeguate metodologie. Nella retrospettiva seguente all'applicazione di queste migliorie verrà effettuato un altro _#rifGlossario("feedback")_ a riguardo per progredire ciclicamente.
 
 === Metriche
 La misurazione del miglioramento nello sviluppo del software può coinvolgere diverse metriche che riflettono aspetti chiave del processo stesso. Generalmente andiamo a valutare le seguenti:
@@ -717,5 +717,5 @@ Infine, una volta capito cosa e da dove studiare, è necessario che ognuno dei c
 
 === Strumenti
 Al fine di agevolare il processo di formazione, ogni membro del gruppo incaricato in un determinato sprint di approfondire un determinato argomento dovrà essere in grado di tramandare la propria conoscenza agli altri. 
-Per aiutarci nel processo di apprendimento l'azienda Sync Lab ci fornisce, duranete lo svolgimento del progetto, meteriali quali video e risorse utili alle tecnologie di dominio d'uso del nostro capitolato, nonché delle sedute di #rifGlossario("Deep dive") concordate a calendario.
+Per aiutarci nel processo di apprendimento l'azienda Sync Lab ci fornisce, duranete lo svolgimento del progetto, meteriali quali video e risorse utili alle tecnologie di dominio d'uso del nostro capitolato, nonché delle sedute di _#rifGlossario("Deep dive")_ concordate a calendario.
 
