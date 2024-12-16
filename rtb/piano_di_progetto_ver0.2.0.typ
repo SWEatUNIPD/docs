@@ -256,7 +256,7 @@ Le attività che il _team_ si è prefissato di portare a termine durante il seco
 - Redazione verbale esterno ed interno del 27/11/2024.
 - Creare una prima versione del simulatore dati.
   - È stato deciso di dedicare la prima settimana dello _sprint_ allo studio e approfondimento delle tecnologie: #rifGlossario("Docker"), #rifGlossario("Apache Kafka"), #rifGlossario("Apache Nifi") e #rifGlossario("PostgreSQL").
-  - La seconda settimana sarà invece riservata all'implementazione concreta del simulatore e del _database_ dove verranno salvati i dati generati, grazie all'utilizzo delle tecnologie studiate.
+  - La seconda settimana sarà invece riservata all'implementazione concreta del simulatore e del _#rifGlossario("database")_ dove verranno salvati i dati generati, grazie all'utilizzo delle tecnologie studiate.
 - Avanzamento nel documento Analisi dei Requisiti, in particolare: 
   - Migliorare i vecchi casi d'uso dopo aver risolto alcuni dubbi in seguito al confronto con l'azienda.
   - Scrivere nuovi casi d'uso.
@@ -271,7 +271,7 @@ Le attività che il _team_ si è prefissato di portare a termine durante il seco
   - Piano di Progetto
   - Norme di Progetto
 - Modifica al _template_ ed al _test_ del Glossario.
-  - La modfica al _template_ vedrà l'implementazione di:
+  - La modifica al _template_ vedrà l'implementazione di:
     - Una funzione per automatizzare la generazione dei grafici relativi al preventivo ed al consuntivo orario richiesti per ogni _sprint_, nel Piano di Progetto.
     - Aggiunta dell'indice delle immagini e delle tabelle, generato automaticamente, su tutti i _file_.
   - La modifica al _test_ del Glossario è necessaria in quanto, attualmente, segnala dei falsi positivi. Per esempio quando abbiamo parole appartenenti al Glossario contenute in altre parole, oppure la segnalazione di termini del Glossario che in realtà sono comandi #rifGlossario("Typst").
@@ -295,12 +295,12 @@ Le attività che il _team_ si è prefissato di portare a termine durante il seco
 #consuntivoOre(
   preventivo: (
     (0, 4, 0, 0, 0, 0),
-    (0, 0, 0, 0, 2, 3),
+    (0, 0, 0, 0, 4, 3),
     (0, 0, 5, 0, 0, 0),
     (0, 4, 0, 0, 0, 0),
-    (4, 0, 0, 0, 0, 0),
-    (0, 0, 5, 0, 0, 0),
-    (0, 0, 0, 0, 2, 3),
+    (5, 0, 0, 0, 0, 0),
+    (0, 1, 6, 0, 1, 0),
+    (0, 0, 0, 0, 4, 3),
   ),
   consuntivo: (
     (0, 4, 0, 0, 0, 0),
@@ -311,27 +311,21 @@ Le attività che il _team_ si è prefissato di portare a termine durante il seco
     (0, 1.5, 6, 0, 1, 0),
     (0, 0, 0, 0, 4, 3),
   ),
-  tabCaption: [Consutivo delle ore nel secondo _sprint_ per membro e per ruolo],
+  tabCaption: [Consuntivo delle ore nel secondo _sprint_ per membro e per ruolo],
   costTabCaption: [Costi sostenuti nel secondo _sprint_],
   chartCaption: [Grafico percentuale dell'allocazione delle ore per ruolo nel secondo _sprint_],
 )
 
 ==== Retrospettiva
-/*Fatto tutto quello che ci aveva chiesto l'azienda*/
 Il secondo _sprint_ è stato un periodo proficuo, in cui il _team_ è riuscito a portare a completamento tutte le attività prefissate.
 
-/*Problemi comunicativi all'inizio, poi migliorati (tipo chi rilevava problemi e poi non li diceva).*/
 Tuttavia sono state notate alcune problematiche, soprattutto ad inizio periodo, ma che con il tempo il gruppo è riuscito progressivamente a migliorare.
 
-//Problemi con le tecnologie: utilizzare le nuove tecnologie ma risolti problemi/concordato con Dorigo
-Una difficoltà inevitabile è stata riscontrata durante lo studio e l'applicazione delle nuove tecnologie, per molti membri del gruppo mai viste. Fortunatamente si è arrivati comunque al livello di implementazione desiderato, anche grazie al confronto con l'azienda che ci ha messo in comunicazione con un loro dipendente specializzato nell'utilizzo di Apache Nifi, una delle tecnologie con cui abbiamo riscontrato maggiormente difficoltà.
+Una difficoltà inevitabile è stata riscontrata durante lo studio e l'applicazione delle nuove tecnologie, per molti mai viste. Fortunatamente si è arrivati comunque al livello di implementazione desiderato, anche grazie al confronto con l'azienda. Questa ci aveva messo in contatto con un loro dipendente specializzato nell'utilizzo di Apache Nifi, una delle tecnologie con cui abbiamo riscontrato maggiormente difficoltà. Alla fine il gruppo è comunque riuscito a risolvere il problema autonomamente.
 
-//Creare una prima versione del simulatore dati -> fatta e fatto anche interfaccia con Grafana
-La prima versione del simulatore dati è stata implementata con successo, tanto che è stata mostrata ed apprezzata durante l'incontro di fine _sprint_ con l'azienda. Infatti, oltre a rispettare la pianificazione, siamo riusciti a presentare anche l'interfaccia del simulatore realizzata con Grafana.
+La prima versione del simulatore dati è stata implementata con successo, tanto che è stata mostrata ed apprezzata durante l'incontro di fine _sprint_ con l'azienda. Infatti, oltre a rispettare la pianificazione, siamo riusciti a presentare anche l'interfaccia del simulatore realizzata con #rifGlossario("Grafana").
 
-//Casi d'uso ok, ma solite difficoltà nel capire come farli, ma colloquio per Cardin per chiarirle
-I casi d'uso sono stati migliorati ed aumentati come pianificato. Tuttavia il gruppo ha riscontrato delle difficoltà durante la scrittura, evidenziando alcuni dubbi a cui non si è riusciti a dare una risposta certa. Per questo abbiamo chiesto al professor Cardin un incontro per confrontarci su queste problematiche, auspicando vengano risolte.
+I casi d'uso sono stati migliorati ed aumentati come pianificato. Tuttavia il gruppo ha riscontrato delle difficoltà durante la scrittura, evidenziando alcuni dubbi a cui non si è riusciti a dare una risposta certa. Per questo abbiamo chiesto al professor Cardin un incontro per confrontarci su queste problematiche.
 
-//Usiamo Gantt di GitHub perché non siamo riusciti a trovarne uno buono
-L'unica attività che non è andata come preventivato è stata l'indagine relativa al _software_ per la gestione di un diagramma di Gantt. L'esigenza era nata in seguito all'utilizzo del sistema di GitHub, che però abbiamo notato avere alcune limitazioni, tra cui principalmente l'assenza della possibilità di segnalare le dipendenze tra le attività.
-Molte delle soluzioni vagliate, alcune anche a pagamento, presentavano dei difetti che ci hanno fatto desistere dal migrare verso un altro applicativo, decidendo quindi, almeno momentaneamente, di restare sul sistema di GitHub. 
+L'unica attività che non si è svolta come preventivato è stata l'indagine relativa al _software_ per la gestione di un diagramma di Gantt. L'esigenza era nata in seguito all'utilizzo del sistema integrato di #rifGlossario("GitHub"), il quale però manca di alcune funzionalità, principalmente l'assenza della possibilità di segnalare le dipendenze tra le attività.
+Molte delle soluzioni vagliate, alcune delle quali anche a pagamento, presentavano dei difetti che ci hanno fatto desistere, almeno momentaneamente, dal migrare verso un altro applicativo.
