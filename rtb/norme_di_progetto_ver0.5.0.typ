@@ -5,19 +5,15 @@
   data: "14 Novembre 2024",
   destinatari: ("Gruppo SWE@",),
   responsabile: "-",
-  // [TODO: verificare] ipotizzando che io sia amministratore o responsabile nello sprint 3
   redattori: ("Klaudio Merja", "Andrea Precoma", "Davide Picello", "Riccardo Milan"),
-  // [TODO: verificare] ipotizzando che @Kla sia revisore nello sprint 3
   verificatori: ("Andrea Precoma", "Davide Marin", "Klaudio Merja"),
   titolo: "Norme di Progetto",
   uso: "Interno",
   versioni: (
     "0.5.0",
     "13/12/2024",
-    // [TODO: verificare] ipotizzando che io sia amministratore o responsabile nello sprint 3
     "Riccardo Milan",
-    // [TODO: verificare] ipotizzando che @Kla sia revisore nello sprint 3
-    "Klaudio Merja",
+    "Klaudio Merja\nDavide Marin",
     [
       - Aggiunta del capitolo "Processi organizzativi"
     ],
