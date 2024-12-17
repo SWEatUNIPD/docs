@@ -5,7 +5,7 @@
   destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "Sync Lab S.r.l.", "Gruppo SWE@"),
   responsabile: "Davide Martinelli",
   redattori: ("Klaudio Merja", "Davide Picello", "Davide Martinelli"),
-  verificatori: ("Davide Marin", "Davide Picello", "Andrea Precoma", "Riccardo Milan"),
+  verificatori: ("Davide Marin", "Davide Picello", "Andrea Precoma", "Riccardo Milan", "Klaudio Merja"),
   titolo: "Piano di Progetto",
   uso: "Esterno",
   versioni: (
@@ -97,7 +97,7 @@ Per il processo di gestione dei rischi il gruppo adotta il modello fornito da Ia
 4. *Controllo del rischio*
 
 == Rischi organizzativi
-=== Riunione con l'azienda proponente
+=== Riunione con l'azienda proponente <RO-1>
 #tabellaRischio(
   ID: [RO-1],
   descrizione: [A causa di impegni personali dei membri del gruppo o per impossibilità dell'azienda proponente può risultare difficile fissare una riunione di #rifGlossario("SAL"), ritardando così il _#rifGlossario("feedback")_ su quanto svolto dal gruppo.],
@@ -329,3 +329,50 @@ I casi d'uso sono stati migliorati ed aumentati come pianificato. Tuttavia il gr
 
 L'unica attività che non si è svolta come preventivato è stata l'indagine relativa al _software_ per la gestione di un diagramma di Gantt. L'esigenza era nata in seguito all'utilizzo del sistema integrato di #rifGlossario("GitHub"), il quale però manca di alcune funzionalità, principalmente l'assenza della possibilità di segnalare le dipendenze tra le attività.
 Molte delle soluzioni vagliate, alcune delle quali anche a pagamento, presentavano dei difetti che ci hanno fatto desistere, almeno momentaneamente, dal migrare verso un altro applicativo.
+
+#pagebreak()
+
+=== Sprint 3
+- *Inizio*: 14/12/2024
+- *Fine*: 23/12/2024
+- *Rischi attesi*: #link(<RO-1>)[RO-1], #link(<RO-3>)[RO-3], #link(<RT-1>)[RT-1]
+
+==== Attività dello sprint
+Le attività che il _team_ si è prefissato di portare a termine durante il terzo _sprint_ sono le seguenti:
+- Redazione del verbale esterno ed interno del 13/12/2024.
+
+- Ampliamento del documento Norme di Progetto, in particolare occupandosi delle sezioni:
+  - Piano di Qualifica
+  - Verifica
+  - Validazione
+
+- Aggiornamento di due sezioni del documento Norme di Progetto:
+  - Processi organizzativi
+  - Processi primari, dove nello specifico si dovrà normare la descrizione dei casi d'uso.
+
+- Continuazione del documento di Analisi dei Requisiti che per questo _sprint_ si può articolare in due fasi, intervallate da un incontro con il professor Cardin (previsto per il 19/12/2024):
+  - Una prima fase in cui si studieranno nuovi casi d'uso per raccogliere eventuali nuovi dubbi da chiarire
+  - Una seconda in cui si miglioreranno i casi d'uso in base al riscontro avuto durante il colloquio.
+  
+- Studio della fattibilità di creare uno _#rifGlossario("stream processor") custom_ sfruttando #rifGlossario("Spring"), possibilmente sviluppandone un prototipo.
+
+- Affinamento della _dashboard_ in Grafana effettuando migliorie di carattere estetico e/o funzionale.
+
+- Continuazione della stesura del Piano di Progetto come da prassi, in particolare:
+  - Scrittura retrospettiva secondo _sprint_.
+  - Scrittura pianificazione terzo _sprint_.
+ 
+
+==== Preventivo orario
+#rendicontazioneOre(
+  (
+    (0, 0, 5, 0, 0, 0),
+    (0, 0, 5, 0, 0, 0),
+    (0, 0, 0, 0, 0, 3),
+    (3, 2, 0, 0, 0, 0),
+    (0, 3, 0, 0, 0, 0),
+    (0, 0, 0, 0, 4, 3),
+    (0, 3, 0, 0, 2, 0),
+  ),
+  caption: [Preventivo delle ore nel terzo _sprint_ per membro e per ruolo],
+)
