@@ -3,9 +3,9 @@
 #show: content => verbale(
   data: "27 novembre 2024",
   destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "Sync Lab S.r.l.", "Gruppo SWE@"),
-  responsabile: "Andrea Perozzo",
-  redattori: ("Klaudio Merja",),
-  verificatori: ("Davide Marin", "Davide Picello"),
+  responsabile: "Davide Martinelli",
+  redattori: ("Klaudio Merja", "Davide Picello", "Davide Martinelli"),
+  verificatori: ("Davide Marin", "Davide Picello", "Andrea Precoma", "Riccardo Milan"),
   titolo: "Piano di Progetto",
   uso: "Esterno",
   versioni: (
