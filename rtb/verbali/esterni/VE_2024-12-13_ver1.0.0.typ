@@ -53,10 +53,10 @@ Durante l'implementazione del simulatore dati sono state riscontrate alcune prob
 
 //2. Come fare a implementare logiche più complesse con nifi? -> come implementare pattern per Cardin
 == Implementazione di logiche complesse con Apache NiFi
-Un'altra domanda posta dal gruppo è stata se Apache NiFi si presti all'implementazione di logiche complesse e di _design pattern_ adeguati ai fini della creazione del _#rifGlossario("MVP")_. L'azienda ci ha rassicurato dicendoci che in genere è sufficiente riconoscere queste logiche nei _software_ che utilizziamo. Per chiarire ogni dubbio il gruppo porrà questa domanda direttamente al professor Cardin durante l'incontro fissato per giovedì 19 dicembre.
+Un'altra domanda posta dal gruppo è stata se Apache NiFi si presti all'implementazione di logiche complesse e di _design pattern_ adeguati ai fini della creazione del #rifGlossario("MVP"). L'azienda ci ha rassicurato condividendoci alcuni _link_ ad esempi di _anti-pattern_ relativi ad Apache NiFi in modo da poter individuare dei _pattern_ da utilizzare durante la realizzazione del MVP. Per chiarire ogni dubbio il gruppo porrà questa domanda direttamente al professor Cardin durante l'incontro fissato per giovedì 19 dicembre.
 
 == Containerizzare il producer
-Un altro piccolo dubbio era se fosse necessario, o perlomeno consigliato, "containerizzare" anche il _producer_ dei dati del simulatore. La risposta è stata affermativa, in quanto, questo faciliterà la collaborazione sul codice.
+Un altro piccolo dubbio era se fosse necessario, o perlomeno consigliato, "containerizzare" anche il _producer_ dei dati del simulatore. La risposta è stata affermativa in quanto questo faciliterà la collaborazione sul codice.
 
 == Confronto sul database
 Dal confronto sul _database_ è emerso che è correttamente impostato e necessita solo di essere ampliato. Ci è stato confermato che i dati della profilazione dovranno essere interamente generati dal gruppo. Infine è stata discussa la possibilità di salvare lo storico dei noleggi e la capacità del sistema di proporre soluzioni coerentemente con il loro effettivo orario di apertura. Questi due requisiti, apprezzati, possono essere intesi come opzionali.
