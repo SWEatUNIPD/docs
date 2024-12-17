@@ -17,7 +17,7 @@
   riassunto: [Incontro relativo alla fine del secondo _sprint_ che ha visto il gruppo presentare una prima implementazione concreta del simulatore dati con interfaccia],
   versioni: (
     "1.0.0", 
-    [16/12/2024], 
+    [17/12/2024], 
     "Davide Picello", 
     "Klaudio Merja",
     [- Stesura del verbale],
