@@ -10,6 +10,14 @@
   titolo: "Norme di Progetto",
   uso: "Interno",
   versioni: (
+    "0.6.0",
+    "17/12/2024",
+    "Riccardo Milan",
+    "Davide Marin\nKlaudio Merja",
+    [
+      - Revisitazione contenuto "Processi Organizzativi"
+    ],
+
     "0.5.1",
     "17/12/2024",
     "Riccardo Milan",
@@ -554,11 +562,11 @@ Il verificatore può consultare sia il documento in formato `.pdf` per maggiore 
 
 #pagebreak()
 = Processi organizzativi
-L'ingegneria del software è una disciplina complessa e multidisciplinare che richiede una pianificazione accurata, una gestione efficiente delle risorse e un controllo rigoroso della qualità. La definizione e il rispetto di processi organizzativi ben strutturati diventa quindi cruciale.
+L'ingegneria del software è un campo complesso e multidisciplinare che richiede un'attenta pianificazione, una gestione efficace delle risorse e un controllo accurato della qualità. Quindi, definire e rispettare processi organizzativi ben organizzati diventa essenziale.
 
 == Gestione dei processi
 === Scopo
-La gestione dei processi, come stabilito dallo standard ISO/IEC 12207:1997, ha lo scopo di stabilire, implementare e migliorare i processi che il gruppo deve assicurarsi vengano svolti per garantire la massima resa dei processi di sviluppo.
+Secondo lo standard ISO/IEC 12207:1997, la gestione dei processi mira a stabilire, implementare e migliorare i processi che il gruppo deve garantire vengano svolti per garantire la massima resa dei processi di sviluppo.
 
 === Descrizione
 Le attività di gestione dei processi sono:
@@ -578,67 +586,65 @@ Le attività di gestione dei processi sono:
 
 === Pianificazione
 ==== Descrizione
-Come stabilito dallo standard ISO/IEC 12207:1997, il responsabile ha il compito di predisporre i piani per l'esecuzione di tutte le attività relative alla pianificazione del periodo di carica. Ogni attività dovrà avere associata una descrizione, il personale incaricato di gestire i processi di essa e una scadenza da rispettare.\
-Il responsabile di un determinato sprint redigerà questa pianificazione all'interno del documento Piano di Progetto, che riporterà le attività da svolgere in quel periodo.
+Come stabilito dallo standard ISO/IEC 12207:1997, il responsabile è responsabile della preparazione dei piani per l'esecuzione di tutte le attività relative alla pianificazione del periodo di carica. 
+Ogni attività dovrà avere associata una descrizione, il personale incaricato di gestire i processi di essa e una scadenza da rispettare.\
+Il responsabile di un determinato _sprint_ redigerà questa pianificazione all'interno del documento Piano di Progetto, che riporterà le attività da svolgere in quel periodo.
 
 ==== Scopo
-Gli scopi della pianificazione sono avere un piano reale di quelli che sono gli obiettivi realistici dello sprint, per poi poter eseguire una retrospettiva, e suddividere tutte le attività necessarie per perseguire questi obiettivi nelle risorse del _team_, in modo da garantire ordine e chiarezza nella divisione dei compiti.
+Gli scopi della pianificazione sono avere un piano reale di quelli che sono gli obiettivi realistici dello _sprint_, per poi poter eseguire una retrospettiva, e suddividere tutte le attività necessarie per perseguire questi obiettivi nelle risorse del _team_, in modo da garantire ordine e chiarezza nella divisione dei compiti.
 
 ==== Ruoli
-I ruoli svolti dai membri del gruppo per il progetto sono decisi dal responsabile di progetto. Al termine del progetto ogni componente dovrà aver ricoperto tutti i ruoli, che sono di seguito descritti.
+I ruoli descritti sotto verranno assegnati ad ogni sprint in base alle esigenze della fase del progetto, con una pianificazione in accordo con il documento di Dichiarazione Impegni e Preventivo Costi presentato in fase di candidatura.
 
 *Responsabile*\
-Il responsabile ha il compito fondamentale di coordinare i membri del gruppo e rappresentarlo nelle comunicazine con il proponente e i committenti.\
-I suoi principali compiti sono:
+Il responsabile si occuperà dell’allocazione delle risorse e della pianificazione generale e si assicurerà che il progetto proceda in modo efficiente e soddisfi gli obiettivi nel rispetto delle scadenze. Sarà inoltre la figura incaricata a rappresentare i team nelle varie interazioni con i proponenti e i committenti.
+I suoi compiti sono:
 - Approvare la documentazione;
-- Gestire la pianificazione del progetto come descritta sopra;
-- Coordinare i membri controllando lo stato del _backlog_ e assegnando le attività da portare a termine;
+- Gestire la pianificazione e la retrospettiva dello _sprint_ in cui è incaricato;
 - Studiare e gestire l'analisi dei rischi;
-- Gestire le comunicazioni con l'esterno.
+- Rappresentare il gruppo nelle comunicazioni con l'esterno.
 
 *Amministratore*\
-L'amministratore definisce, controlla e gestisce il sistema in cui lavora il gruppo, con piena responsabilità sull'efficacia ed efficienza del Way of Working.\
-I suoi principali compiti sono:
-- Essendo il vice del responsabile, sostituirlo nel caso di impedimenti;
+L'amministratore garantirà che l’ambiente e l’infrastruttura necessari per lo sviluppo e l’esecuzione del progetto siano robusti, sicuri ed affidabili e che ciascun membro del team sappia come usarli, senza incorrere in alcun tipo di problema.
+I suoi compiti sono:
+- Sostituire il responsabile in caso di emergenze;
 - Migliorare l'ambiente di lavoro automatizzando il più possibile i processi;
-- Gestione e ottimizzazione dei processi;
 - Redigere e mantenere la documentazione;
 - Gestire le infrastrutture e i servizi.
 
 
 *Analista*\
-L'analista è la figura più importante nelle fasi iniziali del progetto, egli infatti è responsabile dell'Analisi dei Requisiti, grazie alla quale si potrà passare alla vera e propria progettazione del _software_.\
+L'analisti definisce quali dovranno essere le funzionalità del software, in accordo con le necessità del cliente, producendo il documento di Analisi dei Requisiti.
 Ha il compito di:
 - Studiare il problema descritto dal proponente e il relativo dominio d'uso;
 - Raccogliere e studiare i bisogni dei committenti;
-- Redigere il documento Analisi dei Requisiti;
-- Studiare i requisiti definendo la loro complessità.
+- Redigere il documento Analisi dei Requisiti studiando tutti i casi d'uso.
 
 *Progettista*\
-Il progettista determina le scelte realizzative del progetto, scegliendo i _design patterns_ più adeguati per soddisfare i requisiti individuati dagli analisti in un'architettura che modelli il problema. Il progettista seguirà lo sviluppo particolarmente, ma non la manutenzione.\
+Il progettista si occuperà del design del software: partendo dai problemi identificati dall'analisi dei requisiti elabora una possibile soluzione, che successivamente dovrà essere implementata dai programmatori, fungendo quindi da "elaborazione intermedia" tra le due parti.
 Ha il compito di:
-- Sviluppare un prodotto economico, facilmente manutenibile a partire dal lavoro dell'analista;
-- Favorire efficienza ed efficacia grazie alle scelte tecniche effettuate;
-- Garantire un basso grado di accoppiamento grazie ad un sistema ben strutturato.
+- Progettare un prodotto economico e manutenibile partendo dal lavoro degli analisti;
+- Garantire che vengano rispettati i principi tecnici dell'ingegneria del software, come un livello di accopppiamento più basso possibile.
 
 *Verificatore*\
-Il verificatore controlla il lavoro svolto dagli altri componenti del gruppo, assicurandosi che le norme vengano attuate correttamente. \
+Il verificatore dovrà garantire che il software mantenga adeguati standard di qualità garantendone, attraverso test e controlli, l'affidabilità e la robustezza.
 Ha il compito di:
-- Verificare la correttezza delle attività tramite gli strumenti e tecniche definiti nelle Norme di Progetto;
-- Verificare la conformità dei prodotti ai requisiti funzionali e di qualità;
+- Verificare la correttezza di contenuto e stilistica dei docuemnti con le regole definite nelle Norme di Progetto;
+- Verificare che il codice prodotto sia privo di _bug_ e in linea con le linee guida dei progettisti;
 
 *Programmatore*\
-Il programmatore è incaricato di produrre il codice necessario a sviluppare il software che risponda ai bisogni dei proponenti indivuati dagli analisti secondo l'architettura e i _design patterns_ proposti dai progettisti.\
+Il programmatore si occuperà di tradurre le specifiche e i requisiti del progetto nel sistema funzionante richiesto dal proponente.
 Ha il compito di:
-- Implementare la Specifica Tecnica scritta dal Progettista;
+- Implementare il prodotto rispetto alle linee guida dei progettisti;
 - Scrivere codice mantenibile, che rispetti le Norme di Progetto;
-- Creare _test_ per la verifica e validazione del codice;
+- Produrre _test_ per la verifica e validazione del codice;
 - Redigere il manuale utente.
 
 ==== Ticketing
-Il gruppo adotta l'*issue Tracking System* (ITS) interno di GitHub. GitHub permette una gestione semplice e chiara dei compiti da svolgere tramite la _project board_ e le _issue_: le _issues_ vengono create molto velocemente e possono essere chiuse automaticamente a lavoro svolto.\
-È compito del responsabile creare le _issues_ ed assegnarle ai vari membri del gruppo, il cui stato di avanzamento è consultabile all'interno della _board_.\
-Le _issue_ sono create dal responsabile e sono composte da:
+Il gruppo adotta l'*issue Tracking System* (ITS) interno di GitHub. GitHub permette una gestione semplice e chiara dei compiti da svolgere tramite la _project board_ e le _issues_ che possono essere chiuse automaticamente a lavoro svolto.\
+Ad ogni riunione di inizio _sprint_, il responsabile crea le _issues_ e le assegna ai vari membri del gruppo.
+Lo stato di avanzamento delle _issues_ è consultabile all'interno della _project board_.\
+Le _issues_ sono create dal responsabile e sono composte da:
 - *Titolo*: identifica in modo univoco il compito da svolgere;
 - *Descrizione*: descrizione chiara dell'attività da svolgere e riferimento al verbale in cui è stata presa tale decisione per avere più informazioni riguardo ad essa;
 - *Assegnatario*: il componente del gruppo incaricato a svolgere l'attività;
@@ -652,48 +658,48 @@ Ogni qualvolta ci sia la necessità di portare a termine un compito è necessari
 + Contestualmente l'assegnatario apre una _pull request_ su GitHub in stato _draft_, per rendere pubblico il suo lavoro ancora prima che sia pronto. Nella descrizione della _pull request_ è importante che scriva la parola chiave "closes `#X`" (dove X è l'id della _issue_) per chiudere la _issue_ una volta che la _pull request_ sarà approvata e verrà effettuato il _merge_ nel ramo principale;
 + Finito il lavoro di produzione, viene modificata la _pull request_ dallo stato _draft_ allo stato _ready for review_ e viene assegnato il verificatore;
 + Il verificatore si controlla il lavoro svolto e:
-  - Se la verifica ha esito *positivo*:
-    + Il verificatore approva su GitHub la _pull request_ e chiede al responsabile di mergiarla nel ramo principale ;
+  - Se la verifica ha esito positivo:
+    + Il verificatore approva su GitHub la _pull request_ e chiede al responsabile di effettuare il _merge_ nel ramo principale ;
     + La _issue_ viene marcata "_done_" su GitHub automaticamente.
-  - Se la verifica ha esito *negativo*:
+  - Se la verifica ha esito negativo:
     + Il verificatore rilascia una lista di cambiamenti suggeriti nella _pull request_;
     + L'incaricato apporta le modifiche suggerite e si torna al punto 4.
 
 === Coordinamento
-Il Coordinamento è l'attività che concerne la gestione delle comunicazioni e degli incontri tra le diverse parti coinvolte nel progetto, ovvero membri del _team_, proponente e committenti. Il coordinamento è fondamentale nell'assicurare l'efficienza del progetto e il coinvolgimento di tutte le parti interessate.\
-Le attività di coordinamento comprendono la gestione della comunicazione interna ed esterna, la conduzione delle riunioni e la definizione di comportamenti comuni per i membri del _team_.
+Il coordinamento è l'attività che riguarda la gestione delle comunicazioni e degli incontri tra i vari membri del _team_, proponenti e committenti del progetto. L'efficienza del progetto e il coinvolgimento di tutte le parti interessate dipendono dal coordinamento.\
+La gestione della comunicazione interna ed esterna, la conduzione delle riunioni e la definizione di comportamenti comuni per i membri del _team_ sono esempi di attività di coordinamento.
 
 ==== Comunicazioni
 ===== Comunicazioni interne
-Le comunicazioni saranno gestite attraverso due canali principali: *Telegram* e *Discord*. Telegram, un servizio di messaggistica istantanea, sarà impiegato per facilitare conversazioni rapide, informali e accessibili tramite dispositivi mobili. Le riunioni a distanza e le discussioni più strutturate saranno invece condotte su Discord.\
+Le comunicazioni saranno gestite usando Telegram e Discord. Telegram, un servizio di messaggistica istantanea, sarà impiegato per conversazioni rapide, informali e accessibili tramite dispositivi mobili. Le riunioni a distanza e le discussioni più strutturate saranno invece condotte su Discord.\
 Al fine di coordinare in modo efficace le attività di gruppo, le discussioni di routine avverranno su Telegram, mentre eventuali questioni critiche saranno affrontate durante incontri straordinari attraverso videochiamate su Discord.\
 
 ===== Comunicazioni esterne
-Il responsabile del progetto sarà incaricato di gestire il dialogo esterno attraverso l'indirizzo email: `sweat.unipd@gmail.com`. Si assicurerà che ogni membro del gruppo sia informato sulle corrispondenze con committenti e proponente, seguendo le norme precedentemente stabilite per le comunicazioni interne.
+Il responsabile del progetto sarà incaricato di gestire il dialogo esterno attraverso l'indirizzo email: `sweat.unipd@gmail.com`.
 Per quanto riguarda il mezzo di comunicazione per i SAL con i proponenti lo strumento utilizzato è Google Meet, che rende le videochiamate accessibili a tutti.
 
 ==== Riunioni
 Al fine di garantire l'efficienza delle riunioni il responsabile corrente avrà il compito di interloquire con i proponenti per riepilogare i punti principali del periodo trascorso e esprimere dubbi e incertezze emerse dal gruppo.
 
-*Riunioni Interne:*\
+===== Riunioni Interne
 Le riunioni interne sono programmate di comune accordo tra i membri del gruppo. In caso di necessità, è possibile richiedere riunioni straordinarie durante la settimana tramite il canale dedicato su Telegram, con data e orario stabiliti attraverso un sondaggio. Tutte le riunioni online si svolgeranno nel canale Discord appositamente designato. Nelle riunini interne l'obiettivo finale è quello di risolvere le mancanze segnalate dall'ordine del giorno, per cui nella fase finale della riunione, il responsabile, dopo aver discusso con il gruppo, pianifica le attività da svolgere e crea rispettivamente le _issue_ come da procedura sopra.
 
-*Compiti del responsabile*
-- Esporre i punti all'ordine del giorno relativamente alla loro priorità;
-- Aggiornare il resto del gruppo in caso di variazioni orarie;
-- Pianificare le attività da svolgere;
-- Assegnare i _task_ ai membri del gruppo.
-
-*Riunioni Esterne:*\
+===== Riunioni Esterne
 Le riunioni esterne coinvolgono i membri del gruppo e il proponente.\
 Per le riunioni con il proponente, viene utilizzata la piattaforma Google Meet, e l'indirizzo viene comunicato al _team_ di volta in volta. In accordo con l'azienda proponente gli incontri di fine sprint avvengono ogni due settimane, in quanto lo sprint dura due settimane, mentre a metà di ogni sprint si svolgerà un incontro di allineamento più breve per un confronto e degli aggiustamenti.
 
+===== Compiti del responsabile
+- Esporre i punti all'ordine del giorno;
+- Fare il punto su quanto fatto e sul rispetto degli obiettivi posti;
+- Pianificare le prossime attività da svolgere;
+- Assegnare i _task_ ai membri del gruppo.
+
 ==== Verbali
-*Verbali Interni*\
+===== Verbali Interni
 Al fine di tracciare le discussioni svolte, le decisioni prese dal gruppo e soprattutto le motivazioni dietro ad esse, al termine di ogni incontro interno al gruppo, viene aperta una _issue_ su Github per la preparazione, la verifica e l'approvazione del verbale. Il compito di redigere il verbale, seguendo il formato indicato nella sezione 3.1 di questo documento, è affidato al responsabile, il quale deve assicurarsi di includere tutte le informazioni rilevanti discusse.
 
-*Verbali Esterni*\
-Come per il caso delle riunioni interne verrà redatto un Verbale con le stesse modalità descritte in precedenza.
+===== Verbali Esterni
+Per quanto riguarda le riunioni con i proponenti, valgono le stesse regole di quelle interne, con il passaggio aggiuntivo, di cui si occupa il responsabile, di far firmare il verbale ai proponenti una volta redatto e approvato.
 
 == Miglioramento
 === Descrizione
@@ -708,20 +714,17 @@ Innanzitutto occorre stabilire una serie di processi organizzativi per l'intero 
 Una volta identificati i potenziali miglioramenti questi vanno effettivamente implementati secondo le corrette a adeguate metodologie. Nella retrospettiva seguente all'applicazione di queste migliorie verrà effettuato un altro _#rifGlossario("feedback")_ a riguardo per progredire ciclicamente.
 
 === Metriche
-La misurazione del miglioramento nello sviluppo del software può coinvolgere diverse metriche che riflettono aspetti chiave del processo stesso. Generalmente andiamo a valutare le seguenti:
-- Velocità di sviluppo;
-- Tasso di errori;
-- Conformità agli standard.
+// TODO: Bisogna capire bene quali sono nostre metriche, aspettando il PdQ
 
 == Formazione
 === Descrizione
-Dato che alla base di un progetto di successo troviamo un personale esperto e qualificato, per fare in modo che tutti i componenti del gruppo siano preparati ed aggiornati nel ricoprire i ruoli di progetto è fondamentale il processo di formazione.\
+Alla base della buona riuscita del progetto ci sono persone adeguatamente formate a mano a mano che il progetto evolve. Per questo diventa fondamentale il processo di formazione.
 Con esso vengono definiti gli standard e le metodologie con i quali ognuno sarà sempre pronto nell'argomento adeguato nel momento opportuno.
 
 === Descrizione
-Per poter formare i membri del gruppo è necessario innanzitutto comprendere a pieno il dominio del problema. Occorre quindi capire quali sono i temi da approfondire ed identificare nei vari processi da svolgere quali nozioni è necessario apprendere. \
-Fatto ciò si deve passare all'individuazione del materiale di formazione, il quale crescerà nel tempo, dato che man mano che il progetto avanza anche il nostro grado di conoscenza e comprensione del problema dovrà aumentare il più possibile.\
-Infine, una volta capito cosa e da dove studiare, è necessario che ognuno dei componenti del gruppo vada ad aggiornarsi individualmente oppure, quando possibile, tramite supporto di altri membri più esperti.
+Per iniziare a formare i membri del gruppo, è necessario prima comprendere completamente il dominio del problema. Quindi, è necessario comprendere quali argomenti sono necessari per essere approfonditi e quali abilità sono necessarie per i vari processi. \
+Si deve quindi passare all'individuazione del materiale di formazione, che aumenterà nel tempo poiché il nostro livello di conoscenza e comprensione del problema dovrà aumentare man mano che il progetto avanza.\
+Infine, tutti i membri del gruppo devono imparare da dove e cosa studiare, e devono anche aggiornarsi individualmente, se possibile, con l'aiuto di altri membri più esperti.
 
 === Strumenti
 Al fine di agevolare il processo di formazione, ogni membro del gruppo incaricato in un determinato sprint di approfondire un determinato argomento dovrà essere in grado di tramandare la propria conoscenza agli altri. 
