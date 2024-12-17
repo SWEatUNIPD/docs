@@ -51,15 +51,15 @@ Il gruppo ha deciso di organizzare un incontro con il prof. Cardin per discutere
 == Stesura di nuovi casi d'uso
 Continua la necessità di procedere con l'analisi dei requisiti. Nel prossimo _sprint_, in particolare, si prevede di soffermarsi principalmente sui casi d'uso aventi come attore principale l'amministratore del servizio di noleggio. Questa attività avrà una priorità più alta in termini di tempistiche, con l'obiettivo di arrivare al colloquio con il prof. Cardin sopracitato collezionando più dubbi possibili.
 
-== Affinamento dashboard di Grafana
-Per la fine del prossimo _sprint_ si prevede di avere una versione più affinata della dashboard, frutto anche di uno studio più approfondito di #rifGlossario("Grafana").
+== Affinamento _dashboard_ di Grafana
+Per la fine del prossimo _sprint_ si prevede di avere una versione più affinata della _dashboard_, frutto anche di uno studio più approfondito di #rifGlossario("Grafana").
 
 = Conclusioni
 Il gruppo si è diviso le attività da svolgere nel prossimo _sprint_ e si è accordato su come procedere. In particolare, si è deciso di dare priorità alla stesura dei casi d'uso e di organizzare un incontro con il prof. Cardin per chiarire i dubbi emersi durante la loro stesura.
 
 Lo studio delle tecnologie invece prosegue con l'analisi di una possibile soluzione _custom_ per il _data stream processing_ che sfrutti Spring, nell'ottica di valutare possibili alternative ad Apache Nifi.
 
-La ricerca di uno strumento per il diagramma di Gantt è lasciata in sospeso, mentre lo sviluppo della dashboard in Grafana proseguirà incrementalmente in vista del #rifGlossario("PoC").
+La ricerca di uno strumento per il diagramma di Gantt è lasciata in sospeso, mentre lo sviluppo della _dashboard_ in Grafana proseguirà incrementalmente in vista del #rifGlossario("PoC").
 
 = Tabella delle decisioni
 #backlog(content: (
@@ -69,7 +69,7 @@ La ricerca di uno strumento per il diagramma di Gantt è lasciata in sospeso, me
 
   [ORG],
   [Riccardo Milan],
-  [Affinamento della dashboard in Grafana],
+  [Affinamento della _dashboard_ in Grafana],
 
   link("https://github.com/SWEatUNIPD/docs/issues/68")[#text(underline("D0068"))],
   [Davide Picello],
