@@ -4,9 +4,9 @@
   data: "11 novembre 2024",
   uso: "Interno",
   responsabile: "Davide Martinelli",
-  redattori: ("Davide Picello", "Davide Marin", "Andrea Perozzo", "Andrea Precoma", "Riccardo Milan", "Klaudio Merja"),
+  redattori: ("Andrea Perozzo", "Andrea Precoma", "Davide Marin", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
   titolo: "Glossario",
-  verificatori: ("Andrea Perozzo", "Andrea Precoma", "Davide Picello", "Riccardo Milan", "Davide Marin"),
+  verificatori: ("Andrea Perozzo", "Andrea Precoma", "Davide Marin", "Davide Picello", "Riccardo Milan"),
   versioni: (
     "0.11.0",
     "12/12/2024",
