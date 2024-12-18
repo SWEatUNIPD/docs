@@ -292,11 +292,17 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 === UC12 - Visualizzazione singolo annuncio nello storico <uc12>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: l'amministratore è autenticato al sistema ed è acceduto alla sezione dedicata agli annunci.
-- *Postcondizioni*: l'amministratore visualizza le informazioni principali relative al singolo annuncio: nome del punto di interesse collegato, _e-mail_ dell'utente destinatario, data e ora di emissione.
+- *Postcondizioni*: l'amministratore visualizza le informazioni principali relative al singolo annuncio:
+  - Nome del punto di interesse collegato.
+  - _E-mail_ dell'utente destinatario.
+  - Data e ora di emissione.
 - *Trigger*: l'amministratore desidera visualizzare le informazioni principali di un annuncio.
 - *Scenario principale*:
   + L'amministratore accede alla sezione apposita degli annunci.
-  + Vengono esposte le informazioni relative al nome del punto di interesse collegato all'annuncio, l'_e-mail_ dell'utente destinatario, la data e l'ora di emissione.
+  + Vengono esposte le informazioni relative all'annuncio:
+    - Nome del punto di interesse collegato.
+    - _E-mail_ dell'utente destinatario.
+    - Data e ora di erogazione.
 - *Inclusioni*:
   + Visualizzazione nome del punto di interesse collegato all'annuncio (#link(<uc14>)[UC14]).
   + Visualizzazione _e-mail_ dell'utente destinatario dell'annuncio (#link(<uc15>)[UC15]).
@@ -305,23 +311,32 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 === UC13 - Visualizzazione dettagli singolo annuncio nello storico
 - *Attore principale*: Amministratore.
 - *Precondizioni*: l'amministratore è autenticato al sistema ed è acceduto alla sezione dedicata agli annunci.
-- *Postcondizioni*: l'amministratore visualizza l'annuncio selezionato con le relative informazioni.
+- *Postcondizioni*: l'amministratore visualizza l'annuncio selezionato insieme alle relative informazioni:
+  - Nome del punto di interesse collegato.
+  - Categoria del punto di interesse collegato.
+  - _E-mail_ dell'utente destinatario.
+  - Data e ora di erogazione.
 - *Trigger*: l'amministratore desidera visualizzare l'annuncio insieme alle relative informazioni.
 - *Scenario principale*:
   + L'amministratore accede alla sezione apposita degli annunci.
   + L'amministratore seleziona l'opzione "dettagli" dell'annuncio desiderato.
-  + Viene esposto l'annuncio insieme alle relative informazioni: nome del punto di interesse collegato, _e-mail_ dell'utente destinatario, data e ora di erogazione.
+  + Viene esposto l'annuncio insieme alle relative informazioni:
+    - Nome del punto di interesse collegato.
+    - Categoria del punto di interesse collegato.
+    - _E-mail_ dell'utente destinatario.
+    - Data e ora di erogazione.
 - *Inclusioni*:
   + Visualizzazione nome del punto di interesse collegato all'annuncio (#link(<uc14>)[UC14]).
   + Visualizzazione _e-mail_ dell'utente destinatario dell'annuncio (#link(<uc15>)[UC15]).
   + Visualizzazione data e ora di emissione dell'annuncio (#link(<uc16>)[UC16]).
-  + Visualizzazione annuncio nei dettagli dello stesso nello storico (#link(<uc17>)[UC17]).
+  + Visualizzazione completa dell'annuncio (#link(<uc17>)[UC17]).
+  + Visualizzazione categoria del punto di interesse collegato all'annuncio (#link(<uc25>)[UC25]).
 
 === UC14 - Visualizzazione nome del punto di interesse collegato all'annuncio <uc14>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: l'amministratore visualizza le informazioni principali di un annuncio nello storico o ha selezionato i dettagli dell'annuncio.
 - *Postcondizioni*: l'amministratore visualizza il nome del punto di interesse collegato all'annuncio selezionato.
-- *Trigger*: l'amministratore desidera visualizzare il nome del punto di interesse colelgato all'annuncio.
+- *Trigger*: l'amministratore desidera visualizzare il nome del punto di interesse collegato all'annuncio.
 - *Scenario principale*:
   + L'amministratore accede alla sezione apposita degli annunci.
   + Viene esposto il nome del punto di interesse collegato all'annuncio tra le informazioni principali del singolo annuncio.
@@ -334,8 +349,8 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Trigger*: l'amministratore desidera visualizzare l'_e-mail_ dell'untente destinatario dell'annuncio.
 - *Scenario principale*:
   + L'amministratore accede alla sezione apposita degli annunci.
-  + Viene esposto l'_e-mail_ dell'untente destinatario dell'annuncio tra le informazioni principali del singolo annuncio.
-  + Viene esposto l'_e-mail_ dell'untente destinatario dell'annuncio tra i dettagli dell'annuncio.
+  + Viene esposta l'_e-mail_ dell'untente destinatario dell'annuncio tra le informazioni principali del singolo annuncio.
+  + Viene esposta l'_e-mail_ dell'untente destinatario dell'annuncio tra i dettagli dell'annuncio.
 
 === UC16 - Visualizzazione data e ora di emissione dell'annuncio <uc16>
 - *Attore principale*: Amministratore.
@@ -344,10 +359,10 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Trigger*: l'amministratore desidera visualizzare la data e l'ora di erogazione dell'annuncio.
 - *Scenario principale*:
   + L'amministratore accede alla sezione apposita degli annunci.
-  + Viene esposto la data e l'ora di emissione dell'annuncio tra le informazioni principali del singolo annuncio.
-  + Viene esposto la data e l'ora di erogazione dell'annuncio tra i dettagli dell'annuncio.
+  + Viene esposta la data e l'ora di emissione dell'annuncio tra le informazioni principali del singolo annuncio.
+  + Viene esposta la data e l'ora di erogazione dell'annuncio tra i dettagli dell'annuncio.
 
-=== UC17 - Visualizzazione annuncio nei dettagli dello stesso nello storico <uc17>
+=== UC17 - Visualizzazione completa dell'annuncio <uc17>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: l'amministratore ha selezionato i dettagli dell'annuncio nello storico.
 - *Postcondizioni*: l'amministratore visualizza l'annuncio per intero.
@@ -355,10 +370,19 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   + L'amministratore seleziona l'opzione "dettagli" dell'annuncio desiderato.
   + L'amministratore visualizza l'annuncio per intero.
+
+=== UC25 - Visualizzazione categoria del punto di interesse collegato all'annuncio <uc25>
+- *Attore principale*: Amministratore.
+- *Precondizioni*: l'amministratore ha selezionato i dettagli dell'annuncio nello storico.
+- *Postcondizioni*: l'amministratore visualizza la categoria del punto di interesse collegato all'annuncio selezionato.
+- *Trigger*: l'amministratore desidera visualizzare la categoria del punto di interesse collegato all'annuncio.
+- *Scenario principale*:
+  + L'amministratore accede alla sezione apposita degli annunci.
+  + Viene esposta la categoria del punto di interesse collegato all'annuncio tra i dettagli dell'annuncio.
 #v(20pt)
 #figure(
   image("../assets/use_cases/annuncio.png"),
-  caption: [Diagramma dei casi d'uso UC11, UC12, UC13, UC14, UC15, UC16 e UC17],
+  caption: [Diagramma dei casi d'uso UC11, UC12, UC13, UC14, UC15, UC16, UC17 e UC25],
 )
 
 #pagebreak()
@@ -448,6 +472,94 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 )
 
 #pagebreak()
+
+// TODO: OPZIONALI
+
+=== UC26 - Visualizzazione statistiche in grafici
+- *Attore principale*: Amministratore.
+- *Precondizioni*: l'amministratore è autenticato al sistema.
+- *Postcondizioni*: l'amministratore visualizza i grafici relativi alle seguenti analisi:
+  - Rapporto degli annnunci generati sulle richieste totali
+  - Quantità di annunci generati per ogni punto di interesse in un intervallo di date selezionato.
+  - Quantità di annunci generati legati a un punto di interesse in una data e fascia oraria selezionati.
+- *Trigger*: l'amministratore desidera prendere visione dell'andamento di alcuni parametri in formato grafico.
+- *Scenario principale*:
+  + L'amministratore accede alla _dashboard_ principale.
+  + L'amministratore accede alla sezione apposita dei grafici.
+  + Vengono visualizzati i grafici relativi alle seguenti analisi:
+    - Rapporto degli annnunci generati sulle richieste totali
+    - Quantità di annunci generati per ogni punto di interesse in un intervallo di date selezionato.
+    - Quantità di annunci generati legati a un punto di interesse in una data e fascia oraria selezionati.
+- *Inclusioni*:
+  + Visualizzazione singolo grafico (#link(<uc27>)[UC27]).
+
+=== UC27 - Visualizzazione singolo grafico <uc27>
+- *Attore principale*: Amministratore.
+- *Precondizioni*: l'amministratore è autenticato al sistema ed è acceduto alla sezione dedicata ai grafici.
+- *Postcondizioni*: l'amministratore visualizza il grafico con le relative informazioni:
+  - Titolo del grafico.
+  - Etichetta dell'asse delle ascisse.
+  - Etichetta dell'asse delle ordinate.
+  - Etichette dei valori sugli assi.
+  - Dati del grafico.
+- *Trigger*: l'amministratore desidera prendere visione del grafico che espone l'andamento di uno specifico parametro.
+- *Scenario principale*:
+  + L'amministratore accede alla sezione apposita dei grafici.
+  + Viene visualizzato il grafico con le relative informazioni:
+    - Titolo del grafico.
+    - Etichetta dell'asse delle ascisse.
+    - Etichetta dell'asse delle ordinate.
+    - Etichette dei valori sugli assi.
+    - Dati del grafico.
+  // TODO: AGGIORNATO IN AUTOMATICO ALL'ARRIVO DI NUOVI DATI?
+- *Inclusioni*:
+  + Visualizzazione titolo del grafico (#link(<uc28>)[UC28]).
+  + Visualizzazione etichetta asse delle ascisse e relativi valori (#link(<uc29>)[UC29]).
+  + Visualizzazione etichetta asse delle ordinate e relativi valori (#link(<uc30>)[UC30]).
+  + Visualizzazione dati sul grafico (#link(<uc31>)[UC31]).
+
+=== UC28 - Visualizzazione titolo del grafico <uc28>
+- *Attore principale*: Amministratore.
+- *Precondizioni*: l'amministratore è autenticato al sistema ed è acceduto alla sezione dedicata ai grafici.
+- *Postcondizioni*: l'amministratore visualizza il titolo del relativo grafico.
+- *Trigger*: l'amministratore desidera prendere visione del titolo del grafico.
+- *Scenario principale*:
+  + L'amministratore accede alla sezione apposita dei grafici.
+  + Viene esposto il titolo del relativo grafico.
+
+=== UC29 - Visualizzazione etichetta asse delle ascisse e relativi valori <uc29>
+- *Attore principale*: Amministratore.
+- *Precondizioni*: l'amministratore è autenticato al sistema ed è acceduto alla sezione dedicata ai grafici.
+- *Postcondizioni*: l'amministratore visualizza le etichette dell'asse delle ascisse e dei valori dell'asse del relativo grafico.
+- *Trigger*: l'amministratore desidera prendere visione delle etichette dell'asse delle ascisse e dei rispettivi valori.
+- *Scenario principale*:
+  + L'amministratore accede alla sezione apposita dei grafici.
+  + Viene esposta l'etichetta dell'asse delle ascisse del relativo grafico.
+  + Vengono esposte le etichette dei valori segnati sull'asse delle ascisse del relativo grafico.
+
+=== UC30 - Visualizzazione etichetta asse delle ordinate e relativi valori <uc30>
+- *Attore principale*: Amministratore.
+- *Precondizioni*: l'amministratore è autenticato al sistema ed è acceduto alla sezione dedicata ai grafici.
+- *Postcondizioni*: l'amministratore visualizza le etichette dell'asse delle ordiante e dei valori dell'asse del relativo grafico.
+- *Trigger*: l'amministratore desidera prendere visione delle etichette dell'asse delle ordinate e dei rispettivi valori.
+- *Scenario principale*:
+  + L'amministratore accede alla sezione apposita dei grafici.
+  + Viene esposta l'etichetta dell'asse delle ordinate del relativo grafico.
+  + Vengono esposte le etichette dei valori segnati sull'asse delle ordinate del relativo grafico.
+
+=== UC31 - Visualizzazione dati sul grafico <uc31>
+- *Attore principale*: Amministratore.
+- *Precondizioni*: l'amministratore è autenticato al sistema ed è acceduto alla sezione dedicata ai grafici.
+- *Postcondizioni*: l'amministratore visualizza i dati sul relativo grafico. Viene mostrato il valore esatto di un dato immediatamente vicino al punto nel grafico.
+- *Trigger*: l'amministratore desidera prendere visione dei dati del parametro in esame sul grafico.
+- *Scenario principale*:
+  + L'amministratore accede alla sezione apposita dei grafici.
+  + Vengono disposti i dati sul grafico con i relativi valori.
+#v(20pt)
+#figure(
+  image("../assets/use_cases/grafici.png"),
+  caption: [Diagramma dei casi d'uso UC25, UC26, UC27, UC28, UC29 e UC30],
+)
 
 
 
