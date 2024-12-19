@@ -5,7 +5,7 @@
   destinatari: ("Gruppo SWE@", "Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "Sync Lab S.r.L."),
   responsabile: "-",
   redattori: ("Andrea Perozzo", "Andrea Precoma","Davide Marin", "Davide Martinelli", "Klaudio Merja", "Riccardo Milan"),
-  verificatori: ("Andrea Precoma", "Davide Picello", "Davide Marin", "Klaudio Merja", "Riccardo Milan"),
+  verificatori: ("Andrea Precoma", "Davide Marin", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
   titolo: "Analisi dei Requisiti",
   uso: "Esterno",
   versioni: (
