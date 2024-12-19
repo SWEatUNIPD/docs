@@ -736,5 +736,5 @@ Infine, tutti i membri del gruppo devono imparare da dove e cosa studiare, e dev
 
 === Strumenti
 Al fine di agevolare il processo di formazione, ogni membro del gruppo incaricato in un determinato _sprint_ di approfondire un determinato argomento dovrà essere in grado di tramandare la propria conoscenza agli altri. 
-Per aiutarci nel processo di apprendimento l'azienda Sync Lab ci fornisce, duranete lo svolgimento del progetto, meteriali quali video e risorse utili alle tecnologie di dominio d'uso del nostro capitolato, nonché delle sedute di _#rifGlossario("Deep dive")_ concordate a calendario.
+Per aiutarci nel processo di apprendimento l'azienda Sync Lab ci fornisce, duranete lo svolgimento del progetto, meteriali quali video e risorse utili alle tecnologie di dominio d'uso del nostro capitolato, nonché delle sedute di _deep dive_ concordate a calendario.
 
