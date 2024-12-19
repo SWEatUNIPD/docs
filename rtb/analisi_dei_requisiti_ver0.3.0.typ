@@ -83,7 +83,7 @@ sottolineato e seguito dalla lettera g posta ad apice (e.g. #rifGlossario("termi
 
 = Descrizione del prodotto
 == Obiettivi del prodotto
-Il prodotto ha come obiettivo quello di fornire un servizio di pubblicità personalizzata, accessibile agli utenti di un mezzo a noleggio, che sfrutta la GenAI e i dati di profilazione degli utenti come prompt della GenAI stessa per la creazione di pubblicità mirate sui singoli utenti. Il gestore del servizio di noleggio avrà accesso ad una _dashboard_ che gli permetterà di monitorare in tempo reale la posizione degli utenti e gli annunci generati.
+Il prodotto ha come obiettivo quello di fornire un servizio di pubblicità personalizzata, accessibile agli utenti di un mezzo a noleggio, che sfrutta la GenAI e i dati di profilazione degli utenti come #rifGlossario("prompt") della GenAI stessa per la creazione di pubblicità mirate sui singoli utenti. Il gestore del servizio di noleggio avrà accesso ad una _dashboard_ che gli permetterà di monitorare in tempo reale la posizione degli utenti e gli annunci generati.
 Per fare ciò l'azienda proponente chiede di simulare lo spostamento degli utenti lungo un percorso, in modo da poter testare il funzionamento del sistema.
 I dati riguardanti gli annunci pubblicitari visualizzati dagli utenti devono essere memorizzati in un _#rifGlossario("database")_ (storicizzazione) in modo da poter essere consultati successivamente dalla _dashboard_.
 
@@ -184,7 +184,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Attore principale*: LLM.
 - *Precondizioni*: la LLM deve aver ricevuto dal sistema il _prompt_ di generazione dell'annuncio, come la profilazione dell'utente e il punto di interesse per cui si vuole generare l'annuncio.
 - *Postcondizioni*: il sistema riceve l'annuncio pubblicitario generato dalla LLM.
-- *Trigger*: il sistema ha fatto una richiesta di generazione tramite le API della LLM.
+- *Trigger*: il sistema ha fatto una richiesta di generazione tramite le #rifGlossario("API") della LLM.
 - *Scenario principale*:
   1. La LLM riceve la richiesta da parte del sistema
   2. La LLM genera l'annuncio pubblicitario basandosi sui dati ricevuti come _prompt_.
@@ -267,8 +267,82 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 //TODO: valutare se raffinare i casi d'uso con dei sottocasi
 
+#pagebreak()
 
+=== UC11 - Visualizzazione dettagli di un annuncio generato
+- *Attore Principale*: Amministratore.
+- *Precondizioni*: l'amministratore è autenticato e ha accesso alla _dashboard_ del sistema.
+- *Postcondizioni*: l'amministratore riceve un messaggio relativo ad un annuncio generato.
+- *Trigger*: il sistema genera e invia all'utente un annuncio personalizzato relativo al punto di interesse in cui si trova.
+- *Scenario principale*: 
+  + Un utente si avvicina a un punto di interesse e il sistema genera un annuncio personalizzato che viene inviato all'utente.
+  + Nello stesso istante, nella _dashboard_, compare un messaggio _pop-up_ visibile all'amministratore, con i seguenti dettagli:
+    - Utente destinatario.
+    - Punto di interesse associato.
+    - Data e ora di generazione dell'annuncio.
+- *Inclusioni*: 
+  + Scomparsa automatica del messaggio di un annuncio generato (#link(<uc12>)[UC12]).
+  + Chiusura del messaggio di un annuncio generato (#link(<uc13>)[UC13]).
+  + Apertura dello storico dall'annuncio generato (#link(<uc14>)[UC14]).
+- *Estensioni*:
+  + Visualizzazione dettagli di una mancata generazione (#link(<uc15>)[UC15]).
 
+=== UC12 - Scomparsa automatica del messaggio di un annuncio generato <uc12>
+- *Attore Principale*: Amministratore.
+- *Precondizioni*: l'amministratore è autenticato, ha accesso alla _dashboard_ del sistema e ha ricevuto un messaggio di annuncio generato.
+- *Postcondizioni*: La notifica scompare automaticamente dopo un tempo prestabilito.
+- *Trigger*: l'amministratore non interagisce con il messaggio.
+- *Scenario principale*: 
+  + L'amministratore riceve sulla _dashboard_ il messaggio relativo a un annuncio generato.
+  + Il messaggio resta visibile per un tempo predefinito, al termine del quale scomparirà automaticamente.
+
+=== UC13 - Chiusura del messaggio di un annuncio generato <uc13>
+- *Attore Principale*: Amministratore.
+- *Precondizioni*: l'amministratore è autenticato, ha accesso alla _dashboard_ del sistema e ha ricevuto un messaggio di annuncio generato.
+- *Postcondizioni*: l'amministratore chiude il messaggio confermando di aver preso visione.
+- *Trigger*: l'amministratore vuole chiudere il messaggio di annuncio generato.
+- *Scenario principale*: 
+  + L'amministratore riceve sulla _dashboard_ il messaggio relativo a un annuncio generato.
+  + L'amministratore preme sul pulsante "Presa visione" per chiudere il _pop-up_ e farla scomparire dalla _dashboard_.
+
+=== UC14 - Apertura dello storico dall'annuncio generato <uc14>
+- *Attore Principale*: Amministratore.
+- *Precondizioni*: l'amministratore è autenticato, ha accesso alla _dashboard_ del sistema e ha ricevuto un messaggio di annuncio generato.
+- *Postcondizioni*: l'amministratore visualizza lo storico degli annunci.
+- *Trigger*: l'amministratore vuole visualizzare lo storico degli annunci.
+- *Scenario principale*: 
+  + L'amministratore riceve sulla _dashboard_ il messaggio relativo a un annuncio generato.
+  + L'amministratore preme sul pulsante "Vedi annuncio" che mostrerà lo storico degli annunci ordinati dal più recente.
+
+=== UC15 - Visualizzazione dettagli di una mancata generazione <uc15>
+- *Attore Principale*: Amministratore.
+- *Precondizioni*: l'amministratore è autenticato e ha accesso alla _dashboard_ del sistema.
+- *Postcondizioni*: l'amministratore riceve un messaggio relativo ad una generazione fallita.
+- *Trigger*: la _dashboard_ notifica all'amministratore che un annuncio non è stato generato per mancanza di interesse da parte dell'utente.
+- *Scenario principale*: 
+  + L'amministratore ha effettuato l'accesso alla _dashboard_.
+  + La _dashboard_ mostra un messaggio relativo a una mancata generazione di annuncio in quanto l'utente vicino ad un determinato punto di interesse è stato valutato come disinteressato.
+- *Inclusioni*:
+  + Scomparsa automatica del messaggio di mancata generazione (#link(<uc16>)[UC16]).
+  + Chiusura del messaggio di mancata generazione (#link(<uc17>)[UC17])
+
+=== UC16 - Scomparsa automatica del messaggio di mancata generazione <uc16> 
+- *Attore Principale*: Amministratore.
+- *Precondizioni*: l'amministratore è autenticato, ha accesso alla _dashboard_ del sistema e ha ricevuto un messaggio di mancata generazione.
+- *Postcondizioni*: la notifica scompare automaticamente dopo un tempo prestabilito.
+- *Trigger*: l'amministratore non interagisce con il messaggio.
+- *Scenario principale*: 
+  + L'amministratore riceve sulla _dashboard_ un messaggio di mancata generazione.
+  + Il messaggio resta visibile per un tempo predefinito, al termine del quale scomparirà automaticamente.
+
+=== UC17 - Chiusura del messaggio di mancata generazione <uc17> 
+- *Attore Principale*: Amministratore.
+- *Precondizioni*: l'amministratore è autenticato, ha accesso alla _dashboard_ del sistema e ha ricevuto un messaggio di mancata generazione.
+- *Postcondizioni*: l'amministratore chiude il messaggio confermando di aver preso visione.
+- *Trigger*: l'amministratore vuole chiudere la notifica.
+- *Scenario principale*: 
+  + L'amministratore riceve sulla _dashboard_ un messaggio di mancata generazione.
+  + L'amministratore preme sul pulsante "Presa visione" per chiudere il _pop-up_ e farla scomparire dalla _dashboard_.
 
 /**
  * ========
