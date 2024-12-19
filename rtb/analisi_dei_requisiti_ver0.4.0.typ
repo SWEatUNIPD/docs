@@ -589,7 +589,10 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   caption: [Diagramma dei casi d'uso UC25, UC26, UC27, UC28, UC29, UC30 e UC31],
 )
 
-//casi d'uso messaggi pop-up
+
+// UC PERRUZ
+
+
 #pagebreak()
 === UC34 - Visualizzazione dettagli di un annuncio generato
 - *Attore Principale*: Amministratore.
@@ -634,7 +637,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore riceve sulla _dashboard_ il messaggio relativo a un annuncio generato.
   + L'amministratore preme sul pulsante "Vedi annuncio" che mostrerà lo storico degli annunci ordinati dal più recente.
 - *Inclusioni*:
-  + Visualizzazione storico degli annunci (#link(<uc11>)[UC11]). 
+  + Visualizzazione storico degli annunci (#link(<uc11>)[UC11]).
 
 #pagebreak()
 === UC38 - Visualizzazione dettagli di una mancata generazione
