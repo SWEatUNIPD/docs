@@ -716,7 +716,7 @@ Secondo lo _standard_ ISO/IEC 12207:1995, il processo di miglioramento nel ciclo
 - Miglioramento: implementare le modifiche necessarie per migliorare i processi di sviluppo del _software_.
 
 ==== Analisi dei processi
-Innanzitutto occorre stabilire una serie di processi organizzativi per l'intero ciclo di vita del _software_ applicabili alle varie attività di progetto. Quest'ultimi devono essere documentati, come viene fatto proprio qui, e va implementato un meccanismo di controllo per sviluppare, monitorare e migliorare i processi stessi. Per garantire efficacia e continuo miglioramento dei processi alla fine di ogni _sprint_ il responsabile redarrà una retrospettiva del lavoro svolto dal gruppo nel documento Piano di Progetto.
+Innanzitutto occorre stabilire una serie di processi organizzativi per l'intero ciclo di vita del _software_ applicabili alle varie attività di progetto. Quest'ultimi devono essere documentati, come viene fatto proprio qui, e va implementato un meccanismo di controllo per sviluppare, monitorare e migliorare i processi stessi. Per garantire efficacia e continuo miglioramento dei processi alla fine di ogni _sprint_ il gruppo effettuerà una retrospettiva del lavoro svolto nel periodo trascorso, che verrà verbalizzata dal responsabile nel documento Piano di Progetto.
 
 ==== Miglioramento dei processi
 Una volta identificati i potenziali miglioramenti questi vanno effettivamente implementati secondo le corrette a adeguate metodologie. Nella retrospettiva seguente all'applicazione di queste migliorie verrà effettuato un altro _#rifGlossario("feedback")_ a riguardo per progredire ciclicamente.
