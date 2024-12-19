@@ -296,6 +296,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   - Nome del punto di interesse collegato.
   - _E-mail_ dell'utente destinatario.
   - Data e ora di emissione.
+  - Un _flag_ che indica se il noleggio al quale è stato inviato l'annuncio è ancora attivo.
 - *Trigger*: l'amministratore desidera visualizzare le informazioni principali di un annuncio.
 - *Scenario principale*:
   + L'amministratore accede alla sezione apposita degli annunci.
@@ -303,19 +304,22 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
     - Nome del punto di interesse collegato.
     - _E-mail_ dell'utente destinatario.
     - Data e ora di erogazione.
+    - Un _flag_ che indica se il noleggio al quale è stato inviato l'annuncio è ancora attivo.
 - *Inclusioni*:
   + Visualizzazione nome del punto di interesse collegato all'annuncio (#link(<uc14>)[UC14]).
   + Visualizzazione _e-mail_ dell'utente destinatario dell'annuncio (#link(<uc15>)[UC15]).
   + Visualizzazione data e ora di emissione dell'annuncio (#link(<uc16>)[UC16]).
+  + Visualizzazione _flag_ sugli annunci nello storico inviati a noleggi attivi (#link(<uc32>)[UC32]).
 
 === UC13 - Visualizzazione dettagli singolo annuncio nello storico
 - *Attore principale*: Amministratore.
 - *Precondizioni*: l'amministratore è autenticato al sistema ed è acceduto alla sezione dedicata agli annunci.
-- *Postcondizioni*: l'amministratore visualizza l'annuncio selezionato insieme alle relative informazioni:
+- *Postcondizioni*: l'amministratore visualizza interamente l'annuncio selezionato insieme alle relative informazioni:
   - Nome del punto di interesse collegato.
   - Categoria del punto di interesse collegato.
   - _E-mail_ dell'utente destinatario.
   - Data e ora di erogazione.
+  - Un _flag_ che indica se il noleggio al quale è stato inviato l'annuncio è ancora attivo.
 - *Trigger*: l'amministratore desidera visualizzare l'annuncio insieme alle relative informazioni.
 - *Scenario principale*:
   + L'amministratore accede alla sezione apposita degli annunci.
@@ -325,12 +329,15 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
     - Categoria del punto di interesse collegato.
     - _E-mail_ dell'utente destinatario.
     - Data e ora di erogazione.
+    - Un _flag_ che indica se il noleggio al quale è stato inviato l'annuncio è ancora attivo.
 - *Inclusioni*:
   + Visualizzazione nome del punto di interesse collegato all'annuncio (#link(<uc14>)[UC14]).
   + Visualizzazione _e-mail_ dell'utente destinatario dell'annuncio (#link(<uc15>)[UC15]).
   + Visualizzazione data e ora di emissione dell'annuncio (#link(<uc16>)[UC16]).
   + Visualizzazione completa dell'annuncio (#link(<uc17>)[UC17]).
   + Visualizzazione categoria del punto di interesse collegato all'annuncio (#link(<uc25>)[UC25]).
+  + Visualizzazione _flag_ sugli annunci nello storico inviati a noleggi attivi (#link(<uc32>)[UC32]).
+  + Chiusura della finestra corrente (#link(<uc33>)[UC33]).
 
 === UC14 - Visualizzazione nome del punto di interesse collegato all'annuncio <uc14>
 - *Attore principale*: Amministratore.
@@ -362,6 +369,17 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + Viene esposta la data e l'ora di emissione dell'annuncio tra le informazioni principali del singolo annuncio.
   + Viene esposta la data e l'ora di erogazione dell'annuncio tra i dettagli dell'annuncio.
 
+=== UC32 - Visualizzazione _flag_ sugli annunci nello storico inviati a noleggi attivi
+<uc32>
+- *Attore principale*: Amministratore.
+- *Precondizioni*: l'amministratore visualizza le informazioni principali di un annuncio nello storico o ha selezionato i dettagli dell'annuncio.
+- *Postcondizioni*: l'amministratore visualizza un _flag_ che indica se l'annuncio selezionato è stato emesso verso un mezzo con noleggio ancora attivo.
+- *Trigger*: l'amministratore desidera visualizzare se l'annuncio è stato inviato ad un mezzo con noleggio attivo.
+- *Scenario principale*:
+  + L'amministratore accede alla sezione apposita degli annunci.
+  + Viene esposto un _flag_ tra le informazioni principali del singolo annuncio che indica se il noleggio è attivo in quel momento.
+  + Viene espost un _flag_ tra i dettagli dell'annuncio che indica se il noleggio è attivo in quel momento.
+
 === UC17 - Visualizzazione completa dell'annuncio <uc17>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: l'amministratore ha selezionato i dettagli dell'annuncio nello storico.
@@ -379,10 +397,20 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   + L'amministratore accede alla sezione apposita degli annunci.
   + Viene esposta la categoria del punto di interesse collegato all'annuncio tra i dettagli dell'annuncio.
+
+=== UC33 - Chiusura della finestra di dialogo aperta <uc33>
+- *Attore principale*: Amministratore.
+- *Precondizioni*: l'amministratore visualizza una finestra di dialogo aperta.
+- *Postcondizioni*: l'amministratore chiude la finestra di dialogo aperta.
+- *Trigger*: l'amministratore desidera chiudere la finestra di dialogo aperta.
+- *Scenario principale*:
+  + L'amministratore visualizza una finestra di dialogo aperta.
+  + L'amministratore chiude la finestra di dialogo aperta.
+
 #v(20pt)
 #figure(
   image("../assets/use_cases/annuncio.png"),
-  caption: [Diagramma dei casi d'uso UC11, UC12, UC13, UC14, UC15, UC16, UC17 e UC25],
+  caption: [Diagramma dei casi d'uso UC11, UC12, UC13, UC14, UC15, UC16, UC17, UC25, UC32 e UC33],
 )
 
 #pagebreak()
@@ -558,7 +586,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 #v(20pt)
 #figure(
   image("../assets/use_cases/grafici.png"),
-  caption: [Diagramma dei casi d'uso UC25, UC26, UC27, UC28, UC29 e UC30],
+  caption: [Diagramma dei casi d'uso UC25, UC26, UC27, UC28, UC29, UC30 e UC31],
 )
 
 
