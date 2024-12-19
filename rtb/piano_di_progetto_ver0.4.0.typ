@@ -9,6 +9,12 @@
   titolo: "Piano di Progetto",
   uso: "Esterno",
   versioni: (
+    "0.4.0",
+    "17/12/2024",
+    "Davide Martinelli",
+    "Klaudio Merja\nDavide Marin",
+    [- Stesura pianificazione terzo _sprint_],
+
     "0.3.0",
     "14/12/2024",
     "Davide Picello",
@@ -346,13 +352,13 @@ Le attività che il _team_ si è prefissato di portare a termine durante il terz
   - Verifica
   - Validazione
 
+- In concomitanza con l'attività precedente, si procederà con lo studio di possibili metriche per la valutazione della qualità, che andranno al vaglio del gruppo 
+
 - Aggiornamento di due sezioni del documento Norme di Progetto:
   - Processi organizzativi
   - Processi primari, dove nello specifico si dovrà normare la descrizione dei casi d'uso.
 
-- Continuazione del documento di Analisi dei Requisiti che per questo _sprint_ si può articolare in due fasi, intervallate da un incontro con il professor Cardin (previsto per il 19/12/2024):
-  - Una prima fase in cui si studieranno nuovi casi d'uso per raccogliere eventuali nuovi dubbi da chiarire
-  - Una seconda in cui si miglioreranno i casi d'uso in base al riscontro avuto durante il colloquio.
+- Continuazione del documento di Analisi dei Requisiti, che per questo _sprint_ si concentrerà sullo studio di nuovi casi d'uso, con l'obiettivo raccogliere eventuali nuovi dubbi da poter chiarire durante il ricevimento con il professor Cardin (previsto per il 19/12/2024).
   
 - Studio della fattibilità di creare uno _#rifGlossario("stream processor") custom_ sfruttando #rifGlossario("Spring"), possibilmente sviluppandone un prototipo.
 
