@@ -284,8 +284,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + Scomparsa automatica del messaggio di un annuncio generato (#link(<uc12>)[UC12]).
   + Chiusura del messaggio di un annuncio generato (#link(<uc13>)[UC13]).
   + Apertura dello storico dall'annuncio generato (#link(<uc14>)[UC14]).
-- *Estensioni*:
-  + Visualizzazione dettagli di una mancata generazione (#link(<uc15>)[UC15]).
 
 === UC12 - Scomparsa automatica del messaggio di un annuncio generato <uc12>
 - *Attore Principale*: Amministratore.
@@ -294,7 +292,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Trigger*: l'amministratore non interagisce con il messaggio.
 - *Scenario principale*: 
   + L'amministratore riceve sulla _dashboard_ il messaggio relativo a un annuncio generato.
-  + Il messaggio resta visibile per un tempo predefinito, al termine del quale scomparirà automaticamente.
+  + Il messaggio resta visibile per un tempo predefinito terminato il quale scomparirà automaticamente.
 
 === UC13 - Chiusura del messaggio di un annuncio generato <uc13>
 - *Attore Principale*: Amministratore.
@@ -303,7 +301,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Trigger*: l'amministratore vuole chiudere il messaggio di annuncio generato.
 - *Scenario principale*: 
   + L'amministratore riceve sulla _dashboard_ il messaggio relativo a un annuncio generato.
-  + L'amministratore preme sul pulsante "Presa visione" per chiudere il _pop-up_ e farla scomparire dalla _dashboard_.
+  + L'amministratore preme sul pulsante "Presa visione" per chiudere il _pop-up_ e farlo scomparire dalla _dashboard_.
 
 === UC14 - Apertura dello storico dall'annuncio generato <uc14>
 - *Attore Principale*: Amministratore.
@@ -313,8 +311,10 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*: 
   + L'amministratore riceve sulla _dashboard_ il messaggio relativo a un annuncio generato.
   + L'amministratore preme sul pulsante "Vedi annuncio" che mostrerà lo storico degli annunci ordinati dal più recente.
+- *Inclusioni*:
+  + Visualizzazione storico degli annunci. //UC11 delle adr di prec
 
-=== UC15 - Visualizzazione dettagli di una mancata generazione <uc15>
+=== UC15 - Visualizzazione dettagli di una mancata generazione
 - *Attore Principale*: Amministratore.
 - *Precondizioni*: l'amministratore è autenticato e ha accesso alla _dashboard_ del sistema.
 - *Postcondizioni*: l'amministratore riceve un messaggio relativo ad una generazione fallita.
