@@ -287,12 +287,12 @@ Le attività che il _team_ si è prefissato di portare a termine durante il seco
 #rendicontazioneOre(
   (
     (0, 4, 0, 0, 0, 0),
-    (0, 0, 0, 0, 2, 3),
+    (0, 0, 0, 0, 4, 3),
     (0, 0, 5, 0, 0, 0),
     (0, 4, 0, 0, 0, 0),
-    (4, 0, 0, 0, 0, 0),
-    (0, 0, 5, 0, 0, 0),
-    (0, 0, 0, 0, 2, 3),
+    (5, 0, 0, 0, 0, 0),
+    (0, 1, 6, 0, 1, 0),
+    (0, 0, 0, 0, 4, 3),
   ),
   caption: [Preventivo delle ore nel secondo _sprint_ per membro e per ruolo],
 )
@@ -351,18 +351,17 @@ Le attività che il _team_ si è prefissato di portare a termine durante il terz
   - Piano di Qualifica
   - Verifica
   - Validazione
-
-- In concomitanza con l'attività precedente, si procederà con lo studio di possibili metriche per la valutazione della qualità, che andranno al vaglio del gruppo 
-
-- Aggiornamento di due sezioni del documento Norme di Progetto:
   - Processi organizzativi
-  - Processi primari, dove nello specifico si dovrà normare la descrizione dei casi d'uso.
 
-- Continuazione del documento di Analisi dei Requisiti, che per questo _sprint_ si concentrerà sullo studio di nuovi casi d'uso, con l'obiettivo raccogliere eventuali nuovi dubbi da poter chiarire durante il ricevimento con il professor Cardin (previsto per il 19/12/2024).
+- In concomitanza con l'attività precedente si procederà con lo studio di possibili metriche per la valutazione della qualità, che andranno poi al vaglio del gruppo. 
+
+- Aggiornamento della sezione "Processi primari" nel documento Norme di Progetto. Nello specifico si dovrà normare la descrizione dei casi d'uso.
+
+- Continuazione del documento di Analisi dei Requisiti, che per questo _sprint_ si concentrerà sullo studio di nuovi casi d'uso con l'obiettivo raccogliere eventuali nuovi dubbi da poter chiarire durante il ricevimento con il professor Cardin (previsto per il 19/12/2024).
   
 - Studio della fattibilità di creare uno _#rifGlossario("stream processor") custom_ sfruttando #rifGlossario("Spring"), possibilmente sviluppandone un prototipo.
 
-- Affinamento della _dashboard_ in Grafana effettuando migliorie di carattere estetico e/o funzionale.
+- Affinamento della _dashboard_ in Grafana effettuando migliorie di carattere estetico e funzionale.
 
 - Continuazione della stesura del Piano di Progetto come da prassi, in particolare:
   - Scrittura retrospettiva secondo _sprint_.
