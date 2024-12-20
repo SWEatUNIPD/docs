@@ -6,10 +6,18 @@
   destinatari: ("Gruppo SWE@",),
   responsabile: "-",
   redattori: ("Klaudio Merja", "Andrea Precoma", "Davide Picello"),
-  verificatori: ("Andrea Precoma", "Davide Marin"),
+  verificatori: ("Andrea Precoma", "Davide Marin", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
   titolo: "Norme di Progetto",
   uso: "Interno",
   versioni: (
+    "0.5.0",
+    "21/12/2024",
+    "Davide Picello",
+    "Davide Marin,\nKlaudio Merja",
+    [
+      - Scrittura della sezione "Casi d'uso"
+    ],
+
     "0.4.0",
     "30/11/2024",
     "Andrea Precoma",
@@ -17,9 +25,10 @@
     [
       - Modifica del _versioning_
       - Modifica delle regole di stile
-      - Aggiunta struttura della _repository_ Near NearYou
+      - Aggiunta struttura della _repository_ NearYou
       - Correzione ortografica e di stile
     ],
+
     "0.3.0",
     "27/11/2024",
     "Davide Picello",
@@ -174,6 +183,92 @@ Nella fase di implementazione, il fornitore deve stabilire o selezionare un mode
 
 === Analisi dei requisiti di sistema
 In questa fase, si analizzano le esigenze specifiche del sistema da sviluppare, documentando i requisiti funzionali, di sicurezza, di manutenzione, ergonomici e di interfaccia. Tali requisiti vengono valutati rispetto alla loro tracciabilità, consistenza con le esigenze iniziali, testabilità e fattibilità tecnica. Il risultato è una specifica dettagliata dei requisiti del sistema.
+
+==== Casi d'uso
+In questa fase rientra la realizzazione dei casi d'uso (_use case_): descrizioni formali di come un sistema _software_ interagisce con utenti o altre entità, chiamati attori, per raggiungere un obiettivo specifico. Questi sono composti da testo puro e sono usati per documentare le varie funzionalità attese dal sistema ad alto livello, quindi non specificando i dettagli implementativi. A un caso d'uso è preferibile abbinare anche il relativo diagramma #rifGlossario("UML").
+
+Ogni caso d'uso deve comprendere le seguenti informazioni:
+
+===== Nomenclatura
+Ogni caso d'uso deve essere identificato da un codice univoco, seguendo la nomenclatura: *UC[numero_use_case]*
+
+===== Attori
+Gli attori rappresentano agenti esterni che interagiscono con il sistema. Ogni caso d'uso specifica una funzionalità creata per un determinato attore.
+
+Esistono più tipi di attori:
+- *Attore primario*: L'utente o _stakeholder_ che avvia il caso d'uso ed ha un obbiettivo da raggiungere utilizzando il sistema.
+- *Attore di supporto*: Un utente o _stakeholder_ coinvolto nel caso d'uso, ma che non inizia l'interazione con il sistema. Può fornire ulteriori input o risorse necessarie per completare lo _use case_. La sua presenza non è obbligatoria all'interno di un caso d'uso.
+
+===== Precondizioni
+Condizioni che devono essere vere o soddisfatte affinché il caso d'uso possa iniziare. Definiscono lo stato iniziale del sistema ed i requisiti che devono essere garantiti affinché il caso d'uso sia valido.
+
+Esempi: 
+- Un utente deve essere autenticato nel sistema
+- Un prodotto deve essere aggiunto al carrello.
+
+
+===== Postcondizioni
+Stato finale del sistema dopo che il caso d'uso è stato completato. Utili per verificare che l'obiettivo sia stato raggiunto e per documentare le modifiche apportate al sistema.
+
+Esempio: Dopo un pagamento andato a buon fine, il sistema aggiorna lo stato dell'ordine a 'confermato' e invia una ricevuta via email.
+
+===== Trigger
+Il _trigger_ rappresenta l'evento o l'azione che scatena il caso d'uso. Questo può essere un'azione compiuta da un attore, come un _clic_ su un pulsante, oppure un evento esterno come il ricevimento di un messaggio da un altro sistema.
+
+Esempio: L'utente clicca sul pulsante 'Effettua pagamento'.
+
+===== Scenario principale
+Lo scenario principale descrive la sequenza di azioni _standard_ che l'attore ed il sistema eseguono per raggiungere l'obiettivo del caso d'uso. Include tutti i passi principali in ordine sequenziale.
+
+Esempio:
+1. L'utente inserisce i dati di accesso.
+2. Il sistema verifica le credenziali.
+3. L'utente visualizza la propria _dashboard_.
+
+===== Relazioni
+Nei casi d'uso possiamo avere i seguenti tipi di relazione tra attore e caso d'uso.
+
+====== Associazione 
+Congiunge semplicemente gli attori con i casi d'uso a cui prendono parte. Un attore può essere associato a qualsiasi numero di casi d'uso e viceversa. L'associzione implica uno scambio di informazioni tra attore e caso d'uso associato. Viene indicata nel diagramma con una linea nera.
+
+====== Generalizzazione
+Riguarda sia gli attori che i casi d'uso e rappresenta una relazione tra una classe, un caso d'uso o un attore più generale (superclasse) ed uno più specifico (sottoclasse). Questo tipo di relazione segue il principio dell'ereditarietà, in cui la sottoclasse eredita le caratteristiche dalla superclasse e può aggiungere o modificare specifici dettagli. La generalizzazione si rappresenta con una linea che collega le due entità (classi, attori o casi d'uso) e termina con un triangolo vuoto sulla punta, che indica la direzione verso la classe o entità più generale.
+
+Esempi: 
+- Un attore generico, come Utente, può essere specializzato in Cliente e Amministratore.
+- Un caso d'uso generico, come Gestire account, può essere specializzato in Creare account e Modificare account.
+
+
+====== Inclusione
+Le inclusioni rappresentano funzionalità o comportamenti comuni che possono essere riutilizzati in più casi d'uso per evitare duplicazioni. Viene indicata nel diagramma come una freccia tratteggiata con indicato "_include_". La funzione alla base della freccia include completamente la funzione alla punta della freccia.
+
+Esempio: Un caso d'uso Autenticazione utente può essere incluso in casi d'uso come Acquista prodotto o Gestione profilo.
+
+====== Estensione
+Le estensioni definiscono variazioni opzionali o eccezioni al comportamento principale del caso d'uso. Questi flussi si attivano solo se si verificano determinate condizioni. Viene indicata nel diagramma come una freccia tratteggiata con indicato "_extend_". La funzione alla base della freccia può essere impiegata nel contesto della funzione alla punta della freccia. 
+Indichiamo esplicitamente anche la condizione per l'estensione e l'_extension point_, che identifica il punto nel caso d'uso di base in cui è possibile inserire il comportamento del caso d'uso esteso.
+
+Esempio: Se il pagamento fallisce, il sistema richiede all'utente di selezionare un metodo alternativo.
+
+
+===== Diagrammi UML dei casi d'uso 
+I diagrammi UML rappresentano graficamente i casi d'uso, gli attori e le relazioni tra loro, rendendo più intuitivo comprendere le interazioni tra il sistema e i suoi attori. 
+
+Gli elementi grafici principali da utilizzare in questi diagrammi sono:
+- *Sistema*: Il sistema è rappresentato da un rettangolo vuoto al cui interno vengono inseriti gli elementi grafici rappresentanti le sue caratteristiche. Gli elementi che invece rappresentano entità esterne sono posizionati all'esterno del rettangolo.
+- *Attore*: Rappresentati graficamente da un'icona rappresentante un omino stilizzato con la relativa etichetta univoca.
+- *Caso d'uso*: Rappresentato graficamente come un'elisse contenente il nome del caso d'uso. Concretamente rappresenta una funzione o servizio offerto dal sistema ad uno o più attori.
+- *Associazione*: Relazione tra attori e casi d'uso. Essa implica uno scambio di informazioni tra attore e caso d'uso associato.
+
+Vediamo un esempio di un diagramma UML semplice, relativo ad un caso d'uso rappresentante uno _use case_ in cui l'amministratore (*attore*) si interfaccia con il *sistema* tramite un'*associazione*, al fine di eseguire un'azione (*caso d'uso*):
+#figure(image("../assets/img/NdP/esempioUseCase1.png", width: 80%), caption: [Caso d'uso semplice])
+
+Ora vediamo invece un esempio di un diagramma UML dove vengono usate inclusione ed estensione:
+#figure(image("../assets/img/NdP/esempioUseCase2.png", width: 80%), caption: [Caso d'uso con inclusione ed estensione])
+
+
+
+
 
 === Progettazione architetturale del sistema
 Il sistema viene suddiviso in elementi _hardware_, _software_ e operazioni manuali, con l’allocazione dei requisiti a ciascun elemento. L’architettura risultante rappresenta un progetto di alto livello che assicura la tracciabilità rispetto ai requisiti e la fattibilità operativa. La documentazione prodotta include la descrizione dell’architettura del sistema e l’assegnazione dei requisiti ai vari componenti.

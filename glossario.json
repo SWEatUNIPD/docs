@@ -24,7 +24,7 @@
     "Data Generator": "Strumento o un software che produce dati sintetici o simulati, utilizzati per testare applicazioni, addestrare modelli di machine learning o simulare scenari realistici.",
     "Data Visualization": "Rappresentazione grafica di dati e informazioni, al fine di facilitarne la comprensione e l'interpretazione.",
     "Deep dive": "Una sessione deep dive è un incontro in cui esperti esterni al gruppo si mettono a disposizione per approfondire specifiche tecnologie e strumenti legati a un progetto. Questi incontri sono progettati per affrontare temi complessi o aree in cui il team destinatario potrebbe non avere esperienza sufficiente o stia incontrando difficoltà.",
-    "Diagramma di Gantt": "Strumento di supporto alla gestione di progetti, usato principalmente nelle attività di _project management_. È costruito partendo da un asse orizzontale, che rappresenta l'arco temporale, e da un asse verticale che rappresenta le mansioni o attività che costituiscono il progetto.",
+    "Diagramma di Gantt": "Strumento di supporto alla gestione di progetti, usato principalmente nelle attività di gestione di progetto. È costruito partendo da un asse orizzontale, che rappresenta l'arco temporale, e da un asse verticale che rappresenta le mansioni o attività che costituiscono il progetto.",
     "Docker": "Piattaforma software open-source che consente di sviluppare, distribuire ed eseguire applicazioni in container, unità leggere e portatili che includono tutto il necessario per eseguire un'applicazione, garantendo che funzionino in modo coerente su qualsiasi ambiente.",
     "Docker Compose": "È uno strumento di Docker che permette la creazione e condivisione di applicazioni composte da più container. Lo strumento permette di definire i servizi in un file YAML e di avviare l'intera applicazione mediante un singolo comando."
   },
@@ -85,6 +85,7 @@
     "Typst": "Linguaggio di markup per la formattazione dei documenti e strumento di typesetting, simile a LaTeX, progettato per creare documenti complessi con sintassi moderna e funzionalità avanzate."
   },
   "U": {
+    "UML": "Unified Modeling Language, un linguaggio standardizzato di modellazione e di specifica basato sul paradigma orientato agli oggetti. Viene utilizzato per rappresentare componenti e le interazioni tra loro.",
     "Utility": "Insieme di funzioni predefinite per facilitare compiti comuni, spesso abbinato al contesto delle librerie che integrano metodi riutilizzabili in molti programmi."
   },
   "W": {
