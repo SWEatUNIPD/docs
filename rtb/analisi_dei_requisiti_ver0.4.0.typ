@@ -275,9 +275,14 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 //TODO: valutare se raffinare i casi d'uso con dei sottocasi
 
 //UC Perruz
+
+/*
+L'attore sarebbe il sistema => no UC
+Domanda: il capitolato chiede di avvisare l'admin, si può immaginare tramite notifica, però l'attore della notifica è il sistema quindi non andrebbe creato il caso d'uso. Come si fa ad implementare?
+*/
 #pagebreak()
 === UC11 - Visualizzazione notifica di un annuncio generato
-- *Attore Principale*: Amministratore.
+- *Attore principale*: Amministratore.
 - *Precondizioni*: l'amministratore è autenticato e ha accesso alla _dashboard_ del sistema.
 - *Postcondizioni*: l'amministratore riceve una notifica relativa ad un annuncio generato.
 - *Trigger*: il sistema genera e invia all'utente un annuncio personalizzato relativo al punto di interesse in cui si trova.
@@ -292,35 +297,38 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + Chiusura della notifica di un annuncio generato (#link(<uc13>)[UC13]).
   + Apertura dello storico degli annunci dalla notifica (#link(<uc14>)[UC14]).
 
+// vedi uc11, l'amministratore che sarebbe attore non interagisce nemmeno
 === UC12 - Scomparsa automatica della notifica di un annuncio generato <uc12>
-- *Attore Principale*: Amministratore.
+- *Attore principale*: Amministratore.
 - *Precondizioni*: l'amministratore è autenticato, ha accesso alla _dashboard_ del sistema e ha ricevuto una notifica di annuncio generato.
-- *Postcondizioni*: La notifica scompare automaticamente dopo un tempo prestabilito.
+- *Postcondizioni*: la notifica scompare automaticamente dopo un tempo prestabilito.
 - *Trigger*: l'amministratore non interagisce con la notifica.
 - *Scenario principale*: 
   + L'amministratore riceve sulla _dashboard_ la notifica relativa ad un annuncio generato.
   + La notifica resta visibile per un tempo predefinito, terminato il quale scomparirà automaticamente.
 
 === UC13 - Chiusura della notifica di un annuncio generato <uc13>
-- *Attore Principale*: Amministratore.
+- *Attore principale*: Amministratore.
 - *Precondizioni*: l'amministratore è autenticato, ha accesso alla _dashboard_ del sistema e ha ricevuto una notifica di annuncio generato.
 - *Postcondizioni*: l'amministratore chiude la notifica confermando di aver preso visione.
 - *Trigger*: l'amministratore vuole chiudere la notifica di annuncio generato.
 - *Scenario principale*: 
   + L'amministratore riceve sulla _dashboard_ la notifica relativa ad un annuncio generato.
-  + L'amministratore preme sul pulsante "Presa visione" per chiudere il _pop-up_ e farlo scomparire dalla _dashboard_.
+  + L'amministratore segnala alla notifica di aver preso visione del messaggio.
+  + La notifica viene chiusa fatta scomparire dalla _dashboard_.
 
 === UC14 - Apertura dello storico degli annunci dalla notifica <uc14>
-- *Attore Principale*: Amministratore.
+- *Attore principale*: Amministratore.
 - *Precondizioni*: l'amministratore è autenticato, ha accesso alla _dashboard_ del sistema e ha ricevuto una notifica di annuncio generato.
 - *Postcondizioni*: l'amministratore visualizza lo storico degli annunci.
-- *Trigger*: l'amministratore vuole visualizzare per intero l'annuncio che è appena stato generato tramite la notifica appena ricevuta.
+- *Trigger*: l'amministratore vuole visualizzare per intero l'annuncio che è appena stato generato tramite la notifica ricevuta.
 - *Scenario principale*: 
   + L'amministratore riceve sulla _dashboard_ la notifica relativa ad un annuncio generato.
-  + L'amministratore preme sul pulsante "Vedi annuncio" presente nella notifica che mostrerà lo storico degli annunci ordinati dal più recente, dove in cima sarà quindi presente l'annuncio generato poc'anzi.
+  + L'amministratore, interagendo con la notifica, acccede allo storico degli annunci ordinati dal più recente, dove in cima sarà quindi presente l'annuncio appena generato.
 
+// vedi uc11
 === UC15 - Visualizzazione notifica di una mancata generazione
-- *Attore Principale*: Amministratore.
+- *Attore principale*: Amministratore.
 - *Precondizioni*: l'amministratore è autenticato e ha accesso alla _dashboard_ del sistema.
 - *Postcondizioni*: l'amministratore riceve e visualizza una notifica relativa ad una generazione fallita.
 - *Trigger*: il sistema notifica all'amministratore che un annuncio non è stato generato per mancanza di interesse da parte dell'utente.
@@ -331,8 +339,9 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + Scomparsa automatica della notifica di mancata generazione (#link(<uc16>)[UC16]).
   + Chiusura della notifica di mancata generazione (#link(<uc17>)[UC17]).
 
+// vedi uc12, in ogni caso sarebbe da creare un unico uc da riutilizzare del tipo "chiusura automatica notifica"
 === UC16 - Scomparsa automatica della notifica di mancata generazione <uc16> 
-- *Attore Principale*: Amministratore.
+- *Attore principale*: Amministratore.
 - *Precondizioni*: l'amministratore è autenticato, ha accesso alla _dashboard_ del sistema e ha ricevuto una notifica di mancata generazione.
 - *Postcondizioni*: la notifica scompare automaticamente dopo un tempo prestabilito.
 - *Trigger*: l'amministratore non interagisce con la notifica.
@@ -340,8 +349,9 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore riceve sulla _dashboard_ una notifica di mancata generazione.
   + La notifica resta visibile per un tempo predefinito, al termine del quale scomparirà automaticamente.
 
+// vedi uc16
 === UC17 - Chiusura della notifica di mancata generazione <uc17> 
-- *Attore Principale*: Amministratore.
+- *Attore principale*: Amministratore.
 - *Precondizioni*: l'amministratore è autenticato, ha accesso alla _dashboard_ del sistema e ha ricevuto una notifica di mancata generazione.
 - *Postcondizioni*: l'amministratore chiude la notifica confermando di aver preso visione.
 - *Trigger*: l'amministratore vuole chiudere la notifica.
@@ -350,8 +360,8 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore preme sul pulsante "Presa visione" per chiudere il _pop-up_ e farla scomparire dalla _dashboard_.
 
 #pagebreak()
-//UC Prec
 
+//UC Prec
 === UC18 - Visualizzazione storico degli annunci <uc18>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: l'amministratore è autenticato al sistema.
@@ -379,14 +389,60 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
     - Nome del punto di interesse collegato.
     - _E-mail_ dell'utente destinatario.
     - Data e ora di erogazione.
-    - Un _flag_ che indica se il noleggio al quale è stato inviato l'annuncio è ancora attivo.
+    - _Flag_ che indica se il noleggio al quale è stato inviato l'annuncio è ancora attivo.
 - *Inclusioni*:
-  + Visualizzazione nome del punto di interesse collegato all'annuncio (#link(<uc21>)[UC21]).
-  + Visualizzazione _e-mail_ dell'utente destinatario dell'annuncio (#link(<uc22>)[UC22]).
-  + Visualizzazione data e ora di emissione dell'annuncio (#link(<uc23>)[UC23]).
-  + Visualizzazione _flag_ sugli annunci nello storico inviati a noleggi attivi (#link(<uc24>)[UC24]).
+  + Visualizzazione nome del punto di interesse collegato all'annuncio (#link(<uc20>)[UC20]).
+  + Visualizzazione _e-mail_ dell'utente destinatario dell'annuncio (#link(<uc21>)[UC21]).
+  + Visualizzazione data e ora di emissione dell'annuncio (#link(<uc22>)[UC22]).
+  + Visualizzazione _flag_ sugli annunci nello storico inviati a noleggi attivi (#link(<uc23>)[UC23]).
 
-=== UC20 - Visualizzazione dettagli singolo annuncio nello storico
+=== UC20 - Visualizzazione nome del punto di interesse collegato all'annuncio <uc20>
+- *Attore principale*: Amministratore.
+- *Precondizioni*: l'amministratore visualizza le informazioni principali di un annuncio nello storico o ha selezionato i dettagli dell'annuncio.
+- *Postcondizioni*: l'amministratore visualizza il nome del punto di interesse collegato all'annuncio selezionato.
+- *Trigger*: l'amministratore desidera visualizzare il nome del punto di interesse collegato all'annuncio.
+- *Scenario principale*:
+  + L'amministratore accede alla sezione apposita degli annunci.
+  + Viene esposto il nome del punto di interesse collegato all'annuncio tra le informazioni principali del singolo annuncio.
+  + Viene esposto il nome del punto di interesse collegato all'annuncio tra i dettagli dell'annuncio.
+
+=== UC21 - Visualizzazione _e-mail_ dell'utente destinatario dell'annuncio <uc21>
+- *Attore principale*: Amministratore.
+- *Precondizioni*: l'amministratore visualizza le informazioni principali di un annuncio nello storico o ha selezionato i dettagli dell'annuncio.
+- *Postcondizioni*: l'amministratore visualizza l'_e-mail_ dell'untente destinatario dell'annuncio selezionato.
+- *Trigger*: l'amministratore desidera visualizzare l'_e-mail_ dell'untente destinatario dell'annuncio.
+- *Scenario principale*:
+  + L'amministratore accede alla sezione apposita degli annunci.
+  + Viene esposta l'_e-mail_ dell'untente destinatario dell'annuncio tra le informazioni principali del singolo annuncio.
+  + Viene esposta l'_e-mail_ dell'untente destinatario dell'annuncio tra i dettagli dell'annuncio.
+
+=== UC22 - Visualizzazione data e ora di emissione dell'annuncio <uc22>
+- *Attore principale*: Amministratore.
+- *Precondizioni*: l'amministratore visualizza le informazioni principali di un annuncio nello storico o ha selezionato i dettagli dell'annuncio.
+- *Postcondizioni*: l'amministratore visualizza la data e l'ora di emissione dell'annuncio selezionato.
+- *Trigger*: l'amministratore desidera visualizzare la data e l'ora di erogazione dell'annuncio.
+- *Scenario principale*:
+  + L'amministratore accede alla sezione apposita degli annunci.
+  + Viene esposta la data e l'ora di emissione dell'annuncio tra le informazioni principali del singolo annuncio.
+  + Viene esposta la data e l'ora di erogazione dell'annuncio tra i dettagli dell'annuncio.
+
+=== UC23 - Visualizzazione _flag_ sugli annunci nello storico inviati a noleggi attivi
+<uc23>
+- *Attore principale*: Amministratore.
+- *Precondizioni*: l'amministratore visualizza le informazioni principali di un annuncio nello storico o ha selezionato i dettagli dell'annuncio.
+- *Postcondizioni*: l'amministratore visualizza un _flag_ sugli annunci inviati a noleggi che sono ancora attivi.
+- *Trigger*: l'amministratore desidera visualizzare se l'annuncio è stato inviato ad un mezzo con noleggio attivo.
+- *Scenario principale*:
+  + L'amministratore accede alla sezione apposita degli annunci.
+  + Viene esposto un _flag_ tra le informazioni principali del singolo annuncio che indica se il noleggio è attivo in quel momento.
+  + Viene espost un _flag_ tra i dettagli dell'annuncio che indica se il noleggio è attivo in quel momento.
+#v(20pt)
+#figure(
+  image("../assets/use_cases/storico.png"),
+  caption: [Diagramma dei casi d'uso UC18, UC19, UC20, UC21, UC22 e UC23],
+)
+
+=== UC24 - Visualizzazione dettagli singolo annuncio nello storico
 - *Attore principale*: Amministratore.
 - *Precondizioni*: l'amministratore è autenticato al sistema ed ha accesso alla sezione dedicata agli annunci.
 - *Postcondizioni*: l'amministratore visualizza interamente l'annuncio selezionato insieme alle relative informazioni:
@@ -394,7 +450,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   - Categoria del punto di interesse collegato.
   - _E-mail_ dell'utente destinatario.
   - Data e ora di erogazione.
-  - Un _flag_ che indica se il noleggio al quale è stato inviato l'annuncio è ancora attivo.
+  - _Flag_ che indica se il noleggio al quale è stato inviato l'annuncio è ancora attivo.
 - *Trigger*: l'amministratore desidera visualizzare l'annuncio insieme alle relative informazioni.
 - *Scenario principale*:
   + L'amministratore accede alla sezione apposita degli annunci.
@@ -406,54 +462,13 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
     - Data e ora di erogazione.
     - Un _flag_ che indica se il noleggio al quale è stato inviato l'annuncio è ancora attivo.
 - *Inclusioni*:
-  + Visualizzazione nome del punto di interesse collegato all'annuncio (#link(<uc21>)[UC21]).
-  + Visualizzazione _e-mail_ dell'utente destinatario dell'annuncio (#link(<uc22>)[UC22]).
-  + Visualizzazione data e ora di emissione dell'annuncio (#link(<uc23>)[UC23]).
-  + Visualizzazione _flag_ sugli annunci nello storico inviati a noleggi attivi (#link(<uc24>)[UC24]).
+  + Visualizzazione nome del punto di interesse collegato all'annuncio (#link(<uc20>)[UC20]).
+  + Visualizzazione _e-mail_ dell'utente destinatario dell'annuncio (#link(<uc21>)[UC21]).
+  + Visualizzazione data e ora di emissione dell'annuncio (#link(<uc22>)[UC22]).
+  + Visualizzazione _flag_ sugli annunci nello storico inviati a noleggi attivi (#link(<uc23>)[UC23]).
   + Visualizzazione completa dell'annuncio (#link(<uc25>)[UC25]).
   + Visualizzazione categoria del punto di interesse collegato all'annuncio (#link(<uc26>)[UC26]).
   + Chiusura della finestra di dialogo aperta (#link(<uc27>)[UC27]).
-
-=== UC21 - Visualizzazione nome del punto di interesse collegato all'annuncio <uc21>
-- *Attore principale*: Amministratore.
-- *Precondizioni*: l'amministratore visualizza le informazioni principali di un annuncio nello storico o ha selezionato i dettagli dell'annuncio.
-- *Postcondizioni*: l'amministratore visualizza il nome del punto di interesse collegato all'annuncio selezionato.
-- *Trigger*: l'amministratore desidera visualizzare il nome del punto di interesse collegato all'annuncio.
-- *Scenario principale*:
-  + L'amministratore accede alla sezione apposita degli annunci.
-  + Viene esposto il nome del punto di interesse collegato all'annuncio tra le informazioni principali del singolo annuncio.
-  + Viene esposto il nome del punto di interesse collegato all'annuncio tra i dettagli dell'annuncio.
-
-=== UC22 - Visualizzazione _e-mail_ dell'utente destinatario dell'annuncio <uc22>
-- *Attore principale*: Amministratore.
-- *Precondizioni*: l'amministratore visualizza le informazioni principali di un annuncio nello storico o ha selezionato i dettagli dell'annuncio.
-- *Postcondizioni*: l'amministratore visualizza l'_e-mail_ dell'untente destinatario dell'annuncio selezionato.
-- *Trigger*: l'amministratore desidera visualizzare l'_e-mail_ dell'untente destinatario dell'annuncio.
-- *Scenario principale*:
-  + L'amministratore accede alla sezione apposita degli annunci.
-  + Viene esposta l'_e-mail_ dell'untente destinatario dell'annuncio tra le informazioni principali del singolo annuncio.
-  + Viene esposta l'_e-mail_ dell'untente destinatario dell'annuncio tra i dettagli dell'annuncio.
-
-=== UC23 - Visualizzazione data e ora di emissione dell'annuncio <uc23>
-- *Attore principale*: Amministratore.
-- *Precondizioni*: l'amministratore visualizza le informazioni principali di un annuncio nello storico o ha selezionato i dettagli dell'annuncio.
-- *Postcondizioni*: l'amministratore visualizza la data e l'ora di emissione dell'annuncio selezionato.
-- *Trigger*: l'amministratore desidera visualizzare la data e l'ora di erogazione dell'annuncio.
-- *Scenario principale*:
-  + L'amministratore accede alla sezione apposita degli annunci.
-  + Viene esposta la data e l'ora di emissione dell'annuncio tra le informazioni principali del singolo annuncio.
-  + Viene esposta la data e l'ora di erogazione dell'annuncio tra i dettagli dell'annuncio.
-
-=== UC24 - Visualizzazione _flag_ sugli annunci nello storico inviati a noleggi attivi
-<uc24>
-- *Attore principale*: Amministratore.
-- *Precondizioni*: l'amministratore visualizza le informazioni principali di un annuncio nello storico o ha selezionato i dettagli dell'annuncio.
-- *Postcondizioni*: l'amministratore visualizza un _flag_ che indica se l'annuncio selezionato è stato emesso verso un mezzo con noleggio ancora attivo.
-- *Trigger*: l'amministratore desidera visualizzare se l'annuncio è stato inviato ad un mezzo con noleggio attivo.
-- *Scenario principale*:
-  + L'amministratore accede alla sezione apposita degli annunci.
-  + Viene esposto un _flag_ tra le informazioni principali del singolo annuncio che indica se il noleggio è attivo in quel momento.
-  + Viene espost un _flag_ tra i dettagli dell'annuncio che indica se il noleggio è attivo in quel momento.
 
 === UC25 - Visualizzazione completa dell'annuncio <uc25>
 - *Attore principale*: Amministratore.
@@ -481,11 +496,10 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   + L'amministratore visualizza una finestra di dialogo aperta.
   + L'amministratore chiude la finestra di dialogo aperta.
-
 #v(20pt)
 #figure(
-  image("../assets/use_cases/annuncio.png"),
-  caption: [Diagramma dei casi d'uso UC18, UC19, UC20, UC21, UC22, UC23, UC24, UC25, UC26 e UC27],
+  image("../assets/use_cases/dettagli storico.png"),
+  caption: [Diagramma dei casi d'uso UC20, UC21, UC22, UC23, UC24, UC25, UC26 e UC27],
 )
 
 #pagebreak()
