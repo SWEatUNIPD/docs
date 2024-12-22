@@ -11,7 +11,7 @@
   uso: "Interno",
   versioni: (
     "0.5.0",
-    "21/12/2024",
+    "22/12/2024",
     "Davide Picello",
     "Davide Marin,\nKlaudio Merja",
     [
