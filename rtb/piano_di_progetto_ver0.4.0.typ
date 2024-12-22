@@ -4,8 +4,8 @@
   data: "27 novembre 2024",
   destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "Sync Lab S.r.l.", "Gruppo SWE@"),
   responsabile: "Davide Martinelli",
-  redattori: ("Klaudio Merja", "Davide Picello", "Davide Martinelli"),
-  verificatori: ("Davide Marin", "Davide Picello", "Andrea Precoma", "Riccardo Milan", "Klaudio Merja"),
+  redattori: ("Davide Martinelli", "Davide Picello", "Klaudio Merja"),
+  verificatori: ("Andrea Precoma", "Davide Marin", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
   titolo: "Piano di Progetto",
   uso: "Esterno",
   versioni: (
@@ -346,27 +346,19 @@ Molte delle soluzioni vagliate, alcune delle quali anche a pagamento, presentava
 ==== Attività dello sprint
 Le attività che il _team_ si è prefissato di portare a termine durante il terzo _sprint_ sono le seguenti:
 - Redazione del verbale esterno ed interno del 13/12/2024.
-
 - Ampliamento del documento Norme di Progetto, in particolare occupandosi delle sezioni:
   - Piano di Qualifica
   - Verifica
   - Validazione
   - Processi organizzativi
-
 - In concomitanza con l'attività precedente si procederà con lo studio di possibili metriche per la valutazione della qualità, che andranno poi al vaglio del gruppo. 
-
 - Aggiornamento della sezione "Processi primari" nel documento Norme di Progetto. Nello specifico si dovrà normare la descrizione dei casi d'uso.
-
 - Continuazione del documento di Analisi dei Requisiti, che per questo _sprint_ si concentrerà sullo studio di nuovi casi d'uso con l'obiettivo raccogliere eventuali nuovi dubbi da poter chiarire durante il ricevimento con il professor Cardin (previsto per il 19/12/2024).
-  
 - Studio della fattibilità di creare uno _#rifGlossario("stream processor") custom_ sfruttando #rifGlossario("Spring"), possibilmente sviluppandone un prototipo.
-
 - Affinamento della _dashboard_ in Grafana effettuando migliorie di carattere estetico e funzionale.
-
 - Continuazione della stesura del Piano di Progetto come da prassi, in particolare:
   - Scrittura retrospettiva secondo _sprint_.
   - Scrittura pianificazione terzo _sprint_.
- 
 
 ==== Preventivo orario
 #rendicontazioneOre(
