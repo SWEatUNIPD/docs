@@ -17,7 +17,7 @@
     [
       - Modifica del _versioning_
       - Modifica delle regole di stile
-      - Aggiunta struttura della _repository_ Near NearYou
+      - Aggiunta struttura della _repository_ NearYou
       - Correzione ortografica e di stile
     ],
     "0.3.0",
@@ -502,38 +502,181 @@ Viene adoperata una Action per facilitare il processo di verifica in quanto crea
 *`git add [file_name] --force`*
 
 
-
-== Controllo qualità
-TODO: Cosa controllare per mantenere la qualità attesa (durante la verifica e validazione), consultare il PdQ.
-
-
-
 == Verifica
+La verifica è un processo di cruciale importanza che accompagna il _software_ lungo tutto il suo ciclo di vita, dalla progettazione fino alla manutenzione. Il suo obiettivo è garantire l'efficienza.
+Un processo di verifica efficace risulta in un prodotto stabile e facilita di conseguenza il processo di validazione.
+
+
+
+=== Verifica dei documenti
 Ogni documento creato o modificato necessita la revisione da uno o più verificatori. Questo processo viene automatizzato il più possibile con l'utilizzo delle _pull request_, il sistema di _ticketing_ tramite _issue_ e una Action dedicata. Quando possibile è preferibile richiedere la revisione a tutti i verificatori per i documenti di carattere generale perché fondamentali per il corretto svolgimento del progetto.
 
-=== Pull request
+==== Pull request
 Le _pull request_ velocizzano e automatizzano la verifica dei documenti. Una volta organizzate nel modo corretto (#link(<lavoro_doc>)[sez. 3.1.1.2]), il verificatore può aggiungere una _review_ da interfaccia _web_ commentando, chiedendo una modifica o approvando la _pull request_. Una volta soddisfatti i requisiti spetterà al responsabile confermare la nuova versione del documento e unire il _branch_ al principale tramite il pulsante "_squash and merge_".
 
-=== Analisi statica
+==== Analisi statica
 Al completamento di ogni _commit_ una Action compila i _file_ Typst modificati e genera un _file_ `.zip` contenente i documenti in formato `.pdf`. Così facendo si è sicuri che il codice è privo di errore sintattici e genera correttamente un prodotto finale e distribuibile.
 
-È stato messo a disposizione un _test_ il quale controlla che la prima occorrenza dei termini del Glossario venga identificata (#link(<glossario>)[sez. 1.3]). Viene effetuato automanticamente dalla Action ad ogni _push_, tuttavia è preferibile eseguirlo prima in locale così da efficientare il lavoro. È sufficiente quindi aver installato NodeJS sulla propria macchina ed eseguire il comando *`node test.js`* nella _root_ della _repository_ locale. Il _test_ esamina tutti i documenti e ritorna degli avvisi in caso fallisse.
+È stato messo a disposizione un _test_ il quale controlla che la prima occorrenza dei termini del Glossario venga identificata (#link(<glossario>)[sez. 1.3]). Viene effettuato automaticamente dalla Action ad ogni _push_, tuttavia è preferibile eseguirlo prima in locale così da efficientare il lavoro. È sufficiente quindi aver installato NodeJS sulla propria macchina ed eseguire il comando *`node test.js`* nella _root_ della _repository_ locale. Il _test_ esamina tutti i documenti e ritorna degli avvisi in caso fallisse.
 
-=== Analisi dinamica
+==== Analisi dinamica // TODO: da rivedere, non credo sia corretto parlare di analisi dinamica per i documenti
 Il verificatore può consultare sia il documento in formato `.pdf` per maggiore leggibilità sia il codice sorgente. Nel caso trovasse degli errori può segnalarli tramite la _pull request_, oppure pubblicare un commento per avviare una discussione riguardo una correzione più complessa.
 
+=== Analisi statica
+L'analisi statica è un processo di verifica che si svolge senza eseguire il codice ed è perciò applicabile a tutti i prodotti del progetto. Il suo obiettivo è individuare errori e anomalie nel codice sorgente o nel testo prodotto. Le due tecniche principali adottate sono il _walkthrough_ e l'_inspection_.
+
+- Il _walkthrough_ prevede un'analisi sistematica di tutto il prodotto alla ricerca di irregolarità non meglio specificate.
+
+- L'_inspection_, invece, prevede una ricerca mirata all'interno del codice sorgente o del documento soffermandosi solo su ciò che si sa essere più soggetto ad errori, trasformando quindi il processo di verifica nella risoluzione di una _checklist_.
+
+L'_inspection_ è il metodo da preferire in quanto più efficiente, allo stesso tempo è difficilmente implementabile all'inizio per mancanza di esperienza (e quindi dati su quali sono gli errori più comuni).
+
+
+=== Analisi dinamica
+L'analisi dinamica è un processo di verifica che si svolge eseguendo il codice. Il suo obiettivo è individuare errori e anomalie nel codice sorgente. Lo strumento principale utilizzato è il _test_. I test possono essere di vario tipo:
+- *Test di unità*: verificano il corretto funzionamento di una singola unità di codice.
+- *Test di integrazione*: verificano il corretto funzionamento dell'interazione tra due o più unità di codice.
+- *Test di sistema*: verificano il corretto funzionamento del sistema nel suo complesso.
+- *Test di regressione*: verificano che le modifiche apportate al codice non abbiano introdotto nuovi errori.
+- *Test di accettazione*: verificano che il prodotto soddisfi i requisiti specificati.
 
 
 == Validazione
+Il processo di validazione è definibile, secondo lo _standard_ ISO/IEC 12207:1995, come il processo di conferma tramite dimostrazioni oggettive che il prodotto soddisfi i requisiti specificati per un sistema. In sostanza, la validazione certifica che il prodotto soddisfi le esigenze del cliente ovvero, più specificamente:
+- soddisfi tutti i requisiti concordati;
+- sia eseguibile senza problemi nell'ambiente di destinazione.
 
-
+Si tratta di un processo che si svolge in parallelo alla verifica e che si conclude con l'accettazione del prodotto da parte del cliente. Una volta che il cliente, ovvero nel nostro caso l'azienda proponente, ha accettato il prodotto si può procedere con il rilascio.
 
 == Risoluzione dei problemi
 È possibile incappare in problemi riguardanti il ciclo di redazione e verifica dei documenti. In questi casi è preferibile cercare di risolverli al più presto per conto proprio in maniera da non ostacolare il lavoro dei compagni. Tuttavia se si è insicuri delle procedure da adottare o non si trova una soluzione si può contattare l'amministratore per tornare al più presto operativi. Come ultima alternativa è possibile contattare Klaudio Merja, creatore dell'organizzazione e della _repository_ GitHub, il quale è l'unico che può eseguire alcune operazioni forzate poiché gode dei privilegi da amministratore dell'ambiente GitHub.
 
 
+== Gestione della qualità
+=== Scopo
+Il processo di gestione della qualità ha lo scopo di garantire che i prodotti soddisfino i requisiti specificati e che siano, assieme ai processi, conformi agli standard di qualità stabiliti. La qualità è un requisito fondamentale per il successo del progetto e deve essere garantita in ogni fase del ciclo di vita del prodotto.
+
+=== Definizione delle metriche
+Lo strumento fondamentale per misurare la qualità di un prodotto o di un processo sono le metriche. Esse permettono di valutare in modo oggettivo il grado di conformità del prodotto o del processo rispetto agli standard di qualità stabiliti. Le metriche vengono utilizzate per tracciare la qualità durante tutto il ciclo di vita del progetto. L'elenco delle metriche adottate in questo progetto è consultabile nell'#link(<metriche>)[ultima sezione] di questo documento.
+
+==== Identificazione
+Le metriche adottate sono identificate da un codice alfabetico, strutturato nel seguente modo:
+
+#align(center)[*M[tipo]-[abbreviazione]*]
+
+dove:
+- *tipo*: indica il tipo di metrica, può essere:
+  - *PC*: per le metriche riguardanti la qualità di processo.
+  - *PD*: per le metriche riguardanti la qualità di prodotto.
+- *abbreviazione*: abbreviazione o acronimo del nome della metrica.
+
+==== Struttura
+Ciascuna metrica viene descritta tramite seguenti campi:
+- *Codice*: codice identificativo della metrica.
+- *Nome*: nome della metrica.
+- *Descrizione*: breve descrizione della metrica.
+e, nei casi in cui sia necessario:
+- *Formula*: formula utilizzata per calcolare il valore della metrica.
+- *Parametri*: parametri utilizzati nella formula.
+
+
+=== Criteri di accettazione
+All'interno del Piano di Qualifica sono definiti i criteri di accettazione per le metriche adottate. Questi criteri sono stabiliti in modo da garantire che i prodotti e i servizi soddisfino i requisiti specificati e che siano conformi agli standard di qualità stabiliti.
+Ad ogni metrica è associata una soglia di accettazione e una soglia di ottimalità. 
+- la soglia di accettazione rappresenta il valore minimo (o massimo) che la metrica deve rispettare per essere considerata accettabile
+- la soglia di ottimalità rappresenta il valore minimo (o massimo) che la metrica deve rispettare per essere considerata ottimale.
 
 #pagebreak()
 = Processi organizzativi
 
-//FIXME: Mancano ovviamente gli standard di qualità del prodotto che devono essere ancora spiegati, quindi al momento non sono inseriti
+
+= Standard per la qualità
+
+/*TODO: scrivere la sezione
+== Standard ISO/IEC 9126
+*/
+
+= Metriche per la qualità <metriche>
+
+== Metriche per la qualità di processo
+
+=== Processi primari
+==== Fornitura
+- *MPC-PV*:
+  - *Nome*: Planned Value
+  - *Descrizione*: Indica il valore pianificato per il lavoro da svolgere.
+  - *Formula*: $ "PV" = "%LS" * "BAC" $
+  - *Parametri*:
+    - *%LS*: Percentuale del lavoro svolto.
+    - *BAC*: Budget at Completion, ovvero il costo totale del progetto stabilito in fase di candidatura.
+
+- *MPC-EV*:
+  - *Nome*: Earned Value
+  - *Descrizione*: Indica il valore del lavoro svolto fino a quel momento.
+  - *Formula*: $ "EV" = "%LS" * "EAC" $
+  - *Parametri*:
+    - *%LS*: Percentuale del lavoro svolto.
+    - *EAC*: Estimated at Completion.
+
+- *MPC-AC*:
+  - *Nome*: Actual Cost
+  - *Descrizione*: Indica il costo effettivo sostenuto fino a quel momento. Consultabile in ogni momento attraverso il Piano di Progetto.
+
+- *MPC-CPI*:
+  - *Nome*: Cost Performance Index
+  - *Descrizione*: Indica il rapporto tra il valore guadagnato e il costo effettivo.
+  - *Formula*: $ "CPI" = "EV" / "AC" $
+  - *Parametri*:
+    - *EV*: Earned Value, ovvero il valore guadagnato.
+    - *AC*: Actual Cost, ovvero il costo effettivo.
+
+- *MPC-EAC*:
+  - *Nome*: Estimated at Completion
+  - *Descrizione*: Indica il costo stimato per terminare del progetto, rivisto in base allo stato attuale del progetto.
+  - *Formula*: $ "EAC" = "BAC" / "CPI" $
+  - *Parametri*:
+    - *BAC*: Budget at Completion.
+    - *CPI*: Cost Performance Index, ovvero il rapporto tra il valore guadagnato e il costo effettivo.
+
+- *MPC-SV*:
+  - *Nome*: Schedule Variance
+  - *Descrizione*: Indica se il progetto è in anticipo, in pari o in ritardo rispetto alla pianificazione.
+  - *Formula*: $ "SV" = "EV" - "PV" $
+  - *Parametri*:
+    - *EV*: Earned Value.
+    - *PV*: Planned Value.
+
+- *MPC-CV*:
+  - *Nome*: Cost Variance
+  - *Descrizione*: Indica se il progetto è sotto o sopra il budget.
+  - *Formula*: $ "CV" = "EV" - "AC" $
+  - *Parametri*:
+    - *EV*: Earned Value.
+    - *AC*: Actual Cost.
+
+- *MPC-ETC*:
+  - *Nome*: Estimate to Complete
+  - *Descrizione*: Indica il costo stimato per completare il progetto.
+  - *Formula*: $ "ETC" = "EAC" - "AC" $
+  - *Parametri*:
+    - *EAC*: Estimated at Completion.
+    - *AC*: Actual Cost.
+
+
+=== Processi di supporto
+==== Documentazione
+- *MPC-IG*: 
+  - *Nome*: Indice di Gulpease
+  - *Descrizione*: Indica il livello di leggibilità di un testo.
+  - *Formula*: $ "IG" = 89 + (300 * "NDF" - 10 * "NDL") / "NDP" $
+  - *Parametri*: 
+    - *NDF*: numero di frasi presenti nel testo.
+    - *NDL*: numero di lettere presenti nel testo.
+    - *NDP*: numero di parole presenti nel testo.
+
+- *MPC-CO*:
+  - *Nome*: Correttezza ortografica
+  - *Descrizione*: Indica il numero di errori ortografici presenti nel testo.
+
+
+== Metriche per la qualità di prodotto
