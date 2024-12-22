@@ -123,7 +123,7 @@ In questa documento rientra la realizzazione dei casi d'uso (_use case_): descri
 Ogni caso d'uso deve comprendere le seguenti informazioni:
 
 ====== Identificazione
-Ogni caso d'uso deve essere identificato da un codice univoco, secondo la nomenclatura: *UC[numero_use_case]*, seguito da un breve titolo esplicativo, separati da un trattino.
+Ogni caso d'uso deve essere identificato da un codice univoco, secondo la nomenclatura *UC[numero_use_case]*, un trattino ed un breve titolo esplicativo.
 
 Esempio: 'UC1 - Trasmissione dei dati di localizzazione'
 

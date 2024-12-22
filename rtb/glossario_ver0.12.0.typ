@@ -18,7 +18,7 @@
     "12/12/2024",
     "Davide Picello",
     "Andrea Precoma",
-    [- Aggiunto il termine "PostgreSQL", "Diagramma di Gantt"],
+    [- Aggiunto il termine "PostgreSQL" e "Diagramma di Gantt"],
 
     "0.10.0",
     "10/12/2024",
