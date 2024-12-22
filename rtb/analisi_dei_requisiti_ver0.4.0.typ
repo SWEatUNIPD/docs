@@ -362,30 +362,30 @@ Domanda: il capitolato chiede di avvisare l'admin, si può immaginare tramite no
 #pagebreak()
 
 //UC Prec
+// TODO: pagine (tanti annunci)
 === UC18 - Visualizzazione storico degli annunci <uc18>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: l'amministratore è autenticato al sistema.
-- *Postcondizioni*: l'amministratore visualizza lo storico degli annunci ordinati dal più recente.
+- *Precondizioni*: il sistema tiene traccia di tutti gli annunci generati per i clienti dell'amministratore. Questo è autenticato e ha accesso alla _dashboard_.
+- *Postcondizioni*: il sistema espone gli annunci generati fino a quel momento ordinati dal più recente.
 - *Trigger*: l'amministratore desidera prendere visione degli annunci generati fino a quel momento.
 - *Scenario principale*:
   + L'amministratore accede alla _dashboard_ principale.
   + L'amministratore accede alla sezione apposita degli annunci.
-  + Vengono esposte le _preview_ degli annunci con le informazioni principali.
+  + Il sistema espone le _preview_ degli annunci con le informazioni principali.
 - *Inclusione*:
   + Visualizzazione singolo annuncio nello storico (#link(<uc19>)[UC19]).
 
 === UC19 - Visualizzazione singolo annuncio nello storico <uc19>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: l'amministratore è autenticato al sistema ed ha accesso alla sezione dedicata agli annunci.
-- *Postcondizioni*: l'amministratore visualizza le informazioni principali relative al singolo annuncio:
+- *Precondizioni*: il sistema tiene traccia delle informazioni principali degli annunci generati per i clienti dell'amministratore. Questo è autenticato ed è acceduto alla sezione dedicata agli annunci.
+- *Postcondizioni*: il sistema espone le informazioni principali relative al singolo annuncio:
   - Nome del punto di interesse collegato.
   - _E-mail_ dell'utente destinatario.
   - Data e ora di emissione.
   - Un _flag_ che indica se il noleggio al quale è stato inviato l'annuncio è ancora attivo.
 - *Trigger*: l'amministratore desidera visualizzare le informazioni principali di un annuncio.
 - *Scenario principale*:
-  + L'amministratore accede alla sezione apposita degli annunci.
-  + Vengono esposte le informazioni relative all'annuncio:
+  + L'amministratore visualizza le seguenti informazioni relative all'annuncio:
     - Nome del punto di interesse collegato.
     - _E-mail_ dell'utente destinatario.
     - Data e ora di erogazione.
@@ -398,44 +398,36 @@ Domanda: il capitolato chiede di avvisare l'admin, si può immaginare tramite no
 
 === UC20 - Visualizzazione nome del punto di interesse collegato all'annuncio <uc20>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: l'amministratore visualizza le informazioni principali di un annuncio nello storico o ha selezionato i dettagli dell'annuncio.
-- *Postcondizioni*: l'amministratore visualizza il nome del punto di interesse collegato all'annuncio selezionato.
-- *Trigger*: l'amministratore desidera visualizzare il nome del punto di interesse collegato all'annuncio.
+- *Precondizioni*: il sistema tiene traccia del punto di interesse collegato al relativo annuncio. L'amministratore è autenticato e ha accesso alla _dashboard_.
+- *Postcondizioni*: il sistema espone il nome del punto di interesse collegato al relativo annuncio.
+- *Trigger*: l'amministratore desidera visualizzare il nome del punto di interesse collegato al relativo annuncio.
 - *Scenario principale*:
-  + L'amministratore accede alla sezione apposita degli annunci.
-  + Viene esposto il nome del punto di interesse collegato all'annuncio tra le informazioni principali del singolo annuncio.
-  + Viene esposto il nome del punto di interesse collegato all'annuncio tra i dettagli dell'annuncio.
+  + L'amministratore visualizza il nome del punto di interesse.
 
-=== UC21 - Visualizzazione _e-mail_ dell'utente destinatario dell'annuncio <uc21>
+=== UC21 - Visualizzazione e-mail dell'utente destinatario dell'annuncio <uc21>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: l'amministratore visualizza le informazioni principali di un annuncio nello storico o ha selezionato i dettagli dell'annuncio.
-- *Postcondizioni*: l'amministratore visualizza l'_e-mail_ dell'untente destinatario dell'annuncio selezionato.
+- *Precondizioni*: il sistema tiene traccia della _e-mail_ dell'utentu al quale viene mandato l'annuncio. L'amministratore è autenticato e ha accesso alla _dashboard_.
+- *Postcondizioni*: il sistema espone l'_e-mail_ dell'utente al quale è stato inviato l'annuncio.
 - *Trigger*: l'amministratore desidera visualizzare l'_e-mail_ dell'untente destinatario dell'annuncio.
 - *Scenario principale*:
-  + L'amministratore accede alla sezione apposita degli annunci.
-  + Viene esposta l'_e-mail_ dell'untente destinatario dell'annuncio tra le informazioni principali del singolo annuncio.
-  + Viene esposta l'_e-mail_ dell'untente destinatario dell'annuncio tra i dettagli dell'annuncio.
+  + L'amministratore visualizza l'_e-mail_ dell'utente destinatario dell'annuncio.
 
 === UC22 - Visualizzazione data e ora di emissione dell'annuncio <uc22>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: l'amministratore visualizza le informazioni principali di un annuncio nello storico o ha selezionato i dettagli dell'annuncio.
-- *Postcondizioni*: l'amministratore visualizza la data e l'ora di emissione dell'annuncio selezionato.
-- *Trigger*: l'amministratore desidera visualizzare la data e l'ora di erogazione dell'annuncio.
+- *Precondizioni*: il sistema tiene traccia della data e dell'ora alle quali è stato inviato il relativo annuncio all'utente. L'amministratore è autenticato e ha accesso alla _dashboard_.
+- *Postcondizioni*: il sistema espone la data e l'ora alle quali è stato inviato il relativo annuncio all'utente.
+- *Trigger*: l'amministratore desidera visualizzare la data e l'ora di emissione dell'annuncio.
 - *Scenario principale*:
-  + L'amministratore accede alla sezione apposita degli annunci.
-  + Viene esposta la data e l'ora di emissione dell'annuncio tra le informazioni principali del singolo annuncio.
-  + Viene esposta la data e l'ora di erogazione dell'annuncio tra i dettagli dell'annuncio.
+  + L'amministratore visualizza la data e l'ora di emissione dell'annuncio.
 
-=== UC23 - Visualizzazione _flag_ sugli annunci nello storico inviati a noleggi attivi
+=== UC23 - Visualizzazione flag sugli annunci nello storico inviati a noleggi attivi
 <uc23>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: l'amministratore visualizza le informazioni principali di un annuncio nello storico o ha selezionato i dettagli dell'annuncio.
-- *Postcondizioni*: l'amministratore visualizza un _flag_ sugli annunci inviati a noleggi che sono ancora attivi.
+- *Precondizioni*: il sistema tiene traccia dello stato del noleggio al quale è stato inviato l'annuncio, se è cioè ancora attivo o meno. L'amministratore è autenticato e ha accesso alla _dashboard_.
+- *Postcondizioni*: il sistema espone un _flag_ nel caso il noleggio al quale è stato inviato l'annuncio è ancora attivo.
 - *Trigger*: l'amministratore desidera visualizzare se l'annuncio è stato inviato ad un mezzo con noleggio attivo.
 - *Scenario principale*:
-  + L'amministratore accede alla sezione apposita degli annunci.
-  + Viene esposto un _flag_ tra le informazioni principali del singolo annuncio che indica se il noleggio è attivo in quel momento.
-  + Viene espost un _flag_ tra i dettagli dell'annuncio che indica se il noleggio è attivo in quel momento.
+  + L'amministratore visualizza il _flag_ nel caso in cui il noleggio relativo all'annuncio è ancora attivo.
 #v(20pt)
 #figure(
   image("../assets/use_cases/storico.png"),
@@ -444,8 +436,8 @@ Domanda: il capitolato chiede di avvisare l'admin, si può immaginare tramite no
 
 === UC24 - Visualizzazione dettagli singolo annuncio nello storico
 - *Attore principale*: Amministratore.
-- *Precondizioni*: l'amministratore è autenticato al sistema ed ha accesso alla sezione dedicata agli annunci.
-- *Postcondizioni*: l'amministratore visualizza interamente l'annuncio selezionato insieme alle relative informazioni:
+- *Precondizioni*: il sistema tiene traccia di tutte le informazioni degli annunci generati per i clienti dell'amministratore. Questo è autenticato ed è acceduto alla sezione dedicata agli annunci.
+- *Postcondizioni*: il sistema espone interamente l'annuncio insieme alle relative informazioni:
   - Nome del punto di interesse collegato.
   - Categoria del punto di interesse collegato.
   - _E-mail_ dell'utente destinatario.
@@ -453,8 +445,7 @@ Domanda: il capitolato chiede di avvisare l'admin, si può immaginare tramite no
   - _Flag_ che indica se il noleggio al quale è stato inviato l'annuncio è ancora attivo.
 - *Trigger*: l'amministratore desidera visualizzare l'annuncio insieme alle relative informazioni.
 - *Scenario principale*:
-  + L'amministratore accede alla sezione apposita degli annunci.
-  + L'amministratore seleziona l'opzione "dettagli" dell'annuncio desiderato.
+  + L'amministratore seleziona l'opzione per visualizzare i dettagli dell'annuncio desiderato.
   + Viene esposto l'annuncio insieme alle relative informazioni:
     - Nome del punto di interesse collegato.
     - Categoria del punto di interesse collegato.
@@ -472,26 +463,24 @@ Domanda: il capitolato chiede di avvisare l'admin, si può immaginare tramite no
 
 === UC25 - Visualizzazione completa dell'annuncio <uc25>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: l'amministratore ha selezionato i dettagli dell'annuncio nello storico.
-- *Postcondizioni*: l'amministratore visualizza l'annuncio per intero.
-- *Trigger*: l'amministratore desidera visualizzare un annuncio generato precedentemente.
+- *Precondizioni*: il sistema tiene traccia degli annunci generati. L'amministratore è autenticato e ha accesso alla _dashboard_.
+- *Postcondizioni*: il sistema espone l'annuncio per intero.
+- *Trigger*: l'amministratore desidera visualizzare l'annuncio generato precedentemente.
 - *Scenario principale*:
-  + L'amministratore seleziona l'opzione "dettagli" dell'annuncio desiderato.
-  + L'amministratore visualizza l'annuncio per intero.
+  + L'amministratore visualizza interamente l'annuncio generato precedentemente.
 
 === UC26 - Visualizzazione categoria del punto di interesse collegato all'annuncio <uc26>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: l'amministratore ha selezionato i dettagli dell'annuncio nello storico.
-- *Postcondizioni*: l'amministratore visualizza la categoria del punto di interesse collegato all'annuncio selezionato.
-- *Trigger*: l'amministratore desidera visualizzare la categoria del punto di interesse collegato all'annuncio.
+- *Precondizioni*: il sistema tiene traccia della categoria del punto di interesse collegato al relativo annuncio. L'amministratore è autenticato e ha accesso alla _dashboard_.
+- *Postcondizioni*: il sistema espone la categoria del punto di interesse collegato al relativo annuncio.
+- *Trigger*: l'amministratore desidera visualizzare la categoria del punto di interesse collegato al relativo annuncio.
 - *Scenario principale*:
-  + L'amministratore accede alla sezione apposita degli annunci.
-  + Viene esposta la categoria del punto di interesse collegato all'annuncio tra i dettagli dell'annuncio.
+  + L'amministratore visualizza la categoria del punto di interesse.
 
 === UC27 - Chiusura della finestra di dialogo aperta <uc27>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: l'amministratore visualizza una finestra di dialogo aperta.
-- *Postcondizioni*: l'amministratore chiude la finestra di dialogo aperta.
+- *Precondizioni*: il sistema espone una finestra di dialogo con la quale l'amministratore può interagire.
+- *Postcondizioni*: il sistema chiude la finestra di dialogo.
 - *Trigger*: l'amministratore desidera chiudere la finestra di dialogo aperta.
 - *Scenario principale*:
   + L'amministratore visualizza una finestra di dialogo aperta.
@@ -506,19 +495,21 @@ Domanda: il capitolato chiede di avvisare l'admin, si può immaginare tramite no
 
 === UC28 - Visualizzazione storico annunci per lista
 - *Attore principale*: Amministratore.
-- *Precondizioni*: l'amministratore è autenticato al sistema ed ha accesso alla sezione dedicata agli annunci.
-- *Postcondizioni*: l'amministratore visualizza lo storico degli annunci ordinati dal più recente in formato a lista.
+- *Precondizioni*: il sistema tiene traccia di tutti gli annunci generati per i clienti dell'amministratore. Questo è autenticato e ha accesso alla _dashboard_.
+- *Postcondizioni*: il sistema espone gli annunci generati fino a quel momento ordinati dal più recente in formato a lista.
 - *Trigger*: l'amministratore vuole prendere visione degli annunci generati fino a quel momento in formato a lista.
 - *Scenario principale*:
+  + L'amministratore accede alla _dashboard_ principale.
   + L'amministratore accede alla sezione apposita degli annunci.
   + L'amministratore selezione l'opzione per visualizzare gli annunci in formato a lista.
 
 === UC29 - Visualizzazione storico annunci per griglia
 - *Attore principale*: Amministratore.
-- *Precondizioni*: l'amministratore è autenticato al sistema ed ha accesso alla sezione dedicata agli annunci.
-- *Postcondizioni*: l'amministratore visualizza lo storico degli annunci ordinati dal più recente in formato a griglia.
+- *Precondizioni*: il sistema tiene traccia di tutti gli annunci generati per i clienti dell'amministratore. Questo è autenticato e ha accesso alla _dashboard_.
+- *Postcondizioni*: il sistema espone gli annunci generati fino a quel momento ordinati dal più recente in formato a griglia.
 - *Trigger*: l'amministratore vuole prendere visione degli annunci generati fino a quel momento in formato a griglia.
 - *Scenario principale*:
+  + L'amministratore accede alla _dashboard_ principale.
   + L'amministratore accede alla sezione apposita degli annunci.
   + L'amministratore selezione l'opzione per visualizzare gli annunci in formato a griglia.
 #v(20pt)
@@ -531,8 +522,8 @@ Domanda: il capitolato chiede di avvisare l'admin, si può immaginare tramite no
 
 === UC30 - Ricerca degli annunci nello storico
 - *Attore principale*: Amministratore.
-- *Precondizioni*: l'amministratore è autenticato al sistema ed ha accesso alla sezione dedicata agli annunci.
-- *Postcondizioni*: l'amministratore visualizza gli annunci filtrati secondo alcune opzioni fornite: _e-mail_ dell'utente destinatario dell'annuncio, nome del punto di interesse collegato all'annuncio, intervallo di date e fascia oraria di emissione. Gli annunci sono sempre ordinati dal più recente.
+- *Precondizioni*: il sistema tiene traccia di tutti gli annunci generati per i clienti dell'amministratore. Questo è autenticato ed è acceduto alla sezione dedicata agli annunci.
+- *Postcondizioni*: il sistema espone gli annuci filtrati secondo alcune opzioni fornite: _e-mail_ dell'utente destinatario dell'annuncio, nome del punto di interesse collegato all'annuncio, intervallo di date e fascia oraria di emissione.
 - *Trigger*: l'amministratore desidera prendere visione di alcuni specifici annunci generati precedentemente.
 - *Scenario principale*:
   + L'amministratore accede alla sezione apposita degli annunci.
@@ -543,43 +534,39 @@ Domanda: il capitolato chiede di avvisare l'admin, si può immaginare tramite no
   + Ricerca degli annunci nello storico per intervallo di date di emissione (#link(<uc33>)[UC33]).
   + Ricerca degli annunci nello storico per fascia oraria di emissione (#link(<uc34>)[UC34]).
 
-=== UC31 - Ricerca degli annunci nello storico per _e-mail_ utente <uc31>
+=== UC31 - Ricerca degli annunci nello storico per e-mail utente <uc31>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: l'amministratore è autenticato al sistema ed ha accesso alla sezione dedicata agli annunci.
-- *Postcondizioni*: l'amministratore visualizza lo storico degli annunci destinati all'utente selezionato ordinati dal più recente.
+- *Precondizioni*: il sistema tiene traccia di tutti gli annunci generati per l'utente selezionato. L'amministratore è acceduto alla sezione dedicata agli annunci e ha eseguito una ricerca degli annunci.
+- *Postcondizioni*: il sistema espone lo storico degli annunci destinati all'utente selezionato.
 - *Trigger*: l'amministratore desidera prendere visione degli annunci generati fino a quel momento per uno specifico utente.
 - *Scenario principale*:
-  + L'amministratore accede alla sezione apposita degli annunci.
   + L'amministratore seleziona l'_e-mail_ di un utente.
   + Vengono visualizzati solo gli annunci destinati all'utente selezionato.
 
 === UC32 - Ricerca degli annunci nello storico per nome del punto di interesse <uc32>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: l'amministratore è autenticato al sistema ed ha accesso alla sezione dedicata agli annunci.
-- *Postcondizioni*: l'amministratore visualizza lo storico degli annunci legati al punto di interesse selezionato ordinati dal più recente.
+- *Precondizioni*: il sistema tiene traccia di tutti gli annunci generati collegati al punto di interesse selezionato. L'amministratore è acceduto alla sezione dedicata agli annunci e ha eseguito una ricerca degli annunci.
+- *Postcondizioni*: il sistema espone lo storico degli annunci collegati al punto di interesse selezionato.
 - *Trigger*: l'amministratore desidera prendere visione degli annunci generati fino a quel momento per uno specifico punto di interesse.
 - *Scenario principale*:
-  + L'amministratore accede alla sezione apposita degli annunci.
   + L'amministratore seleziona il nome di un punto di interesse.
   + Vengono visualizzati solo gli annunci collegati al punto di interesse selezionato.
 
 === UC33 - Ricerca degli annunci nello storico per intervallo di date di emissione <uc33>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: l'amministratore è autenticato al sistema ed ha accesso alla sezione dedicata agli annunci.
-- *Postcondizioni*: l'amministratore visualizza lo storico degli annunci emessi nell'intervallo di date selezionato ordinati dal più recente.
+- *Precondizioni*: il sistema tiene traccia di tutti gli annunci emessi nell'intervallo di date selezionato. L'amministratore è acceduto alla sezione dedicata agli annunci e ha eseguito una ricerca degli annunci.
+- *Postcondizioni*: il sistema espone lo storico degli annunci emessi nell'intervallo di date selezionato.
 - *Trigger*: l'amministratore desidera prendere visione degli annunci generati fino a quel momento in un determinato intervallo di date.
 - *Scenario principale*:
-  + L'amministratore accede alla sezione apposita degli annunci.
   + L'amministratore seleziona un intervallo di date.
   + Vengono visualizzati solo gli annunci emessi nell'intervallo di date selezionato.
 
 === UC34 - Ricerca degli annunci nello storico per fascia oraria di emissione <uc34>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: l'amministratore è autenticato al sistema ed ha accesso alla sezione dedicata agli annunci.
-- *Postcondizioni*: l'amministratore visualizza lo storico degli annunci emessi nella fascia oraria selezionata ordinati dal più recente.
+- *Precondizioni*: il sistema tiene traccia di tutti gli annunci emessi nella fascia oraria selezionata. L'amministratore è acceduto alla sezione dedicata agli annunci e ha eseguito una ricerca degli annunci.
+- *Postcondizioni*: il sistema espone lo storico degli annunci emessi nella fascia oraria selezionata.
 - *Trigger*: l'amministratore desidera prendere visione degli annunci generati fino a quel momento in una determinata fascia oraria.
 - *Scenario principale*:
-  + L'amministratore accede alla sezione apposita degli annunci.
   + L'amministratore seleziona una fascia oraria.
   + Vengono visualizzati solo gli annunci emessi nella fascia oraria selezionata.
 #v(20pt)
