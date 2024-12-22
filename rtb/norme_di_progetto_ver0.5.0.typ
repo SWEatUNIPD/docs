@@ -5,33 +5,18 @@
   data: "14 Novembre 2024",
   destinatari: ("Gruppo SWE@",),
   responsabile: "-",
-  redattori: ("Klaudio Merja", "Riccardo Milan", "Andrea Precoma", "Davide Picello"),
-  verificatori: ("Davide Marin","Klaudio Merja", "Riccardo Milan", "Davide Picello", "Andrea Precoma"),
+  redattori: ("Andrea Precoma", "Klaudio Merja", "Davide Picello", "Riccardo Milan"),
+  verificatori: ("Davide Marin", "Davide Picello", "Andrea Precoma","Klaudio Merja", "Riccardo Milan"),
   titolo: "Norme di Progetto",
   uso: "Interno",
   versioni: (
-    "0.5.2",
-    "20/12/2024",
-    "Riccardo Milan",
-    "Davide Marin\nKlaudio Merja",
-    [
-      - Altre piccole correzioni dopo seconda revisione
-    ],
-
-    "0.5.1",
-    "17/12/2024",
-    "Riccardo Milan",
-    "Davide Marin\nKlaudio Merja",
-    [
-      - Correzioni di stile
-    ],
-
     "0.5.0",
-    "13/12/2024",
+    "22/12/2024",
     "Riccardo Milan",
     "Davide Marin\nKlaudio Merja",
     [
       - Aggiunta del capitolo "Processi organizzativi"
+      - Correzioni di stile
     ],
 
     "0.4.0",
@@ -237,7 +222,7 @@ Il fornitore supporta il cliente nella revisione e nei _test_ di accettazione de
 #pagebreak()
 = Processi di supporto
 
-== Documentazione
+== Documentazione <Documentazione>
 Il processo di documentazione è necessario per il tracciamento di tutte le attività relative al progetto, sia dal lato _software_ che dal lato organizzativo. Tutti i membri del gruppo si impegnano a rispettare le norme delineate nel capitolo corrente per la stesura di ogni documento.
 
 === Preparazione dell'ambiente
@@ -394,10 +379,10 @@ Nei documenti vengono applicate le seguenti regole di stile testuali:
 
 === Riferimenti
 ==== Contestuali
-Per riferirsi ad una sezione del documento per una spiegazione più dettagliata si adotta la dicitura "(sez. [I])" dove I indica l'indice della sezione (ad esempio "(sez. 3.2)").
+Per riferirsi ad una sezione del documento per una spiegazione più dettagliata si adotta la dicitura "sez. [I]" dove I indica l'indice della sezione (ad esempio "(sez. 3.2)"). Per un corretto collegamento si veda il paragrafo apposito (#link(<stile_testo>)[sez. 3.1.8]).
 
 ==== Ipertestuali
-Per esporre un _link_ ad una pagina esterna al docuento si utilizza la funzione `#formatLink` (#link(<stile_testo>)[sez. 3.1.9]) esplicitando l'interezza dell'_url_ anche nella _label_. Unica eccezione di stile per i riferimenti alle _issue_ nella tabella delle decisioni (#link(<stile_testo>)[sez. 3.1.9]).
+Per esporre un _link_ ad una pagina esterna al docuento si utilizza la funzione `#formatLink` (#link(<stile_testo>)[sez. 3.1.8]) esplicitando l'interezza dell'_url_ anche nella _label_. Unica eccezione di stile per i riferimenti alle _issue_ nella tabella delle decisioni (#link(<stile_testo>)[sez. 3.1.8]).
 
 === Elenchi puntati
 Una lista è preferibile a un elenco narrativo, da valutare se renderlo numerato o meno a seconda della circostanza. I punti della descrizione nel registro delle modifiche vengono sempre rappresentati in un elenco. Se le voci dell'elenco sono costituite da delle frasi vengono chiuse da ".", se invece possiedono solo poche parole, che ad esempio indicano il nome di una tecnologia, non viene messo nessun segno di punteggiatura al termine. Le voci dell'elenco della descrizione nel registro delle modifche non vengono chiuse da punteggiatura.
@@ -651,6 +636,7 @@ Lo stato di avanzamento delle _issues_ è consultabile all'interno della _projec
 
 
 Le _issues_ sono create dal responsabile e sono composte da:
+- *Id*: identifica in modo univoco la _issue_ e viene riportato nel _backlog_ e nella tabella delle decisioni del verbale in cui viene presa la decisione.
 - *Titolo*: identifica in modo univoco il compito da svolgere.
 - *Descrizione*: descrizione breve dell'attività da svolgere, riferimento al verbale in cui è stata presa tale decisione per avere più informazioni riguardo ad essa e i membri del gruppo che dovranno verificare l'attività svolta.
 - *Assegnatario*: i componenti del gruppo incaricati a svolgere l'attività.
@@ -662,12 +648,11 @@ Le _issues_ sono create dal responsabile e sono composte da:
 Ogni qualvolta ci sia la necessità di portare a termine un compito è necessario seguire la seguente procedura:
 + Il responsabile, dopo aver concordato in una riunione il da farsi, crea una nuova _issue_ con stato "_To do_" su GitHub e la assegna.
 + All'inizio del lavoro di produzione, l'assegnatario cambia la _issue_ di stato, passando da "_To do_" ad "_In progress_", inoltre crea un nuovo _branch_ apposito staccato dal ramo principale per eseguire l'attività.
-+ Contestualmente l'assegnatario apre una _pull request_ su GitHub. Nella descrizione della _pull request_ è importante che scriva la parola chiave "closes `#X`" (dove X è l'id della _issue_) per chiudere la _issue_ una volta che la _pull request_ sarà approvata e verrà effettuato il _merge_ nel ramo principale.
-+ Finito il lavoro di produzione viene assegnato il verificatore.
++ Contestualmente l'assegnatario apre una _pull request_ su GitHub e assegna i verificatori per quell'attività.
 + Il verificatore controlla il lavoro svolto:
   - Se la verifica ha esito positivo:
     + Il verificatore approva su GitHub la _pull request_ e chiede al responsabile di effettuare il _merge_ nel ramo principale .
-    + La _issue_ viene marcata "_done_" su GitHub automaticamente.
+    + La _issue_ viene marcata "_Done_" su GitHub automaticamente.
   - Se la verifica ha esito negativo:
     + Il verificatore rilascia una lista di cambiamenti suggeriti nella _pull request_.
     + L'incaricato apporta le modifiche suggerite e si torna al punto 4.
@@ -697,7 +682,7 @@ Le riunioni interne sono programmate di comune accordo tra i membri del gruppo. 
 Le riunioni esterne coinvolgono i membri del gruppo e il proponente.
 
 
-Per le riunioni con il proponente viene utilizzata la piattaforma Google Meet e il _link_ per accedere alla chiamata viene comunicato al _team_ di volta in volta. In accordo con l'azienda proponente gli incontri di fine _sprint_ avvengono ogni due settimane, in quanto lo _sprint_ dura due settimane, mentre a metà di ogni _sprint_ si svolgerà un incontro di allineamento più breve per un confronto e degli aggiustamenti.
+Per le riunioni con il proponente viene utilizzata la piattaforma Google Meet e il _link_ per accedere alla chiamata viene comunicato al _team_ di volta in volta. In accordo con l'azienda proponente gli incontri di fine _sprint_ avvengono ogni due settimane, in corrispondenza della cadenza degli _sprint_, mentre a metà di ogni _sprint_ si svolgerà un incontro di allineamento più breve per un confronto e degli aggiustamenti.
 
 ===== Compiti del responsabile
 - Esporre i punti all'ordine del giorno.
@@ -707,14 +692,14 @@ Per le riunioni con il proponente viene utilizzata la piattaforma Google Meet e 
 
 ==== Verbali
 ===== Verbali Interni
-Al fine di tracciare le discussioni svolte, le decisioni prese dal gruppo e soprattutto le motivazioni dietro ad esse, al termine di ogni incontro interno viene aperta una _issue_ su Github per la preparazione, la verifica e l'approvazione del verbale. Il compito di redigere il verbale, seguendo il formato indicato nella sezione 3.1 di questo documento, è affidato al responsabile il quale deve assicurarsi di includere tutte le informazioni rilevanti discusse.
+Al fine di tracciare le discussioni svolte, le decisioni prese dal gruppo e soprattutto le motivazioni dietro ad esse, al termine di ogni incontro interno viene aperta una _issue_ su Github per la preparazione, la verifica e l'approvazione del verbale. Il compito di redigere il verbale, seguendo il formato indicato nella #link(<Documentazione>)[sez. 3.1] di questo documento, è affidato al responsabile il quale deve assicurarsi di includere tutte le informazioni rilevanti discusse.
 
 ===== Verbali Esterni
 Per quanto riguarda le riunioni con i proponenti valgono le stesse regole di quelle interne con il passaggio aggiuntivo, di cui si occupa il responsabile, di richiedere l'approvazione del proponente tramite la sua firma sul verbale una volta redatto e verificato.
 
 == Miglioramento
 === Descrizione
-Secondo lo _standard_ ISO/IEC 12207:1995 il processo di miglioramento nel ciclo di vita del _software_ è finalizzato a stabilire, misurare, controllare e migliorare i processi che lo compongono. L’attività di miglioramento è composta da:
+Secondo lo standard ISO/IEC 12207:1995 il processo di miglioramento nel ciclo di vita del _software_ è finalizzato a stabilire, misurare, controllare e migliorare i processi che lo compongono. L’attività di miglioramento è composta da:
 - Analisi: identificare le aree di miglioramento dei processi.
 - Miglioramento: implementare le modifiche necessarie per migliorare i processi di sviluppo del _software_.
 
