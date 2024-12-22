@@ -406,7 +406,7 @@ Domanda: il capitolato chiede di avvisare l'admin, si può immaginare tramite no
 
 === UC21 - Visualizzazione e-mail dell'utente destinatario dell'annuncio <uc21>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia della _e-mail_ dell'utentu al quale viene mandato l'annuncio. L'amministratore è autenticato e ha accesso alla _dashboard_.
+- *Precondizioni*: il sistema tiene traccia della _e-mail_ dell'utente al quale viene mandato l'annuncio. L'amministratore è autenticato e ha accesso alla _dashboard_.
 - *Postcondizioni*: il sistema espone l'_e-mail_ dell'utente al quale è stato inviato l'annuncio.
 - *Trigger*: l'amministratore desidera visualizzare l'_e-mail_ dell'untente destinatario dell'annuncio.
 - *Scenario principale*:
