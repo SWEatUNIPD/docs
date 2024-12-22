@@ -118,7 +118,7 @@ Di seguito l'elenco dei documenti che il gruppo consegnerà all'azienda proponen
 L'Analisi dei Requisiti è un documento redatto dagli analisti che definisce le funzionalità necessarie per soddisfare le richieste del proponente.
 
 ===== Casi d'uso
-In questa documento rientra la realizzazione dei casi d'uso (_use case_): descrizioni formali di come un sistema _software_ interagisce con utenti o con altre entità esterne al sistema, chiamati attori, per raggiungere un obiettivo specifico. Questi sono composti da testo puro e sono usati per documentare le varie funzionalità attese dal sistema ad alto livello, quindi non specificando i dettagli implementativi. A un caso d'uso è preferibile abbinare anche il relativo diagramma #rifGlossario("UML").
+In questo documento rientra la realizzazione dei casi d'uso (_use case_): descrizioni formali di come un sistema _software_ interagisce con utenti o con altre entità esterne al sistema, chiamati attori, per raggiungere un obiettivo specifico. Questi sono composti da testo puro e sono usati per documentare le varie funzionalità attese dal sistema ad alto livello, quindi non specificando i dettagli implementativi. A un caso d'uso è preferibile abbinare anche il relativo diagramma #rifGlossario("UML").
 
 Ogni caso d'uso deve comprendere le seguenti informazioni:
 
