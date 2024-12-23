@@ -140,7 +140,7 @@ Esempio: 'UC1 - Trasmissione dei dati di localizzazione'
 Gli attori rappresentano entità esterne che interagiscono con il sistema. Ogni caso d'uso specifica una funzionalità creata per un determinato attore.
 
 Esistono più tipi di attori:
-- *Attore primario*: L'utente o _stakeholder_ che avvia il caso d'uso ed ha un obiettivo da raggiungere utilizzando il sistema.
+- *Attore primario*: L'utente o _#rifGlossario("stakeholder")_ che avvia il caso d'uso ed ha un obiettivo da raggiungere utilizzando il sistema.
 - *Attore di supporto*: Un utente o _stakeholder_ coinvolto nel caso d'uso, ma che non inizia l'interazione con il sistema. Può fornire ulteriori _input_ o risorse necessarie per completare lo _use case_. La sua presenza non è obbligatoria all'interno di un caso d'uso.
 
 ====== Precondizioni
@@ -238,7 +238,7 @@ Dovrebbe contenere le seguenti informazioni/sessioni:
 */
 
 ==== Glossario
-Il Glossario è un documento di supporto che raccoglie i termini tecnici e specifici utilizzati all'interno del progetto, fornendone definizioni chiare e univoche. È destinato a tutti gli _#rifGlossario("stakeholder")_, i membri del _team_, i committenti e l'azienda proponente, con l'obiettivo di prevenire ambiguità e incomprensioni. Questo strumento è fondamentale per migliorare la coerenza e la qualità della documentazione prodotta.
+Il Glossario è un documento di supporto che raccoglie i termini tecnici e specifici utilizzati all'interno del progetto, fornendone definizioni chiare e univoche. È destinato a tutti gli _stakeholder_, i membri del _team_, i committenti e l'azienda proponente, con l'obiettivo di prevenire ambiguità e incomprensioni. Questo strumento è fondamentale per migliorare la coerenza e la qualità della documentazione prodotta.
 
 ==== Lettera di presentazione
 La Lettera di Presentazione è un documento formale attraverso il quale il gruppo esprime la propria intenzione di partecipare alla fase di revisione del progetto. Include la documentazione prodotta dal gruppo e, se necessario, un aggiornamento sui costi e sulle tempistiche.
