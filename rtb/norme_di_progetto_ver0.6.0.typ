@@ -701,7 +701,7 @@ Ha il compito di:
 Il progettista si occuperà del _design_ del _software_: partendo dai problemi identificati dall'Analisi dei Requisiti elabora una possibile soluzione, che successivamente dovrà essere implementata dai programmatori, fungendo quindi da "elaborazione intermedia" tra le due parti.
 Ha il compito di:
 - Progettare un prodotto economico e manutenibile partendo dal lavoro degli analisti.
-- Garantire che vengano rispettati i principi tecnici dell'ingegneria del _software_, come un livello di accopppiamento più basso possibile.
+- Garantire che vengano rispettati i principi tecnici dell'ingegneria del _software_, come un livello di accoppiamento più basso possibile.
 
 ===== Verificatore
 Il verificatore dovrà garantire che il _software_ mantenga adeguati standard di qualità garantendone, attraverso _test_ e controlli, l'affidabilità e la robustezza.
@@ -733,8 +733,8 @@ Le _issues_ sono create dal responsabile e sono composte da:
 - *Milestone*: la _release_ in cui deve essere pubblicato il risultato dell'attività.
 - *Etichetta*: la categoria a cui appartiene quella attività.
 - *Stato*: avanzamento del _task_.
-- *Data di inizio attività*: momento di presa in carico dell'attività (solitamente coincide con la data di inizio sprint), fondamentale per aggiornare il diagramma gantt.
-- *Data di fine attività*: il termine indicato per portare a termine l'attività (solitamente coincide con la data di fine sprint), fondamentale per aggiornare il diagramma gantt.
+- *Data di inizio attività*: momento di presa in carico dell'attività (solitamente coincide con la data di inizio _sprint_), fondamentale per aggiornare il diagramma gantt.
+- *Data di fine attività*: il termine indicato per portare a termine l'attività (solitamente coincide con la data di fine _sprint_), fondamentale per aggiornare il diagramma gantt.
 Ogni qualvolta ci sia la necessità di portare a termine un compito è necessario seguire la seguente procedura:
 + Il responsabile, dopo aver concordato in una riunione il da farsi, crea una nuova _issue_ con stato "_To do_" su GitHub e la assegna.
 + All'inizio del lavoro di produzione, l'assegnatario cambia la _issue_ di stato, passando da "_To do_" ad "_In progress_", inoltre crea un nuovo _branch_ apposito staccato dal ramo principale per eseguire l'attività.
@@ -766,7 +766,7 @@ Per quanto riguarda il mezzo di comunicazione per i SAL con i proponenti lo stru
 Al fine di garantire l'efficienza delle riunioni il responsabile corrente avrà il compito di interloquire con i proponenti per riepilogare i punti principali del periodo trascorso e esprimere dubbi e incertezze emerse dal gruppo.
 
 ===== Riunioni Interne
-Le riunioni interne sono programmate di comune accordo tra i membri del gruppo. In caso di necessità è possibile richiedere riunioni straordinarie durante la settimana tramite il canale dedicato su Telegram con data e orario stabiliti attraverso un sondaggio. Tutte le riunioni _online_ si svolgeranno nel canale Discord appositamente designato. Nelle riunini interne l'obiettivo finale è quello di risolvere le mancanze segnalate dall'ordine del giorno, per cui nella fase finale della riunione il responsabile, dopo aver discusso con il gruppo, pianifica le attività da svolgere e crea rispettivamente le _issue_ come da procedura sopra.
+Le riunioni interne sono programmate di comune accordo tra i membri del gruppo. In caso di necessità è possibile richiedere riunioni straordinarie durante la settimana tramite il canale dedicato su Telegram con data e orario stabiliti attraverso un sondaggio. Tutte le riunioni _online_ si svolgeranno nel canale Discord appositamente designato. Nelle riunioni interne l'obiettivo finale è quello di risolvere le mancanze segnalate dall'ordine del giorno, per cui nella fase finale della riunione il responsabile, dopo aver discusso con il gruppo, pianifica le attività da svolgere e crea rispettivamente le _issue_ come da procedura sopra.
 
 ===== Riunioni Esterne
 Le riunioni esterne coinvolgono i membri del gruppo e il proponente.
