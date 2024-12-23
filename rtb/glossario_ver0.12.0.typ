@@ -3,11 +3,23 @@
 #show: content => verbale(
   data: "11 novembre 2024",
   uso: "Interno",
-  responsabile: "Klaudio Merja",
-  redattori: ("Andrea Perozzo", "Andrea Precoma", "Riccardo Milan", "Klaudio Merja"),
+  responsabile: "Davide Martinelli",
+  redattori: ("Andrea Perozzo", "Andrea Precoma", "Davide Marin", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
   titolo: "Glossario",
-  verificatori: ("Andrea Perozzo", "Andrea Precoma", "Davide Picello"),
+  verificatori: ("Andrea Perozzo", "Andrea Precoma", "Davide Marin", "Davide Picello", "Riccardo Milan"),
   versioni: (
+    "0.12.0",
+    "21/12/2024",
+    "Davide Picello",
+    "Davide Marin\nKlaudio Merja",
+    [- Aggiunto il termine "UML"],
+
+    "0.11.0",
+    "12/12/2024",
+    "Davide Picello",
+    "Andrea Precoma",
+    [- Aggiunto il termine "PostgreSQL" e "Diagramma di Gantt"],
+
     "0.10.0",
     "10/12/2024",
     "Davide Marin\nKlaudio Merja",

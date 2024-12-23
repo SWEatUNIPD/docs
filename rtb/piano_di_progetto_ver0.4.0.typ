@@ -1,14 +1,32 @@
 #import "/templates/template.typ": *
 
 #show: content => verbale(
-  data: "27 Novembre 2024",
+  data: "27 novembre 2024",
   destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "Sync Lab S.r.l.", "Gruppo SWE@"),
-  responsabile: "Andrea Perozzo",
-  redattori: ("Klaudio Merja",),
-  verificatori: ("Davide Marin", "Davide Picello"),
+  responsabile: "Davide Martinelli",
+  redattori: ("Davide Martinelli", "Davide Picello", "Klaudio Merja"),
+  verificatori: ("Andrea Precoma", "Davide Marin", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
   titolo: "Piano di Progetto",
   uso: "Esterno",
   versioni: (
+    "0.4.0",
+    "17/12/2024",
+    "Davide Martinelli",
+    "Klaudio Merja\nDavide Marin",
+    [- Stesura pianificazione terzo _sprint_],
+
+    "0.3.0",
+    "14/12/2024",
+    "Davide Picello",
+    "Andrea Precoma\nRiccardo Milan",
+    [- Stesura retrospettiva secondo _sprint_],
+
+    "0.2.0",
+    "1/12/2024",
+    "Davide Picello",
+    "Andrea Precoma\nRiccardo Milan",
+    [- Stesura pianificazione secondo _sprint_],
+
     "0.1.1",
     "03/12/2024",
     "Klaudio Merja",
@@ -16,6 +34,7 @@
     [
       - Generazione dei grafici automatica
     ],
+    
     "0.1.0",
     "27/11/2024",
     "Klaudio Merja",
@@ -84,7 +103,7 @@ Per il processo di gestione dei rischi il gruppo adotta il modello fornito da Ia
 4. *Controllo del rischio*
 
 == Rischi organizzativi
-=== Riunione con l'azienda proponente
+=== Riunione con l'azienda proponente <RO-1>
 #tabellaRischio(
   ID: [RO-1],
   descrizione: [A causa di impegni personali dei membri del gruppo o per impossibilità dell'azienda proponente può risultare difficile fissare una riunione di #rifGlossario("SAL"), ritardando così il _#rifGlossario("feedback")_ su quanto svolto dal gruppo.],
@@ -140,7 +159,7 @@ Inoltre il modello permette un incremento parallelo dell'attività di analisi e 
 #pagebreak()
 
 = Pianificazione
-Come frutto della scelta del modello Agile la pianificazione delle attività da svolgere all'interno del progetto sono suddivise in degli _sprint_, ovvero delle iterazioni della durata di due settimana ciascuna in cui vengono pianificate le attività da svolgere per raggiungere gli obiettivi prefissati.
+Come frutto della scelta del modello Agile la pianificazione delle attività da svolgere all'interno del progetto sono suddivise in degli _sprint_, ovvero delle iterazioni della durata di due settimane ciascuna in cui vengono pianificate le attività da svolgere per raggiungere gli obiettivi prefissati.
 
 Alla fine di ogni _sprint_ viene svolta una riunione con l'azienda proponente in cui si analizza quanto prodotto durante l'iterazione, si effettua una retrospettiva su quanto avvenuto analizzando difficoltà e problemi riscontrati e si pianifica il lavoro da svolgere e gli obiettivi da raggiungere per la seguente iterazione.
 
@@ -166,7 +185,7 @@ Gli _sprint_ vengono quindi divisi nelle due _milestone_ precedentemente elencat
 - *Fine*: 27/11/2024
 - *Rischi attesi*: #link(<RO-2>)[RO-2], #link(<RO-3>)[RO-3], #link(<RT-1>)[RT-1]
 ==== Attività dello sprint
-Le attività che il gruppo si è preoccupato di concludere durante queste due settimane sono:
+Le attività che il gruppo si prefissa di concludere durante queste due settimane sono:
 - Inizio stesura delle Norme di Progetto, in particolare:
   - introduzione
   - processi primari
@@ -220,12 +239,137 @@ Le attività che il gruppo si è preoccupato di concludere durante queste due se
 )
 
 ==== Retrospettiva
-In queste due settimane di lavoro è apparso evidente l'impatto che le Norme di Progetto hanno avuto all'interno del gruppo, adottando una serie di convenzioni e regole che hanno permesso di uniformare il lavoro svolto dai vari redattori. Tuttavia, essendo la prima versione delle Norme di Progetto, a causa dei frequenti cambiamenti all'interno del documento, si è reso necessario più volte dover rivedere e correggere in corso d'opera alcuni documenti più volte. Nonostante ciò, il gruppo ritiene il lavoro svolto in linea con le aspettative.
+Il primo _sprint_ si è concluso con un bilancio molto positivo, dato il completamento di tutte le attività pianificate. 
+
+Ciononostante il gruppo ha riscontrato alcune difficoltà. In particolare, in queste due settimane di lavoro, è apparso evidente l'impatto che le Norme di Progetto hanno avuto all'interno del gruppo, adottando una serie di convenzioni e regole che hanno permesso di uniformare il lavoro svolto dai vari redattori. Tuttavia, essendo la prima versione delle Norme di Progetto, a causa dei frequenti cambiamenti all'interno del documento, si è reso necessario più volte dover rivedere e correggere in corso d'opera alcuni documenti più volte. Nonostante ciò, il gruppo ritiene il lavoro svolto in linea con le aspettative.
 
 Si evidenzia come difetto la possibilità di lavorare su una stessa _#rifGlossario("branch")_ a più membri in quanto questa causerebbe problemi di conflitti tra i file modificati.
 
-Gli analisti evidenziano le difficoltà e i dubbi relativa alla comprensione dei casi d'uso del prodotto richiesto dal proponente, che hanno però trovato risposta dalla riunione di fine primo _sprint_ da parte del proponente e che verranno approfonditi in quello successivo. Incentivano inoltre a lavorare in maniera più collaborativa alla fase di analisi e non limitarsi semplicemente all'esecuzione delle attività di analisi in maniera parallela.
+Gli analisti evidenziano le difficoltà e i dubbi relativi alla comprensione dei casi d'uso del prodotto richiesto dal proponente, che hanno però trovato risposta nella riunione di fine primo _sprint_ da parte del proponente e che verranno approfonditi in quello successivo. Incentivano a lavorare in maniera più collaborativa nella fase di analisi e non limitarsi semplicemente all'esecuzione delle attività in maniera parallela.
 
 I verificatori suggeriscono infine di incaricare più di una persona alla verifica dei documenti ad alto contenuto, quali possono essere le Norme di Progetto e il Piano di Progetto, al fine di garantire una verifica ottimale.
 
 
+#pagebreak()
+
+=== Sprint 2
+- *Inizio*: 28/11/2024
+- *Fine*: 13/12/2024
+- *Rischi attesi*: #link(<RO-2>)[RO-2], #link(<RO-3>)[RO-3], #link(<RT-1>)[RT-1]
+
+==== Attività dello sprint
+Le attività che il _team_ si è prefissato di portare a termine durante il secondo _sprint_ sono le seguenti:
+- Redazione verbale esterno ed interno del 27/11/2024.
+- Creare una prima versione del simulatore dati.
+  - È stato deciso di dedicare la prima settimana dello _sprint_ allo studio e approfondimento delle tecnologie: #rifGlossario("Docker"), #rifGlossario("Apache Kafka"), #rifGlossario("Apache Nifi") e #rifGlossario("PostgreSQL").
+  - La seconda settimana sarà invece riservata all'implementazione concreta del simulatore e del _#rifGlossario("database")_ dove verranno salvati i dati generati, grazie all'utilizzo delle tecnologie studiate.
+- Avanzamento nel documento Analisi dei Requisiti, in particolare: 
+  - Migliorare i vecchi casi d'uso dopo aver risolto alcuni dubbi in seguito al confronto con l'azienda.
+  - Scrivere nuovi casi d'uso.
+- Continuazione stesura Piano di Progetto, in particolare:
+  - Scrittura retrospettiva primo _sprint_.
+  - Scrittura pianificazione secondo _sprint_.
+- Inizio stesura del Piano di Qualifica.
+- Modifica alle Norme di Progetto, per via del nuovo aggiornamento riguardo al sistema di _versioning_ (spiegazione completa nel VI_2024-11-27).
+- Modifica delle versioni dei seguenti documenti, per coerenza con il nuovo sistema di versionamento:
+  - Glossario
+  - Analisi dei Requisiti
+  - Piano di Progetto
+  - Norme di Progetto
+- Modifica al _template_ ed al _test_ del Glossario.
+  - La modifica al _template_ vedrà l'implementazione di:
+    - Una funzione per automatizzare la generazione dei grafici relativi al preventivo ed al consuntivo orario richiesti per ogni _sprint_, nel Piano di Progetto.
+    - Aggiunta dell'indice delle immagini e delle tabelle, generato automaticamente, su tutti i _file_.
+  - La modifica al _test_ del Glossario è necessaria in quanto, attualmente, segnala dei falsi positivi. Per esempio quando abbiamo parole appartenenti al Glossario contenute in altre parole, oppure la segnalazione di termini del Glossario che in realtà sono comandi #rifGlossario("Typst").
+- Informarsi ed eventualmente dotarsi di un _software_ per la creazione e gestione di un #rifGlossario("diagramma di Gantt") per coordinare le attività del gruppo.
+
+==== Preventivo orario
+#rendicontazioneOre(
+  (
+    (0, 4, 0, 0, 0, 0),
+    (0, 0, 0, 0, 4, 3),
+    (0, 0, 5, 0, 0, 0),
+    (0, 4, 0, 0, 0, 0),
+    (5, 0, 0, 0, 0, 0),
+    (0, 1, 6, 0, 1, 0),
+    (0, 0, 0, 0, 4, 3),
+  ),
+  caption: [Preventivo delle ore nel secondo _sprint_ per membro e per ruolo],
+)
+
+==== Consuntivo orario e di spesa
+#consuntivoOre(
+  preventivo: (
+    (0, 4, 0, 0, 0, 0),
+    (0, 0, 0, 0, 4, 3),
+    (0, 0, 5, 0, 0, 0),
+    (0, 4, 0, 0, 0, 0),
+    (5, 0, 0, 0, 0, 0),
+    (0, 1, 6, 0, 1, 0),
+    (0, 0, 0, 0, 4, 3),
+  ),
+  consuntivo: (
+    (0, 4, 0, 0, 0, 0),
+    (0.5, 0, 0, 0, 4, 3),
+    (0, 0, 6, 0, 0, 0),
+    (0, 3, 0, 0, 0, 0),
+    (5, 0, 0, 0, 0, 0),
+    (0, 1.5, 6, 0, 1, 0),
+    (0, 0, 0, 0, 4, 3),
+  ),
+  tabCaption: [Consuntivo delle ore nel secondo _sprint_ per membro e per ruolo],
+  costTabCaption: [Costi sostenuti nel secondo _sprint_],
+  chartCaption: [Grafico percentuale dell'allocazione delle ore per ruolo nel secondo _sprint_],
+)
+
+==== Retrospettiva
+Il secondo _sprint_ è stato un periodo proficuo, in cui il _team_ è riuscito a portare a completamento tutte le attività prefissate.
+
+Tuttavia sono state notate alcune problematiche, soprattutto ad inizio periodo, ma che con il tempo il gruppo è riuscito progressivamente a migliorare.
+
+Una difficoltà inevitabile è stata riscontrata durante lo studio e l'applicazione delle nuove tecnologie, per molti mai viste. Fortunatamente si è arrivati comunque al livello di implementazione desiderato, anche grazie al confronto con l'azienda. Questa ci aveva messo in contatto con un loro dipendente specializzato nell'utilizzo di Apache Nifi, una delle tecnologie con cui abbiamo riscontrato maggiormente difficoltà. Alla fine il gruppo è comunque riuscito a risolvere il problema autonomamente.
+
+La prima versione del simulatore dati è stata implementata con successo, tanto che è stata mostrata ed apprezzata durante l'incontro di fine _sprint_ con l'azienda. Infatti, oltre a rispettare la pianificazione, siamo riusciti a presentare anche l'interfaccia del simulatore realizzata con #rifGlossario("Grafana").
+
+I casi d'uso sono stati migliorati ed aumentati come pianificato. Tuttavia il gruppo ha riscontrato delle difficoltà durante la scrittura, evidenziando alcuni dubbi a cui non si è riusciti a dare una risposta certa. Per questo abbiamo chiesto al professor Cardin un incontro per confrontarci su queste problematiche.
+
+L'unica attività che non si è svolta come preventivato è stata l'indagine relativa al _software_ per la gestione di un diagramma di Gantt. L'esigenza era nata in seguito all'utilizzo del sistema integrato di #rifGlossario("GitHub"), il quale però manca di alcune funzionalità, principalmente l'assenza della possibilità di segnalare le dipendenze tra le attività.
+Molte delle soluzioni vagliate, alcune delle quali anche a pagamento, presentavano dei difetti che ci hanno fatto desistere, almeno momentaneamente, dal migrare verso un altro applicativo.
+
+#pagebreak()
+
+=== Sprint 3
+- *Inizio*: 14/12/2024
+- *Fine*: 23/12/2024
+- *Rischi attesi*: #link(<RO-1>)[RO-1], #link(<RO-3>)[RO-3], #link(<RT-1>)[RT-1]
+
+==== Attività dello sprint
+Le attività che il _team_ si è prefissato di portare a termine durante il terzo _sprint_ sono le seguenti:
+- Redazione del verbale esterno ed interno del 13/12/2024.
+- Ampliamento del documento Norme di Progetto, in particolare occupandosi delle sezioni:
+  - Piano di Qualifica
+  - Verifica
+  - Validazione
+  - Processi organizzativi
+- In concomitanza con l'attività precedente si procederà con lo studio di possibili metriche per la valutazione della qualità, che andranno poi al vaglio del gruppo. 
+- Aggiornamento della sezione "Processi primari" nel documento Norme di Progetto. Nello specifico si dovrà normare la descrizione dei casi d'uso.
+- Continuazione del documento di Analisi dei Requisiti, che per questo _sprint_ si concentrerà sullo studio di nuovi casi d'uso con l'obiettivo raccogliere eventuali nuovi dubbi da poter chiarire durante il ricevimento con il professor Cardin (previsto per il 19/12/2024).
+- Studio della fattibilità di creare uno _#rifGlossario("stream processor") custom_ sfruttando #rifGlossario("Spring"), possibilmente sviluppandone un prototipo.
+- Affinamento della _dashboard_ in Grafana effettuando migliorie di carattere estetico e funzionale.
+- Continuazione della stesura del Piano di Progetto come da prassi, in particolare:
+  - Scrittura retrospettiva secondo _sprint_.
+  - Scrittura pianificazione terzo _sprint_.
+
+==== Preventivo orario
+#rendicontazioneOre(
+  (
+    (0, 0, 5, 0, 0, 0),
+    (0, 0, 5, 0, 0, 0),
+    (0, 0, 0, 0, 0, 3),
+    (3, 2, 0, 0, 0, 0),
+    (0, 3, 0, 0, 0, 0),
+    (0, 0, 0, 0, 4, 3),
+    (0, 3, 0, 0, 2, 0),
+  ),
+  caption: [Preventivo delle ore nel terzo _sprint_ per membro e per ruolo],
+)
