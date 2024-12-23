@@ -648,7 +648,7 @@ Si tratta di un processo che si svolge in parallelo alla verifica e che si concl
 Il processo di gestione della qualità ha lo scopo di garantire che i prodotti soddisfino i requisiti specificati e che siano, assieme ai processi, conformi agli standard di qualità stabiliti. La qualità è un requisito fondamentale per il successo del progetto e deve essere garantita in ogni fase del ciclo di vita del prodotto.
 
 === Definizione delle metriche
-Lo strumento fondamentale per misurare la qualità di un prodotto o di un processo sono le metriche. Esse permettono di valutare in modo oggettivo il grado di conformità del prodotto o del processo rispetto agli standard di qualità stabiliti. Le metriche vengono utilizzate per tracciare la qualità durante tutto il ciclo di vita del progetto. L'elenco delle metriche adottate in questo progetto è consultabile nell'#link(<metriche>)[ultima sezione] di questo documento.
+Lo strumento fondamentale per misurare la qualità di un prodotto o di un processo sono le metriche. Esse permettono di valutare in modo oggettivo il grado di conformità del prodotto o del processo rispetto agli standard di qualità stabiliti. Le metriche vengono utilizzate per tracciare la qualità durante tutto il ciclo di vita del progetto. L'elenco delle metriche adottate in questo progetto è consultabile nell'ultima sezione (#link(<metriche>)[sez. 6]) di questo documento.
 
 ==== Identificazione
 Le metriche adottate sono identificate da un codice alfabetico, strutturato nel seguente modo:
