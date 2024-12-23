@@ -9,6 +9,12 @@
   titolo: "Piano di Progetto",
   uso: "Esterno",
   versioni: (
+    "0.5.0",
+    "23/12/2024",
+    "Davide Martinelli",
+    "Klaudio Merja\nDavide Marin",
+    [- Stesura retrospettiva terzo _sprint_],
+
     "0.4.0",
     "17/12/2024",
     "Davide Martinelli",
@@ -373,3 +379,39 @@ Le attività che il _team_ si è prefissato di portare a termine durante il terz
   ),
   caption: [Preventivo delle ore nel terzo _sprint_ per membro e per ruolo],
 )
+
+==== Consuntivo orario e di spesa
+#consuntivoOre(
+  preventivo: (
+    (0, 0, 5, 0, 0, 0),
+    (0, 0, 5, 0, 0, 0),
+    (0, 0, 0, 0, 0, 3),
+    (3, 2, 0, 0, 0, 0),
+    (0, 3, 0, 0, 0, 0),
+    (0, 0, 0, 0, 4, 3),
+    (0, 3, 0, 0, 2, 0),
+  ),
+  consuntivo: (
+    (0, 0, 5, 0, 0, 0),
+    (0, 0, 6, 0, 0, 0),
+    (0, 0, 0, 0, 0, 5),
+    (3, 2.5, 0, 0, 0, 0),
+    (0, 5, 0, 0, 0, 0),
+    (0, 0, 0, 0, 1, 5),
+    (0, 7, 0, 0, 0, 0),
+  ),
+  tabCaption: [Consuntivo delle ore nel terzo _sprint_ per membro e per ruolo],
+  costTabCaption: [Costi sostenuti nel terzo _sprint_],
+  chartCaption: [Grafico percentuale dell'allocazione delle ore per ruolo nel terzo _sprint_],
+)
+
+==== Retrospettiva
+Il terzo _sprint_ si è concluso con un bilancio tutto sommato positivo, nonostante alcune difficoltà riscontrate.
+
+In primo luogo si è dovuto accantonare per questo _sprint_ la prosecuzione dello sviluppo della _dashboard_ in Grafana in quanto, vista anche la durata ridotta dello _sprint_, si è preferito dare più priorità e tempo allo sviluppo dello _stream processor_ in Spring, che peraltro è già attualmente in grado di sostituire il _software_ precedentemente costruito con Apache NiFi. Da questa scelta ne beneficerà anche lo sviluppo della _dashboard_ stessa visto che si avrà a disposizione un _backend_ funzionante e semidefinitivo rispetto alla prossima _milestone_.
+
+La risorsa che avrebbe dovuto lavorare alla _dashboard_ è stata quindi riallocata, nel corso dello _sprint_, alla stesura delle Norme di Progetto, documento che in questo _sprint_ è stato ampliato in modo considerevole.
+
+Tuttavia, a causa sia di stime troppo ottimistiche da parte del responsabile che dallo stretto legame tra lo studio delle metriche e la stesura delle Norme di Progetto, si è riscontrato un ritardo nel completare queste attività entro i tempi preventivati. Queste quindi si protrarranno anche nella prima parte prossimo _sprint_.
+
+Per quanto riguarda l'Analisi dei Requisiti l'attività di stesura è proseguita come previsto. Il gruppo ha riscontrato delle difficoltà nell'identificazione dei casi d'uso e, più nello specifico, nel delineare il confine tra analisi dei requisiti e progettazione. È risultato quindi utile il confronto avvenuto con il professor Cardin, che ha permesso di chiarire molti dubbi. Ciò si è ripercosso anche nella stesura della parte riguardante la descrizione dei casi d'uso all'interno delle Norme di Progetto, che ora riporta per iscritto le _best practices_ imparate dal gruppo fino a questo momento.
