@@ -48,6 +48,9 @@
     "Hive MQ": "Broker MQTT open-source ad alte prestazioni per l'IoT.",
     "Hosting": "Servizio che fornisce uno spazio online per archiviare, gestire e condividere dei documenti. Nel contesto attuale viene riferito ad un hosting di repository, un ambiente dove versionare codice sorgente e documentazione."
   },
+  "I":{
+      "Indice Gulpease":"L'Indice Gulpease è un indice di leggibilità di un testo tarato sulla lingua italiana. Rispetto ad altri ha il vantaggio di utilizzare la lunghezza delle parole in lettere anziché in sillabe, semplificandone il calcolo automatico."
+  },
   "K": {
     "Kubernetes": "Sistema open-source di orchestrazione di container."
   },
