@@ -8,6 +8,12 @@
   titolo: "Glossario",
   verificatori: ("Andrea Perozzo", "Andrea Precoma", "Davide Marin", "Davide Picello", "Riccardo Milan"),
   versioni: (
+    "0.13.0",
+    "24/12/2024",
+    "Riccardo Milan",
+    "Davide Martinelli",
+    [- Aggiunta l'espressione "Indice Gulpease"],
+
     "0.12.0",
     "21/12/2024",
     "Davide Picello",
