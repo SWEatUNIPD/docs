@@ -10,7 +10,7 @@
   uso: "Esterno",
   versioni: (
     "0.4.0",
-    [20/12/2024],
+    [27/12/2024],
     "Andrea Perozzo\nAndrea Precoma",
     "Davide Marin\nKlaudio Merja",
     [
@@ -129,8 +129,9 @@ Ogni caso d'uso è identificato da un codice univoco, che segue la nomenclatura 
 == Attori
 Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Amministratore*: gestore di un servizio di noleggio.
-- *Utente*: utente che utilizza il servizio di noleggio.
-- *Utente non autenticato*: un qualsiasi individuo che intende accedere al sistema, sia esso un utente inteso come utilizzatore del servizio di noleggio o un amministratore.
+// - *Utente*: utente che utilizza il servizio di noleggio.
+// - *Utente non autenticato*: un qualsiasi individuo che intende accedere al sistema, sia esso un utente inteso come utilizzatore del servizio di noleggio o un amministratore.
+- *Amministratore non autenticato*: gestore di un servizio di noleggio che non è autenticato alla _dashboard_.
 - *Sensore*: strumento attraverso il quale il mezzo noleggiato da uno specifico utente trasmette la sua posizione in tempo reale.
 - *#rifGlossario("LLM")*: servizio esterno che si occupa della generazione degli annunci pubblicitari personalizzati tramite #rifGlossario("prompt") fornito dal sistema.
 
@@ -139,102 +140,108 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 === UC1 - Trasmissione dei dati di localizzazione
 
 - *Attore principale*: Sensore.
-- *Precondizioni*: il mezzo in cui è installato il sensore ha un noleggio attivo.
-- *Postcondizioni*: il sistema riceve i dati di localizzazione #rifGlossario("GPS") del mezzo in uso dall'utente.
-- *Trigger*: il sensore intende notificare al sistema la localizzazione GPS del mezzo.
+- *Precondizioni*: il sistema monitora i sensori sui mezzi con un noleggio attivo. In particolare mantiene l'informazione riguardo l'ultima posizione #rifGlossario("GPS") inviata dal sensore.
+- *Postcondizioni*: il sistema riceve l'informazione riguardo la posizione GPS del sensore in quel momento.
+// - *Precondizioni*: il mezzo in cui è installato il sensore ha un noleggio attivo.
+// - *Postcondizioni*: il sistema riceve i dati di localizzazione GPS del mezzo in uso dall'utente.
+- *Trigger*: il sensore intende notificare al sistema la localizzazione GPS del mezzo sul quale è installato.
 - *Scenario principale*:
   + L'utente noleggia un mezzo.
   + Il sensore invia a intervalli di tempo regolari i dati di localizzazione GPS del mezzo.
-- *Inclusioni*:
-  + Controllo della posizione in prossimità di un punto di interesse (#link(<uc2>)[UC2]).
+// - *Inclusioni*:
+//   + Controllo della posizione in prossimità di un punto di interesse (#link(<uc2>)[UC2]).
 
-=== UC2 - Controllo della posizione in prossimità di un punto di interesse <uc2>
+// === UC2 - Controllo della posizione in prossimità di un punto di interesse <uc2>
+// - *Attore principale*: Sensore.
+// - *Precondizioni*: il sensore ha inviato dei dati di localizzazione.
+// - *Postcondizioni*: il sensore si trova in prossimità di un punto di interesse.
+// - *Trigger*: il sensore invia al sistema la localizzazione GPS del mezzo.
+// - *Scenario principale*:
+//   + Il sensore invia al sistema la localizzazione GPS del mezzo.
+//   + Il sistema verifica che il sensore sia in prossimità di un punto di interesse.
+// - *Estensione*:
+//   + Il sensore non è in prossimità di un punto di interesse (#link(<uc3>)[UC3]).
 
-- *Attore principale*: Sensore.
-- *Precondizioni*: il sensore ha inviato dei dati di localizzazione.
-- *Postcondizioni*: il sensore si trova in prossimità di un punto di interesse.
-- *Trigger*: il sensore invia al sistema la localizzazione GPS del mezzo.
-- *Scenario principale*:
-  + Il sensore invia al sistema la localizzazione GPS del mezzo.
-  + Il sistema verifica che il sensore sia in prossimità di un punto di interesse.
-- *Estensione*:
-  + Il sensore non è in prossimità di un punto di interesse (#link(<uc3>)[UC3]).
-
-=== UC3 - Il sensore non è in prossimità di un punto di interesse<uc3>
-//TODO: https://github.com/SWEatUNIPD/docs/pull/67#discussion_r1882217372
-- *Attore principale*: Sensore.
-- *Precondizioni*: il sensore ha inviato dei dati di localizzazione.
-- *Postcondizioni*: il sistema verifica che il sensore non si trova in prossimità di un punto di interesse.
-- *Trigger*: il sensore invia al sistema la localizzazione GPS del mezzo.
-- *Scenario principale*:
-  + Il sensore invia al sistema la localizzazione GPS del mezzo.
-  + Il sistema verifica che il sensore non è in prossimità di un punto di interesse.
-#v(20pt)
-#figure(image("../assets/use_cases/UC1-2-3.svg"), caption: [Diagramma dei casi d'uso UC1, UC2 e UC3])
+// === UC3 - Il sensore non è in prossimità di un punto di interesse<uc3>
+// //TODO: https://github.com/SWEatUNIPD/docs/pull/67#discussion_r1882217372
+// - *Attore principale*: Sensore.
+// - *Precondizioni*: il sensore ha inviato dei dati di localizzazione.
+// - *Postcondizioni*: il sistema verifica che il sensore non si trova in prossimità di un punto di interesse.
+// - *Trigger*: il sensore invia al sistema la localizzazione GPS del mezzo.
+// - *Scenario principale*:
+//   + Il sensore invia al sistema la localizzazione GPS del mezzo.
+//   + Il sistema verifica che il sensore non è in prossimità di un punto di interesse.
+// #v(20pt)
+// #figure(image("../assets/use_cases/UC1-2-3.svg"), caption: [Diagramma dei casi d'uso UC1, UC2 e UC3])
+#figure(image("../assets/use_cases/UC1.png"), caption: [Diagramma del caso d'uso UC1])
 
 #pagebreak()
 
-=== UC4 - Invio richiesta di annuncio personalizzato alla LLM
-- *Attore principale*: Sensore.
-- *Attore secondario*: LLM.
-- *Precondizioni*: il sensore si trova in prossimità di un punto di interesse.
-- *Postcondizioni*: il sistema ha inviato alla LLM la richiesta per la generazione di un annuncio personalizzato.
-- *Trigger*: il sensore si trova in prossimità di un punto di interesse.
-- *Scenario principale*:
-  + Il sensore si trova in prossimità di un punto di interesse.
-  + Il sistema invia alla LLM una richiesta di annuncio personalizzato in caso la profilazione dell'utente risulti idonea al punto di interesse.
-#v(20pt)
-#figure(image("../assets/use_cases/UC4.svg", width: 90%), caption: [Diagramma del caso d'uso UC4])
-#pagebreak()
+// === UC4 - Invio richiesta di annuncio personalizzato alla LLM
+// // È il sistema che invia la richiesta, non il sensore
+// - *Attore principale*: Sensore.
+// - *Attore secondario*: LLM.
+// - *Precondizioni*: il sensore si trova in prossimità di un punto di interesse.
+// - *Postcondizioni*: il sistema ha inviato alla LLM la richiesta per la generazione di un annuncio personalizzato.
+// - *Trigger*: il sensore si trova in prossimità di un punto di interesse.
+// - *Scenario principale*:
+//   + Il sensore si trova in prossimità di un punto di interesse.
+//   + Il sistema invia alla LLM una richiesta di annuncio personalizzato in caso la profilazione dell'utente risulti idonea al punto di interesse.
+// #v(20pt)
+// #figure(image("../assets/use_cases/UC4.svg", width: 90%), caption: [Diagramma del caso d'uso UC4])
+// #pagebreak()
 
-=== UC5 - Invio dell'annuncio pubblicitario generato
-- *Attore principale*: LLM.
-- *Precondizioni*: la LLM deve aver ricevuto dal sistema il _prompt_ di generazione dell'annuncio, come la profilazione dell'utente e il punto di interesse per cui si vuole generare l'annuncio.
-- *Postcondizioni*: il sistema riceve l'annuncio pubblicitario generato dalla LLM.
-- *Trigger*: il sistema ha fatto una richiesta di generazione tramite le #rifGlossario("API") della LLM.
-- *Scenario principale*:
-  + La LLM riceve la richiesta da parte del sistema
-  + La LLM genera l'annuncio pubblicitario basandosi sui dati ricevuti come _prompt_.
-  + La LLM invia l'annuncio pubblicitario generato al sistema.
-- *Estensione*: Annuncio pubblicitario non generato (#link(<uc6>)[UC6]).
-=== UC6 - Annuncio pubblicitario non generato <uc6>
-//TODO: https://github.com/SWEatUNIPD/docs/pull/67#discussion_r1882335589
-- *Attore principale*: LLM
-- *Precondizioni*: La LLM considera il punto di interesse non pertinente in base alla profilazione dell'utente per cui si vuole generare l'annuncio.
-- *Postcondizioni*: il sistema non riceve l'annuncio pubblicitario generato dalla LLM.
-- *Trigger*: l'utente del noleggio si trova in prossimità di un punto di interesse non pertinente.
-- *Scenario principale*:
-  + La LLM verifica che il punto di interesse non è pertinente per l'utente.
-  + La LLM decide di non generare alcun annuncio pubblicitario
-#v(20pt)
-#figure(
-  image("../assets/use_cases/UC5-6.svg"),
-  caption: [Diagramma dei casi d'uso UC5 e UC6],
-)
-#pagebreak()
+// TODO: è implicito in "visualizzazione annuncio", LLM attore secondario
+// === UC5 - Invio dell'annuncio pubblicitario generato
+// - *Attore principale*: LLM.
+// - *Precondizioni*: la LLM deve aver ricevuto dal sistema il _prompt_ di generazione dell'annuncio, come la profilazione dell'utente e il punto di interesse per cui si vuole generare l'annuncio.
+// - *Postcondizioni*: il sistema riceve l'annuncio pubblicitario generato dalla LLM.
+// - *Trigger*: il sistema ha fatto una richiesta di generazione tramite le #rifGlossario("API") della LLM.
+// - *Scenario principale*:
+//   + La LLM riceve la richiesta da parte del sistema
+//   + La LLM genera l'annuncio pubblicitario basandosi sui dati ricevuti come _prompt_.
+//   + La LLM invia l'annuncio pubblicitario generato al sistema.
+// - *Estensione*: Annuncio pubblicitario non generato (#link(<uc6>)[UC6]).
 
+// === UC6 - Annuncio pubblicitario non generato <uc6>
+// //TODO: https://github.com/SWEatUNIPD/docs/pull/67#discussion_r1882335589
+// - *Attore principale*: LLM
+// - *Precondizioni*: La LLM considera il punto di interesse non pertinente in base alla profilazione dell'utente per cui si vuole generare l'annuncio.
+// - *Postcondizioni*: il sistema non riceve l'annuncio pubblicitario generato dalla LLM.
+// - *Trigger*: l'utente del noleggio si trova in prossimità di un punto di interesse non pertinente.
+// - *Scenario principale*:
+//   + La LLM verifica che il punto di interesse non è pertinente per l'utente.
+//   + La LLM decide di non generare alcun annuncio pubblicitario
+// #v(20pt)
+// #figure(
+//   image("../assets/use_cases/UC5-6.svg"),
+//   caption: [Diagramma dei casi d'uso UC5 e UC6],
+// )
+// #pagebreak()
 
+// DOBBIAMO GESTIRE ANCHE SIGN UP O SOLO SIGN IN?
+// TODO: fare use case sul login (quali campi)
 === UC7 - Autenticazione alla _dashboard_ del sistema
-- *Attori principali*: Utente non autenticato.
-- *Precondizioni*: l'individuo che intende accedere alla _dashboard_ deve essere registrato all'interno del sistema per poter accedere.
-- *Postcondizioni*: l'utente o l'amministratore che si è appena autenticato accede alla _dashboard_ personale con le relative funzionalità (a seconda dei loro privilegi).
-- *Trigger*: l'utente o l'amministratore intende accedere alla _dashboard_ personale.
+- *Attori principali*: Amministratore non autenticato.
+- *Precondizioni*: il sistema possiede le credenziali dell'amministratore che in quel momento non è autenticato.
+- *Postcondizioni*: il sistema accetta le credenziali inserite e fa accedere l'amministratore alla _dashboard_ personale.
+- *Trigger*: l'amministratore intende accedere alla _dashboard_ personale.
 - *Scenario principale*:
-  + L'utente non autenticato accede alla pagina di login del sistema.
-  + L'utente non autenticato inserisce le proprie credenziali di accesso.
-  + Il sistema verifica se le credenziali inserite sono valide o meno.
-  + Nel caso in cui le credenziali fossero valide, l'utente o l'amministratore (a seconda del ruolo all'interno del sistema) accede alla propria _dashboard_ personale.
+  + L'amministratore non autenticato accede alla pagina di _login_ del sistema.
+  + L'amministratore non autenticato inserisce le proprie credenziali di accesso.
+  + Il sistema registra l'amministratore come autenticato e lo fa accedere alla _dashboard_ personale.
 - *Estensione*: Errore "Credenziali errate" (#link(<uc8>)[UC8]).
 
-=== UC8 - Errore "Credenziali errate" <uc8>
-- *Attori principali*: Utente non autenticato.
-- *Precondizioni*: l'utente non autenticato tenta di accedere alla _dashboard_ con delle credenziali errate.
-- *Postcondizioni*: l'utente non autenticato riceve un messaggio di errore.
-- *Trigger*: l'utente non autenticato inserisce delle credenziali errate.
+=== UC8 - Visualizzazione errore "Credenziali errate" <uc8>
+- *Attori principali*: Amministratore non autenticato.
+- *Precondizioni*: il sistema riceve le credenziali inserite dall'amministratore non autenticato.
+- *Postcondizioni*: il sistema individua un'incoerenza tra le credenziali inserite e quelle memorizzate.
+- *Trigger*: l'amministratore non autenticato inserisce delle credenziali errate.
 - *Scenario principale*:
-  + L'utente inserisce delle credenziali errate durante la fase di autenticazione alla _dashboard_.
-  + L'utente riceve un messaggio di errore, segnalando il fatto che le credenziali di accesso inserite siano invalide e invitando a riprovare l'autenticazione.
+  + L'amministratore inserisce delle credenziali errate durante la fase di autenticazione alla _dashboard_.
+  + L'amministratore riceve un messaggio di errore il quale segnala che le credenziali di inserite sono invalide.
 #v(20pt)
+// TODO: mettere una gen tra gli attori AMM <-- AMM NON AUT
 #figure(
   image("../assets/use_cases/UC7-8.svg"),
   caption: [Diagramma dei casi d'uso UC7 e UC8],
@@ -242,37 +249,71 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #pagebreak()
 
-=== UC9 - Visualizzazione della mappa dei mezzi noleggiati
+// TODO: interazioni con la mappa (anche zoom, spostamento e cagate varie)
+=== UC9 - Visualizzazione della mappa geografica sulla dashboard
 - *Attore principale*: Amministratore.
-- *Precondizioni*: l'amministratore del sistema è autenticato e ha accesso alla _dashboard_ del sistema.
-- *Postcondizioni*: l'amministratore ottiene una visione della posizione e del movimento dei mezzi attualmente in uso all'interno di una mappa.
-- *Trigger*: l'amministratore intende visualizzare la posizione dei mezzi noleggiati.
+- *Precondizioni*: il sistema tiene traccia, per ogni amministratore, delle informazioni relative ai mezzi noleggiati, ai punti di interesse e agli annunci.
+- *Postcondizioni*: il sistema espone una mappa geografica sulla _dashboard_ dell'amministratore.
+- *Trigger*: l'amministratore intende visualizzare la mappa geografica sulla propria _dashboard_.
 - *Scenario principale*:
-  + L'amministratore è collegato e autenticato alla _dashboard_ del sistema.
-  + La _dashboard_ mette a disposizione una mappa interattiva con i mezzi attualmente a noleggio, la cui posizione viene indicata attraverso dei _#rifGlossario("marker")_.
+  + L'amministratore è autenticato alla _dashboard_ del sistema.
+  + La _dashboard_ del sistema espone una mappa geografica del territorio.
+- *Inclusioni*:
+  + Visualizzazione marker sulla mappa per i punti di interesse (#link(<uc10>)[UC10]).
+
+=== UC10 - Visualizzazione marker sulla mappa per i punti di interesse <uc10>
+- *Attore principale*: Amministratore.
+- *Precondizioni*: il sistema tiene traccia della posizione di ciascun punto di interesse.
+- *Postcondizioni*: il sistema espone sulla mappa dei _marker_ in corrispondenza dei punti di interesse.
+- *Trigger*: l'amministratore intende visualizzare sulla mappa le locazioni dei punti di interesse.
+- *Scenario principale*:
+  + L'amministratore accede alla mappa sulla _dashboard_.
+  + L'amministratore visualizza un _marker_ in corrispondenza di ciascun punto di interesse.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC9.svg"),
-  caption: [Diagramma del caso d'uso UC9],
+  image("../assets/use_cases/mappa.png"),
+  caption: [Diagramma dei casi d'uso UC9 e UC10],
 )
 
 #pagebreak()
 
-=== UC10 - Visualizzazione degli annunci pubblicitari generati lato amministratore
+=== UC11 - Visualizzazione percorso del mezzo in noleggio sulla mappa
 - *Attore principale*: Amministratore.
-- *Precondizioni*: l'amministratore è autenticato al sistema.
-- *Postcondizioni*: l'amministratore visualizza gli annunci generati dalla LLM per ogni utente con un noleggio attivo all'interno della mappa.
-- *Trigger*: l'amministratore vuole prendere visione di quanto generato da parte della LLM per i clienti del noleggio e per i punti di interesse convenzionati.
+- *Precondizioni*: il sistema tiene traccia delle posizioni nel tempo dei mezzi con noleggio attivo.
+- *Postcondizioni*: il sistema espone sulla mappa il percorso dei mezzi con noleggio attivo.
+- *Trigger*: l'amministratore desidera visualizzare il percorso di un mezzo dall'inizio del suo noleggio fino a quel momento.
 - *Scenario principale*:
-  + L'amministratore accede alla mappa dei mezzi noleggiati.
-  + L'amministratore, tramite un "_click_" sul _marker_ che indica la posizione di un mezzo, visualizza l'annuncio pubblicitario generato per l'utente che ha attualmente in uso il mezzo.
-#v(20pt)
+  + L'amministratore accede alla mappa sulla _dashboard_.
+  + L'amministratore visualizza il percorso del mezzo noleggiato.
+- *Inclusioni*:
+  + Visualizzazione marker sul tracciato dei mezzi noleggiati in corrispondenza del dato GPS (#link(<uc12>)[UC12]).
+
+=== UC12 - Visualizzazione marker sul tracciato dei mezzi noleggiati in corrispondenza del dato GPS <uc12>
+- *Attore principale*: Amministratore.
+- *Precondizioni*: il sistema memorizza i dati GPS dei sensori quando il mezzo sul quale sono installati ha un noleggio attivo.
+- *Postcondizioni*: il sistema espone sulla mappa un _marker_ in corrispondenza di ciascuna coordinata GPS fornita dal sensore.
+- *Trigger*: l'amministratore intende visualizzare sulla mappa le posizioni del mezzo in noleggio fino a quel momento.
+- *Scenario principale*:
+  + L'amministratore accede alla mappa sulla _dashboard_.
+  + L'amministratore visualizza un _marker_ per ogni dato GPS ritornato dal sensore di un relativo mezzo in noleggio.
 #figure(
-  image("../assets/use_cases/UC10.svg"),
-  caption: [Diagramma del caso d'uso UC10],
+  image("../assets/use_cases/percorso.png"),
+  caption: [Diagramma dei casi d'uso UC11 e UC12],
 )
 
-//TODO: valutare se raffinare i casi d'uso con dei sottocasi
+// === UC10 - Visualizzazione degli annunci pubblicitari generati lato amministratore
+// - *Attore principale*: Amministratore.
+// - *Precondizioni*: l'amministratore è autenticato al sistema.
+// - *Postcondizioni*: l'amministratore visualizza gli annunci generati dalla LLM per ogni utente con un noleggio attivo all'interno della mappa.
+// - *Trigger*: l'amministratore vuole prendere visione di quanto generato da parte della LLM per i clienti del noleggio e per i punti di interesse convenzionati.
+// - *Scenario principale*:
+//   + L'amministratore accede alla mappa dei mezzi noleggiati.
+//   + L'amministratore, tramite un "_click_" sul _marker_ che indica la posizione di un mezzo, visualizza l'annuncio pubblicitario generato per l'utente che ha attualmente in uso il mezzo.
+// #v(20pt)
+// #figure(
+//   image("../assets/use_cases/UC10.svg"),
+//   caption: [Diagramma del caso d'uso UC10],
+// )
 
 //UC Perruz
 
@@ -298,7 +339,7 @@ Domanda: il capitolato chiede di avvisare l'admin, si può immaginare tramite no
   + Apertura dello storico degli annunci dalla notifica (#link(<uc14>)[UC14]).
 
 // vedi uc11, l'amministratore che sarebbe attore non interagisce nemmeno
-=== UC12 - Scomparsa automatica della notifica di un annuncio generato <uc12>
+=== UC12 - Scomparsa automatica della notifica di un annuncio generato
 - *Attore principale*: Amministratore.
 - *Precondizioni*: l'amministratore è autenticato, ha accesso alla _dashboard_ del sistema e ha ricevuto una notifica di annuncio generato.
 - *Postcondizioni*: la notifica scompare automaticamente dopo un tempo prestabilito.
