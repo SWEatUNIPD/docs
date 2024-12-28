@@ -221,7 +221,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 // #pagebreak()
 
 // DOBBIAMO GESTIRE ANCHE SIGN UP O SOLO SIGN IN?
-// TODO: fare use case sul login (quali campi)
 === UC7 - Autenticazione alla dashboard del sistema
 - *Attori principali*: Amministratore non autenticato.
 - *Precondizioni*: il sistema possiede le credenziali dell'amministratore che in quel momento non è autenticato. L'amministratore non autenticato accede alla pagina di _login_.
@@ -264,7 +263,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore inserisce delle credenziali errate durante la fase di autenticazione alla _dashboard_.
   + L'amministratore riceve un messaggio di errore il quale segnala che le credenziali di inserite sono invalide.
 #v(20pt)
-// TODO: mettere una gen tra gli attori AMM <-- AMM NON AUT
 #figure(
   image("../assets/use_cases/autenticazione.png"),
   caption: [Diagramma dei casi d'uso UC7 e UC8],
@@ -319,6 +317,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   + L'amministratore accede alla mappa sulla _dashboard_.
   + L'amministratore visualizza un _marker_ in corrispondenza di ogni dato GPS ritornato dal sensore di un relativo mezzo in noleggio.
+#v(20pt)
 #figure(
   image("../assets/use_cases/percorso.png"),
   caption: [Diagramma dei casi d'uso UC11 e UC12],
@@ -336,7 +335,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   + L'amministratore accede alla mappa sulla _dashboard_.
   + L'amministratore visualizza un _marker_ in corrispondenza delle posizioni nelle quali è stato generato un annuncio.
-
+#v(20pt)
 #figure(
   image("../assets/use_cases/marker annuncio.png"),
   caption: [Diagramma del caso d'uso UC13],
@@ -352,9 +351,49 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   + L'amministratore accede alla mappa sulla _dashboard_.
   + L'amministratore visualizza un _marker_ in corrispondenza delle posizioni nelle quali la LLM non ha generato un annuncio..
-
+#v(20pt)
 #figure(
   image("../assets/use_cases/marker annuncio fallito.png"),
+  caption: [Diagramma del caso d'uso UC14],
+)
+
+#pagebreak()
+
+// TODO: fare anche chiusura dell'annuncio (non è chiusura finestra di dialogo)?
+=== UC15 - Visualizzazione annuncio tramite marker sulla mappa
+- *Attore principale*: Amministratore.
+- *Precondizioni*: il sistema tiene traccia degli annunci generati e le relative informazioni. L'amministratore è autenticato.
+- *Postcondizioni*: il sistema espone l'annuncio generato, con le relative informazioni, in corrispondenza del _marker_ sulla mappa.
+- *Trigger*: l'amministratore desidera visualizzare l'annuncio generato in corrispondenza del _marker_ sulla mappa.
+- *Scenario principale*:
+  + L'amministratore accede alla mappa sulla _dashboard_.
+  + L'amministratore interagisce col _marker_ che indica un annuncio generato.
+  + Viene visualizzato l'annuncio generato in corrispondenza del _marker_ selezionato.
+- *Inclusioni*:
+  + VISUALIZZAZIONE ANNUNCIO E RELATIVE INFORMAZIONI
+#v(20pt)
+#figure(
+  image("../assets/use_cases/annuncio marker.png"),
+  caption: [Diagramma del caso d'uso UC14],
+)
+
+#pagebreak()
+
+// TODO: vedi uc simile per annuncio, fare anche chiusura del messagio (non è chiusura finestra di dialogo)?
+=== UC16 - Visualizzazione messaggio annuncio non generato tramite marker sulla mappa
+- *Attore principale*: Amministratore.
+- *Precondizioni*: il sistema tiene traccia degli annunci non generati e le relative informazioni. L'amministratore è autenticato.
+- *Postcondizioni*: il sistema espone un messaggio circa l'annuncio non generato, con le relative informazioni, in corrispondenza del _marker_ sulla mappa.
+- *Trigger*: l'amministratore desidera visualizzare le informazioni dell'annuncio non generato in corrispondenza del _marker_ sulla mappa.
+- *Scenario principale*:
+  + L'amministratore accede alla mappa sulla _dashboard_.
+  + L'amministratore interagisce col _marker_ che indica un annuncio non generato.
+  + Viene visualizzato il messaggio con le informazioni dell'annuncio che non è stato generato in corrispondenza del _marker_ selezionato.
+- *Inclusioni*:
+  + VISUALIZZAZIONE MESSAGGIO ANNUNCIO FALLITO E RELATIVE INFORMAZIONI
+#v(20pt)
+#figure(
+  image("../assets/use_cases/annuncio mancato marker.png"),
   caption: [Diagramma del caso d'uso UC14],
 )
 
