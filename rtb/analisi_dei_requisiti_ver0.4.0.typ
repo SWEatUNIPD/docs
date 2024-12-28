@@ -14,7 +14,8 @@
     "Andrea Perozzo\nAndrea Precoma",
     "Davide Marin\nKlaudio Merja",
     [
-      - TODO
+      - Aggiunti casi d'uso relativi alla mappa, agli anunci e ai grafici
+      - Sistemati i primi casi d'uso
     ],
     "0.3.0",
     [10/12/2024],
@@ -221,18 +222,40 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 // DOBBIAMO GESTIRE ANCHE SIGN UP O SOLO SIGN IN?
 // TODO: fare use case sul login (quali campi)
-=== UC7 - Autenticazione alla _dashboard_ del sistema
+=== UC7 - Autenticazione alla dashboard del sistema
 - *Attori principali*: Amministratore non autenticato.
-- *Precondizioni*: il sistema possiede le credenziali dell'amministratore che in quel momento non è autenticato.
+- *Precondizioni*: il sistema possiede le credenziali dell'amministratore che in quel momento non è autenticato. L'amministratore non autenticato accede alla pagina di _login_.
 - *Postcondizioni*: il sistema accetta le credenziali inserite e fa accedere l'amministratore alla _dashboard_ personale.
 - *Trigger*: l'amministratore intende accedere alla _dashboard_ personale.
 - *Scenario principale*:
   + L'amministratore non autenticato accede alla pagina di _login_ del sistema.
   + L'amministratore non autenticato inserisce le proprie credenziali di accesso.
   + Il sistema registra l'amministratore come autenticato e lo fa accedere alla _dashboard_ personale.
-- *Estensione*: Errore "Credenziali errate" (#link(<uc8>)[UC8]).
+- *Inclusioni*:
+  + Inserimento _e-mail_ per l'autenticazione alla _dashboard_ (#link(<uc8>)[UC8]).
+  + Inserimento _password_ per l'autenticazione alla _dashboard_ (#link(<uc9>)[UC9]).
+- *Estensioni*:
+  + Errore "Credenziali errate" (#link(<uc10>)[UC10]).
 
-=== UC8 - Visualizzazione errore "Credenziali errate" <uc8>
+=== UC8 - Inserimento e-mail per l'autenticazione alla dashboard <uc8>
+- *Attore principale*: Amministratore non autenticato.
+- *Precondizioni*: il sistema possiede l'_e-mail_ dell'amministratore che in quel momento non è autenticato. L'amministratore non autenticato accede alla pagina di _login_.
+- *Postcondizioni*: il sistema accetta l'_e-mail_ inserita.
+- *Trigger*: l'amministratore intende accede alla _dashboard_ personale.
+- *Scenario principale*:
+  + L'amministratore non autenticato accedere alla pagina di _login_ del sistema.
+  + L'amministratore non autenticato inserisce l'_e-mail_ con la quale è registrato nel sistema.
+
+=== UC9 - Inserimento password per l'autenticazione alla dashboard <uc9>
+- *Attore principale*: Amministratore non autenticato.
+- *Precondizioni*: il sistema possiede la _password_ dell'amministratore che in quel momento non è autenticato. L'amministratore non autenticato accede alla pagina di _login_.
+- *Postcondizioni*: il sistema accetta la _password_ inserita.
+- *Trigger*: l'amministratore intende accedere alla _dashboard_ personale.
+- *Scenario principale*:
+  + L'amministratore non autenticato accede alla pagina di _login_ del sistema.
+  + L'amministratore non autenticato inserisce la _password_ con la quale è registrato nel sistema.
+
+=== UC10 - Visualizzazione errore "Credenziali errate" <uc10>
 - *Attori principali*: Amministratore non autenticato.
 - *Precondizioni*: il sistema riceve le credenziali inserite dall'amministratore non autenticato.
 - *Postcondizioni*: il sistema individua un'incoerenza tra le credenziali inserite e quelle memorizzate.
@@ -243,7 +266,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 #v(20pt)
 // TODO: mettere una gen tra gli attori AMM <-- AMM NON AUT
 #figure(
-  image("../assets/use_cases/UC7-8.svg"),
+  image("../assets/use_cases/autenticazione.png"),
   caption: [Diagramma dei casi d'uso UC7 e UC8],
 )
 
@@ -252,18 +275,18 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 // TODO: interazioni con la mappa (anche zoom, spostamento e cagate varie)
 === UC9 - Visualizzazione della mappa geografica sulla dashboard
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia, per ogni amministratore, delle informazioni relative ai mezzi noleggiati, ai punti di interesse e agli annunci.
+- *Precondizioni*: il sistema tiene traccia, per ogni amministratore, delle informazioni relative ai mezzi noleggiati, ai punti di interesse e agli annunci. L'amministratore è autenticato.
 - *Postcondizioni*: il sistema espone una mappa geografica sulla _dashboard_ dell'amministratore.
 - *Trigger*: l'amministratore intende visualizzare la mappa geografica sulla propria _dashboard_.
 - *Scenario principale*:
   + L'amministratore è autenticato alla _dashboard_ del sistema.
   + La _dashboard_ del sistema espone una mappa geografica del territorio.
 - *Inclusioni*:
-  + Visualizzazione marker sulla mappa per i punti di interesse (#link(<uc10>)[UC10]).
+  + Visualizzazione marker sulla mappa per i punti di interesse (#link(<uc11>)[UC11]).
 
-=== UC10 - Visualizzazione marker sulla mappa per i punti di interesse <uc10>
+=== UC11 - Visualizzazione marker sulla mappa per i punti di interesse <uc11>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia della posizione di ciascun punto di interesse.
+- *Precondizioni*: il sistema tiene traccia della posizione di ciascun punto di interesse. L'amministratore è autenticato.
 - *Postcondizioni*: il sistema espone sulla mappa dei _marker_ in corrispondenza dei punti di interesse.
 - *Trigger*: l'amministratore intende visualizzare sulla mappa le locazioni dei punti di interesse.
 - *Scenario principale*:
@@ -279,26 +302,60 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 === UC11 - Visualizzazione percorso del mezzo in noleggio sulla mappa
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia delle posizioni nel tempo dei mezzi con noleggio attivo.
+- *Precondizioni*: il sistema tiene traccia delle posizioni nel tempo dei mezzi con noleggio attivo. L'amministratore è autenticato.
 - *Postcondizioni*: il sistema espone sulla mappa il percorso dei mezzi con noleggio attivo.
 - *Trigger*: l'amministratore desidera visualizzare il percorso di un mezzo dall'inizio del suo noleggio fino a quel momento.
 - *Scenario principale*:
   + L'amministratore accede alla mappa sulla _dashboard_.
   + L'amministratore visualizza il percorso del mezzo noleggiato.
 - *Inclusioni*:
-  + Visualizzazione marker sul tracciato dei mezzi noleggiati in corrispondenza del dato GPS (#link(<uc12>)[UC12]).
+  + Visualizzazione marker sul tracciato dei mezzi con noleggio attivo in corrispondenza del dato GPS (#link(<uc12>)[UC12]).
 
-=== UC12 - Visualizzazione marker sul tracciato dei mezzi noleggiati in corrispondenza del dato GPS <uc12>
+=== UC12 - Visualizzazione marker sul tracciato dei mezzi con noleggio attivo in corrispondenza del dato GPS <uc12>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema memorizza i dati GPS dei sensori quando il mezzo sul quale sono installati ha un noleggio attivo.
+- *Precondizioni*: il sistema memorizza i dati GPS dei sensori quando il mezzo sul quale sono installati ha un noleggio attivo. L'amministratore è autenticato.
 - *Postcondizioni*: il sistema espone sulla mappa un _marker_ in corrispondenza di ciascuna coordinata GPS fornita dal sensore.
 - *Trigger*: l'amministratore intende visualizzare sulla mappa le posizioni del mezzo in noleggio fino a quel momento.
 - *Scenario principale*:
   + L'amministratore accede alla mappa sulla _dashboard_.
-  + L'amministratore visualizza un _marker_ per ogni dato GPS ritornato dal sensore di un relativo mezzo in noleggio.
+  + L'amministratore visualizza un _marker_ in corrispondenza di ogni dato GPS ritornato dal sensore di un relativo mezzo in noleggio.
 #figure(
   image("../assets/use_cases/percorso.png"),
   caption: [Diagramma dei casi d'uso UC11 e UC12],
+)
+
+#pagebreak()
+
+// TODO: hover per visualizzare info
+// HOVER SOLO PER ANNUNCIO RIUSCITO O ANCHE FALLITO
+=== UC13 - Visualizzazione marker sul tracciato dei mezzi con noleggio attivo in corrispondenza della generazione di un annuncio
+- *Attore principale*: Amministratore.
+- *Precondizioni*: il sistema memorizza gli annunci generati e le relative informazioni. L'amministratore è autenticato.
+- *Postcondizioni*: il sistema espone sulla mappa un _marker_ in corrispondenza dei punti in cui è stato generato un annuncio.
+- *Trigger*: l'amministratore intende visualizzare sulla mappa le posizioni del mezzo in noleggio nelle quali è stato generato un annuncio.
+- *Scenario principale*:
+  + L'amministratore accede alla mappa sulla _dashboard_.
+  + L'amministratore visualizza un _marker_ in corrispondenza delle posizioni nelle quali è stato generato un annuncio.
+
+#figure(
+  image("../assets/use_cases/marker annuncio.png"),
+  caption: [Diagramma del caso d'uso UC13],
+)
+
+#pagebreak()
+
+=== UC14 - Visualizzazione marker sul tracciato dei mezzi con noleggio attivo in corrispondenza della mancata generazione di un annuncio
+- *Attore principale*: Amministratore.
+- *Precondizioni*: il sistema memorizza le mancate generazioni degli annunci e le relative informazioni. L'amministratore è autenticato.
+- *Postcondizioni*: il sistema espone sulla mappa un _marker_ in corrispondenza dei punti in cui la LLM non ha ritenuto l'utente interessato, quindi non è stato generato l'annuncio.
+- *Trigger*: l'amministratore intende visualizzare sulla mappa le posizioni del mezzo in noleggio nelle quali la LLM non ha generato un annuncio.
+- *Scenario principale*:
+  + L'amministratore accede alla mappa sulla _dashboard_.
+  + L'amministratore visualizza un _marker_ in corrispondenza delle posizioni nelle quali la LLM non ha generato un annuncio..
+
+#figure(
+  image("../assets/use_cases/marker annuncio fallito.png"),
+  caption: [Diagramma del caso d'uso UC14],
 )
 
 // === UC10 - Visualizzazione degli annunci pubblicitari generati lato amministratore
