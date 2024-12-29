@@ -16,6 +16,7 @@
     [
       - Aggiunti casi d'uso relativi alla mappa, agli anunci e ai grafici
       - Sistemati i primi casi d'uso
+      - Aggiunti casi d'uso relativi alle interazioni con la mappa
     ],
     "0.3.0",
     [10/12/2024],
@@ -129,10 +130,10 @@ Ogni caso d'uso è identificato da un codice univoco, che segue la nomenclatura 
 
 == Attori
 Gli attori coinvolti nei casi d'uso sono i seguenti:
-- *Amministratore*: gestore di un servizio di noleggio.
+- *Amministratore*: gestore di un servizio di noleggio autenticato al sistema.
 // - *Utente*: utente che utilizza il servizio di noleggio.
 // - *Utente non autenticato*: un qualsiasi individuo che intende accedere al sistema, sia esso un utente inteso come utilizzatore del servizio di noleggio o un amministratore.
-- *Amministratore non autenticato*: gestore di un servizio di noleggio che non è autenticato alla _dashboard_.
+- *Amministratore non autenticato*: gestore di un servizio di noleggio non autenticato al sistema.
 - *Sensore*: strumento attraverso il quale il mezzo noleggiato da uno specifico utente trasmette la sua posizione in tempo reale.
 - *#rifGlossario("LLM")*: servizio esterno che si occupa della generazione degli annunci pubblicitari personalizzati tramite #rifGlossario("prompt") fornito dal sistema.
 
@@ -174,6 +175,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 //   + Il sistema verifica che il sensore non è in prossimità di un punto di interesse.
 // #v(20pt)
 // #figure(image("../assets/use_cases/UC1-2-3.svg"), caption: [Diagramma dei casi d'uso UC1, UC2 e UC3])
+#v(20pt)
 #figure(image("../assets/use_cases/UC1.png"), caption: [Diagramma del caso d'uso UC1])
 
 #pagebreak()
@@ -270,10 +272,9 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #pagebreak()
 
-// TODO: interazioni con la mappa (anche zoom, spostamento e cagate varie)
 === UC9 - Visualizzazione della mappa geografica sulla dashboard
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia, per ogni amministratore, delle informazioni relative ai mezzi noleggiati, ai punti di interesse e agli annunci. L'amministratore è autenticato.
+- *Precondizioni*: il sistema tiene traccia delle informazioni relative ai mezzi noleggiati, ai punti di interesse e agli annunci.
 - *Postcondizioni*: il sistema espone una mappa geografica sulla _dashboard_ dell'amministratore.
 - *Trigger*: l'amministratore intende visualizzare la mappa geografica sulla propria _dashboard_.
 - *Scenario principale*:
@@ -284,7 +285,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 === UC11 - Visualizzazione marker sulla mappa per i punti di interesse <uc11>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia della posizione di ciascun punto di interesse. L'amministratore è autenticato.
+- *Precondizioni*: il sistema tiene traccia della posizione di ciascun punto di interesse.
 - *Postcondizioni*: il sistema espone sulla mappa dei _marker_ in corrispondenza dei punti di interesse.
 - *Trigger*: l'amministratore intende visualizzare sulla mappa le locazioni dei punti di interesse.
 - *Scenario principale*:
@@ -300,7 +301,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 === UC11 - Visualizzazione percorso del mezzo in noleggio sulla mappa
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia delle posizioni nel tempo dei mezzi con noleggio attivo. L'amministratore è autenticato.
+- *Precondizioni*: il sistema tiene traccia delle posizioni nel tempo dei mezzi con noleggio attivo.
 - *Postcondizioni*: il sistema espone sulla mappa il percorso dei mezzi con noleggio attivo.
 - *Trigger*: l'amministratore desidera visualizzare il percorso di un mezzo dall'inizio del suo noleggio fino a quel momento.
 - *Scenario principale*:
@@ -311,7 +312,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 === UC12 - Visualizzazione marker sul tracciato dei mezzi con noleggio attivo in corrispondenza del dato GPS <uc12>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema memorizza i dati GPS dei sensori quando il mezzo sul quale sono installati ha un noleggio attivo. L'amministratore è autenticato.
+- *Precondizioni*: il sistema memorizza i dati GPS dei sensori quando il mezzo sul quale sono installati ha un noleggio attivo.
 - *Postcondizioni*: il sistema espone sulla mappa un _marker_ in corrispondenza di ciascuna coordinata GPS fornita dal sensore.
 - *Trigger*: l'amministratore intende visualizzare sulla mappa le posizioni del mezzo in noleggio fino a quel momento.
 - *Scenario principale*:
@@ -327,7 +328,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 === UC13 - Visualizzazione marker sul tracciato dei mezzi con noleggio attivo in corrispondenza della generazione di un annuncio
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema memorizza gli annunci generati e le relative informazioni. L'amministratore è autenticato.
+- *Precondizioni*: il sistema memorizza gli annunci generati e le relative informazioni.
 - *Postcondizioni*: il sistema espone sulla mappa un _marker_ in corrispondenza dei punti in cui è stato generato un annuncio.
 - *Trigger*: l'amministratore intende visualizzare sulla mappa le posizioni del mezzo in noleggio nelle quali è stato generato un annuncio.
 - *Scenario principale*:
@@ -343,7 +344,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 === UC14 - Visualizzazione marker sul tracciato dei mezzi con noleggio attivo in corrispondenza della mancata generazione di un annuncio
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema memorizza le mancate generazioni degli annunci e le relative informazioni. L'amministratore è autenticato.
+- *Precondizioni*: il sistema memorizza le mancate generazioni degli annunci e le relative informazioni.
 - *Postcondizioni*: il sistema espone sulla mappa un _marker_ in corrispondenza dei punti in cui la LLM non ha ritenuto l'utente interessato, quindi non è stato generato l'annuncio.
 - *Trigger*: l'amministratore intende visualizzare sulla mappa le posizioni del mezzo in noleggio nelle quali la LLM non ha generato un annuncio.
 - *Scenario principale*:
@@ -359,7 +360,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 === UC15 - Visualizzazione annuncio tramite marker sulla mappa
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia degli annunci generati e le relative informazioni. L'amministratore è autenticato.
+- *Precondizioni*: il sistema tiene traccia degli annunci generati e le relative informazioni.
 - *Postcondizioni*: il sistema espone l'annuncio generato, con le relative informazioni, in corrispondenza del _marker_ sulla mappa.
 - *Trigger*: l'amministratore desidera visualizzare l'annuncio generato in corrispondenza del _marker_ sulla mappa.
 - *Scenario principale*:
@@ -378,7 +379,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 === UC16 - Visualizzazione messaggio annuncio non generato tramite marker sulla mappa
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia degli annunci non generati e le relative informazioni. L'amministratore è autenticato.
+- *Precondizioni*: il sistema tiene traccia degli annunci non generati e le relative informazioni.
 - *Postcondizioni*: il sistema espone un messaggio circa l'annuncio non generato, con le relative informazioni, in corrispondenza del _marker_ sulla mappa.
 - *Trigger*: l'amministratore desidera visualizzare le informazioni dell'annuncio non generato in corrispondenza del _marker_ sulla mappa.
 - *Scenario principale*:
@@ -397,7 +398,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 === UC17 - Chiusura annuncio visualizzato tramite marker sulla mappa
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia dell'annuncio visualizzato sulla mappa tramite una interazione con il _marker_ corrispondente. L'amministratore è autenticato.
+- *Precondizioni*: il sistema tiene traccia dell'annuncio visualizzato sulla mappa tramite una interazione con il _marker_ corrispondente.
 - *Postcondizioni*: il sistema chiude l'annuncio visualizzato tramite una interazione con il _marker_ corrispondente.
 - *Trigger*: l'amministratore desidera chiudere l'annuncio fatto comparire sulla mappa in corrispondenza del _marker_.
 - *Scenario principale*:
@@ -406,7 +407,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 === UC18 - Chiusura messaggio annuncio non generato visualizzato tramite marker sulla mappa
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia del messaggio di annuncio non generato visualizzato sulla mappa in corrispondenza del _marker_. L'amministratore è autenticato.
+- *Precondizioni*: il sistema tiene traccia del messaggio di annuncio non generato visualizzato sulla mappa in corrispondenza del _marker_.
 - *Postcondizioni*: il sistema chiude il messaggio di annuncio non generato visualizzato tramite una interazione con il _marker_ corrispondente.
 - *Trigger*: l'amministratore desidera chiudere il messaggio di annuncio non generato fatto comparire sulla mappa in corrispondenza del _marker_.
 - *Scenario principale*:
@@ -418,14 +419,43 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   caption: [Diagramma dei casi d'uso UC14],
 )
 
+#pagebreak()
+
+=== UC19 - Spostamento della visuale sulla mappa
+- *Attore principale*: Amministratore.
+- *Precondizioni*: il sistema tiene traccia del centro della porzione di territorio visualizzata sulla mappa.
+- *Postcondizioni*: il sistema fa visualizzare sulla mappa una porzione di territorio centrata su un nuovo punto.
+- *Trigger*: l'amministratore desidera spostare la visuale sulla mappa.
+- *Scenario principale*:
+  + L'amministratore accede alla mappa sulla _dashboard_.
+  + L'amministratore interagisce con la mappa per spostare il centro della mappa, quindi anche l'intera visuale.
+
+=== UC20 - Ampliamento della visuale sulla mappa
+- *Attore principale*: Amministratore.
+- *Precondizioni*: il sistema tiene traccia della porzione di territorio mostrata dalla mappa sulla _dashboard_.
+- *Postcondizioni*: il sistema fa visualizzare sulla mappa una porzione di territorio più ampia.
+- *Trigger*: l'amministratore desidera ampliare la visuale sulla mappa.
+- *Scenario principale*:
+  + L'amministratore accede alla mappa sulla _dashboard_.
+  + L'amministratore interagisce con la mappa per ampliare la visuale.
+
+=== UC21 - Restringimento della visuale sulla mappa
+- *Attore principale*: Amministratore.
+- *Precondizioni*: il sistema tiene traccia della porzione di territorio mostrata dalla mappa sulla _dashboard_.
+- *Postcondizioni*: il sistema fa visualizzare sulla mappa una porzione di territorio meno ampia.
+- *Trigger*: l'amministratore desidera restringere la visuale sulla mappa.
+- *Scenario principale*:
+  + L'amministratore accede alla mappa sulla _dashboard_.
+  + L'amministratore interagisce con la mappa per restringere la visuale.
+#v(20pt)
+#figure(
+  image("../assets/use_cases/interazioni mappa.png"),
+  caption: [Diagramma dei casi d'uso UC14],
+)
+
+#pagebreak()
 
 // UC Perruz ==================================================================
-
-/*
-L'attore sarebbe il sistema => no UC
-Domanda: il capitolato chiede di avvisare l'admin, si può immaginare tramite notifica, però l'attore della notifica è il sistema quindi non andrebbe creato il caso d'uso. Come si fa ad implementare?
-*/
-#pagebreak()
 
 === UC11 - Visualizzazione notifica di un annuncio generato
 - *Attore principale*: Amministratore.
