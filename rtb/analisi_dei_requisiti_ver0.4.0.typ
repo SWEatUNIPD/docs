@@ -10,7 +10,7 @@
   uso: "Esterno",
   versioni: (
     "0.4.0",
-    [27/12/2024],
+    [29/12/2024],
     "Andrea Perozzo\nAndrea Precoma",
     "Davide Marin\nKlaudio Merja",
     [
@@ -325,8 +325,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #pagebreak()
 
-// TODO: hover per visualizzare info
-// HOVER SOLO PER ANNUNCIO RIUSCITO O ANCHE FALLITO
 === UC13 - Visualizzazione marker sul tracciato dei mezzi con noleggio attivo in corrispondenza della generazione di un annuncio
 - *Attore principale*: Amministratore.
 - *Precondizioni*: il sistema memorizza gli annunci generati e le relative informazioni. L'amministratore è autenticato.
@@ -359,7 +357,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #pagebreak()
 
-// TODO: fare anche chiusura dell'annuncio (non è chiusura finestra di dialogo)?
 === UC15 - Visualizzazione annuncio tramite marker sulla mappa
 - *Attore principale*: Amministratore.
 - *Precondizioni*: il sistema tiene traccia degli annunci generati e le relative informazioni. L'amministratore è autenticato.
@@ -379,7 +376,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #pagebreak()
 
-// TODO: vedi uc simile per annuncio, fare anche chiusura del messagio (non è chiusura finestra di dialogo)?
 === UC16 - Visualizzazione messaggio annuncio non generato tramite marker sulla mappa
 - *Attore principale*: Amministratore.
 - *Precondizioni*: il sistema tiene traccia degli annunci non generati e le relative informazioni. L'amministratore è autenticato.
@@ -397,27 +393,40 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   caption: [Diagramma del caso d'uso UC14],
 )
 
-// === UC10 - Visualizzazione degli annunci pubblicitari generati lato amministratore
-// - *Attore principale*: Amministratore.
-// - *Precondizioni*: l'amministratore è autenticato al sistema.
-// - *Postcondizioni*: l'amministratore visualizza gli annunci generati dalla LLM per ogni utente con un noleggio attivo all'interno della mappa.
-// - *Trigger*: l'amministratore vuole prendere visione di quanto generato da parte della LLM per i clienti del noleggio e per i punti di interesse convenzionati.
-// - *Scenario principale*:
-//   + L'amministratore accede alla mappa dei mezzi noleggiati.
-//   + L'amministratore, tramite un "_click_" sul _marker_ che indica la posizione di un mezzo, visualizza l'annuncio pubblicitario generato per l'utente che ha attualmente in uso il mezzo.
-// #v(20pt)
-// #figure(
-//   image("../assets/use_cases/UC10.svg"),
-//   caption: [Diagramma del caso d'uso UC10],
-// )
+#pagebreak()
 
-//UC Perruz
+=== UC17 - Chiusura annuncio visualizzato tramite marker sulla mappa
+- *Attore principale*: Amministratore.
+- *Precondizioni*: il sistema tiene traccia dell'annuncio visualizzato sulla mappa tramite una interazione con il _marker_ corrispondente. L'amministratore è autenticato.
+- *Postcondizioni*: il sistema chiude l'annuncio visualizzato tramite una interazione con il _marker_ corrispondente.
+- *Trigger*: l'amministratore desidera chiudere l'annuncio fatto comparire sulla mappa in corrispondenza del _marker_.
+- *Scenario principale*:
+  + L'amministratore visualiza l'annuncio sulla mappa in corrispondenza del _marker_.
+  + L'amministratore chiude l'annuncio.
+
+=== UC18 - Chiusura messaggio annuncio non generato visualizzato tramite marker sulla mappa
+- *Attore principale*: Amministratore.
+- *Precondizioni*: il sistema tiene traccia del messaggio di annuncio non generato visualizzato sulla mappa in corrispondenza del _marker_. L'amministratore è autenticato.
+- *Postcondizioni*: il sistema chiude il messaggio di annuncio non generato visualizzato tramite una interazione con il _marker_ corrispondente.
+- *Trigger*: l'amministratore desidera chiudere il messaggio di annuncio non generato fatto comparire sulla mappa in corrispondenza del _marker_.
+- *Scenario principale*:
+  + L'amministratore visualiza il messaggio di annuncio non generato sulla mappa in corrispondenza del _marker_.
+  + L'amministratore chiude il messaggio.
+#v(20pt)
+#figure(
+  image("../assets/use_cases/chiusure.png"),
+  caption: [Diagramma dei casi d'uso UC14],
+)
+
+
+// UC Perruz ==================================================================
 
 /*
 L'attore sarebbe il sistema => no UC
 Domanda: il capitolato chiede di avvisare l'admin, si può immaginare tramite notifica, però l'attore della notifica è il sistema quindi non andrebbe creato il caso d'uso. Come si fa ad implementare?
 */
 #pagebreak()
+
 === UC11 - Visualizzazione notifica di un annuncio generato
 - *Attore principale*: Amministratore.
 - *Precondizioni*: l'amministratore è autenticato e ha accesso alla _dashboard_ del sistema.
