@@ -873,98 +873,6 @@ Infine tutti i membri del gruppo devono imparare da dove e cosa studiare e devon
 Al fine di agevolare il processo di formazione ogni membro del gruppo incaricato in un determinato _sprint_ di approfondire un determinato argomento dovrà essere in grado di tramandare la propria conoscenza agli altri. 
 Per aiutarci nel processo di apprendimento l'azienda Sync Lab ci fornisce, durante lo svolgimento del progetto, materiali quali video e risorse utili alle tecnologie di dominio d'uso del nostro capitolato, nonché delle sedute di _deep dive_ concordate a calendario.
 
-
-= Standard per la qualità
-
-/*TODO: scrivere la sezione
-== Standard ISO/IEC 9126
-*/
-
-= Metriche per la qualità <metriche>
-
-== Metriche per la qualità di processo
-
-=== Processi primari
-==== Fornitura
-- *MPC-PV*:
-  - *Nome*: Planned Value
-  - *Descrizione*: Indica il valore pianificato per il lavoro da svolgere.
-  - *Formula*: $ "PV" = "%LS" * "BAC" $
-  - *Parametri*:
-    - *%LS*: Percentuale del lavoro svolto.
-    - *BAC*: Budget at Completion, ovvero il costo totale del progetto stabilito in fase di candidatura.
-
-- *MPC-EV*:
-  - *Nome*: Earned Value
-  - *Descrizione*: Indica il valore del lavoro svolto fino a quel momento.
-  - *Formula*: $ "EV" = "%LS" * "EAC" $
-  - *Parametri*:
-    - *%LS*: Percentuale del lavoro svolto.
-    - *EAC*: Estimated at Completion.
-
-- *MPC-AC*:
-  - *Nome*: Actual Cost
-  - *Descrizione*: Indica il costo effettivo sostenuto fino a quel momento. Consultabile in ogni momento attraverso il Piano di Progetto.
-
-- *MPC-CPI*:
-  - *Nome*: Cost Performance Index
-  - *Descrizione*: Indica il rapporto tra il valore guadagnato e il costo effettivo.
-  - *Formula*: $ "CPI" = "EV" / "AC" $
-  - *Parametri*:
-    - *EV*: Earned Value, ovvero il valore guadagnato.
-    - *AC*: Actual Cost, ovvero il costo effettivo.
-
-- *MPC-EAC*:
-  - *Nome*: Estimated at Completion
-  - *Descrizione*: Indica il costo stimato per terminare del progetto, rivisto in base allo stato attuale del progetto.
-  - *Formula*: $ "EAC" = "BAC" / "CPI" $
-  - *Parametri*:
-    - *BAC*: Budget at Completion.
-    - *CPI*: Cost Performance Index, ovvero il rapporto tra il valore guadagnato e il costo effettivo.
-
-- *MPC-SV*:
-  - *Nome*: Schedule Variance
-  - *Descrizione*: Indica se il progetto è in anticipo, in pari o in ritardo rispetto alla pianificazione.
-  - *Formula*: $ "SV" = "EV" - "PV" $
-  - *Parametri*:
-    - *EV*: Earned Value.
-    - *PV*: Planned Value.
-
-- *MPC-CV*:
-  - *Nome*: Cost Variance
-  - *Descrizione*: Indica se il progetto è sotto o sopra il budget.
-  - *Formula*: $ "CV" = "EV" - "AC" $
-  - *Parametri*:
-    - *EV*: Earned Value.
-    - *AC*: Actual Cost.
-
-- *MPC-ETC*:
-  - *Nome*: Estimate to Complete
-  - *Descrizione*: Indica il costo stimato per completare il progetto.
-  - *Formula*: $ "ETC" = "EAC" - "AC" $
-  - *Parametri*:
-    - *EAC*: Estimated at Completion.
-    - *AC*: Actual Cost.
-
-
-=== Processi di supporto
-==== Documentazione
-- *MPC-IG*: 
-  - *Nome*: Indice di Gulpease
-  - *Descrizione*: Indica il livello di leggibilità di un testo.
-  - *Formula*: $ "IG" = 89 + (300 * "NDF" - 10 * "NDL") / "NDP" $
-  - *Parametri*: 
-    - *NDF*: numero di frasi presenti nel testo.
-    - *NDL*: numero di lettere presenti nel testo.
-    - *NDP*: numero di parole presenti nel testo.
-
-- *MPC-CO*:
-  - *Nome*: Correttezza ortografica
-  - *Descrizione*: Indica il numero di errori ortografici presenti nel testo.
-
-
-== Metriche per la qualità di prodotto
-
 == Gestione dei processi
 === Scopo
 Secondo lo standard ISO/IEC 12207:1997 la gestione dei processi mira a stabilire, implementare e migliorare i processi che il gruppo deve assicurarsi vengano svolti per garantire la massima resa dei processi di sviluppo.
@@ -1145,4 +1053,97 @@ Infine tutti i membri del gruppo devono imparare da dove e cosa studiare e devon
 === Strumenti
 Al fine di agevolare il processo di formazione ogni membro del gruppo incaricato in un determinato _sprint_ di approfondire un determinato argomento dovrà essere in grado di tramandare la propria conoscenza agli altri. 
 Per aiutarci nel processo di apprendimento l'azienda Sync Lab ci fornisce, durante lo svolgimento del progetto, materiali quali video e risorse utili alle tecnologie di dominio d'uso del nostro capitolato, nonché delle sedute di _deep dive_ concordate a calendario.
+
+
+
+= Standard per la qualità
+
+/*TODO: scrivere la sezione
+== Standard ISO/IEC 9126
+*/
+
+= Metriche per la qualità <metriche>
+
+== Metriche per la qualità di processo
+
+=== Processi primari
+==== Fornitura
+- *MPC-PV*:
+  - *Nome*: Planned Value
+  - *Descrizione*: Indica il valore pianificato per il lavoro da svolgere.
+  - *Formula*: $ "PV" = "%LS" * "BAC" $
+  - *Parametri*:
+    - *%LS*: Percentuale del lavoro svolto.
+    - *BAC*: Budget at Completion, ovvero il costo totale del progetto stabilito in fase di candidatura.
+
+- *MPC-EV*:
+  - *Nome*: Earned Value
+  - *Descrizione*: Indica il valore del lavoro svolto fino a quel momento.
+  - *Formula*: $ "EV" = "%LS" * "EAC" $
+  - *Parametri*:
+    - *%LS*: Percentuale del lavoro svolto.
+    - *EAC*: Estimated at Completion.
+
+- *MPC-AC*:
+  - *Nome*: Actual Cost
+  - *Descrizione*: Indica il costo effettivo sostenuto fino a quel momento. Consultabile in ogni momento attraverso il Piano di Progetto.
+
+- *MPC-CPI*:
+  - *Nome*: Cost Performance Index
+  - *Descrizione*: Indica il rapporto tra il valore guadagnato e il costo effettivo.
+  - *Formula*: $ "CPI" = "EV" / "AC" $
+  - *Parametri*:
+    - *EV*: Earned Value, ovvero il valore guadagnato.
+    - *AC*: Actual Cost, ovvero il costo effettivo.
+
+- *MPC-EAC*:
+  - *Nome*: Estimated at Completion
+  - *Descrizione*: Indica il costo stimato per terminare del progetto, rivisto in base allo stato attuale del progetto.
+  - *Formula*: $ "EAC" = "BAC" / "CPI" $
+  - *Parametri*:
+    - *BAC*: Budget at Completion.
+    - *CPI*: Cost Performance Index, ovvero il rapporto tra il valore guadagnato e il costo effettivo.
+
+- *MPC-SV*:
+  - *Nome*: Schedule Variance
+  - *Descrizione*: Indica se il progetto è in anticipo, in pari o in ritardo rispetto alla pianificazione.
+  - *Formula*: $ "SV" = "EV" - "PV" $
+  - *Parametri*:
+    - *EV*: Earned Value.
+    - *PV*: Planned Value.
+
+- *MPC-CV*:
+  - *Nome*: Cost Variance
+  - *Descrizione*: Indica se il progetto è sotto o sopra il budget.
+  - *Formula*: $ "CV" = "EV" - "AC" $
+  - *Parametri*:
+    - *EV*: Earned Value.
+    - *AC*: Actual Cost.
+
+- *MPC-ETC*:
+  - *Nome*: Estimate to Complete
+  - *Descrizione*: Indica il costo stimato per completare il progetto.
+  - *Formula*: $ "ETC" = "EAC" - "AC" $
+  - *Parametri*:
+    - *EAC*: Estimated at Completion.
+    - *AC*: Actual Cost.
+
+
+=== Processi di supporto
+==== Documentazione
+- *MPC-IG*: 
+  - *Nome*: Indice di Gulpease
+  - *Descrizione*: Indica il livello di leggibilità di un testo.
+  - *Formula*: $ "IG" = 89 + (300 * "NDF" - 10 * "NDL") / "NDP" $
+  - *Parametri*: 
+    - *NDF*: numero di frasi presenti nel testo.
+    - *NDL*: numero di lettere presenti nel testo.
+    - *NDP*: numero di parole presenti nel testo.
+
+- *MPC-CO*:
+  - *Nome*: Correttezza ortografica
+  - *Descrizione*: Indica il numero di errori ortografici presenti nel testo.
+
+
+== Metriche per la qualità di prodotto
 
