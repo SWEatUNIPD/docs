@@ -577,7 +577,7 @@ Alla fine di ogni riunione interna si aggiorna il _backlog_ con le nuove _issue_
 | ------------------------------------------------------\
 | Breve descrizione. \
 | \
-| Verificatore: \@Nickame \
+| Verificatore: \@Nickname \
 | \
 | Decisione presa nel [VI/VE]\_[YYYY-MM-DD]
 
