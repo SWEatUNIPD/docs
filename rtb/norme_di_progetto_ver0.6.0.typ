@@ -5,17 +5,26 @@
   data: "14 Novembre 2024",
   destinatari: ("Gruppo SWE@",),
   responsabile: "-",
-  redattori: ("Andrea Precoma", "Davide Picello", "Klaudio Merja"),
+  redattori: ("Andrea Precoma", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
   verificatori: ("Andrea Precoma", "Davide Marin", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
   titolo: "Norme di Progetto",
   uso: "Interno",
   versioni: (
-    "0.5.0",
+    "0.6.0",
     "22/12/2024",
     "Davide Picello",
     "Davide Marin,\nKlaudio Merja",
     [
       - Scrittura della sezione "Casi d'uso" in "Processi primari"
+    ],
+
+    "0.5.0",
+    "22/12/2024",
+    "Riccardo Milan",
+    "Davide Marin\nKlaudio Merja",
+    [
+      - Aggiunta del capitolo "Processi organizzativi"
+      - Correzioni di stile
     ],
 
     "0.4.0",
