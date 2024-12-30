@@ -445,14 +445,14 @@ Le attività che il _team_ si è prefissato di portare a termine durante il quar
 - Redazione del verbale esterno ed interno del 23/12/2024.
 - Codifica dello _script_ per il calcolo automatico dell'_#rifGlossario("indice Gulpease")_.
 - Ampliamento del documento Norme di Progetto, in particolare occupandosi delle sezioni:
-  - Metriche di qualità del prodotto
+  - Metriche di qualità del prodotto.
   - Metriche di qualità del processo.
-- Redazione completa del Piano di Qualifica con le metriche individuate nel punto sopra.
+- Redazione completa del Piano di Qualifica con le metriche individuate nel punto precedente.
 - Continuazione del documento di Analisi dei Requisiti, in particolare:
-  - Rifinire e completare i casi d'uso
-  - Individuare e redarre in maniera completa i Requisiti.
-- Creazione del nuovo _#rifGlossario("stream processor") custom_ sfruttando #rifGlossario("Spring"), con il _database_ popolato e l'integrazione con _#rifGlossario("LangChain")_.
-- Aggiornamento della _dashboard_ in Grafana per adattarsi alla nuova infrastruttura con _Spring_.
+  - Rifinire e completare i casi d'uso.
+  - Individuare e redigere in maniera completa i requisiti.
+- Creazione del nuovo _#rifGlossario("stream processor") custom_ sfruttando #rifGlossario("Spring"), con il _database_ popolato e l'integrazione con #rifGlossario("LangChain").
+- Aggiornamento della _dashboard_ in Grafana per adattarsi alla nuova infrastruttura con Spring.
 - Continuazione della stesura del Piano di Progetto come da prassi, in particolare:
   - Scrittura pianificazione quarto _sprint_.
   - Scrittura retrospettiva quarto _sprint_ in concomitanza con la fine dello _sprint_.
