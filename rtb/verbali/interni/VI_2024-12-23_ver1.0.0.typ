@@ -29,32 +29,32 @@
 Dopo il #rifGlossario("SAL") di fine terzo _#rifGlossario("sprint")_ il gruppo si è riunito per fare il punto della situazione e pianificare il lavoro da svolgere nel quarto _sprint_.
 
 = Ordine del giorno
-All'ordine del giorno i punti fondamentali da svolgere sono relativi sia alla documentazione, ovvero rifinire i casi d'uso e i requisiti e ricercare le metriche di qualità, sia alla realizzazione concreta di un prodotto da presentare come _#rifGlossario("Poc")_.
+All'ordine del giorno i punti fondamentali da svolgere sono relativi sia alla documentazione, ovvero rifinire i casi d'uso e i requisiti e ricercare le metriche di qualità, sia alla realizzazione concreta di un prodotto da presentare come _#rifGlossario("PoC")_.
 
 == Casi d'uso e Requisiti
-Dopo il proficuo incontro svoltosi la settimana precedente con il professor Cardin, in questo _sprint_ si prevede di sistemare tutti i casi d'uso nel documento di Analisi dei Requisiti e, parallelamente, nello stesso documento definire i Requisiti del progetto.
+Dopo il proficuo incontro svoltosi la settimana precedente con il professor Cardin, in questo _sprint_ si prevede di sistemare tutti i casi d'uso nel documento di Analisi dei Requisiti e, parallelamente, definire nello stesso documento i requisiti del progetto.
 
 == Metriche
-Continuando il lavoro iniziato nello scorso _sprint_, il gruppo vuole focalizzarsi sulle metriche con cui misurare i progressi del progetto. Per questo sarà importante studiare le metriche di qualità da inserire nelle Norme di Progetto e nel Piano di Qualifica. Riguardo a un primo studio delle metriche svolto nel precedente _sprint_, si è reso necessario codificare uno _script_ che calcola l'#rifGlossario("indice Gulpease").
+Continuando il lavoro iniziato nello scorso _sprint_, il gruppo vuole focalizzarsi sulle metriche con cui misurare i progressi del progetto. Per questo sarà importante studiare le metriche con cui misurare e monitorare la qualità dei processi e i prodotti coinvolti nella realizzazione del progetto. In seguito a un primo studio delle metriche svolto nel precedente _sprint_, si è reso necessario codificare uno _script_ che calcola l'#rifGlossario("indice Gulpease").
 
 == PoC
-Lato pratico il punto della situazione è che bisogna ultimare la transizione da #rifGlossario("Apache Nifi") alla costruire un servizio _custom_ di _data #rifGlossario("stream processing")_ utilzzando il _framework_ #rifGlossario("Spring"), popolare il _database_ con dei dati di _test_ e aggiornare l'interfaccia _#rifGlossario("Grafana")_ per ricevere correttamente i dati dal nuovo _stram processor_.
+Lato pratico il punto della situazione è che bisogna ultimare la transizione da #rifGlossario("Apache Nifi") a un servizio _custom_ di _data #rifGlossario("stream processing")_ costruito utilzzando il _framework_ #rifGlossario("Spring"), popolare il _database_ con dei dati di _test_ e aggiornare l'interfaccia _#rifGlossario("Grafana")_ per ricevere correttamente i dati dal nuovo _stream processor_.
 
 == Strumenti per il diagramma di Gantt
-Dopo numerose ricerche nessuno strumento in rapposto costo beneficio si è rivelato essere meglio di #rifGlossario("GitHub") per costruire il #rifGlossario("diagramma di Gantt"). Il gruppo perciò ha deciso di continuare a organizzare i diagrammi come fatto fino ad ora.
+Dopo numerose ricerche nessuno strumento si è rivelato essere meglio di #rifGlossario("GitHub") per costruire il #rifGlossario("diagramma di Gantt") in termini di costo-beneficio. Il gruppo perciò ha deciso di continuare a organizzare i diagrammi come fatto fino ad ora.
 
 = Conclusioni
 Il gruppo si è diviso le attività da svolgere nel prossimo _sprint_ e si è accordato su come procedere.
 
 Il progresso nella documentazione si concentra soprattutto nell'individuazione delle metriche, dei casi d'uso e dei requisiti.
 
-Dal punto di vista pratico invece l'implementazione di _Spring_, il popolamento del _database_ e l'aggiornamento dell'interfaccia.
+Dal punto di vista pratico invece ci si concentrerà sull'implementazione di Spring, il popolamento del _database_ e l'aggiornamento dell'interfaccia.
 
 = Tabella delle decisioni
 #backlog(content: (
   link("https://github.com/SWEatUNIPD/NearYou/issues/2")[#text(underline("N0002"))],
   [Klaudio Merja],
-  [Creazione del servizio _custom_ di _data processing_ con _Spring_],
+  [Creazione del servizio _custom_ di _data processing_ con Spring],
 
   link("https://github.com/SWEatUNIPD/NearYou/issues/3")[#text(underline("N0003"))],
   [Riccardo Milan],
