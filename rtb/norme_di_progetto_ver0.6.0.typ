@@ -1070,19 +1070,19 @@ Per aiutarci nel processo di apprendimento l'azienda Sync Lab ci fornisce, duran
 ==== Fornitura
 - *MPC-PV*:
   - *Nome*: Planned Value
-  - *Descrizione*: Indica il valore pianificato per il lavoro da svolgere.
-  - *Formula*: $ "PV" = "%LS" * "BAC" $
+  - *Descrizione*: Indica il valore previsto per il lavoro svolto fino a quel momento se le attività proseguono come pianificato.
+  - *Formula*: $ "PV" = "%LSP" * "BAC" $
   - *Parametri*:
-    - *%LS*: Percentuale del lavoro svolto.
+    - *%LSP*: Percentuale di lavoro svolto, secondo pianificazione.
     - *BAC*: Budget at Completion, ovvero il costo totale del progetto stabilito in fase di candidatura.
 
 - *MPC-EV*:
   - *Nome*: Earned Value
-  - *Descrizione*: Indica il valore del lavoro svolto fino a quel momento.
-  - *Formula*: $ "EV" = "%LS" * "EAC" $
+  - *Descrizione*: Indica il valore del lavoro effettivamente svolto fino a quel momento.
+  - *Formula*: $ "EV" = "%LSE" * "BAC" $
   - *Parametri*:
-    - *%LS*: Percentuale del lavoro svolto.
-    - *EAC*: Estimated at Completion.
+    - *%LSE*: Percentuale del lavoro effettivamente svolto.
+    - *EAC*: Budget at Completion.
 
 - *MPC-AC*:
   - *Nome*: Actual Cost
