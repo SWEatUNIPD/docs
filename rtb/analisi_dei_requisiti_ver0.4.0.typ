@@ -244,7 +244,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Postcondizioni*: il sistema accetta l'_e-mail_ inserita.
 - *Trigger*: l'amministratore intende accede alla _dashboard_ personale.
 - *Scenario principale*:
-  + L'amministratore non autenticato accedere alla pagina di _login_ del sistema.
+  + L'amministratore non autenticato accede alla pagina di _login_ del sistema.
   + L'amministratore non autenticato inserisce l'_e-mail_ con la quale è registrato nel sistema.
 
 === UC9 - Inserimento password per l'autenticazione alla dashboard <uc9>
@@ -263,7 +263,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Trigger*: l'amministratore non autenticato inserisce delle credenziali errate.
 - *Scenario principale*:
   + L'amministratore inserisce delle credenziali errate durante la fase di autenticazione alla _dashboard_.
-  + L'amministratore riceve un messaggio di errore il quale segnala che le credenziali di inserite sono invalide.
+  + L'amministratore riceve un messaggio di errore il quale segnala che le credenziali di inserite sono non valide.
 #v(20pt)
 #figure(
   image("../assets/use_cases/autenticazione.png"),
@@ -281,7 +281,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore è autenticato alla _dashboard_ del sistema.
   + La _dashboard_ del sistema espone una mappa geografica del territorio.
 - *Inclusioni*:
-  + Visualizzazione marker sulla mappa per i punti di interesse (#link(<uc11>)[UC11]).
+  + Visualizzazione _marker_ sulla mappa per i punti di interesse (#link(<uc11>)[UC11]).
 
 === UC11 - Visualizzazione marker sulla mappa per i punti di interesse <uc11>
 - *Attore principale*: Amministratore.
@@ -561,11 +561,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   - Un _flag_ che indica se il noleggio al quale è stato inviato l'annuncio è ancora attivo.
 - *Trigger*: l'amministratore desidera visualizzare le informazioni principali di un annuncio.
 - *Scenario principale*:
-  + L'amministratore visualizza le seguenti informazioni relative all'annuncio:
-    - Nome del punto di interesse collegato.
-    - _E-mail_ dell'utente destinatario.
-    - Data e ora di erogazione.
-    - _Flag_ che indica se il noleggio al quale è stato inviato l'annuncio è ancora attivo.
+  + L'amministratore visualizza le informazioni principali relative all'annuncio.
 - *Inclusioni*:
   + Visualizzazione nome del punto di interesse collegato all'annuncio (#link(<uc20>)[UC20]).
   + Visualizzazione _e-mail_ dell'utente destinatario dell'annuncio (#link(<uc21>)[UC21]).
@@ -584,7 +580,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Attore principale*: Amministratore.
 - *Precondizioni*: il sistema tiene traccia della _e-mail_ dell'utente al quale viene mandato l'annuncio. L'amministratore è autenticato e ha accesso alla _dashboard_.
 - *Postcondizioni*: il sistema espone l'_e-mail_ dell'utente al quale è stato inviato l'annuncio.
-- *Trigger*: l'amministratore desidera visualizzare l'_e-mail_ dell'untente destinatario dell'annuncio.
+- *Trigger*: l'amministratore desidera visualizzare l'_e-mail_ dell'utente destinatario dell'annuncio.
 - *Scenario principale*:
   + L'amministratore visualizza l'_e-mail_ dell'utente destinatario dell'annuncio.
 
@@ -622,12 +618,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Trigger*: l'amministratore desidera visualizzare l'annuncio insieme alle relative informazioni.
 - *Scenario principale*:
   + L'amministratore seleziona l'opzione per visualizzare i dettagli dell'annuncio desiderato.
-  + Viene esposto l'annuncio insieme alle relative informazioni:
-    - Nome del punto di interesse collegato.
-    - Categoria del punto di interesse collegato.
-    - _E-mail_ dell'utente destinatario.
-    - Data e ora di erogazione.
-    - Un _flag_ che indica se il noleggio al quale è stato inviato l'annuncio è ancora attivo.
+  + Viene esposto l'annuncio insieme alle relative informazioni.
 - *Inclusioni*:
   + Visualizzazione nome del punto di interesse collegato all'annuncio (#link(<uc20>)[UC20]).
   + Visualizzazione _e-mail_ dell'utente destinatario dell'annuncio (#link(<uc21>)[UC21]).
@@ -669,25 +660,25 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #pagebreak()
 
-=== UC28 - Visualizzazione storico annunci per lista
+=== UC28 - Visualizzazione storico annunci in lista
 - *Attore principale*: Amministratore.
 - *Precondizioni*: il sistema tiene traccia di tutti gli annunci generati per i clienti dell'amministratore. Questo è autenticato e ha accesso alla _dashboard_.
-- *Postcondizioni*: il sistema espone gli annunci generati fino a quel momento ordinati dal più recente in formato a lista.
-- *Trigger*: l'amministratore vuole prendere visione degli annunci generati fino a quel momento in formato a lista.
+- *Postcondizioni*: il sistema espone gli annunci generati fino a quel momento ordinati dal più recente in lista.
+- *Trigger*: l'amministratore vuole prendere visione degli annunci generati fino a quel momento in lista.
 - *Scenario principale*:
   + L'amministratore accede alla _dashboard_ principale.
   + L'amministratore accede alla sezione apposita degli annunci.
-  + L'amministratore selezione l'opzione per visualizzare gli annunci in formato a lista.
+  + L'amministratore selezione l'opzione per visualizzare gli annunci in lista.
 
-=== UC29 - Visualizzazione storico annunci per griglia
+=== UC29 - Visualizzazione storico annunci in griglia
 - *Attore principale*: Amministratore.
 - *Precondizioni*: il sistema tiene traccia di tutti gli annunci generati per i clienti dell'amministratore. Questo è autenticato e ha accesso alla _dashboard_.
-- *Postcondizioni*: il sistema espone gli annunci generati fino a quel momento ordinati dal più recente in formato a griglia.
-- *Trigger*: l'amministratore vuole prendere visione degli annunci generati fino a quel momento in formato a griglia.
+- *Postcondizioni*: il sistema espone gli annunci generati fino a quel momento ordinati dal più recente in griglia.
+- *Trigger*: l'amministratore vuole prendere visione degli annunci generati fino a quel momento in griglia.
 - *Scenario principale*:
   + L'amministratore accede alla _dashboard_ principale.
   + L'amministratore accede alla sezione apposita degli annunci.
-  + L'amministratore selezione l'opzione per visualizzare gli annunci in formato a griglia.
+  + L'amministratore selezione l'opzione per visualizzare gli annunci in griglia.
 #v(20pt)
 #figure(
   image("../assets/use_cases/display.png"),
@@ -766,10 +757,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   + L'amministratore accede alla _dashboard_ principale.
   + L'amministratore accede alla sezione apposita dei grafici.
-  + Vengono visualizzati i grafici relativi alle seguenti analisi:
-    - Rapporto degli annnunci generati sulle richieste totali
-    - Quantità di annunci generati per ogni punto di interesse in un intervallo di date selezionato.
-    - Quantità di annunci generati legati a un punto di interesse in una data e fascia oraria selezionati.
+  + Vengono visualizzati i grafici relativi alle analisi proposte.
 - *Inclusioni*:
   + Visualizzazione singolo grafico (#link(<uc36>)[UC36]).
 
@@ -785,12 +773,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Trigger*: l'amministratore desidera prendere visione del grafico che espone l'andamento di uno specifico parametro.
 - *Scenario principale*:
   + L'amministratore accede alla sezione apposita dei grafici.
-  + Viene visualizzato il grafico con le relative informazioni:
-    - Titolo del grafico.
-    - Etichetta dell'asse delle ascisse.
-    - Etichetta dell'asse delle ordinate.
-    - Etichette dei valori sugli assi.
-    - Dati del grafico.
+  + Viene visualizzato il grafico con le relative informazioni.
   // TODO: AGGIORNATO IN AUTOMATICO ALL'ARRIVO DI NUOVI DATI?
 - *Inclusioni*:
   + Visualizzazione titolo del grafico (#link(<uc37>)[UC37]).
