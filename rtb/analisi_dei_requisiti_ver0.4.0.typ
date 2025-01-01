@@ -236,7 +236,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + Inserimento _e-mail_ per l'autenticazione alla _dashboard_ (#link(<uc3>)[UC3]).
   + Inserimento _password_ per l'autenticazione alla _dashboard_ (#link(<uc4>)[UC4]).
 - *Estensioni*:
-  + Errore "Credenziali errate" (#link(<uc5>)[UC5]).
+  + Visualizzazione errore "Credenziali errate" (#link(<uc5>)[UC5]).
 
 === UC3 - Inserimento e-mail per l'autenticazione alla dashboard <uc3>
 - *Attore principale*: Amministratore non autenticato.
@@ -459,11 +459,13 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 === UC19 - Visualizzazione notifica di un annuncio generato
 - *Attore principale*: Amministratore.
+// io ho rimosso che l'amministratore è autenticato dalle pre perché è nella definizione dell'attore (altrimenti sarebbe "amministratore non autenticato"). stesso vale per tute le pre a seguire
 - *Precondizioni*: il sistema ha generato un annuncio personalizzato ad un utente, l'amministratore è autenticato ed è acceduto alla _dashboard_.
 - *Postcondizioni*: il sistema mostra una notifica sulla _dashboard_ contenente le informazioni principlai riguardo l'annuncio appena generato.
 - *Trigger*: l'amministratore desidera prendere visione della notifica.
 - *Scenario principale*: 
   + Un utente si avvicina a un punto di interesse e il sistema genera un annuncio personalizzato che viene inviato all'utente.
+  // eviterei di scrivere pop-up, mi sembra rientri già sul COME fare la notifica
   + Nello stesso istante, nella _dashboard_, viene mostrata una notifica _pop-up_ che informa l'amministratore con i seguenti dettagli:
     - E-mail dell'utente destinatario.
     - Punto di interesse associato all'annuncio.
@@ -473,6 +475,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + Visualizzazione _e-mail_ dell'utente destinatario dell'annuncio (#link(<uc26>)[UC26]).
   + Visualizzazione data e ora di emissione dell'annuncio (#link(<uc27>)[UC27]).
 
+// specificherei "mancata generazione di un annuncio", è da pensare che ogni uc deve essere ben capibile senza il contesto
 === UC20 - Visualizzazione notifica di una mancata generazione
 - *Attore principale*: Amministratore.
 - *Precondizioni*: il sistema ha valutato un utente come disinteressato ad un punto di interesse, l'amministratore è autenticato ed è acceduto alla _dashboard_.
@@ -480,8 +483,10 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Trigger*: l'amministratore desidera prendere visione della notifica.
 - *Scenario principale*: 
   + Un utente si avvicina a un punto di interesse e il sistema valuta che l'utente non è interessato.
+  // stesso discorso di prima per pop-up
   + Nello stesso istante, nella _dashboard_, viene mostrata una notifica _pop-up_ contenente un messaggio che informa l'amministratore che l'utente non è interessato al punto di interesse.
 // includo uc25 e uc26 oppure no?
+// direi di sì, anche il 27 a sto punto
 
 === UC21 - Apertura dettagli singolo annuncio dalla notifica
 - *Attore principale*: Amministratore.
@@ -490,17 +495,21 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Trigger*: l'amministratore desidera prendere visione dei dettagli dell'annuncio generato.
 - *Scenario principale*: 
   + L'amministratore riceve sulla _dashboard_ la notifica relativa ad un annuncio generato.
+  // mi terrei generico sempre per il discorso del COME, mi pare io abbia scritto qualcosa tipo "interagisce per visualizzare i dettagli"
   + L'amministratore preme sul pulsante "Visualizza dettagli" per aprire i dettagli dell'annuncio.
 - *Inclusioni*:
+// NOTE: se teniamo così vuol dire che lo porta nella pagina dello storico per visualizzare l'annuncio, dovremmo riformulare la cosa
   + Visualizzazione dettagli singolo annuncio nello storico(#link(<uc29>)[UC29]).
 
 === UC22 - Chiusura di una notifica 
 - *Attore principale*: Amministratore.
+// chiudi solo la notifica dell'annuncio generato?
 - *Precondizioni*: il sistema ha generato un annuncio personalizzato ad un utente, l'amministratore è autenticato ed è acceduto alla _dashboard_. L'amministratore ha ricevuto una notifica di annuncio generato.
 - *Postcondizioni*: il sistema chiude la notifica.
 - *Trigger*: l'amministratore vuole chiudere la notifica.
 - *Scenario principale*: 
   + L'amministratore riceve sulla _dashboard_ una notifica.
+  // come prima mi terrei generale al posto di "pulsante presa visione"
   + L'amministratore preme sul pulsante "Presa visione" per chiudere il _pop-up_ e farla scomparire dalla _dashboard_.
 
 #pagebreak()
