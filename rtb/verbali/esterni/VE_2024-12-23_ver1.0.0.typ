@@ -63,7 +63,7 @@ Alla fine della riunione, ci siamo prefissati, assieme ai proponenti, di riuscir
 
 = Conclusioni
 In questo incontro si sono chiariti alcuni dubbi e fornite importanti indicazioni per il prossimo _sprint_.
-Il prossimo incontro con l'azienda sarà mercoledì 8 gennaio e come obiettivo ci siamo posti di riuscire a mandare le richieste di annunci personalizzati al LLM. 
+Il prossimo incontro con l'azienda sarà mercoledì 8 gennaio e come obiettivo ci siamo posti di riuscire a implementare la gestione delle richieste di annunci personalizzati al LLM. 
 
 = Tabella delle decisioni
 #backlog(
