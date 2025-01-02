@@ -801,6 +801,56 @@ Una volta identificati i potenziali miglioramenti questi vanno effettivamente im
 
 === Metriche
 // TODO: Bisogna capire bene quali sono nostre metriche, aspettando il PdQ
+=== Metriche di qualità del prodotto
+==== Funzionabilità
+- *MQP01 - Percentuale dei requisiti obbligatori soddisfatti*
+  - *Descrizione*: misura la percentuale di requisiti obbligatori soddisfatti dal prodotto; si misura come:
+   #align(center)[$ "PROS" = "ROS" / "TRO" * 100 $] 
+  
+
+  - *ROS*: numero di requisiti obbligatori soddisfatti.
+  - *TRO*: numero totale di requisiti obbligatori.
+
+==== Affidabilità
+- *MQP02 - Test coverage*
+  - *Descrizione*: misura la percentuale di test superati rispetto ai test eseguiti, per richiesta del proponente, si deve avere almeno un _test coverage_ del 80%. Si misura come:
+  #align(center)[$ "TC" = "TR" / "TE" * 100 $]
+  - *TR*: test riusciti
+  - *TE* test eseguiti
+- *MQP03 - Tolleranza agli errori*
+  - *Descrizione*: valuta quanto il prodotto riesca a funzionare nonostante accorrano errori, dati da malfunzionamento o da uso scorretto. 
+==== Efficienza
+- *MQP04 - Utilizzo di risorse*
+  - *Descrizione*: misura l'utilizzo di risorse effettivo rispetto a quelle aspettatate, si misura come:
+  #align(center)[$ "UR" = 1 - "RUA" / "RU" $]
+  - *UR* = 0 : l'utilizzo di risorse è uguale a come ci si aspettava.
+  - *UR* < 0 : l'utilizzo di risorse è minore di come ci si aspettava.
+  - *UR* > 0 : l'utilizzo di risorse è maggiore di come ci si aspettava.
+  - *RUA*: risorse utilizzate aspettate.
+  - *RU*: risorse utilizzate
+
+==== Usabilità
+- *MQP05 - Praticità di utilizzo*
+  - *Descrizione*: valuta quanto il sistema sia semplice e veloce da utilizzare per i suoi utenti. 
+- *MQP06 - Comprensibilità*
+  - *Descrizione*: valuta quanto le funzionalità del sistema siano semplici e intuitive da utilizzare ad un primo accesso al sistema.
+
+==== Manutenibilità
+- *MPQ07 - Facilità di modifica*
+  - *Descrizione*: valuta quanto sia facile apportare modifiche al prodotto.
+- *MPQ08 - Stabilità alle modifiche*
+  - *Descrizione*: valluta quanto il prodotto rimanga stabile e privo di errori una volta effettuate delle modifiche.
+- *MPQ09 -  Ripercussione delle modifiche* 
+  - *Descrizione*: misura quanto del sistema sia stato affetto dalle modifiche apportate, si misura come:
+  #align(center)[$ "SA" = "MA" / "MT" * 100 $]
+  - *MA*: moduli affetti dalle modifiche.
+  - *MT*: moduli totali del sistema.
+
+==== Portabilità
+- *MPQ10 - Facilità di installazione*
+  - *Descrizione*: valuta quanto sia facile per gli utenti installare il prodotto.
+- *MPQ11 - Adattabilità*
+  - *Descrizione*: valuta quanto il prodotto sia facile da adattare a diversi sistemi operativi.
 
 == Formazione
 === Descrizione
