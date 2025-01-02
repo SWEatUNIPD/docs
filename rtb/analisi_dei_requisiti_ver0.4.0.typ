@@ -263,7 +263,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Trigger*: l'amministratore non autenticato inserisce delle credenziali errate.
 - *Scenario principale*:
   + L'amministratore inserisce delle credenziali errate durante la fase di autenticazione alla _dashboard_.
-  + L'amministratore riceve un messaggio di errore il quale segnala che le credenziali di inserite sono non valide.
+  + L'amministratore riceve un messaggio di errore il quale segnala che le credenziali inserite sono non valide.
 #v(20pt)
 #figure(
   image("../assets/use_cases/autenticazione.png"),
@@ -308,7 +308,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore accede alla mappa sulla _dashboard_.
   + L'amministratore visualizza il percorso del mezzo noleggiato.
 - *Inclusioni*:
-  + Visualizzazione marker sul tracciato dei mezzi con noleggio attivo in corrispondenza del dato GPS (#link(<uc9>)[UC9]).
+  + Visualizzazione _marker_ sul tracciato dei mezzi con noleggio attivo in corrispondenza del dato GPS (#link(<uc9>)[UC9]).
 
 === UC9 - Visualizzazione marker sul tracciato dei mezzi con noleggio attivo in corrispondenza del dato GPS <uc9>
 - *Attore principale*: Amministratore.
