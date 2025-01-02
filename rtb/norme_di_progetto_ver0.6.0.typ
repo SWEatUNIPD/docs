@@ -1167,6 +1167,14 @@ Per aiutarci nel processo di apprendimento l'azienda Sync Lab ci fornisce, duran
     - *RC*: Numero di rami condizionali coperti dai test.
     - *RT*: Numero totale di rami condizionali.
 
+- *MPC-PTP*:
+  - *Nome*: Percentuale test passati
+  - *Descrizione*: Indica la percentuale di test che attualmente danno risultato positivo.
+  - *Formula*: $ "PTP" = ("TP" / "TT") * 100 $
+  - *Parametri*:
+    - *TP*: Numero di test positivi.
+    - *TT*: Numero totale di test.
+
 
 ==== Gestione della qualità
 
