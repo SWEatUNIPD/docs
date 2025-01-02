@@ -1058,10 +1058,56 @@ Per aiutarci nel processo di apprendimento l'azienda Sync Lab ci fornisce, duran
 
 
 = Standard per la qualità
+Per la valutazione della qualità del _software_ prodotto il gruppo si prefigge di adottare le linee guida dello standard ISO/IEC 9126.
 
-/*TODO: scrivere la sezione
 == Standard ISO/IEC 9126
-*/
+L'ISO/IEC 9126 è uno standard internazionale creato per la valutazione della qualità del _software_. Definisce un modello di qualità del _software_ in termini di sei caratteristiche generali e venticinque sotto-caratteristiche. Questo standard è stato sostituito dall'ISO/IEC 25010, ma rimane comunque un riferimento importante per la valutazione della qualità del _software_.
+
+Di seguito forniamo una panoramica delle caratteristiche del modello di qualità descritto dallo standard ISO/IEC 9126.
+
+=== *Funzionalità*
+La funzionalità è la capacità del prodotto _software_ di fornire funzioni che soddisfano le esigenze esplicite e implicite necessarie per operare. \ Questa caratteristica è composta dalle seguenti sotto-caratteristiche:
+  - *Appropriatezza*: capacità del prodotto di fornire un adeguato insieme di funzioni per consentire all'utente di perseguire i suoi specifici compiti e obiettivi.
+  - *Accuratezza*: capacità del prodotto di fornire i risultati o gli effetti attesi.
+  - *Interoperabilità*: capacità del prodotto di interagire con uno o più sistemi specificati.
+  - *Conformità*: capacità del prodotto di aderire a standard, convenzioni e regolamentazioni rilevanti per il settore operativo a cui vengono applicate.
+  - *Sicurezza*: capacità del prodotto di proteggere i dati e le funzioni da accessi non autorizzati.
+
+=== *Affidabilità*
+L'affidabilità è la capacità del prodotto di mantenere un certo livello di prestazioni in condizioni specificate per un periodo di tempo specificato. \ Le sue sotto-caratteristiche sono:
+  - *Maturità*: capacità del prodotto di evitare errori, malfunzionamenti o arresti inaspettati.
+  - *Tolleranza agli errori*: capacità del prodotto di mantenere un livello prestabilito di prestazioni in caso di errori.
+  - *Recuperabilità*: capacità del prodotto di ripristinare il livello di prestazioni e i dati in caso di malfunzionamenti.
+  - *Aderenza*: capacità del prodotto di aderire a standard, convenzioni e regolamentazioni riguardanti l'affidabilità.
+
+=== *Efficienza*
+L'efficienza è la capacità del prodotto di fornire prestazioni appropriate rispetto alla quantità di risorse utilizzate. \ Le sue sotto-caratteristiche sono:
+  - *Comportamento rispetto al tempo*: capacità del prodotto di fornire, sotto certe condizioni, adeguati tempi di risposta, elaborazione e velocità di attraversamento.
+  - *Utilizzo delle risorse*: capacità del prodotto di utilizzare adeguatamente risorse come memoria, CPU e spazio su disco.
+  - *Conformità*: capacità del prodotto di aderire a standard e specifiche per l'efficienza.
+
+=== *Usabilità*
+L'usabilità è la capacità del prodotto di essere compreso, appreso, utilizzato e attraente per l'utente. \ Le sue sotto-caratteristiche sono:
+  - *Comprensibilità*: capacità del prodotto di rendere i suoi concetti facilmente comprensibili all'utente, permettendogli di valutare se il prodotto è adatto alle sue esigenze.
+  - *Apprendibilità*: capacità del prodotto essere facilmente apprendibile per gli utenti che non ne conoscono già il funzionamento.
+  - *Operabilità*: capacità del prodotto di essere utilizzato dagli utenti per i propri scopi e controllandone l'uso.
+  - *Attrattività*: capacità del prodotto di essere piacevole da utilizzare per l'utente.
+  - *Conformità*: capacità del prodotto di aderire a standard o convenzioni per l'usabilità.
+
+=== *Manutenibilità*
+La manutenibilità è la capacità del prodotto di essere modificato, includendo correzioni, miglioramenti o adattamenti. \ Le sue sotto-caratteristiche sono:
+  - *Analizzabilità*: capacità del prodotto di essere facilmente analizzato per identificare difetti o cause di malfunzionamenti.
+  - *Modificabilità*: capacità del prodotto di essere facilmente modificato (sostituendo componenti).
+  - *Stabilità*: capacità del prodotto di evitare effetti indesiderati derivanti da modifiche.
+  - *Testabilità*: capacità del prodotto di essere facilmente testato così da validare le modifiche apportate.
+
+=== *Portabilità*
+La portabilità è la capacità del prodotto di essere trasportato da un ambiente operativo a un altro. \ Le sue sotto-caratteristiche sono:
+  - *Adattabilità*: capacità del prodotto di essere adattato a diversi ambienti senza dover applicare modifiche diverse da quelle fornite.
+  - *Installabilità*: capacità del prodotto di essere facilmente installabile nell'ambiente specificato.
+  - *Conformità*: capacità del prodotto di aderire a standard, convenzioni e regolamentazioni in merito di portabilità.
+  - *Sostituibilità*: capacità del prodotto di essere utilizzato al posto di un altro per svolgere le stesse azioni nello stesso ambiente.
+
 
 = Metriche per la qualità <metriche>
 
@@ -1071,23 +1117,23 @@ Per aiutarci nel processo di apprendimento l'azienda Sync Lab ci fornisce, duran
 ==== Fornitura
 - *MPC-PV*:
   - *Nome*: Planned Value
-  - *Descrizione*: Indica il valore previsto per il lavoro svolto fino a quel momento se le attività proseguono come pianificato.
+  - *Descrizione*: Indica il valore che si prevede di aver prodotto fino a quel momento.
   - *Formula*: $ "PV" = "%LSP" * "BAC" $
   - *Parametri*:
-    - *%LSP*: Percentuale di lavoro svolto, secondo pianificazione.
-    - *BAC*: Budget at Completion, ovvero il costo totale del progetto stabilito in fase di candidatura.
+    - *%LSP*: Percentuale di lavoro svolto prevista in rapporto alla data di consegna finale, ovvero il tempo passato dall'inizio del progetto rispetto alla scadenza.
+    - *BAC*: Budget at Completion, ovvero il costo totale del progetto, stabilito in fase di candidatura.
 
 - *MPC-EV*:
   - *Nome*: Earned Value
   - *Descrizione*: Indica il valore del lavoro effettivamente svolto fino a quel momento.
   - *Formula*: $ "EV" = "%LSE" * "BAC" $
   - *Parametri*:
-    - *%LSE*: Percentuale del lavoro effettivamente svolto.
-    - *EAC*: Budget at Completion.
+    - *%LSE*: Percentuale del lavoro effettivamente svolto (ore consumate rispetto al totale disponibile).
+    - *BAC*: Budget at Completion.
 
 - *MPC-AC*:
   - *Nome*: Actual Cost
-  - *Descrizione*: Indica il costo effettivo sostenuto fino a quel momento. Consultabile in ogni momento attraverso il Piano di Progetto.
+  - *Descrizione*: Indica i costi effettivi sostenuti dall'inizio del progetto fino a quel momento. Consultabile in ogni momento attraverso il Piano di Progetto.
 
 - *MPC-CPI*:
   - *Nome*: Cost Performance Index
@@ -1107,7 +1153,7 @@ Per aiutarci nel processo di apprendimento l'azienda Sync Lab ci fornisce, duran
 
 - *MPC-SV*:
   - *Nome*: Schedule Variance
-  - *Descrizione*: Indica se il progetto è in anticipo, in pari o in ritardo rispetto alla pianificazione.
+  - *Descrizione*: Indica se il progetto è in anticipo (valore positivo), in pari (valore zero) o in ritardo (valore negativo) rispetto alla pianificazione.
   - *Formula*: $ "SV" = "EV" - "PV" $
   - *Parametri*:
     - *EV*: Earned Value.
@@ -1115,7 +1161,7 @@ Per aiutarci nel processo di apprendimento l'azienda Sync Lab ci fornisce, duran
 
 - *MPC-CV*:
   - *Nome*: Cost Variance
-  - *Descrizione*: Indica se il progetto è sotto o sopra il budget.
+  - *Descrizione*: Indica se il progetto è sotto (valore positivo) o sopra (valore negativo) il budget.
   - *Formula*: $ "CV" = "EV" - "AC" $
   - *Parametri*:
     - *EV*: Earned Value.
