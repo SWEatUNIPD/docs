@@ -86,6 +86,7 @@ La prima occorrenza di un termine definito all'interno del glossario presente al
 == Riferimenti
 === Riferimenti normativi
 - Regolamento del progetto didattico\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")
+- ISO/IEC 12207:1995\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf")
 === Riferimenti informativi
 - Capitolato C4 (Sync Lab)\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
 
@@ -1133,7 +1134,7 @@ Per aiutarci nel processo di apprendimento l'azienda Sync Lab ci fornisce, duran
 - *MPC-ISR*:
   - *Nome*: Indice di stabilità dei requisiti
   - *Descrizione*: Indice che misura la variazione dei requisiti nel corso del tempo.
-  - *Formula*: $ "ISR" = 100 - ("RM" + "RC" + "RA" / "RT") * 100 $
+  - *Formula*: $ "ISR" = 100 - (("RM" + "RC" + "RA") / "RT") * 100 $
   - *Parametri*:
     - *RM*: Numero di requisiti modificati.
     - *RC*: Numero di requisiti cancellati.
@@ -1145,13 +1146,16 @@ Per aiutarci nel processo di apprendimento l'azienda Sync Lab ci fornisce, duran
 ==== Documentazione
 - *MPC-IG*: 
   - *Nome*: Indice di Gulpease
-  - *Descrizione*: Indica il livello di leggibilità di un testo.
+  - *Descrizione*: Indica il livello di leggibilità di un testo: 
+    - Inferiore a 80: difficile da leggere per chi ha la licenza elementare.
+    - Inferiore a 60: difficile da leggere per chi ha la licenza media.
+    - Inferiore a 40: difficile da leggere per chi ha la licenza superiore.
   - *Formula*: $ "IG" = 89 + (300 * "NDF" - 10 * "NDL") / "NDP" $
   - *Parametri*: 
     - *NDF*: numero di frasi presenti nel testo.
     - *NDL*: numero di lettere presenti nel testo.
     - *NDP*: numero di parole presenti nel testo.
-
+  
 - *MPC-CO*:
   - *Nome*: Correttezza ortografica
   - *Descrizione*: Indica il numero di errori ortografici presenti nel testo.
