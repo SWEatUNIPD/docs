@@ -1128,6 +1128,18 @@ Per aiutarci nel processo di apprendimento l'azienda Sync Lab ci fornisce, duran
     - *EAC*: Estimated at Completion.
     - *AC*: Actual Cost.
 
+==== Sviluppo
+
+- *MPC-ISR*:
+  - *Nome*: Indice di stabilità dei requisiti
+  - *Descrizione*: Indice che misura la variazione dei requisiti nel corso del tempo.
+  - *Formula*: $ "ISR" = 100 - ("RM" + "RC" + "RA" / "RT") * 100 $
+  - *Parametri*:
+    - *RM*: Numero di requisiti modificati.
+    - *RC*: Numero di requisiti cancellati.
+    - *RA*: Numero di requisiti aggiunti.
+    - *RT*: Numero totale di requisiti inizialmente previsti.
+
 
 === Processi di supporto
 ==== Documentazione
@@ -1143,6 +1155,28 @@ Per aiutarci nel processo di apprendimento l'azienda Sync Lab ci fornisce, duran
 - *MPC-CO*:
   - *Nome*: Correttezza ortografica
   - *Descrizione*: Indica il numero di errori ortografici presenti nel testo.
+
+
+==== Verifica
+
+- *MPC-BC*:
+  - *Nome*: Branch Coverage
+  - *Descrizione*: Indica la percentuale di rami condizionali coperti dai test.
+  - *Formula*: $ "BC" = ("RC" / "RT") * 100 $
+  - *Parametri*:
+    - *RC*: Numero di rami condizionali coperti dai test.
+    - *RT*: Numero totale di rami condizionali.
+
+
+==== Gestione della qualità
+
+- *MPC-PMS*:
+  - *Nome*: Percentuale metriche soddisfatte
+  - *Descrizione*: Indica la percentuale di metriche che risultano soddisfare gli obiettivi minimi di qualità previsti dal Piano di Qualifica.
+  - *Formula*: $ "PMS" = ("MS" / "MT") * 100 $
+  - *Parametri*:
+    - *MS*: Numero di metriche soddisfatte.
+    - *MT*: Numero di metriche totali.
 
 
 == Metriche per la qualità di prodotto
