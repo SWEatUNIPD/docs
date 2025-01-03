@@ -469,9 +469,17 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
     - Punto di interesse associato all'annuncio.
     - Data e ora di emissione dell'annuncio.
 - *Inclusioni*: 
-  + Visualizzazione nome del punto di interesse collegato all'annuncio (#link(<uc25>)[UC25]).
-  + Visualizzazione _e-mail_ dell'utente destinatario dell'annuncio (#link(<uc26>)[UC26]).
-  + Visualizzazione data e ora di emissione dell'annuncio (#link(<uc27>)[UC27]).
+  + Visualizzazione nome del punto di interesse associato (#link(<uc25>)[UC25]).
+  + Visualizzazione _e-mail_ dell'utente associato (#link(<uc26>)[UC26]).
+  + Visualizzazione data e ora dell'evento associato (#link(<uc27>)[UC27]).
+
+#v(20pt)
+#figure(
+  image("../assets/use_cases/notifica_annuncio_generato.png"),
+  caption: [Diagramma dei caso d'uso UC19, UC25, UC26, UC27],
+)
+
+#pagebreak()
 
 === UC20 - Visualizzazione notifica di mancata generazione di un annuncio
 - *Attore principale*: Amministratore.
@@ -482,9 +490,17 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + Un utente si avvicina a un punto di interesse e il sistema valuta che l'utente non è interessato.
   + Nello stesso istante, nella _dashboard_, viene mostrata una notifica contenente un messaggio che informa l'amministratore che l'utente non è interessato al punto di interesse.
 - *Inclusioni*:
-  + Visualizzazione nome del punto di interesse collegato all'annuncio (#link(<uc25>)[UC25]).
-  + Visualizzazione _e-mail_ dell'utente destinatario dell'annuncio (#link(<uc26>)[UC26]).
-  + Visualizzazione data e ora di emissione dell'annuncio (#link(<uc27>)[UC27]).
+  + Visualizzazione nome del punto di interesse associato (#link(<uc25>)[UC25]).
+  + Visualizzazione _e-mail_ dell'utente associato (#link(<uc26>)[UC26]).
+  + Visualizzazione data e ora dell'evento associato (#link(<uc27>)[UC27]).
+
+#v(20pt)
+#figure(
+  image("../assets/use_cases/notifica_annuncio_NON_generato.png"),
+  caption: [Diagramma dei caso d'uso UC20, UC25, UC26, UC27],
+)
+
+#pagebreak()
 
 === UC21 - Apertura dettagli singolo annuncio dalla notifica
 - *Attore principale*: Amministratore.
@@ -495,8 +511,15 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore riceve sulla _dashboard_ la notifica relativa ad un annuncio generato.
   + L'amministratore interagisce con la notifica per visualizzare i dettagli dell'annuncio generato.
 - *Inclusioni*:
-// NOTE: se teniamo così vuol dire che lo porta nella pagina dello storico per visualizzare l'annuncio, dovremmo riformulare la cosa
-  + Visualizzazione dettagli singolo annuncio nello storico(#link(<uc29>)[UC29]).
+  + Visualizzazione dettagli di un singolo annuncio(#link(<uc29>)[UC29]).
+
+#v(20pt)
+#figure(
+  image("../assets/use_cases/notifica_apertura_dettagli_annuncio.png"),
+  caption: [Diagramma dei caso d'uso UC21, UC29],
+)
+
+#pagebreak()
 
 === UC22 - Chiusura di una notifica 
 - *Attore principale*: Amministratore.
@@ -506,6 +529,12 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*: 
   + L'amministratore riceve sulla _dashboard_ una notifica.
   + L'amministratore interagisce con la notifica per farla scomparire dalla _dashboard_.
+
+#v(20pt)
+#figure(
+  image("../assets/use_cases/notifica_chiusura.png"),
+  caption: [Diagramma del caso d'uso UC22],
+)
 
 #pagebreak()
 
@@ -535,34 +564,34 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   + L'amministratore visualizza le informazioni principali relative all'annuncio.
 - *Inclusioni*:
-  + Visualizzazione nome del punto di interesse collegato all'annuncio (#link(<uc25>)[UC25]).
-  + Visualizzazione _e-mail_ dell'utente destinatario dell'annuncio (#link(<uc26>)[UC26]).
-  + Visualizzazione data e ora di emissione dell'annuncio (#link(<uc27>)[UC27]).
+  + Visualizzazione nome del punto di interesse associato (#link(<uc25>)[UC25]).
+  + Visualizzazione _e-mail_ dell'utente associato (#link(<uc26>)[UC26]).
+  + Visualizzazione data e ora dell'evento associato (#link(<uc27>)[UC27]).
   + Visualizzazione _flag_ sugli annunci nello storico inviati a noleggi attivi (#link(<uc28>)[UC28]).
 
-=== UC25 - Visualizzazione nome del punto di interesse collegato all'annuncio <uc25>
+=== UC25 - Visualizzazione nome del punto di interesse associato <uc25>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia del punto di interesse collegato al relativo annuncio. L'amministratore è autenticato e ha accesso alla _dashboard_.
-- *Postcondizioni*: il sistema espone il nome del punto di interesse collegato al relativo annuncio.
-- *Trigger*: l'amministratore desidera visualizzare il nome del punto di interesse collegato al relativo annuncio.
+- *Precondizioni*: il sistema tiene traccia del punto di interesse associato a un annuncio o alla mancata generazione di un annuncio.
+- *Postcondizioni*: il sistema espone il nome del punto di interesse associato all'annuncio o alla mancata generazione dell'annuncio.
+- *Trigger*: l'amministratore desidera visualizzare il nome del punto di interesse associato.
 - *Scenario principale*:
-  + L'amministratore visualizza il nome del punto di interesse.
+  + L'amministratore visualizza il nome del punto di interesse associato.
 
-=== UC26 - Visualizzazione e-mail dell'utente destinatario dell'annuncio <uc26>
+=== UC26 - Visualizzazione e-mail dell'utente associato <uc26>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia della _e-mail_ dell'utente al quale viene mandato l'annuncio. L'amministratore è autenticato e ha accesso alla _dashboard_.
-- *Postcondizioni*: il sistema espone l'_e-mail_ dell'utente al quale è stato inviato l'annuncio.
-- *Trigger*: l'amministratore desidera visualizzare l'_e-mail_ dell'utente destinatario dell'annuncio.
+- *Precondizioni*: il sistema tiene traccia dell'_e-mail_ dell'utente associato a un annuncio o alla mancata generazione di un annuncio.
+- *Postcondizioni*: il sistema espone l'_e-mail_ dell'utente associato all'annuncio o alla mancata generazione dell'annuncio.
+- *Trigger*: l'amministratore desidera visualizzare l'_e-mail_ dell'utente associato.
 - *Scenario principale*:
-  + L'amministratore visualizza l'_e-mail_ dell'utente destinatario dell'annuncio.
+  + L'amministratore visualizza l'_e-mail_ dell'utente associato.
 
-=== UC27 - Visualizzazione data e ora di emissione dell'annuncio <uc27>
+=== UC27 - Visualizzazione data e ora dell'evento associato <uc27>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia della data e dell'ora alle quali è stato inviato il relativo annuncio all'utente. L'amministratore è autenticato e ha accesso alla _dashboard_.
-- *Postcondizioni*: il sistema espone la data e l'ora alle quali è stato inviato il relativo annuncio all'utente.
-- *Trigger*: l'amministratore desidera visualizzare la data e l'ora di emissione dell'annuncio.
+- *Precondizioni*: il sistema tiene traccia della data e dell'ora associate all'emissione di un annuncio o alla mancata generazione di un annuncio.
+- *Postcondizioni*: il sistema espone la data e l'ora associate all'evento di interesse (emissione o mancata generazione dell'annuncio).
+- *Trigger*: l'amministratore desidera visualizzare la data e l'ora dell'evento associato.
 - *Scenario principale*:
-  + L'amministratore visualizza la data e l'ora di emissione dell'annuncio.
+  + L'amministratore visualizza la data e l'ora dell'evento associato.
 
 === UC28 - Visualizzazione flag sugli annunci nello storico inviati a noleggi attivi
 <uc28>
@@ -578,9 +607,9 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   caption: [Diagramma dei casi d'uso UC23, UC24, UC25, UC26, UC27 e UC28],
 )
 
-=== UC29 - Visualizzazione dettagli singolo annuncio nello storico <uc29>
+=== UC29 - Visualizzazione dettagli di un singolo annuncio <uc29>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia di tutte le informazioni degli annunci generati per i clienti dell'amministratore. Questo è autenticato ed è acceduto alla sezione dedicata agli annunci.
+- *Precondizioni*: il sistema tiene traccia di tutte le informazioni degli annunci generati per i clienti dell'amministratore.
 - *Postcondizioni*: il sistema espone interamente l'annuncio insieme alle relative informazioni:
   - Nome del punto di interesse collegato.
   - Categoria del punto di interesse collegato.
@@ -592,9 +621,9 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore seleziona l'opzione per visualizzare i dettagli dell'annuncio desiderato.
   + Viene esposto l'annuncio insieme alle relative informazioni.
 - *Inclusioni*:
-  + Visualizzazione nome del punto di interesse collegato all'annuncio (#link(<uc25>)[UC25]).
-  + Visualizzazione _e-mail_ dell'utente destinatario dell'annuncio (#link(<uc26>)[UC26]).
-  + Visualizzazione data e ora di emissione dell'annuncio (#link(<uc27>)[UC27]).
+  + Visualizzazione nome del punto di interesse associato (#link(<uc25>)[UC25]).
+  + Visualizzazione _e-mail_ dell'utente associato (#link(<uc26>)[UC26]).
+  + Visualizzazione data e ora dell'evento associato (#link(<uc27>)[UC27]).
   + Visualizzazione _flag_ sugli annunci nello storico inviati a noleggi attivi (#link(<uc28>)[UC28]).
   + Visualizzazione completa dell'annuncio (#link(<uc30>)[UC30]).
   + Visualizzazione categoria del punto di interesse collegato all'annuncio (#link(<uc31>)[UC31]).
