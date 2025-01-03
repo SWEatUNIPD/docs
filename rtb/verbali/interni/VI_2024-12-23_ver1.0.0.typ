@@ -35,10 +35,10 @@ All'ordine del giorno i punti fondamentali da svolgere sono relativi sia alla do
 Dopo il proficuo incontro svoltosi la settimana precedente con il professor Cardin, in questo _sprint_ si prevede di sistemare tutti i casi d'uso nel documento di Analisi dei Requisiti e, parallelamente, definire nello stesso documento i requisiti del progetto.
 
 == Metriche
-Continuando il lavoro iniziato nello scorso _sprint_, il gruppo vuole focalizzarsi sulle metriche con cui misurare i progressi del progetto. Per questo sarà importante studiare le metriche con cui misurare e monitorare la qualità dei processi e i prodotti coinvolti nella realizzazione del progetto. In seguito a un primo studio delle metriche svolto nel precedente _sprint_, si è reso necessario codificare uno _script_ che calcola l'#rifGlossario("indice Gulpease").
+Continuando il lavoro iniziato nello scorso _sprint_, il gruppo vuole focalizzarsi sulle metriche con cui misurare i progressi del progetto. Per questo sarà importante studiare le metriche con cui misurare e monitorare la qualità dei processi e i prodotti coinvolti nella realizzazione del progetto. In seguito a un primo studio delle metriche svolto nel precedente _sprint_, si è reso necessario codificare uno _script_ che calcoli l'#rifGlossario("indice Gulpease").
 
 == PoC
-Lato pratico il punto della situazione è che bisogna ultimare la transizione da #rifGlossario("Apache Nifi") a un servizio _custom_ di _data #rifGlossario("stream processing")_ costruito utilzzando il _framework_ #rifGlossario("Spring"), popolare il _database_ con dei dati di _test_ e aggiornare l'interfaccia _#rifGlossario("Grafana")_ per ricevere correttamente i dati dal nuovo _stream processor_.
+Lato pratico il punto della situazione è che bisogna ultimare la transizione da #rifGlossario("Apache Nifi") a un servizio _custom_ di _data #rifGlossario("stream processing")_ costruito utilzzando il _framework_ #rifGlossario("Spring"), popolare il #rifGlossario("database") con dei dati di _test_ e aggiornare l'interfaccia _#rifGlossario("Grafana")_ per ricevere correttamente i dati dal nuovo _stream processor_.
 
 == Strumenti per il diagramma di Gantt
 Dopo numerose ricerche nessuno strumento si è rivelato essere meglio di #rifGlossario("GitHub") per costruire il #rifGlossario("diagramma di Gantt") in termini di costo-beneficio. Il gruppo perciò ha deciso di continuare a organizzare i diagrammi come fatto fino ad ora.
