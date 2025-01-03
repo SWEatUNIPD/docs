@@ -2,7 +2,7 @@
 
 #show: content => verbale(
   data: "23 dicembre 2024",
-  responsabile: "Riccardo Milan",
+  responsabile: "Davide Picello",
   redattori: ("Riccardo Milan",),
   titolo: "Ottava riunione",
   verificatori: ("Davide Martinelli",),
