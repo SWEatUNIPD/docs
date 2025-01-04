@@ -59,11 +59,11 @@ Si è discusso di se e come implementare nei casi d'uso i controlli e gli errori
 In definitiva, andranno inseriti controlli ed errori nei casi d'uso, ma non è necessario che ne implementiamo di nostri in quanto Grafana gestisce autonomamente tutti gli aspetti di connessione al _database_ e _login_ utente.
 
 = Obiettivi per il prossimo SAL
-Alla fine della riunione, ci siamo prefissati, assieme ai proponenti, di riuscire a gestire le richieste di annunci personalizzati tramite #rifGlossario("LLM") entro il termine del prossimo _sprint_.
+Alla fine della riunione ci siamo prefissati, assieme ai proponenti, di riuscire a contattare il #rifGlossario("LLM") e fargli generare un messaggio di test entro il termine del prossimo _sprint_.
 
 = Conclusioni
 In questo incontro si sono chiariti alcuni dubbi e fornite importanti indicazioni per il prossimo _sprint_.
-Il prossimo incontro con l'azienda sarà mercoledì 8 gennaio e come obiettivo ci siamo posti di riuscire a implementare la gestione delle richieste di annunci personalizzati al LLM. 
+Il prossimo incontro con l'azienda sarà mercoledì 8 gennaio e come obiettivo ci siamo posti di riuscire a contattare il LLM e fargli produrre un messaggio di test. 
 
 = Tabella delle decisioni
 #backlog(
