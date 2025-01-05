@@ -457,7 +457,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #pagebreak()
 
-=== UC100 - Modifica dall'ampiezza della visuale sulla mappa
+=== UC100 - Modifica ampiezza della visuale sulla mappa
 - *Attore principale*: Amministratore.
 - *Precondizioni*: il sistema tiene traccia della porzione di territorio mostrata dalla mappa sulla _dashboard_.
 - *Postcondizioni*: il sistema fa visualizzare sulla mappa una porzione di territorio più o meno ampia a seconda dell'azione dell'amministratore.
@@ -577,18 +577,41 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 === UC23 - Visualizzazione storico degli annunci
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia di tutti gli annunci generati per i clienti dell'amministratore.
+- *Precondizioni*: il sistema tiene traccia di tutti gli annunci generati per gli utenti dell'amministratore.
 - *Postcondizioni*: il sistema espone gli annunci generati fino a quel momento ordinati dal più recente.
 - *Trigger*: l'amministratore desidera prendere visione degli annunci generati fino a quel momento.
 - *Scenario principale*:
   + L'amministratore accede alla sezione apposita degli annunci.
   + Il sistema espone le _preview_ degli annunci con le informazioni principali.
-- *Inclusione*:
+- *Generalizzazioni*:
+  + Visualizzazione storico annunci in lista (#link(<uc33>)[UC33]).
+  + Visualizzazione storico annunci in griglia (#link(<uc34>)[UC34]).
+- *Inclusioni*:
   + Visualizzazione singolo annuncio nello storico (#link(<uc24>)[UC24]).
+
+=== UC33 - Visualizzazione storico annunci in lista <uc33>
+- *Attore principale*: Amministratore.
+- *Precondizioni*: il sistema tiene traccia di tutti gli annunci generati per gli utenti dell'amministratore. Questo visualizza la sezione dedicata agli annunci.
+- *Postcondizioni*: il sistema espone gli annunci generati fino a quel momento.
+- *Trigger*: l'amministratore vuole prendere visione degli annunci generati fino a quel momento in lista.
+- *Scenario principale*:
+  + L'amministratore accede alla _dashboard_ principale.
+  + L'amministratore accede alla sezione apposita degli annunci.
+  + L'amministratore selezione l'opzione per visualizzare gli annunci in lista.
+
+=== UC34 - Visualizzazione storico annunci in griglia <uc34>
+- *Attore principale*: Amministratore.
+- *Precondizioni*: il sistema tiene traccia di tutti gli annunci generati per gli utenti dell'amministratore. Questo visualizza la sezione dedicata agli annunci.
+- *Postcondizioni*: il sistema espone gli annunci generati fino a quel momento ordinati dal più recente in griglia.
+- *Trigger*: l'amministratore vuole prendere visione degli annunci generati fino a quel momento in griglia.
+- *Scenario principale*:
+  + L'amministratore accede alla _dashboard_ principale.
+  + L'amministratore accede alla sezione apposita degli annunci.
+  + L'amministratore selezione l'opzione per visualizzare gli annunci in griglia.
 
 === UC24 - Visualizzazione singolo annuncio nello storico <uc24>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia delle informazioni principali degli annunci generati per i clienti dell'amministratore. Questo visualizza la sezione dedicata agli annunci.
+- *Precondizioni*: il sistema tiene traccia delle informazioni principali degli annunci generati per gli utenti dell'amministratore. Questo visualizza la sezione dedicata agli annunci.
 - *Postcondizioni*: il sistema espone le informazioni principali relative al singolo annuncio:
   - Nome del punto di interesse collegato.
   - _E-mail_ dell'utente destinatario.
@@ -637,13 +660,19 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore visualizza il _flag_ nel caso in cui il noleggio relativo all'annuncio è ancora attivo.
 #v(20pt)
 #figure(
+  image("../assets/use_cases/display.png"),
+  caption: [Diagramma dei casi d'uso UC33 e UC34],
+)
+#figure(
   image("../assets/use_cases/storico.png"),
   caption: [Diagramma dei casi d'uso UC23, UC24, UC25, UC26, UC27 e UC28],
 )
 
+#pagebreak()
+
 === UC29 - Visualizzazione dettagli di un singolo annuncio <uc29>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia di tutte le informazioni degli annunci generati per i clienti dell'amministratore.
+- *Precondizioni*: il sistema tiene traccia di tutte le informazioni degli annunci generati per gli utenti dell'amministratore.
 - *Postcondizioni*: il sistema espone interamente l'annuncio insieme alle relative informazioni:
   - Nome del punto di interesse collegato.
   - Categoria del punto di interesse collegato.
@@ -695,54 +724,15 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #pagebreak()
 
-=== UC420 - Visualizzazione storico annunci
-- *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia di tutti gli annunci generati per gli utenti dell'amministratore.
-- *Postcondizioni*: il sistema espone gli annunci generati fino a quel momento.
-- *Trigger*: l'amministratore vuole prendere visione degli annunci generati fino a quel momento.
-- *Scenario principale*:
-  + L'amministratore accede alla _dashboard_ principale.
-  + L'amministratore accede alla sezione apposita degli annunci.
-- *Generalizzazioni*:
-  + Visualizzazione storico annunci in lista (#link(<uc33>)[UC33]).
-  + Visualizzazione storico annunci in griglia (#link(<uc34>)[UC34]).
-
-=== UC33 - Visualizzazione storico annunci in lista <uc33>
-- *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia di tutti gli annunci generati per gli utenti dell'amministratore. Questo visualizza la sezione dedicata agli annunci.
-- *Postcondizioni*: il sistema espone gli annunci generati fino a quel momento.
-- *Trigger*: l'amministratore vuole prendere visione degli annunci generati fino a quel momento in lista.
-- *Scenario principale*:
-  + L'amministratore accede alla _dashboard_ principale.
-  + L'amministratore accede alla sezione apposita degli annunci.
-  + L'amministratore selezione l'opzione per visualizzare gli annunci in lista.
-
-=== UC34 - Visualizzazione storico annunci in griglia <uc34>
-- *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia di tutti gli annunci generati per gli utenti dell'amministratore. Questo visualizza la sezione dedicata agli annunci.
-- *Postcondizioni*: il sistema espone gli annunci generati fino a quel momento ordinati dal più recente in griglia.
-- *Trigger*: l'amministratore vuole prendere visione degli annunci generati fino a quel momento in griglia.
-- *Scenario principale*:
-  + L'amministratore accede alla _dashboard_ principale.
-  + L'amministratore accede alla sezione apposita degli annunci.
-  + L'amministratore selezione l'opzione per visualizzare gli annunci in griglia.
-#v(20pt)
-#figure(
-  image("../assets/use_cases/display.png"),
-  caption: [Diagramma dei casi d'uso UC33 e UC34],
-)
-
-#pagebreak()
-
 === UC35 - Ricerca degli annunci nello storico
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia di tutti gli annunci generati per i clienti dell'amministratore. Questo visualizza la sezione dedicata agli annunci.
+- *Precondizioni*: il sistema tiene traccia di tutti gli annunci generati per gli utenti dell'amministratore. Questo visualizza la sezione dedicata agli annunci.
 - *Postcondizioni*: il sistema espone gli annuci filtrati secondo alcune opzioni fornite: _e-mail_ dell'utente destinatario dell'annuncio, nome del punto di interesse collegato all'annuncio, intervallo di date e fascia oraria di emissione.
 - *Trigger*: l'amministratore desidera prendere visione di alcuni specifici annunci generati precedentemente.
 - *Scenario principale*:
   + L'amministratore accede alla sezione apposita degli annunci.
   + L'amministratore esegue una ricerca degli annunci desiderati.
-- *Inclusione*:
+- *Inclusioni*:
   + Ricerca degli annunci nello storico per _e-mail_ utente (#link(<uc36>)[UC36]).
   + Ricerca degli annnunci nello storico per nome del punto di interesse (#link(<uc37>)[UC37]).
   + Ricerca degli annunci nello storico per intervallo di date di emissione (#link(<uc38>)[UC38]).
