@@ -4,8 +4,8 @@
   data: "7 dicembre 2024",
   destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "Sync Lab S.r.l.", "Gruppo SWE@"),
   responsabile: "-",
-  redattori: ("Davide Martinelli",),
-  verificatori: ("Andrea Precoma", "Riccardo Milan"),
+  redattori: ("Davide Martinelli", "Davide Picello"),
+  verificatori: ("Andrea Precoma", "Davide Martinelli", "Davide Marin", "Riccardo Milan"),
   titolo: "Piano di Qualifica",
   uso: "Esterno",
   versioni: (
@@ -242,7 +242,7 @@ Questa metrica valuta la percentuale di casi di _test_ superati con successo ris
     fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
     table.header[*Metrica*][*Nome*][*Valore accettabile*][*Valore desiderabile*],
     [],[Code coverage],[$≥ 80%$],[$100%$],
-    [],[Passed test cases percentage],[$≥ %$],[$100%$],
+    [],[Passed test cases percentage],[$≥ 80%$],[$100%$],
   )
 )
 
@@ -286,8 +286,8 @@ Formula: ``` ET = Oₒ / Oₚ ```
     columns: 4,
     fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
     table.header[*Metrica*][*Nome*][*Valore accettabile*][*Valore desiderabile*],
-    [],[Quality Metrics Satisfied],[$≤ 3$],[$0$],
-    [],[Quality Metrics Satisfied],[$≤ 3$],[$≤ 1$]
+    [],[Non-calculated risk],[$≤ 3$],[$0$],
+    [],[Efficienza temporale],[$≤ 3$],[$≤ 1$]
   )
 )
 
