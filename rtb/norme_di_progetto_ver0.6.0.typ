@@ -263,6 +263,25 @@ Piattaforma per il controllo di versione e la collaborazione su progetti _softwa
 ==== Typst
 #rifGlossario("Typst") è un nuovo sistema di impaginazione basato su _markup_, progettato per essere potente quanto LaTeX ma molto più facile da imparare e utilizzare.
 
+=== Metriche
+Le metriche adottate per il processo di fornitura sono le seguenti:
+
+#figure(
+  table( 
+    columns: 2,
+    table.header[*ID Metrica*][*Nome*],
+    [#link(<MPC-PV>)[MPC-PV]], [_Planned Value_],
+    [#link(<MPC-EV>)[MPC-EV]], [_Earned Value_],
+    [#link(<MPC-AC>)[MPC-AC]], [_Actual Cost_],
+    [#link(<MPC-CPI>)[MPC-CPI]], [_Cost Performance Index_],
+    [#link(<MPC-EAC>)[MPC-EAC]], [_Estimate At Completion_],
+    [#link(<MPC-SV>)[MPC-SV]], [_Schedule Variance_],
+    [#link(<MPC-CV>)[MPC-CV]], [_Cost Variance_],
+    [#link(<MPC-ETC>)[MPC-ETC]], [_Estimate To Complete_],
+  ),
+  caption: [Metriche per la fornitura]
+)
+
 == Sviluppo
 Sempre secondo lo _standard_ ISO/IEC 12207:1995 lo scopo del processo di sviluppo è di descrivere le attività e i compiti necessari per creare e mantenere un sistema _software_, garantendo che il prodotto finale soddisfi i requisiti specificati nel contratto.
 
@@ -307,6 +326,18 @@ Si sviluppa e implementa un piano per l’installazione del _software_ nell’am
 === Supporto all'accettazione del software
 Il fornitore supporta il cliente nella revisione e nei _test_ di accettazione del _software_, che comprendono la valutazione di tutti i risultati ottenuti nelle fasi precedenti. Viene completata la consegna del prodotto _software_ e fornite eventuali attività di formazione e supporto iniziale.
 
+#pagebreak()
+=== Metriche
+Le metriche adottate per il processo di sviluppo sono le seguenti:
+
+#figure(
+  table( 
+    columns: 2,
+    table.header[*ID Metrica*][*Nome*],
+    [#link(<MPC-ISR>)[MPC-ISR]], [Indice di stabilità dei requisiti],
+  ),
+  caption: [Metriche per lo sviluppo]
+)
 
 #pagebreak()
 = Processi di supporto
@@ -468,7 +499,7 @@ Nei documenti vengono applicate le seguenti regole di stile testuali:
 
 === Riferimenti
 ==== Contestuali
-Per riferirsi ad una sezione del documento per una spiegazione più dettagliata si adotta la dicitura "sez. [I]" dove I indica l'indice della sezione (ad esempio "(sez. 3.2)"). Per un corretto collegamento si veda il paragrafo apposito (#link(<stile_testo>)[sez. 3.1.8]).
+Per riferirsi ad una sezione del documento per una spiegazione più dettagliata si adotta la dicitura "sez. [I]" dove I indica l'indice della sezione (ad esempio "(sez. 3.2)"). Per un corretto collegamento si veda il paragrafo apposito (#link(<stile_testo>)[sez. 3.1.8]). \ Nel caso si tratti di un riferimento alla descrizione di una metrica (e quindi solo in questo documento) è sufficiente lasciare come dicitura il codice della metrica stessa (ad esempio "MPC-IG").
 
 ==== Ipertestuali
 Per esporre un _link_ ad una pagina esterna al docuento si utilizza la funzione `#formatLink` (#link(<stile_testo>)[sez. 3.1.8]) esplicitando l'interezza dell'_url_ anche nella _label_. Unica eccezione di stile per i riferimenti alle _issue_ nella tabella delle decisioni (#link(<stile_testo>)[sez. 3.1.8]).
@@ -488,7 +519,18 @@ Sono stati scelti i seguenti strumenti per redigere e mantenere la documentazion
 - *Draw.io*: sito _web_ che offre un'interfaccia grafica per creare i diagrammi utili all'analisi e alla progettazione.
 - *GitHub*: servizio di _#rifGlossario("hosting")_ di _repository_.
 
+=== Metriche
+Le metriche adottate per la documentazione sono le seguenti:
 
+#figure(
+  table( 
+    columns: 2,
+    table.header[*ID Metrica*][*Nome*],
+    [#link(<MPC-IG>)[MPC-IG]], [Indice Gulpease],
+    [#link(<MPC-CO>)[MPC-CO]], [Correttezza Ortografica],
+  ),
+  caption: [Metriche per la documentazione]
+)
 
 == Gestione della configurazione
 Per gestire la documentazione è stato creata una _repository_ contenente tutti i _file_ Typst aggiornati e verificati. Gli stessi documenti in formato `.pdf` sono consultabili al sito \ #formatLink(label: "https://sweatunipd.github.io", url: "https://sweatunipd.github.io").
@@ -614,7 +656,7 @@ Ogni documento creato o modificato necessita la revisione da uno o più verifica
 Le _pull request_ velocizzano e automatizzano la verifica dei documenti. Una volta organizzate nel modo corretto (#link(<lavoro_doc>)[sez. 3.1.1.2]), il verificatore può aggiungere una _review_ da interfaccia _web_ commentando, chiedendo una modifica o approvando la _pull request_. Una volta soddisfatti i requisiti spetterà al responsabile confermare la nuova versione del documento e unire il _branch_ al principale tramite il pulsante "_squash and merge_".
 
 ==== Analisi statica
-Al completamento di ogni _commit_ una Action compila i _file_ Typst modificati e genera un _file_ `.zip` contenente i documenti in formato `.pdf`. Così facendo si è sicuri che il codice è privo di errore sintattici e genera correttamente un prodotto finale e distribuibile.
+Al completamento di ogni _commit_ una Action compila i _file_ Typst modificati e genera un _file_ `.zip` contenente i documenti in formato `.pdf`. Così facendo si è sicuri che il codice è privo di errori sintattici e genera correttamente un prodotto finale e distribuibile.
 
 È stato messo a disposizione un _test_ il quale controlla che la prima occorrenza dei termini del Glossario venga identificata (#link(<glossario>)[sez. 1.3]). Viene effettuato automaticamente dalla Action ad ogni _push_, tuttavia è preferibile eseguirlo prima in locale così da efficientare il lavoro. È sufficiente quindi aver installato NodeJS sulla propria macchina ed eseguire il comando *`node test.js`* nella _root_ della _repository_ locale. Il _test_ esamina tutti i documenti e ritorna degli avvisi in caso fallisse.
 
@@ -639,6 +681,20 @@ L'analisi dinamica è un processo di verifica che si svolge eseguendo il codice.
 - *Test di regressione*: verificano che le modifiche apportate al codice non abbiano introdotto nuovi errori.
 - *Test di accettazione*: verificano che il prodotto soddisfi i requisiti specificati.
 
+=== Metriche
+Le metriche adottate per la verifica sono le seguenti:
+
+#figure(
+  table( 
+    columns: 2,
+    table.header[*ID Metrica*][*Nome*],
+    [#link(<MPC-BC>)[MPC-BC]], [_Branch Coverage_],
+    [#link(<MPC-PTP>)[MPC-PTP]], [Percentuale di _test_ passati],
+    
+  ),
+  caption: [Metriche per la verifica]
+)
+
 
 == Validazione
 Il processo di validazione è definibile, secondo lo _standard_ ISO/IEC 12207:1995, come il processo di conferma tramite dimostrazioni oggettive che il prodotto soddisfi i requisiti specificati per un sistema. In sostanza, la validazione certifica che il prodotto soddisfi le esigenze del cliente ovvero, più specificamente:
@@ -646,6 +702,8 @@ Il processo di validazione è definibile, secondo lo _standard_ ISO/IEC 12207:19
 - sia eseguibile senza problemi nell'ambiente di destinazione.
 
 Si tratta di un processo che si svolge in parallelo alla verifica e che si conclude con l'accettazione del prodotto da parte del cliente. Una volta che il cliente, ovvero nel nostro caso l'azienda proponente, ha accettato il prodotto si può procedere con il rilascio.
+
+Lo strumento principale utilizzato per la validazione è il _test_ di accettazione, ovvero l'ultimo _test_ che viene eseguito prima del rilascio del prodotto. Tale _test_ verrà eseguito in presenza della proponente.
 
 == Risoluzione dei problemi
 È possibile incappare in problemi riguardanti il ciclo di redazione e verifica dei documenti. In questi casi è preferibile cercare di risolverli al più presto per conto proprio in maniera da non ostacolare il lavoro dei compagni. Tuttavia se si è insicuri delle procedure da adottare o non si trova una soluzione si può contattare l'amministratore per tornare al più presto operativi. Come ultima alternativa è possibile contattare Klaudio Merja, creatore dell'organizzazione e della _repository_ GitHub, il quale è l'unico che può eseguire alcune operazioni forzate poiché gode dei privilegi da amministratore dell'ambiente GitHub.
@@ -658,7 +716,7 @@ Si tratta di un processo che si svolge in parallelo alla verifica e che si concl
 Il processo di gestione della qualità ha lo scopo di garantire che i prodotti soddisfino i requisiti specificati e che siano, assieme ai processi, conformi agli _standard_ di qualità stabiliti. La qualità è un requisito fondamentale per il successo del progetto e deve essere garantita in ogni fase del ciclo di vita del prodotto.
 
 === Definizione delle metriche
-Lo strumento fondamentale per misurare la qualità di un prodotto o di un processo sono le metriche. Esse permettono di valutare in modo oggettivo il grado di conformità del prodotto o del processo rispetto agli _standard_ di qualità stabiliti. Le metriche vengono utilizzate per tracciare la qualità durante tutto il ciclo di vita del progetto. L'elenco delle metriche adottate in questo progetto è consultabile nell'ultima sezione (#link(<metriche>)[sez. 6]) di questo documento.
+Lo strumento fondamentale per misurare la qualità di un prodotto o di un processo sono le metriche. Esse permettono di valutare in modo oggettivo il grado di conformità del prodotto o del processo rispetto agli _standard_ di qualità stabiliti. Le metriche vengono utilizzate per tracciare la qualità durante tutto il ciclo di vita del progetto. L'elenco esaustivo di tutte le metriche adottate in questo progetto, e la loro rispettiva descrizione, è consultabile nell'ultima sezione (#link(<metriche>)[sez. 6]) di questo documento.
 
 ==== Identificazione
 Le metriche adottate sono identificate da un codice alfabetico, strutturato nel seguente modo:
@@ -686,6 +744,19 @@ All'interno del Piano di Qualifica sono definiti i criteri di accettazione per l
 Ad ogni metrica è associata una soglia di accettazione e una soglia di ottimalità. 
 - La soglia di accettazione rappresenta il valore minimo (o massimo) che la metrica deve rispettare per essere considerata accettabile.
 - La soglia di ottimalità rappresenta il valore minimo (o massimo) che la metrica deve rispettare per essere considerata ottimale.
+
+=== Metriche
+Le metriche adottate per la gestione della qualità sono le seguenti:
+
+#figure(
+  table( 
+    columns: 2,
+    table.header[*ID Metrica*][*Nome*],
+    [#link(<MPC-PMS>)[MPC-PMS]], [Percentuale di metriche soddisfatte],
+    
+  ),
+  caption: [Metriche per la gestione della qualità]
+)
 
 #pagebreak()
 = Processi organizzativi
@@ -931,7 +1002,7 @@ La portabilità è la capacità del prodotto di essere trasportato da un ambient
 
 === Processi primari
 ==== Fornitura
-- *MPC-PV*:
+- *MPC-PV*: <MPC-PV>
   - *Nome*: _Planned Value_
   - *Descrizione*: Indica il valore che si prevede di aver prodotto fino a quel momento.
   - *Formula*: $ "PV" = "%LSP" * "BAC" $
@@ -939,7 +1010,7 @@ La portabilità è la capacità del prodotto di essere trasportato da un ambient
     - *%LSP*: Percentuale di lavoro svolto prevista in rapporto alla data di consegna finale, ovvero il tempo passato dall'inizio del progetto rispetto alla scadenza.
     - *BAC*: _Budget at Completion_, ovvero il costo totale del progetto, stabilito in fase di candidatura.
 
-- *MPC-EV*:
+- *MPC-EV*: <MPC-EV>
   - *Nome*: _Earned Value_
   - *Descrizione*: Indica il valore del lavoro effettivamente svolto fino a quel momento.
   - *Formula*: $ "EV" = "%LSE" * "BAC" $
@@ -947,11 +1018,11 @@ La portabilità è la capacità del prodotto di essere trasportato da un ambient
     - *%LSE*: Percentuale del lavoro effettivamente svolto (ore consumate rispetto al totale disponibile).
     - *BAC*: _Budget at Completion_.
 
-- *MPC-AC*:
+- *MPC-AC*: <MPC-AC>
   - *Nome*: _Actual Cost_
   - *Descrizione*: Indica i costi effettivi sostenuti dall'inizio del progetto fino a quel momento. Ricavabile in qualsiasi momento consultando il Piano di Progetto.
 
-- *MPC-CPI*:
+- *MPC-CPI*: <MPC-CPI>
   - *Nome*: _Cost Performance Index_
   - *Descrizione*: Indica il rapporto tra il valore guadagnato e il costo effettivo. Più grande il suo valore, maggiore sarà l’efficienza.
   - *Formula*: $ "CPI" = "EV" / "AC" $
@@ -959,7 +1030,7 @@ La portabilità è la capacità del prodotto di essere trasportato da un ambient
     - *EV*: _Earned Value_, ovvero il valore guadagnato.
     - *AC*: _Actual Cost_, ovvero il costo effettivo.
 
-- *MPC-EAC*:
+- *MPC-EAC*: <MPC-EAC>
   - *Nome*: _Estimated at Completion_
   - *Descrizione*: Indica il costo stimato per terminare il progetto se si mantenesse l'attuale efficienza nell'utilizzo delle risorse.
   - *Formula*: $ "EAC" = "BAC" / "CPI" $
@@ -967,7 +1038,7 @@ La portabilità è la capacità del prodotto di essere trasportato da un ambient
     - *BAC*: _Budget at Completion_.
     - *CPI*: _Cost Performance Index_.
 
-- *MPC-SV*:
+- *MPC-SV*: <MPC-SV>
   - *Nome*: _Schedule Variance_
   - *Descrizione*: Indica se il progetto è in anticipo (valore positivo), in pari (valore zero) o in ritardo (valore negativo) rispetto alla pianificazione.
   - *Formula*: $ "SV" = "EV" - "PV" $
@@ -975,7 +1046,7 @@ La portabilità è la capacità del prodotto di essere trasportato da un ambient
     - *EV*: _Earned Value_.
     - *PV*: _Planned Value_.
 
-- *MPC-CV*:
+- *MPC-CV*: <MPC-CV>
   - *Nome*: _Cost Variance_
   - *Descrizione*: Indica se il progetto è sotto (valore positivo) o sopra (valore negativo) il budget.
   - *Formula*: $ "CV" = "EV" - "AC" $
@@ -983,7 +1054,7 @@ La portabilità è la capacità del prodotto di essere trasportato da un ambient
     - *EV*: _Earned Value_.
     - *AC*: _Actual Cost_.
 
-- *MPC-ETC*:
+- *MPC-ETC*: <MPC-ETC>
   - *Nome*: _Estimate to Complete_
   - *Descrizione*: Costo stimato per poter completare il progetto allo stato attuale.
   - *Formula*: $ "ETC" = "EAC" - "AC" $
@@ -993,7 +1064,7 @@ La portabilità è la capacità del prodotto di essere trasportato da un ambient
 
 ==== Sviluppo
 
-- *MPC-ISR*:
+- *MPC-ISR*: <MPC-ISR>
   - *Nome*: Indice di stabilità dei requisiti
   - *Descrizione*: Indice che misura la variazione dei requisiti nel corso del tempo.
   - *Formula*: $ "ISR" = 100 - (("RM" + "RC" + "RA") / "RT") * 100 $
@@ -1006,8 +1077,8 @@ La portabilità è la capacità del prodotto di essere trasportato da un ambient
 
 === Processi di supporto
 ==== Documentazione
-- *MPC-IG*: 
-  - *Nome*: Indice di Gulpease
+- *MPC-IG*: <MPC-IG>
+  - *Nome*: Indice Gulpease
   - *Descrizione*: Indica il livello di leggibilità di un testo: 
     - Inferiore a 80: difficile da leggere per chi ha la licenza elementare.
     - Inferiore a 60: difficile da leggere per chi ha la licenza media.
@@ -1018,14 +1089,14 @@ La portabilità è la capacità del prodotto di essere trasportato da un ambient
     - *NDL*: numero di lettere presenti nel testo.
     - *NDP*: numero di parole presenti nel testo.
   
-- *MPC-CO*:
-  - *Nome*: Correttezza ortografica
-  - *Descrizione*: Indica il numero di errori ortografici presenti nel testo.
+- *MPC-CO*: <MPC-CO>
+  - *Nome*: Correttezza Ortografica
+  - *Descrizione*: Indica il numero di errori ortografici trovati nel testo.
 
 
 ==== Verifica
 
-- *MPC-BC*:
+- *MPC-BC*: <MPC-BC>
   - *Nome*: _Branch Coverage_
   - *Descrizione*: Indica la percentuale di rami condizionali coperti dai _test_.
   - *Formula*: $ "BC" = ("RC" / "RT") * 100 $
@@ -1033,8 +1104,8 @@ La portabilità è la capacità del prodotto di essere trasportato da un ambient
     - *RC*: Numero di rami condizionali coperti dai _test_.
     - *RT*: Numero totale di rami condizionali.
 
-- *MPC-PTP*:
-  - *Nome*: Percentuale _test_ passati
+- *MPC-PTP*: <MPC-PTP>
+  - *Nome*: Percentuale di _test_ passati
   - *Descrizione*: Indica la percentuale di _test_ che attualmente danno risultato positivo.
   - *Formula*: $ "PTP" = ("TP" / "TT") * 100 $
   - *Parametri*:
@@ -1044,8 +1115,8 @@ La portabilità è la capacità del prodotto di essere trasportato da un ambient
 
 ==== Gestione della qualità
 
-- *MPC-PMS*:
-  - *Nome*: Percentuale metriche soddisfatte
+- *MPC-PMS*: <MPC-PMS>
+  - *Nome*: Percentuale di metriche soddisfatte
   - *Descrizione*: Indica la percentuale di metriche che risultano soddisfare gli obiettivi minimi di qualità previsti dal Piano di Qualifica.
   - *Formula*: $ "PMS" = ("MS" / "MT") * 100 $
   - *Parametri*:
