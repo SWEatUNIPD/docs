@@ -10,7 +10,7 @@
   uso: "Esterno",
   versioni: (
     "0.4.0",
-    [29/12/2024],
+    [05/01/2025],
     "Andrea Perozzo\nAndrea Precoma",
     "Davide Marin\nKlaudio Merja",
     [
@@ -125,6 +125,7 @@ Ogni caso d'uso è identificato da un codice univoco, che segue la nomenclatura 
 - *Postcondizioni*
 - *Trigger*
 - *Scenario principale*
+- *Generalizzazioni* (se presenti)
 - *Inclusioni* (se presenti)
 - *Estensioni* (se presenti)
 
@@ -358,6 +359,25 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #pagebreak()
 
+=== UC69 - Visualizzazione informazioni punto di interesse tramite marker sulla mappa
+- *Attore principale*: Amministratore.
+- *Precondizioni*: il sistema tiene traccia delle informazioni di ciascun punto di interesse.
+- *Postcondizioni*: il sistema espone le informazioni del punto di interesse selezionato in corrispondenza del _marker_ sulla mappa.
+- *Trigger*: l'amministratore desidera visualizzare le informazioni del punto di interesse in corrispondenza del _marker_ sulla mappa.
+- *Scenario principale*:
+  + L'amministratore accede alla mappa sulla _dashboard_.
+  + L'amministratore interagisce col _marker_ che indica un punto di interesse.
+  + Vengono visualizzate le informazioni in corrispondenza del _marker_ selezionato.
+- *Inclusioni*:
+  + VISUALIZZAZIONE INFORMAZIONI DEL POI
+#v(20pt)
+#figure(
+  image("../assets/use_cases/info poi marker.png"),
+  caption: [Diagramma del caso d'uso UC11],
+)
+
+#pagebreak()
+
 === UC12 - Visualizzazione annuncio tramite marker sulla mappa
 - *Attore principale*: Amministratore.
 - *Precondizioni*: il sistema tiene traccia degli annunci generati e le relative informazioni.
@@ -429,8 +449,27 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   + L'amministratore accede alla mappa sulla _dashboard_.
   + L'amministratore interagisce con la mappa per spostare il centro della mappa, quindi anche l'intera visuale.
+#v(20pt)
+#figure(
+  image("../assets/use_cases/spostamento mappa.png"),
+  caption: [Diagramma dei casi d'uso UC16, UC17 e UC18],
+)
 
-=== UC17 - Ampliamento della visuale sulla mappa
+#pagebreak()
+
+=== UC100 - Modifica dall'ampiezza della visuale sulla mappa
+- *Attore principale*: Amministratore.
+- *Precondizioni*: il sistema tiene traccia della porzione di territorio mostrata dalla mappa sulla _dashboard_.
+- *Postcondizioni*: il sistema fa visualizzare sulla mappa una porzione di territorio più o meno ampia a seconda dell'azione dell'amministratore.
+- *Trigger*: l'amministratore desidera modificare l'ampiezza della visuale sulla mappa.
+- *Scenario principale*:
+  + L'amministratore accede alla mappa sulla _dashboard_.
+  + L'amministratore interagisce con la mappa per modificare l'ampiezza della visuale.
+- *Generalizzazioni*:
+  + Ampliamento della visuale sulla mappa (#link(<uc17>)[UC17])).
+  + Restringimento della visuale sulla mappa (#link(<uc18>)[UC188])).
+
+=== UC17 - Ampliamento della visuale sulla mappa <uc17>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: il sistema tiene traccia della porzione di territorio mostrata dalla mappa sulla _dashboard_.
 - *Postcondizioni*: il sistema fa visualizzare sulla mappa una porzione di territorio più ampia.
@@ -439,7 +478,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore accede alla mappa sulla _dashboard_.
   + L'amministratore interagisce con la mappa per ampliare la visuale.
 
-=== UC18 - Restringimento della visuale sulla mappa
+=== UC18 - Restringimento della visuale sulla mappa <uc18>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: il sistema tiene traccia della porzione di territorio mostrata dalla mappa sulla _dashboard_.
 - *Postcondizioni*: il sistema fa visualizzare sulla mappa una porzione di territorio meno ampia.
@@ -449,13 +488,11 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore interagisce con la mappa per restringere la visuale.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/interazioni mappa.png"),
+  image("../assets/use_cases/zoom mappa.png"),
   caption: [Diagramma dei casi d'uso UC16, UC17 e UC18],
 )
 
 #pagebreak()
-
-// UC Perruz ==================================================================
 
 === UC19 - Visualizzazione notifica di un annuncio generato
 - *Attore principale*: Amministratore.
@@ -538,15 +575,12 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #pagebreak()
 
-//UC Prec
-// TODO: pagine (tanti annunci)
-=== UC23 - Visualizzazione storico degli annunci <uc23>
+=== UC23 - Visualizzazione storico degli annunci
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia di tutti gli annunci generati per i clienti dell'amministratore. Questo è autenticato e ha accesso alla _dashboard_.
+- *Precondizioni*: il sistema tiene traccia di tutti gli annunci generati per i clienti dell'amministratore.
 - *Postcondizioni*: il sistema espone gli annunci generati fino a quel momento ordinati dal più recente.
 - *Trigger*: l'amministratore desidera prendere visione degli annunci generati fino a quel momento.
 - *Scenario principale*:
-  + L'amministratore accede alla _dashboard_ principale.
   + L'amministratore accede alla sezione apposita degli annunci.
   + Il sistema espone le _preview_ degli annunci con le informazioni principali.
 - *Inclusione*:
@@ -554,7 +588,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 === UC24 - Visualizzazione singolo annuncio nello storico <uc24>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia delle informazioni principali degli annunci generati per i clienti dell'amministratore. Questo è autenticato ed è acceduto alla sezione dedicata agli annunci.
+- *Precondizioni*: il sistema tiene traccia delle informazioni principali degli annunci generati per i clienti dell'amministratore. Questo visualizza la sezione dedicata agli annunci.
 - *Postcondizioni*: il sistema espone le informazioni principali relative al singolo annuncio:
   - Nome del punto di interesse collegato.
   - _E-mail_ dell'utente destinatario.
@@ -596,7 +630,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 === UC28 - Visualizzazione flag sugli annunci nello storico inviati a noleggi attivi
 <uc28>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia dello stato del noleggio al quale è stato inviato l'annuncio, se è cioè ancora attivo o meno. L'amministratore è autenticato e ha accesso alla _dashboard_.
+- *Precondizioni*: il sistema tiene traccia dello stato del noleggio al quale è stato inviato l'annuncio, se è cioè ancora attivo o meno.
 - *Postcondizioni*: il sistema espone un _flag_ nel caso il noleggio al quale è stato inviato l'annuncio è ancora attivo.
 - *Trigger*: l'amministratore desidera visualizzare se l'annuncio è stato inviato ad un mezzo con noleggio attivo.
 - *Scenario principale*:
@@ -631,7 +665,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 === UC30 - Visualizzazione completa dell'annuncio <uc30>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia degli annunci generati. L'amministratore è autenticato e ha accesso alla _dashboard_.
+- *Precondizioni*: il sistema tiene traccia degli annunci generati.
 - *Postcondizioni*: il sistema espone l'annuncio per intero.
 - *Trigger*: l'amministratore desidera visualizzare l'annuncio generato precedentemente.
 - *Scenario principale*:
@@ -639,7 +673,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 === UC31 - Visualizzazione categoria del punto di interesse collegato all'annuncio <uc31>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia della categoria del punto di interesse collegato al relativo annuncio. L'amministratore è autenticato e ha accesso alla _dashboard_.
+- *Precondizioni*: il sistema tiene traccia della categoria del punto di interesse collegato al relativo annuncio.
 - *Postcondizioni*: il sistema espone la categoria del punto di interesse collegato al relativo annuncio.
 - *Trigger*: l'amministratore desidera visualizzare la categoria del punto di interesse collegato al relativo annuncio.
 - *Scenario principale*:
@@ -661,19 +695,31 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #pagebreak()
 
-=== UC33 - Visualizzazione storico annunci in lista
+=== UC420 - Visualizzazione storico annunci
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia di tutti gli annunci generati per i clienti dell'amministratore. Questo è autenticato e ha accesso alla _dashboard_.
-- *Postcondizioni*: il sistema espone gli annunci generati fino a quel momento ordinati dal più recente in lista.
+- *Precondizioni*: il sistema tiene traccia di tutti gli annunci generati per gli utenti dell'amministratore.
+- *Postcondizioni*: il sistema espone gli annunci generati fino a quel momento.
+- *Trigger*: l'amministratore vuole prendere visione degli annunci generati fino a quel momento.
+- *Scenario principale*:
+  + L'amministratore accede alla _dashboard_ principale.
+  + L'amministratore accede alla sezione apposita degli annunci.
+- *Generalizzazioni*:
+  + Visualizzazione storico annunci in lista (#link(<uc33>)[UC33]).
+  + Visualizzazione storico annunci in griglia (#link(<uc34>)[UC34]).
+
+=== UC33 - Visualizzazione storico annunci in lista <uc33>
+- *Attore principale*: Amministratore.
+- *Precondizioni*: il sistema tiene traccia di tutti gli annunci generati per gli utenti dell'amministratore. Questo visualizza la sezione dedicata agli annunci.
+- *Postcondizioni*: il sistema espone gli annunci generati fino a quel momento.
 - *Trigger*: l'amministratore vuole prendere visione degli annunci generati fino a quel momento in lista.
 - *Scenario principale*:
   + L'amministratore accede alla _dashboard_ principale.
   + L'amministratore accede alla sezione apposita degli annunci.
   + L'amministratore selezione l'opzione per visualizzare gli annunci in lista.
 
-=== UC34 - Visualizzazione storico annunci in griglia
+=== UC34 - Visualizzazione storico annunci in griglia <uc34>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia di tutti gli annunci generati per i clienti dell'amministratore. Questo è autenticato e ha accesso alla _dashboard_.
+- *Precondizioni*: il sistema tiene traccia di tutti gli annunci generati per gli utenti dell'amministratore. Questo visualizza la sezione dedicata agli annunci.
 - *Postcondizioni*: il sistema espone gli annunci generati fino a quel momento ordinati dal più recente in griglia.
 - *Trigger*: l'amministratore vuole prendere visione degli annunci generati fino a quel momento in griglia.
 - *Scenario principale*:
@@ -690,7 +736,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 === UC35 - Ricerca degli annunci nello storico
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia di tutti gli annunci generati per i clienti dell'amministratore. Questo è autenticato ed è acceduto alla sezione dedicata agli annunci.
+- *Precondizioni*: il sistema tiene traccia di tutti gli annunci generati per i clienti dell'amministratore. Questo visualizza la sezione dedicata agli annunci.
 - *Postcondizioni*: il sistema espone gli annuci filtrati secondo alcune opzioni fornite: _e-mail_ dell'utente destinatario dell'annuncio, nome del punto di interesse collegato all'annuncio, intervallo di date e fascia oraria di emissione.
 - *Trigger*: l'amministratore desidera prendere visione di alcuni specifici annunci generati precedentemente.
 - *Scenario principale*:
@@ -704,7 +750,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 === UC36 - Ricerca degli annunci nello storico per e-mail utente <uc36>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia di tutti gli annunci generati per l'utente selezionato. L'amministratore è acceduto alla sezione dedicata agli annunci e ha eseguito una ricerca degli annunci.
+- *Precondizioni*: il sistema tiene traccia di tutti gli annunci generati per l'utente selezionato. Questo visualizza la sezione dedicata agli annunci.
 - *Postcondizioni*: il sistema espone lo storico degli annunci destinati all'utente selezionato.
 - *Trigger*: l'amministratore desidera prendere visione degli annunci generati fino a quel momento per uno specifico utente.
 - *Scenario principale*:
@@ -713,7 +759,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 === UC37 - Ricerca degli annunci nello storico per nome del punto di interesse <uc37>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia di tutti gli annunci generati collegati al punto di interesse selezionato. L'amministratore è acceduto alla sezione dedicata agli annunci e ha eseguito una ricerca degli annunci.
+- *Precondizioni*: il sistema tiene traccia di tutti gli annunci generati collegati al punto di interesse selezionato. Questo visualizza la sezione dedicata agli annunci.
 - *Postcondizioni*: il sistema espone lo storico degli annunci collegati al punto di interesse selezionato.
 - *Trigger*: l'amministratore desidera prendere visione degli annunci generati fino a quel momento per uno specifico punto di interesse.
 - *Scenario principale*:
@@ -722,7 +768,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 === UC38 - Ricerca degli annunci nello storico per intervallo di date di emissione <uc38>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia di tutti gli annunci emessi nell'intervallo di date selezionato. L'amministratore è acceduto alla sezione dedicata agli annunci e ha eseguito una ricerca degli annunci.
+- *Precondizioni*: il sistema tiene traccia di tutti gli annunci emessi nell'intervallo di date selezionato. Questo visualizza la sezione dedicata agli annunci.
 - *Postcondizioni*: il sistema espone lo storico degli annunci emessi nell'intervallo di date selezionato.
 - *Trigger*: l'amministratore desidera prendere visione degli annunci generati fino a quel momento in un determinato intervallo di date.
 - *Scenario principale*:
@@ -731,7 +777,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 === UC39 - Ricerca degli annunci nello storico per fascia oraria di emissione <uc39>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia di tutti gli annunci emessi nella fascia oraria selezionata. L'amministratore è acceduto alla sezione dedicata agli annunci e ha eseguito una ricerca degli annunci.
+- *Precondizioni*: il sistema tiene traccia di tutti gli annunci emessi nella fascia oraria selezionata. Questo visualizza la sezione dedicata agli annunci.
 - *Postcondizioni*: il sistema espone lo storico degli annunci emessi nella fascia oraria selezionata.
 - *Trigger*: l'amministratore desidera prendere visione degli annunci generati fino a quel momento in una determinata fascia oraria.
 - *Scenario principale*:
@@ -745,7 +791,27 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #pagebreak()
 
-// TODO: OPZIONALI
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// OPZIONALI
 
 === UC40 - Visualizzazione statistiche in grafici
 - *Attore principale*: Amministratore.
