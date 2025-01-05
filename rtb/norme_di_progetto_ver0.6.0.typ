@@ -644,24 +644,8 @@ Viene adoperata una Action per facilitare il processo di verifica in quanto crea
 
 
 == Verifica
-La verifica è un processo di cruciale importanza che accompagna il _software_ lungo tutto il suo ciclo di vita, dalla progettazione fino alla manutenzione. Il suo obiettivo è garantire l'efficienza.
-Un processo di verifica efficace risulta in un prodotto stabile e facilita di conseguenza il processo di validazione.
-
-
-
-=== Verifica dei documenti
-Ogni documento creato o modificato necessita la revisione da uno o più verificatori. Questo processo viene automatizzato il più possibile con l'utilizzo delle _pull request_, il sistema di _ticketing_ tramite _issue_ e una Action dedicata. Quando possibile è preferibile richiedere la revisione a tutti i verificatori per i documenti di carattere generale perché fondamentali per il corretto svolgimento del progetto.
-
-==== Pull request
-Le _pull request_ velocizzano e automatizzano la verifica dei documenti. Una volta organizzate nel modo corretto (#link(<lavoro_doc>)[sez. 3.1.1.2]), il verificatore può aggiungere una _review_ da interfaccia _web_ commentando, chiedendo una modifica o approvando la _pull request_. Una volta soddisfatti i requisiti spetterà al responsabile confermare la nuova versione del documento e unire il _branch_ al principale tramite il pulsante "_squash and merge_".
-
-==== Analisi statica
-Al completamento di ogni _commit_ una Action compila i _file_ Typst modificati e genera un _file_ `.zip` contenente i documenti in formato `.pdf`. Così facendo si è sicuri che il codice è privo di errori sintattici e genera correttamente un prodotto finale e distribuibile.
-
-È stato messo a disposizione un _test_ il quale controlla che la prima occorrenza dei termini del Glossario venga identificata (#link(<glossario>)[sez. 1.3]). Viene effettuato automaticamente dalla Action ad ogni _push_, tuttavia è preferibile eseguirlo prima in locale così da efficientare il lavoro. È sufficiente quindi aver installato NodeJS sulla propria macchina ed eseguire il comando *`node test.js`* nella _root_ della _repository_ locale. Il _test_ esamina tutti i documenti e ritorna degli avvisi in caso fallisse.
-
-==== Analisi dinamica // TODO: da rivedere, non credo sia corretto parlare di analisi dinamica per i documenti
-Il verificatore può consultare sia il documento in formato `.pdf` per maggiore leggibilità sia il codice sorgente. Nel caso trovasse degli errori può segnalarli tramite la _pull request_, oppure pubblicare un commento per avviare una discussione riguardo una correzione più complessa.
+La verifica è un processo di cruciale importanza che accompagna il _software_ lungo tutto il suo ciclo di vita, dalla progettazione fino alla manutenzione. Il suo obiettivo è garantire l'efficienza e la correttezza dei processi e dei loro eventuali prodotti.
+Un processo di verifica efficace ha come naturale conseguenza un prodotto più stabile, che risulta in un processo di validazione più lineare e prevedibile, meno soggetto ad imprevisti.
 
 === Analisi statica
 L'analisi statica è un processo di verifica che si svolge senza eseguire il codice ed è perciò applicabile a tutti i prodotti del progetto. Il suo obiettivo è individuare errori e anomalie nel codice sorgente o nel testo prodotto. Le due tecniche principali adottate sono il _walkthrough_ e l'_inspection_.
@@ -680,6 +664,20 @@ L'analisi dinamica è un processo di verifica che si svolge eseguendo il codice.
 - *Test di sistema*: verificano il corretto funzionamento del sistema nel suo complesso.
 - *Test di regressione*: verificano che le modifiche apportate al codice non abbiano introdotto nuovi errori.
 - *Test di accettazione*: verificano che il prodotto soddisfi i requisiti specificati.
+
+=== Verifica dei documenti
+Ogni documento creato o modificato necessita la revisione da uno o più verificatori. Questo processo viene automatizzato il più possibile con l'utilizzo delle _pull request_, il sistema di _ticketing_ tramite _issue_ e una Action dedicata. Quando possibile è preferibile richiedere la revisione a tutti i verificatori per i documenti di carattere generale perché fondamentali per il corretto svolgimento del progetto.
+
+==== Pull request
+Le _pull request_ velocizzano e automatizzano la verifica dei documenti. Una volta organizzate nel modo corretto (#link(<lavoro_doc>)[sez. 3.1.1.2]), il verificatore può aggiungere una _review_ da interfaccia _web_ commentando, chiedendo una modifica o approvando la _pull request_. Una volta soddisfatti i requisiti spetterà al responsabile confermare la nuova versione del documento e unire il _branch_ al principale tramite il pulsante "_squash and merge_".
+
+==== Action
+Al completamento di ogni _commit_ una Action compila i _file_ Typst modificati e genera un _file_ `.zip` contenente i documenti in formato `.pdf`. Così facendo si è sicuri che il codice è privo di errori sintattici e genera correttamente un prodotto finale e distribuibile.
+Il verificatore può consultare sia il documento in formato `.pdf` per maggiore leggibilità sia il codice sorgente. Nel caso trovasse degli errori può segnalarli tramite la _pull request_, oppure pubblicare un commento per avviare una discussione riguardo una correzione più complessa.
+
+==== Test
+È stato messo a disposizione un _test_ il quale controlla che la prima occorrenza dei termini del Glossario venga identificata (#link(<glossario>)[sez. 1.3]). Viene effettuato automaticamente dalla Action ad ogni _push_, tuttavia è preferibile eseguirlo prima in locale così da efficientare il lavoro. È sufficiente quindi aver installato NodeJS sulla propria macchina ed eseguire il comando *`node test.js`* nella _root_ della _repository_ locale. Il _test_ esamina tutti i documenti e ritorna degli avvisi in caso fallisse.
+
 
 === Metriche
 Le metriche adottate per la verifica sono le seguenti:
@@ -706,6 +704,8 @@ Si tratta di un processo che si svolge in parallelo alla verifica e che si concl
 Lo strumento principale utilizzato per la validazione è il _test_ di accettazione, ovvero l'ultimo _test_ che viene eseguito prima del rilascio del prodotto. Tale _test_ verrà eseguito in presenza della proponente.
 
 == Risoluzione dei problemi
+
+=== Documentazione
 È possibile incappare in problemi riguardanti il ciclo di redazione e verifica dei documenti. In questi casi è preferibile cercare di risolverli al più presto per conto proprio in maniera da non ostacolare il lavoro dei compagni. Tuttavia se si è insicuri delle procedure da adottare o non si trova una soluzione si può contattare l'amministratore per tornare al più presto operativi. Come ultima alternativa è possibile contattare Klaudio Merja, creatore dell'organizzazione e della _repository_ GitHub, il quale è l'unico che può eseguire alcune operazioni forzate poiché gode dei privilegi da amministratore dell'ambiente GitHub.
 
 //FIXME: Mancano ovviamente gli _standard_ di qualità del prodotto che devono essere ancora spiegati, quindi al momento non sono inseriti
@@ -922,8 +922,9 @@ Innanzitutto occorre stabilire una serie di processi organizzativi per l'intero 
 ==== Miglioramento dei processi
 Una volta identificati i potenziali miglioramenti questi vanno effettivamente implementati secondo le corrette e adeguate metodologie. Nella retrospettiva seguente all'applicazione di queste migliorie verrà effettuato un altro _#rifGlossario("feedback")_ a riguardo per progredire ciclicamente.
 
-=== Metriche
-// TODO: Bisogna capire bene quali sono nostre metriche, aspettando il PdQ
+=== Strumenti
+Lo strumento principale per misurare l'efficacia delle modifiche apportate ad un processo e per identificare eventuali aree di miglioramento sono le metriche, ognuna delle quali analizzerà un aspetto chiave del processo stesso. Il loro andamento è consultabule nel Cruscotto della Qualità.
+
 
 == Formazione
 === Descrizione
