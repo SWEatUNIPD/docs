@@ -52,13 +52,12 @@ function calcGulpease(filePath) {
     .replaceAll(functionPattern, "")
     .replaceAll(titlesPattern, "")
     .replaceAll(backlogFuncPattern, "")
+    .replaceAll(/#rifGlossario\("([^"]+)"\)/g, "$1")
     .toLowerCase();
 
   const stats = textStats.stats(content);
-  console.log(`${filePath}: ${stats.gulpease}`);
+  console.log(`Indice di Gulpease di "${filePath}": ${stats.gulpease}`);
 }
-
-const glossario = require("./glossario.json");
 
 searchFile(".").forEach((path) => {
   calcGulpease(path);
