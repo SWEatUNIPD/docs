@@ -780,7 +780,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #pagebreak()
 
-=== UC100 - Visualizzazione errore "Sensore malfunzionante"
+=== UC42 - Visualizzazione errore "Sensore malfunzionante"
 - *Attore principale*: Amministratore.
 - *Precondizioni*: il sistema monitora le risposte dei sensori attivi, cioè installati su mezzi con noleggio attivo.
 - *Postcondizioni*: il sistema espone il messaggio di malfunzionamento di un sensore.
@@ -789,7 +789,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + Il sensore non comunica correttamente i dati al sistema.
   + L'amministratore visualizza il messaggio di errore sulla _dashboard_.
 
-=== UC101 - Visualizzazione errore "Generazione impossibile dell'annuncio"
+=== UC43 - Visualizzazione errore "Generazione impossibile dell'annuncio"
 - *Attore principale*: Amministratore.
 - *Precondizioni*: il sistema comunica con una LLM per far generare gli annunci.
 - *Postcondizioni*: il sistema espone il messaggio di impossibilità di comunicazione con la LLM.
@@ -802,7 +802,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 // OPZIONALI
 
-=== UC42 - Visualizzazione statistiche in grafici
+=== UC44 - Visualizzazione statistiche in grafici
 - *Attore principale*: Amministratore.
 - *Precondizioni*: il sistema mantiene delle informazioni utili per una anlisi statistica.
 - *Postcondizioni*: il sistema espone dei grafici che rappresentino le informazioni.
@@ -811,9 +811,9 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore accede alla sezione apposita dei grafici.
   + Il sistema espone dei grafici relativi alle analisi proposte.
 - *Inclusioni*:
-  + Visualizzazione singolo grafico (#link(<uc43>)[UC43]).
+  + Visualizzazione singolo grafico (#link(<uc45>)[UC45]).
 
-=== UC43 - Visualizzazione singolo grafico <uc43>
+=== UC45 - Visualizzazione singolo grafico <uc45>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: il sistema tiene traccia delle informazioni dei grafici. L'amministratore accede alla sezione dedicata ai grafici.
 - *Postcondizioni*: l'amministratore visualizza il grafico con le relative informazioni:
@@ -826,12 +826,12 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   + L'amministratore visualizza il grafico con le relative informazioni.
 - *Inclusioni*:
-  + Visualizzazione titolo del grafico (#link(<uc44>)[UC44]).
-  + Visualizzazione etichetta asse delle ascisse e relativi valori (#link(<uc45>)[UC45]).
-  + Visualizzazione etichetta asse delle ordinate e relativi valori (#link(<uc46>)[UC46]).
-  + Visualizzazione dati sul grafico (#link(<uc47>)[UC47]).
+  + Visualizzazione titolo del grafico (#link(<uc46>)[UC46]).
+  + Visualizzazione etichetta asse delle ascisse e relativi valori (#link(<uc47>)[UC47]).
+  + Visualizzazione etichetta asse delle ordinate e relativi valori (#link(<uc48>)[UC48]).
+  + Visualizzazione dati sul grafico (#link(<uc49>)[UC49]).
 
-=== UC44 - Visualizzazione titolo del grafico <uc44>
+=== UC46 - Visualizzazione titolo del grafico <uc46>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: il sistema tiene traccia del titolo del grafico. L'amministratore visualizza un grafico.
 - *Postcondizioni*: il sistema espone il titolo del grafico.
@@ -839,7 +839,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   + L'amministratore visualizza il titolo del grafico.
 
-=== UC45 - Visualizzazione etichetta asse delle ascisse e relativi valori <uc45>
+=== UC47 - Visualizzazione etichetta asse delle ascisse e relativi valori <uc47>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: il sistema tiene traccia delle etichette dell'asse delle ascisse e dei relativi valori di ciascun grafico. L'amministratore visualizza un grafico.
 - *Postcondizioni*: il sistema espone le etichette dell'asse delle ascisse e dei relativi valori.
@@ -848,7 +848,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore visualizza l'etichetta dell'asse delle ascisse del relativo grafico.
   + L'amministratore visualizza le etichette dei valori segnati sull'asse delle ascisse del relativo grafico.
 
-=== UC46 - Visualizzazione etichetta asse delle ordinate e relativi valori <uc46>
+=== UC48 - Visualizzazione etichetta asse delle ordinate e relativi valori <uc48>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: il sistema tiene traccia delle etichette dell'asse delle ordinate e dei relativi valori di ciascun grafico. L'amministratore visualizza un grafico.
 - *Postcondizioni*: il sistema espone le etichette dell'asse delle ordinate e dei relativi valori.
@@ -858,7 +858,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore visualizza le etichette dei valori segnati sull'asse delle ordinate del relativo grafico.
 
 // TODO: si possono mettere dati sul grafico?
-=== UC47 - Visualizzazione dati sul grafico <uc47>
+=== UC49 - Visualizzazione dati sul grafico <uc49>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: lil sistema tiene traccia dei dati di ciascun grafico. L'amministratore visualizza un grafico.
 - *Postcondizioni*: l'amministratore visualizza i dati sul relativo grafico.
@@ -868,7 +868,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 #v(20pt)
 #figure(
   image("../assets/use_cases/grafici.png"),
-  caption: [Diagramma dei casi d'uso UC42, UC43, UC44, UC45, UC46 e UC47],
+  caption: [Diagramma dei casi d'uso UC44, UC45, UC46, UC47, UC48 e UC49],
 )
 
 /**
