@@ -797,7 +797,13 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   + Il sistema non riesce a comunicare correttamente con la LLM, non riesce cioè a inviare o ricevere messaggi.
   + L'amministratore viualizza il messaggio di errore sulla _dashboard_.
+#v(20pt)
+#figure(
+  image("../assets/use_cases/errori.png"),
+  caption: [Diagramma dei casi d'uso UC44, UC45, UC46, UC47, UC48 e UC49],
+)
 
+#pagebreak()
 
 
 // OPZIONALI
