@@ -10,13 +10,14 @@
   uso: "Esterno",
   versioni: (
     "0.4.0",
-    [05/01/2025],
+    [07/01/2025],
     "Andrea Perozzo\nAndrea Precoma",
     "Davide Marin\nKlaudio Merja",
     [
       - Aggiunti casi d'uso relativi alla mappa, agli anunci e ai grafici
       - Sistemati i primi casi d'uso
       - Aggiunti casi d'uso relativi alle interazioni con la mappa
+      - Aggiunti casi d'uso relativi agli errori
     ],
     "0.3.0",
     [10/12/2024],
@@ -779,23 +780,23 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #pagebreak()
 
+=== UC100 - Visualizzazione errore "Sensore malfunzionante"
+- *Attore principale*: Amministratore.
+- *Precondizioni*: il sistema monitora le risposte dei sensori attivi, cioè installati su mezzi con noleggio attivo.
+- *Postcondizioni*: il sistema espone il messaggio di malfunzionamento di un sensore.
+- *Trigger*: l'amministratore desidera prendere visione del messaggio di errore di malfunzionamento di un sensore.
+- *Scenario principale*:
+  + Il sensore non comunica correttamente i dati al sistema.
+  + L'amministratore visualizza il messaggio di errore sulla _dashboard_.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+=== UC101 - Visualizzazione errore "Generazione impossibile dell'annuncio"
+- *Attore principale*: Amministratore.
+- *Precondizioni*: il sistema comunica con una LLM per far generare gli annunci.
+- *Postcondizioni*: il sistema espone il messaggio di impossibilità di comunicazione con la LLM.
+- *Trigger*: l'amministratore desidera prendere visione del messaggio di errore di impossibiltà di connessione con la LLM.
+- *Scenario principale*:
+  + Il sistema non riesce a comunicare correttamente con la LLM, non riesce cioè a inviare o ricevere messaggi.
+  + L'amministratore viualizza il messaggio di errore sulla _dashboard_.
 
 
 
@@ -803,22 +804,18 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 === UC42 - Visualizzazione statistiche in grafici
 - *Attore principale*: Amministratore.
-- *Precondizioni*: l'amministratore è autenticato al sistema.
-- *Postcondizioni*: l'amministratore visualizza i grafici relativi alle seguenti analisi:
-  - Rapporto degli annnunci generati sulle richieste totali
-  - Quantità di annunci generati per ogni punto di interesse in un intervallo di date selezionato.
-  - Quantità di annunci generati legati a un punto di interesse in una data e fascia oraria selezionati.
-- *Trigger*: l'amministratore desidera prendere visione dell'andamento di alcuni parametri in formato grafico.
+- *Precondizioni*: il sistema mantiene delle informazioni utili per una anlisi statistica.
+- *Postcondizioni*: il sistema espone dei grafici che rappresentino le informazioni.
+- *Trigger*: l'amministratore desidera prendere visione dei grafici per osservare l'andamento di alcuni dati.
 - *Scenario principale*:
-  + L'amministratore accede alla _dashboard_ principale.
   + L'amministratore accede alla sezione apposita dei grafici.
-  + Vengono visualizzati i grafici relativi alle analisi proposte.
+  + Il sistema espone dei grafici relativi alle analisi proposte.
 - *Inclusioni*:
   + Visualizzazione singolo grafico (#link(<uc43>)[UC43]).
 
 === UC43 - Visualizzazione singolo grafico <uc43>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: l'amministratore è autenticato al sistema ed ha accesso alla sezione dedicata ai grafici.
+- *Precondizioni*: il sistema tiene traccia delle informazioni dei grafici. L'amministratore accede alla sezione dedicata ai grafici.
 - *Postcondizioni*: l'amministratore visualizza il grafico con le relative informazioni:
   - Titolo del grafico.
   - Etichetta dell'asse delle ascisse.
@@ -827,9 +824,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   - Dati del grafico.
 - *Trigger*: l'amministratore desidera prendere visione del grafico che espone l'andamento di uno specifico parametro.
 - *Scenario principale*:
-  + L'amministratore accede alla sezione apposita dei grafici.
-  + Viene visualizzato il grafico con le relative informazioni.
-  // TODO: AGGIORNATO IN AUTOMATICO ALL'ARRIVO DI NUOVI DATI?
+  + L'amministratore visualizza il grafico con le relative informazioni.
 - *Inclusioni*:
   + Visualizzazione titolo del grafico (#link(<uc44>)[UC44]).
   + Visualizzazione etichetta asse delle ascisse e relativi valori (#link(<uc45>)[UC45]).
@@ -838,46 +833,45 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 === UC44 - Visualizzazione titolo del grafico <uc44>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: l'amministratore è autenticato al sistema ed ha accesso alla sezione dedicata ai grafici.
-- *Postcondizioni*: l'amministratore visualizza il titolo del relativo grafico.
+- *Precondizioni*: il sistema tiene traccia del titolo del grafico. L'amministratore visualizza un grafico.
+- *Postcondizioni*: il sistema espone il titolo del grafico.
 - *Trigger*: l'amministratore desidera prendere visione del titolo del grafico.
 - *Scenario principale*:
-  + L'amministratore accede alla sezione apposita dei grafici.
-  + Viene esposto il titolo del relativo grafico.
+  + L'amministratore visualizza il titolo del grafico.
 
 === UC45 - Visualizzazione etichetta asse delle ascisse e relativi valori <uc45>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: l'amministratore è autenticato al sistema ed ha accesso alla sezione dedicata ai grafici.
-- *Postcondizioni*: l'amministratore visualizza le etichette dell'asse delle ascisse e dei valori dell'asse del relativo grafico.
+- *Precondizioni*: il sistema tiene traccia delle etichette dell'asse delle ascisse e dei relativi valori di ciascun grafico. L'amministratore visualizza un grafico.
+- *Postcondizioni*: il sistema espone le etichette dell'asse delle ascisse e dei relativi valori.
 - *Trigger*: l'amministratore desidera prendere visione delle etichette dell'asse delle ascisse e dei rispettivi valori.
 - *Scenario principale*:
-  + L'amministratore accede alla sezione apposita dei grafici.
-  + Viene esposta l'etichetta dell'asse delle ascisse del relativo grafico.
-  + Vengono esposte le etichette dei valori segnati sull'asse delle ascisse del relativo grafico.
+  + L'amministratore visualizza l'etichetta dell'asse delle ascisse del relativo grafico.
+  + L'amministratore visualizza le etichette dei valori segnati sull'asse delle ascisse del relativo grafico.
 
 === UC46 - Visualizzazione etichetta asse delle ordinate e relativi valori <uc46>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: l'amministratore è autenticato al sistema ed ha accesso alla sezione dedicata ai grafici.
-- *Postcondizioni*: l'amministratore visualizza le etichette dell'asse delle ordiante e dei valori dell'asse del relativo grafico.
+- *Precondizioni*: il sistema tiene traccia delle etichette dell'asse delle ordinate e dei relativi valori di ciascun grafico. L'amministratore visualizza un grafico.
+- *Postcondizioni*: il sistema espone le etichette dell'asse delle ordinate e dei relativi valori.
 - *Trigger*: l'amministratore desidera prendere visione delle etichette dell'asse delle ordinate e dei rispettivi valori.
 - *Scenario principale*:
-  + L'amministratore accede alla sezione apposita dei grafici.
-  + Viene esposta l'etichetta dell'asse delle ordinate del relativo grafico.
-  + Vengono esposte le etichette dei valori segnati sull'asse delle ordinate del relativo grafico.
+  + L'amministratore visualizza l'etichetta dell'asse delle ordinate del relativo grafico.
+  + L'amministratore visualizza le etichette dei valori segnati sull'asse delle ordinate del relativo grafico.
 
+// TODO: si possono mettere dati sul grafico?
 === UC47 - Visualizzazione dati sul grafico <uc47>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: l'amministratore è autenticato al sistema ed ha accesso alla sezione dedicata ai grafici.
-- *Postcondizioni*: l'amministratore visualizza i dati sul relativo grafico. Viene mostrato il valore esatto di un dato immediatamente vicino al punto nel grafico.
+- *Precondizioni*: lil sistema tiene traccia dei dati di ciascun grafico. L'amministratore visualizza un grafico.
+- *Postcondizioni*: l'amministratore visualizza i dati sul relativo grafico.
 - *Trigger*: l'amministratore desidera prendere visione dei dati del parametro in esame sul grafico.
 - *Scenario principale*:
-  + L'amministratore accede alla sezione apposita dei grafici.
-  + Vengono disposti i dati sul grafico con i relativi valori.
+  + L'amministratore visualizza i dati sul grafico.
 #v(20pt)
 #figure(
   image("../assets/use_cases/grafici.png"),
   caption: [Diagramma dei casi d'uso UC42, UC43, UC44, UC45, UC46 e UC47],
-)/**
+)
+
+/**
  * ========
  * Vecchi casi d'uso
  * ========
