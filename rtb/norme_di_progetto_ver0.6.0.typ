@@ -276,7 +276,7 @@ Le metriche adottate per il processo di fornitura sono le seguenti:
     [#link(<MPC-CPI>)[MPC-CPI]], [_Cost Performance Index_],
     [#link(<MPC-EAC>)[MPC-EAC]], [_Estimate At Completion_],
     [#link(<MPC-SV>)[MPC-SV]], [_Schedule Variance_],
-    [#link(<MPC-CV>)[MPC-CV]], [_Cost Variance_],
+    [#link(<MPC-BV>)[MPC-BV]], [_Budget Variance_],
     [#link(<MPC-ETC>)[MPC-ETC]], [_Estimate To Complete_],
   ),
   caption: [Metriche per la fornitura]
@@ -679,21 +679,6 @@ Il verificatore può consultare sia il documento in formato `.pdf` per maggiore 
 È stato messo a disposizione un _test_ il quale controlla che la prima occorrenza dei termini del Glossario venga identificata (#link(<glossario>)[sez. 1.3]). Viene effettuato automaticamente dalla Action ad ogni _push_, tuttavia è preferibile eseguirlo prima in locale così da efficientare il lavoro. È sufficiente quindi aver installato NodeJS sulla propria macchina ed eseguire il comando *`node test.js`* nella _root_ della _repository_ locale. Il _test_ esamina tutti i documenti e ritorna degli avvisi in caso fallisse.
 
 
-=== Metriche
-Le metriche adottate per la verifica sono le seguenti:
-
-#figure(
-  table( 
-    columns: 2,
-    table.header[*ID Metrica*][*Nome*],
-    [#link(<MPC-BC>)[MPC-BC]], [_Branch Coverage_],
-    [#link(<MPC-PTP>)[MPC-PTP]], [Percentuale di _test_ passati],
-    
-  ),
-  caption: [Metriche per la verifica]
-)
-
-
 == Validazione
 Il processo di validazione è definibile, secondo lo _standard_ ISO/IEC 12207:1995, come il processo di conferma tramite dimostrazioni oggettive che il prodotto soddisfi i requisiti specificati per un sistema. In sostanza, la validazione certifica che il prodotto soddisfi le esigenze del cliente ovvero, più specificamente:
 - soddisfi tutti i requisiti concordati;
@@ -1016,7 +1001,7 @@ La portabilità è la capacità del prodotto di essere trasportato da un ambient
   - *Descrizione*: Indica il valore del lavoro effettivamente svolto fino a quel momento.
   - *Formula*: $ "EV" = "%LSE" * "BAC" $
   - *Parametri*:
-    - *%LSE*: Percentuale del lavoro effettivamente svolto (ore consumate rispetto al totale disponibile).
+    - *%LSE*: Percentuale del lavoro svolto effettivamente (ore consumate rispetto al totale disponibile).
     - *BAC*: _Budget at Completion_.
 
 - *MPC-AC*: <MPC-AC>
@@ -1047,12 +1032,12 @@ La portabilità è la capacità del prodotto di essere trasportato da un ambient
     - *EV*: _Earned Value_.
     - *PV*: _Planned Value_.
 
-- *MPC-CV*: <MPC-CV>
-  - *Nome*: _Cost Variance_
-  - *Descrizione*: Indica se il progetto è sotto (valore positivo) o sopra (valore negativo) il budget.
-  - *Formula*: $ "CV" = "EV" - "AC" $
+- *MPC-BV*: <MPC-BV>
+  - *Nome*: _Budget Variance_
+  - *Descrizione*: Indica se i costi finora sostenuti per il progetto sono meno (valore positivo) o più (valore negativo) del previsto.
+  - *Formula*: $ "BV" = "PV" - "AC" $
   - *Parametri*:
-    - *EV*: _Earned Value_.
+    - *PV*: _Planned Value_.
     - *AC*: _Actual Cost_.
 
 - *MPC-ETC*: <MPC-ETC>
@@ -1094,7 +1079,7 @@ La portabilità è la capacità del prodotto di essere trasportato da un ambient
   - *Nome*: Correttezza Ortografica
   - *Descrizione*: Indica il numero di errori ortografici trovati nel testo.
 
-
+/*  DA SPOSTARE NELLA SEZIONE "Metriche per la qualità di prodotto"
 ==== Verifica
 
 - *MPC-BC*: <MPC-BC>
@@ -1112,7 +1097,7 @@ La portabilità è la capacità del prodotto di essere trasportato da un ambient
   - *Parametri*:
     - *TP*: Numero di _test_ positivi.
     - *TT*: Numero totale di _test_.
-
+*/
 
 ==== Gestione della qualità
 
