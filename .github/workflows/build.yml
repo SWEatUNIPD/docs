@@ -19,6 +19,9 @@ jobs:
       - name: Check missing glossary references
         run: node test.js
 
+      - name: Print all the Gulpease indexes for all the documents
+        run: node gulpease.js
+
       - name: Setup Typst
         uses: typst-community/setup-typst@v3
 
