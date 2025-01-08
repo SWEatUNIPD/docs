@@ -5,11 +5,21 @@
   data: "14 Novembre 2024",
   destinatari: ("Gruppo SWE@",),
   responsabile: "-",
-  redattori: ("Andrea Precoma", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
+  redattori: ("Andrea Precoma", "Davide Martinelli", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
   verificatori: ("Andrea Precoma", "Davide Marin", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
   titolo: "Norme di Progetto",
   uso: "Interno",
   versioni: (
+    "0.7.0",
+    "8/01/2025",
+    "Davide Martinelli",
+    "Davide Marin\nDavide Picello",
+    [
+      - Aggiunte metriche per la qualità di processo
+      - Stesura sezione "Standard per la qualità"
+      - Ampliamento sezioni "Verifica" e "Validazione"
+    ],
+
     "0.6.0",
     "22/12/2024",
     "Davide Picello",
@@ -693,9 +703,6 @@ Lo strumento principale utilizzato per la validazione è il _test_ di accettazio
 === Documentazione
 È possibile incappare in problemi riguardanti il ciclo di redazione e verifica dei documenti. In questi casi è preferibile cercare di risolverli al più presto per conto proprio in maniera da non ostacolare il lavoro dei compagni. Tuttavia se si è insicuri delle procedure da adottare o non si trova una soluzione si può contattare l'amministratore per tornare al più presto operativi. Come ultima alternativa è possibile contattare Klaudio Merja, creatore dell'organizzazione e della _repository_ GitHub, il quale è l'unico che può eseguire alcune operazioni forzate poiché gode dei privilegi da amministratore dell'ambiente GitHub.
 
-//FIXME: Mancano ovviamente gli _standard_ di qualità del prodotto che devono essere ancora spiegati, quindi al momento non sono inseriti
-
-
 == Gestione della qualità
 === Scopo
 Il processo di gestione della qualità ha lo scopo di garantire che i prodotti soddisfino i requisiti specificati e che siano, assieme ai processi, conformi agli _standard_ di qualità stabiliti. La qualità è un requisito fondamentale per il successo del progetto e deve essere garantita in ogni fase del ciclo di vita del prodotto.
@@ -991,17 +998,19 @@ La portabilità è la capacità del prodotto di essere trasportato da un ambient
 - *MPC-PV*: <MPC-PV>
   - *Nome*: _Planned Value_
   - *Descrizione*: Indica il valore che si prevede di aver prodotto fino a quel momento.
-  - *Formula*: $ "PV" = "%LSP" * "BAC" $
+  - *Formula*: 
+  $ "PV" = "%LSP" * "BAC" $
   - *Parametri*:
-    - *%LSP*: Percentuale di lavoro svolto prevista in rapporto alla data di consegna finale, ovvero il tempo passato dall'inizio del progetto rispetto alla scadenza.
+    - *%LSP*: Percentuale di Lavoro Svolto secondo la Pianificazione (ore pianificate rispetto alle ore totali disponibili).
     - *BAC*: _Budget at Completion_, ovvero il costo totale del progetto, stabilito in fase di candidatura.
 
 - *MPC-EV*: <MPC-EV>
   - *Nome*: _Earned Value_
   - *Descrizione*: Indica il valore del lavoro effettivamente svolto fino a quel momento.
-  - *Formula*: $ "EV" = "%LSE" * "BAC" $
+  - *Formula*: 
+  $ "EV" = "%LSE" * "BAC" $
   - *Parametri*:
-    - *%LSE*: Percentuale del lavoro svolto effettivamente (ore consumate rispetto al totale disponibile).
+    - *%LSE*: Percentuale di Lavoro Svolto Effettivamente (ore consumate rispetto al totale disponibile).
     - *BAC*: _Budget at Completion_.
 
 - *MPC-AC*: <MPC-AC>
@@ -1011,7 +1020,8 @@ La portabilità è la capacità del prodotto di essere trasportato da un ambient
 - *MPC-CPI*: <MPC-CPI>
   - *Nome*: _Cost Performance Index_
   - *Descrizione*: Indica il rapporto tra il valore guadagnato e il costo effettivo. Più grande il suo valore, maggiore sarà l’efficienza.
-  - *Formula*: $ "CPI" = "EV" / "AC" $
+  - *Formula*: 
+  $ "CPI" = "EV" / "AC" $
   - *Parametri*:
     - *EV*: _Earned Value_, ovvero il valore guadagnato.
     - *AC*: _Actual Cost_, ovvero il costo effettivo.
@@ -1019,7 +1029,8 @@ La portabilità è la capacità del prodotto di essere trasportato da un ambient
 - *MPC-EAC*: <MPC-EAC>
   - *Nome*: _Estimated at Completion_
   - *Descrizione*: Indica il costo stimato per terminare il progetto se si mantenesse l'attuale efficienza nell'utilizzo delle risorse.
-  - *Formula*: $ "EAC" = "BAC" / "CPI" $
+  - *Formula*: 
+  $ "EAC" = "BAC" / "CPI" $
   - *Parametri*:
     - *BAC*: _Budget at Completion_.
     - *CPI*: _Cost Performance Index_.
@@ -1027,7 +1038,8 @@ La portabilità è la capacità del prodotto di essere trasportato da un ambient
 - *MPC-SV*: <MPC-SV>
   - *Nome*: _Schedule Variance_
   - *Descrizione*: Indica se il progetto è in anticipo (valore positivo), in pari (valore zero) o in ritardo (valore negativo) rispetto alla pianificazione.
-  - *Formula*: $ "SV" = "EV" - "PV" $
+  - *Formula*: 
+  $ "SV" = "EV" - "PV" $
   - *Parametri*:
     - *EV*: _Earned Value_.
     - *PV*: _Planned Value_.
@@ -1035,7 +1047,8 @@ La portabilità è la capacità del prodotto di essere trasportato da un ambient
 - *MPC-BV*: <MPC-BV>
   - *Nome*: _Budget Variance_
   - *Descrizione*: Indica se i costi finora sostenuti per il progetto sono meno (valore positivo) o più (valore negativo) del previsto.
-  - *Formula*: $ "BV" = "PV" - "AC" $
+  - *Formula*: 
+  $ "BV" = "PV" - "AC" $
   - *Parametri*:
     - *PV*: _Planned Value_.
     - *AC*: _Actual Cost_.
@@ -1043,7 +1056,8 @@ La portabilità è la capacità del prodotto di essere trasportato da un ambient
 - *MPC-ETC*: <MPC-ETC>
   - *Nome*: _Estimate to Complete_
   - *Descrizione*: Costo stimato per poter completare il progetto allo stato attuale.
-  - *Formula*: $ "ETC" = "EAC" - "AC" $
+  - *Formula*: 
+  $ "ETC" = "EAC" - "AC" $
   - *Parametri*:
     - *EAC*: _Estimated at Completion_.
     - *AC*: _Actual Cost_.
@@ -1051,14 +1065,15 @@ La portabilità è la capacità del prodotto di essere trasportato da un ambient
 ==== Sviluppo
 
 - *MPC-ISR*: <MPC-ISR>
-  - *Nome*: Indice di stabilità dei requisiti
+  - *Nome*: Indice di Stabilità dei Requisiti
   - *Descrizione*: Indice che misura la variazione dei requisiti nel corso del tempo.
-  - *Formula*: $ "ISR" = 100 - (("RM" + "RC" + "RA") / "RT") * 100 $
+  - *Formula*: 
+  $ "ISR" = 100 - (("RM" + "RC" + "RA") / "RT") * 100 $
   - *Parametri*:
-    - *RM*: Numero di requisiti modificati.
-    - *RC*: Numero di requisiti cancellati.
-    - *RA*: Numero di requisiti aggiunti.
-    - *RT*: Numero totale di requisiti inizialmente previsti.
+    - *RM*: Numero di Requisiti Modificati.
+    - *RC*: Numero di Requisiti Cancellati.
+    - *RA*: Numero di Requisiti Aggiunti.
+    - *RT*: Numero Totale di Requisiti inizialmente previsti.
 
 
 === Processi di supporto
@@ -1069,11 +1084,12 @@ La portabilità è la capacità del prodotto di essere trasportato da un ambient
     - Inferiore a 80: difficile da leggere per chi ha la licenza elementare.
     - Inferiore a 60: difficile da leggere per chi ha la licenza media.
     - Inferiore a 40: difficile da leggere per chi ha la licenza superiore.
-  - *Formula*: $ "IG" = 89 + (300 * "NDF" - 10 * "NDL") / "NDP" $
+  - *Formula*:
+  $ "IG" = 89 + (300 * "NDF" - 10 * "NDL") / "NDP" $
   - *Parametri*: 
-    - *NDF*: numero di frasi presenti nel testo.
-    - *NDL*: numero di lettere presenti nel testo.
-    - *NDP*: numero di parole presenti nel testo.
+    - *NDF*: Numero di Frasi presenti nel testo.
+    - *NDL*: Numero di Lettere presenti nel testo.
+    - *NDP*: Numero di Parole presenti nel testo.
   
 - *MPC-CO*: <MPC-CO>
   - *Nome*: Correttezza Ortografica
@@ -1102,12 +1118,13 @@ La portabilità è la capacità del prodotto di essere trasportato da un ambient
 ==== Gestione della qualità
 
 - *MPC-PMS*: <MPC-PMS>
-  - *Nome*: Percentuale di metriche soddisfatte
+  - *Nome*: Percentuale di Metriche Soddisfatte
   - *Descrizione*: Indica la percentuale di metriche che risultano soddisfare gli obiettivi minimi di qualità previsti dal Piano di Qualifica.
-  - *Formula*: $ "PMS" = ("MS" / "MT") * 100 $
+  - *Formula*: 
+  $ "PMS" = ("MS" / "MT") * 100 $
   - *Parametri*:
-    - *MS*: Numero di metriche soddisfatte.
-    - *MT*: Numero di metriche totali.
+    - *MS*: Numero di Metriche Soddisfatte.
+    - *MT*: Numero di Metriche Totali.
 
 
 == Metriche per la qualità di prodotto
