@@ -10,7 +10,7 @@
   uso: "Esterno",
   versioni: (
     "0.4.0",
-    [07/01/2025],
+    [08/01/2025],
     "Andrea Perozzo\nAndrea Precoma",
     "Davide Marin\nKlaudio Merja",
     [
@@ -25,14 +25,7 @@
     "Andrea Precoma\nRiccardo Milan",
     [
       - Aggiunta di nuovi casi d'uso relativi all'autenticazione alla _dashboard_, alla prossimità dell'utente ad un punto di interesse e alla generazione degli annunci pubblicitari tramite la LLM
-    ],
-    "0.3.0",
-    [05/12/2024],
-    "Davide Marin\nKlaudio Merja",
-    "Andrea Precoma\nRiccardo Milan",
-    [
       - Modifica di stile per quanto riguarda la sintassi delle frasi
-      - Modifica dei casi d'uso a seguito di una riunione con Sync Lab S.r.L.
       - Aggiunta del _trigger_ mancanti ai casi d'uso presenti
     ],
     "0.2.0",
@@ -109,10 +102,8 @@ Il prodotto dovrà fornire le seguenti funzionalità:
 L'azienda proponente richiede inoltre la dimostrazione del corretto funzionamento dei servizi e delle funzionalità del sitema, garantendo una copertura di test di più dell'80% e correlata da report. Viene richiesto inoltre che il prodotto sia in grado di mantenere un elevato flusso di dati in entrata dovuto ai dati di localizzazione emessi dai sensori.
 
 == Utenti e loro caratteristiche
-
-Il prodotto si rivolge a due tipologie di utenti:
 - *Gestore del servizio di noleggio*: utente che gestisce il servizio di noleggio, ovvero un nostro cliente, che ha accesso tramite _dashboard_ a tutte le funzionalità del sistema ed è interessato quindi, oltre che al monitoraggio della flotta, anche all'andamento delle campagne pubblicitarie nel tempo.
-- *Utente*: utente che utilizza il servizio di noleggio e che ha accesso solo alla funzionalità di visualizzazione degli annunci pubblicitari. //FIXME: da rivedere per quanto riguarda i voleri di Sync Lab
+// - *Utente*: utente che utilizza il servizio di noleggio e che ha accesso solo alla funzionalità di visualizzazione degli annunci pubblicitari.
 
 #pagebreak()
 
@@ -351,7 +342,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Trigger*: l'amministratore intende visualizzare sulla mappa le posizioni del mezzo in noleggio nelle quali la LLM non ha generato un annuncio.
 - *Scenario principale*:
   + L'amministratore accede alla mappa sulla _dashboard_.
-  + L'amministratore visualizza un _marker_ in corrispondenza delle posizioni nelle quali il LLM non ha generato un annuncio..
+  + L'amministratore visualizza un _marker_ in corrispondenza delle posizioni nelle quali la LLM non ha generato un annuncio.
 #v(20pt)
 #figure(
   image("../assets/use_cases/marker annuncio fallito.png"),
