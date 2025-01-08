@@ -314,11 +314,11 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + Viene visualizzato l'annuncio generato in corrispondenza del _marker_ selezionato.
 - *Inclusioni*:
   + Visualizzazione dettagli di un singolo annuncio (#link(<uc33>)[UC33]).
-// #v(20pt)
-// #figure(
-//   image("../assets/use_cases/UC13.png"),
-//   caption: [Diagramma del caso d'uso UC13],
-// )
+#v(20pt)
+#figure(
+  image("../assets/use_cases/UC13.png"),
+  caption: [Diagramma del caso d'uso UC13],
+)
 
 #pagebreak()
 
@@ -334,11 +334,11 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Inclusioni*:
   + Visualizzazione nome del punto di interesse (#link(<uc29>)[UC29]).
   + Visualizzazione _e-mail_ dell'utente (#link(<uc30>)[UC30]).
-// #v(20pt)
-// #figure(
-//   image("../assets/use_cases/UC14.png"),
-//   caption: [Diagramma del caso d'uso UC14],
-// )
+#v(20pt)
+#figure(
+  image("../assets/use_cases/UC14.png"),
+  caption: [Diagramma del caso d'uso UC14],
+)
 
 #pagebreak()
 
@@ -738,7 +738,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 #v(20pt)
 #figure(
   image("../assets/use_cases/UC42-43-44-45.png"),
-  caption: [Diagramma dei casi d'uso UC44, UC45],
+  caption: [Diagramma dei casi d'uso UC42, UC43, UC44, UC45],
 )
 
 #pagebreak()
