@@ -284,10 +284,10 @@ Le metriche adottate per il processo di fornitura sono le seguenti:
     [#link(<MPC-EV>)[MPC-EV]], [_Earned Value_],
     [#link(<MPC-AC>)[MPC-AC]], [_Actual Cost_],
     [#link(<MPC-CPI>)[MPC-CPI]], [_Cost Performance Index_],
-    [#link(<MPC-EAC>)[MPC-EAC]], [_Estimate At Completion_],
+    [#link(<MPC-EAC>)[MPC-EAC]], [_Estimated at Completion_],
     [#link(<MPC-SV>)[MPC-SV]], [_Schedule Variance_],
     [#link(<MPC-BV>)[MPC-BV]], [_Budget Variance_],
-    [#link(<MPC-ETC>)[MPC-ETC]], [_Estimate To Complete_],
+    [#link(<MPC-ETC>)[MPC-ETC]], [_Estimate to Complete_],
   ),
   caption: [Metriche per la fornitura]
 )
