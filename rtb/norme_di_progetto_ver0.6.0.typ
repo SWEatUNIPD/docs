@@ -803,70 +803,81 @@ Una volta identificati i potenziali miglioramenti questi vanno effettivamente im
 // TODO: Bisogna capire bene quali sono nostre metriche, aspettando il PdQ
 === Metriche di qualità del prodotto
 ==== Funzionalità
-- *MQP01 - Percentuale dei requisiti obbligatori soddisfatti*
+- *MPD01 - Requisiti obbligatori soddisfatti*
   - *Descrizione*: misura la percentuale di requisiti obbligatori soddisfatti dal prodotto; si misura come:
-   #align(center)[$ "PROS" = "ROS" / "TRO" * 100 $] 
+   #align(center)[$ "CRO" = "ROC" / "TRO" * 100 $] 
   
 
   - *ROS*: numero di requisiti obbligatori soddisfatti.
   - *TRO*: numero totale di requisiti obbligatori.
 
-- *MQP01 - Percentuale dei requisiti desiderabili soddisfatti*
+- *MPD02 - Requisiti desiderabili soddisfatti*
   - *Descrizione*: misura la percentuale di requisiti desiderabili soddisfatti dal prodotto; si misura come:
-   #align(center)[$ "PRDS" = "RDS" / "TRD" * 100 $] 
+   #align(center)[$ "CRD" = "RDC" / "TRD" * 100 $] 
   
 
-  - *RDS*: numero di requisiti desiderabili soddisfatti.
+  - *RDC*: numero di requisiti desiderabili soddisfatti.
   - *TRD*: numero totale di requisiti desiderabili.
 
-- *MQP01 - Percentuale dei requisiti opzionali soddisfatti*
+- *MPD03 - Requisiti opzionali soddisfatti*
   - *Descrizione*: misura la percentuale di requisiti opzionali soddisfatti dal prodotto; si misura come:
-   #align(center)[$ "PROPS" = "ROPS" / "TROP" * 100 $] 
+   #align(center)[$ "CRP" = "RPC" / "TRP" * 100 $] 
   
 
-  - *ROPS*: numero di requisiti opzionali soddisfatti.
-  - *TROP*: numero totale di requisiti opzionali.
+  - *RPC*: numero di requisiti opzionali soddisfatti.
+  - *TRP*: numero totale di requisiti opzionali.
 
 ==== Affidabilità
-- *MQP02 - Test coverage*
-  - *Descrizione*: misura la percentuale di test superati rispetto ai test eseguiti, per richiesta del proponente, si deve avere almeno un _test coverage_ del 80%. Si misura come:
-  #align(center)[$ "TC" = "TR" / "TE" * 100 $]
-  - *TR*: test riusciti
-  - *TE* test eseguiti
-- *MQP03 - Tolleranza agli errori*
-  - *Descrizione*: valuta quanto il prodotto riesca a funzionare nonostante accorrano errori, dati da malfunzionamento o da uso scorretto. 
-==== Efficienza
-- *MQP04 - Utilizzo di risorse*
-  - *Descrizione*: misura l'utilizzo di risorse effettivo rispetto a quelle aspettatate, si misura come:
-  #align(center)[$ "UR" = 1 - "RUA" / "RU" $]
-  - *UR* = 0 : l'utilizzo di risorse è uguale a come ci si aspettava.
-  - *UR* < 0 : l'utilizzo di risorse è minore di come ci si aspettava.
-  - *UR* > 0 : l'utilizzo di risorse è maggiore di come ci si aspettava.
-  - *RUA*: risorse utilizzate aspettate.
-  - *RU*: risorse utilizzate
+- *MPD04 - Code coverage*
+  - *Descrizione*: misura la percentuale di codice eseguita durante i _test_. Per questo progetto è richiesta una copertura pari o superiore all’80%.
+
+- *MPD05 - Branch coverage*
+  - *Descrizione*: calcola la percentuale di rami decisionali del codice eseguiti durante i _test_.
+
+- *MPD06 - Statement coverage*
+  - *Descrizione*: misura la percentuale di codice eseguita durante i _test_.
+
+- *MPD07 - Passed test cases percentage*
+  - *Descrizione*: misura la percentuale di _test_ superati rispetto ai test eseguiti.
+
+- *MPD08 - Failure density*
+  - *Descrizione*: indica il numero di fallimenti correttamente riscontrati per unità di dimensione del software; valori più bassi denotano un software di qualità superiore, con meno difetti rispetto alla sua complessità o dimensione.
 
 ==== Usabilità
-- *MQP05 - Praticità di utilizzo*
-  - *Descrizione*: valuta quanto il sistema sia semplice e veloce da utilizzare per i suoi utenti. 
-- *MQP06 - Comprensibilità*
-  - *Descrizione*: valuta quanto le funzionalità del sistema siano semplici e intuitive da utilizzare ad un primo accesso al sistema.
+- *MPD09 - Praticità di utilizzo*
+  - *Descrizione*: misura il numero di errori commessi dagli utenti durante l’interazione. Un valore minimo indica un’interfaccia intuitiva. 
+- *MPD10 - Comprensibilità*
+  - *Descrizione*: valuta il tempo necessario a un utente per imparare a utilizzare il software.
+
+==== Efficienza
+- *MPD11 - Utilizzo di risorse*
+  - *Descrizione*: misura l’efficienza del sistema in termini di utilizzo delle risorse hardware, come CPU, memoria e altre risorse di sistema.
 
 ==== Manutenibilità
-- *MPQ07 - Facilità di modifica*
-  - *Descrizione*: valuta quanto sia facile apportare modifiche al prodotto.
-- *MPQ08 - Stabilità alle modifiche*
-  - *Descrizione*: valluta quanto il prodotto rimanga stabile e privo di errori una volta effettuate delle modifiche.
-- *MPQ09 -  Ripercussione delle modifiche* 
+- *MPD12 - Complessità ciclomatica per metodo*
+  - *Descrizione*: valuta la complessità per metodo del codice sorgente attraverso la misurazione del numero di cammini indipendenti attraverso il grafo di controllo del flusso; si misura come:
+  #align(center)[$ "CC" = "e" - "n" + 2 $] 
+
+- *MPD13 - Code smell*
+  - *Descrizione*: Rileva potenziali problemi di progettazione o codice che potrebbero richiedere manutenzione.
+
+- *MPD14 - Coefficient of Coupling (COC)*
+  - *Descrizione*: misura il grado di dipendenza tra i moduli o le componenti di un sistema. Un alto COC implica che i moduli siano strettamente interconnessi il che rende difficile apportare modifiche a un modulo senza influenzarne altri; si misura come: 
+  #align(center)[$ "COC" = "NDIP" / "NMOD" * 100 $]
+  -*NDIP*: Numero di dipendenze interne.
+  *NMOD*: Numero totale di moduli.
+
+- *MPD15 - Structure fan in (SFI)*
+  - *Descrizione*: Indica il numero di moduli o componenti che dipendono direttamente da un modulo o funzione specifica. Un alto valore di fan-in suggerisce che molte parti del sistema dipendono da quel modulo.
+
+- *MPD16 - Structure fan out (SFO)*
+  - *Descrizione*: Misura il numero di dipendenze o connessioni che un modulo o componente ha con altri. Un elevato fan-out può indicare che il modulo è fortemente interconnesso con altri.
+
+- *MPD17 -  Ripercussione delle modifiche* 
   - *Descrizione*: misura quanto del sistema sia stato affetto dalle modifiche apportate, si misura come:
   #align(center)[$ "SA" = "MA" / "MT" * 100 $]
   - *MA*: moduli affetti dalle modifiche.
   - *MT*: moduli totali del sistema.
-
-==== Portabilità
-- *MPQ10 - Facilità di installazione*
-  - *Descrizione*: valuta quanto sia facile per gli utenti installare il prodotto.
-- *MPQ11 - Adattabilità*
-  - *Descrizione*: valuta quanto il prodotto sia facile da adattare a diversi sistemi operativi.
 
 == Formazione
 === Descrizione
