@@ -802,7 +802,7 @@ Una volta identificati i potenziali miglioramenti questi vanno effettivamente im
 === Metriche
 // TODO: Bisogna capire bene quali sono nostre metriche, aspettando il PdQ
 === Metriche di qualità del prodotto
-==== Funzionabilità
+==== Funzionalità
 - *MQP01 - Percentuale dei requisiti obbligatori soddisfatti*
   - *Descrizione*: misura la percentuale di requisiti obbligatori soddisfatti dal prodotto; si misura come:
    #align(center)[$ "PROS" = "ROS" / "TRO" * 100 $] 
@@ -810,6 +810,22 @@ Una volta identificati i potenziali miglioramenti questi vanno effettivamente im
 
   - *ROS*: numero di requisiti obbligatori soddisfatti.
   - *TRO*: numero totale di requisiti obbligatori.
+
+- *MQP01 - Percentuale dei requisiti desiderabili soddisfatti*
+  - *Descrizione*: misura la percentuale di requisiti desiderabili soddisfatti dal prodotto; si misura come:
+   #align(center)[$ "PRDS" = "RDS" / "TRD" * 100 $] 
+  
+
+  - *RDS*: numero di requisiti desiderabili soddisfatti.
+  - *TRD*: numero totale di requisiti desiderabili.
+
+- *MQP01 - Percentuale dei requisiti opzionali soddisfatti*
+  - *Descrizione*: misura la percentuale di requisiti opzionali soddisfatti dal prodotto; si misura come:
+   #align(center)[$ "PROPS" = "ROPS" / "TROP" * 100 $] 
+  
+
+  - *ROPS*: numero di requisiti opzionali soddisfatti.
+  - *TROP*: numero totale di requisiti opzionali.
 
 ==== Affidabilità
 - *MQP02 - Test coverage*
