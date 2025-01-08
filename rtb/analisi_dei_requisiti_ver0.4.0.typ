@@ -352,6 +352,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #pagebreak()
 
+
 === UC12 - Visualizzazione informazioni punto di interesse tramite marker sulla mappa
 - *Attore principale*: Amministratore.
 - *Precondizioni*: il sistema tiene traccia delle informazioni di ciascun punto di interesse.
