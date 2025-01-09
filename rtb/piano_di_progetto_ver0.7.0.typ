@@ -9,6 +9,12 @@
   titolo: "Piano di Progetto",
   uso: "Esterno",
   versioni: (
+    "0.7.0",
+    "09/01/2025",
+    "Riccardo Milan",
+    "Davide Martinelli\nDavide Picello",
+    [- Stesura retrospettiva quarto _sprint_],
+
     "0.6.0",
     "24/12/2024",
     "Riccardo Milan",
@@ -469,4 +475,29 @@ Le attività che il _team_ si è prefissato di portare a termine durante il quar
     (2, 2, 0, 0, 1, 0),
   ),
   caption: [Preventivo delle ore nel quarto _sprint_ per membro e per ruolo],
+)
+
+==== Consuntivo orario e di spesa
+#consuntivoOre(
+  preventivo: (
+    (0, 0, 5, 0, 0, 0),
+    (0, 0, 5, 0, 0, 0),
+    (0, 4, 0, 0, 0, 2),
+    (0, 1, 0, 0, 0, 3),
+    (0, 3, 0, 0, 0, 3),
+    (0, 2, 0, 0, 4, 0),
+    (2, 2, 0, 0, 1, 0),
+  ),
+  consuntivo: (
+    (0, 0, 6, 0, 0, 0),
+    (0, 0, 6, 0, 0, 0),
+    (0, 0, 0, 0, 0, 0),
+    (0, 0, 1.5, 0, 0, 3.5),
+    (0, 0, 3, 0, 0, 3),
+    (0, 1, 3, 0, 3, 0),
+    (2.5, 0, 0, 0, 0, 0),
+  ),
+  tabCaption: [Consuntivo delle ore nel terzo _sprint_ per membro e per ruolo],
+  costTabCaption: [Costi sostenuti nel terzo _sprint_],
+  chartCaption: [Grafico percentuale dell'allocazione delle ore per ruolo nel terzo _sprint_],
 )
