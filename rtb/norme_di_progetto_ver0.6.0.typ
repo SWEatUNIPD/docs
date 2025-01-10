@@ -1066,7 +1066,7 @@ La portabilità è la capacità del prodotto di essere trasportato da un ambient
 
 - *MPC-ISR*: <MPC-ISR>
   - *Nome*: Indice di Stabilità dei Requisiti
-  - *Descrizione*: Indice che misura la variazione dei requisiti nel corso del tempo.
+  - *Descrizione*: Indice che misura la variazione dei requisiti nel corso del tempo. #h(1fr)
   - *Formula*: 
   $ "ISR" = 100 - (("RM" + "RC" + "RA") / "RT") * 100 $
   - *Parametri*:
@@ -1083,7 +1083,7 @@ La portabilità è la capacità del prodotto di essere trasportato da un ambient
   - *Descrizione*: Indica il livello di leggibilità di un testo: 
     - Inferiore a 80: difficile da leggere per chi ha la licenza elementare.
     - Inferiore a 60: difficile da leggere per chi ha la licenza media.
-    - Inferiore a 40: difficile da leggere per chi ha la licenza superiore.
+    - Inferiore a 40: difficile da leggere per chi ha la licenza superiore. #h(1fr)
   - *Formula*:
   $ "IG" = 89 + (300 * "NDF" - 10 * "NDL") / "NDP" $
   - *Parametri*: 
