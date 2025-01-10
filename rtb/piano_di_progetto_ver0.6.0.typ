@@ -4,11 +4,17 @@
   data: "27 novembre 2024",
   destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "Sync Lab S.r.l.", "Gruppo SWE@"),
   responsabile: "Davide Martinelli",
-  redattori: ("Davide Martinelli", "Davide Picello", "Klaudio Merja"),
-  verificatori: ("Andrea Precoma", "Davide Marin", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
+  redattori: ("Davide Martinelli", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
+  verificatori: ("Andrea Precoma", "Davide Marin", "Davide Martinelli", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
   titolo: "Piano di Progetto",
   uso: "Esterno",
   versioni: (
+    "0.6.0",
+    "24/12/2024",
+    "Riccardo Milan",
+    "Davide Martinelli\nDavide Picello",
+    [- Stesura pianificazione quarto _sprint_],
+
     "0.5.0",
     "23/12/2024",
     "Davide Martinelli",
@@ -137,6 +143,17 @@ Per il processo di gestione dei rischi il gruppo adotta il modello fornito da Ia
   piano: [Il rischio è inevitabile, ma può essere mitigato tramite l'allocazione di risorse disponibili a supporto di quelle già allocate per accelerare lo svolgimento dell'attività.],
   caption: [RO-3 - Sottostima della durata delle attività],
 )
+
+=== Impegni universitari e personali <RO-4>
+#tabellaRischio(
+  ID: [RO-4],
+  descrizione: [Gli impegni universitari non procrastinabili (specialmente nel periodo della sessione di esami invernale) e gli impegni personali dei membri del gruppo (soprattutto in concomitanza con la pausa natalizia) limitano la disponibilità, il che può portare a ritardi nello svolgimento delle attività del progetto. ],
+  probabilità: [Media],
+  impatto: [Medio],
+  piano: [Il rischio è risolvibile con un'attenta e lungimirante pianificazione e ripartizione dei compiti, confidando nella collaborazione di tutti i membri del gruppo nel comunicare apertamente le proprie indisponibilità. ],
+  caption: [RO-4 - Impegni universitari e personali],
+)
+
 == Rischi tecnologici
 === Inesperienza <RT-1>
 #tabellaRischio(
@@ -415,3 +432,41 @@ La risorsa che avrebbe dovuto lavorare alla _dashboard_ è stata quindi rialloca
 Tuttavia, a causa sia di stime troppo ottimistiche da parte del responsabile che dallo stretto legame tra lo studio delle metriche e la stesura delle Norme di Progetto, si è riscontrato un ritardo nel completare queste attività entro i tempi preventivati. Queste quindi si protrarranno anche nella prima parte prossimo _sprint_.
 
 Per quanto riguarda l'Analisi dei Requisiti l'attività di stesura è proseguita come previsto. Il gruppo ha riscontrato delle difficoltà nell'identificazione dei casi d'uso e, più nello specifico, nel delineare il confine tra analisi dei requisiti e progettazione. È risultato quindi utile il confronto avvenuto con il professor Cardin, che ha permesso di chiarire molti dubbi. Ciò si è ripercosso anche nella stesura della parte riguardante la descrizione dei casi d'uso all'interno delle Norme di Progetto, che ora riporta per iscritto le _best practices_ imparate dal gruppo fino a questo momento.
+
+#pagebreak()
+
+=== Sprint 4
+- *Inizio*: 24/12/2024
+- *Fine*: 8/01/2024
+- *Rischi attesi*: #link(<RO-1>)[RO-1], #link(<RO-3>)[RO-3], #link(<RO-4>)[RO-4], #link(<RT-1>)[RT-1]
+
+==== Attività dello sprint
+Le attività che il _team_ si è prefissato di portare a termine durante il quarto _sprint_ sono le seguenti:
+- Redazione del verbale esterno ed interno del 23/12/2024.
+- Codifica dello _script_ per il calcolo automatico dell'#rifGlossario("indice Gulpease").
+- Ampliamento del documento Norme di Progetto, in particolare occupandosi delle sezioni:
+  - Metriche di qualità del prodotto.
+  - Metriche di qualità del processo.
+- Redazione completa del Piano di Qualifica con le metriche individuate nel punto precedente.
+- Continuazione del documento di Analisi dei Requisiti, in particolare:
+  - Rifinire e completare i casi d'uso.
+  - Individuare e redigere in maniera completa i requisiti.
+- Creazione del nuovo _#rifGlossario("stream processor") custom_ sfruttando #rifGlossario("Spring"), con il _database_ popolato e l'integrazione con #rifGlossario("LangChain").
+- Aggiornamento della _dashboard_ in Grafana per adattarsi alla nuova infrastruttura con Spring.
+- Continuazione della stesura del Piano di Progetto come da prassi, in particolare:
+  - Scrittura pianificazione quarto _sprint_.
+  - Scrittura retrospettiva quarto _sprint_ in concomitanza con la fine dello _sprint_.
+
+==== Preventivo orario
+#rendicontazioneOre(
+  (
+    (0, 0, 5, 0, 0, 0),
+    (0, 0, 5, 0, 0, 0),
+    (0, 4, 0, 0, 0, 2),
+    (0, 1, 0, 0, 0, 3),
+    (0, 3, 0, 0, 0, 3),
+    (0, 2, 0, 0, 4, 0),
+    (2, 2, 0, 0, 1, 0),
+  ),
+  caption: [Preventivo delle ore nel quarto _sprint_ per membro e per ruolo],
+)
