@@ -513,6 +513,6 @@ L'attività di raffinamento dei casi d'uso e stesura dei requisiti è proceduta 
 
 I miglioramenti del PoC, ristrutturando il _software_ usando Spring, sono stati sostanziali e anche il proponente si è mostrato soddisfatto nel consueto SAL di fine _sprint_.
 
-In ultima i miglioramenti alla dashboard Grafana non sono stati fatti, in quanto in un incontro con il proponente si sono rivelati superflui per il PoC.
+In ultima i miglioramenti alla dashboard Grafana non sono stati fatti in quanto, dopo un confronto con il proponente, si sono rivelati superflui per il PoC.
 
 #pagebreak()
