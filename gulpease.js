@@ -1,11 +1,12 @@
 const fs = require("fs");
 const path = require("path");
 const textStats = require("text-stats");
+const glossario = require("./glossario.json");
 
 /**
  *
  * @param {string} dir percorso dove ricercare tutti i file `.typ` ricorsivamente
- * @returns array di tutti i path ai file typst all'interno del percorso `dir`
+ * @returns array di tutti i path ai file Typst all'interno del percorso `dir`
  */
 function searchFile(dir) {
   var out = [];
@@ -56,9 +57,24 @@ function calcGulpease(filePath) {
     .toLowerCase();
 
   const stats = textStats.stats(content);
-  console.log(`Indice di Gulpease di "${filePath}": ${stats.gulpease}`);
+  console.log(`Indice di Gulpease di "${filePath}":`, stats.gulpease);
 }
 
 searchFile(".").forEach((path) => {
   calcGulpease(path);
 });
+
+var wallOfText = "";
+
+for (letter in glossario) {
+  for (termine in glossario[letter]) {
+    wallOfText += termine + " " + glossario[letter][termine] + "\n";
+  }
+}
+
+const stats = textStats.stats(wallOfText);
+
+console.log(
+  "Indice di Gulpease del glossario (./glossario.json):",
+  stats.gulpease
+);
