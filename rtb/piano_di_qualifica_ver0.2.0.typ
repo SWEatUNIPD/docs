@@ -10,7 +10,7 @@
   uso: "Esterno",
   versioni: (
     "0.2.0",
-    "02/01/2025",
+    "10/01/2025",
     "Davide Picello",
     "Davide Martinelli,\nDavide Marin",
     [- Definite le metriche di qualità di processo e di prodotto. Definita la struttura delle specifiche dei _test_ e del cruscotto di monitoraggio della qualità.],
