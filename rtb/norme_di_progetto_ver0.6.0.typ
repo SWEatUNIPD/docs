@@ -821,11 +821,11 @@ Una volta identificati i potenziali miglioramenti questi vanno effettivamente im
     - *NRDC*: Numero di Requisiti Desiderabili Completati.
     - *NTRD*: Numero Totale di Requisiti Desiderabili.
 
-- *MPD-CRP*
+- *MPD-ROPS*
   - *Nome*: Requisiti Opzionali Soddisfatti
   - *Descrizione*: Misura la percentuale di requisiti opzionali soddisfatti dal prodotto.
   - *Formula*:
-  #align(center)[$ "%RPS" = "NRPC" / "NTRP" * 100 $] 
+  #align(center)[$ "%ROPS" = "NRPC" / "NTRP" * 100 $] 
   - *Parametri*:
     - *NRPC*: Numero di Requisiti Opzionali Completati.
     - *NTRP*: Numero Totale di Requisiti Opzionali.
