@@ -803,7 +803,7 @@ Una volta identificati i potenziali miglioramenti questi vanno effettivamente im
 // TODO: Bisogna capire bene quali sono nostre metriche, aspettando il PdQ
 === Metriche di qualità del prodotto
 ==== Funzionalità
-- *MPD01 - Requisiti obbligatori soddisfatti*
+- *MPD-CRO - Requisiti obbligatori soddisfatti*
   - *Descrizione*: misura la percentuale di requisiti obbligatori soddisfatti dal prodotto; si misura come:
    #align(center)[$ "CRO" = "ROC" / "TRO" * 100 $] 
   
@@ -811,7 +811,7 @@ Una volta identificati i potenziali miglioramenti questi vanno effettivamente im
   - *ROS*: numero di requisiti obbligatori soddisfatti.
   - *TRO*: numero totale di requisiti obbligatori.
 
-- *MPD02 - Requisiti desiderabili soddisfatti*
+- *MPD-CRD - Requisiti desiderabili soddisfatti*
   - *Descrizione*: misura la percentuale di requisiti desiderabili soddisfatti dal prodotto; si misura come:
    #align(center)[$ "CRD" = "RDC" / "TRD" * 100 $] 
   
@@ -819,7 +819,7 @@ Una volta identificati i potenziali miglioramenti questi vanno effettivamente im
   - *RDC*: numero di requisiti desiderabili soddisfatti.
   - *TRD*: numero totale di requisiti desiderabili.
 
-- *MPD03 - Requisiti opzionali soddisfatti*
+- *MPD-CRP - Requisiti opzionali soddisfatti*
   - *Descrizione*: misura la percentuale di requisiti opzionali soddisfatti dal prodotto; si misura come:
    #align(center)[$ "CRP" = "RPC" / "TRP" * 100 $] 
   
@@ -828,54 +828,54 @@ Una volta identificati i potenziali miglioramenti questi vanno effettivamente im
   - *TRP*: numero totale di requisiti opzionali.
 
 ==== Affidabilità
-- *MPD04 - Code coverage*
+- *MPD-CC - Code coverage*
   - *Descrizione*: misura la percentuale di codice eseguita durante i _test_. Per questo progetto è richiesta una copertura pari o superiore all’80%.
 
-- *MPD05 - Branch coverage*
+- *MPD-BC - Branch coverage*
   - *Descrizione*: calcola la percentuale di rami decisionali del codice eseguiti durante i _test_.
 
-- *MPD06 - Statement coverage*
+- *MPD-SC - Statement coverage*
   - *Descrizione*: misura la percentuale di codice eseguita durante i _test_.
 
-- *MPD07 - Passed test cases percentage*
+- *MPD-PTCP - Passed test cases percentage*
   - *Descrizione*: misura la percentuale di _test_ superati rispetto ai test eseguiti.
 
-- *MPD08 - Failure density*
-  - *Descrizione*: indica il numero di fallimenti correttamente riscontrati per unità di dimensione del software; valori più bassi denotano un software di qualità superiore, con meno difetti rispetto alla sua complessità o dimensione.
+- *MPD-FD - Failure density*
+  - *Descrizione*: indica il numero di fallimenti correttamente riscontrati per unità di dimensione del _software_; valori più bassi denotano un _software_ di qualità superiore, con meno difetti rispetto alla sua complessità o dimensione.
 
 ==== Usabilità
-- *MPD09 - Praticità di utilizzo*
+- *MPD-FU - Facilità di utilizzo*
   - *Descrizione*: misura il numero di errori commessi dagli utenti durante l’interazione. Un valore minimo indica un’interfaccia intuitiva. 
-- *MPD10 - Comprensibilità*
-  - *Descrizione*: valuta il tempo necessario a un utente per imparare a utilizzare il software.
+- *MPD-TA - Tempo di apprendimento*
+  - *Descrizione*: valuta il tempo necessario a un utente per imparare a utilizzare il _software_.
 
 ==== Efficienza
-- *MPD11 - Utilizzo di risorse*
-  - *Descrizione*: misura l’efficienza del sistema in termini di utilizzo delle risorse hardware, come CPU, memoria e altre risorse di sistema.
+- *MPD-UR - Utilizzo di risorse*
+  - *Descrizione*: misura l’efficienza del sistema in termini di utilizzo delle risorse _hardware_, come CPU, memoria e altre risorse di sistema.
 
 ==== Manutenibilità
-- *MPD12 - Complessità ciclomatica per metodo*
+- *MPD-CCM - Complessità ciclomatica per metodo*
   - *Descrizione*: valuta la complessità per metodo del codice sorgente attraverso la misurazione del numero di cammini indipendenti attraverso il grafo di controllo del flusso; si misura come:
   #align(center)[$ "CC" = "e" - "n" + 2 $] 
 
-- *MPD13 - Code smell*
+- *MPD-CS - Code smell*
   - *Descrizione*: Rileva potenziali problemi di progettazione o codice che potrebbero richiedere manutenzione.
 
-- *MPD14 - Coefficient of Coupling (COC)*
+- *MPD-COC - Coefficient of Coupling (COC)*
   - *Descrizione*: misura il grado di dipendenza tra i moduli o le componenti di un sistema. Un alto COC implica che i moduli siano strettamente interconnessi il che rende difficile apportare modifiche a un modulo senza influenzarne altri; si misura come: 
   #align(center)[$ "COC" = "NDIP" / "NMOD" * 100 $]
   -*NDIP*: Numero di dipendenze interne.
   *NMOD*: Numero totale di moduli.
 
-- *MPD15 - Structure fan in (SFI)*
+- *MPD-SFI - Structure fan in (SFI)*
   - *Descrizione*: Indica il numero di moduli o componenti che dipendono direttamente da un modulo o funzione specifica. Un alto valore di fan-in suggerisce che molte parti del sistema dipendono da quel modulo.
 
-- *MPD16 - Structure fan out (SFO)*
+- *MPD-SFO - Structure fan out (SFO)*
   - *Descrizione*: Misura il numero di dipendenze o connessioni che un modulo o componente ha con altri. Un elevato fan-out può indicare che il modulo è fortemente interconnesso con altri.
 
-- *MPD17 -  Ripercussione delle modifiche* 
-  - *Descrizione*: misura quanto del sistema sia stato affetto dalle modifiche apportate, si misura come:
-  #align(center)[$ "SA" = "MA" / "MT" * 100 $]
+- *MPD-RM -  Ripercussione delle modifiche* 
+  - *Descrizione*: misura la percentuale del sistema che è stato affetto dalle modifiche apportate, si misura come:
+  #align(center)[$ "%RM" = "MA" / "MT" * 100 $]
   - *MA*: moduli affetti dalle modifiche.
   - *MT*: moduli totali del sistema.
 
