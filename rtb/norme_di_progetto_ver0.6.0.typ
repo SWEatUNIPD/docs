@@ -803,82 +803,104 @@ Una volta identificati i potenziali miglioramenti questi vanno effettivamente im
 // TODO: Bisogna capire bene quali sono nostre metriche, aspettando il PdQ
 === Metriche di qualità del prodotto
 ==== Funzionalità
-- *MPD-CRO - Requisiti obbligatori soddisfatti*
-  - *Descrizione*: misura la percentuale di requisiti obbligatori soddisfatti dal prodotto; si misura come:
-   #align(center)[$ "CRO" = "ROC" / "TRO" * 100 $] 
-  
+- *MPD-ROS*
+  - *Nome*: Requisiti Obbligatori Soddisfatti
+  - *Descrizione*: Misura la percentuale di requisiti obbligatori soddisfatti dal prodotto; si misura come:
+  - *Formula*:
+  #align(center)[$ "%ROS" = "NROC" / "NTRO" * 100 $] 
+  - *Parametri*:
+    - *NROC*: Numero di Requisiti Obbligatori Completati.
+    - *NTRO*: Numero Totale di Requisiti Obbligatori.
 
-  - *ROS*: numero di requisiti obbligatori soddisfatti.
-  - *TRO*: numero totale di requisiti obbligatori.
+- *MPD-RDS*
+  - *Nome*: Requisiti Desiderabili Soddisfatti
+  - *Descrizione*: Misura la percentuale di requisiti desiderabili soddisfatti dal prodotto; si misura come:
+  - *Formula*:
+  #align(center)[$ "%RDS" = "NRDC" / "NTRD" * 100 $] 
+  - *Parametri*:
+    - *NRDC*: Numero di Requisiti Desiderabili Completati.
+    - *NTRD*: Numero Totale di Requisiti Desiderabili.
 
-- *MPD-CRD - Requisiti desiderabili soddisfatti*
-  - *Descrizione*: misura la percentuale di requisiti desiderabili soddisfatti dal prodotto; si misura come:
-   #align(center)[$ "CRD" = "RDC" / "TRD" * 100 $] 
-  
-
-  - *RDC*: numero di requisiti desiderabili soddisfatti.
-  - *TRD*: numero totale di requisiti desiderabili.
-
-- *MPD-CRP - Requisiti opzionali soddisfatti*
-  - *Descrizione*: misura la percentuale di requisiti opzionali soddisfatti dal prodotto; si misura come:
-   #align(center)[$ "CRP" = "RPC" / "TRP" * 100 $] 
-  
-
-  - *RPC*: numero di requisiti opzionali soddisfatti.
-  - *TRP*: numero totale di requisiti opzionali.
+- *MPD-CRP*
+  - *Nome*: Requisiti Opzionali Soddisfatti
+  - *Descrizione*: Misura la percentuale di requisiti opzionali soddisfatti dal prodotto; si misura come:
+  - *Formula*:
+  #align(center)[$ "%RPS" = "NRPC" / "NTRP" * 100 $] 
+  - *Parametri*:
+    - *NRPC*: Numero di Requisiti Opzionali Completati.
+    - *NTRP*: Numero Totale di Requisiti Opzionali.
 
 ==== Affidabilità
-- *MPD-CC - Code coverage*
-  - *Descrizione*: misura la percentuale di codice eseguita durante i _test_. Per questo progetto è richiesta una copertura pari o superiore all’80%.
+- *MPD-CC*
+  - *Nome*: Code Coverage
+  - *Descrizione*: Misura la percentuale di codice eseguita durante i _test_. Per questo progetto è richiesta una copertura pari o superiore all’80%.
 
-- *MPD-BC - Branch coverage*
-  - *Descrizione*: calcola la percentuale di rami decisionali del codice eseguiti durante i _test_.
+- *MPD-BC*
+  - *Nome*: Branch Coverage
+  - *Descrizione*: Calcola la percentuale di rami decisionali del codice eseguiti durante i _test_.
 
-- *MPD-SC - Statement coverage*
-  - *Descrizione*: misura la percentuale di codice eseguita durante i _test_.
+- *MPD-SC*
+  - *Nome*: Statement Coverage
+  - *Descrizione*: Misura la percentuale di codice eseguita durante i _test_.
 
-- *MPD-PTCP - Passed test cases percentage*
-  - *Descrizione*: misura la percentuale di _test_ superati rispetto ai test eseguiti.
+- *MPD-PTCP*
+  - *Nome*: Passed Test Cases Percentage
+  - *Descrizione*: Misura la percentuale di _test_ superati rispetto ai test eseguiti.
 
-- *MPD-FD - Failure density*
-  - *Descrizione*: indica il numero di fallimenti correttamente riscontrati per unità di dimensione del _software_; valori più bassi denotano un _software_ di qualità superiore, con meno difetti rispetto alla sua complessità o dimensione.
+- *MPD-FD*
+  - *Nome*: Failure Density
+  - *Descrizione*: Indica il numero di fallimenti correttamente riscontrati per unità di dimensione del _software_; valori più bassi denotano un _software_ di qualità superiore, con meno difetti rispetto alla sua complessità o dimensione.
 
 ==== Usabilità
-- *MPD-FU - Facilità di utilizzo*
-  - *Descrizione*: misura il numero di errori commessi dagli utenti durante l’interazione. Un valore minimo indica un’interfaccia intuitiva. 
-- *MPD-TA - Tempo di apprendimento*
-  - *Descrizione*: valuta il tempo necessario a un utente per imparare a utilizzare il _software_.
+- *MPD-FU*
+  - *Nome*: Facilità di Utilizzo
+  - *Descrizione*: Misura il numero di errori commessi dagli utenti durante l’interazione. Un valore minimo indica un’interfaccia intuitiva. 
+- *MPD-TA*
+  - *Nome*: Tempo di apprendimento
+  - *Descrizione*: Valuta il tempo necessario a un utente per imparare a utilizzare il _software_.
 
 ==== Efficienza
-- *MPD-UR - Utilizzo di risorse*
-  - *Descrizione*: misura l’efficienza del sistema in termini di utilizzo delle risorse _hardware_, come CPU, memoria e altre risorse di sistema.
+- *MPD-UR*
+  - *Nome*: Utilizzo di Risorse
+  - *Descrizione*: Misura l’efficienza del sistema in termini di utilizzo delle risorse _hardware_, come CPU, memoria e altre risorse di sistema.
 
 ==== Manutenibilità
-- *MPD-CCM - Complessità ciclomatica per metodo*
-  - *Descrizione*: valuta la complessità per metodo del codice sorgente attraverso la misurazione del numero di cammini indipendenti attraverso il grafo di controllo del flusso; si misura come:
+- *MPD-CCM*
+  - *Nome*: Complessità Ciclomatica per Metodo
+  - *Descrizione*: Valuta la complessità per metodo del codice sorgente attraverso la misurazione del numero di cammini indipendenti attraverso il grafo di controllo del flusso; si misura come:
+  - *Formula*:
   #align(center)[$ "CC" = "e" - "n" + 2 $] 
 
-- *MPD-CS - Code smell*
+- *MPD-CS*
+  - *Nome*: Code Smell
   - *Descrizione*: Rileva potenziali problemi di progettazione o codice che potrebbero richiedere manutenzione.
 
-- *MPD-COC - Coefficient of Coupling (COC)*
-  - *Descrizione*: misura il grado di dipendenza tra i moduli o le componenti di un sistema. Un alto COC implica che i moduli siano strettamente interconnessi il che rende difficile apportare modifiche a un modulo senza influenzarne altri; si misura come: 
-  #align(center)[$ "COC" = "NDIP" / "NMOD" * 100 $]
-  -*NDIP*: Numero di dipendenze interne.
-  *NMOD*: Numero totale di moduli.
+- *MPD-COC*
+  - *Nome*: Coefficient Of Coupling
+  - *Descrizione*: Misura il grado di dipendenza tra i moduli o le componenti di un sistema. Un alto COC implica che i moduli siano strettamente interconnessi il che rende difficile apportare modifiche a un modulo senza influenzarne altri; si misura come: 
+  - *Formula*:
+  #align(center)[$ "COC" = "NDI" / "NTM" * 100 $]
+  - *Parametri*:
+    -*NDI*: Numero di Dipendenze Interne.
+    -*NTM*: Numero Totale di Moduli.
 
-- *MPD-SFI - Structure fan in (SFI)*
+- *MPD-SFI*
+  - *Nome*: Structure Fan In
   - *Descrizione*: Indica il numero di moduli o componenti che dipendono direttamente da un modulo o funzione specifica. Un alto valore di fan-in suggerisce che molte parti del sistema dipendono da quel modulo.
 
-- *MPD-SFO - Structure fan out (SFO)*
+- *MPD-SFO*
+  - *Nome*: Structure Fan Out 
   - *Descrizione*: Misura il numero di dipendenze o connessioni che un modulo o componente ha con altri. Un elevato fan-out può indicare che il modulo è fortemente interconnesso con altri.
 
-- *MPD-RM -  Ripercussione delle modifiche* 
-  - *Descrizione*: misura la percentuale del sistema che è stato affetto dalle modifiche apportate, si misura come:
+- *MPD-RM* 
+  - *Nome*: Ripercussione delle Modifiche
+  - *Descrizione*: Misura la percentuale del sistema che è stato affetto dalle modifiche apportate, si misura come:
+  - *Formula*:
   #align(center)[$ "%RM" = "MA" / "MT" * 100 $]
-  - *MA*: moduli affetti dalle modifiche.
-  - *MT*: moduli totali del sistema.
-
+  - *Parametri*:
+    - *MA*: Moduli Affetti dalle modifiche.
+    - *MT*: Moduli Totali del sistema.
+#pagebreak()
 == Formazione
 === Descrizione
 Alla base della buona riuscita del progetto ci sono persone adeguatamente formate con l'evolversi del progetto. Per questo diventa fondamentale il processo di formazione.
