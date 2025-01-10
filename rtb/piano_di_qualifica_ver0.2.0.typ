@@ -216,19 +216,13 @@ La qualità del prodotto si concentra sulla valutazione del _software_ sviluppat
 La funzionalità misura la capacità del _software_ di soddisfare i requisiti obbligatori, desiderabili e opzionali.
 
 ==== Requisiti obbligatori soddisfatti
-Indica la percentuale di requisiti obbligatori implementati nel prodotto. Deve essere sempre pari al 100% per garantire la conformità alle specifiche. Si calcola come rapporto tra i requisiti obbligatori completati "ROC" e il totale dei requisiti obbligatori "TRO".
-
-Formula: ``` CRO = ROC/TRO * 100 ```
+Indica la percentuale di requisiti obbligatori implementati nel prodotto. Deve essere sempre pari al 100% per garantire la conformità alle specifiche.
 
 ==== Requisiti desiderabili soddisfatti
-Misura la percentuale di requisiti desiderabili implementati nel prodotto. Valori più elevati migliorano la soddisfazione del cliente.Si calcola come rapporto tra i requisiti desiderabili completati "RDC" e il totale dei requisiti desiderabili "TRD".
-
-Formula: ``` CRD = RDC/TRO * 100 ```
+Misura la percentuale di requisiti desiderabili implementati nel prodotto. Valori più elevati migliorano la soddisfazione del cliente.
 
 ==== Requisiti opzionali soddisfatti
-Rappresenta la percentuale di requisiti opzionali implementati. Una copertura opzionale più alta può aggiungere valore al prodotto. Si calcola come rapporto tra i requisiti opzionali completati "RDC" e il totale dei requisiti opzionali "TRD".
-
-Formula: ``` CRP = RPC/TRP * 100 ```
+Rappresenta la percentuale di requisiti opzionali implementati. Una copertura opzionale più alta può aggiungere valore al prodotto.
 
 ==== Tabella metriche funzionalità
 #figure(
@@ -240,9 +234,9 @@ Formula: ``` CRP = RPC/TRP * 100 ```
     fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
     table.header[*Metrica*][*Nome*][*Valore accettabile*][*Valore desiderabile*],
     
-    [], [Requisiti obbligatori soddisfatti], [$100\%$], [$100\%$],
-    [], [Requisiti desiderabili soddisfatti], [$≥ 0\%$], [$100\%$],
-    [], [Requisiti opzionali soddisfatti], [$≥ 0\%$], [$≥ 50\%$],
+    [MDP-CRO], [Requisiti obbligatori soddisfatti], [$100\%$], [$100\%$],
+    [MDP-CRD], [Requisiti desiderabili soddisfatti], [$≥ 0\%$], [$100\%$],
+    [MDP-CRP], [Requisiti opzionali soddisfatti], [$≥ 0\%$], [$≥ 50\%$],
   )
 )
 
@@ -276,11 +270,11 @@ Indica il numero di fallimenti correttamente riscontrati per unità di dimension
     fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
     table.header[*Metrica*][*Nome*][*Valore accettabile*][*Valore desiderabile*],
     
-    [], [Code coverage], [$≥ 80\%$], [$100\%$],
-    [], [#rifGlossario("Branch") coverage], [$≥ 60\%$], [$100\%$],
-    [], [Statement coverage], [$≥ 60\%$], [$100\%$],
-    [], [Passed test cases percentage], [$≥ 80\%$], [$100\%$],
-    [], [Failure density], [$100%$], [$100%$],
+    [MDP-CC], [Code coverage], [$≥ 80\%$], [$100\%$],
+    [MDP-BC], [#rifGlossario("Branch") coverage], [$≥ 60\%$], [$100\%$],
+    [MDP-SC], [Statement coverage], [$≥ 60\%$], [$100\%$],
+    [MDP-PTCP], [Passed test cases percentage], [$≥ 80\%$], [$100\%$],
+    [MDP-FD], [Failure density], [$100%$], [$100%$],
   )
 )
 
@@ -303,8 +297,8 @@ Valuta il tempo necessario a un utente per imparare a utilizzare il _software_. 
     fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
     table.header[*Metrica*][*Nome*][*Valore accettabile*][*Valore desiderabile*],
     
-    [], [Facilità di utilizzo], [$≤ 3$ errori], [$0$ errori],
-    [], [Tempo di apprendimento], [$≤ 15$ minuti], [$≤ 5$ minuti],
+    [MPD-FU], [Facilità di utilizzo], [$≤ 3$ errori], [$0$ errori],
+    [MPD-TA], [Tempo di apprendimento], [$≤ 15$ minuti], [$≤ 5$ minuti],
   )
 )
 
@@ -323,20 +317,16 @@ Misura l’efficienza del sistema in termini di utilizzo delle risorse hardware,
     fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
     table.header[*Metrica*][*Nome*][*Valore accettabile*][*Valore desiderabile*],
     
-    [], [Utilizzo risorse], [$≥ 75\%$], [$100\%$],
-    [], [Maximum CPU usage], [da determinare], [da determinare],
-    [], [Maximum RAM usage], [da determinare], [da determinare],
-    [], [Tempo Di Elaborazione], [da determinare], [da determinare],
+    [MPD-UR], [Utilizzo risorse], [$≥ 75\%$], [$100\%$],
   )
 )
 
 
 === Manutenibilità
 
-==== Complessità ciclomatica
+==== Complessità ciclomatica per metodo
 La complessità ciclomatica valuta la complessità del codice sorgente attraverso la misurazione del numero di cammini indipendenti attraverso il grafo di controllo del flusso. Una complessità ciclomatica più alta indica che il codice è più difficile da comprendere e manutenere.
 
-Formula: ``` e - n + 2 ```
 
 ==== Code smell
 Rileva potenziali problemi di progettazione o codice che potrebbero richiedere manutenzione. Segnala parti del codice che potrebbero non essere ottimali e che potrebbero causare difficoltà nel futuro, come un'architettura poco chiara o sezioni di codice ripetitive.
@@ -344,9 +334,7 @@ Rileva potenziali problemi di progettazione o codice che potrebbero richiedere m
 
 
 ==== Coefficient of Coupling (COC)
-Il Coefficient of Coupling misura il grado di dipendenza tra i moduli o le componenti di un sistema. Un alto COC implica che i moduli siano strettamente interconnessi, il che può rendere difficile apportare modifiche a un modulo senza influenzare altri. Si calcola come rapporto tra il numero di dipendenze interne (NDIP) e il numero totale di moduli (NMOD), moltiplicato per $100$.
-
-Formula: ``` COC = (NDIP / NMOD) * 100 ```
+Il Coefficient of Coupling misura il grado di dipendenza tra i moduli o le componenti di un sistema. Un alto COC implica che i moduli siano strettamente interconnessi, il che può rendere difficile apportare modifiche a un modulo senza influenzare altri.
 
 ==== Structure fan in (SFIN)
 Indica il numero di moduli o componenti che dipendono direttamente da un modulo o funzione specifica. Un alto valore di fan-in suggerisce che molte parti del sistema dipendono da quel modulo, quindi modifiche a tale modulo potrebbero avere un ampio impatto.
@@ -365,12 +353,11 @@ Misura il numero di dipendenze o connessioni che un modulo o componente ha con a
     fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
     table.header[*Metrica*][*Nome*][*Valore accettabile*][*Valore desiderabile*],
     
-    [], [Complessità ciclomatica], [$1 - 10$], [$11 - 20$],
-    [], [Code smell], [$0$], [$0$],
-    [], [Coefficient of coupling], [$≤ 30\%$], [$≤ 10\%$],
-    [], [Structure fan in], [da determinare], [da determinare],
-    [], [Structure fan out], [da determinare], [da determinare],
-    [], [Complessità ciclomatica per metodo], [$≤ 5$], [$≤ 3$],
+    [MPD-CCM], [Complessità ciclomatica per metodo], [$≤ 5$], [$≤ 3$],
+    [MPD-CS], [Code smell], [$0$], [$0$],
+    [MPD-COC], [Coefficient of coupling], [$≤ 30\%$], [$≤ 10\%$],
+    [MPD-SFI], [Structure fan in], [da determinare], [da determinare],
+    [MPD-SFO], [Structure fan out], [da determinare], [da determinare],
   )
 )
 

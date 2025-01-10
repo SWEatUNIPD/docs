@@ -1,4 +1,7 @@
 {
   "tinymist.fontPaths": ["${workspaceFolder}/assets/font/"],
   "tinymist.formatterMode": "typstyle",
+  "cSpell.words": [
+    "ciclomatica"
+  ],
 }
