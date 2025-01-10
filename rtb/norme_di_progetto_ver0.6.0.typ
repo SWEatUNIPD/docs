@@ -805,7 +805,7 @@ Una volta identificati i potenziali miglioramenti questi vanno effettivamente im
 ==== Funzionalità
 - *MPD-ROS*
   - *Nome*: Requisiti Obbligatori Soddisfatti
-  - *Descrizione*: Misura la percentuale di requisiti obbligatori soddisfatti dal prodotto; si misura come:
+  - *Descrizione*: Misura la percentuale di requisiti obbligatori soddisfatti dal prodotto.
   - *Formula*:
   #align(center)[$ "%ROS" = "NROC" / "NTRO" * 100 $] 
   - *Parametri*:
@@ -814,7 +814,7 @@ Una volta identificati i potenziali miglioramenti questi vanno effettivamente im
 
 - *MPD-RDS*
   - *Nome*: Requisiti Desiderabili Soddisfatti
-  - *Descrizione*: Misura la percentuale di requisiti desiderabili soddisfatti dal prodotto; si misura come:
+  - *Descrizione*: Misura la percentuale di requisiti desiderabili soddisfatti dal prodotto.
   - *Formula*:
   #align(center)[$ "%RDS" = "NRDC" / "NTRD" * 100 $] 
   - *Parametri*:
@@ -823,7 +823,7 @@ Una volta identificati i potenziali miglioramenti questi vanno effettivamente im
 
 - *MPD-CRP*
   - *Nome*: Requisiti Opzionali Soddisfatti
-  - *Descrizione*: Misura la percentuale di requisiti opzionali soddisfatti dal prodotto; si misura come:
+  - *Descrizione*: Misura la percentuale di requisiti opzionali soddisfatti dal prodotto.
   - *Formula*:
   #align(center)[$ "%RPS" = "NRPC" / "NTRP" * 100 $] 
   - *Parametri*:
@@ -867,7 +867,7 @@ Una volta identificati i potenziali miglioramenti questi vanno effettivamente im
 ==== Manutenibilità
 - *MPD-CCM*
   - *Nome*: Complessità Ciclomatica per Metodo
-  - *Descrizione*: Valuta la complessità per metodo del codice sorgente attraverso la misurazione del numero di cammini indipendenti attraverso il grafo di controllo del flusso; si misura come:
+  - *Descrizione*: Valuta la complessità per metodo del codice sorgente attraverso la misurazione del numero di cammini indipendenti attraverso il grafo di controllo del flusso.
   - *Formula*:
   #align(center)[$ "CC" = "e" - "n" + 2 $] 
 
@@ -877,7 +877,7 @@ Una volta identificati i potenziali miglioramenti questi vanno effettivamente im
 
 - *MPD-COC*
   - *Nome*: Coefficient Of Coupling
-  - *Descrizione*: Misura il grado di dipendenza tra i moduli o le componenti di un sistema. Un alto COC implica che i moduli siano strettamente interconnessi il che rende difficile apportare modifiche a un modulo senza influenzarne altri; si misura come: 
+  - *Descrizione*: Misura il grado di dipendenza tra i moduli o le componenti di un sistema. Un alto COC implica che i moduli siano strettamente interconnessi il che rende difficile apportare modifiche a un modulo senza influenzarne altri. 
   - *Formula*:
   #align(center)[$ "COC" = "NDI" / "NTM" * 100 $]
   - *Parametri*:
@@ -894,7 +894,7 @@ Una volta identificati i potenziali miglioramenti questi vanno effettivamente im
 
 - *MPD-RM* 
   - *Nome*: Ripercussione delle Modifiche
-  - *Descrizione*: Misura la percentuale del sistema che è stato affetto dalle modifiche apportate, si misura come:
+  - *Descrizione*: Misura la percentuale del sistema che è stato affetto dalle modifiche apportate.
   - *Formula*:
   #align(center)[$ "%RM" = "MA" / "MT" * 100 $]
   - *Parametri*:
