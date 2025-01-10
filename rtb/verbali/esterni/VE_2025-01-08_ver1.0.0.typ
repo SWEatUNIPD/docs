@@ -28,6 +28,7 @@
 
 #infoRiunione(luogo: "Google Meet", data: "08/01/2025", ora: "16:00", durata: "40 minuti", partecipantiEsterni: ("Andrea Dorigo","Fabio Pallaro"), 
 partecipanti: (
+    "Andrea Perozzo",
     "Andrea Precoma",
     "Davide Marin",
     "Davide Martinelli",
@@ -42,15 +43,15 @@ La proponente si è mostrata soddisfatta del lavoro fatto nel #rifGlossario("PoC
 = Risposte alle domande
 
 == PoC
-È stato esposta la parte di _back-end_ del PoC. Abbiamo ricevuto un riscontro positivo specie per quanto riguarda l'utilizzo di #rifGlossario("Spring"), con alcuni accorgimenti da apportare in futuro nel MVP ma che per la consegna RTB sono tollerabili: arricchire i dati di profilazione e renderli più specifici utilizzando delle categorie, e controllare di non mandare due volte l'anuncio allo stesso utente se rimane nella zona di un punto di interesse.
+È stato esposta la parte di _back-end_ del PoC. Abbiamo ricevuto un riscontro positivo specie per quanto riguarda l'utilizzo di #rifGlossario("Spring"), con alcuni accorgimenti da apportare in futuro nel MVP ma che per la consegna RTB sono tollerabili: arricchire i dati di profilazione e renderli più specifici utilizzando delle categorie, controllare di non mandare due volte l'annuncio allo stesso utente se rimane nella zona di un punto di interesse.
 
-È stato chiarito un dubbio riguardante le notifiche #rifGlossario("Grafana"). Ragionando su un campione di utenti limitato avevamo pensato di notificare l'amministratore ogni volta che un annuncio viene generato. La proponente ci ha fatto notare che in uno scenario reale l'amministratore sarebbe innondato di notifiche. Abbiamo quindi provveduto a mantenere la funzionalità di notifica solo per messaggi importanti.
+È stato chiarito un dubbio riguardante le notifiche #rifGlossario("Grafana"). Ragionando su un campione di utenti limitato avevamo pensato di notificare l'amministratore ogni volta che un annuncio viene generato. La proponente ci ha fatto notare che in uno scenario reale l'amministratore sarebbe soggetto ad un flusso di notifiche troppo rapido e incessante. Abbiamo quindi provveduto a mantenere la funzionalità di notifica solo per messaggi importanti.
 
 == Analisi dei requisiti
 Abbiamo ricevuto un riscontro positivo anche per quanto riguarda l'approccio adottato per la ricerca dei casi d'suo, ovvero concentrarci sul _fron-end_ poiché è la parte con la quale l'amministratore interagisce. È stata confermata anche la scelta di trattare il sensore come attore esterno al sistema.
 
 = Conclusioni
-Sono stati apprezzati i lavori svolti sia per la parte produttiva del PoC sia per la parte di analisi. Sono stati indicati degli accorgimenti da applicare per portare a termine la consegna del RTB e per lo svolgimento più avanti del MVP. Abbiamo quindi in programma di ultimare i prodotti _software_ e di documentazione nel prossimo _#rifGlossario("sprint")_ in modo da consegnare il PoC entro fine gennaio.
+Sono stati apprezzati i lavori svolti sia per la parte produttiva del PoC sia per la parte di analisi. Sono stati indicati degli accorgimenti da applicare per portare a termine la consegna del RTB e per il successivo sviluppo del MVP. Abbiamo quindi in programma di ultimare i prodotti _software_ e di documentazione nel prossimo _#rifGlossario("sprint")_ in modo da completare la _milestone_ entro venerdì 24 gennaio.
 
 = Tabella delle decisioni
 #backlog(
