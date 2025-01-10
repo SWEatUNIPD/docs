@@ -344,7 +344,7 @@ Le metriche adottate per il processo di sviluppo sono le seguenti:
   table( 
     columns: 2,
     table.header[*ID Metrica*][*Nome*],
-    [#link(<MPC-ISR>)[MPC-ISR]], [Indice di stabilità dei requisiti],
+    [#link(<MPC-ISR>)[MPC-ISR]], [Indice di Stabilità dei Requisiti],
   ),
   caption: [Metriche per lo sviluppo]
 )
@@ -744,7 +744,7 @@ Le metriche adottate per la gestione della qualità sono le seguenti:
   table( 
     columns: 2,
     table.header[*ID Metrica*][*Nome*],
-    [#link(<MPC-PMS>)[MPC-PMS]], [Percentuale di metriche soddisfatte],
+    [#link(<MPC-PMS>)[MPC-PMS]], [Percentuale di Metriche Soddisfatte],
     
   ),
   caption: [Metriche per la gestione della qualità]
@@ -901,6 +901,18 @@ Al fine di tracciare le discussioni svolte, le decisioni prese dal gruppo e sopr
 
 ===== Verbali Esterni
 Per quanto riguarda le riunioni con i proponenti valgono le stesse regole di quelle interne con il passaggio aggiuntivo, di cui si occupa il responsabile, di richiedere l'approvazione del proponente tramite la sua firma sul verbale una volta redatto e verificato.
+
+=== Metriche
+
+#figure(
+  table( 
+    columns: 2,
+    table.header[*ID Metrica*][*Nome*],
+    [#link(<MPC-ET>)[MPC-ET]], [Efficienza Temporale],
+    
+  ),
+  caption: [Metriche per la gestione dei processi]
+)
 
 == Miglioramento
 === Descrizione
@@ -1126,6 +1138,17 @@ La portabilità è la capacità del prodotto di essere trasportato da un ambient
     - *MS*: Numero di Metriche Soddisfatte.
     - *MT*: Numero di Metriche Totali.
 
+=== Processi organizzativi
+==== Gestione dei processi
+
+- *MPC-ET*: <MPC-ET>
+  - *Nome*: Efficienza Temporale
+  - *Descrizione*: Indica la percentuale di tempo disponibile che il _team_ è riuscito a impiegare svolgendo attività produttive, ossia quelle che contribuiscono direttamente al raggiungimento degli obiettivi del progetto.
+  - *Formula*: 
+  $ "ET" = ("OO" / "OE") * 100 $
+  - *Parametri*:
+    - *OO*: Ore di Orologio (tempo totale trascorso).
+    - *OP*: Ore Produttive (tempo effettivamente dedicato ad attività produttive).
 
 == Metriche per la qualità di prodotto
 
