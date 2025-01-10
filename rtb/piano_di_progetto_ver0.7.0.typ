@@ -466,11 +466,11 @@ Le attività che il _team_ si è prefissato di portare a termine durante il quar
 ==== Preventivo orario
 #rendicontazioneOre(
   (
-    (0, 0, 5, 0, 0, 0),
-    (0, 0, 5, 0, 0, 0),
+    (0, 0, 6, 0, 0, 0),
+    (0, 0, 6, 0, 0, 0),
     (0, 0, 4, 0, 0, 1),
     (0, 1, 0, 0, 0, 3),
-    (0, 3, 0, 0, 0, 3),
+    (0, 0, 3, 0, 0, 3),
     (0, 2, 3, 0, 4, 0),
     (2, 2, 0, 0, 1, 0),
   ),
@@ -480,11 +480,11 @@ Le attività che il _team_ si è prefissato di portare a termine durante il quar
 ==== Consuntivo orario e di spesa
 #consuntivoOre(
   preventivo: (
-    (0, 0, 5, 0, 0, 0),
-    (0, 0, 5, 0, 0, 0),
+    (0, 0, 6, 0, 0, 0),
+    (0, 0, 6, 0, 0, 0),
     (0, 0, 4, 0, 0, 1),
     (0, 1, 0, 0, 0, 3),
-    (0, 3, 0, 0, 0, 3),
+    (0, 0, 3, 0, 0, 3),
     (0, 2, 3, 0, 4, 0),
     (2, 2, 0, 0, 1, 0),
   ),
@@ -493,7 +493,7 @@ Le attività che il _team_ si è prefissato di portare a termine durante il quar
     (0, 0, 6, 0, 0, 0),
     (0, 0, 5, 0, 0, 1),
     (0, 1.5, 0, 0, 0, 3.5),
-    (0, 3, 0, 0, 0, 3),
+    (0, 0, 3, 0, 0, 3),
     (0, 1, 3, 0, 3, 0),
     (2.5, 1, 0, 0, 0, 0),
   ),
@@ -507,11 +507,11 @@ Il quarto _sprint_ si è concluso con risultati molto soddisfacenti in termini d
 
 Tutti i verbali sono stati redatti, verificati e approvati tempestivamente e lo script per il calcolo dell'indice Gulpease è stato completato e funziona correttamente.
 
-Lo studio e la redadzione delle metriche sono stati portati a termine correttamente, seppur con dei ritardi dovuti alla poca coordinazione tra i membri del gruppo nella prima parte dello sprint che avevano prodotto lavori conflittuali.
+Lo studio e la redazione delle metriche sono stati portati a termine correttamente, seppur con dei ritardi dovuti alla poca coordinazione tra i membri del gruppo nella prima parte dello sprint che avevano prodotto lavori conflittuali.
 
-L'attività di raffinamento dei casi d'uso e stesura dei requisiti è proceduta linearmente proseguando il lavoro fatto fino a questo periodo con le indicazioni ricevute dal professor Cardin nel precedente _sprint_.
+L'attività di raffinamento dei casi d'uso e stesura dei requisiti è proceduta linearmente proseguendo il lavoro fatto fino a questo periodo con le indicazioni ricevute dal professor Cardin nel precedente _sprint_.
 
-I miglioramenti del PoC ristrutturando il _software_ usando Spring sono stati sostanziali e anche il proponente si è mostrato soddisfatto nel consueto SAL di fine _sprint_.
+I miglioramenti del PoC, ristrutturando il _software_ usando Spring, sono stati sostanziali e anche il proponente si è mostrato soddisfatto nel consueto SAL di fine _sprint_.
 
 In ultima i miglioramenti alla dashboard Grafana non sono stati fatti, in quanto in un incontro con il proponente si sono rivelati superflui per il PoC.
 
