@@ -75,14 +75,10 @@ Fanno parte dei processi primari le attività di acquisizione, fornitura, svilup
 Attività e compiti del fornitore, il quale dovrà accordarsi con il proponente per stabilire ufficialmente i vari vincoli e requisiti del progetto.
 
 ===== Earned value (EV)
-Misura il valore del lavoro completato fino a un determinato momento rispetto al _budget_ pianificato. Si calcola moltiplicando la percentuale di completamento del lavoro per il _budget_ totale previsto (BAC).
-
-Formula: ``` EV = % completamento del lavoro * BAC ```
+Misura il valore del lavoro completato fino a un determinato momento rispetto al _budget_ pianificato.
 
 ===== Planned value (PV)
-Rappresenta il valore pianificato del lavoro da completare entro una certa data. Si calcola come il prodotto della percentuale di pianificazione del lavoro per il _budget_ totale previsto (BAC).
-
-Formula: ``` PV = % pianificazione del lavoro * BAC ```
+Rappresenta il valore pianificato del lavoro da completare entro una certa data.
 
 ===== Actual cost (AC)
 Indica il costo effettivamente sostenuto per il lavoro completato fino a un determinato momento.
@@ -90,37 +86,24 @@ Indica il costo effettivamente sostenuto per il lavoro completato fino a un dete
 ===== Cost performance index
 Misura l’efficienza del costo per il lavoro svolto fino a un determinato momento, valutando quanto valore si ottiene per ogni unità monetaria spesa.
 
-Formula:  ``` CPI = EV / AC ``` 
-
 ===== Estimated at completion (EAC)
-Fornisce una stima del costo totale del progetto basata sulle condizioni attuali. Può essere calcolata come il rapporto tra il _budget_ totale (BAC) e l’indice di efficienza dei costi (CPI).
-
-Formula: ``` EAC = BAC / CPI ``` 
+Fornisce una stima del costo totale del progetto basata sulle condizioni attuali.
 
 ===== Estimate to complete (ETC)
-Stima i costi aggiuntivi necessari per completare il progetto. Può essere calcolato come la differenza tra il costo totale stimato (EAC) e il costo effettivo sostenuto fino a quel momento (AC).
-
-Formula:  ``` ETC = EAC − AC ``` 
+Stima i costi aggiuntivi necessari per completare il progetto.
 
 ===== Variance at completion
 Indica la differenza tra il _budget_ pianificato (BAC) e il _budget_ attuale stimato per il completamento del progetto (EAC). Valori positivi indicano un risparmio rispetto al _budget_ pianificato.
 
-Formula:  ``` VAC = BAC − EAC ``` 
-
 ===== Schedule variance (SV)
 Indica la differenza tra il valore guadagnato (EV) e il valore pianificato (PV). Valori negativi mostrano ritardi rispetto alla pianificazione.
-
-Formula: ``` SV = EV − PV ```
 
 ===== Budget variance
 Misura la differenza tra il valore pianificato (PV) e il costo effettivo (AC) alla data corrente. Valori negativi indicano un superamento del _budget_ pianificato.
 
-Formula:  ``` BV = PV − AC ``` 
-
 ===== Cost variance (CV)
 Misura la differenza tra il valore guadagnato (EV) e il costo effettivo (AC). Valori negativi indicano che i costi superano il _budget_ pianificato.
 
-Formula: ``` CV = EV - AC ``` 
 
 ===== Tabella metriche fornitura
 #figure(
@@ -132,47 +115,22 @@ Formula: ``` CV = EV - AC ```
     fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
     table.header[*Metrica*][*Nome*][*Valore accettabile*][*Valore desiderabile*],
     
-    [], [Earned value], [$≥ 0$], [$≤$ EAC],
-    [], [Planned value], [$≥ 0$], [$≤$ BAC],
-    [], [Actual cost], [$≥ 0$], [$≤$ EAC],
-    [], [Cost performance index], [tra 0.95 e 1.05], [1],
-    [], [Estimated at completion], [$± 5%$ rispetto BAC], [BAC],
-    [], [Estimated to completion], [$≥ 0$], [$≤$ EAC],
-    [], [Variance at completion], [$± 10%$ rispetto BAC], [$0%$],
-    [], [Schedule variance], [$± 10%$ rispetto BAC], [$0%$],
-    [], [Budget variance], [$± 10%$ rispetto BAC], [$0%$],
-    [], [Cost variance], [$± 10%$ rispetto BAC], [$0%$],
-
+    [MPC-PV], [Planned value], [$≥ 0$], [$≤$ BAC],
+    [MPC-EV], [Earned value], [$≥ 0$], [$≤$ EAC],
+    [MPC-AC], [Actual cost], [$≥ 0$], [$≤$ EAC],
+    [MPC-CPI], [Cost performance index], [tra 0.95 e 1.05], [1],
+    [MPC-EAC], [Estimated at completion], [$± 5%$ rispetto BAC], [BAC],
+    [MPC-SV], [Schedule variance], [$± 10%$ rispetto BAC], [$0%$],
+    [MPC-BV], [Budget variance], [$± 10%$ rispetto BAC], [$0%$],
+    [MPC-ETC], [Estimated to completion], [$≥ 0$], [$≤$ EAC],
   )
 )
 
 ==== Sviluppo
 Composta da attività il cui scopo è di descrivere le attività e i compiti necessari per creare e mantenere un sistema _software_, garantendo che il prodotto finale soddisfi i requisiti specificati nel contratto. Elenchiamo di seguito le metriche relative.
 
-===== Attributi per Classe
-Numero di attributi appartenenti a una classe.
-
-===== Parametri per Metodo
-Numero di parametri appartenenti a un metodo.
-
-===== Linee di Codice per Metodo  
-Numero di linee di codice che costituiscono un metodo.
-
-===== Requirements Stability Index (RSI)
-Valuta la stabilità dei requisiti nel corso del tempo.  
-
-Formula: ``` RSI = 100 − ((RA + RC + RR) / TR) ∗ 100 ```
-
-- *RA*: Numero di requisiti aggiunti nel periodo considerato.  
-- *RC*: Numero di requisiti cambiati nel periodo considerato.  
-- *RR*: Numero di requisiti rimossi nel periodo considerato.  
-- *TR*: Numero totale di requisiti al momento dell’analisi.
-
-===== Structural Fan-In (SFIN)
-Indice di utilità che misura la quantità di componenti che utilizzano un modulo specifico.
-
-=====  Structural Fan-Out (SFOUT)
-Indice di dipendenza che rappresenta il numero di componenti utilizzate dal modulo considerato.
+===== Indice di Stabilità dei Requisiti
+Valuta la stabilità dei requisiti nel corso del tempo.
 
 ===== Tabella metriche sviluppo
 #figure(
@@ -183,14 +141,7 @@ Indice di dipendenza che rappresenta il numero di componenti utilizzate dal modu
     columns: 4,
     fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
     table.header[*Metrica*][*Nome*][*Valore accettabile*][*Valore desiderabile*],
-    
-    [], [Attributi per Classe], [$≤ 6$], [$≤ 4$],
-    [], [Parametri per Metodo], [$≤ 5$], [$≤ 4$],
-    [], [Linee di Codice per Metodo], [$≤ 25$], [$≤ 20$],
-    [], [], [], [],
-    [], [Requirements stability index], [$≥ 75%$], [$100$%],
-    [], [Structural Fan-In], [-], [Max],
-    [], [Structural Fan-Out], [-], [Min],
+    [MPC-ISR], [Indice di Stabilità dei Requisiti], [$≥ 75%$], [$100$%]
 
   )
 )
@@ -202,12 +153,10 @@ Forniscono servizi e attività che assistono i processi primari. Includono: docu
 Processo necessario per il tracciamento di tutte le attività relative al progetto.
 
 ===== Indice Gulpease
-L'Indice gulpease è una metrica utilizzata per valutare la leggibilità di un testo in lingua italiana. Tiene conto della lunghezza delle parole e delle frasi, fornendo un punteggio da 0 a 100. Punteggi più alti indicano una maggiore leggibilità. Questo strumento è utile per garantire che i documenti siano comprensibili per il pubblico di riferimento.
-
-Formula: ``` IG = 89 + (300 * Nf - 10 * Nl) / Np  ```
+L'Indice gulpease è una metrica utilizzata per valutare la leggibilità di un testo in lingua italiana. Tiene conto della lunghezza delle parole e delle frasi, fornendo un punteggio da 0 a 100. Punteggi più alti indicano una maggiore leggibilità.
 
 ===== Correttezza Ortografica
-La metrica della Correttezza Ortografica misura il numero di errori grammaticali e ortografici presenti in un documento. Serve a garantire la qualità formale del testo e a migliorare la sua professionalità e leggibilità.
+La metrica della Correttezza Ortografica misura il numero di errori grammaticali e ortografici presenti in un documento.
 
 ===== Tabella metriche documentazione
 #figure(
@@ -218,37 +167,15 @@ La metrica della Correttezza Ortografica misura il numero di errori grammaticali
     columns: 4,
     fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
     table.header[*Metrica*][*Nome*][*Valore accettabile*][*Valore desiderabile*],
-    [TBD],[Indice Gulpease],[$gt.eq 40$],[$gt.eq 80$],
-    [TBD],[Correttezza Ortografica],[0],[0],
-  )
-)
-
-==== Verifica
-Processo necessario per garantire che il prodotto soddisfi i requisiti.
-
-===== Code coverage
-La _code coverage_ indica la percentuale di codice sorgente che è stato effettivamente testato rispetto al totale. Una copertura alta assicura che le funzionalità implementate siano ben verificate, riducendo il rischio di errori in fase di esecuzione.
-
-===== Passed test cases percentage
-Questa metrica valuta la percentuale di casi di _test_ superati con successo rispetto al totale eseguito. È utile per monitorare l'affidabilità del software e identificare eventuali aree problematiche.
-
-===== Tabella metriche documentazione
-#figure(
-  kind: table,
-  caption: [Valori accettabili e desiderabili per ogni metrica riguardante il processo di documentazione], 
-  table(
-    align: center,
-    columns: 4,
-    fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
-    table.header[*Metrica*][*Nome*][*Valore accettabile*][*Valore desiderabile*],
-    [],[Code coverage],[$≥ 80%$],[$100%$],
-    [],[Passed test cases percentage],[$≥ 80%$],[$100%$],
+    [MPC-IG],[Indice Gulpease],[$gt.eq 40$],[$gt.eq 80$],
+    [MPC-CO],[Correttezza Ortografica],[0],[0],
   )
 )
 
 ==== Gestione della qualità
 ===== Quality Metrics Satisfied
-Monitora il grado di soddisfacimento delle metriche di qualità stabilite. È una misura dell'aderenza del progetto agli standard definiti, utile per garantire che gli obiettivi qualitativi siano raggiunti e mantenuti.
+Indica la percentuale di metriche che risultano soddisfare gli obiettivi minimi di
+qualità.
 
 ===== Tabella metriche gestione della qualità
 #figure(
@@ -266,16 +193,8 @@ Monitora il grado di soddisfacimento delle metriche di qualità stabilite. È un
 === Processi organizzativi
 Riguardano la gestione e l'organizzazione del progetto. Includono: gestione dei processi, miglioramento, e formazione.
 
-==== Gestione dei processi
-Stabilire, implementare e migliorare un insieme di processi che assicurino il raggiungimento degli obiettivi del progetto.
-
-===== Non-calculated risk
-Tiene traccia dei rischi che non sono stati previsti o stimati durante la pianificazione del progetto.
-
 ===== Efficienza temporale
-Questa metrica valuta l'efficienza con cui il tempo disponibile viene impiegato in attività produttive, ossia quelle che contribuiscono direttamente al raggiungimento degli obiettivi del progetto. Si calcola come il rapporto tra le ore di orologio "Oₒ" (tempo totale trascorso) e le ore produttive "Oₚ" (tempo effettivamente dedicato ad attività utili).
-
-Formula: ``` ET = Oₒ / Oₚ ```
+Questa metrica valuta l'efficienza con cui il tempo disponibile viene impiegato in attività produttive, ossia quelle che contribuiscono direttamente al raggiungimento degli obiettivi del progetto.
 
 ===== Tabella metriche gestione dei processi
 #figure(
@@ -286,8 +205,7 @@ Formula: ``` ET = Oₒ / Oₚ ```
     columns: 4,
     fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
     table.header[*Metrica*][*Nome*][*Valore accettabile*][*Valore desiderabile*],
-    [],[Non-calculated risk],[$≤ 3$],[$0$],
-    [],[Efficienza temporale],[$≤ 3$],[$≤ 1$]
+    [MPC-ET],[Efficienza temporale],[$≤ 3$],[$≤ 1$]
   )
 )
 
