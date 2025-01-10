@@ -17,7 +17,7 @@
   riassunto: [Sono stati esposti i lavori svolti riguardanti il PoC e l'analisi dei requisiti ai quali la proponente ha chiarito alcune questioni.],
   versioni: (
     "1.0.0", 
-    [09/01/2025], 
+    [10/01/2025], 
     "Andrea Precoma", "Davide Martinelli",
     [- Stesura del verbale],
   ),
