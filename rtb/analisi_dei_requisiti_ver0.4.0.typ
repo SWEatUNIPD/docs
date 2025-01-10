@@ -17,7 +17,7 @@
   uso: "Esterno",
   versioni: (
     "0.4.0",
-    [07/01/2025],
+    [08/01/2025],
     "Andrea Perozzo\nAndrea Precoma",
     "Davide Marin\nKlaudio Merja",
     [
@@ -25,6 +25,7 @@
       - Sistemati i primi casi d'uso
       - Aggiunti casi d'uso relativi alle interazioni con la mappa
       - Aggiunti casi d'uso relativi agli errori
+      - Aggiunti diagrammi dei casi d'uso
     ],
     "0.3.0",
     [10/12/2024],
@@ -32,14 +33,7 @@
     "Andrea Precoma\nRiccardo Milan",
     [
       - Aggiunta di nuovi casi d'uso relativi all'autenticazione alla _dashboard_, alla prossimità dell'utente ad un punto di interesse e alla generazione degli annunci pubblicitari tramite la LLM
-    ],
-    "0.3.0",
-    [05/12/2024],
-    "Davide Marin\nKlaudio Merja",
-    "Andrea Precoma\nRiccardo Milan",
-    [
       - Modifica di stile per quanto riguarda la sintassi delle frasi
-      - Modifica dei casi d'uso a seguito di una riunione con Sync Lab S.r.L.
       - Aggiunta del _trigger_ mancanti ai casi d'uso presenti
     ],
     "0.2.0",
@@ -116,10 +110,9 @@ Il prodotto dovrà fornire le seguenti funzionalità:
 L'azienda proponente richiede inoltre la dimostrazione del corretto funzionamento dei servizi e delle funzionalità del sitema, garantendo una copertura di test di più dell'80% e correlata da report. Viene richiesto inoltre che il prodotto sia in grado di mantenere un elevato flusso di dati in entrata dovuto ai dati di localizzazione emessi dai sensori.
 
 == Utenti e loro caratteristiche
-
 Il prodotto si rivolge a due tipologie di utenti:
 - *Gestore del servizio di noleggio*: utente che gestisce il servizio di noleggio, ovvero un nostro cliente, che ha accesso tramite _dashboard_ a tutte le funzionalità del sistema ed è interessato quindi, oltre che al monitoraggio della flotta, anche all'andamento delle campagne pubblicitarie nel tempo.
-- *Utente*: utente che utilizza il servizio di noleggio e che ha accesso solo alla funzionalità di visualizzazione degli annunci pubblicitari. //FIXME: da rivedere per quanto riguarda i voleri di Sync Lab
+- *Utente*: utente che utilizza il servizio di noleggio e che ha accesso solo alla funzionalità di visualizzazione degli annunci pubblicitari.
 
 #pagebreak()
 
@@ -140,98 +133,28 @@ Ogni caso d'uso è identificato da un codice univoco, che segue la nomenclatura 
 == Attori
 Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Amministratore*: gestore di un servizio di noleggio autenticato al sistema.
-// - *Utente*: utente che utilizza il servizio di noleggio.
-// - *Utente non autenticato*: un qualsiasi individuo che intende accedere al sistema, sia esso un utente inteso come utilizzatore del servizio di noleggio o un amministratore.
 - *Amministratore non autenticato*: gestore di un servizio di noleggio non autenticato al sistema.
 - *Sensore*: strumento attraverso il quale il mezzo noleggiato da uno specifico utente trasmette la sua posizione in tempo reale.
 - *#rifGlossario("LLM")*: servizio esterno che si occupa della generazione degli annunci pubblicitari personalizzati tramite #rifGlossario("prompt") fornito dal sistema.
 
 == Elenco dei casi d'uso
 
-=== UC1 - Trasmissione dei dati di localizzazione
-
+=== UC1 - Trasmissione dei dati di localizzazione <uc1>
 - *Attore principale*: Sensore.
 - *Precondizioni*: il sistema monitora i sensori sui mezzi con un noleggio attivo. In particolare mantiene l'informazione riguardo l'ultima posizione #rifGlossario("GPS") inviata dal sensore.
 - *Postcondizioni*: il sistema riceve l'informazione riguardo la posizione GPS del sensore in quel momento.
-// - *Precondizioni*: il mezzo in cui è installato il sensore ha un noleggio attivo.
-// - *Postcondizioni*: il sistema riceve i dati di localizzazione GPS del mezzo in uso dall'utente.
 - *Trigger*: il sensore intende notificare al sistema la localizzazione GPS del mezzo sul quale è installato.
 - *Scenario principale*:
   + L'utente noleggia un mezzo.
   + Il sensore invia a intervalli di tempo regolari i dati di localizzazione GPS del mezzo.
-// - *Inclusioni*:
-//   + Controllo della posizione in prossimità di un punto di interesse (#link(<uc2>)[UC2]).
-
-// === UC2 - Controllo della posizione in prossimità di un punto di interesse <uc2>
-// - *Attore principale*: Sensore.
-// - *Precondizioni*: il sensore ha inviato dei dati di localizzazione.
-// - *Postcondizioni*: il sensore si trova in prossimità di un punto di interesse.
-// - *Trigger*: il sensore invia al sistema la localizzazione GPS del mezzo.
-// - *Scenario principale*:
-//   + Il sensore invia al sistema la localizzazione GPS del mezzo.
-//   + Il sistema verifica che il sensore sia in prossimità di un punto di interesse.
-// - *Estensione*:
-//   + Il sensore non è in prossimità di un punto di interesse (#link(<uc3>)[UC3]).
-
-// === UC3 - Il sensore non è in prossimità di un punto di interesse<uc3>
-// //TODO: https://github.com/SWEatUNIPD/docs/pull/67#discussion_r1882217372
-// - *Attore principale*: Sensore.
-// - *Precondizioni*: il sensore ha inviato dei dati di localizzazione.
-// - *Postcondizioni*: il sistema verifica che il sensore non si trova in prossimità di un punto di interesse.
-// - *Trigger*: il sensore invia al sistema la localizzazione GPS del mezzo.
-// - *Scenario principale*:
-//   + Il sensore invia al sistema la localizzazione GPS del mezzo.
-//   + Il sistema verifica che il sensore non è in prossimità di un punto di interesse.
-// #v(20pt)
-// #figure(image("../assets/use_cases/UC1-2-3.svg"), caption: [Diagramma dei casi d'uso UC1, UC2 e UC3])
 #v(20pt)
-#figure(image("../assets/use_cases/UC1.png"), caption: [Diagramma del caso d'uso UC1])
+#figure(
+  image("../assets/use_cases/UC1.png"),
+  caption: [Diagramma del caso d'uso UC1],
+)
 
 #pagebreak()
 
-// === UC4 - Invio richiesta di annuncio personalizzato alla LLM
-// // È il sistema che invia la richiesta, non il sensore
-// - *Attore principale*: Sensore.
-// - *Attore secondario*: LLM.
-// - *Precondizioni*: il sensore si trova in prossimità di un punto di interesse.
-// - *Postcondizioni*: il sistema ha inviato alla LLM la richiesta per la generazione di un annuncio personalizzato.
-// - *Trigger*: il sensore si trova in prossimità di un punto di interesse.
-// - *Scenario principale*:
-//   + Il sensore si trova in prossimità di un punto di interesse.
-//   + Il sistema invia alla LLM una richiesta di annuncio personalizzato in caso la profilazione dell'utente risulti idonea al punto di interesse.
-// #v(20pt)
-// #figure(image("../assets/use_cases/UC4.svg", width: 90%), caption: [Diagramma del caso d'uso UC4])
-// #pagebreak()
-
-// TODO: è implicito in "visualizzazione annuncio", LLM attore secondario
-// === UC5 - Invio dell'annuncio pubblicitario generato
-// - *Attore principale*: LLM.
-// - *Precondizioni*: la LLM deve aver ricevuto dal sistema il _prompt_ di generazione dell'annuncio, come la profilazione dell'utente e il punto di interesse per cui si vuole generare l'annuncio.
-// - *Postcondizioni*: il sistema riceve l'annuncio pubblicitario generato dalla LLM.
-// - *Trigger*: il sistema ha fatto una richiesta di generazione tramite le #rifGlossario("API") della LLM.
-// - *Scenario principale*:
-//   + La LLM riceve la richiesta da parte del sistema
-//   + La LLM genera l'annuncio pubblicitario basandosi sui dati ricevuti come _prompt_.
-//   + La LLM invia l'annuncio pubblicitario generato al sistema.
-// - *Estensione*: Annuncio pubblicitario non generato (#link(<uc6>)[UC6]).
-
-// === UC6 - Annuncio pubblicitario non generato <uc6>
-// //TODO: https://github.com/SWEatUNIPD/docs/pull/67#discussion_r1882595589
-// - *Attore principale*: LLM
-// - *Precondizioni*: La LLM considera il punto di interesse non pertinente in base alla profilazione dell'utente per cui si vuole generare l'annuncio.
-// - *Postcondizioni*: il sistema non riceve l'annuncio pubblicitario generato dalla LLM.
-// - *Trigger*: l'utente del noleggio si trova in prossimità di un punto di interesse non pertinente.
-// - *Scenario principale*:
-//   + La LLM verifica che il punto di interesse non è pertinente per l'utente.
-//   + La LLM decide di non generare alcun annuncio pubblicitario
-// #v(20pt)
-// #figure(
-//   image("../assets/use_cases/UC5-6.svg"),
-//   caption: [Diagramma dei casi d'uso UC5 e UC6],
-// )
-// #pagebreak()
-
-// DOBBIAMO GESTIRE ANCHE SIGN UP O SOLO SIGN IN?
 === UC2 - Autenticazione alla dashboard del sistema <uc2>
 - *Attori principali*: Amministratore non autenticato.
 - *Precondizioni*: il sistema possiede le credenziali dell'amministratore che in quel momento non è autenticato. L'amministratore non autenticato accede alla pagina di _login_.
@@ -275,7 +198,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore riceve un messaggio di errore il quale segnala che le credenziali inserite sono non valide.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/autenticazione.png"),
+  image("../assets/use_cases/UC2-3-4-5.png"),
   caption: [Diagramma dei casi d'uso UC2, UC3, UC4 e UC5],
 )
 
@@ -302,7 +225,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore visualizza un _marker_ in corrispondenza di ciascun punto di interesse.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/mappa.png"),
+  image("../assets/use_cases/UC6-7.png"),
   caption: [Diagramma dei casi d'uso UC6 e UC7],
 )
 
@@ -329,7 +252,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore visualizza un _marker_ in corrispondenza di ogni dato GPS ritornato dal sensore di un relativo mezzo in noleggio.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/percorso.png"),
+  image("../assets/use_cases/UC8-9.png"),
   caption: [Diagramma dei casi d'uso UC8 e UC9],
 )
 
@@ -345,7 +268,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore visualizza un _marker_ in corrispondenza delle posizioni nelle quali è stato generato un annuncio.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/marker annuncio.png"),
+  image("../assets/use_cases/UC10.png"),
   caption: [Diagramma del caso d'uso UC10],
 )
 
@@ -358,14 +281,15 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Trigger*: l'amministratore intende visualizzare sulla mappa le posizioni del mezzo in noleggio nelle quali la LLM non ha generato un annuncio.
 - *Scenario principale*:
   + L'amministratore accede alla mappa sulla _dashboard_.
-  + L'amministratore visualizza un _marker_ in corrispondenza delle posizioni nelle quali il LLM non ha generato un annuncio..
+  + L'amministratore visualizza un _marker_ in corrispondenza delle posizioni nelle quali la LLM non ha generato un annuncio.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/marker annuncio fallito.png"),
+  image("../assets/use_cases/UC11.png"),
   caption: [Diagramma del caso d'uso UC11],
 )
 
 #pagebreak()
+
 
 === UC12 - Visualizzazione informazioni punto di interesse tramite marker sulla mappa <uc12>
 - *Attore principale*: Amministratore.
@@ -380,8 +304,8 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + VISUALIZZAZIONE INFORMAZIONI DEL POI
 #v(20pt)
 #figure(
-  image("../assets/use_cases/info poi marker.png"),
-  caption: [Diagramma del caso d'uso UC11],
+  image("../assets/use_cases/UC12.png"),
+  caption: [Diagramma del caso d'uso UC12],
 )
 
 #pagebreak()
@@ -396,16 +320,16 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore interagisce col _marker_ che indica un annuncio generato.
   + Viene visualizzato l'annuncio generato in corrispondenza del _marker_ selezionato.
 - *Inclusioni*:
-  + VISUALIZZAZIONE ANNUNCIO E RELATIVE INFORMAZIONI
+  + Visualizzazione dettagli di un singolo annuncio (#link(<uc33>)[UC33]).
 #v(20pt)
 #figure(
-  image("../assets/use_cases/annuncio marker.png"),
+  image("../assets/use_cases/UC13.png"),
   caption: [Diagramma del caso d'uso UC13],
 )
 
 #pagebreak()
 
-=== UC14 - Visualizzazione messaggio annuncio non generato tramite marker sulla mappa <uc14>
+=== UC14 - Visualizzazione messaggio annuncio non generato tramite marker sulla mappa
 - *Attore principale*: Amministratore.
 - *Precondizioni*: il sistema tiene traccia degli annunci non generati e le relative informazioni.
 - *Postcondizioni*: il sistema espone un messaggio circa l'annuncio non generato, con le relative informazioni, in corrispondenza del _marker_ sulla mappa.
@@ -415,16 +339,17 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore interagisce col _marker_ che indica un annuncio non generato.
   + Viene visualizzato il messaggio con le informazioni dell'annuncio che non è stato generato in corrispondenza del _marker_ selezionato.
 - *Inclusioni*:
-  + VISUALIZZAZIONE MESSAGGIO ANNUNCIO FALLITO E RELATIVE INFORMAZIONI
+  + Visualizzazione nome del punto di interesse (#link(<uc29>)[UC29]).
+  + Visualizzazione _e-mail_ dell'utente (#link(<uc30>)[UC30]).
 #v(20pt)
 #figure(
-  image("../assets/use_cases/annuncio mancato marker.png"),
+  image("../assets/use_cases/UC14.png"),
   caption: [Diagramma del caso d'uso UC14],
 )
 
 #pagebreak()
 
-=== UC15 - Chiusura annuncio visualizzato tramite marker sulla mappa <uc15>
+=== UC15 - Chiusura annuncio visualizzato tramite marker sulla mappa
 - *Attore principale*: Amministratore.
 - *Precondizioni*: il sistema tiene traccia dell'annuncio visualizzato sulla mappa tramite una interazione con il _marker_ corrispondente.
 - *Postcondizioni*: il sistema chiude l'annuncio visualizzato tramite una interazione con il _marker_ corrispondente.
@@ -433,7 +358,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore visualiza l'annuncio sulla mappa in corrispondenza del _marker_.
   + L'amministratore chiude l'annuncio.
 
-=== UC16 - Chiusura messaggio annuncio non generato visualizzato tramite marker sulla mappa <uc16>
+=== UC16 - Chiusura messaggio annuncio non generato visualizzato tramite marker sulla mappa
 - *Attore principale*: Amministratore.
 - *Precondizioni*: il sistema tiene traccia del messaggio di annuncio non generato visualizzato sulla mappa in corrispondenza del _marker_.
 - *Postcondizioni*: il sistema chiude il messaggio di annuncio non generato visualizzato tramite una interazione con il _marker_ corrispondente.
@@ -443,13 +368,13 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore chiude il messaggio.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/chiusure.png"),
+  image("../assets/use_cases/UC15-16.png"),
   caption: [Diagramma dei casi d'uso UC15 e UC16],
 )
 
 #pagebreak()
 
-=== UC17 - Spostamento della visuale sulla mappa <uc17>
+=== UC17 - Spostamento della visuale sulla mappa
 - *Attore principale*: Amministratore.
 - *Precondizioni*: il sistema tiene traccia del centro della porzione di territorio visualizzata sulla mappa.
 - *Postcondizioni*: il sistema fa visualizzare sulla mappa una porzione di territorio centrata su un nuovo punto.
@@ -459,13 +384,13 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore interagisce con la mappa per spostare il centro della mappa, quindi anche l'intera visuale.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/spostamento mappa.png"),
-  caption: [Diagramma dei casi d'uso UC17, UC19 e UC20],
+  image("../assets/use_cases/UC17.png"),
+  caption: [Diagramma dei casi d'uso UC17],
 )
 
 #pagebreak()
 
-=== UC18 - Modifica ampiezza della visuale sulla mappa <uc18>
+=== UC18 - Modifica ampiezza della visuale sulla mappa
 - *Attore principale*: Amministratore.
 - *Precondizioni*: il sistema tiene traccia della porzione di territorio mostrata dalla mappa sulla _dashboard_.
 - *Postcondizioni*: il sistema fa visualizzare sulla mappa una porzione di territorio più o meno ampia a seconda dell'azione dell'amministratore.
@@ -496,13 +421,13 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore interagisce con la mappa per restringere la visuale.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/zoom mappa.png"),
-  caption: [Diagramma dei casi d'uso UC17, UC19 e UC20],
+  image("../assets/use_cases/UC18-19-20.png"),
+  caption: [Diagramma dei casi d'uso UC18, UC19 e UC20],
 )
 
 #pagebreak()
 
-=== UC21 - Visualizzazione notifica di un annuncio generato <uc21>
+=== UC21 - Visualizzazione notifica di un annuncio generato
 - *Attore principale*: Amministratore.
 - *Precondizioni*: il sistema ha generato un annuncio personalizzato ad un utente.
 - *Postcondizioni*: il sistema mostra una notifica sulla _dashboard_ contenente le informazioni principlai riguardo l'annuncio appena generato.
@@ -518,13 +443,13 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #v(20pt)
 #figure(
-  image("../assets/use_cases/notifica_annuncio_generato.png"),
-  caption: [Diagramma dei caso d'uso UC21, UC29, UC30, UC31],
+  image("../assets/use_cases/UC21.png"),
+  caption: [Diagramma dei caso d'uso UC21, UC29, UC30],
 )
 
 #pagebreak()
 
-=== UC22 - Visualizzazione notifica di mancata generazione di un annuncio <uc22>
+=== UC22 - Visualizzazione notifica di mancata generazione di un annuncio
 - *Attore principale*: Amministratore.
 - *Precondizioni*: il sistema ha valutato un utente come disinteressato ad un punto di interesse.
 - *Postcondizioni*: il sistema mostra una notifica sulla _dashboard_ contenente le informazioni principali riguardo alla mancata generazione di un annuncio.
@@ -538,13 +463,13 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #v(20pt)
 #figure(
-  image("../assets/use_cases/notifica_annuncio_NON_generato.png"),
-  caption: [Diagramma dei caso d'uso UC22, UC29, UC30, UC31],
+  image("../assets/use_cases/UC22.png"),
+  caption: [Diagramma dei caso d'uso UC22, UC29, UC30],
 )
 
 #pagebreak()
 
-=== UC23 - Apertura dettagli singolo annuncio dalla notifica <uc23>
+=== UC23 - Apertura dettagli singolo annuncio dalla notifica
 - *Attore principale*: Amministratore.
 - *Precondizioni*: il sistema ha generato un annuncio personalizzato ad un utente. L'amministratore ha ricevuto una notifica di annuncio generato.
 - *Postcondizioni*: il sistema espone i dettagli dell'annuncio generato.
@@ -557,13 +482,13 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #v(20pt)
 #figure(
-  image("../assets/use_cases/notifica_apertura_dettagli_annuncio.png"),
-  caption: [Diagramma dei caso d'uso UC23, UC33],
+  image("../assets/use_cases/UC23.png"),
+  caption: [Diagramma dei caso d'uso UC23, UC29, UC30, UC31, UC32, UC33, UC34, UC35, UC36],
 )
 
 #pagebreak()
 
-=== UC24 - Chiusura di una notifica <uc24>
+=== UC24 - Chiusura di una notifica
 - *Attore principale*: Amministratore.
 - *Precondizioni*: il sistema ha generato un annuncio personalizzato ad un utente. L'amministratore ha ricevuto una notifica.
 - *Postcondizioni*: il sistema chiude la notifica.
@@ -574,7 +499,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #v(20pt)
 #figure(
-  image("../assets/use_cases/notifica_chiusura.png"),
+  image("../assets/use_cases/UC24.png"),
   caption: [Diagramma del caso d'uso UC24],
 )
 
@@ -665,12 +590,8 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore visualizza il _flag_ nel caso in cui il noleggio relativo all'annuncio è ancora attivo.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/display.png"),
-  caption: [Diagramma dei casi d'uso UC26 e UC27],
-)
-#figure(
-  image("../assets/use_cases/storico.png"),
-  caption: [Diagramma dei casi d'uso UC25, UC24, UC29, UC30, UC31 e UC32],
+  image("../assets/use_cases/UC25-26-27-28-29-30-31-32.png"),
+  caption: [Diagramma dei casi d'uso UC25, UC26, UC27, UC28, UC29, UC30, UC31 e UC32],
 )
 
 #pagebreak()
@@ -723,7 +644,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore chiude la finestra di dialogo aperta.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/dettagli storico.png"),
+  image("../assets/use_cases/UC33-34-35-36.png"),
   caption: [Diagramma dei casi d'uso UC29, UC30, UC31, UC32, UC33, UC34, UC35 e UC36],
 )
 
@@ -780,7 +701,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + Vengono visualizzati solo gli annunci emessi nella fascia oraria selezionata.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/filtro.png"),
+  image("../assets/use_cases/UC37-38-39-40-41.png"),
   caption: [Diagramma dei casi d'uso UC37, UC38, UC39, UC40 e UC41],
 )
 
@@ -823,14 +744,14 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore viualizza il messaggio di errore sulla _dashboard_.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/errori.png"),
-  caption: [Diagramma dei casi d'uso UC44, UC45],
+  image("../assets/use_cases/UC42-43-44-45.png"),
+  caption: [Diagramma dei casi d'uso UC42, UC43, UC44, UC45],
 )
 
 #pagebreak()
 
 
-// OPZIONALI
+// OPZIONALI (rimesso da @klamerja... non sono sicuro alla fine siano opzionali o meno. Da confermare con @ErPreco)
 
 === UC46 - Visualizzazione statistiche in grafici
 - *Attore principale*: Amministratore.
@@ -897,59 +818,12 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore visualizza i dati sul grafico.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/grafici.png"),
+  image("../assets/use_cases/UC46-47-48-49-50-51.png"),
   caption: [Diagramma dei casi d'uso UC46, UC47, UC48, UC49, UC50 e UC51],
 )
 
-/**
- * ========
- * Vecchi casi d'uso
- * ========
- **/
-
-// === UC4 - Visualizzazione storico amministratore
-
-// - *Attore principale*: Amministratore
-// - *Precondizioni*: l'amministratore del sistema è autenticato e ha accesso alla _dashboard_ Grafana.
-// - *Postcondizioni*: l'amministratore ha una visione dello storico degli annunci pubblicitari comparsi associato al rispettivo utente, con un _feedback_ indicante il successo o l'insuccesso che l'annuncio ha avuto.
-// - *Scenario principale*:
-//   + L'amministratore è collegato e autenticato nella _dashboard_ Grafana;
-//   + La _dashboard_ mette a disposizione una sezione con lo storico degli annunci prodotti dal sistema e il relativo esito.
-// - *User story*:
-// #figure(image("../assets/use_cases/old/oldUC4.svg", width: 80%), caption: [UC4 - Visualizzazione storico amministratore])
-
-// === UC5 - Interazione con l'annuncio pubblicitario //FIXME: questo caso d'uso è da capire sempre se mantenere o meno in quanto è opzionale e non necessario ai fini del PoC
-// - *Attore principale*: Utente
-// - *Precondizioni*: l'utente visualizza un annuncio pubblicitario.
-// - *Postcondizioni*: se l'utente interagisce con l'annuncio pubblicitario, il sistema memorizza l'interazione come _feedback_ sull'annuncio generato.
-// - *Scenario principale*:
-//   + L'utente visualizza un annuncio pubblicitario;
-//   + L'utente interagisce con l'annuncio pubblicitario;
-//   + Il sistema memorizza un _feedback_ associato all'annuncio visualizzato.
-// - *User story*:
-// #figure(image("../assets/use_cases/old/oldUC5.svg", width: 80%), caption: [UC5 - Interazione con l'annuncio pubblicitario])
-
-// Il caso d'uso sottostante rappresenta un'interazione alternativa al caso d'uso UC5, in cui l'utente si ferma presso il punto d'interesse pubblicizzato per un periodo di tempo prolungato
-// Da valutare se implementarla in quanto risulterebbe ridondante
-
-/*=== UC5.1 - Sosta presso il punto d'interesse pubblicizzato
-
-- *Attore principale*: Utente
-
-- *Precondizioni*: l'utente visualizza un annuncio pubblicitario
-
-- *Postcondizioni*: se l'utente si ferma presso il punto di interesse pubblicizzato, il sistema memorizza l'interazione come feedback positivo sull'annuncio generato
-
-- *Scenario principale*:
-+ L'utente visualizza un annuncio pubblicitario
-+ L'utente si ferma presso il punto di interesse pubblicizzato per un periodo di tempo prolungato
-+ Il sistema memorizza un feedback positivo associato all'annuncio visualizzato
-
-- *User story*:
-#figure(image("../assets/use_cases/UC5.1.svg", width: 80%), caption: [UC5.1 - Sosta presso il punto d'interesse pubblicizzato])
-*/
-
 #pagebreak()
+
 = Requisiti
 In questa sezione vengono elencati i requisiti relativi al sistema oggetto del progetto didattico _Near You_ fornito dalla proponente Sync Lab S.r.l..
 
@@ -1020,8 +894,6 @@ Viene riportata di seguito il significato e i possibili valori dei campi present
   [ROF-x],
   [L'amministatore deve poter visualizzare l'annuncio generato dall'LLM per un determinato noleggio e per una determinata trasmissione di posizione tramite l'interazione con i _marker_ indicanti le trasmissioni che hanno generato un annuncio.],
   [#link(<uc13>)[UC13]],
-
-  [ROF-x], [], [#link(<uc14>)[UC14]],
 )
 === Requisiti di qualità
 #table(
