@@ -828,7 +828,7 @@ Una volta identificati i potenziali miglioramenti questi vanno effettivamente im
   #align(center)[$ "%ROPS" = "NRPC" / "NTRP" * 100 $] 
   - *Parametri*:
     - *NROPC*: Numero di Requisiti Opzionali Completati.
-    - *NTRP*: Numero Totale di Requisiti Opzionali.
+    - *NTROP*: Numero Totale di Requisiti Opzionali.
 
 ==== Affidabilità
 - *MPD-CC*
