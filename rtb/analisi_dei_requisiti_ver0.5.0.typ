@@ -5,10 +5,23 @@
   destinatari: ("Gruppo SWE@", "Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "Sync Lab S.r.L."),
   responsabile: "-",
   redattori: ("Andrea Perozzo", "Andrea Precoma","Davide Marin", "Davide Martinelli", "Klaudio Merja", "Riccardo Milan"),
-  verificatori: ("Andrea Precoma", "Davide Marin", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
+  verificatori: ("Andrea Perozzo", "Andrea Precoma", "Davide Marin", "Davide Martinelli", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
   titolo: "Analisi dei Requisiti",
   uso: "Esterno",
   versioni: (
+    "0.5.0",
+    [10/01/2025],
+    "Davide Marin\nRiccardo Milan",
+    "Andrea Perozzo \nDavide Martinelli",
+    [
+      // TODO
+      - tolti i casi d'uso relativi alle notifiche
+      // - [IN SOSPESO] controllare casi d'uso relativi a chiusura annuncio (forse chiedere a Cardin), è una funzionalità che implementiamo noi?
+      // - [MARIN DA 1 A 23, MILAN DA 24 A 51] pre e post hanno come soggetto il sistema ma non descrivono bene lo stato del sistema rispetto al caso d'uso
+      // - [MARIN DA 1 A 23, MILAN DA 24 A 51] i casi d'uso non vanno riciclati: dove ci sono cose uguali che accadono con pre diverse vanno fatti uc diversi
+      // - [OPZIONALE] se ci vengono in mente altri scenari si può aggiungere
+    ],
+
     "0.4.0",
     [08/01/2025],
     "Andrea Perozzo\nAndrea Precoma",
@@ -416,84 +429,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 #figure(
   image("../assets/use_cases/UC18-19-20.png"),
   caption: [Diagramma dei casi d'uso UC18, UC19 e UC20],
-)
-
-#pagebreak()
-
-=== UC21 - Visualizzazione notifica di un annuncio generato
-- *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema ha generato un annuncio personalizzato ad un utente.
-- *Postcondizioni*: il sistema mostra una notifica sulla _dashboard_ contenente le informazioni principlai riguardo l'annuncio appena generato.
-- *Trigger*: l'amministratore desidera prendere visione della notifica.
-- *Scenario principale*: 
-  + Un utente si avvicina a un punto di interesse e il sistema genera un annuncio personalizzato che viene inviato all'utente.
-  + Nello stesso istante, nella _dashboard_, viene mostrata una notifica che informa l'amministratore con i seguenti dettagli:
-    - E-mail dell'utente destinatario.
-    - Punto di interesse associato all'annuncio.
-- *Inclusioni*: 
-  + Visualizzazione nome del punto di interesse (#link(<uc29>)[UC29]).
-  + Visualizzazione _e-mail_ dell'utente (#link(<uc30>)[UC30]).
-
-#v(20pt)
-#figure(
-  image("../assets/use_cases/UC21.png"),
-  caption: [Diagramma dei caso d'uso UC21, UC29, UC30],
-)
-
-#pagebreak()
-
-=== UC22 - Visualizzazione notifica di mancata generazione di un annuncio
-- *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema ha valutato un utente come disinteressato ad un punto di interesse.
-- *Postcondizioni*: il sistema mostra una notifica sulla _dashboard_ contenente le informazioni principali riguardo alla mancata generazione di un annuncio.
-- *Trigger*: l'amministratore desidera prendere visione della notifica.
-- *Scenario principale*: 
-  + Un utente si avvicina a un punto di interesse e il sistema valuta che l'utente non è interessato.
-  + Nello stesso istante, nella _dashboard_, viene mostrata una notifica contenente un messaggio che informa l'amministratore che l'utente non è interessato al punto di interesse.
-- *Inclusioni*:
-  + Visualizzazione nome del punto di interesse (#link(<uc29>)[UC29]).
-  + Visualizzazione _e-mail_ dell'utente (#link(<uc30>)[UC30]).
-
-#v(20pt)
-#figure(
-  image("../assets/use_cases/UC22.png"),
-  caption: [Diagramma dei caso d'uso UC22, UC29, UC30],
-)
-
-#pagebreak()
-
-=== UC23 - Apertura dettagli singolo annuncio dalla notifica
-- *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema ha generato un annuncio personalizzato ad un utente. L'amministratore ha ricevuto una notifica di annuncio generato.
-- *Postcondizioni*: il sistema espone i dettagli dell'annuncio generato.
-- *Trigger*: l'amministratore desidera prendere visione dei dettagli dell'annuncio generato.
-- *Scenario principale*: 
-  + L'amministratore riceve sulla _dashboard_ la notifica relativa ad un annuncio generato.
-  + L'amministratore interagisce con la notifica per visualizzare i dettagli dell'annuncio generato.
-- *Inclusioni*:
-  + Visualizzazione dettagli di un singolo annuncio(#link(<uc33>)[UC33]).
-
-#v(20pt)
-#figure(
-  image("../assets/use_cases/UC23.png"),
-  caption: [Diagramma dei caso d'uso UC23, UC29, UC30, UC31, UC32, UC33, UC34, UC35, UC36],
-)
-
-#pagebreak()
-
-=== UC24 - Chiusura di una notifica 
-- *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema ha generato un annuncio personalizzato ad un utente. L'amministratore ha ricevuto una notifica.
-- *Postcondizioni*: il sistema chiude la notifica.
-- *Trigger*: l'amministratore vuole chiudere la notifica.
-- *Scenario principale*: 
-  + L'amministratore riceve sulla _dashboard_ una notifica.
-  + L'amministratore interagisce con la notifica per farla scomparire dalla _dashboard_.
-
-#v(20pt)
-#figure(
-  image("../assets/use_cases/UC24.png"),
-  caption: [Diagramma del caso d'uso UC24],
 )
 
 #pagebreak()
