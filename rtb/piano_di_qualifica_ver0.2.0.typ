@@ -74,11 +74,11 @@ Fanno parte dei processi primari le attività di acquisizione, fornitura, svilup
 ==== Fornitura
 Attività e compiti del fornitore, il quale dovrà accordarsi con il proponente per stabilire ufficialmente i vari vincoli e requisiti del progetto.
 
-===== Earned value (EV)
-Misura il valore del lavoro completato fino a un determinato momento rispetto al _budget_ pianificato.
-
 ===== Planned value (PV)
 Rappresenta il valore pianificato del lavoro da completare entro una certa data.
+
+===== Earned value (EV)
+Misura il valore del lavoro completato fino a un determinato momento rispetto al _budget_ pianificato.
 
 ===== Actual cost (AC)
 Indica il costo effettivamente sostenuto per il lavoro completato fino a un determinato momento.
@@ -89,23 +89,18 @@ Misura l’efficienza del costo per il lavoro svolto fino a un determinato momen
 ===== Estimated at completion (EAC)
 Fornisce una stima del costo totale del progetto basata sulle condizioni attuali.
 
-===== Estimate to complete (ETC)
-Stima i costi aggiuntivi necessari per completare il progetto.
-
-===== Variance at completion
-Indica la differenza tra il _budget_ pianificato (BAC) e il _budget_ attuale stimato per il completamento del progetto (EAC). Valori positivi indicano un risparmio rispetto al _budget_ pianificato.
-
 ===== Schedule variance (SV)
 Indica la differenza tra il valore guadagnato (EV) e il valore pianificato (PV). Valori negativi mostrano ritardi rispetto alla pianificazione.
 
 ===== Budget variance
 Misura la differenza tra il valore pianificato (PV) e il costo effettivo (AC) alla data corrente. Valori negativi indicano un superamento del _budget_ pianificato.
 
-===== Cost variance (CV)
-Misura la differenza tra il valore guadagnato (EV) e il costo effettivo (AC). Valori negativi indicano che i costi superano il _budget_ pianificato.
+===== Estimate to complete (ETC)
+Stima i costi aggiuntivi necessari per completare il progetto.
 
 
 ===== Tabella metriche fornitura
+Ricordiamo che il *BAC* rappresenta il _Budget at Completion_, ovvero il costo totale del progetto stabilito in fase di candidatura.
 #figure(
   kind: table,
   caption: [Valori accettabili e desiderabili per ogni metrica riguardante il processo di fornitura], 
@@ -115,14 +110,14 @@ Misura la differenza tra il valore guadagnato (EV) e il costo effettivo (AC). Va
     fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
     table.header[*Metrica*][*Nome*][*Valore accettabile*][*Valore desiderabile*],
     
-    [MPC-PV], [Planned value], [$≥ 0$], [$≤$ BAC],
-    [MPC-EV], [Earned value], [$≥ 0$], [$≤$ EAC],
-    [MPC-AC], [Actual cost], [$≥ 0$], [$≤$ EAC],
-    [MPC-CPI], [Cost performance index], [tra 0.95 e 1.05], [1],
-    [MPC-EAC], [Estimated at completion], [$± 5%$ rispetto BAC], [BAC],
-    [MPC-SV], [Schedule variance], [$± 10%$ rispetto BAC], [$0%$],
-    [MPC-BV], [Budget variance], [$± 10%$ rispetto BAC], [$0%$],
-    [MPC-ETC], [Estimated to completion], [$≥ 0$], [$≤$ EAC],
+    [MPC-PV], [_Planned value_], [$≥ 0$], [$≤$ BAC],
+    [MPC-EV], [_Earned value_], [$≥ 0$], [$≤$ EAC],
+    [MPC-AC], [_Actual cost_], [$≥ 0$], [$≤$ EAC],
+    [MPC-CPI], [_Cost performance index_], [tra 0.95 e 1.05], [1],
+    [MPC-EAC], [_Estimated at completion_], [$± 5%$ rispetto BAC], [BAC],
+    [MPC-SV], [_Schedule variance_], [$± 10%$ rispetto BAC], [$0%$],
+    [MPC-BV], [_Budget variance_], [$± 10%$ rispetto BAC], [$0%$],
+    [MPC-ETC], [_Estimated to completion_], [$≥ 0$], [$≤$ EAC],
   )
 )
 
@@ -173,7 +168,7 @@ La metrica della Correttezza Ortografica misura il numero di errori grammaticali
 )
 
 ==== Gestione della qualità
-===== Quality Metrics Satisfied
+===== Percentuale di Metriche Soddisfatte
 Indica la percentuale di metriche che risultano soddisfare gli obiettivi minimi di
 qualità.
 
@@ -186,7 +181,7 @@ qualità.
     columns: 4,
     fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
     table.header[*Metrica*][*Nome*][*Valore accettabile*][*Valore desiderabile*],
-    [],[Quality Metrics Satisfied],[$≥ 80%$],[$100%$]
+    [MPC-PMS],[Percentuale di Metriche Soddisfatte],[$≥ 80%$],[$100%$]
   )
 )
 
@@ -234,9 +229,9 @@ Rappresenta la percentuale di requisiti opzionali implementati. Una copertura op
     fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
     table.header[*Metrica*][*Nome*][*Valore accettabile*][*Valore desiderabile*],
     
-    [MDP-CRO], [Requisiti obbligatori soddisfatti], [$100\%$], [$100\%$],
-    [MDP-CRD], [Requisiti desiderabili soddisfatti], [$≥ 0\%$], [$100\%$],
-    [MDP-CRP], [Requisiti opzionali soddisfatti], [$≥ 0\%$], [$≥ 50\%$],
+    [MDP-ROS], [Requisiti obbligatori soddisfatti], [$100\%$], [$100\%$],
+    [MDP-RDS], [Requisiti desiderabili soddisfatti], [$≥ 0\%$], [$100\%$],
+    [MDP-ROPS], [Requisiti opzionali soddisfatti], [$≥ 0\%$], [$≥ 50\%$],
   )
 )
 
@@ -247,7 +242,7 @@ L’affidabilità valuta la capacità del _software_ di funzionare correttamente
 Misura la percentuale di codice eseguita durante i _test_. Valori più alti indicano una migliore copertura del codice. Per questo progetto è richiesta una copertura pari o superiore all'$80%$.
 
 ==== Branch coverage
-Calcola la percentuale di rami decisionali del codice eseguiti durante i _test_. Aiuta a identificare scenari non testati.
+Calcola la percentuale di rami decisionali (_#rifGlossario("branch")_) del codice eseguiti durante i _test_. Aiuta a identificare scenari non testati.
 
 ==== Statement coverage
 Rappresenta la percentuale di istruzioni eseguite durante i _test_. Un valore alto garantisce un'analisi più approfondita del codice.
@@ -270,11 +265,11 @@ Indica il numero di fallimenti correttamente riscontrati per unità di dimension
     fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
     table.header[*Metrica*][*Nome*][*Valore accettabile*][*Valore desiderabile*],
     
-    [MDP-CC], [Code coverage], [$≥ 80\%$], [$100\%$],
-    [MDP-BC], [#rifGlossario("Branch") coverage], [$≥ 60\%$], [$100\%$],
-    [MDP-SC], [Statement coverage], [$≥ 60\%$], [$100\%$],
-    [MDP-PTCP], [Passed test cases percentage], [$≥ 80\%$], [$100\%$],
-    [MDP-FD], [Failure density], [$100%$], [$100%$],
+    [MDP-CC], [_Code coverage_], [$≥ 80\%$], [$100\%$],
+    [MDP-BC], [_Branch coverage_], [$≥ 60\%$], [$100\%$],
+    [MDP-SC], [_Statement coverage_], [$≥ 60\%$], [$100\%$],
+    [MDP-PTCP], [_Passed test cases percentage_], [$≥ 80\%$], [$100\%$],
+    [MDP-FD], [_Failure density_], [$100%$], [$100%$],
   )
 )
 
@@ -354,8 +349,8 @@ Misura il numero di dipendenze o connessioni che un modulo o componente ha con a
     table.header[*Metrica*][*Nome*][*Valore accettabile*][*Valore desiderabile*],
     
     [MPD-CCM], [Complessità ciclomatica per metodo], [$≤ 5$], [$≤ 3$],
-    [MPD-CS], [Code smell], [$0$], [$0$],
-    [MPD-COC], [Coefficient of coupling], [$≤ 30\%$], [$≤ 10\%$],
+    [MPD-CS], [_Code smell_], [$0$], [$0$],
+    [MPD-COC], [_Coefficient of coupling_], [$≤ 30\%$], [$≤ 10\%$],
     [MPD-SFI], [Structure fan in], [da determinare], [da determinare],
     [MPD-SFO], [Structure fan out], [da determinare], [da determinare],
   )
