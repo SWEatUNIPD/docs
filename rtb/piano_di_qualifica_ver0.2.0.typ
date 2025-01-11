@@ -332,10 +332,10 @@ Rileva potenziali problemi di progettazione o codice che potrebbero richiedere m
 Il Coefficient of Coupling misura il grado di dipendenza tra i moduli o le componenti di un sistema. Un alto COC implica che i moduli siano strettamente interconnessi, il che può rendere difficile apportare modifiche a un modulo senza influenzare altri.
 
 ==== Structure fan in (SFIN)
-Indica il numero di moduli o componenti che dipendono direttamente da un modulo o funzione specifica. Un alto valore di fan-in suggerisce che molte parti del sistema dipendono da quel modulo, quindi modifiche a tale modulo potrebbero avere un ampio impatto.
+Indica il numero di moduli o componenti che dipendono direttamente da un modulo o funzione specifica. Un alto valore di _fan-in_ suggerisce che molte parti del sistema dipendono da quel modulo, quindi modifiche a tale modulo potrebbero avere un ampio impatto.
 
 ==== Structure fan out (SFOUT)
-Misura il numero di dipendenze o connessioni che un modulo o componente ha con altri. Un elevato fan-out può indicare che il modulo è fortemente interconnesso con altri, il che può comportare una maggiore complessità nelle modifiche o nella manutenzione del sistema.
+Misura il numero di dipendenze o connessioni che un modulo o componente ha con altri. Un elevato _fan-out_ può indicare che il modulo è fortemente interconnesso con altri, il che può comportare una maggiore complessità nelle modifiche o nella manutenzione del sistema.
 
 ==== Tabella metriche manutenibilità
 
@@ -351,8 +351,8 @@ Misura il numero di dipendenze o connessioni che un modulo o componente ha con a
     [MPD-CCM], [Complessità ciclomatica per metodo], [$≤ 5$], [$≤ 3$],
     [MPD-CS], [_Code smell_], [$0$], [$0$],
     [MPD-COC], [_Coefficient of coupling_], [$≤ 30\%$], [$≤ 10\%$],
-    [MPD-SFI], [Structure fan in], [da determinare], [da determinare],
-    [MPD-SFO], [Structure fan out], [da determinare], [da determinare],
+    [MPD-SFI], [Structure _fan in_], [da determinare], [da determinare],
+    [MPD-SFO], [Structure _fan out_], [da determinare], [da determinare],
   )
 )
 
