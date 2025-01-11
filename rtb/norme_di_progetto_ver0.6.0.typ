@@ -818,7 +818,7 @@ Una volta identificati i potenziali miglioramenti questi vanno effettivamente im
   - *Formula*:
   #align(center)[$ "%RDS" = "NRDC" / "NTRD" * 100 $] 
   - *Parametri*:
-    - *NRDC*: Numero di Requisiti Desiderabili Completati.
+    - *NRDC*: Numero di Requisiti Desiderabili Completati. 
     - *NTRD*: Numero Totale di Requisiti Desiderabili.
 
 - *MPD-ROPS*
@@ -827,7 +827,7 @@ Una volta identificati i potenziali miglioramenti questi vanno effettivamente im
   - *Formula*:
   #align(center)[$ "%ROPS" = "NRPC" / "NTRP" * 100 $] 
   - *Parametri*:
-    - *NRPC*: Numero di Requisiti Opzionali Completati.
+    - *NROPC*: Numero di Requisiti Opzionali Completati.
     - *NTRP*: Numero Totale di Requisiti Opzionali.
 
 ==== Affidabilità
