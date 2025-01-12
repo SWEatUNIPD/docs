@@ -817,7 +817,7 @@ Una volta identificati i potenziali miglioramenti questi vanno effettivamente im
   - *Formula*:
   #align(center)[$ "%ROS" = "NROS" / "NTRO" * 100 $] 
   - *Parametri*:
-    - *NROC*: Numero di Requisiti Obbligatori Soddisfatti.
+    - *NROS*: Numero di Requisiti Obbligatori Soddisfatti.
     - *NTRO*: Numero Totale di Requisiti Obbligatori.
 
 - *MPD-RDS*
@@ -826,7 +826,7 @@ Una volta identificati i potenziali miglioramenti questi vanno effettivamente im
   - *Formula*:
   #align(center)[$ "%RDS" = "NRDS" / "NTRD" * 100 $] 
   - *Parametri*:
-    - *NRDC*: Numero di Requisiti Desiderabili Soddisfatti. 
+    - *NRDS*: Numero di Requisiti Desiderabili Soddisfatti. 
     - *NTRD*: Numero Totale di Requisiti Desiderabili.
 
 - *MPD-ROPS*
@@ -835,7 +835,7 @@ Una volta identificati i potenziali miglioramenti questi vanno effettivamente im
   - *Formula*:
   #align(center)[$ "%ROPS" = "NROPS" / "NTROP" * 100 $] 
   - *Parametri*:
-    - *NROPC*: Numero di Requisiti Opzionali Soddisfatti.
+    - *NROPS*: Numero di Requisiti Opzionali Soddisfatti.
     - *NTROP*: Numero Totale di Requisiti Opzionali.
 
 ==== Affidabilità
