@@ -475,7 +475,7 @@ Le attività che il _team_ si è prefissato di portare a termine durante il quar
   (
     (0, 0, 6, 0, 0, 0),
     (0, 0, 6, 0, 0, 0),
-    (0, 0, 4, 0, 0, 1),
+    (0, 4, 0, 0, 0, 1),
     (0, 1, 0, 0, 0, 3),
     (0, 0, 3, 0, 0, 3),
     (0, 2, 3, 0, 4, 0),
@@ -489,7 +489,7 @@ Le attività che il _team_ si è prefissato di portare a termine durante il quar
   preventivo: (
     (0, 0, 6, 0, 0, 0),
     (0, 0, 6, 0, 0, 0),
-    (0, 0, 4, 0, 0, 1),
+    (0, 4, 0, 0, 0, 1),
     (0, 1, 0, 0, 0, 3),
     (0, 0, 3, 0, 0, 3),
     (0, 2, 3, 0, 4, 0),
@@ -498,7 +498,7 @@ Le attività che il _team_ si è prefissato di portare a termine durante il quar
   consuntivo: (
     (0, 0, 6, 0, 0, 0),
     (0, 0, 6, 0, 0, 0),
-    (0, 0, 5, 0, 0, 1),
+    (0, 4, 0, 0, 0, 1),
     (0, 1.5, 0, 0, 0, 3.5),
     (0, 0, 3, 0, 0, 3),
     (0, 1, 3, 0, 3, 0),
