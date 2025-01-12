@@ -5,11 +5,19 @@
   data: "14 Novembre 2024",
   destinatari: ("Gruppo SWE@",),
   responsabile: "-",
-  redattori: ("Andrea Precoma", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
-  verificatori: ("Andrea Precoma", "Davide Marin", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
+  redattori: ("Andrea Precoma", "Davide Marin", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
+  verificatori: ("Andrea Precoma", "Davide Marin", "Davide Martinelli", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
   titolo: "Norme di Progetto",
   uso: "Interno",
   versioni: (
+    "0.7.0",
+    "11/01/2025",
+    "Davide Marin",
+    "Davide Martinelli\nDavide Picello",
+    [
+      - Aggiunte metriche per la qualità di prodotto
+    ],
+
     "0.6.0",
     "22/12/2024",
     "Davide Picello",
@@ -807,27 +815,27 @@ Una volta identificati i potenziali miglioramenti questi vanno effettivamente im
   - *Nome*: Requisiti Obbligatori Soddisfatti
   - *Descrizione*: Misura la percentuale di requisiti obbligatori soddisfatti dal prodotto.
   - *Formula*:
-  #align(center)[$ "%ROS" = "NROC" / "NTRO" * 100 $] 
+  #align(center)[$ "%ROS" = "NROS" / "NTRO" * 100 $] 
   - *Parametri*:
-    - *NROC*: Numero di Requisiti Obbligatori Completati.
+    - *NROC*: Numero di Requisiti Obbligatori Soddisfatti.
     - *NTRO*: Numero Totale di Requisiti Obbligatori.
 
 - *MPD-RDS*
   - *Nome*: Requisiti Desiderabili Soddisfatti
   - *Descrizione*: Misura la percentuale di requisiti desiderabili soddisfatti dal prodotto.
   - *Formula*:
-  #align(center)[$ "%RDS" = "NRDC" / "NTRD" * 100 $] 
+  #align(center)[$ "%RDS" = "NRDS" / "NTRD" * 100 $] 
   - *Parametri*:
-    - *NRDC*: Numero di Requisiti Desiderabili Completati. 
+    - *NRDC*: Numero di Requisiti Desiderabili Soddisfatti. 
     - *NTRD*: Numero Totale di Requisiti Desiderabili.
 
 - *MPD-ROPS*
   - *Nome*: Requisiti Opzionali Soddisfatti
   - *Descrizione*: Misura la percentuale di requisiti opzionali soddisfatti dal prodotto.
   - *Formula*:
-  #align(center)[$ "%ROPS" = "NRPC" / "NTRP" * 100 $] 
+  #align(center)[$ "%ROPS" = "NROPS" / "NTROP" * 100 $] 
   - *Parametri*:
-    - *NROPC*: Numero di Requisiti Opzionali Completati.
+    - *NROPC*: Numero di Requisiti Opzionali Soddisfatti.
     - *NTROP*: Numero Totale di Requisiti Opzionali.
 
 ==== Affidabilità
