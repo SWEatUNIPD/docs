@@ -9,6 +9,12 @@
   titolo: "Piano di Progetto",
   uso: "Esterno",
   versioni: (
+    "0.8.0",
+    "12/01/2025",
+    "Andrea Precoma",
+    "Andrea Perozzo\nDavide Martinelli",
+    [- Stesura pianificazione quinto _sprint_],
+
     "0.7.0",
     "09/01/2025",
     "Riccardo Milan",
@@ -208,6 +214,7 @@ Il gruppo si pone come _milestone_ del progetto le due consegne previste dai com
 - *PB* con data di consegna 21/03/2025
 
 Gli _sprint_ vengono quindi divisi nelle due _milestone_ precedentemente elencate per garantire una seperazione netta degli stessi e delle attività che ne comportano.
+
 == RTB
 === Sprint 1
 - *Inizio*: 13/11/2024
@@ -431,7 +438,7 @@ Le attività che il _team_ si è prefissato di portare a termine durante il terz
 ==== Retrospettiva
 Il terzo _sprint_ si è concluso con un bilancio tutto sommato positivo, nonostante alcune difficoltà riscontrate.
 
-In primo luogo si è dovuto accantonare per questo _sprint_ la prosecuzione dello sviluppo della _dashboard_ in Grafana in quanto, vista anche la durata ridotta dello _sprint_, si è preferito dare più priorità e tempo allo sviluppo dello _stream processor_ in Spring, che peraltro è già attualmente in grado di sostituire il _software_ precedentemente costruito con Apache NiFi. Da questa scelta ne beneficerà anche lo sviluppo della _dashboard_ stessa visto che si avrà a disposizione un _backend_ funzionante e semidefinitivo rispetto alla prossima _milestone_.
+In primo luogo si è dovuto accantonare per questo _sprint_ la prosecuzione dello sviluppo della _dashboard_ in Grafana in quanto, vista anche la durata ridotta dello _sprint_, si è preferito dare più priorità e tempo allo sviluppo dello _stream processor_ in Spring, che peraltro è già attualmente in grado di sostituire il _software_ precedentemente costruito con Apache NiFi. Da questa scelta ne beneficerà anche lo sviluppo della _dashboard_ stessa visto che si avrà a disposizione un _back-end_ funzionante e semidefinitivo rispetto alla prossima _milestone_.
 
 La risorsa che avrebbe dovuto lavorare alla _dashboard_ è stata quindi riallocata, nel corso dello _sprint_, alla stesura delle Norme di Progetto, documento che in questo _sprint_ è stato ampliato in modo considerevole.
 
@@ -443,7 +450,7 @@ Per quanto riguarda l'Analisi dei Requisiti l'attività di stesura è proseguita
 
 === Sprint 4
 - *Inizio*: 24/12/2024
-- *Fine*: 8/01/2024
+- *Fine*: 08/01/2024
 - *Rischi attesi*: #link(<RO-1>)[RO-1], #link(<RO-3>)[RO-3], #link(<RO-4>)[RO-4], #link(<RT-1>)[RT-1]
 
 ==== Attività dello sprint
@@ -457,7 +464,7 @@ Le attività che il _team_ si è prefissato di portare a termine durante il quar
 - Continuazione del documento di Analisi dei Requisiti, in particolare:
   - Rifinire e completare i casi d'uso.
   - Individuare e redigere in maniera completa i requisiti.
-- Creazione del nuovo _#rifGlossario("stream processor") custom_ sfruttando #rifGlossario("Spring"), con il _database_ popolato e l'integrazione con #rifGlossario("LangChain").
+- Creazione del nuovo _stream processor custom_ sfruttando Spring, con il _database_ popolato e l'integrazione con #rifGlossario("LangChain").
 - Aggiornamento della _dashboard_ in Grafana per adattarsi alla nuova infrastruttura con Spring.
 - Continuazione della stesura del Piano di Progetto come da prassi, in particolare:
   - Scrittura pianificazione quarto _sprint_.
@@ -511,8 +518,73 @@ Lo studio e la redazione delle metriche sono stati portati a termine correttamen
 
 L'attività di raffinamento dei casi d'uso e stesura dei requisiti è proceduta linearmente proseguendo il lavoro fatto fino a questo periodo con le indicazioni ricevute dal professor Cardin nel precedente _sprint_.
 
-I miglioramenti del PoC, ristrutturando il _software_ usando Spring, sono stati sostanziali e anche il proponente si è mostrato soddisfatto nel consueto SAL di fine _sprint_.
+I miglioramenti del #rifGlossario("PoC"), ristrutturando il _software_ usando Spring, sono stati sostanziali e anche il proponente si è mostrato soddisfatto nel consueto SAL di fine _sprint_.
 
 In ultima i miglioramenti alla dashboard Grafana non sono stati fatti in quanto, dopo un confronto con il proponente, si sono rivelati superflui per il PoC.
 
 #pagebreak()
+
+=== Sprint 5
+- *Inizio*: 09/01/2025
+- *Fine*: 22/01/2025
+- *Rischi attesi*: #link(<RO-1>)[RO-1], #link(<RO-3>)[RO-3], #link(<RO-4>)[RO-4]
+
+==== Attività dello sprint
+In vista della scadenza della _milestone_, e quindi della consegna posta per venerdì 24 gennaio, le attività che il _team_ si è prefissato di portare a termine durante il quinto _sprint_ sono le seguenti:
+- Redazione dei verbali per le rispettive riunioni interne ed esterne.
+- Compilazione del Piano di Progetto con la sezione relativa al quinto _sprint_.
+- Completamento delle Norme di Progetto, in particolare:
+  - Stesura degli ultimi paragrafi seguendo lo _standard_ ISO/IEC 12207:1995.
+- Completamento del Piano di Qualifica, in particolare:
+  - Aggiornamento dei valori del "cruscotto".
+  - Inserimento dei grafici dei documenti nelle sezioni apposite delle relative metriche.
+- Completamento dell'Analisi dei Requisiti come indicato dall'incontro con il prof. Cardin, in particolare:
+  - Rivalutare le precondizioni e postcondizioni.
+  - Modificare i casi d'uso relativi alle notifiche.
+  - Rendere più specifiche alcune funzionalità.
+  - Concludere la copiatura dei requisiti. È stato scelto di mantenere questa operazione come ultima per ridurre il più possibile il lavoro di riscrittura dei riferimenti coi casi d'uso.
+- Presentare la _repository_ NearYou tramite `README.md`.
+- Ultimare la struttura del PoC, in particolare:
+  - Completare l'infrastruttura con #rifGlossario("Docker Compose").
+  - Integrare la parte di _back-end_ con quella di _front-end_.
+
+==== Preventivo orario
+#rendicontazioneOre(
+  (
+    (0, 0, 0, 0, 0, 4),
+    (4, 0, 0, 0, 0, 2),
+    (0, 0, 3, 0, 0, 0),
+    (0, 0, 0, 0, 0, 4),
+    (0, 0, 4, 0, 0, 0),
+    (0, 0, 3, 0, 2, 0),
+    (0, 0.5, 3, 0, 0, 0),
+  ),
+  caption: [Preventivo delle ore nel quinto _sprint_ per membro e per ruolo],
+)
+
+==== Consuntivo orario e di spesa
+#consuntivoOre(
+  preventivo: (
+    (0, 0, 0, 0, 0, 4),
+    (4, 0, 0, 0, 0, 2),
+    (0, 0, 3, 0, 0, 0),
+    (0, 0, 0, 0, 0, 4),
+    (0, 0, 4, 0, 0, 0),
+    (0, 0, 3, 0, 2, 0),
+    (0, 0.5, 3, 0, 0, 0),
+  ),
+  consuntivo: (
+    (0, 0, 0, 0, 0, 4),
+    (4, 0, 0, 0, 0, 2),
+    (0, 0, 3, 0, 0, 0),
+    (0, 0, 0, 0, 0, 4),
+    (0, 0, 4, 0, 0, 0),
+    (0, 0, 3, 0, 2, 0),
+    (0, 0.5, 3, 0, 0, 0),
+  ),
+  tabCaption: [Consuntivo delle ore nel quinto _sprint_ per membro e per ruolo],
+  costTabCaption: [Costi sostenuti nel quinto _sprint_],
+  chartCaption: [Grafico percentuale dell'allocazione delle ore per ruolo nel quinto _sprint_],
+)
+
+==== Retrospettiva
