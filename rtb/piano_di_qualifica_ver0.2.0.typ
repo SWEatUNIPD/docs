@@ -302,7 +302,7 @@ Valuta il tempo necessario a un utente per imparare a utilizzare il _software_. 
 ==== Utilizzo risorse
 Misura l’efficienza del sistema in termini di utilizzo delle risorse hardware, come CPU, memoria e altre risorse di sistema. Un uso efficiente delle risorse garantisce che il sistema funzioni in modo ottimale senza sovraccaricare le risorse disponibili.
 
-
+==== Tabella metriche efficienza
 #figure(
   kind: table,
   caption: [Valori accettabili e desiderabili per ogni metrica riguardante l'efficienza del prodotto],
@@ -326,8 +326,6 @@ La complessità ciclomatica valuta la complessità del codice sorgente attravers
 ==== Code smell
 Rileva potenziali problemi di progettazione o codice che potrebbero richiedere manutenzione. Segnala parti del codice che potrebbero non essere ottimali e che potrebbero causare difficoltà nel futuro, come un'architettura poco chiara o sezioni di codice ripetitive.
 
-
-
 ==== Coefficient of Coupling (COC)
 Il Coefficient of Coupling misura il grado di dipendenza tra i moduli o le componenti di un sistema. Un alto COC implica che i moduli siano strettamente interconnessi, il che può rendere difficile apportare modifiche a un modulo senza influenzare altri.
 
@@ -336,6 +334,9 @@ Indica il numero di moduli o componenti che dipendono direttamente da un modulo 
 
 ==== Structure fan out (SFOUT)
 Misura il numero di dipendenze o connessioni che un modulo o componente ha con altri. Un elevato _fan-out_ può indicare che il modulo è fortemente interconnesso con altri, il che può comportare una maggiore complessità nelle modifiche o nella manutenzione del sistema.
+
+==== Ripercussione delle Modifiche
+Misura la percentuale del sistema che è stato affetto dalle modifiche apportate.
 
 ==== Tabella metriche manutenibilità
 
@@ -353,6 +354,7 @@ Misura il numero di dipendenze o connessioni che un modulo o componente ha con a
     [MPD-COC], [_Coefficient of coupling_], [$≤ 30\%$], [$≤ 10\%$],
     [MPD-SFI], [Structure _fan in_], [da determinare], [da determinare],
     [MPD-SFO], [Structure _fan out_], [da determinare], [da determinare],
+    [MPD-RM], [Ripercussione delle Modifiche], [da determinare], [da determinare],
   )
 )
 
