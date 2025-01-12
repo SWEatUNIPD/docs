@@ -1,4 +1,11 @@
 {
   "tinymist.fontPaths": ["${workspaceFolder}/assets/font/"],
   "tinymist.formatterMode": "typstyle",
+  "cSpell.words": [
+    "ciclomatica",
+    "gulpease",
+    "Precoma",
+    "profilazione",
+    "Vardanega"
+  ],
 }
