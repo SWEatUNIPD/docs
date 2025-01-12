@@ -43,7 +43,7 @@ La proponente si è mostrata soddisfatta del lavoro fatto nel #rifGlossario("PoC
 = Risposte alle domande
 
 == PoC
-È stato esposta la parte di _back-end_ del PoC. Abbiamo ricevuto un riscontro positivo specie per quanto riguarda l'utilizzo di #rifGlossario("Spring"), con alcuni accorgimenti da apportare in futuro nel MVP ma che per la consegna RTB sono tollerabili: arricchire i dati di profilazione e renderli più specifici utilizzando delle categorie, controllare di non mandare due volte l'annuncio allo stesso utente se rimane nella zona di un punto di interesse.
+È stato esposta la parte di _back-end_ del PoC. Abbiamo ricevuto un riscontro positivo specie per quanto riguarda l'utilizzo di #rifGlossario("Spring"), con alcuni accorgimenti da apportare in futuro nel MVP ma che per la consegna RTB sono tollerabili: in primo luogo arricchire i dati di profilazione e renderli più specifici utilizzando delle categorie, in secondo luogo controllare di non mandare due volte l'annuncio allo stesso utente se rimane nella zona di un punto di interesse.
 
 È stato chiarito un dubbio riguardante le notifiche #rifGlossario("Grafana"). Ragionando su un campione di utenti limitato avevamo pensato di notificare l'amministratore ogni volta che un annuncio viene generato. La proponente ci ha fatto notare che in uno scenario reale l'amministratore sarebbe soggetto ad un flusso di notifiche troppo rapido e incessante. Abbiamo quindi provveduto a mantenere la funzionalità di notifica solo per messaggi importanti.
 

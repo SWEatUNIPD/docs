@@ -1,4 +1,10 @@
 {
   "tinymist.fontPaths": ["${workspaceFolder}/assets/font/"],
   "tinymist.formatterMode": "typstyle",
+  "cSpell.words": [
+    "profilazione"
+  ],
+  "cSpell.enabledFileTypes": {
+    "typst": true
+  },
 }
