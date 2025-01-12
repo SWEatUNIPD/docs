@@ -4,12 +4,27 @@
   data: "25 novembre 2024",
   destinatari: ("Gruppo SWE@", "Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "Sync Lab S.r.L."),
   responsabile: "-",
-  redattori: ("Andrea Perozzo", "Andrea Precoma","Davide Marin", "Davide Martinelli", "Klaudio Merja", "Riccardo Milan"),
-  verificatori: ("Andrea Perozzo", "Andrea Precoma", "Davide Marin", "Davide Martinelli", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
+  redattori: (
+    "Andrea Perozzo",
+    "Andrea Precoma",
+    "Davide Marin",
+    "Davide Martinelli",
+    "Klaudio Merja",
+    "Riccardo Milan",
+  ),
+  verificatori: (
+    "Andrea Perozzo",
+    "Andrea Precoma",
+    "Davide Marin",
+    "Davide Martinelli",
+    "Davide Picello",
+    "Klaudio Merja",
+    "Riccardo Milan",
+  ),
   titolo: "Analisi dei Requisiti",
   uso: "Esterno",
   versioni: (
-    "0.5.0",
+    "0.6.0",
     [10/01/2025],
     "Davide Marin\nRiccardo Milan",
     "Andrea Perozzo \nDavide Martinelli",
@@ -22,6 +37,12 @@
       // - [OPZIONALE] se ci vengono in mente altri scenari si può aggiungere
     ],
 
+    "0.5.0",
+    [09/01/2025],
+    "Klaudio Merja",
+    "Davide Martinelli\nDavide Picello",
+    [- Aggiunta di nuovi requisiti],
+    
     "0.4.0",
     [08/01/2025],
     "Andrea Perozzo\nAndrea Precoma",
@@ -145,7 +166,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 == Elenco dei casi d'uso
 
-=== UC1 - Trasmissione dei dati di localizzazione
+=== UC1 - Trasmissione dei dati di localizzazione <uc1>
 - *Attore principale*: Sensore.
 - *Precondizioni*: il sistema monitora i sensori sui mezzi con un noleggio attivo. In particolare mantiene l'informazione riguardo l'ultima posizione #rifGlossario("GPS") inviata dal sensore.
 - *Postcondizioni*: il sistema riceve l'informazione riguardo la posizione GPS del sensore in quel momento.
@@ -156,12 +177,12 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 #v(20pt)
 #figure(
   image("../assets/use_cases/UC1.png"),
-  caption: [Diagramma del caso d'uso UC1]
+  caption: [Diagramma del caso d'uso UC1],
 )
 
 #pagebreak()
 
-=== UC2 - Autenticazione alla dashboard del sistema
+=== UC2 - Autenticazione alla dashboard del sistema <uc2>
 - *Attori principali*: Amministratore non autenticato.
 - *Precondizioni*: il sistema possiede le credenziali dell'amministratore che in quel momento non è autenticato. L'amministratore non autenticato accede alla pagina di _login_.
 - *Postcondizioni*: il sistema accetta le credenziali inserite e fa accedere l'amministratore alla _dashboard_ personale.
@@ -210,7 +231,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #pagebreak()
 
-=== UC6 - Visualizzazione della mappa geografica sulla dashboard
+=== UC6 - Visualizzazione della mappa geografica sulla dashboard <uc6>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: il sistema tiene traccia delle informazioni relative ai mezzi noleggiati, ai punti di interesse e agli annunci.
 - *Postcondizioni*: il sistema espone una mappa geografica sulla _dashboard_ dell'amministratore.
@@ -237,7 +258,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #pagebreak()
 
-=== UC8 - Visualizzazione percorso del mezzo in noleggio sulla mappa
+=== UC8 - Visualizzazione percorso del mezzo in noleggio sulla mappa <uc8>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: il sistema tiene traccia delle posizioni nel tempo dei mezzi con noleggio attivo.
 - *Postcondizioni*: il sistema espone sulla mappa il percorso dei mezzi con noleggio attivo.
@@ -264,7 +285,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #pagebreak()
 
-=== UC10 - Visualizzazione marker sul tracciato dei mezzi con noleggio attivo in corrispondenza della generazione di un annuncio
+=== UC10 - Visualizzazione marker sul tracciato dei mezzi con noleggio attivo in corrispondenza della generazione di un annuncio <uc10>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: il sistema memorizza gli annunci generati e le relative informazioni.
 - *Postcondizioni*: il sistema espone sulla mappa un _marker_ in corrispondenza dei punti in cui è stato generato un annuncio.
@@ -280,7 +301,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #pagebreak()
 
-=== UC11 - Visualizzazione marker sul tracciato dei mezzi con noleggio attivo in corrispondenza della mancata generazione di un annuncio
+=== UC11 - Visualizzazione marker sul tracciato dei mezzi con noleggio attivo in corrispondenza della mancata generazione di un annuncio <uc11>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: il sistema memorizza le mancate generazioni degli annunci e le relative informazioni.
 - *Postcondizioni*: il sistema espone sulla mappa un _marker_ in corrispondenza dei punti in cui la LLM non ha ritenuto l'utente interessato, quindi non è stato generato l'annuncio.
@@ -297,7 +318,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 #pagebreak()
 
 
-=== UC12 - Visualizzazione informazioni punto di interesse tramite marker sulla mappa
+=== UC12 - Visualizzazione informazioni punto di interesse tramite marker sulla mappa <uc12>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: il sistema tiene traccia delle informazioni di ciascun punto di interesse.
 - *Postcondizioni*: il sistema espone le informazioni del punto di interesse selezionato in corrispondenza del _marker_ sulla mappa.
@@ -316,7 +337,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #pagebreak()
 
-=== UC13 - Visualizzazione annuncio tramite marker sulla mappa
+=== UC13 - Visualizzazione annuncio tramite marker sulla mappa <uc13>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: il sistema tiene traccia degli annunci generati e le relative informazioni.
 - *Postcondizioni*: il sistema espone l'annuncio generato, con le relative informazioni, in corrispondenza del _marker_ sulla mappa.
@@ -678,6 +699,9 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #pagebreak()
 
+
+// OPZIONALI (rimesso da @klamerja... non sono sicuro alla fine siano opzionali o meno. Da confermare con @ErPreco)
+
 === UC46 - Visualizzazione statistiche in grafici
 - *Attore principale*: Amministratore.
 - *Precondizioni*: il sistema mantiene delle informazioni utili per una anlisi statistica.
@@ -750,3 +774,92 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 #pagebreak()
 
 = Requisiti
+In questa sezione vengono elencati i requisiti relativi al sistema oggetto del progetto didattico _Near You_ fornito dalla proponente Sync Lab S.r.l..
+
+I requisiti sono frutto dell'analisi del capitolato d'appalto, dalle varie interazioni con la proponente e a seguito dei vari dialoghi interni avvenuti con i vari membri del gruppo.
+
+Ogni requisito è identificato univocamente da un codice che presenta la seguente struttura:
+#align(center)[*R[Importanza][Tipo]-[ID]*]
+Viene riportata di seguito il significato e i possibili valori dei campi presenti all'interno di ogni identificativo:
+- *Importanza*: indica il grado di importanza di ogni requisito, che si disingue in:
+  - *O*: requisito obbligatorio, ovvero che viene richiesto esplicitamente dall'azienda e strettamente necessario.
+  - *D*: requisito desiderabile, ovvero che non è strettamente necessario ma da valore aggiunto al prodotto finale.
+  - *F*: requisito facoltativo, ovvero che non è necessario ma può essere utile ai fini del prodotto finale. Quest'ultimi possono essere contrattati in seguito con l'azienda.
+- *Tipo*: indica la tipologia di requisito che si distingue in:
+  - *F*: requisito funzionale
+  - *Q*: requisito di qualità
+  - *V*: requisito di vincolo
+- *ID*: numero progressivo che identifica univocamente il requisito nella sua categoria.
+== Requisiti obbligatori
+=== Requisiti funzionali
+#table(
+  align: (center, left, center),
+  columns: (0.8fr, 3fr, 0.8fr),
+  table.header([*Codice*], [*Descrizione*], [*Origine*]),
+  [ROF-x],
+  [La _dashboard_ dell'amministratore, per essere accessibile solamente da quest'ultimo, deve essere protetta da un sistema di autenticazione. Per poter visualizzare la _dashboard_ l'amministratore deve quindi autenticarsi con le proprie credenziali.],
+  [#link(<uc2>)[UC2]],
+
+  [ROF-x],
+  [L'amministratore, per poter accedere alla _dashboard_, deve fornire l'indirizzo _e-mail_ dell'_account_ con cui è registrato all'interno del sistema.],
+  [#link(<uc3>)[UC3]],
+
+  [ROF-x],
+  [L'amministratore, per poter accedere alla _dashboard_, deve fornire la _password_ dell'_account_ con cui è registrato all'interno del sistema.],
+  [#link(<uc4>)[UC4]],
+
+  [ROF-x],
+  [Se l'amministratore inserisce delle credenziali invalide, come una _e-mail_ o _password_ non valida, il sistema deve ritornare un avviso che informi l'utente riguardo l'errore.],
+  [#link(<uc5>)[UC5]],
+
+  [ROF-x],
+  [L'amministratore, una volta autenticato, deve poter visualizzare all'interno della dashboard la mappa geografica dove verranno posizionate le varie informazioni.],
+  [#link(<uc6>)[UC6]],
+
+  [ROF-x],
+  [L'amministratore deve poter visualizzare tutti i punti di interesse all'interno della mappa geografica mediante l'ausilio dei _marker_.],
+  [#link(<uc7>)[UC7]],
+
+  [ROF-x],
+  [L'amministratore deve poter visualizzare i tracciati percorsi dai mezzi a noleggio per ogni noleggio che viene erogato dal sistema.],
+  [#link(<uc8>)[UC8]],
+
+  [ROF-x],
+  [L'amministratore deve poter visualizzare i _marker_ indicanti l'aggiornamento in tempo reale della posizione dei mezzi all'interno della mappa geografica per ogni noleggio che permettono la generazione del tracciato stesso.],
+  [#link(<uc9>)[UC9]],
+
+  [ROF-x],
+  [L'amministratore deve poter visualizzare i _marker_ indicanti quali posizioni trasmesse relative ad un noleggio hanno generato con successo un annuncio in prossimità di un punto di interesse all'interno della mappa (ovviamente contraddistinguendo il _marker_ della trasmissione generica con quest'ultimo).],
+  [#link(<uc10>)[UC10]],
+
+  [ROF-x],
+  [L'amministratore deve poter visualizzare i _marker_ indicanti quali posizioni trasmesse relative ad un noleggio non hanno generato un annuncio in prossimità di un punto di interesse all'interno della mappa in quanto l'LLM ha ritenuto quest'ultimo non interessato.],
+  [#link(<uc11>)[UC11]],
+
+  [ROF-x],
+  [L'amministratore deve poter visualizzare le informazioni relative ad un punto di interesse tramite l'interazione con il _marker_ associato ad esso e presente all'interno della mappa. Può essere considerata un'interazione con il _marker_ il click o il passaggio del cursore su di esso.],
+  [#link(<uc12>)[UC12]],
+
+  [ROF-x],
+  [L'amministatore deve poter visualizzare l'annuncio generato dall'LLM per un determinato noleggio e per una determinata trasmissione di posizione tramite l'interazione con i _marker_ indicanti le trasmissioni che hanno generato un annuncio.],
+  [#link(<uc13>)[UC13]],
+)
+=== Requisiti di qualità
+#table(
+  align: (center, left, center),
+  columns: (0.8fr, 3fr, 0.8fr),
+  table.header([*Codice*], [*Descrizione*], [*Origine*]),
+  //TODO: CODE COVERAGE è presente a glossario?
+  [ROQ-x],
+  [Superamento dei _test_ che dimostrano il corretto funzionamento dei servizi e delle funzionalità. In particolare i _test_ devono garantire un _code coverage_ dell'80% o più, correlata da _report_.],
+  [Capitolato],
+)
+=== Requisiti di vincolo
+== Requisiti desiderabili
+=== Requisiti funzionali
+=== Requisiti di qualità
+=== Requisiti di vincolo
+== Requisiti facoltativi
+=== Requisiti funzionali
+=== Requisiti di qualità
+=== Requisiti di vincolo
