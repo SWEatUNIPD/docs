@@ -31,8 +31,7 @@
     [
       - Aggiunti casi d'uso per evitare riutilizzo nelle generalizzazioni
       - Sistemate precondizioni di tutti i casi d'uso
-      // TODO [Marin]
-      // - sistemare tutti gli uml per i nuovi casi d'uso
+      - Sistemati e aggiornati gli UML rispettivi ai casi d'uso cambiati ed aggiunti
     ],
 
     "0.5.0",
@@ -446,7 +445,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore chiude il messaggio.
 #v(20pt)
 #figure(
-  // TODO [Marin]: ovviamente non rinomino l'immagine, toccherà a Davide Marin quando farà i nuovi UML
   image("../assets/use_cases/UC17-18.png"),
   caption: [Diagramma dei casi d'uso UC17 e UC18],
 )
@@ -465,7 +463,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore interagisce con la mappa per spostare il centro della mappa, quindi anche l'intera visuale.
 #v(20pt)
 #figure(
-  // TODO [Marin]: ovviamente non rinomino l'immagine, toccherà a Davide Marin quando farà i nuovi UML
   image("../assets/use_cases/UC19.png"),
   caption: [Diagramma dei casi d'uso UC19],
 )
@@ -507,7 +504,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + l'amministratore interagisce con la mappa per restringere la visuale.
 #v(20pt)
 #figure(
-  // TODO [Marin]: ovviamente non rinomino l'immagine, toccherà a Davide Marin quando farà i nuovi UML
   image("../assets/use_cases/UC20-21-22.png"),
   caption: [Diagramma dei casi d'uso UC20, UC21 e UC22],
 )
@@ -611,7 +607,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore visualizza il _flag_ nel caso in cui il noleggio relativo all'annuncio è ancora attivo.
 #v(20pt)
 #figure(
-  // TODO [Marin]: ovviamente non rinomino l'immagine, toccherà a Davide Marin quando farà i nuovi UML
   image("../assets/use_cases/UC23-24-25-26-27-28-29-30.png"),
   caption: [Diagramma dei casi d'uso UC23, UC24, UC25, UC26, UC27, UC28, UC29 e UC30],
 )
@@ -716,7 +711,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore chiude la finestra di dialogo aperta.
 #v(20pt)
 #figure(
-  // TODO [Marin]: ovviamente non rinomino l'immagine, toccherà a Davide Marin quando farà i nuovi UML
   image("../assets/use_cases/UC31-32-33-34-35-36-37-38.png"),
   caption: [Diagramma dei casi d'uso UC31, UC32, UC33, UC34, UC35, UC36, UC37 e UC38],
 )
@@ -788,7 +782,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + Vengono visualizzati solo gli annunci emessi nella fascia oraria selezionata.
 #v(20pt)
 #figure(
-  // TODO [Marin]: ovviamente non rinomino l'immagine, toccherà a Davide Marin quando farà i nuovi UML
   image("../assets/use_cases/UC39-40-41-42-43.png"),
   caption: [Diagramma dei casi d'uso UC39, UC40, UC41, UC42 e UC43],
 )
@@ -832,7 +825,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore viualizza il messaggio di errore sulla _dashboard_.
 #v(20pt)
 #figure(
-  // TODO [Marin]: ovviamente non rinomino l'immagine, toccherà a Davide Marin quando farà i nuovi UML
   image("../assets/use_cases/UC44-45-46-47.png"),
   caption: [Diagramma dei casi d'uso UC44, UC45, UC46, UC47],
 )
@@ -920,7 +912,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + l'amministratore visualizza i dati sul grafico.
 #v(20pt)
 #figure(
-  // TODO [Marin]: ovviamente non rinomino l'immagine, toccherà a Davide Marin quando farà i nuovi UML
   image("../assets/use_cases/UC48-49-50-51-52-53.png"),
   caption: [Diagramma dei casi d'uso UC48, UC49, UC50, UC51, UC52 e UC53],
 )
