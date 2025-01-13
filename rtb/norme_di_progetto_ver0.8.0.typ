@@ -5,7 +5,7 @@
   data: "14 Novembre 2024",
   destinatari: ("Gruppo SWE@",),
   responsabile: "-",
-  redattori: ("Andrea Precoma", "Davide Marin", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
+  redattori: ("Andrea Precoma", "Davide Marin", "Davide Martinelli", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
   verificatori: ("Andrea Precoma", "Davide Marin", "Davide Martinelli", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
   titolo: "Norme di Progetto",
   uso: "Interno",
@@ -546,7 +546,7 @@ Le metriche adottate per la documentazione sono le seguenti:
   table( 
     columns: 2,
     table.header[*ID Metrica*][*Nome*],
-    [#link(<MPC-IG>)[MPC-IG]], [Indice Gulpease],
+    [#link(<MPC-IG>)[MPC-IG]], [#rifGlossario("Indice Gulpease")],
     [#link(<MPC-CO>)[MPC-CO]], [Correttezza Ortografica],
   ),
   caption: [Metriche per la documentazione]
