@@ -4,18 +4,18 @@
   data: "27 novembre 2024",
   destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "Sync Lab S.r.l.", "Gruppo SWE@"),
   responsabile: "-",
-  redattori: ("Davide Martinelli", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
-  verificatori: ("Andrea Precoma", "Davide Marin", "Davide Martinelli", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
+  redattori: ("Andrea Precoma", "Davide Martinelli", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
+  verificatori: ("Andrea Perozzo", "Andrea Precoma", "Davide Marin", "Davide Martinelli", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
   titolo: "Piano di Progetto",
   uso: "Esterno",
   versioni: (
     "0.8.0",
-    "12/01/2025",
+    "13/01/2025",
     "Andrea Precoma",
     "Andrea Perozzo\nDavide Martinelli",
     [
       - Stesura pianificazione quinto _sprint_,
-      - Aggiunta foto dei grafici di Gantt per tutti gli _sprint_
+      - Aggiunta immagini dei grafici di Gantt per tutti gli _sprint_
     ],
 
     "0.7.0",
