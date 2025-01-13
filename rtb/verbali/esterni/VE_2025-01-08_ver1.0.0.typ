@@ -2,7 +2,7 @@
 
 #show: content=>verbale(
   data: "08 gennaio 2025", 
-  responsabile: "Davide Marin", 
+  responsabile: "Klaudio Merja", 
   destinatari: (
     "Prof. Tullio Vardanega",
     "Prof. Riccardo Cardin",
@@ -17,7 +17,7 @@
   riassunto: [Sono stati esposti i lavori svolti riguardanti il PoC e l'analisi dei requisiti ai quali la proponente ha chiarito alcune questioni.],
   versioni: (
     "1.0.0", 
-    [10/01/2025], 
+    [13/01/2025], 
     "Andrea Precoma", "Davide Martinelli",
     [- Stesura del verbale],
   ),
@@ -48,7 +48,7 @@ La proponente si è mostrata soddisfatta del lavoro fatto nel #rifGlossario("PoC
 È stato chiarito un dubbio riguardante le notifiche #rifGlossario("Grafana"). Ragionando su un campione di utenti limitato avevamo pensato di notificare l'amministratore ogni volta che un annuncio viene generato. La proponente ci ha fatto notare che in uno scenario reale l'amministratore sarebbe soggetto ad un flusso di notifiche troppo rapido e incessante. Abbiamo quindi provveduto a mantenere la funzionalità di notifica solo per messaggi importanti.
 
 == Analisi dei requisiti
-Abbiamo ricevuto un riscontro positivo anche per quanto riguarda l'approccio adottato per la ricerca dei casi d'suo, ovvero concentrarci sul _fron-end_ poiché è la parte con la quale l'amministratore interagisce. È stata confermata anche la scelta di trattare il sensore come attore esterno al sistema.
+Abbiamo ricevuto un riscontro positivo anche per quanto riguarda l'approccio adottato per la ricerca dei casi d'suo, ovvero concentrarci sul _front-end_ poiché è la parte con la quale l'amministratore interagisce. È stata confermata anche la scelta di trattare il sensore come attore esterno al sistema.
 
 = Conclusioni
 Sono stati apprezzati i lavori svolti sia per la parte produttiva del PoC sia per la parte di analisi. Sono stati indicati degli accorgimenti da applicare per portare a termine la consegna del RTB e per il successivo sviluppo del MVP. Abbiamo quindi in programma di ultimare i prodotti _software_ e di documentazione nel prossimo _#rifGlossario("sprint")_ in modo da completare la _milestone_ entro venerdì 24 gennaio.
