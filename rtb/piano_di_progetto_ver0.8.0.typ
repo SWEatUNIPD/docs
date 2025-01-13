@@ -121,10 +121,10 @@ Ogni ID rischio segue la seguente convenzione per quanto riguarda la sua struttu
 dove *`[X]`* indica la tipologia di rischio, che si può distinguere in *`O`*-Organizzativo oppure *`T`*-Tecnologico, e *`[Y]`* indica un numero progressivo, univoco per tipologia di rischio.
 
 Per il processo di gestione dei rischi il gruppo adotta il modello fornito da Ian Sommerville nel libro _Software Engineering_, caratterizzato dai seguenti passi:
-1. *Identificazione del rischio*
-2. *Analisi e classificazione del rischio*
-3. *Processi di mitigazione del rischio*
-4. *Controllo del rischio*
++ *Identificazione del rischio*
++ *Analisi e classificazione del rischio*
++ *Processi di mitigazione del rischio*
++ *Controllo del rischio*
 
 == Rischi organizzativi
 === Riunione con l'azienda proponente <RO-1>
@@ -213,7 +213,7 @@ Il gruppo si pone come _milestone_ del progetto le due consegne previste dai com
 - *RTB* con data di consegna xx/01/2025
 - *PB* con data di consegna 21/03/2025
 
-Gli _sprint_ vengono quindi divisi nelle due _milestone_ precedentemente elencate per garantire una seperazione netta degli stessi e delle attività che ne comportano.
+Gli _sprint_ vengono quindi divisi nelle due _milestone_ precedentemente elencate per garantire una separazione netta degli stessi e delle attività che ne comportano.
 
 == RTB
 === Sprint 1
@@ -269,7 +269,7 @@ Le attività che il gruppo si prefissa di concludere durante queste due settiman
     (2, 2, 0, 0, 1, 0),
     (0, 0, 5, 0, 0, 0),
   ),
-  tabCaption: [Consutivo delle ore nel primo _sprint_ per membro e per ruolo],
+  tabCaption: [Consuntivo delle ore nel primo _sprint_ per membro e per ruolo],
   costTabCaption: [Costi sostenuti nel primo _sprint_],
   chartCaption: [Grafico percentuale dell'allocazione delle ore per ruolo nel primo _sprint_],
 )
@@ -444,7 +444,7 @@ La risorsa che avrebbe dovuto lavorare alla _dashboard_ è stata quindi rialloca
 
 Tuttavia, a causa sia di stime troppo ottimistiche da parte del responsabile che dallo stretto legame tra lo studio delle metriche e la stesura delle Norme di Progetto, si è riscontrato un ritardo nel completare queste attività entro i tempi preventivati. Queste quindi si protrarranno anche nella prima parte prossimo _sprint_.
 
-Per quanto riguarda l'Analisi dei Requisiti l'attività di stesura è proseguita come previsto. Il gruppo ha riscontrato delle difficoltà nell'identificazione dei casi d'uso e, più nello specifico, nel delineare il confine tra analisi dei requisiti e progettazione. È risultato quindi utile il confronto avvenuto con il professor Cardin, che ha permesso di chiarire molti dubbi. Ciò si è ripercosso anche nella stesura della parte riguardante la descrizione dei casi d'uso all'interno delle Norme di Progetto, che ora riporta per iscritto le _best practices_ imparate dal gruppo fino a questo momento.
+Per quanto riguarda l'Analisi dei Requisiti l'attività di stesura è proseguita come previsto. Il gruppo ha riscontrato delle difficoltà nell'identificazione dei casi d'uso e, più nello specifico, nel delineare il confine tra analisi dei requisiti e progettazione. È risultato quindi utile il confronto avvenuto con il professor Cardin, che ha permesso di chiarire molti dubbi. Ciò si è ripercosso anche nella stesura della parte riguardante la descrizione dei casi d'uso all'interno delle Norme di Progetto, che ora riporta per iscritto le _best practice_ imparate dal gruppo fino a questo momento.
 
 #pagebreak()
 
@@ -530,19 +530,19 @@ In ultima i miglioramenti alla dashboard Grafana non sono stati fatti in quanto,
 - *Rischi attesi*: #link(<RO-1>)[RO-1], #link(<RO-3>)[RO-3], #link(<RO-4>)[RO-4]
 
 ==== Attività dello sprint
-In vista della scadenza della _milestone_, e quindi della consegna posta per venerdì 24 gennaio, le attività che il _team_ si è prefissato di portare a termine durante il quinto _sprint_ sono le seguenti:
+In vista della scadenza della _milestone_, e quindi della consegna prevista per venerdì 24 gennaio, le attività che il _team_ si è prefissato di portare a termine durante il quinto _sprint_ sono le seguenti:
 - Redazione dei verbali per le rispettive riunioni interne ed esterne.
 - Compilazione del Piano di Progetto con la sezione relativa al quinto _sprint_.
 - Completamento delle Norme di Progetto, in particolare:
   - Stesura degli ultimi paragrafi seguendo lo _standard_ ISO/IEC 12207:1995.
 - Completamento del Piano di Qualifica, in particolare:
   - Aggiornamento dei valori del "cruscotto".
-  - Inserimento dei grafici dei documenti nelle sezioni apposite delle relative metriche.
+  - Inserimento dei grafici con gli andamenti dei valori delle metriche per ogni documento.
 - Completamento dell'Analisi dei Requisiti come indicato dall'incontro con il prof. Cardin, in particolare:
   - Rivalutare le precondizioni e postcondizioni.
   - Modificare i casi d'uso relativi alle notifiche.
   - Rendere più specifiche alcune funzionalità.
-  - Concludere la copiatura dei requisiti. È stato scelto di mantenere questa operazione come ultima per ridurre il più possibile il lavoro di riscrittura dei riferimenti coi casi d'uso.
+  - Concludere la copiatura dei requisiti. È stato scelto di mantenere questa operazione come ultima per ridurre il più possibile il lavoro di riscrittura dei riferimenti ai casi d'uso.
 - Presentare la _repository_ NearYou tramite `README.md`.
 - Ultimare la struttura del PoC, in particolare:
   - Completare l'infrastruttura con #rifGlossario("Docker Compose").
