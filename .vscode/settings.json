@@ -2,7 +2,12 @@
   "tinymist.fontPaths": ["${workspaceFolder}/assets/font/"],
   "tinymist.formatterMode": "typstyle",
   "cSpell.words": [
-    "profilazione"
+    "profilazione",
+    "ciclomatica",
+    "gulpease",
+    "Precoma",
+    "profilazione",
+    "Vardanega"
   ],
   "cSpell.enabledFileTypes": {
     "typst": true
