@@ -10,12 +10,22 @@
   titolo: "Norme di Progetto",
   uso: "Interno",
   versioni: (
-    "0.7.0",
-    "11/01/2025",
+    "0.8.0",
+    "12/01/2025",
     "Davide Marin",
     "Davide Martinelli\nDavide Picello",
     [
       - Aggiunte metriche per la qualità di prodotto
+    ],
+
+    "0.7.0",
+    "8/01/2025",
+    "Davide Martinelli",
+    "Davide Marin\nDavide Picello",
+    [
+      - Aggiunte metriche per la qualità di processo
+      - Stesura sezione "Standard per la qualità"
+      - Ampliamento sezioni "Verifica" e "Validazione"
     ],
 
     "0.6.0",
@@ -94,12 +104,13 @@ La prima occorrenza di un termine definito all'interno del glossario presente al
 == Riferimenti
 === Riferimenti normativi
 - Regolamento del progetto didattico\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")
+- ISO/IEC 12207:1995\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf")
 === Riferimenti informativi
 - Capitolato C4 (Sync Lab)\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
 
 #pagebreak()
 = Processi primari
-Lo standard ISO/IEC 12207:1995, riferimento internazionale per i processi del ciclo di vita del _software_, definisce come processi primari le attività di: acquisizione, fornitura, sviluppo, gestione operativa e di manutenzione.
+Lo _standard_ ISO/IEC 12207:1995, riferimento internazionale per i processi del ciclo di vita del _software_, definisce come processi primari le attività di: acquisizione, fornitura, sviluppo, gestione operativa e di manutenzione.
 
 Tuttavia, data la natura didattica del progetto, saremo tenuti ad occuparci solo delle parti di fornitura e sviluppo.
 
@@ -170,7 +181,7 @@ Il _trigger_ rappresenta l'evento o l'azione che scatena il caso d'uso. Questo p
 Esempio: L'utente clicca sul pulsante 'Effettua pagamento'.
 
 ====== Scenario principale
-Lo scenario principale descrive la sequenza di azioni standard che l'attore ed il sistema eseguono per raggiungere l'obiettivo del caso d'uso. Include tutti i passi principali in ordine sequenziale.
+Lo scenario principale descrive la sequenza di azioni _standard_ che l'attore ed il sistema eseguono per raggiungere l'obiettivo del caso d'uso. Include tutti i passi principali in ordine sequenziale.
 
 Esempio:
 1. L'amministratore inserisce i dati di accesso.
@@ -233,7 +244,7 @@ Dovrebbe contenere le seguenti informazioni/sessioni:
 */
 
 ==== Piano di Qualifica
-Il Piano di Qualifica è un documento formale che definisce le strategie, le attività e gli approcci necessari per garantire la qualità del prodotto _software_, durante tutto il corso del progetto. Descrive le modalità di verifica e validazione, gli standard adottati e le procedure di qualità da seguire.
+Il Piano di Qualifica è un documento formale che definisce le strategie, le attività e gli approcci necessari per garantire la qualità del prodotto _software_, durante tutto il corso del progetto. Descrive le modalità di verifica e validazione, gli _standard_ adottati e le procedure di qualità da seguire.
 
 Il suo scopo principale è assicurare che il prodotto finale sia conforme alle specifiche richieste e alle aspettative del committente, monitorando il progresso rispetto agli obiettivi prefissati. Ogni membro del _team_ coinvolto nello sviluppo farà riferimento a questo documento per mantenere e garantire i livelli di qualità stabiliti.
 
@@ -272,13 +283,32 @@ Piattaforma per il controllo di versione e la collaborazione su progetti _softwa
 ==== Typst
 #rifGlossario("Typst") è un nuovo sistema di impaginazione basato su _markup_, progettato per essere potente quanto LaTeX ma molto più facile da imparare e utilizzare.
 
+=== Metriche
+Le metriche adottate per il processo di fornitura sono le seguenti:
+
+#figure(
+  table( 
+    columns: 2,
+    table.header[*ID Metrica*][*Nome*],
+    [#link(<MPC-PV>)[MPC-PV]], [_Planned Value_],
+    [#link(<MPC-EV>)[MPC-EV]], [_Earned Value_],
+    [#link(<MPC-AC>)[MPC-AC]], [_Actual Cost_],
+    [#link(<MPC-CPI>)[MPC-CPI]], [_Cost Performance Index_],
+    [#link(<MPC-EAC>)[MPC-EAC]], [_Estimated at Completion_],
+    [#link(<MPC-SV>)[MPC-SV]], [_Schedule Variance_],
+    [#link(<MPC-BV>)[MPC-BV]], [_Budget Variance_],
+    [#link(<MPC-ETC>)[MPC-ETC]], [_Estimate to Complete_],
+  ),
+  caption: [Metriche per la fornitura]
+)
+
 == Sviluppo
-Sempre secondo lo standard ISO/IEC 12207:1995 lo scopo del processo di sviluppo è di descrivere le attività e i compiti necessari per creare e mantenere un sistema _software_, garantendo che il prodotto finale soddisfi i requisiti specificati nel contratto.
+Sempre secondo lo _standard_ ISO/IEC 12207:1995 lo scopo del processo di sviluppo è di descrivere le attività e i compiti necessari per creare e mantenere un sistema _software_, garantendo che il prodotto finale soddisfi i requisiti specificati nel contratto.
 
 Il processo di sviluppo è composto dalle seguenti attività:
 
 === Implementazione del processo
-Nella fase di implementazione, il fornitore deve stabilire o selezionare un modello di ciclo di vita appropriato per il progetto. Le attività di sviluppo e i compiti associati vengono mappati su tale modello, considerando che possono essere eseguiti in modo iterativo o ricorsivo. Il fornitore documenta i risultati secondo il processo di documentazione, ne gestisce le modifiche con un sistema di configurazione e risolve eventuali problemi di conformità. Devono essere selezionati strumenti, metodi e linguaggi di programmazione adeguati, e vengono pianificate le azioni necessarie per rispettare gli standard di qualità, sicurezza e conformità. Tutto questo è accompagnato dalla creazione di piani documentati e implementabili.
+Nella fase di implementazione, il fornitore deve stabilire o selezionare un modello di ciclo di vita appropriato per il progetto. Le attività di sviluppo e i compiti associati vengono mappati su tale modello, considerando che possono essere eseguiti in modo iterativo o ricorsivo. Il fornitore documenta i risultati secondo il processo di documentazione, ne gestisce le modifiche con un sistema di configurazione e risolve eventuali problemi di conformità. Devono essere selezionati strumenti, metodi e linguaggi di programmazione adeguati, e vengono pianificate le azioni necessarie per rispettare gli _standard_ di qualità, sicurezza e conformità. Tutto questo è accompagnato dalla creazione di piani documentati e implementabili.
 
 === Analisi dei requisiti di sistema
 In questa fase, si analizzano le esigenze specifiche del sistema da sviluppare, documentando i requisiti funzionali, di sicurezza, di manutenzione, ergonomici e di interfaccia. Tali requisiti vengono valutati rispetto alla loro tracciabilità, consistenza con le esigenze iniziali, testabilità e fattibilità tecnica. Il risultato è una specifica dettagliata dei requisiti del sistema.
@@ -293,7 +323,7 @@ Per ogni componente _software_ individuato, vengono stabiliti e documentati i re
 I requisiti _software_ vengono trasformati in un’architettura che descrive la struttura generale del _software_ e identifica i componenti principali. Si definiscono e documentano le interfacce e le prime versioni della documentazione utente, oltre ai requisiti di _test_ preliminari per l’integrazione. La valutazione di questa fase si concentra sulla tracciabilità rispetto ai requisiti, sulla coerenza interna e sull’adeguatezza dei metodi di progettazione utilizzati.
 
 === Progettazione dettagliata del software
-Si sviluppano progetti dettagliati per ogni componente _software_, che vengono suddivisi in unità più piccole, codificabili e testabili. La documentazione comprende dettagli delle interfacce, del _database_ e requisiti specifici per il _testing_. Anche in questa fase, la progettazione è sottoposta a valutazioni che ne verificano tracciabilità, coerenza interna, testabilità e conformità agli standard di progettazione.
+Si sviluppano progetti dettagliati per ogni componente _software_, che vengono suddivisi in unità più piccole, codificabili e testabili. La documentazione comprende dettagli delle interfacce, del _database_ e requisiti specifici per il _testing_. Anche in questa fase, la progettazione è sottoposta a valutazioni che ne verificano tracciabilità, coerenza interna, testabilità e conformità agli _standard_ di progettazione.
 
 === Codifica e testing del software
 I componenti _software_ vengono codificati e testati per garantire che soddisfino i requisiti definiti. I risultati dei _test_ vengono documentati e la documentazione utente viene aggiornata. Questa fase include anche la preparazione dei requisiti di _test_ per l’integrazione _software_ e una revisione dell’adeguatezza del codice e dei risultati dei _test_.
@@ -316,8 +346,20 @@ Si sviluppa e implementa un piano per l’installazione del _software_ nell’am
 === Supporto all'accettazione del software
 Il fornitore supporta il cliente nella revisione e nei _test_ di accettazione del _software_, che comprendono la valutazione di tutti i risultati ottenuti nelle fasi precedenti. Viene completata la consegna del prodotto _software_ e fornite eventuali attività di formazione e supporto iniziale.
 
+=== Metriche
+Le metriche adottate per il processo di sviluppo sono le seguenti:
+
+#figure(
+  table( 
+    columns: 2,
+    table.header[*ID Metrica*][*Nome*],
+    [#link(<MPC-ISR>)[MPC-ISR]], [Indice di Stabilità dei Requisiti],
+  ),
+  caption: [Metriche per lo sviluppo]
+)
 
 #pagebreak()
+
 = Processi di supporto
 
 == Documentazione <Documentazione>
@@ -477,7 +519,7 @@ Nei documenti vengono applicate le seguenti regole di stile testuali:
 
 === Riferimenti
 ==== Contestuali
-Per riferirsi ad una sezione del documento per una spiegazione più dettagliata si adotta la dicitura "sez. [I]" dove I indica l'indice della sezione (ad esempio "(sez. 3.2)"). Per un corretto collegamento si veda il paragrafo apposito (#link(<stile_testo>)[sez. 3.1.8]).
+Per riferirsi ad una sezione del documento per una spiegazione più dettagliata si adotta la dicitura "sez. [I]" dove I indica l'indice della sezione (ad esempio "(sez. 3.2)"). Per un corretto collegamento si veda il paragrafo apposito (#link(<stile_testo>)[sez. 3.1.8]). \ Nel caso si tratti di un riferimento alla descrizione di una metrica (e quindi solo in questo documento) è sufficiente lasciare come dicitura il codice della metrica stessa (ad esempio "MPC-IG").
 
 ==== Ipertestuali
 Per esporre un _link_ ad una pagina esterna al docuento si utilizza la funzione `#formatLink` (#link(<stile_testo>)[sez. 3.1.8]) esplicitando l'interezza dell'_url_ anche nella _label_. Unica eccezione di stile per i riferimenti alle _issue_ nella tabella delle decisioni (#link(<stile_testo>)[sez. 3.1.8]).
@@ -497,7 +539,18 @@ Sono stati scelti i seguenti strumenti per redigere e mantenere la documentazion
 - *Draw.io*: sito _web_ che offre un'interfaccia grafica per creare i diagrammi utili all'analisi e alla progettazione.
 - *GitHub*: servizio di _#rifGlossario("hosting")_ di _repository_.
 
+=== Metriche
+Le metriche adottate per la documentazione sono le seguenti:
 
+#figure(
+  table( 
+    columns: 2,
+    table.header[*ID Metrica*][*Nome*],
+    [#link(<MPC-IG>)[MPC-IG]], [Indice Gulpease],
+    [#link(<MPC-CO>)[MPC-CO]], [Correttezza Ortografica],
+  ),
+  caption: [Metriche per la documentazione]
+)
 
 == Gestione della configurazione
 Per gestire la documentazione è stato creata una _repository_ contenente tutti i _file_ Typst aggiornati e verificati. Gli stessi documenti in formato `.pdf` sono consultabili al sito \ #formatLink(label: "https://sweatunipd.github.io", url: "https://sweatunipd.github.io").
@@ -579,13 +632,13 @@ Il _product backlog_ è rappresentato da una GitHub _board_ con tre sezioni:
 - *Done*
 
 === Ticketing
-Alla fine di ogni riunione interna si aggiorna il _backlog_ con le nuove _issue_ (corrispondenti alle decisioni prese durante la riunione). Esse devono specificare in modo esaustivo il compito da svolgere nel titolo, arricchite da una breve descrizione e dai riferimenti al verificatore e al verbale nel quale è scaturita quella decisione, in modo che in futuro sia sempre tracciabile il motivo della inserimento di quella _issue_. Per una corretta impostazione si chiede di seguire il seguente schema:
+Alla fine di ogni riunione interna si aggiorna il _backlog_ con le nuove _issue_ (corrispondenti alle decisioni prese durante la riunione). Esse devono specificare in modo esaustivo il compito da svolgere nel titolo, arricchite da una breve descrizione e dai riferimenti al verificatore e al verbale nel quale è scaturita quella decisione, in modo che in futuro sia sempre tracciabile il motivo dell'inserimento di quella _issue_. Per una corretta impostazione si chiede di seguire il seguente schema:
 
 | Titolo completo ed esaustivo \
 | ------------------------------------------------------\
 | Breve descrizione. \
 | \
-| Verificatore: \@Nickame \
+| Verificatori: \@Nickname \
 | \
 | Decisione presa nel [VI/VE]\_[YYYY-MM-DD]
 
@@ -609,47 +662,110 @@ Sono state create le seguenti _label_ per migliorare l'organizzazione delle _iss
 Viene adoperata una Action per facilitare il processo di verifica in quanto crea un _file_ `.zip` con i documenti in formato `.pdf` ad ogni _commit_, e automatizza la pubblicazione dei documenti approvati nel sito del gruppo. Per i verbali esterni si è scelto un approccio differente in quanto bisogna aspettare la firma del proponente per presa visione. Non potendo quindi essere pubblicati direttamente nel sito i verbali esterni vanno compilati localmente e mandati alla controparte. Una volta restituiti firmati vanno caricati manualmente nella stessa cartella dove risiede il codice sorgente e la Action si occuperà di pubblicarli nel sito. Per caricare i documenti firmati bisogna forzare l'operazione col seguente comando: \
 *`git add [file_name] --force`*
 
-
-
-== Controllo qualità
-TODO: Cosa controllare per mantenere la qualità attesa (durante la verifica e validazione), consultare il PdQ.
-
-
-
 == Verifica
-Ogni documento creato o modificato necessita la revisione da uno o più verificatori. Questo processo viene automatizzato il più possibile con l'utilizzo delle _pull request_, il sistema di _ticketing_ tramite _issue_ e una Action dedicata. Quando possibile è preferibile richiedere la revisione a tutti i verificatori per i documenti di carattere generale perché fondamentali per il corretto svolgimento del progetto.
-
-=== Pull request
-Le _pull request_ velocizzano e automatizzano la verifica dei documenti. Una volta organizzate nel modo corretto (#link(<lavoro_doc>)[sez. 3.1.1.2]), il verificatore può aggiungere una _review_ da interfaccia _web_ commentando, chiedendo una modifica o approvando la _pull request_. Una volta soddisfatti i requisiti spetterà al responsabile confermare la nuova versione del documento e unire il _branch_ al principale tramite il pulsante "_squash and merge_".
+La verifica è un processo di cruciale importanza che accompagna il _software_ lungo tutto il suo ciclo di vita, dalla progettazione fino alla manutenzione. Il suo obiettivo è garantire l'efficienza e la correttezza dei processi e dei loro eventuali prodotti.
+Un processo di verifica efficace ha come naturale conseguenza un prodotto più stabile, che risulta in un processo di validazione più lineare e prevedibile, meno soggetto ad imprevisti.
 
 === Analisi statica
-Al completamento di ogni _commit_ una Action compila i _file_ Typst modificati e genera un _file_ `.zip` contenente i documenti in formato `.pdf`. Così facendo si è sicuri che il codice è privo di errore sintattici e genera correttamente un prodotto finale e distribuibile.
+L'analisi statica è un processo di verifica che si svolge senza eseguire il codice ed è perciò applicabile a tutti i prodotti del progetto. Il suo obiettivo è individuare errori e anomalie nel codice sorgente o nel testo prodotto. Le due tecniche principali adottate sono il _walkthrough_ e l'_inspection_.
 
-È stato messo a disposizione un _test_ il quale controlla che la prima occorrenza dei termini del Glossario venga identificata (#link(<glossario>)[sez. 1.3]). Viene effetuato automanticamente dalla Action ad ogni _push_, tuttavia è preferibile eseguirlo prima in locale così da efficientare il lavoro. È sufficiente quindi aver installato NodeJS sulla propria macchina ed eseguire il comando *`node test.js`* nella _root_ della _repository_ locale. Il _test_ esamina tutti i documenti e ritorna degli avvisi in caso fallisse.
+- Il _walkthrough_ prevede un'analisi sistematica di tutto il prodotto alla ricerca di irregolarità non meglio specificate.
+
+- L'_inspection_, invece, prevede una ricerca mirata all'interno del codice sorgente o del documento soffermandosi solo su ciò che si sa essere più soggetto ad errori, trasformando quindi il processo di verifica nella risoluzione di una _checklist_.
+
+L'_inspection_ è il metodo da preferire in quanto più efficiente, allo stesso tempo è difficilmente implementabile all'inizio per mancanza di esperienza (e quindi dati su quali sono gli errori più comuni).
+
 
 === Analisi dinamica
+L'analisi dinamica è un processo di verifica che si svolge eseguendo il codice. Il suo obiettivo è individuare errori e anomalie nel codice sorgente. Lo strumento principale utilizzato è il _test_. I _test_ possono essere di vario tipo:
+- *Test di unità*: verificano il corretto funzionamento di una singola unità di codice.
+- *Test di integrazione*: verificano il corretto funzionamento dell'interazione tra due o più unità di codice.
+- *Test di sistema*: verificano il corretto funzionamento del sistema nel suo complesso.
+- *Test di regressione*: verificano che le modifiche apportate al codice non abbiano introdotto nuovi errori.
+- *Test di accettazione*: verificano che il prodotto soddisfi i requisiti specificati.
+
+=== Verifica dei documenti
+Ogni documento creato o modificato necessita la revisione da uno o più verificatori. Questo processo viene automatizzato il più possibile con l'utilizzo delle _pull request_, il sistema di _ticketing_ tramite _issue_ e una Action dedicata. Quando possibile è preferibile richiedere la revisione a tutti i verificatori per i documenti di carattere generale perché fondamentali per il corretto svolgimento del progetto.
+
+==== Pull request
+Le _pull request_ velocizzano e automatizzano la verifica dei documenti. Una volta organizzate nel modo corretto (#link(<lavoro_doc>)[sez. 3.1.1.2]), il verificatore può aggiungere una _review_ da interfaccia _web_ commentando, chiedendo una modifica o approvando la _pull request_. Una volta soddisfatti i requisiti spetterà al responsabile confermare la nuova versione del documento e unire il _branch_ al principale tramite il pulsante "_squash and merge_".
+
+==== Action
+Al completamento di ogni _commit_ una Action compila i _file_ Typst modificati e genera un _file_ `.zip` contenente i documenti in formato `.pdf`. Così facendo si è sicuri che il codice è privo di errori sintattici e genera correttamente un prodotto finale e distribuibile.
 Il verificatore può consultare sia il documento in formato `.pdf` per maggiore leggibilità sia il codice sorgente. Nel caso trovasse degli errori può segnalarli tramite la _pull request_, oppure pubblicare un commento per avviare una discussione riguardo una correzione più complessa.
 
+==== Test
+È stato messo a disposizione un _test_ il quale controlla che la prima occorrenza dei termini del Glossario venga identificata (#link(<glossario>)[sez. 1.3]). Viene effettuato automaticamente dalla Action ad ogni _push_, tuttavia è preferibile eseguirlo prima in locale così da efficientare il lavoro. È sufficiente quindi aver installato NodeJS sulla propria macchina ed eseguire il comando *`node test.js`* nella _root_ della _repository_ locale. Il _test_ esamina tutti i documenti e ritorna degli avvisi in caso fallisse.
 
 
 == Validazione
+Il processo di validazione è definibile, secondo lo _standard_ ISO/IEC 12207:1995, come il processo di conferma tramite dimostrazioni oggettive che il prodotto soddisfi i requisiti specificati per un sistema. In sostanza, la validazione certifica che il prodotto soddisfi le esigenze del cliente ovvero, più specificamente:
+- soddisfi tutti i requisiti concordati;
+- sia eseguibile senza problemi nell'ambiente di destinazione.
 
+Si tratta di un processo che si svolge in parallelo alla verifica e che si conclude con l'accettazione del prodotto da parte del cliente. Una volta che il cliente, ovvero nel nostro caso l'azienda proponente, ha accettato il prodotto si può procedere con il rilascio.
 
+Lo strumento principale utilizzato per la validazione è il _test_ di accettazione, ovvero l'ultimo _test_ che viene eseguito prima del rilascio del prodotto. Tale _test_ verrà eseguito in presenza della proponente.
 
 == Risoluzione dei problemi
+
+=== Documentazione
 È possibile incappare in problemi riguardanti il ciclo di redazione e verifica dei documenti. In questi casi è preferibile cercare di risolverli al più presto per conto proprio in maniera da non ostacolare il lavoro dei compagni. Tuttavia se si è insicuri delle procedure da adottare o non si trova una soluzione si può contattare l'amministratore per tornare al più presto operativi. Come ultima alternativa è possibile contattare Klaudio Merja, creatore dell'organizzazione e della _repository_ GitHub, il quale è l'unico che può eseguire alcune operazioni forzate poiché gode dei privilegi da amministratore dell'ambiente GitHub.
 
-//FIXME: Mancano ovviamente gli standard di qualità del prodotto che devono essere ancora spiegati, quindi al momento non sono inseriti
+== Gestione della qualità
+=== Scopo
+Il processo di gestione della qualità ha lo scopo di garantire che i prodotti soddisfino i requisiti specificati e che siano, assieme ai processi, conformi agli _standard_ di qualità stabiliti. La qualità è un requisito fondamentale per il successo del progetto e deve essere garantita in ogni fase del ciclo di vita del prodotto.
 
+=== Definizione delle metriche
+Lo strumento fondamentale per misurare la qualità di un prodotto o di un processo sono le metriche. Esse permettono di valutare in modo oggettivo il grado di conformità del prodotto o del processo rispetto agli _standard_ di qualità stabiliti. Le metriche vengono utilizzate per tracciare la qualità durante tutto il ciclo di vita del progetto. L'elenco esaustivo di tutte le metriche adottate in questo progetto, e la loro rispettiva descrizione, è consultabile nell'ultima sezione (#link(<metriche>)[sez. 6]) di questo documento.
 
+==== Identificazione
+Le metriche adottate sono identificate da un codice alfabetico, strutturato nel seguente modo:
+
+#align(center)[*M[tipo]-[abbreviazione]*]
+
+dove:
+- *tipo*: indica il tipo di metrica, può essere:
+  - *PC*: per le metriche riguardanti la qualità di processo.
+  - *PD*: per le metriche riguardanti la qualità di prodotto.
+- *abbreviazione*: abbreviazione o acronimo del nome della metrica.
+
+==== Struttura
+Ciascuna metrica viene descritta tramite seguenti campi:
+- *Codice*: codice identificativo della metrica.
+- *Nome*: nome della metrica.
+- *Descrizione*: breve descrizione della metrica.
+e, nei casi in cui sia necessario:
+- *Formula*: formula utilizzata per calcolare il valore della metrica.
+- *Parametri*: parametri utilizzati nella formula.
+
+=== Criteri di accettazione
+All'interno del Piano di Qualifica sono definiti i criteri di accettazione per le metriche adottate. Questi criteri sono stabiliti in modo da garantire che i prodotti e i servizi soddisfino i requisiti specificati e che siano conformi agli _standard_ di qualità stabiliti.
+Ad ogni metrica è associata una soglia di accettazione e una soglia di ottimalità. 
+- La soglia di accettazione rappresenta il valore minimo (o massimo) che la metrica deve rispettare per essere considerata accettabile.
+- La soglia di ottimalità rappresenta il valore minimo (o massimo) che la metrica deve rispettare per essere considerata ottimale.
+
+=== Metriche
+Le metriche adottate per la gestione della qualità sono le seguenti:
+
+#figure(
+  table( 
+    columns: 2,
+    table.header[*ID Metrica*][*Nome*],
+    [#link(<MPC-PMS>)[MPC-PMS]], [Percentuale di Metriche Soddisfatte],
+    
+  ),
+  caption: [Metriche per la gestione della qualità]
+)
 
 #pagebreak()
+
 = Processi organizzativi
 L'ingegneria del _software_ è un campo complesso e multidisciplinare che richiede un'attenta pianificazione, una gestione efficace delle risorse e un controllo accurato della qualità. Quindi definire e rispettare processi organizzativi ben organizzati diventa essenziale.
 
 == Gestione dei processi
 === Scopo
-Secondo lo standard ISO/IEC 12207:1997 la gestione dei processi mira a stabilire, implementare e migliorare i processi che il gruppo deve assicurarsi vengano svolti per garantire la massima resa dei processi di sviluppo.
+Secondo lo _standard_ ISO/IEC 12207:1997 la gestione dei processi mira a stabilire, implementare e migliorare i processi che il gruppo deve assicurarsi vengano svolti per garantire la massima resa dei processi di sviluppo.
 
 === Descrizione
 Le attività di gestione dei processi sono:
@@ -669,11 +785,10 @@ Le attività di gestione dei processi sono:
 
 === Pianificazione
 ==== Descrizione
-Come stabilito dallo standard ISO/IEC 12207:1997 il responsabile è responsabile della preparazione dei piani per l'esecuzione di tutte le attività relative alla pianificazione del periodo di carica. 
+Come stabilito dallo _standard_ ISO/IEC 12207:1997 il responsabile è responsabile della preparazione dei piani per l'esecuzione di tutte le attività relative alla pianificazione del periodo di carica. 
 Ogni attività dovrà avere associata una descrizione, il personale incaricato di gestire i processi di essa e una scadenza da rispettare.
 
-
-Il responsabile di un determinato _sprint_ redigerà questa pianificazione all'interno del documento Piano di Progetto, che riporterà le attività da svolgere in quel periodo.
+Il responsabile di ciascuno _sprint_ ha il compito di redigere questa pianificazione all'interno del documento Piano di Progetto, che riporterà le attività da svolgere in quel periodo.
 
 ==== Scopo
 Gli scopi della pianificazione sono avere un piano reale di quelli che sono gli obiettivi realistici dello _sprint_, per poi poter eseguire una retrospettiva, e suddividere tutte le attività necessarie per perseguire questi obiettivi nelle risorse del _team_, in modo da garantire ordine e chiarezza nella divisione dei compiti.
@@ -712,7 +827,7 @@ Ha il compito di:
 - Garantire che vengano rispettati i principi tecnici dell'ingegneria del _software_, come un livello di accoppiamento più basso possibile.
 
 ===== Verificatore
-Il verificatore dovrà garantire che il _software_ mantenga adeguati standard di qualità garantendone, attraverso _test_ e controlli, l'affidabilità e la robustezza.
+Il verificatore dovrà garantire che il _software_ mantenga adeguati _standard_ di qualità garantendone, attraverso _test_ e controlli, l'affidabilità e la robustezza.
 Ha il compito di:
 - Verificare la correttezza di contenuto e stilistica dei documenti con le regole definite nelle Norme di Progetto.
 - Verificare che il codice prodotto sia privo di _bug_ e in linea con le linee guida dei progettisti.
@@ -726,7 +841,7 @@ Ha il compito di:
 - Redigere il manuale utente.
 
 ==== Ticketing
-Il gruppo adotta l'*Issue Tracking System* (ITS) interno di GitHub. GitHub permette una gestione semplice e chiara dei compiti da svolgere tramite la _project board_ e le _issues_ che possono essere chiuse automaticamente a lavoro svolto.
+Il gruppo adotta l'*Issue Tracking System* (ITS) interno di GitHub. Esso permette una gestione semplice e chiara dei compiti da svolgere grazie alla _project board_ e alle _issues_, che possono essere chiuse automaticamente a lavoro svolto.
 
 
 Ad ogni riunione di inizio _sprint_ il responsabile crea le _issues_ e le assegna ai vari membri del gruppo.
@@ -795,9 +910,23 @@ Al fine di tracciare le discussioni svolte, le decisioni prese dal gruppo e sopr
 ===== Verbali Esterni
 Per quanto riguarda le riunioni con i proponenti valgono le stesse regole di quelle interne con il passaggio aggiuntivo, di cui si occupa il responsabile, di richiedere l'approvazione del proponente tramite la sua firma sul verbale una volta redatto e verificato.
 
+=== Metriche
+
+#figure(
+  table( 
+    columns: 2,
+    table.header[*ID Metrica*][*Nome*],
+    [#link(<MPC-ET>)[MPC-ET]], [Efficienza Temporale],
+    
+  ),
+  caption: [Metriche per la gestione dei processi]
+)
+
+
 == Miglioramento
 === Descrizione
-Secondo lo standard ISO/IEC 12207:1995 il processo di miglioramento nel ciclo di vita del _software_ è finalizzato a stabilire, misurare, controllare e migliorare i processi che lo compongono. L’attività di miglioramento è composta da:
+Secondo lo _standard_ ISO/IEC 12207:1995 il processo di miglioramento nel ciclo di vita del _software_ è finalizzato a stabilire, misurare, controllare e migliorare i processi che lo compongono. L’attività di miglioramento è composta da:
+
 - Analisi: identificare le aree di miglioramento dei processi.
 - Miglioramento: implementare le modifiche necessarie per migliorare i processi di sviluppo del _software_.
 
@@ -807,10 +936,216 @@ Innanzitutto occorre stabilire una serie di processi organizzativi per l'intero 
 ==== Miglioramento dei processi
 Una volta identificati i potenziali miglioramenti questi vanno effettivamente implementati secondo le corrette e adeguate metodologie. Nella retrospettiva seguente all'applicazione di queste migliorie verrà effettuato un altro _#rifGlossario("feedback")_ a riguardo per progredire ciclicamente.
 
-=== Metriche
-// TODO: Bisogna capire bene quali sono nostre metriche, aspettando il PdQ
-=== Metriche di qualità del prodotto
-==== Funzionalità
+=== Strumenti
+Lo strumento principale per misurare l'efficacia delle modifiche apportate ad un processo e per identificare eventuali aree di miglioramento sono le metriche, ognuna delle quali analizzerà un aspetto chiave del processo stesso. Il loro andamento è consultabule nel Cruscotto della Qualità.
+
+== Formazione
+=== Descrizione
+Per iniziare a formare i membri del gruppo, è necessario prima comprendere completamente il dominio del problema. È necessario quindi comprendere quali argomenti sono necessari per essere approfonditi e quali abilità sono necessarie per i vari processi. 
+
+Si deve quindi passare all'individuazione del materiale di formazione che aumenterà nel tempo poiché il nostro livello di conoscenza e comprensione del problema dovrà aumentare man mano che il progetto avanza.
+
+Infine tutti i membri del gruppo devono imparare da dove e cosa studiare e devono anche aggiornarsi individualmente, se possibile, con l'aiuto di altri membri più esperti.
+
+=== Strumenti
+Al fine di agevolare il processo di formazione ogni membro del gruppo incaricato in un determinato _sprint_ di approfondire un determinato argomento dovrà essere in grado di tramandare la propria conoscenza agli altri. 
+Per aiutarci nel processo di apprendimento l'azienda Sync Lab ci fornisce, durante lo svolgimento del progetto, materiali quali video e risorse utili alle tecnologie di dominio d'uso del nostro capitolato, nonché delle sedute di _deep dive_ concordate a calendario.
+
+= Standard per la qualità
+Per la valutazione della qualità del _software_ prodotto il gruppo si prefigge di adottare le linee guida dello _standard_ ISO/IEC 9126.
+
+== Standard ISO/IEC 9126
+L'ISO/IEC 9126 è uno _standard_ internazionale creato per la valutazione della qualità del _software_. Definisce un modello di qualità del _software_ in termini di sei caratteristiche generali e venticinque sotto-caratteristiche. Questo _standard_ è stato sostituito dall'ISO/IEC 25010, ma rimane comunque un riferimento importante per la valutazione della qualità del _software_.
+
+Di seguito forniamo una panoramica delle caratteristiche del modello di qualità descritto dallo _standard_ ISO/IEC 9126.
+
+=== Funzionalità
+La funzionalità è la capacità del prodotto _software_ di fornire funzioni che soddisfano le esigenze esplicite e implicite necessarie per operare. \ Questa caratteristica è composta dalle seguenti sotto-caratteristiche:
+  - *Appropriatezza*: capacità del prodotto di fornire un adeguato insieme di funzioni per consentire all'utente di perseguire i suoi specifici compiti e obiettivi.
+  - *Accuratezza*: capacità del prodotto di fornire i risultati o gli effetti attesi.
+  - *Interoperabilità*: capacità del prodotto di interagire con uno o più sistemi specificati.
+  - *Conformità*: capacità del prodotto di aderire a _standard_, convenzioni e regolamentazioni rilevanti per il settore operativo a cui vengono applicate.
+  - *Sicurezza*: capacità del prodotto di proteggere i dati e le funzioni da accessi non autorizzati.
+
+=== Affidabilità
+L'affidabilità è la capacità del prodotto di mantenere un certo livello di prestazioni in condizioni specificate per un periodo di tempo specificato. \ Le sue sotto-caratteristiche sono:
+  - *Maturità*: capacità del prodotto di evitare errori, malfunzionamenti o arresti inaspettati.
+  - *Tolleranza agli errori*: capacità del prodotto di mantenere un livello prestabilito di prestazioni in caso di errori.
+  - *Recuperabilità*: capacità del prodotto di ripristinare il livello di prestazioni e i dati in caso di malfunzionamenti.
+  - *Aderenza*: capacità del prodotto di aderire a _standard_, convenzioni e regolamentazioni riguardanti l'affidabilità.
+
+=== Efficienza
+L'efficienza è la capacità del prodotto di fornire prestazioni appropriate rispetto alla quantità di risorse utilizzate. \ Le sue sotto-caratteristiche sono:
+  - *Comportamento rispetto al tempo*: capacità del prodotto di fornire, sotto certe condizioni, adeguati tempi di risposta, elaborazione e velocità di attraversamento.
+  - *Utilizzo delle risorse*: capacità del prodotto di utilizzare adeguatamente risorse come memoria, CPU e spazio su disco.
+  - *Conformità*: capacità del prodotto di aderire a _standard_ e specifiche per l'efficienza.
+
+=== Usabilità
+L'usabilità è la capacità del prodotto di essere compreso, appreso, utilizzato e attraente per l'utente. \ Le sue sotto-caratteristiche sono:
+  - *Comprensibilità*: capacità del prodotto di rendere i suoi concetti facilmente comprensibili all'utente, permettendogli di valutare se il prodotto è adatto alle sue esigenze.
+  - *Apprendibilità*: capacità del prodotto essere facilmente apprendibile per gli utenti che non ne conoscono già il funzionamento.
+  - *Operabilità*: capacità del prodotto di essere utilizzato dagli utenti per i propri scopi e controllandone l'uso.
+  - *Attrattività*: capacità del prodotto di essere piacevole da utilizzare per l'utente.
+  - *Conformità*: capacità del prodotto di aderire a _standard_ o convenzioni per l'usabilità.
+
+=== Manutenibilità
+La manutenibilità è la capacità del prodotto di essere modificato, includendo correzioni, miglioramenti o adattamenti. \ Le sue sotto-caratteristiche sono:
+  - *Analizzabilità*: capacità del prodotto di essere facilmente analizzato per identificare difetti o cause di malfunzionamenti.
+  - *Modificabilità*: capacità del prodotto di essere facilmente modificato (sostituendo componenti).
+  - *Stabilità*: capacità del prodotto di evitare effetti indesiderati derivanti da modifiche.
+  - *Testabilità*: capacità del prodotto di essere facilmente testato così da validare le modifiche apportate.
+
+= Metriche per la qualità <metriche>
+
+== Metriche per la qualità di processo
+
+=== Processi primari
+==== Fornitura
+- *MPC-PV*: <MPC-PV>
+  - *Nome*: _Planned Value_
+  - *Descrizione*: Indica il valore che si prevede di aver prodotto fino a quel momento.
+  - *Formula*: 
+  $ "PV" = "%LSP" * "BAC" $
+  - *Parametri*:
+    - *%LSP*: Percentuale di Lavoro Svolto secondo la Pianificazione (ore pianificate rispetto alle ore totali disponibili).
+    - *BAC*: _Budget at Completion_, ovvero il costo totale del progetto, stabilito in fase di candidatura.
+
+- *MPC-EV*: <MPC-EV>
+  - *Nome*: _Earned Value_
+  - *Descrizione*: Indica il valore del lavoro effettivamente svolto fino a quel momento.
+  - *Formula*: 
+  $ "EV" = "%LSE" * "BAC" $
+  - *Parametri*:
+    - *%LSE*: Percentuale di Lavoro Svolto Effettivamente (ore consumate rispetto al totale disponibile).
+    - *BAC*: _Budget at Completion_.
+
+- *MPC-AC*: <MPC-AC>
+  - *Nome*: _Actual Cost_
+  - *Descrizione*: Indica i costi effettivi sostenuti dall'inizio del progetto fino a quel momento. Ricavabile in qualsiasi momento consultando il Piano di Progetto.
+
+- *MPC-CPI*: <MPC-CPI>
+  - *Nome*: _Cost Performance Index_
+  - *Descrizione*: Indica il rapporto tra il valore guadagnato e il costo effettivo. Più grande il suo valore, maggiore sarà l’efficienza.
+  - *Formula*: 
+  $ "CPI" = "EV" / "AC" $
+  - *Parametri*:
+    - *EV*: _Earned Value_, ovvero il valore guadagnato.
+    - *AC*: _Actual Cost_, ovvero il costo effettivo.
+
+- *MPC-EAC*: <MPC-EAC>
+  - *Nome*: _Estimated at Completion_
+  - *Descrizione*: Indica il costo stimato per terminare il progetto se si mantenesse l'attuale efficienza nell'utilizzo delle risorse.
+  - *Formula*: 
+  $ "EAC" = "BAC" / "CPI" $
+  - *Parametri*:
+    - *BAC*: _Budget at Completion_.
+    - *CPI*: _Cost Performance Index_.
+
+- *MPC-SV*: <MPC-SV>
+  - *Nome*: _Schedule Variance_
+  - *Descrizione*: Indica se il progetto è in anticipo (valore positivo), in pari (valore zero) o in ritardo (valore negativo) rispetto alla pianificazione.
+  - *Formula*: 
+  $ "SV" = "EV" - "PV" $
+  - *Parametri*:
+    - *EV*: _Earned Value_.
+    - *PV*: _Planned Value_.
+
+- *MPC-BV*: <MPC-BV>
+  - *Nome*: _Budget Variance_
+  - *Descrizione*: Indica se i costi finora sostenuti per il progetto sono meno (valore positivo) o più (valore negativo) del previsto.
+  - *Formula*: 
+  $ "BV" = "PV" - "AC" $
+  - *Parametri*:
+    - *PV*: _Planned Value_.
+    - *AC*: _Actual Cost_.
+
+- *MPC-ETC*: <MPC-ETC>
+  - *Nome*: _Estimate to Complete_
+  - *Descrizione*: Costo stimato per poter completare il progetto allo stato attuale.
+  - *Formula*: 
+  $ "ETC" = "EAC" - "AC" $
+  - *Parametri*:
+    - *EAC*: _Estimated at Completion_.
+    - *AC*: _Actual Cost_.
+
+==== Sviluppo
+
+- *MPC-ISR*: <MPC-ISR>
+  - *Nome*: Indice di Stabilità dei Requisiti
+  - *Descrizione*: Indice che misura la variazione dei requisiti nel corso del tempo. #h(1fr)
+  - *Formula*: 
+  $ "ISR" = 100 - (("RM" + "RC" + "RA") / "RT") * 100 $
+  - *Parametri*:
+    - *RM*: Numero di Requisiti Modificati.
+    - *RC*: Numero di Requisiti Cancellati.
+    - *RA*: Numero di Requisiti Aggiunti.
+    - *RT*: Numero Totale di Requisiti inizialmente previsti.
+
+
+=== Processi di supporto
+==== Documentazione
+- *MPC-IG*: <MPC-IG>
+  - *Nome*: Indice Gulpease
+  - *Descrizione*: Indica il livello di leggibilità di un testo: 
+    - Inferiore a 80: difficile da leggere per chi ha la licenza elementare.
+    - Inferiore a 60: difficile da leggere per chi ha la licenza media.
+    - Inferiore a 40: difficile da leggere per chi ha la licenza superiore. #h(1fr)
+  - *Formula*:
+  $ "IG" = 89 + (300 * "NDF" - 10 * "NDL") / "NDP" $
+  - *Parametri*: 
+    - *NDF*: Numero di Frasi presenti nel testo.
+    - *NDL*: Numero di Lettere presenti nel testo.
+    - *NDP*: Numero di Parole presenti nel testo.
+  
+- *MPC-CO*: <MPC-CO>
+  - *Nome*: Correttezza Ortografica
+  - *Descrizione*: Indica il numero di errori ortografici trovati nel testo.
+
+/*  DA SPOSTARE NELLA SEZIONE "Metriche per la qualità di prodotto"
+==== Verifica
+
+- *MPC-BC*: <MPC-BC>
+  - *Nome*: _Branch Coverage_
+  - *Descrizione*: Indica la percentuale di rami condizionali coperti dai _test_.
+  - *Formula*: $ "BC" = ("RC" / "RT") * 100 $
+  - *Parametri*:
+    - *RC*: Numero di rami condizionali coperti dai _test_.
+    - *RT*: Numero totale di rami condizionali.
+
+- *MPC-PTP*: <MPC-PTP>
+  - *Nome*: Percentuale di _test_ passati
+  - *Descrizione*: Indica la percentuale di _test_ che attualmente danno risultato positivo.
+  - *Formula*: $ "PTP" = ("TP" / "TT") * 100 $
+  - *Parametri*:
+    - *TP*: Numero di _test_ positivi.
+    - *TT*: Numero totale di _test_.
+*/
+
+==== Gestione della qualità
+
+- *MPC-PMS*: <MPC-PMS>
+  - *Nome*: Percentuale di Metriche Soddisfatte
+  - *Descrizione*: Indica la percentuale di metriche che risultano soddisfare gli obiettivi minimi di qualità previsti dal Piano di Qualifica.
+  - *Formula*: 
+  $ "PMS" = ("MS" / "MT") * 100 $
+  - *Parametri*:
+    - *MS*: Numero di Metriche Soddisfatte.
+    - *MT*: Numero di Metriche Totali.
+
+=== Processi organizzativi
+==== Gestione dei processi
+
+- *MPC-ET*: <MPC-ET>
+  - *Nome*: Efficienza Temporale
+  - *Descrizione*: Indica la percentuale di tempo disponibile che il _team_ è riuscito a impiegare svolgendo attività produttive, ossia quelle che contribuiscono direttamente al raggiungimento degli obiettivi del progetto.
+  - *Formula*: 
+  $ "ET" = ("OO" / "OE") * 100 $
+  - *Parametri*:
+    - *OO*: Ore di Orologio (tempo totale trascorso).
+    - *OP*: Ore Produttive (tempo effettivamente dedicato ad attività produttive).
+
+== Metriche per la qualità di prodotto
+=== Funzionalità
 - *MPD-ROS*
   - *Nome*: Requisiti Obbligatori Soddisfatti
   - *Descrizione*: Misura la percentuale di requisiti obbligatori soddisfatti dal prodotto.
@@ -838,7 +1173,7 @@ Una volta identificati i potenziali miglioramenti questi vanno effettivamente im
     - *NROPS*: Numero di Requisiti Opzionali Soddisfatti.
     - *NTROP*: Numero Totale di Requisiti Opzionali.
 
-==== Affidabilità
+=== Affidabilità
 - *MPD-CC*
   - *Nome*: Code Coverage
   - *Descrizione*: Misura la percentuale di codice eseguita durante i _test_. Per questo progetto è richiesta una copertura pari o superiore all’80%.
@@ -859,7 +1194,12 @@ Una volta identificati i potenziali miglioramenti questi vanno effettivamente im
   - *Nome*: Failure Density
   - *Descrizione*: Indica il numero di fallimenti correttamente riscontrati per unità di dimensione del _software_; valori più bassi denotano un _software_ di qualità superiore, con meno difetti rispetto alla sua complessità o dimensione.
 
-==== Usabilità
+=== Efficienza
+- *MPD-UR*
+  - *Nome*: Utilizzo di Risorse
+  - *Descrizione*: Misura l’efficienza del sistema in termini di utilizzo delle risorse _hardware_, come CPU, memoria e altre risorse di sistema.
+
+=== Usabilità
 - *MPD-FU*
   - *Nome*: Facilità di Utilizzo
   - *Descrizione*: Misura il numero di errori commessi dagli utenti durante l’interazione. Un valore minimo indica un’interfaccia intuitiva. 
@@ -867,12 +1207,7 @@ Una volta identificati i potenziali miglioramenti questi vanno effettivamente im
   - *Nome*: Tempo di apprendimento
   - *Descrizione*: Valuta il tempo necessario a un utente per imparare a utilizzare il _software_.
 
-==== Efficienza
-- *MPD-UR*
-  - *Nome*: Utilizzo di Risorse
-  - *Descrizione*: Misura l’efficienza del sistema in termini di utilizzo delle risorse _hardware_, come CPU, memoria e altre risorse di sistema.
-
-==== Manutenibilità
+=== Manutenibilità
 - *MPD-CCM*
   - *Nome*: Complessità Ciclomatica per Metodo
   - *Descrizione*: Valuta la complessità per metodo del codice sorgente attraverso la misurazione del numero di cammini indipendenti attraverso il grafo di controllo del flusso.
@@ -908,22 +1243,3 @@ Una volta identificati i potenziali miglioramenti questi vanno effettivamente im
   - *Parametri*:
     - *MA*: Moduli Affetti dalle modifiche.
     - *MT*: Moduli Totali del sistema.
-#pagebreak()
-== Formazione
-=== Descrizione
-Alla base della buona riuscita del progetto ci sono persone adeguatamente formate con l'evolversi del progetto. Per questo diventa fondamentale il processo di formazione.
-Con esso vengono definiti gli standard e le metodologie con i quali ognuno sarà sempre pronto nell'argomento adeguato nel momento opportuno.
-
-=== Descrizione
-Per iniziare a formare i membri del gruppo, è necessario prima comprendere completamente il dominio del problema. È necessario quindi comprendere quali argomenti sono necessari per essere approfonditi e quali abilità sono necessarie per i vari processi. 
-
-
-Si deve quindi passare all'individuazione del materiale di formazione che aumenterà nel tempo poiché il nostro livello di conoscenza e comprensione del problema dovrà aumentare man mano che il progetto avanza.
-
-
-Infine tutti i membri del gruppo devono imparare da dove e cosa studiare e devono anche aggiornarsi individualmente, se possibile, con l'aiuto di altri membri più esperti.
-
-=== Strumenti
-Al fine di agevolare il processo di formazione ogni membro del gruppo incaricato in un determinato _sprint_ di approfondire un determinato argomento dovrà essere in grado di tramandare la propria conoscenza agli altri. 
-Per aiutarci nel processo di apprendimento l'azienda Sync Lab ci fornisce, durante lo svolgimento del progetto, materiali quali video e risorse utili alle tecnologie di dominio d'uso del nostro capitolato, nonché delle sedute di _deep dive_ concordate a calendario.
-
