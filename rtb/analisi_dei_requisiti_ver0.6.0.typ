@@ -683,15 +683,15 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   + L'amministratore visualizza il _flag_ nel caso in cui il noleggio relativo all'annuncio è ancora attivo.
 
-=== UC36 - Visualizzazione completa dell'annuncio dal suo dettaglio <uc36>
+=== UC36 - Visualizzazione del corpo dell'annuncio dal suo dettaglio <uc36>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia degli annunci generati.
   + l'amministratore sta visualizzando il dettaglio di un singolo annuncio.
-- *Postcondizioni*: il sistema espone l'annuncio per intero.
+- *Postcondizioni*: il sistema espone il corpo dell'annuncio per intero.
 - *Trigger*: l'amministratore desidera visualizzare l'annuncio generato precedentemente.
 - *Scenario principale*:
-  + L'amministratore visualizza interamente l'annuncio generato precedentemente.
+  + L'amministratore visualizza interamente il corpo dell'annuncio generato precedentemente.
 
 === UC37 - Visualizzazione categoria del punto di interesse collegato all'annuncio dal suo dettaglio <uc37>
 - *Attore principale*: Amministratore.
