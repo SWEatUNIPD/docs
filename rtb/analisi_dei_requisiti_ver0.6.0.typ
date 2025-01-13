@@ -369,7 +369,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore interagisce col _marker_ che indica un annuncio generato.
   + Viene visualizzato l'annuncio generato in corrispondenza del _marker_ selezionato.
 - *Inclusioni*:
-  + Visualizzazione dettagli di un singolo annuncio (#link(<uc33>)[UC33]).
+  + Visualizzazione dettagli di un singolo annuncio (#link(<uc31>)[UC31]).
 #v(20pt)
 #figure(
   image("../assets/use_cases/UC13.png"),
@@ -415,7 +415,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC14.png"),
+  image("../assets/use_cases/UC14-15-16.png"),
   caption: [Diagramma dei caso d'uso UC14, UC15, UC16],
 )
 
@@ -447,7 +447,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 #v(20pt)
 #figure(
   // TODO [Marin]: ovviamente non rinomino l'immagine, toccherà a Davide Marin quando farà i nuovi UML
-  image("../assets/use_cases/UC15-16.png"),
+  image("../assets/use_cases/UC17-18.png"),
   caption: [Diagramma dei casi d'uso UC17 e UC18],
 )
 
@@ -466,7 +466,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 #v(20pt)
 #figure(
   // TODO [Marin]: ovviamente non rinomino l'immagine, toccherà a Davide Marin quando farà i nuovi UML
-  image("../assets/use_cases/UC17.png"),
+  image("../assets/use_cases/UC19.png"),
   caption: [Diagramma dei casi d'uso UC19],
 )
 
@@ -508,7 +508,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 #v(20pt)
 #figure(
   // TODO [Marin]: ovviamente non rinomino l'immagine, toccherà a Davide Marin quando farà i nuovi UML
-  image("../assets/use_cases/UC18-19-20.png"),
+  image("../assets/use_cases/UC20-21-22.png"),
   caption: [Diagramma dei casi d'uso UC20, UC21 e UC22],
 )
 
@@ -612,7 +612,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 #v(20pt)
 #figure(
   // TODO [Marin]: ovviamente non rinomino l'immagine, toccherà a Davide Marin quando farà i nuovi UML
-  image("../assets/use_cases/UC25-26-27-28-29-30-31-32.png"),
+  image("../assets/use_cases/UC23-24-25-26-27-28-29-30.png"),
   caption: [Diagramma dei casi d'uso UC23, UC24, UC25, UC26, UC27, UC28, UC29 e UC30],
 )
 
@@ -717,7 +717,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 #v(20pt)
 #figure(
   // TODO [Marin]: ovviamente non rinomino l'immagine, toccherà a Davide Marin quando farà i nuovi UML
-  image("../assets/use_cases/UC33-34-35-36.png"),
+  image("../assets/use_cases/UC31-32-33-34-35-36-37-38.png"),
   caption: [Diagramma dei casi d'uso UC31, UC32, UC33, UC34, UC35, UC36, UC37 e UC38],
 )
 
@@ -789,7 +789,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 #v(20pt)
 #figure(
   // TODO [Marin]: ovviamente non rinomino l'immagine, toccherà a Davide Marin quando farà i nuovi UML
-  image("../assets/use_cases/UC37-38-39-40-41.png"),
+  image("../assets/use_cases/UC39-40-41-42-43.png"),
   caption: [Diagramma dei casi d'uso UC39, UC40, UC41, UC42 e UC43],
 )
 
@@ -833,7 +833,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 #v(20pt)
 #figure(
   // TODO [Marin]: ovviamente non rinomino l'immagine, toccherà a Davide Marin quando farà i nuovi UML
-  image("../assets/use_cases/UC42-43-44-45.png"),
+  image("../assets/use_cases/UC44-45-46-47.png"),
   caption: [Diagramma dei casi d'uso UC44, UC45, UC46, UC47],
 )
 
@@ -921,7 +921,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 #v(20pt)
 #figure(
   // TODO [Marin]: ovviamente non rinomino l'immagine, toccherà a Davide Marin quando farà i nuovi UML
-  image("../assets/use_cases/UC46-47-48-49-50-51.png"),
+  image("../assets/use_cases/UC48-49-50-51-52-53.png"),
   caption: [Diagramma dei casi d'uso UC48, UC49, UC50, UC51, UC52 e UC53],
 )
 
