@@ -3,7 +3,7 @@
 #show: content => verbale(
   data: "27 novembre 2024",
   destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "Sync Lab S.r.l.", "Gruppo SWE@"),
-  responsabile: "Davide Martinelli",
+  responsabile: "-",
   redattori: ("Davide Martinelli", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
   verificatori: ("Andrea Precoma", "Davide Marin", "Davide Martinelli", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
   titolo: "Piano di Progetto",
@@ -13,7 +13,10 @@
     "12/01/2025",
     "Andrea Precoma",
     "Andrea Perozzo\nDavide Martinelli",
-    [- Stesura pianificazione quinto _sprint_],
+    [
+      - Stesura pianificazione quinto _sprint_,
+      - Aggiunta foto dei grafici di Gantt per tutti gli _sprint_
+    ],
 
     "0.7.0",
     "09/01/2025",
@@ -210,7 +213,7 @@ Ogni iterazione è caratterizzata da:
 - *Retrospettiva*: analisi svolta alla fine di ogni _sprint_ con lo scopo di evidenziare ciò che ha funzionato e ciò che non ha funzionato durante l'iterazione, sottolineando i vari problemi e difficoltà riscontrati che hanno causato rallentamenti, con il fine di migliorare le prossime iterazioni.
 
 Il gruppo si pone come _milestone_ del progetto le due consegne previste dai committenti, nonché i Prof.ssori Tullio Vardanega e Riccardo Cardin, ovvero:
-- *RTB* con data di consegna xx/01/2025
+- *RTB* con data di consegna 24/01/2025
 - *PB* con data di consegna 21/03/2025
 
 Gli _sprint_ vengono quindi divisi nelle due _milestone_ precedentemente elencate per garantire una separazione netta degli stessi e delle attività che ne comportano.
@@ -319,6 +322,11 @@ Le attività che il _team_ si è prefissato di portare a termine durante il seco
   - La modifica al _test_ del Glossario è necessaria in quanto, attualmente, segnala dei falsi positivi. Per esempio quando abbiamo parole appartenenti al Glossario contenute in altre parole, oppure la segnalazione di termini del Glossario che in realtà sono comandi #rifGlossario("Typst").
 - Informarsi ed eventualmente dotarsi di un _software_ per la creazione e gestione di un #rifGlossario("diagramma di Gantt") per coordinare le attività del gruppo.
 
+#figure(
+  image("../assets/img/PdP/gantt_s2.png"),
+  caption: [Diagramma di Gantt dello _sprint_ 2],
+)
+
 ==== Preventivo orario
 #rendicontazioneOre(
   (
@@ -396,6 +404,11 @@ Le attività che il _team_ si è prefissato di portare a termine durante il terz
   - Scrittura retrospettiva secondo _sprint_.
   - Scrittura pianificazione terzo _sprint_.
 
+#figure(
+  image("../assets/img/PdP/gantt_s3.png"),
+  caption: [Diagramma di Gantt dello _sprint_ 3],
+)
+
 ==== Preventivo orario
 #rendicontazioneOre(
   (
@@ -469,6 +482,11 @@ Le attività che il _team_ si è prefissato di portare a termine durante il quar
 - Continuazione della stesura del Piano di Progetto come da prassi, in particolare:
   - Scrittura pianificazione quarto _sprint_.
   - Scrittura retrospettiva quarto _sprint_ in concomitanza con la fine dello _sprint_.
+
+#figure(
+  image("../assets/img/PdP/gantt_s4.png"),
+  caption: [Diagramma di Gantt dello _sprint_ 4],
+)
 
 ==== Preventivo orario
 #rendicontazioneOre(
@@ -547,6 +565,11 @@ In vista della scadenza della _milestone_, e quindi della consegna prevista per 
 - Ultimare la struttura del PoC, in particolare:
   - Completare l'infrastruttura con #rifGlossario("Docker Compose").
   - Integrare la parte di _back-end_ con quella di _front-end_.
+
+// #figure(
+//   image("../assets/img/PdP/gantt_s5.png"),
+//   caption: [Diagramma di Gantt dello _sprint_ 5],
+// )
 
 ==== Preventivo orario
 #rendicontazioneOre(
