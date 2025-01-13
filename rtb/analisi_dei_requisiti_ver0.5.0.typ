@@ -9,10 +9,12 @@
     "Andrea Precoma",
     "Davide Marin",
     "Davide Martinelli",
+    "Davide Picello",
     "Klaudio Merja",
     "Riccardo Milan",
   ),
   verificatori: (
+    "Andrea Perozzo",
     "Andrea Precoma",
     "Davide Marin",
     "Davide Martinelli",
@@ -23,6 +25,12 @@
   titolo: "Analisi dei Requisiti",
   uso: "Esterno",
   versioni: (
+    "0.6.0",
+    [14/01/2025],
+    "Klaudio Merja\nDavide Picello",
+    "Andrea Perozzo\nDavide Marin",
+    [- Completata stesura requisiti],
+
     "0.5.0",
     [09/01/2025],
     "Klaudio Merja",
@@ -905,8 +913,88 @@ Viene riportata di seguito il significato e i possibili valori dei campi present
   [#link(<uc12>)[UC12]],
 
   [ROF-x],
-  [L'amministatore deve poter visualizzare l'annuncio generato dall'LLM per un determinato noleggio e per una determinata trasmissione di posizione tramite l'interazione con i _marker_ indicanti le trasmissioni che hanno generato un annuncio.],
+  [L'amministratore deve poter visualizzare l'annuncio generato dall'LLM per un determinato noleggio e per una determinata trasmissione di posizione tramite l'interazione con i _marker_ indicanti le trasmissioni che hanno generato un annuncio.],
   [#link(<uc13>)[UC13]],
+
+  [ROF-x],
+  [L'amministratore deve poter visualizzare l'annuncio non generato dall'LLM per un noleggio, e per una trasmissione di posizione, tramite i _marker_ indicanti le trasmissioni che non hanno generato un annuncio.],
+  [/*UC14 - Visualizzazione annuncio tramite marker sulla mappa*/],
+
+  [ROF-x],
+  [L'amministratore dopo aver preso visione dell'annuncio generato, tramite il _marker_ corrispondente, dev'essere in grado di chiudere l'annuncio.],
+  [/*UC15 - Chiusura annuncio visualizzato tramite marker sulla mappa */],
+
+  [ROF-x],
+  [L'amministratore dopo aver preso visione dell'annuncio non generato, tramite il _marker_ corrispondente, dev'essere in grado di chiudere l'annuncio.],
+  [/*UC16 - Chiusura messaggio annuncio non generato visualizzato tramite marker sulla mappa */],
+
+  [ROF-x],
+  [Il sistema deve garantire la possibilità all'amministratore di interagire con la mappa per spostarne il centro, quindi anche l'intera visuale.],
+  [/*UC17 - Spostamento della visuale sulla mappa */],
+
+  [ROF-x],
+  [Il sistema deve garantire la possibilità all'amministratore di interagire con la mappa per modificare l'ampiezza della visuale.],
+  [/*UC18 - Modifica ampiezza della visuale sulla mappa */],
+
+  [ROF-x],
+  [Il sistema deve garantire la possibilità all'amministratore di interagire con la mappa per ampliare la visuale.],
+  [/*UC19 - Ampliamento della visuale sulla mappa */],
+
+  [ROF-x],
+  [Il sistema deve garantire la possibilità all'amministratore di interagire con la mappa per restringere la visuale.],
+  [/*UC20 - Restringimento della visuale sulla mappa */],
+
+  [ROF-x],
+  [In seguito alla generazione di un annuncio da parte dell'LLM, il sistema deve notificare l'amministratore dell'avvenuta generazione dell'annuncio, mostrando _e-mail_ e punto d'interesse relativi.],
+  [/*UC21 - Visualizzazione notifica di un annuncio generato */],
+
+  [ROF-x],
+  [In seguito alla mancata generazione di un annuncio da parte dell'LLM, il sistema deve notificare l'amministratore dell'avvenuta generazione dell'annuncio, mostrando _e-mail_ e punto d'interesse relativi.],
+  [/*UC22 - Visualizzazione notifica di mancata generazione di un annuncio */],
+
+  [ROF-x],
+  [In seguito alla generazione di un annuncio da parte dell'LLM, l'amministratore deve essere in grado di poter interagire con la notifica per visualizzarne i dettagli.],
+  [/*UC23 - Apertura dettagli singolo annuncio dalla notifica */],
+
+  [ROF-x],
+  [In seguito alla generazione di un annuncio da parte dell'LLM, e della relativa presa visione, l'amministratore deve essere in grado di poter interagire con la notifica per chiuderla.],
+  [/*UC24 - Chiusura di una notifica */],
+
+  [ROF-x],
+  [L'amministratore deve poter accedere alla sezione dedicata per visualizzare le preview degli annunci generati, contenenti le loro informazioni principali.],
+  [/* UC25 - Visualizzazione storico degli annunci */],
+
+  [ROF-x],
+  [L'amministratore deve poter accedere alla sezione dedicata per visualizzare le preview degli annunci generati, contenenti le loro informazioni principali, visualizzate tramite lista.],
+  [/*UC26 - Visualizzazione storico annunci in lista */],
+
+  [ROF-x],
+  [L'amministratore deve poter accedere alla sezione dedicata per visualizzare le preview degli annunci generati, contenenti le loro informazioni principali visualizzate tramite griglia.],
+  [/*UC27 - Visualizzazione storico annunci in griglia */],
+
+  [ROF-x],
+  [L'amministratore deve poter visualizzare le informazioni principali di un singolo annuncio dallo storico, visualizzando: 
+  - nome del punto di interesse collegato
+  - _e-mail_ dell'utente
+  - data e ora di emissione
+  - _flag_ che indica se il noleggio al quale è stato inviato l'annuncio è ancora attivo.],
+  [/*UC28 - Visualizzazione singolo annuncio nello storico */],
+
+  [ROF-x],
+  [Il sistema deve essere in grado di mostrare il nome del punto d'interesse collegato all'annuncio.],
+  [/*UC29 - Visualizzazione nome del punto di interesse */],
+
+  [ROF-x],
+  [Il sistema deve essere in grado di mostrare l'e-mail dell'utente collegato all'annuncio.],
+  [/*UC30 - Visualizzazione e-mail dell’utente */],
+
+  [ROF-x],
+  [Il sistema deve essere in grado di mostrare data e ora nel quale il sistema ha richiesto la generazione di un annuncio.],
+  [/*UC31 - Visualizzazione data e ora di tentativo di generazione annuncio */],
+
+  [ROF-x],
+  [Il sistema deve essere in grado di mostrare il flag che indica se il noleggio è ancora attivo.],
+  [/*UC32 - Visualizzazione flag sugli annunci nello storico inviati a noleggi attivi */],
 )
 === Requisiti di qualità
 #table(
