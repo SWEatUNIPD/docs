@@ -424,7 +424,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 #pagebreak()
 
 
-// TODO: vedere dubbio su UC36
 === UC17 - Chiusura annuncio visualizzato tramite marker sulla mappa
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
@@ -730,23 +729,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #pagebreak()
 
-=== UC39 - Ricerca degli annunci nello storico <uc39>
-- *Attore principale*: Amministratore.
-- *Precondizioni*: 
-  + il sistema tiene traccia di tutti gli annunci generati per gli utenti dell'amministratore. 
-  + l'amministratore sta visualizzando la sezione dedicata agli annunci.
-- *Postcondizioni*: il sistema espone gli annunci filtrati secondo alcune opzioni fornite: _e-mail_ dell'utente destinatario dell'annuncio, nome del punto di interesse collegato all'annuncio, intervallo di date e fascia oraria di emissione.
-- *Trigger*: l'amministratore desidera prendere visione di alcuni specifici annunci generati precedentemente.
-- *Scenario principale*:
-  + L'amministratore accede alla sezione apposita degli annunci.
-  + L'amministratore esegue una ricerca degli annunci desiderati.
-- *Inclusioni*:
-  + Ricerca degli annunci nello storico per _e-mail_ utente (#link(<uc40>)[UC40]).
-  + Ricerca degli annunci nello storico per nome del punto di interesse (#link(<uc41>)[UC41]).
-  + Ricerca degli annunci nello storico per intervallo di date di emissione (#link(<uc42>)[UC42]).
-  + Ricerca degli annunci nello storico per fascia oraria di emissione (#link(<uc43>)[UC43]).
-
-=== UC40 - Ricerca degli annunci nello storico per e-mail utente <uc40>
+=== UC39 - Ricerca degli annunci nello storico per e-mail utente
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia di tutti gli annunci generati per l'utente selezionato. 
@@ -758,7 +741,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore seleziona l'_e-mail_ di un utente.
   + Vengono visualizzati solo gli annunci destinati all'utente selezionato.
 
-=== UC41 - Ricerca degli annunci nello storico per nome del punto di interesse <uc41>
+=== UC40 - Ricerca degli annunci nello storico per nome del punto di interesse
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia di tutti gli annunci generati collegati al punto di interesse selezionato.
@@ -770,7 +753,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore seleziona il nome di un punto di interesse.
   + Vengono visualizzati solo gli annunci collegati al punto di interesse selezionato.
 
-=== UC42 - Ricerca degli annunci nello storico per intervallo di date di emissione <uc42>
+=== UC41 - Ricerca degli annunci nello storico per intervallo di date di emissione
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia di tutti gli annunci emessi nell'intervallo di date selezionato.
@@ -782,7 +765,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore seleziona un intervallo di date.
   + Vengono visualizzati solo gli annunci emessi nell'intervallo di date selezionato.
 
-=== UC43 - Ricerca degli annunci nello storico per fascia oraria di emissione <uc43>
+=== UC42 - Ricerca degli annunci nello storico per fascia oraria di emissione
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   + il sistema tiene traccia di tutti gli annunci emessi nell'intervallo di date selezionato.
@@ -795,13 +778,15 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + Vengono visualizzati solo gli annunci emessi nella fascia oraria selezionata.
 #v(20pt)
 #figure(
+  // TODO: prima i casi d'uso sopra erano una generalizzazione con il vecchio UC39
+  // ora UC39 non esiste più e occorre spezzettare l'UML in più parti, ognuna per il corrispondente caso d'uso
   image("../assets/use_cases/UC39-40-41-42-43.png"),
   caption: [Diagramma dei casi d'uso UC39, UC40, UC41, UC42 e UC43],
 )
 
 #pagebreak()
 
-=== UC44 - Visualizzazione errore "Il server non risponde"
+=== UC43 - Visualizzazione errore "Il server non risponde"
 - *Attore principale*: Amministratore.
 - *Precondizioni*: il sistema tenta di comunicare con il _server_ per ricevere o inviare informazioni, ma si verifica un errore.
 - *Postcondizioni*: il sistema espone il messaggio di errore che segnala un problema con il _server_.
@@ -810,7 +795,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + Il _server_ restituisce un errore (ad esempio, codice HTTP 500 o simile) durante la comunicazione.
   + L'amministratore visualizza il messaggio di errore sulla _dashboard_.
 
-=== UC45 - Visualizzazione errore "Connessione persa"
+=== UC44 - Visualizzazione errore "Connessione persa"
 - *Attore principale*: Amministratore.
 - *Precondizioni*: il sistema monitora lo stato della connessione di rete e non rileva connessione.
 - *Postcondizioni*: il sistema espone il messaggio di errore relativo alla perdita di connessione.
@@ -819,7 +804,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + Il sistema rileva che la connessione di rete è persa o instabile.
   + L'amministratore visualizza il messaggio di errore sulla _dashboard_.
 
-=== UC46 - Visualizzazione errore "Sensore malfunzionante"
+=== UC45 - Visualizzazione errore "Sensore malfunzionante"
 - *Attore principale*: Amministratore.
 - *Precondizioni*: il sistema monitora le risposte dei sensori attivi, cioè installati su mezzi con noleggio attivo e rileva uno o più errori.
 - *Postcondizioni*: il sistema espone il messaggio di malfunzionamento di un sensore.
@@ -828,7 +813,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + Il sensore non comunica correttamente i dati al sistema.
   + L'amministratore visualizza il messaggio di errore sulla _dashboard_.
 
-=== UC47 - Visualizzazione errore "Generazione impossibile dell'annuncio"
+=== UC46 - Visualizzazione errore "Generazione impossibile dell'annuncio"
 - *Attore principale*: Amministratore.
 - *Precondizioni*: il sistema comunica con una LLM per far generare gli annunci, ma si verifica un errore.
 - *Postcondizioni*: il sistema espone il messaggio di impossibilità di comunicazione con la LLM.
@@ -838,6 +823,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore visualizza il messaggio di errore sulla _dashboard_.
 #v(20pt)
 #figure(
+  // TODO: i casi d'uso sono stati rinominati, serve rifare UML e sistemare caption
   image("../assets/use_cases/UC44-45-46-47.png"),
   caption: [Diagramma dei casi d'uso UC44, UC45, UC46, UC47],
 )
@@ -845,9 +831,9 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 #pagebreak()
 
 
-// OPZIONALI (rimesso da @klamerja... non sono sicuro alla fine siano opzionali o meno. Da confermare con @ErPreco)
+// OPZIONALI
 
-=== UC48 - Visualizzazione statistiche in grafici
+=== UC47 - Visualizzazione statistiche in grafici
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema mantiene delle informazioni utili per una analisi statistica.
@@ -858,9 +844,9 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore accede alla sezione apposita dei grafici.
   + Il sistema espone dei grafici relativi alle analisi proposte.
 - *Inclusioni*:
-  + Visualizzazione singolo grafico (#link(<uc49>)[UC49]).
+  + Visualizzazione singolo grafico (#link(<uc48>)[UC48]).
 
-=== UC49 - Visualizzazione singolo grafico <uc49>
+=== UC48 - Visualizzazione singolo grafico <uc48>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema mantiene delle informazioni utili per una analisi statistica.
@@ -876,12 +862,12 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   + L'amministratore visualizza il grafico con le relative informazioni.
 - *Inclusioni*:
-  + Visualizzazione titolo del grafico (#link(<uc50>)[UC50]).
-  + Visualizzazione etichetta asse delle ascisse e relativi valori (#link(<uc51>)[UC51]).
-  + Visualizzazione etichetta asse delle ordinate e relativi valori (#link(<uc52>)[UC52]).
-  + Visualizzazione dati sul grafico (#link(<uc53>)[UC53]).
+  + Visualizzazione titolo del grafico (#link(<uc49>)[UC49]).
+  + Visualizzazione etichetta asse delle ascisse e relativi valori (#link(<uc50>)[UC50]).
+  + Visualizzazione etichetta asse delle ordinate e relativi valori (#link(<uc51>)[UC51]).
+  + Visualizzazione dati sul grafico (#link(<uc52>)[UC52]).
 
-=== UC50 - Visualizzazione titolo del grafico <uc50>
+=== UC49 - Visualizzazione titolo del grafico <uc49>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia del titolo del grafico. 
@@ -891,7 +877,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   + L'amministratore visualizza il titolo del grafico.
 
-=== UC51 - Visualizzazione etichetta asse delle ascisse e relativi valori <uc51>
+=== UC50 - Visualizzazione etichetta asse delle ascisse e relativi valori <uc50>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia delle etichette dell'asse delle ascisse e dei relativi valori di ciascun grafico.
@@ -902,7 +888,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore visualizza l'etichetta dell'asse delle ascisse del relativo grafico.
   + L'amministratore visualizza le etichette dei valori segnati sull'asse delle ascisse del relativo grafico.
 
-=== UC52 - Visualizzazione etichetta asse delle ordinate e relativi valori <uc52>
+=== UC51 - Visualizzazione etichetta asse delle ordinate e relativi valori <uc51>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia delle etichette dell'asse delle ordinate e dei relativi valori di ciascun grafico.
@@ -913,8 +899,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + l'amministratore visualizza l'etichetta dell'asse delle ordinate del relativo grafico.
   + l'amministratore visualizza le etichette dei valori segnati sull'asse delle ordinate del relativo grafico.
 
-// TODO: si possono mettere dati sul grafico?
-=== UC53 - Visualizzazione dati sul grafico <uc53>
+=== UC52 - Visualizzazione dati sul grafico <uc52>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia dei dati di ciascun grafico.
@@ -925,6 +910,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + l'amministratore visualizza i dati sul grafico.
 #v(20pt)
 #figure(
+  // TODO: i casi d'uso sono stati rinumerarti: server rifare UML e caption
   image("../assets/use_cases/UC48-49-50-51-52-53.png"),
   caption: [Diagramma dei casi d'uso UC48, UC49, UC50, UC51, UC52 e UC53],
 )
