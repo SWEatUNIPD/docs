@@ -32,6 +32,7 @@
       - Aggiunti casi d'uso per evitare riutilizzo nelle generalizzazioni
       - Sistemate precondizioni di tutti i casi d'uso
       - Sistemati e aggiornati gli UML rispettivi ai casi d'uso cambiati ed aggiunti
+      - Rimossi i _trigger_ da tutti i casi d'uso
     ],
 
     "0.5.0",
@@ -148,7 +149,6 @@ Ogni caso d'uso è identificato da un codice univoco, che segue la nomenclatura 
 - *Attori secondari* (se presenti)
 - *Precondizioni*
 - *Postcondizioni*
-- *Trigger*
 - *Scenario principale*
 - *Generalizzazioni* (se presenti)
 - *Inclusioni* (se presenti)
@@ -167,7 +167,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Attore principale*: Sensore.
 - *Precondizioni*: il sistema monitora i sensori sui mezzi con un noleggio attivo. In particolare mantiene l'informazione riguardo la posizione #rifGlossario("GPS") inviata dal sensore in tempo reale.
 - *Postcondizioni*: il sistema riceve l'informazione riguardo l'id del prestito (_rent_) e la posizione GPS (espressa tramite longitudine e latitudine) del sensore in quel momento.
-- *Trigger*: il sensore intende notificare al sistema la localizzazione GPS del mezzo sul quale è installato.
 - *Scenario principale*:
   + L'utente noleggia un mezzo.
   + Il sensore invia a intervalli di tempo regolari i dati di identificazione e localizzazione GPS del mezzo.
@@ -186,7 +185,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + il sistema possiede le credenziali dell'amministratore che in quel momento non è autenticato.
   + l'amministratore non autenticato accede alla pagina di _login_.
 - *Postcondizioni*: il sistema accetta le credenziali inserite e fa accedere l'amministratore alla _dashboard_ personale.
-- *Trigger*: l'amministratore intende accedere alla _dashboard_ personale.
 - *Scenario principale*:
   + L'amministratore non autenticato accede alla pagina di _login_ del sistema.
   + L'amministratore non autenticato inserisce le proprie credenziali di accesso.
@@ -204,7 +202,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + l'amministratore non autenticato si trova nella pagina di _login_. 
   + l'amministratore inserisce la propria _e-mail_.
 - *Postcondizioni*: il sistema accetta l'_e-mail_ inserita.
-- *Trigger*: l'amministratore intende accedere alla _dashboard_ personale.
 - *Scenario principale*:
   + L'amministratore non autenticato accede alla pagina di _login_ del sistema.
   + L'amministratore non autenticato inserisce l'_e-mail_ con la quale è registrato nel sistema.
@@ -216,7 +213,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + l'amministratore non autenticato si trova nella pagina di _login_. 
   + l'amministratore inserisce la propria _password_.
 - *Postcondizioni*: il sistema accetta la _password_ inserita.
-- *Trigger*: l'amministratore intende accedere alla _dashboard_ personale.
 - *Scenario principale*:
   + L'amministratore non autenticato accede alla pagina di _login_ del sistema.
   + L'amministratore non autenticato inserisce la _password_ con la quale è registrato nel sistema.
@@ -225,7 +221,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Attori principali*: Amministratore non autenticato.
 - *Precondizioni*: il sistema riceve le credenziali inserite dall'amministratore non autenticato.
 - *Postcondizioni*: il sistema individua un'incoerenza tra le credenziali inserite e quelle memorizzate.
-- *Trigger*: l'amministratore non autenticato inserisce delle credenziali errate.
 - *Scenario principale*:
   + L'amministratore inserisce delle credenziali errate durante la fase di autenticazione alla _dashboard_.
   + L'amministratore riceve un messaggio di errore il quale segnala che le credenziali inserite sono non valide.
@@ -243,7 +238,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + il sistema tiene traccia delle informazioni relative ai mezzi noleggiati, ai punti di interesse e agli annunci.
   + l'amministratore accede alla _dashboard_ di visualizzazione della mappa.
 - *Postcondizioni*: il sistema espone una mappa geografica sulla _dashboard_ dell'amministratore.
-- *Trigger*: l'amministratore intende visualizzare la mappa geografica sulla propria _dashboard_.
 - *Scenario principale*:
   + L'amministratore è autenticato alla _dashboard_ del sistema.
   + La _dashboard_ del sistema espone una mappa geografica del territorio.
@@ -256,7 +250,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + il sistema tiene traccia della posizione di ciascun punto di interesse.
   + l'amministratore si trova nella _dashboard_ di visualizzazione della mappa.
 - *Postcondizioni*: il sistema espone sulla mappa dei _marker_ in corrispondenza dei punti di interesse.
-- *Trigger*: l'amministratore intende visualizzare sulla mappa le locazioni dei punti di interesse.
 - *Scenario principale*:
   + L'amministratore accede alla mappa sulla _dashboard_.
   + L'amministratore visualizza un _marker_ in corrispondenza di ciascun punto di interesse.
@@ -274,7 +267,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + il sistema tiene traccia nel tempo delle posizioni dei mezzi con noleggio attivo.
   + l'amministratore si trova nella _dashboard_ di visualizzazione della mappa.
 - *Postcondizioni*: il sistema espone sulla mappa il percorso dei mezzi con noleggio attivo.
-- *Trigger*: l'amministratore desidera visualizzare il percorso di un mezzo dall'inizio del suo noleggio fino a quel momento.
 - *Scenario principale*:
   + L'amministratore accede alla mappa sulla _dashboard_.
   + L'amministratore visualizza il percorso del mezzo noleggiato.
@@ -287,7 +279,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + il sistema riceve in tempo reale i dati GPS dei sensori quando il mezzo sul quale sono installati ha un noleggio attivo.
   + l'amministratore si trova nella _dashboard_ di visualizzazione della mappa.
 - *Postcondizioni*: il sistema espone sulla mappa un _marker_ in corrispondenza di ciascuna posizione GPS fornita dal sensore.
-- *Trigger*: l'amministratore intende visualizzare sulla mappa le posizioni del mezzo in noleggio fino a quel momento.
 - *Scenario principale*:
   + L'amministratore accede alla mappa sulla _dashboard_.
   + L'amministratore visualizza un _marker_ in corrispondenza di ogni dato GPS ritornato dal sensore di un relativo mezzo in noleggio.
@@ -305,7 +296,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + il sistema memorizza gli annunci generati e le relative informazioni.
   + l'amministratore si trova nella _dashboard_ di visualizzazione della mappa.
 - *Postcondizioni*: il sistema espone sulla mappa un _marker_ in corrispondenza dei punti in cui è stato generato un annuncio.
-- *Trigger*: l'amministratore intende visualizzare sulla mappa le posizioni del mezzo in noleggio nelle quali è stato generato un annuncio.
 - *Scenario principale*:
   + L'amministratore accede alla mappa sulla _dashboard_.
   + L'amministratore visualizza un _marker_ in corrispondenza delle posizioni nelle quali è stato generato un annuncio.
@@ -323,7 +313,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + il sistema memorizza le mancate generazioni degli annunci e le relative informazioni.
   + l'amministratore si trova nella _dashboard_ di visualizzazione della mappa.
 - *Postcondizioni*: il sistema espone sulla mappa un _marker_ in corrispondenza dei punti in cui la LLM non ha ritenuto l'utente interessato, quindi non è stato generato l'annuncio.
-- *Trigger*: l'amministratore intende visualizzare sulla mappa le posizioni del mezzo in noleggio nelle quali la LLM non ha generato un annuncio.
 - *Scenario principale*:
   + L'amministratore accede alla mappa sulla _dashboard_.
   + L'amministratore visualizza un _marker_ in corrispondenza delle posizioni nelle quali la LLM non ha generato un annuncio.
@@ -342,7 +331,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + il sistema tiene traccia delle informazioni di ciascun punto di interesse.
   + l'amministratore si trova nella _dashboard_ di visualizzazione della mappa.
 - *Postcondizioni*: il sistema espone le informazioni del punto di interesse selezionato in corrispondenza del _marker_ sulla mappa.
-- *Trigger*: l'amministratore desidera visualizzare le informazioni del punto di interesse in corrispondenza del _marker_ sulla mappa.
 - *Scenario principale*:
   + L'amministratore accede alla mappa sulla _dashboard_.
   + L'amministratore interagisce col _marker_ che indica un punto di interesse.
@@ -363,7 +351,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + il sistema tiene traccia degli annunci generati e le relative informazioni.
   + l'amministratore si trova nella _dashboard_ di visualizzazione della mappa.
 - *Postcondizioni*: il sistema espone l'annuncio generato, con le relative informazioni, in corrispondenza del _marker_ sulla mappa.
-- *Trigger*: l'amministratore desidera visualizzare l'annuncio generato in corrispondenza del _marker_ sulla mappa.
 - *Scenario principale*:
   + L'amministratore accede alla mappa sulla _dashboard_.
   + L'amministratore interagisce col _marker_ che indica un annuncio generato.
@@ -384,7 +371,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + il sistema tiene traccia degli annunci non generati e le relative informazioni.
   + l'amministratore si trova nella _dashboard_ di visualizzazione della mappa.
 - *Postcondizioni*: il sistema espone un messaggio circa l'annuncio non generato, con le relative informazioni, in corrispondenza del _marker_ sulla mappa.
-- *Trigger*: l'amministratore desidera visualizzare le informazioni dell'annuncio non generato in corrispondenza del _marker_ sulla mappa.
 - *Scenario principale*:
   + L'amministratore accede alla mappa sulla _dashboard_.
   + L'amministratore interagisce col _marker_ che indica un annuncio non generato.
@@ -399,7 +385,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + il sistema tiene traccia del nome di ciascun punto di interesse.
   + il sistema sta esponendo la _dashboard_ con la mappa e i _marker_ all'amministratore.
 - *Postcondizioni*: il sistema espone il nome del punto di interesse.
-- *Trigger*: l'amministratore desidera visualizzare il nome del punto di interesse.
 - *Scenario principale*:
   + L'amministratore visualizza il nome del punto di interesse.
 
@@ -409,7 +394,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + il sistema tiene traccia dell'_e-mail_ di ciascun utente.
   + il sistema sta esponendo la _dashboard_ con la mappa e i _marker_ all'amministratore.
 - *Postcondizioni*: il sistema espone l'_e-mail_ dell'utente.
-- *Trigger*: l'amministratore desidera visualizzare l'_e-mail_ dell'utente.
 - *Scenario principale*:
   + L'amministratore visualizza l'_e-mail_ dell'utente.
 
@@ -428,7 +412,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + l'amministratore si trova nella _dashboard_ di visualizzazione della mappa.
   + l'amministratore ha aperto l'annuncio tramite un'interazione con il _marker_ sulla mappa.
 - *Postcondizioni*: il sistema chiude l'annuncio visualizzato tramite una interazione con il _marker_ corrispondente.
-- *Trigger*: l'amministratore desidera chiudere l'annuncio fatto comparire sulla mappa in corrispondenza del _marker_.
 - *Scenario principale*:
   + L'amministratore visualizza l'annuncio sulla mappa in corrispondenza del _marker_.
   + L'amministratore chiude l'annuncio.
@@ -439,7 +422,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + l'amministratore si trova nella _dashboard_ di visualizzazione della mappa.
   + l'amministratore ha aperto la visualizzazione di mancata generazione di un annuncio tramite un'interazione con il _marker_ sulla mappa.
 - *Postcondizioni*: il sistema chiude il messaggio di annuncio non generato visualizzato tramite una interazione con il _marker_ corrispondente.
-- *Trigger*: l'amministratore desidera chiudere il messaggio di annuncio non generato fatto comparire sulla mappa in corrispondenza del _marker_.
 - *Scenario principale*:
   + L'amministratore visualizza il messaggio di annuncio non generato sulla mappa in corrispondenza del _marker_.
   + L'amministratore chiude il messaggio.
@@ -457,7 +439,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + l'amministratore si trova nella _dashboard_ di visualizzazione della mappa.
   + il sistema tiene traccia del centro della porzione di territorio visualizzata sulla mappa.
 - *Postcondizioni*: il sistema fa visualizzare sulla mappa una porzione di territorio centrata su un nuovo punto.
-- *Trigger*: l'amministratore desidera spostare la visuale sulla mappa.
 - *Scenario principale*:
   + L'amministratore accede alla mappa sulla _dashboard_.
   + L'amministratore interagisce con la mappa per spostare il centro della mappa, quindi anche l'intera visuale.
@@ -475,7 +456,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + l'amministratore si trova nella _dashboard_ di visualizzazione della mappa.
   + il sistema tiene traccia della porzione di territorio mostrata dalla mappa sulla _dashboard_.
 - *Postcondizioni*: il sistema fa visualizzare sulla mappa una porzione di territorio più o meno ampia a seconda dell'azione dell'amministratore.
-- *Trigger*: l'amministratore desidera modificare l'ampiezza della visuale sulla mappa.
 - *Scenario principale*:
   + L'amministratore accede alla mappa sulla _dashboard_.
   + L'amministratore interagisce con la mappa per modificare l'ampiezza della visuale.
@@ -489,7 +469,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + l'amministratore si trova nella _dashboard_ di visualizzazione della mappa. 
   + il sistema tiene traccia della porzione di territorio mostrata dalla mappa sulla _dashboard_.
 - *Postcondizioni*: il sistema fa visualizzare sulla mappa una porzione di territorio più ampia.
-- *Trigger*: l'amministratore interagisce con la mappa per ampliare la visuale.
 - *Scenario principale*:
   + l'amministratore accede alla mappa sulla _dashboard_.
   + l'amministratore interagisce con la mappa per ampliare la visuale.
@@ -500,7 +479,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + l'amministratore si trova nella _dashboard_ di visualizzazione della mappa.
   + il sistema tiene traccia della porzione di territorio mostrata dalla mappa sulla _dashboard_.
 - *Postcondizioni*: il sistema fa visualizzare sulla mappa una porzione di territorio meno ampia.
-- *Trigger*: l'amministratore interagisce con la mappa per restringere la visuale.
 - *Scenario principale*:
   + l'amministratore accede alla mappa sulla _dashboard_.
   + l'amministratore interagisce con la mappa per restringere la visuale.
@@ -518,7 +496,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + Il sistema tiene traccia di tutti gli annunci generati per gli utenti dell'amministratore.
   + L'amministratore accede alla sezione apposita degli annunci.
 - *Postcondizioni*: il sistema espone gli annunci generati fino a quel momento ordinati dal più recente.
-- *Trigger*: l'amministratore desidera prendere visione degli annunci generati fino a quel momento.
 - *Scenario principale*:
   + Il sistema espone le _preview_ degli annunci con le informazioni principali.
 - *Generalizzazioni*:
@@ -533,7 +510,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + il sistema espone gli annunci generati fino a quel momento ordinati dal più recente.
   + l'amministratore ha selezionato l'opzione per visualizzare gli annunci sotto forma di lista.
 - *Postcondizioni*: gli annunci vengono mostrati nella dashboard all'amministratore sotto forma di lista.
-- *Trigger*: l'amministratore vuole prendere visione degli annunci generati fino a quel momento in lista.
 - *Scenario principale*:
   + L'amministratore accede alla _dashboard_ principale.
   + L'amministratore accede alla sezione apposita degli annunci.
@@ -545,7 +521,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + il sistema espone gli annunci generati fino a quel momento ordinati dal più recente.
   + l'amministratore ha selezionato l'opzione per visualizzare gli annunci sotto forma di griglia.
 - *Postcondizioni*: gli annunci vengono mostrati nella dashboard all'amministratore sottoforma di griglia.
-- *Trigger*: l'amministratore vuole prendere visione degli annunci generati fino a quel momento in griglia.
 - *Scenario principale*:
   + L'amministratore accede alla _dashboard_ principale.
   + L'amministratore accede alla sezione apposita degli annunci.
@@ -561,7 +536,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   - _E-mail_ dell'utente destinatario.
   - Data e ora di emissione.
   - Un _flag_ che indica se il noleggio al quale è stato inviato l'annuncio è ancora attivo.
-- *Trigger*: l'amministratore desidera visualizzare le informazioni principali di un annuncio.
 - *Scenario principale*:
   + L'amministratore visualizza le informazioni principali relative all'annuncio.
 - *Inclusioni*:
@@ -576,7 +550,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + il sistema tiene traccia del nome di ciascun punto di interesse.
   + l'amministratore sta visualizzando lo storico degli annunci.
 - *Postcondizioni*: il sistema espone il nome del punto di interesse.
-- *Trigger*: l'amministratore desidera visualizzare il nome del punto di interesse.
 - *Scenario principale*:
   + L'amministratore visualizza il nome del punto di interesse.
 
@@ -586,7 +559,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + il sistema tiene traccia dell'_e-mail_ di ciascun utente.
   + l'amministratore sta visualizzando lo storico degli annunci.
 - *Postcondizioni*: il sistema espone l'_e-mail_ dell'utente.
-- *Trigger*: l'amministratore desidera visualizzare l'_e-mail_ dell'utente.
 - *Scenario principale*:
   + L'amministratore visualizza l'_e-mail_ dell'utente.
 
@@ -596,7 +568,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + il sistema tiene traccia della data e dell'ora nelle quali il sistema ha richiesto di generare un annuncio.
   + l'amministratore sta visualizzando lo storico degli annunci.
 - *Postcondizioni*: il sistema espone la data e l'ora di tentativo di generazione annuncio.
-- *Trigger*: l'amministratore desidera visualizzare la data e l'ora di quando il sistema ha richiesto di generare un annuncio.
 - *Scenario principale*:
   + L'amministratore visualizza la data e l'ora di tentativo di generazione annuncio.
 
@@ -607,7 +578,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + il sistema tiene traccia dello stato del noleggio al quale è stato inviato l'annuncio, se è cioè ancora attivo o meno.
   + l'amministratore sta visualizzando lo storico degli annunci.
 - *Postcondizioni*: il sistema espone un _flag_ nel caso il noleggio al quale è stato inviato l'annuncio è ancora attivo.
-- *Trigger*: l'amministratore desidera visualizzare se l'annuncio è stato inviato ad un mezzo con noleggio attivo.
 - *Scenario principale*:
   + L'amministratore visualizza il _flag_ nel caso in cui il noleggio relativo all'annuncio è ancora attivo.
 #v(20pt)
@@ -629,7 +599,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   - _E-mail_ dell'utente destinatario.
   - Data e ora di erogazione.
   - _Flag_ che indica se il noleggio al quale è stato inviato l'annuncio è ancora attivo.
-- *Trigger*: l'amministratore desidera visualizzare l'annuncio insieme alle relative informazioni.
 - *Scenario principale*:
   + L'amministratore seleziona l'opzione per visualizzare i dettagli dell'annuncio desiderato.
   + Viene esposto l'annuncio insieme alle relative informazioni.
@@ -647,7 +616,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + il sistema tiene traccia del nome di ciascun punto di interesse.
   + l'amministratore sta visualizzando il dettaglio di un singolo annuncio.
 - *Postcondizioni*: il sistema espone il nome del punto di interesse.
-- *Trigger*: l'amministratore desidera visualizzare il nome del punto di interesse.
 - *Scenario principale*:
   + L'amministratore visualizza il nome del punto di interesse.
 
@@ -657,7 +625,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + il sistema tiene traccia dell'_e-mail_ di ciascun utente.
   + l'amministratore sta visualizzando il dettaglio di un singolo annuncio.
 - *Postcondizioni*: il sistema espone l'_e-mail_ dell'utente.
-- *Trigger*: l'amministratore desidera visualizzare l'_e-mail_ dell'utente.
 - *Scenario principale*:
   + L'amministratore visualizza l'_e-mail_ dell'utente.
 
@@ -667,7 +634,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + il sistema tiene traccia della data e dell'ora nelle quali il sistema ha richiesto di generare un annuncio.
   + l'amministratore sta visualizzando il dettaglio di un singolo annuncio.
 - *Postcondizioni*: il sistema espone la data e l'ora di tentativo di generazione annuncio.
-- *Trigger*: l'amministratore desidera visualizzare la data e l'ora di quando il sistema ha richiesto di generare un annuncio.
 - *Scenario principale*:
   + L'amministratore visualizza la data e l'ora di tentaivo di generazione annuncio.
 
@@ -678,7 +644,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + il sistema tiene traccia dello stato del noleggio al quale è stato inviato l'annuncio, se è cioè ancora attivo o meno.
   + l'amministratore sta visualizzando il dettaglio di un singolo annuncio.
 - *Postcondizioni*: il sistema espone un _flag_ nel caso il noleggio al quale è stato inviato l'annuncio è ancora attivo.
-- *Trigger*: l'amministratore desidera visualizzare se l'annuncio è stato inviato ad un mezzo con noleggio attivo.
 - *Scenario principale*:
   + L'amministratore visualizza il _flag_ nel caso in cui il noleggio relativo all'annuncio è ancora attivo.
 
@@ -688,7 +653,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + il sistema tiene traccia degli annunci generati.
   + l'amministratore sta visualizzando il dettaglio di un singolo annuncio.
 - *Postcondizioni*: il sistema espone il corpo dell'annuncio per intero.
-- *Trigger*: l'amministratore desidera visualizzare l'annuncio generato precedentemente.
 - *Scenario principale*:
   + L'amministratore visualizza interamente il corpo dell'annuncio generato precedentemente.
 
@@ -698,7 +662,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + il sistema tiene traccia della categoria del punto di interesse collegato al relativo annuncio.
   + l'amministratore sta visualizzando il dettaglio di un singolo annuncio.
 - *Postcondizioni*: il sistema espone la categoria del punto di interesse collegato al relativo annuncio.
-- *Trigger*: l'amministratore desidera visualizzare la categoria del punto di interesse collegato al relativo annuncio.
 - *Scenario principale*:
   + L'amministratore visualizza la categoria del punto di interesse.
 #v(20pt)
@@ -714,7 +677,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Attore principale*: Amministratore.
 - *Precondizioni*: il sistema espone una finestra di dialogo per i dettagli di un annuncio con la quale l'amministratore può interagire.
 - *Postcondizioni*: il sistema chiude la finestra di dialogo.
-- *Trigger*: l'amministratore desidera chiudere la finestra di dialogo aperta.
 - *Scenario principale*:
   + L'amministratore visualizza una finestra di dialogo aperta.
   + L'amministratore chiude la finestra di dialogo aperta.
@@ -734,7 +696,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + l'amministratore sta visualizzando la sezione dedicata agli annunci.
   + l'amministratore ha selezionato l'opzione per filtrare gli annunci per _e-mail_ utente.
 - *Postcondizioni*: il sistema espone lo storico degli annunci destinati all'utente selezionato.
-- *Trigger*: l'amministratore desidera prendere visione degli annunci generati fino a quel momento per uno specifico utente.
 - *Scenario principale*:
   + L'amministratore seleziona l'_e-mail_ di un utente.
   + Vengono visualizzati solo gli annunci destinati all'utente selezionato.
@@ -746,7 +707,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + l'amministratore sta visualizzando la sezione dedicata agli annunci.
   + l'amministratore ha selezionato l'opzione per filtrare gli annunci per nome del punto di interesse.
 - *Postcondizioni*: il sistema espone lo storico degli annunci collegati al punto di interesse selezionato.
-- *Trigger*: l'amministratore desidera prendere visione degli annunci generati fino a quel momento per uno specifico punto di interesse.
 - *Scenario principale*:
   + L'amministratore seleziona il nome di un punto di interesse.
   + Vengono visualizzati solo gli annunci collegati al punto di interesse selezionato.
@@ -758,7 +718,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + l'amministratore sta visualizzando la sezione dedicata agli annunci.
   + l'amministratore ha selezionato l'opzione per filtrare gli annunci per intervallo di date di emissione.
 - *Postcondizioni*: il sistema espone lo storico degli annunci emessi nell'intervallo di date selezionato.
-- *Trigger*: l'amministratore desidera prendere visione degli annunci generati fino a quel momento in un determinato intervallo di date.
 - *Scenario principale*:
   + L'amministratore seleziona un intervallo di date.
   + Vengono visualizzati solo gli annunci emessi nell'intervallo di date selezionato.
@@ -770,7 +729,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + l'amministratore sta visualizzando la sezione dedicata agli annunci.
   + l'amministratore ha selezionato l'opzione per filtrare gli annunci per fascia oraria di emissione.
 - *Postcondizioni*: il sistema espone lo storico degli annunci emessi nella fascia oraria selezionata.
-- *Trigger*: l'amministratore desidera prendere visione degli annunci generati fino a quel momento in una determinata fascia oraria.
 - *Scenario principale*:
   + L'amministratore seleziona una fascia oraria.
   + Vengono visualizzati solo gli annunci emessi nella fascia oraria selezionata.
@@ -788,7 +746,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Attore principale*: Amministratore.
 - *Precondizioni*: il sistema tenta di comunicare con il _server_ per ricevere o inviare informazioni, ma si verifica un errore.
 - *Postcondizioni*: il sistema espone il messaggio di errore che segnala un problema con il _server_.
-- *Trigger*: l'amministratore desidera prendere visione del messaggio di errore quando il _server_ non risponde correttamente.
 - *Scenario principale*:
   + Il _server_ restituisce un errore (ad esempio, codice HTTP 500 o simile) durante la comunicazione.
   + L'amministratore visualizza il messaggio di errore sulla _dashboard_.
@@ -797,7 +754,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Attore principale*: Amministratore.
 - *Precondizioni*: il sistema monitora lo stato della connessione di rete e non rileva connessione.
 - *Postcondizioni*: il sistema espone il messaggio di errore relativo alla perdita di connessione.
-- *Trigger*: l'amministratore desidera prendere visione del messaggio di errore quando la connessione di rete è assente.
 - *Scenario principale*:
   + Il sistema rileva che la connessione di rete è persa o instabile.
   + L'amministratore visualizza il messaggio di errore sulla _dashboard_.
@@ -806,7 +762,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Attore principale*: Amministratore.
 - *Precondizioni*: il sistema monitora le risposte dei sensori attivi, cioè installati su mezzi con noleggio attivo e rileva uno o più errori.
 - *Postcondizioni*: il sistema espone il messaggio di malfunzionamento di un sensore.
-- *Trigger*: l'amministratore desidera prendere visione del messaggio di errore di malfunzionamento di un sensore.
 - *Scenario principale*:
   + Il sensore non comunica correttamente i dati al sistema.
   + L'amministratore visualizza il messaggio di errore sulla _dashboard_.
@@ -815,7 +770,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Attore principale*: Amministratore.
 - *Precondizioni*: il sistema comunica con una LLM per far generare gli annunci, ma si verifica un errore.
 - *Postcondizioni*: il sistema espone il messaggio di impossibilità di comunicazione con la LLM.
-- *Trigger*: l'amministratore desidera prendere visione del messaggio di errore di impossibilità di connessione con la LLM.
 - *Scenario principale*:
   + Il sistema non riesce a comunicare correttamente con la LLM, non riesce cioè a inviare o ricevere messaggi.
   + L'amministratore visualizza il messaggio di errore sulla _dashboard_.
@@ -837,7 +791,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + il sistema mantiene delle informazioni utili per una analisi statistica.
   + l'amministratore entra nella _dashboard_ con i grafici per le analisi sui dati.
 - *Postcondizioni*: il sistema espone dei grafici che rappresentino le informazioni.
-- *Trigger*: l'amministratore desidera prendere visione dei grafici per osservare l'andamento di alcuni dati.
 - *Scenario principale*:
   + L'amministratore accede alla sezione apposita dei grafici.
   + Il sistema espone dei grafici relativi alle analisi proposte.
@@ -856,7 +809,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   - Etichetta dell'asse delle ordinate.
   - Etichette dei valori sugli assi.
   - Dati del grafico.
-- *Trigger*: l'amministratore desidera prendere visione del grafico che espone l'andamento di uno specifico parametro.
 - *Scenario principale*:
   + L'amministratore visualizza il grafico con le relative informazioni.
 - *Inclusioni*:
@@ -871,7 +823,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + il sistema tiene traccia del titolo del grafico. 
   + l'amministratore sta visualizzando un grafico.
 - *Postcondizioni*: il sistema espone il titolo del grafico.
-- *Trigger*: l'amministratore desidera prendere visione del titolo del grafico.
 - *Scenario principale*:
   + L'amministratore visualizza il titolo del grafico.
 
@@ -881,7 +832,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + il sistema tiene traccia delle etichette dell'asse delle ascisse e dei relativi valori di ciascun grafico.
   + l'amministratore sta visualizzando un grafico.
 - *Postcondizioni*: il sistema espone le etichette dell'asse delle ascisse e dei relativi valori.
-- *Trigger*: l'amministratore desidera prendere visione delle etichette dell'asse delle ascisse e dei rispettivi valori.
 - *Scenario principale*:
   + L'amministratore visualizza l'etichetta dell'asse delle ascisse del relativo grafico.
   + L'amministratore visualizza le etichette dei valori segnati sull'asse delle ascisse del relativo grafico.
@@ -892,7 +842,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + il sistema tiene traccia delle etichette dell'asse delle ordinate e dei relativi valori di ciascun grafico.
   + l'amministratore sta visualizzando un grafico. 
 - *Postcondizioni*: il sistema espone le etichette dell'asse delle ordinate e dei relativi valori.
-- *Trigger*: l'amministratore desidera prendere visione delle etichette dell'asse delle ordinate e dei rispettivi valori.
 - *Scenario principale*:
   + l'amministratore visualizza l'etichetta dell'asse delle ordinate del relativo grafico.
   + l'amministratore visualizza le etichette dei valori segnati sull'asse delle ordinate del relativo grafico.
@@ -903,7 +852,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + il sistema tiene traccia dei dati di ciascun grafico.
   + l'amministratore sta visualizzando un grafico. 
 - *Postcondizioni*: l'amministratore visualizza i dati sul relativo grafico.
-- *Trigger*: l'amministratore desidera prendere visione dei dati del parametro in esame sul grafico.
 - *Scenario principale*:
   + l'amministratore visualizza i dati sul grafico.
 #v(20pt)
