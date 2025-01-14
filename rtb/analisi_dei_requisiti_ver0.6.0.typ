@@ -211,7 +211,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 === UC4 - Inserimento password per l'autenticazione alla dashboard <uc4>
 - *Attore principale*: Amministratore non autenticato.
 - *Precondizioni*: 
-  + il sistema possiede l'_e-mail_ dell'amministratore che in quel momento non è autenticato.
+  + il sistema possiede la _password_ dell'amministratore che in quel momento non è autenticato.
   + l'amministratore non autenticato si trova nella pagina di _login_. 
   + l'amministratore inserisce la propria _password_.
 - *Postcondizioni*: il sistema accetta la _password_ inserita.
@@ -270,7 +270,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 === UC8 - Visualizzazione percorso del mezzo in noleggio sulla mappa <uc8>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
-  + il sistema tiene traccia delle posizioni nel tempo dei mezzi con noleggio attivo.
+  + il sistema tiene traccia nel tempo delle posizioni dei mezzi con noleggio attivo.
   + l'amministratore si trova nella _dashboard_ di visualizzazione della mappa.
 - *Postcondizioni*: il sistema espone sulla mappa il percorso dei mezzi con noleggio attivo.
 - *Trigger*: l'amministratore desidera visualizzare il percorso di un mezzo dall'inizio del suo noleggio fino a quel momento.
@@ -285,7 +285,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Precondizioni*: 
   + il sistema riceve in tempo reale i dati GPS dei sensori quando il mezzo sul quale sono installati ha un noleggio attivo.
   + l'amministratore si trova nella _dashboard_ di visualizzazione della mappa.
-- *Postcondizioni*: il sistema espone sulla mappa un _marker_ in corrispondenza di ciascuna coordinata GPS fornita dal sensore.
+- *Postcondizioni*: il sistema espone sulla mappa un _marker_ in corrispondenza di ciascuna posizione GPS fornita dal sensore.
 - *Trigger*: l'amministratore intende visualizzare sulla mappa le posizioni del mezzo in noleggio fino a quel momento.
 - *Scenario principale*:
   + L'amministratore accede alla mappa sulla _dashboard_.
@@ -437,7 +437,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + l'amministratore si trova nella _dashboard_ di visualizzazione della mappa.
-  + l'amministratore ha aperto la mancata generazione di un annuncio tramite un'interazione con il _marker_ sulla mappa.
+  + l'amministratore ha aperto la visualizzazione di mancata generazione di un annuncio tramite un'interazione con il _marker_ sulla mappa.
 - *Postcondizioni*: il sistema chiude il messaggio di annuncio non generato visualizzato tramite una interazione con il _marker_ corrispondente.
 - *Trigger*: l'amministratore desidera chiudere il messaggio di annuncio non generato fatto comparire sulla mappa in corrispondenza del _marker_.
 - *Scenario principale*:
@@ -485,7 +485,10 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 === UC21 - Ampliamento della visuale sulla mappa <uc21>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia della porzione di territorio mostrata dalla mappa sulla _dashboard_.
+- *Precondizioni*:
+  + l'amministratore si trova nella _dashboard_ di visualizzazione della mappa. 
+  + il sistema tiene traccia della porzione di territorio mostrata dalla mappa sulla _dashboard_.
+  + l'amministratore vuole vedere nel dettaglio una porzione specifica di mappa.
 - *Postcondizioni*: il sistema fa visualizzare sulla mappa una porzione di territorio più ampia.
 - *Trigger*: l'amministratore desidera ampliare la visuale sulla mappa.
 - *Scenario principale*:
@@ -497,6 +500,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Precondizioni*: 
   + l'amministratore si trova nella _dashboard_ di visualizzazione della mappa.
   + il sistema tiene traccia della porzione di territorio mostrata dalla mappa sulla _dashboard_.
+  + l'amministratore vuole vedere meno nel dettaglio una porzione più grande di mappa.
 - *Postcondizioni*: il sistema fa visualizzare sulla mappa una porzione di territorio meno ampia.
 - *Trigger*: l'amministratore desidera restringere la visuale sulla mappa.
 - *Scenario principale*:
@@ -550,7 +554,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 === UC26 - Visualizzazione singolo annuncio nello storico <uc26>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia delle informazioni principali degli annunci generati per gli utenti dell'amministratore. Questo visualizza la sezione dedicata agli annunci e vuole conoscere i dettagli di uno di questi.
+- *Precondizioni*: il sistema tiene traccia delle informazioni principali degli annunci generati per gli utenti dell'amministratore. Quest'ultimo visualizza la sezione dedicata agli annunci e vuole conoscere i dettagli di uno di questi.
 - *Postcondizioni*: il sistema espone le informazioni principali relative al singolo annuncio:
   - Nome del punto di interesse collegato.
   - _E-mail_ dell'utente destinatario.
@@ -632,10 +636,9 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + Visualizzazione nome del punto di interesse dal dettaglio di un annuncio (#link(<uc32>)[UC32]).
   + Visualizzazione _e-mail_ dell'utente dal dettaglio di un annuncio (#link(<uc33>)[UC33]).
   + Visualizzazione data e ora di tentativo di generazione annuncio dal dettaglio di un annuncio (#link(<uc34>)[UC34]).
-  + Visualizzazione _flag_ sugli annunci nello storico inviati a noleggi attivi dal suo dettaglio (#link(<uc37>)[UC37]).
+  + Visualizzazione _flag_ sugli annunci nello storico inviati a noleggi attivi dal suo dettaglio (#link(<uc35>)[UC35]).
   + Visualizzazione completa dell'annuncio dal suo dettaglio (#link(<uc36>)[UC36]).
   + Visualizzazione categoria del punto di interesse collegato all'annuncio dal suo dettaglio (#link(<uc37>)[UC37]).
-  + Chiusura della finestra di dialogo aperta (#link(<uc38>)[UC38]).
 
 === UC32 - Visualizzazione nome del punto di interesse dal dettaglio di un annuncio <uc32>
 - *Attore principale*: Amministratore.
@@ -697,10 +700,15 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Trigger*: l'amministratore desidera visualizzare la categoria del punto di interesse collegato al relativo annuncio.
 - *Scenario principale*:
   + L'amministratore visualizza la categoria del punto di interesse.
+#v(20pt)
+#figure(
+  // TODO [Marin]: prima il 38 era in inclusione e c'era un uml solo, come ha fatto notare in revisione 
+  // Martinelli effettivamente non sarebbe inclusione, perciò bisogna toglierlo dall'uml e fare un uml
+  // solo per lui da mettere sotto
+  image("../assets/use_cases/UC31-32-33-34-35-36-37-38.png"),
+  caption: [Diagramma dei casi d'uso UC31, UC32, UC33, UC34, UC35, UC36, UC37 e UC38],
+)
 
-// TODO: risolvere il seguente dubbio, questa funzionalità (UC36) è effettivamente implementata da noi? Io (rm) penso di sì in quanto è una funzionalità
-//        della dashboard grafana configurata da noi, se non fosse una funzionalità per assurdo anche la mappa non sarebbe implementata da noi.
-//        se Marin conferma e poi anche i revisori possiamo togliere questo commento e anche quello sulla versione 0.6.0 nel changelog.
 === UC38 - Chiusura della finestra di dialogo aperta <uc38>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: il sistema espone una finestra di dialogo con la quale l'amministratore può interagire.
@@ -711,6 +719,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore chiude la finestra di dialogo aperta.
 #v(20pt)
 #figure(
+  // TODO [Marin]: come scritto sopra qua va fatto un unico uml per il 38 da solo
   image("../assets/use_cases/UC31-32-33-34-35-36-37-38.png"),
   caption: [Diagramma dei casi d'uso UC31, UC32, UC33, UC34, UC35, UC36, UC37 e UC38],
 )
@@ -978,7 +987,7 @@ Viene riportata di seguito il significato e i possibili valori dei campi present
   [#link(<uc10>)[UC10]],
 
   [ROF-x],
-  [L'amministratore deve poter visualizzare i _marker_ indicanti quali posizioni trasmesse relative ad un noleggio non hanno generato un annuncio in prossimità di un punto di interesse all'interno della mappa in quanto l'LLM ha ritenuto quest'ultimo non interessato.],
+  [L'amministratore deve poter visualizzare i _marker_ indicanti quali posizioni trasmesse relative ad un noleggio non hanno generato un annuncio in prossimità di un punto di interesse all'interno della mappa in quanto l'LLM ha ritenuto il noleggiatore non interessato.],
   [#link(<uc11>)[UC11]],
 
   [ROF-x],
