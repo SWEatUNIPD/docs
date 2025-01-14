@@ -995,6 +995,14 @@ La manutenibilità è la capacità del prodotto di essere modificato, includendo
   - *Stabilità*: capacità del prodotto di evitare effetti indesiderati derivanti da modifiche.
   - *Testabilità*: capacità del prodotto di essere facilmente testato così da validare le modifiche apportate.
 
+=== *Portabilità*
+La portabilità è la capacità del prodotto di essere trasportato da un ambiente operativo a un altro. \ Le sue sotto-caratteristiche sono:
+  - *Adattabilità*: capacità del prodotto di essere adattato a diversi ambienti senza dover applicare modifiche diverse da quelle fornite.
+  - *Installabilità*: capacità del prodotto di essere facilmente installabile nell'ambiente specificato.
+  - *Conformità*: capacità del prodotto di aderire a _standard_, convenzioni e regolamentazioni in merito di portabilità.
+  - *Sostituibilità*: capacità del prodotto di essere utilizzato al posto di un altro per svolgere le stesse azioni nello stesso ambiente.
+
+
 = Metriche per la qualità <metriche>
 
 == Metriche per la qualità di processo
@@ -1204,7 +1212,7 @@ La manutenibilità è la capacità del prodotto di essere modificato, includendo
   - *Nome*: Facilità di Utilizzo
   - *Descrizione*: Misura il numero di errori commessi dagli utenti durante l’interazione. Un valore minimo indica un’interfaccia intuitiva. 
 - *MPD-TA*
-  - *Nome*: Tempo di apprendimento
+  - *Nome*: Tempo di Apprendimento
   - *Descrizione*: Valuta il tempo necessario a un utente per imparare a utilizzare il _software_.
 
 === Manutenibilità
