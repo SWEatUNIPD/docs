@@ -45,7 +45,7 @@
     "Andrea Perozzo\nAndrea Precoma",
     "Davide Marin\nKlaudio Merja",
     [
-      - Aggiunti casi d'uso relativi alla mappa, agli anunci e ai grafici
+      - Aggiunti casi d'uso relativi alla mappa, agli annunci e ai grafici
       - Sistemati i primi casi d'uso
       - Aggiunti casi d'uso relativi alle interazioni con la mappa
       - Aggiunti casi d'uso relativi agli errori
@@ -131,7 +131,7 @@ Il prodotto dovrà fornire le seguenti funzionalità:
 - *Visualizzazione nella _dashboard_ degli annunci pubblicitari generati*: il sistema dovrà essere in grado di mostrare in tempo reale gli annunci pubblicitari che vengono visualizzati dagli utenti.
 - *Visualizzazione nella _dashboard_ dello storico degli annunci pubblicitari*: il sistema dovrà essere in grado di mostrare uno storico degli annunci pubblicitari visualizzati dagli utenti a disposizione degli amministratori del sistema.
 
-L'azienda proponente richiede inoltre la dimostrazione del corretto funzionamento dei servizi e delle funzionalità del sitema, garantendo una copertura di test di più dell'80% e correlata da report. Viene richiesto inoltre che il prodotto sia in grado di mantenere un elevato flusso di dati in entrata dovuto ai dati di localizzazione emessi dai sensori.
+L'azienda proponente richiede inoltre la dimostrazione del corretto funzionamento dei servizi e delle funzionalità del sistema, garantendo una copertura di test di più dell'80% e correlata da report. Viene richiesto inoltre che il prodotto sia in grado di mantenere un elevato flusso di dati in entrata dovuto ai dati di localizzazione emessi dai sensori.
 
 == Utenti e loro caratteristiche
 Il prodotto si rivolge a due tipologie di utenti:
@@ -201,7 +201,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Precondizioni*: 
   + il sistema possiede l'_e-mail_ dell'amministratore che in quel momento non è autenticato.
   + l'amministratore non autenticato si trova nella pagina di _login_. 
-  + l'amministratore insersce la propria _e-mail_.
+  + l'amministratore inserisce la propria _e-mail_.
 - *Postcondizioni*: il sistema accetta l'_e-mail_ inserita.
 - *Trigger*: l'amministratore intende accedere alla _dashboard_ personale.
 - *Scenario principale*:
@@ -213,7 +213,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Precondizioni*: 
   + il sistema possiede l'_e-mail_ dell'amministratore che in quel momento non è autenticato.
   + l'amministratore non autenticato si trova nella pagina di _login_. 
-  + l'amministratore insersce la propria _password_.
+  + l'amministratore inserisce la propria _password_.
 - *Postcondizioni*: il sistema accetta la _password_ inserita.
 - *Trigger*: l'amministratore intende accedere alla _dashboard_ personale.
 - *Scenario principale*:
@@ -430,7 +430,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Postcondizioni*: il sistema chiude l'annuncio visualizzato tramite una interazione con il _marker_ corrispondente.
 - *Trigger*: l'amministratore desidera chiudere l'annuncio fatto comparire sulla mappa in corrispondenza del _marker_.
 - *Scenario principale*:
-  + L'amministratore visualiza l'annuncio sulla mappa in corrispondenza del _marker_.
+  + L'amministratore visualizza l'annuncio sulla mappa in corrispondenza del _marker_.
   + L'amministratore chiude l'annuncio.
 
 === UC18 - Chiusura messaggio annuncio non generato visualizzato tramite marker sulla mappa
@@ -441,7 +441,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Postcondizioni*: il sistema chiude il messaggio di annuncio non generato visualizzato tramite una interazione con il _marker_ corrispondente.
 - *Trigger*: l'amministratore desidera chiudere il messaggio di annuncio non generato fatto comparire sulla mappa in corrispondenza del _marker_.
 - *Scenario principale*:
-  + L'amministratore visualiza il messaggio di annuncio non generato sulla mappa in corrispondenza del _marker_.
+  + L'amministratore visualizza il messaggio di annuncio non generato sulla mappa in corrispondenza del _marker_.
   + L'amministratore chiude il messaggio.
 #v(20pt)
 #figure(
@@ -529,7 +529,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Precondizioni*: 
   + il sistema espone gli annunci generati fino a quel momento ordinati dal più recente.
   + l'amministratore vuole vedere gli annunci in una lista.
-- *Postcondizioni*: gli annunci vengono mostrati nella dashboard all'amministratore sottoforma di lista.
+- *Postcondizioni*: gli annunci vengono mostrati nella dashboard all'amministratore sotto forma di lista.
 - *Trigger*: l'amministratore vuole prendere visione degli annunci generati fino a quel momento in lista.
 - *Scenario principale*:
   + L'amministratore accede alla _dashboard_ principale.
@@ -593,7 +593,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Postcondizioni*: il sistema espone la data e l'ora di tentativo di generazione annuncio.
 - *Trigger*: l'amministratore desidera visualizzare la data e l'ora di quando il sistema ha richiesto di generare un annuncio.
 - *Scenario principale*:
-  + L'amministratore visualizza la data e l'ora di tentaivo di generazione annuncio.
+  + L'amministratore visualizza la data e l'ora di tentativo di generazione annuncio.
 
 === UC30 - Visualizzazione flag sugli annunci nello storico inviati a noleggi attivi dall'annuncio nello storico
 <uc30>
@@ -722,14 +722,14 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Precondizioni*: 
   + il sistema tiene traccia di tutti gli annunci generati per gli utenti dell'amministratore. 
   + l'amministratore sta visualizzando la sezione dedicata agli annunci.
-- *Postcondizioni*: il sistema espone gli annuci filtrati secondo alcune opzioni fornite: _e-mail_ dell'utente destinatario dell'annuncio, nome del punto di interesse collegato all'annuncio, intervallo di date e fascia oraria di emissione.
+- *Postcondizioni*: il sistema espone gli annunci filtrati secondo alcune opzioni fornite: _e-mail_ dell'utente destinatario dell'annuncio, nome del punto di interesse collegato all'annuncio, intervallo di date e fascia oraria di emissione.
 - *Trigger*: l'amministratore desidera prendere visione di alcuni specifici annunci generati precedentemente.
 - *Scenario principale*:
   + L'amministratore accede alla sezione apposita degli annunci.
   + L'amministratore esegue una ricerca degli annunci desiderati.
 - *Inclusioni*:
   + Ricerca degli annunci nello storico per _e-mail_ utente (#link(<uc40>)[UC40]).
-  + Ricerca degli annnunci nello storico per nome del punto di interesse (#link(<uc41>)[UC41]).
+  + Ricerca degli annunci nello storico per nome del punto di interesse (#link(<uc41>)[UC41]).
   + Ricerca degli annunci nello storico per intervallo di date di emissione (#link(<uc42>)[UC42]).
   + Ricerca degli annunci nello storico per fascia oraria di emissione (#link(<uc43>)[UC43]).
 
@@ -819,10 +819,10 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Attore principale*: Amministratore.
 - *Precondizioni*: il sistema comunica con una LLM per far generare gli annunci, ma si verifica un errore.
 - *Postcondizioni*: il sistema espone il messaggio di impossibilità di comunicazione con la LLM.
-- *Trigger*: l'amministratore desidera prendere visione del messaggio di errore di impossibiltà di connessione con la LLM.
+- *Trigger*: l'amministratore desidera prendere visione del messaggio di errore di impossibilità di connessione con la LLM.
 - *Scenario principale*:
   + Il sistema non riesce a comunicare correttamente con la LLM, non riesce cioè a inviare o ricevere messaggi.
-  + L'amministratore viualizza il messaggio di errore sulla _dashboard_.
+  + L'amministratore visualizza il messaggio di errore sulla _dashboard_.
 #v(20pt)
 #figure(
   image("../assets/use_cases/UC44-45-46-47.png"),
@@ -837,7 +837,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 === UC48 - Visualizzazione statistiche in grafici
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
-  + il sistema mantiene delle informazioni utili per una anlisi statistica.
+  + il sistema mantiene delle informazioni utili per una analisi statistica.
   + l'amministratore entra nella _dashboard_ con i grafici per le analisi sui dati.
 - *Postcondizioni*: il sistema espone dei grafici che rappresentino le informazioni.
 - *Trigger*: l'amministratore desidera prendere visione dei grafici per osservare l'andamento di alcuni dati.
@@ -850,7 +850,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 === UC49 - Visualizzazione singolo grafico <uc49>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
-  + il sistema mantiene delle informazioni utili per una anlisi statistica.
+  + il sistema mantiene delle informazioni utili per una analisi statistica.
   + l'amministratore si trova nella _dashboard_ con i grafici per le analisi sui dati.
   + l'amministratore vuole visualizzare un singolo grafico.
 - *Postcondizioni*: l'amministratore visualizza il grafico con le relative informazioni:
@@ -926,7 +926,7 @@ I requisiti sono frutto dell'analisi del capitolato d'appalto, dalle varie inter
 Ogni requisito è identificato univocamente da un codice che presenta la seguente struttura:
 #align(center)[*R[Importanza][Tipo]-[ID]*]
 Viene riportata di seguito il significato e i possibili valori dei campi presenti all'interno di ogni identificativo:
-- *Importanza*: indica il grado di importanza di ogni requisito, che si disingue in:
+- *Importanza*: indica il grado di importanza di ogni requisito, che si distingue in:
   - *O*: requisito obbligatorio, ovvero che viene richiesto esplicitamente dall'azienda e strettamente necessario.
   - *D*: requisito desiderabile, ovvero che non è strettamente necessario ma da valore aggiunto al prodotto finale.
   - *F*: requisito facoltativo, ovvero che non è necessario ma può essere utile ai fini del prodotto finale. Quest'ultimi possono essere contrattati in seguito con l'azienda.
@@ -986,7 +986,7 @@ Viene riportata di seguito il significato e i possibili valori dei campi present
   [#link(<uc12>)[UC12]],
 
   [ROF-x],
-  [L'amministatore deve poter visualizzare l'annuncio generato dall'LLM per un determinato noleggio e per una determinata trasmissione di posizione tramite l'interazione con i _marker_ indicanti le trasmissioni che hanno generato un annuncio.],
+  [L'amministratore deve poter visualizzare l'annuncio generato dall'LLM per un determinato noleggio e per una determinata trasmissione di posizione tramite l'interazione con i _marker_ indicanti le trasmissioni che hanno generato un annuncio.],
   [#link(<uc13>)[UC13]],
 )
 === Requisiti di qualità
