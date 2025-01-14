@@ -29,9 +29,6 @@
     "Davide Marin\nRiccardo Milan",
     "Andrea Perozzo \nDavide Martinelli",
     [
-      // TODO: aggiungere i seguenti casi d'uso per la chiusura delle finstre:
-      // - chiusura di messaggio generato dopo aver cliccato sul marker
-      // - chiusura di tentata generazione di un messaggio dopo aver cliccato sul marker
       - Aggiunti casi d'uso per evitare riutilizzo nelle generalizzazioni
       - Sistemate precondizioni di tutti i casi d'uso
       - Sistemati e aggiornati gli UML rispettivi ai casi d'uso cambiati ed aggiunti
@@ -166,16 +163,17 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 == Elenco dei casi d'uso
 
-=== UC1 - Trasmissione dei dati di localizzazione <uc1>
+=== UC1 - Trasmissione dei dati di identificazione e localizzazione del sensore <uc1>
 - *Attore principale*: Sensore.
 - *Precondizioni*: il sistema monitora i sensori sui mezzi con un noleggio attivo. In particolare mantiene l'informazione riguardo la posizione #rifGlossario("GPS") inviata dal sensore in tempo reale.
-- *Postcondizioni*: il sistema riceve l'informazione riguardo la posizione GPS del sensore in quel momento.
+- *Postcondizioni*: il sistema riceve l'informazione riguardo l'id del prestito (_rent_) e la posizione GPS (espressa tramite longitudine e latitudine) del sensore in quel momento.
 - *Trigger*: il sensore intende notificare al sistema la localizzazione GPS del mezzo sul quale è installato.
 - *Scenario principale*:
   + L'utente noleggia un mezzo.
-  + Il sensore invia a intervalli di tempo regolari i dati di localizzazione GPS del mezzo.
+  + Il sensore invia a intervalli di tempo regolari i dati di identificazione e localizzazione GPS del mezzo.
 #v(20pt)
 #figure(
+  // TODO: il caso d'uso è stato rinominato, occorre rinominarlo anche nell'UML
   image("../assets/use_cases/UC1.png"),
   caption: [Diagramma del caso d'uso UC1],
 )
