@@ -29,6 +29,9 @@
     "Davide Marin\nRiccardo Milan",
     "Andrea Perozzo \nDavide Martinelli",
     [
+      // TODO: aggiungere i seguenti casi d'uso per la chiusura delle finstre:
+      // - chiusura di messaggio generato dopo aver cliccato sul marker
+      // - chiusura di tentata generazione di un messaggio dopo aver cliccato sul marker
       - Aggiunti casi d'uso per evitare riutilizzo nelle generalizzazioni
       - Sistemate precondizioni di tutti i casi d'uso
       - Sistemati e aggiornati gli UML rispettivi ai casi d'uso cambiati ed aggiunti
@@ -710,9 +713,9 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   caption: [Diagramma dei casi d'uso UC31, UC32, UC33, UC34, UC35, UC36, UC37 e UC38],
 )
 
-=== UC38 - Chiusura della finestra di dialogo aperta <uc38>
+=== UC38 - Chiusura della finestra di dialogo di visualizzazione dettagli di un singolo annuncio <uc38>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema espone una finestra di dialogo con la quale l'amministratore può interagire.
+- *Precondizioni*: il sistema espone una finestra di dialogo per i dettagli di un annuncio con la quale l'amministratore può interagire.
 - *Postcondizioni*: il sistema chiude la finestra di dialogo.
 - *Trigger*: l'amministratore desidera chiudere la finestra di dialogo aperta.
 - *Scenario principale*:
