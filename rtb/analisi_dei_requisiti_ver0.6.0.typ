@@ -488,9 +488,8 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Precondizioni*:
   + l'amministratore si trova nella _dashboard_ di visualizzazione della mappa. 
   + il sistema tiene traccia della porzione di territorio mostrata dalla mappa sulla _dashboard_.
-  + l'amministratore vuole vedere nel dettaglio una porzione specifica di mappa.
 - *Postcondizioni*: il sistema fa visualizzare sulla mappa una porzione di territorio più ampia.
-- *Trigger*: l'amministratore desidera ampliare la visuale sulla mappa.
+- *Trigger*: l'amministratore interagisce con la mappa per ampliare la visuale.
 - *Scenario principale*:
   + l'amministratore accede alla mappa sulla _dashboard_.
   + l'amministratore interagisce con la mappa per ampliare la visuale.
@@ -500,9 +499,8 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Precondizioni*: 
   + l'amministratore si trova nella _dashboard_ di visualizzazione della mappa.
   + il sistema tiene traccia della porzione di territorio mostrata dalla mappa sulla _dashboard_.
-  + l'amministratore vuole vedere meno nel dettaglio una porzione più grande di mappa.
 - *Postcondizioni*: il sistema fa visualizzare sulla mappa una porzione di territorio meno ampia.
-- *Trigger*: l'amministratore desidera restringere la visuale sulla mappa.
+- *Trigger*: l'amministratore interagisce con la mappa per restringere la visuale.
 - *Scenario principale*:
   + l'amministratore accede alla mappa sulla _dashboard_.
   + l'amministratore interagisce con la mappa per restringere la visuale.
@@ -516,11 +514,12 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 === UC23 - Visualizzazione storico degli annunci
 - *Attore principale*: Amministratore.
-- *Precondizioni*: l'amministratore vuole entrare nella _dashboard_ in cui il sistema espone gli annunci generati fino a quel momento.
+- *Precondizioni*: 
+  + Il sistema tiene traccia di tutti gli annunci generati per gli utenti dell'amministratore.
+  + L'amministratore accede alla sezione apposita degli annunci.
 - *Postcondizioni*: il sistema espone gli annunci generati fino a quel momento ordinati dal più recente.
 - *Trigger*: l'amministratore desidera prendere visione degli annunci generati fino a quel momento.
 - *Scenario principale*:
-  + L'amministratore accede alla sezione apposita degli annunci.
   + Il sistema espone le _preview_ degli annunci con le informazioni principali.
 - *Generalizzazioni*:
   + Visualizzazione storico annunci in lista (#link(<uc24>)[UC24]).
@@ -532,7 +531,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema espone gli annunci generati fino a quel momento ordinati dal più recente.
-  + l'amministratore vuole vedere gli annunci in una lista.
+  + l'amministratore ha selezionato l'opzione per visualizzare gli annunci sotto forma di lista.
 - *Postcondizioni*: gli annunci vengono mostrati nella dashboard all'amministratore sotto forma di lista.
 - *Trigger*: l'amministratore vuole prendere visione degli annunci generati fino a quel momento in lista.
 - *Scenario principale*:
@@ -544,7 +543,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema espone gli annunci generati fino a quel momento ordinati dal più recente.
-  + l'amministratore vuole vedere gli annunci in una griglia.
+  + l'amministratore ha selezionato l'opzione per visualizzare gli annunci sotto forma di griglia.
 - *Postcondizioni*: gli annunci vengono mostrati nella dashboard all'amministratore sottoforma di griglia.
 - *Trigger*: l'amministratore vuole prendere visione degli annunci generati fino a quel momento in griglia.
 - *Scenario principale*:
@@ -554,7 +553,9 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 === UC26 - Visualizzazione singolo annuncio nello storico <uc26>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia delle informazioni principali degli annunci generati per gli utenti dell'amministratore. Quest'ultimo visualizza la sezione dedicata agli annunci e vuole conoscere i dettagli di uno di questi.
+- *Precondizioni*: 
+  + il sistema tiene traccia delle informazioni principali degli annunci generati per gli utenti dell'amministratore. 
+  + l'amministratore sta visualizzando lo storico degli annunci.
 - *Postcondizioni*: il sistema espone le informazioni principali relative al singolo annuncio:
   - Nome del punto di interesse collegato.
   - _E-mail_ dell'utente destinatario.
@@ -747,7 +748,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Precondizioni*: 
   + il sistema tiene traccia di tutti gli annunci generati per l'utente selezionato. 
   + l'amministratore sta visualizzando la sezione dedicata agli annunci.
-  + l'amministratore vuole filtrare gli annunci per _e-mail_ utente.
+  + l'amministratore ha selezionato l'opzione per filtrare gli annunci per _e-mail_ utente.
 - *Postcondizioni*: il sistema espone lo storico degli annunci destinati all'utente selezionato.
 - *Trigger*: l'amministratore desidera prendere visione degli annunci generati fino a quel momento per uno specifico utente.
 - *Scenario principale*:
@@ -759,7 +760,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Precondizioni*: 
   + il sistema tiene traccia di tutti gli annunci generati collegati al punto di interesse selezionato.
   + l'amministratore sta visualizzando la sezione dedicata agli annunci.
-  + l'amministratore vuole filtrare gli annunci per nome del punto di interesse.
+  + l'amministratore ha selezionato l'opzione per filtrare gli annunci per nome del punto di interesse.
 - *Postcondizioni*: il sistema espone lo storico degli annunci collegati al punto di interesse selezionato.
 - *Trigger*: l'amministratore desidera prendere visione degli annunci generati fino a quel momento per uno specifico punto di interesse.
 - *Scenario principale*:
@@ -771,7 +772,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Precondizioni*: 
   + il sistema tiene traccia di tutti gli annunci emessi nell'intervallo di date selezionato.
   + l'amministratore sta visualizzando la sezione dedicata agli annunci.
-  + l'amministratore vuole filtrare gli annunci per intervallo di date di emissione.
+  + l'amministratore ha selezionato l'opzione per filtrare gli annunci per intervallo di date di emissione.
 - *Postcondizioni*: il sistema espone lo storico degli annunci emessi nell'intervallo di date selezionato.
 - *Trigger*: l'amministratore desidera prendere visione degli annunci generati fino a quel momento in un determinato intervallo di date.
 - *Scenario principale*:
@@ -783,7 +784,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Precondizioni*:
   + il sistema tiene traccia di tutti gli annunci emessi nell'intervallo di date selezionato.
   + l'amministratore sta visualizzando la sezione dedicata agli annunci.
-  + l'amministratore vuole filtrare gli annunci per fascia oraria di emissione.
+  + l'amministratore ha selezionato l'opzione per filtrare gli annunci per fascia oraria di emissione.
 - *Postcondizioni*: il sistema espone lo storico degli annunci emessi nella fascia oraria selezionata.
 - *Trigger*: l'amministratore desidera prendere visione degli annunci generati fino a quel momento in una determinata fascia oraria.
 - *Scenario principale*:
@@ -861,7 +862,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Precondizioni*: 
   + il sistema mantiene delle informazioni utili per una analisi statistica.
   + l'amministratore si trova nella _dashboard_ con i grafici per le analisi sui dati.
-  + l'amministratore vuole visualizzare un singolo grafico.
+  + il sistema sta esponendo i grafici con le analisi dei dati.
 - *Postcondizioni*: l'amministratore visualizza il grafico con le relative informazioni:
   - Titolo del grafico.
   - Etichetta dell'asse delle ascisse.
