@@ -25,18 +25,16 @@
   titolo: "Analisi dei Requisiti",
   uso: "Esterno",
   versioni: (
-    "0.6.0",
+    "0.7.0",
     [14/01/2025],
     "Klaudio Merja\nDavide Picello",
     "Andrea Perozzo\nDavide Marin",
-    [- Completata stesura requisiti],
-
+    [- Raffinamento e completamento della stesura dei requisiti],
     "0.5.0",
     [09/01/2025],
     "Klaudio Merja",
     "Davide Martinelli\nDavide Picello",
     [- Aggiunta di nuovi requisiti],
-    
     "0.4.0",
     [08/01/2025],
     "Andrea Perozzo\nAndrea Precoma",
@@ -917,7 +915,7 @@ Viene riportata di seguito il significato e i possibili valori dei campi present
   [#link(<uc13>)[UC13]],
 
   [ROF-x],
-  [L'amministratore deve poter visualizzare l'annuncio non generato dall'LLM per un noleggio, e per una trasmissione di posizione, tramite i _marker_ indicanti le trasmissioni che non hanno generato un annuncio.],
+  [L'amministratore deve poter visualizzare la mancata generazione dell'annuncio dall'LLM per un noleggio, e per una trasmissione di posizione, tramite i _marker_ indicanti le trasmissioni che non hanno generato un annuncio.],
   [/*UC14 - Visualizzazione annuncio tramite marker sulla mappa*/],
 
   [ROF-x],
@@ -973,11 +971,11 @@ Viene riportata di seguito il significato e i possibili valori dei campi present
   [/*UC27 - Visualizzazione storico annunci in griglia */],
 
   [ROF-x],
-  [L'amministratore deve poter visualizzare le informazioni principali di un singolo annuncio dallo storico, visualizzando: 
-  - nome del punto di interesse collegato
-  - _e-mail_ dell'utente
-  - data e ora di emissione
-  - _flag_ che indica se il noleggio al quale è stato inviato l'annuncio è ancora attivo.],
+  [L'amministratore deve poter visualizzare le informazioni principali di un singolo annuncio dallo storico, visualizzando:
+    - nome del punto di interesse collegato
+    - _e-mail_ dell'utente
+    - data e ora di emissione
+    - _flag_ che indica se il noleggio al quale è stato inviato l'annuncio è ancora attivo.],
   [/*UC28 - Visualizzazione singolo annuncio nello storico */],
 
   [ROF-x],
@@ -995,6 +993,67 @@ Viene riportata di seguito il significato e i possibili valori dei campi present
   [ROF-x],
   [Il sistema deve essere in grado di mostrare il flag che indica se il noleggio è ancora attivo.],
   [/*UC32 - Visualizzazione flag sugli annunci nello storico inviati a noleggi attivi */],
+
+  [ROF-x], [], [/*UC33 - Visualizzazione dettagli di un singolo annuncio */],
+  [ROF-x],
+  [L'amministratore deve poter ricercare uno o più annunci specifici a seconda di un parametro di ricerca all'interno dello storico.],
+  [/*UC37 - Ricerca degli annunci nello storico */],
+
+  [ROF-x],
+  [L'amministratore deve poter ricercare uno o più annunci tramite l'e-mail dell'utente destinatario all'interno dello storico.],
+  [/*UC38 - Ricerca degli annunci nello storico per e-mail utente */],
+
+  [ROF-x],
+  [L'amministratore deve poter ricercare uno o più annunci tramite il nome del punto d'interesse all'interno dello storico.],
+  [/*UC39 - Ricerca degli annunci nello storico per nome del punto di interesse */],
+
+  [ROF-x],
+  [L'amministratore deve poter ricercare uno o più annunci tramite un intervallo di date di emissione all'interno dello storico.],
+  [/*UC40 - Ricerca degli annunci nello storico per intervallo di date di emissione */],
+
+  [ROF-x],
+  [L'amministratore deve poter ricercare uno o più annunci tramite una fascia oraria di emissione all'interno dello storico.],
+  [/*UC41 - Ricerca degli annunci nello storico per fascia oraria di emissione */],
+
+  [ROF-x],
+  [L'amministratore deve poter visualizzare un messaggio di errore nel caso in cui il _server_ non risponda alle richieste, indicando un possibile _down_ dello stesso.],
+  [/*UC42 - Visualizzazione errore "Il server non risponde" */],
+
+  [ROF-x],
+  [L'amministratore deve poter visualizzare un messaggio di errore nel caso in cui la connessione di rete sia persa, indicando problemi di connettività dal lato client.],
+  [/*UC43 - Visualizzazione errore "Connessione persa" */],
+
+  [ROF-x],
+  [L'amministratore deve poter visualizzare un messaggio di errore nel caso in cui un sensore installato su un mezzo con noleggio attivo non comunichi correttamente i dati al sistema (come informazioni non valide oppure in timeout da più di un determinato lasso di tempo).],
+  [/*UC44 - Visualizzazione errore "Sensore malfunzionante" */],
+
+  [ROF-x],
+  [L'amministratore deve poter visualizzare un messaggio di errore nel caso in cui il sistema non riesca a comunicare con la LLM per la generazione degli annunci.],
+  [/*UC45 - Visualizzazione errore "Generazione impossibile dell'annuncio" */],
+
+  [ROF-x],
+  [L'amministratore deve poter visualizzare i grafici relativi alle varie statistiche del sistema.],
+  [/*UC46 - Visualizzazione statistiche in grafici */],
+
+  [ROF-x],
+  [L'amministratore deve poter visualizzare un singolo grafico relativo ad una specifica statistica del sistema.],
+  [/*UC47 - Visualizzazione singolo grafico */],
+
+  [ROF-x],
+  [L'amministratore deve poter visualizzare il titolo del grafico relativo ad una specifica statistica del sistema.],
+  [/*UC48 - Visualizzazione titolo del grafico */],
+
+  [ROF-x],
+  [L'amministratore deve poter visualizzare l'etichetta dell'asse delle ascisse e i relativi valori di un grafico relativo ad una specifica statistica del sistema.],
+  [/*UC49 - Visualizzazione etichetta asse delle ascisse e relativi valori */],
+
+  [ROF-x],
+  [L'amministratore deve poter visualizzare l'etichetta dell'asse delle ordinate e i relativi valori di un grafico relativo ad una specifica statistica del sistema.],
+  [/*UC50 - Visualizzazione etichetta asse delle ordinate e relativi valori */],
+
+  [ROF-x],
+  [L'amministratore deve poter visualizzare i dati di un grafico relativo ad una specifica statistica del sistema.],
+  [/*UC51 - Visualizzazione dati sul grafico */],
 )
 === Requisiti di qualità
 #table(
