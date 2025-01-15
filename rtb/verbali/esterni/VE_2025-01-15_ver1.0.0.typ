@@ -50,7 +50,7 @@ Poiché il sensore invia diversi dati al sistema avevamo pensato di creare delle
 == Diagramma delle attività
 Come suggerito dal prof. Cardin durante un ricevimento ci è stata confermata la scelta di descrivere le azioni del sistema tramite un diagramma delle attività. Le seguenti azioni infatti non possono essere descritte dai casi d'uso ma sono importanti per analizzare il prodotto _software_:
 - Elaborazione dei dati inviati dal sensore.
-- Invio della richiesta alla LLM di generare un annuncio nel caso un utente sia sufficientemente vicino ad un punto di interesse e non ne abbia già ricevuto uno.
+- Invio della richiesta alla #rifGlossario("LLM") di generare un annuncio nel caso un utente sia sufficientemente vicino ad un punto di interesse e non ne abbia già ricevuto uno.
 - Ricezione della risposta della LLM.
 - Storicizzazione della risposta della LLM.
 
@@ -58,7 +58,7 @@ Come suggerito dal prof. Cardin durante un ricevimento ci è stata confermata la
 Sono stati anche approvati i requisiti trovati e confermati quelli circa la qualità del prodotto.
 
 = Conclusioni
-In seguito alle indicazioni della proponente e del prof. Cardin in un ricevimento passato abbiamo programmato le prossime giornate in modo da concludere questi accorgimenti. Pianifichiamo di portare a termine i lavori entro lunedì 20 in modo da dedicare gli ultimi giorni dello _sprint_ alla revisione e approvazione dei documenti per la consegna del progetto.
+In seguito alle indicazioni della proponente e del prof. Cardin in un ricevimento passato abbiamo programmato le prossime giornate in modo da concludere questi accorgimenti. Pianifichiamo di portare a termine i lavori entro lunedì 20 in modo da dedicare gli ultimi giorni dello _#rifGlossario("sprint")_ alla revisione e approvazione dei documenti per la consegna del progetto.
 
 = Tabella delle decisioni
 #backlog(
