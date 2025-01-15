@@ -995,13 +995,6 @@ La manutenibilità è la capacità del prodotto di essere modificato, includendo
   - *Stabilità*: capacità del prodotto di evitare effetti indesiderati derivanti da modifiche.
   - *Testabilità*: capacità del prodotto di essere facilmente testato così da validare le modifiche apportate.
 
-=== *Portabilità*
-La portabilità è la capacità del prodotto di essere trasportato da un ambiente operativo a un altro. \ Le sue sotto-caratteristiche sono:
-  - *Adattabilità*: capacità del prodotto di essere adattato a diversi ambienti senza dover applicare modifiche diverse da quelle fornite.
-  - *Installabilità*: capacità del prodotto di essere facilmente installabile nell'ambiente specificato.
-  - *Conformità*: capacità del prodotto di aderire a _standard_, convenzioni e regolamentazioni in merito di portabilità.
-  - *Sostituibilità*: capacità del prodotto di essere utilizzato al posto di un altro per svolgere le stesse azioni nello stesso ambiente.
-
 
 = Metriche per la qualità <metriche>
 
