@@ -33,6 +33,7 @@
       - Sistemate precondizioni di tutti i casi d'uso
       - Sistemati e aggiornati gli UML rispettivi ai casi d'uso cambiati ed aggiunti
       - Rimossi i _trigger_ da tutti i casi d'uso
+      - Rimosso _LLM_ dagli attori
     ],
 
     "0.5.0",
@@ -159,14 +160,14 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Amministratore*: gestore di un servizio di noleggio autenticato al sistema.
 - *Amministratore non autenticato*: gestore di un servizio di noleggio non autenticato al sistema.
 - *Sensore*: strumento attraverso il quale il mezzo noleggiato da uno specifico utente trasmette la sua posizione in tempo reale.
-- *#rifGlossario("LLM")*: servizio esterno che si occupa della generazione degli annunci pubblicitari personalizzati tramite #rifGlossario("prompt") fornito dal sistema.
+// - *#rifGlossario("LLM")*: servizio esterno che si occupa della generazione degli annunci pubblicitari personalizzati tramite #rifGlossario("prompt") fornito dal sistema.
 
 == Elenco dei casi d'uso
 
 === UC1 - Trasmissione dei dati di identificazione e localizzazione del sensore <uc1>
 - *Attore principale*: Sensore.
 - *Precondizioni*: il sistema monitora i sensori sui mezzi con un noleggio attivo. In particolare mantiene l'informazione riguardo la posizione #rifGlossario("GPS") inviata dal sensore in tempo reale.
-- *Postcondizioni*: il sistema riceve l'informazione riguardo l'id del prestito (_rent_) e la posizione GPS (espressa tramite longitudine e latitudine) del sensore in quel momento.
+- *Postcondizioni*: il sistema riceve l'informazione riguardo la posizione GPS (espressa tramite longitudine e latitudine) del sensore in quel momento.
 - *Scenario principale*:
   + L'utente noleggia un mezzo.
   + Il sensore invia a intervalli di tempo regolari i dati di identificazione e localizzazione GPS del mezzo.
@@ -200,7 +201,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Precondizioni*: 
   + il sistema possiede l'_e-mail_ dell'amministratore che in quel momento non è autenticato.
   + l'amministratore non autenticato si trova nella pagina di _login_. 
-  + l'amministratore inserisce la propria _e-mail_.
+  + il sistema si aspetta di ricevere un indirizzo _e-mail_.
 - *Postcondizioni*: il sistema accetta l'_e-mail_ inserita.
 - *Scenario principale*:
   + L'amministratore non autenticato accede alla pagina di _login_ del sistema.
@@ -211,7 +212,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Precondizioni*: 
   + il sistema possiede la _password_ dell'amministratore che in quel momento non è autenticato.
   + l'amministratore non autenticato si trova nella pagina di _login_. 
-  + l'amministratore inserisce la propria _password_.
+  + il sistema si aspetta di ricevere una _password_.
 - *Postcondizioni*: il sistema accetta la _password_ inserita.
 - *Scenario principale*:
   + L'amministratore non autenticato accede alla pagina di _login_ del sistema.
@@ -588,7 +589,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #pagebreak()
 
-=== UC31 - Visualizzazione dettagli di un singolo annuncio <uc31>
+=== UC31 - Visualizzazione dettagli di un singolo annuncio dopo aver interagito con un elemento nello storico <uc31>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia di tutte le informazioni degli annunci generati per gli utenti dell'amministratore.
