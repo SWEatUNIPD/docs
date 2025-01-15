@@ -802,7 +802,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Precondizioni*: 
   + il sistema mantiene delle informazioni utili per una analisi statistica.
   + l'amministratore si trova nella _dashboard_ con i grafici per le analisi sui dati.
-  + il sistema sta esponendo i grafici con le analisi dei dati.
+  + il sistema sta esponendo i grafici con le analisi sui dati.
 - *Postcondizioni*: l'amministratore visualizza il grafico con le relative informazioni:
   - Titolo del grafico.
   - Etichetta dell'asse delle ascisse.
