@@ -592,7 +592,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia di tutte le informazioni degli annunci generati per gli utenti dell'amministratore.
-  + l'amministratore entra nel dettaglio di un annuncio.
+  + l'amministratore entra nel dettaglio di un annuncio dallo storico.
 - *Postcondizioni*: il sistema espone interamente l'annuncio insieme alle relative informazioni:
   - Nome del punto di interesse collegato.
   - Categoria del punto di interesse collegato.
@@ -635,7 +635,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + l'amministratore sta visualizzando il dettaglio di un singolo annuncio.
 - *Postcondizioni*: il sistema espone la data e l'ora di tentativo di generazione annuncio.
 - *Scenario principale*:
-  + L'amministratore visualizza la data e l'ora di tentaivo di generazione annuncio.
+  + L'amministratore visualizza la data e l'ora di tentativo di generazione annuncio.
 
 === UC35 - Visualizzazione flag sugli annunci nello storico inviati a noleggi attivi dal dettaglio di un annuncio
 <uc35>
