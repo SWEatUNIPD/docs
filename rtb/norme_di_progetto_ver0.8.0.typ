@@ -5,11 +5,19 @@
   data: "14 Novembre 2024",
   destinatari: ("Gruppo SWE@",),
   responsabile: "-",
-  redattori: ("Andrea Precoma", "Davide Martinelli", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
-  verificatori: ("Andrea Precoma", "Davide Marin", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
+  redattori: ("Andrea Precoma", "Davide Marin", "Davide Martinelli", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
+  verificatori: ("Andrea Precoma", "Davide Marin", "Davide Martinelli", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
   titolo: "Norme di Progetto",
   uso: "Interno",
   versioni: (
+    "0.8.0",
+    "12/01/2025",
+    "Davide Marin",
+    "Davide Martinelli\nDavide Picello",
+    [
+      - Aggiunte metriche per la qualità di prodotto
+    ],
+
     "0.7.0",
     "8/01/2025",
     "Davide Martinelli",
@@ -73,6 +81,8 @@
   ),
   content: content,
 )
+
+//TODO: I vari processi (primari, di supporto e organizzativi) sono presenti nell'ISO/IEC 12207:1995 (T02 slide n. 12) -> introdurre come prossimo aggiornamento del documento quando andranno descritte
 
 = Introduzione
 == Scopo del documento
@@ -336,7 +346,6 @@ Si sviluppa e implementa un piano per l’installazione del _software_ nell’am
 === Supporto all'accettazione del software
 Il fornitore supporta il cliente nella revisione e nei _test_ di accettazione del _software_, che comprendono la valutazione di tutti i risultati ottenuti nelle fasi precedenti. Viene completata la consegna del prodotto _software_ e fornite eventuali attività di formazione e supporto iniziale.
 
-#pagebreak()
 === Metriche
 Le metriche adottate per il processo di sviluppo sono le seguenti:
 
@@ -350,6 +359,7 @@ Le metriche adottate per il processo di sviluppo sono le seguenti:
 )
 
 #pagebreak()
+
 = Processi di supporto
 
 == Documentazione <Documentazione>
@@ -536,7 +546,7 @@ Le metriche adottate per la documentazione sono le seguenti:
   table( 
     columns: 2,
     table.header[*ID Metrica*][*Nome*],
-    [#link(<MPC-IG>)[MPC-IG]], [Indice Gulpease],
+    [#link(<MPC-IG>)[MPC-IG]], [#rifGlossario("Indice Gulpease")],
     [#link(<MPC-CO>)[MPC-CO]], [Correttezza Ortografica],
   ),
   caption: [Metriche per la documentazione]
@@ -628,7 +638,7 @@ Alla fine di ogni riunione interna si aggiorna il _backlog_ con le nuove _issue_
 | ------------------------------------------------------\
 | Breve descrizione. \
 | \
-| Verificatore: \@Nickname \
+| Verificatori: \@Nickname \
 | \
 | Decisione presa nel [VI/VE]\_[YYYY-MM-DD]
 
@@ -651,7 +661,6 @@ Sono state create le seguenti _label_ per migliorare l'organizzazione delle _iss
 === GitHub Action
 Viene adoperata una Action per facilitare il processo di verifica in quanto crea un _file_ `.zip` con i documenti in formato `.pdf` ad ogni _commit_, e automatizza la pubblicazione dei documenti approvati nel sito del gruppo. Per i verbali esterni si è scelto un approccio differente in quanto bisogna aspettare la firma del proponente per presa visione. Non potendo quindi essere pubblicati direttamente nel sito i verbali esterni vanno compilati localmente e mandati alla controparte. Una volta restituiti firmati vanno caricati manualmente nella stessa cartella dove risiede il codice sorgente e la Action si occuperà di pubblicarli nel sito. Per caricare i documenti firmati bisogna forzare l'operazione col seguente comando: \
 *`git add [file_name] --force`*
-
 
 == Verifica
 La verifica è un processo di cruciale importanza che accompagna il _software_ lungo tutto il suo ciclo di vita, dalla progettazione fino alla manutenzione. Il suo obiettivo è garantire l'efficienza e la correttezza dei processi e dei loro eventuali prodotti.
@@ -730,7 +739,6 @@ e, nei casi in cui sia necessario:
 - *Formula*: formula utilizzata per calcolare il valore della metrica.
 - *Parametri*: parametri utilizzati nella formula.
 
-
 === Criteri di accettazione
 All'interno del Piano di Qualifica sono definiti i criteri di accettazione per le metriche adottate. Questi criteri sono stabiliti in modo da garantire che i prodotti e i servizi soddisfino i requisiti specificati e che siano conformi agli _standard_ di qualità stabiliti.
 Ad ogni metrica è associata una soglia di accettazione e una soglia di ottimalità. 
@@ -751,6 +759,7 @@ Le metriche adottate per la gestione della qualità sono le seguenti:
 )
 
 #pagebreak()
+
 = Processi organizzativi
 L'ingegneria del _software_ è un campo complesso e multidisciplinare che richiede un'attenta pianificazione, una gestione efficace delle risorse e un controllo accurato della qualità. Quindi definire e rispettare processi organizzativi ben organizzati diventa essenziale.
 
@@ -778,7 +787,6 @@ Le attività di gestione dei processi sono:
 ==== Descrizione
 Come stabilito dallo _standard_ ISO/IEC 12207:1997 il responsabile è responsabile della preparazione dei piani per l'esecuzione di tutte le attività relative alla pianificazione del periodo di carica. 
 Ogni attività dovrà avere associata una descrizione, il personale incaricato di gestire i processi di essa e una scadenza da rispettare.
-
 
 Il responsabile di ciascuno _sprint_ ha il compito di redigere questa pianificazione all'interno del documento Piano di Progetto, che riporterà le attività da svolgere in quel periodo.
 
@@ -914,9 +922,11 @@ Per quanto riguarda le riunioni con i proponenti valgono le stesse regole di que
   caption: [Metriche per la gestione dei processi]
 )
 
+
 == Miglioramento
 === Descrizione
 Secondo lo _standard_ ISO/IEC 12207:1995 il processo di miglioramento nel ciclo di vita del _software_ è finalizzato a stabilire, misurare, controllare e migliorare i processi che lo compongono. L’attività di miglioramento è composta da:
+
 - Analisi: identificare le aree di miglioramento dei processi.
 - Miglioramento: implementare le modifiche necessarie per migliorare i processi di sviluppo del _software_.
 
@@ -929,25 +939,17 @@ Una volta identificati i potenziali miglioramenti questi vanno effettivamente im
 === Strumenti
 Lo strumento principale per misurare l'efficacia delle modifiche apportate ad un processo e per identificare eventuali aree di miglioramento sono le metriche, ognuna delle quali analizzerà un aspetto chiave del processo stesso. Il loro andamento è consultabule nel Cruscotto della Qualità.
 
-
 == Formazione
-=== Descrizione
-Alla base della buona riuscita del progetto ci sono persone adeguatamente formate con l'evolversi del progetto. Per questo diventa fondamentale il processo di formazione.
-Con esso vengono definiti gli _standard_ e le metodologie con i quali ognuno sarà sempre pronto nell'argomento adeguato nel momento opportuno.
-
 === Descrizione
 Per iniziare a formare i membri del gruppo, è necessario prima comprendere completamente il dominio del problema. È necessario quindi comprendere quali argomenti sono necessari per essere approfonditi e quali abilità sono necessarie per i vari processi. 
 
-
 Si deve quindi passare all'individuazione del materiale di formazione che aumenterà nel tempo poiché il nostro livello di conoscenza e comprensione del problema dovrà aumentare man mano che il progetto avanza.
-
 
 Infine tutti i membri del gruppo devono imparare da dove e cosa studiare e devono anche aggiornarsi individualmente, se possibile, con l'aiuto di altri membri più esperti.
 
 === Strumenti
 Al fine di agevolare il processo di formazione ogni membro del gruppo incaricato in un determinato _sprint_ di approfondire un determinato argomento dovrà essere in grado di tramandare la propria conoscenza agli altri. 
 Per aiutarci nel processo di apprendimento l'azienda Sync Lab ci fornisce, durante lo svolgimento del progetto, materiali quali video e risorse utili alle tecnologie di dominio d'uso del nostro capitolato, nonché delle sedute di _deep dive_ concordate a calendario.
-
 
 = Standard per la qualità
 Per la valutazione della qualità del _software_ prodotto il gruppo si prefigge di adottare le linee guida dello _standard_ ISO/IEC 9126.
@@ -957,7 +959,7 @@ L'ISO/IEC 9126 è uno _standard_ internazionale creato per la valutazione della 
 
 Di seguito forniamo una panoramica delle caratteristiche del modello di qualità descritto dallo _standard_ ISO/IEC 9126.
 
-=== *Funzionalità*
+=== Funzionalità
 La funzionalità è la capacità del prodotto _software_ di fornire funzioni che soddisfano le esigenze esplicite e implicite necessarie per operare. \ Questa caratteristica è composta dalle seguenti sotto-caratteristiche:
   - *Appropriatezza*: capacità del prodotto di fornire un adeguato insieme di funzioni per consentire all'utente di perseguire i suoi specifici compiti e obiettivi.
   - *Accuratezza*: capacità del prodotto di fornire i risultati o gli effetti attesi.
@@ -965,20 +967,20 @@ La funzionalità è la capacità del prodotto _software_ di fornire funzioni che
   - *Conformità*: capacità del prodotto di aderire a _standard_, convenzioni e regolamentazioni rilevanti per il settore operativo a cui vengono applicate.
   - *Sicurezza*: capacità del prodotto di proteggere i dati e le funzioni da accessi non autorizzati.
 
-=== *Affidabilità*
+=== Affidabilità
 L'affidabilità è la capacità del prodotto di mantenere un certo livello di prestazioni in condizioni specificate per un periodo di tempo specificato. \ Le sue sotto-caratteristiche sono:
   - *Maturità*: capacità del prodotto di evitare errori, malfunzionamenti o arresti inaspettati.
   - *Tolleranza agli errori*: capacità del prodotto di mantenere un livello prestabilito di prestazioni in caso di errori.
   - *Recuperabilità*: capacità del prodotto di ripristinare il livello di prestazioni e i dati in caso di malfunzionamenti.
   - *Aderenza*: capacità del prodotto di aderire a _standard_, convenzioni e regolamentazioni riguardanti l'affidabilità.
 
-=== *Efficienza*
+=== Efficienza
 L'efficienza è la capacità del prodotto di fornire prestazioni appropriate rispetto alla quantità di risorse utilizzate. \ Le sue sotto-caratteristiche sono:
   - *Comportamento rispetto al tempo*: capacità del prodotto di fornire, sotto certe condizioni, adeguati tempi di risposta, elaborazione e velocità di attraversamento.
   - *Utilizzo delle risorse*: capacità del prodotto di utilizzare adeguatamente risorse come memoria, CPU e spazio su disco.
   - *Conformità*: capacità del prodotto di aderire a _standard_ e specifiche per l'efficienza.
 
-=== *Usabilità*
+=== Usabilità
 L'usabilità è la capacità del prodotto di essere compreso, appreso, utilizzato e attraente per l'utente. \ Le sue sotto-caratteristiche sono:
   - *Comprensibilità*: capacità del prodotto di rendere i suoi concetti facilmente comprensibili all'utente, permettendogli di valutare se il prodotto è adatto alle sue esigenze.
   - *Apprendibilità*: capacità del prodotto essere facilmente apprendibile per gli utenti che non ne conoscono già il funzionamento.
@@ -986,19 +988,12 @@ L'usabilità è la capacità del prodotto di essere compreso, appreso, utilizzat
   - *Attrattività*: capacità del prodotto di essere piacevole da utilizzare per l'utente.
   - *Conformità*: capacità del prodotto di aderire a _standard_ o convenzioni per l'usabilità.
 
-=== *Manutenibilità*
+=== Manutenibilità
 La manutenibilità è la capacità del prodotto di essere modificato, includendo correzioni, miglioramenti o adattamenti. \ Le sue sotto-caratteristiche sono:
   - *Analizzabilità*: capacità del prodotto di essere facilmente analizzato per identificare difetti o cause di malfunzionamenti.
   - *Modificabilità*: capacità del prodotto di essere facilmente modificato (sostituendo componenti).
   - *Stabilità*: capacità del prodotto di evitare effetti indesiderati derivanti da modifiche.
   - *Testabilità*: capacità del prodotto di essere facilmente testato così da validare le modifiche apportate.
-
-=== *Portabilità*
-La portabilità è la capacità del prodotto di essere trasportato da un ambiente operativo a un altro. \ Le sue sotto-caratteristiche sono:
-  - *Adattabilità*: capacità del prodotto di essere adattato a diversi ambienti senza dover applicare modifiche diverse da quelle fornite.
-  - *Installabilità*: capacità del prodotto di essere facilmente installabile nell'ambiente specificato.
-  - *Conformità*: capacità del prodotto di aderire a _standard_, convenzioni e regolamentazioni in merito di portabilità.
-  - *Sostituibilità*: capacità del prodotto di essere utilizzato al posto di un altro per svolgere le stesse azioni nello stesso ambiente.
 
 
 = Metriche per la qualità <metriche>
@@ -1151,4 +1146,101 @@ La portabilità è la capacità del prodotto di essere trasportato da un ambient
     - *OP*: Ore Produttive (tempo effettivamente dedicato ad attività produttive).
 
 == Metriche per la qualità di prodotto
+=== Funzionalità
+- *MPD-ROS*
+  - *Nome*: Requisiti Obbligatori Soddisfatti
+  - *Descrizione*: Misura la percentuale di requisiti obbligatori soddisfatti dal prodotto.
+  - *Formula*:
+  #align(center)[$ "%ROS" = "NROS" / "NTRO" * 100 $] 
+  - *Parametri*:
+    - *NROS*: Numero di Requisiti Obbligatori Soddisfatti.
+    - *NTRO*: Numero Totale di Requisiti Obbligatori.
 
+- *MPD-RDS*
+  - *Nome*: Requisiti Desiderabili Soddisfatti
+  - *Descrizione*: Misura la percentuale di requisiti desiderabili soddisfatti dal prodotto.
+  - *Formula*:
+  #align(center)[$ "%RDS" = "NRDS" / "NTRD" * 100 $] 
+  - *Parametri*:
+    - *NRDS*: Numero di Requisiti Desiderabili Soddisfatti. 
+    - *NTRD*: Numero Totale di Requisiti Desiderabili.
+
+- *MPD-ROPS*
+  - *Nome*: Requisiti Opzionali Soddisfatti
+  - *Descrizione*: Misura la percentuale di requisiti opzionali soddisfatti dal prodotto.
+  - *Formula*:
+  #align(center)[$ "%ROPS" = "NROPS" / "NTROP" * 100 $] 
+  - *Parametri*:
+    - *NROPS*: Numero di Requisiti Opzionali Soddisfatti.
+    - *NTROP*: Numero Totale di Requisiti Opzionali.
+
+=== Affidabilità
+- *MPD-CC*
+  - *Nome*: Code Coverage
+  - *Descrizione*: Misura la percentuale di codice eseguita durante i _test_. Per questo progetto è richiesta una copertura pari o superiore all’80%.
+
+- *MPD-BC*
+  - *Nome*: Branch Coverage
+  - *Descrizione*: Calcola la percentuale di rami decisionali del codice eseguiti durante i _test_.
+
+- *MPD-SC*
+  - *Nome*: Statement Coverage
+  - *Descrizione*: Misura la percentuale di codice eseguita durante i _test_.
+
+- *MPD-PTCP*
+  - *Nome*: Passed Test Cases Percentage
+  - *Descrizione*: Misura la percentuale di _test_ superati rispetto ai test eseguiti.
+
+- *MPD-FD*
+  - *Nome*: Failure Density
+  - *Descrizione*: Indica il numero di fallimenti correttamente riscontrati per unità di dimensione del _software_; valori più bassi denotano un _software_ di qualità superiore, con meno difetti rispetto alla sua complessità o dimensione.
+
+=== Efficienza
+- *MPD-UR*
+  - *Nome*: Utilizzo di Risorse
+  - *Descrizione*: Misura l’efficienza del sistema in termini di utilizzo delle risorse _hardware_, come CPU, memoria e altre risorse di sistema.
+
+=== Usabilità
+- *MPD-FU*
+  - *Nome*: Facilità di Utilizzo
+  - *Descrizione*: Misura il numero di errori commessi dagli utenti durante l’interazione. Un valore minimo indica un’interfaccia intuitiva. 
+- *MPD-TA*
+  - *Nome*: Tempo di Apprendimento
+  - *Descrizione*: Valuta il tempo necessario a un utente per imparare a utilizzare il _software_.
+
+=== Manutenibilità
+- *MPD-CCM*
+  - *Nome*: Complessità Ciclomatica per Metodo
+  - *Descrizione*: Valuta la complessità per metodo del codice sorgente attraverso la misurazione del numero di cammini indipendenti attraverso il grafo di controllo del flusso.
+  - *Formula*:
+  #align(center)[$ "CC" = "e" - "n" + 2 $] 
+
+- *MPD-CS*
+  - *Nome*: Code Smell
+  - *Descrizione*: Rileva potenziali problemi di progettazione o codice che potrebbero richiedere manutenzione.
+
+- *MPD-COC*
+  - *Nome*: Coefficient Of Coupling
+  - *Descrizione*: Misura il grado di dipendenza tra i moduli o le componenti di un sistema. Un alto COC implica che i moduli siano strettamente interconnessi il che rende difficile apportare modifiche a un modulo senza influenzarne altri. 
+  - *Formula*:
+  #align(center)[$ "COC" = "NDI" / "NTM" * 100 $]
+  - *Parametri*:
+    -*NDI*: Numero di Dipendenze Interne.
+    -*NTM*: Numero Totale di Moduli.
+
+- *MPD-SFI*
+  - *Nome*: Structure Fan In
+  - *Descrizione*: Indica il numero di moduli o componenti che dipendono direttamente da un modulo o funzione specifica. Un alto valore di fan-in suggerisce che molte parti del sistema dipendono da quel modulo.
+
+- *MPD-SFO*
+  - *Nome*: Structure Fan Out 
+  - *Descrizione*: Misura il numero di dipendenze o connessioni che un modulo o componente ha con altri. Un elevato fan-out può indicare che il modulo è fortemente interconnesso con altri.
+
+- *MPD-RM* 
+  - *Nome*: Ripercussione delle Modifiche
+  - *Descrizione*: Misura la percentuale del sistema che è stato affetto dalle modifiche apportate.
+  - *Formula*:
+  #align(center)[$ "%RM" = "MA" / "MT" * 100 $]
+  - *Parametri*:
+    - *MA*: Moduli Affetti dalle modifiche.
+    - *MT*: Moduli Totali del sistema.
