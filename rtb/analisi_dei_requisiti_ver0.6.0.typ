@@ -243,9 +243,9 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore è autenticato alla _dashboard_ del sistema.
   + La _dashboard_ del sistema espone una mappa geografica del territorio.
 - *Inclusioni*:
-  + Visualizzazione _#rifGlossario("marker")_ sulla mappa per i punti di interesse (#link(<uc7>)[UC7]).
+  + Visualizzazione _#rifGlossario("_marker_")_ sulla mappa per i punti di interesse (#link(<uc7>)[UC7]).
 
-=== UC7 - Visualizzazione marker sulla mappa per i punti di interesse <uc7>
+=== UC7 - Visualizzazione _marker_ sulla mappa per i punti di interesse <uc7>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia della posizione di ciascun punto di interesse.
@@ -274,22 +274,22 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 // TODO: fare uml per UC8 singolo
 
 
-=== UC8bis - Visualizzazione marker sul tracciato dei mezzi con noleggio attivo <uc8bis>
+=== UC8bis - Visualizzazione _marker_ sul tracciato dei mezzi con noleggio attivo <uc8bis>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema riceve in tempo reale i dati con le posizioni dei mezzi con noleggio attivo.
   + il dato ricevuto dal sensore innesca dei meccanismi nel sistema.
   + l'amministratore si trova nella _dashboard_ di visualizzazione della mappa.
-- *Postcondizioni*: il sistema espone sulla mappa un marker basato su ciò che è successo dopo aver ricevuto il dato dal sensore.
+- *Postcondizioni*: il sistema espone sulla mappa un _marker_ basato su ciò che è successo dopo aver ricevuto il dato dal sensore.
 - *Scenario principale*:
   + L'amministratore accede alla mappa sulla _dashboard_.
-  + L'amministratore visualizza un marker in base al meccanismo che il dato ha scatenato nel sistema.
+  + L'amministratore visualizza un _marker_ in base al meccanismo che il dato ha scatenato nel sistema.
 - *Generalizzazioni*:
   + Visualizzazione _marker_ sul tracciato dei mezzi con noleggio attivo in corrispondenza del dato GPS (#link(<uc9>)[uc9])).
   + Visualizzazione _marker_ sul tracciato dei mezzi con noleggio attivo in corrispondenza della generazione di un annuncio (#link(<uc10>)[uc10])).
   + Visualizzazione _marker_ sul tracciato dei mezzi con noleggio attivo in corrispondenza della mancata generazione di un annuncio (#link(<uc10>)[uc11])).
 
-=== UC9 - Visualizzazione marker sul tracciato dei mezzi con noleggio attivo in corrispondenza del dato GPS <uc9>
+=== UC9 - Visualizzazione _marker_ sul tracciato dei mezzi con noleggio attivo in corrispondenza del dato GPS <uc9>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema riceve in tempo reale i dati GPS dei sensori quando il mezzo sul quale sono installati ha un noleggio attivo.
@@ -301,7 +301,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #pagebreak()
 
-=== UC10 - Visualizzazione marker sul tracciato dei mezzi con noleggio attivo in corrispondenza della generazione di un annuncio <uc10>
+=== UC10 - Visualizzazione _marker_ sul tracciato dei mezzi con noleggio attivo in corrispondenza della generazione di un annuncio <uc10>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema memorizza gli annunci generati e le relative informazioni.
@@ -313,7 +313,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #pagebreak()
 
-=== UC11 - Visualizzazione marker sul tracciato dei mezzi con noleggio attivo in corrispondenza della mancata generazione di un annuncio <uc11>
+=== UC11 - Visualizzazione _marker_ sul tracciato dei mezzi con noleggio attivo in corrispondenza della mancata generazione di un annuncio <uc11>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema memorizza le mancate generazioni degli annunci e le relative informazioni.
@@ -327,7 +327,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 #pagebreak()
 
 
-=== UC12 - Visualizzazione informazioni punto di interesse tramite marker sulla mappa <uc12>
+=== UC12 - Visualizzazione informazioni punto di interesse tramite _marker_ sulla mappa <uc12>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia delle informazioni di ciascun punto di interesse.
@@ -341,7 +341,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + Visualizzazione nome del punto di interesse dal _marker_ del punto di interesse (#link(<uc12bis>)[uc12bis])).
   + Visualizzazione categoria del punto di interesse dal _marker_ del punto di interesse (#link(<uc12bis>)[uc12bis])).
 
-=== UC12bis - Visualizzazione nome del punto di interesse dal marker del punto di interesse <uc12bis>
+=== UC12bis - Visualizzazione nome del punto di interesse dal _marker_ del punto di interesse <uc12bis>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia del nome di ciascun punto di interesse.
@@ -350,7 +350,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   + L'amministratore visualizza il nome del punto di interesse.
 
-=== UC12tris - Visualizzazione categoria del punto di interesse dal marker del punto di interesse <12tris>
+=== UC12tris - Visualizzazione categoria del punto di interesse dal _marker_ del punto di interesse <12tris>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia della categoria di ciascun punto di interesse.
@@ -363,7 +363,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #pagebreak()
 
-=== UC13 - Visualizzazione annuncio tramite marker sulla mappa <uc13>
+=== UC13 - Visualizzazione annuncio tramite _marker_ sulla mappa <uc13>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia degli annunci generati e le relative informazioni.
@@ -374,66 +374,66 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore interagisce col _marker_ che indica un annuncio generato.
   + Viene visualizzato l'annuncio generato in corrispondenza del _marker_ selezionato.
 - *Inclusioni*:
-  + Visualizzazione nome del punto di interesse dell'annuncio aperto dal marker(#link(<uc32bis>)[uc32bis]).
-  + Visualizzazione _e-mail_ dell'utente dell'annuncio aperto dal marker(#link(<uc33bis>)[uc33bis]).
-  + Visualizzazione data e ora di tentativo di generazione annuncio dell'annuncio aperto dal marker(#link(<uc34bis>)[uc34bis]).
-  + Visualizzazione _flag_ sugli annunci nello storico inviati a noleggi attivi dell'annuncio aperto dal marker(#link(<uc35bis>)[uc35bis]).
-  + Visualizzazione completa dell'annuncio aperto dal marker(#link(<uc36bis>)[uc36bis]).
-  + Visualizzazione categoria del punto di interesse collegato all'annuncio aperto dal marker(#link(<uc37bis>)[uc37bis]).
+  + Visualizzazione nome del punto di interesse dell'annuncio aperto dal _marker_ (#link(<uc32bis>)[uc32bis]).
+  + Visualizzazione _e-mail_ dell'utente dell'annuncio aperto dal _marker_ (#link(<uc33bis>)[uc33bis]).
+  + Visualizzazione data e ora di tentativo di generazione annuncio dell'annuncio aperto dal _marker_ (#link(<uc34bis>)[uc34bis]).
+  + Visualizzazione _flag_ sugli annunci nello storico inviati a noleggi attivi dell'annuncio aperto dal _marker_ (#link(<uc35bis>)[uc35bis]).
+  + Visualizzazione completa dell'annuncio aperto dal _marker_ (#link(<uc36bis>)[uc36bis]).
+  + Visualizzazione categoria del punto di interesse collegato all'annuncio aperto dal _marker_ (#link(<uc37bis>)[uc37bis]).
 
 #pagebreak()
 
-=== UC32bis - Visualizzazione nome del punto di interesse dell'annuncio aperto dal marker <uc32bis>
+=== UC32bis - Visualizzazione nome del punto di interesse dell'annuncio aperto dal _marker_ <uc32bis>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia del nome di ciascun punto di interesse.
-  + l'amministratore sta visualizzando l'annuncio aperto dal marker.
+  + l'amministratore sta visualizzando l'annuncio aperto dal _marker_.
 - *Postcondizioni*: il sistema espone il nome del punto di interesse.
 - *Scenario principale*:
   + L'amministratore visualizza il nome del punto di interesse.
 
-=== UC33bis - Visualizzazione e-mail dell'utente dell'annuncio aperto dal marker<uc33bis>
+=== UC33bis - Visualizzazione e-mail dell'utente dell'annuncio aperto dal _marker_<uc33bis>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia dell'_e-mail_ di ciascun utente.
-  + l'amministratore sta visualizzando l'annuncio aperto dal marker.
+  + l'amministratore sta visualizzando l'annuncio aperto dal _marker_.
 - *Postcondizioni*: il sistema espone l'_e-mail_ dell'utente.
 - *Scenario principale*:
   + L'amministratore visualizza l'_e-mail_ dell'utente.
 
-=== UC34bis - Visualizzazione data e ora di tentativo di generazione annuncio dell'annuncio aperto dal marker<uc34bis>
+=== UC34bis - Visualizzazione data e ora di tentativo di generazione annuncio dell'annuncio aperto dal _marker_<uc34bis>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia della data e dell'ora nelle quali il sistema ha richiesto di generare un annuncio.
-  + l'amministratore sta visualizzando l'annuncio aperto dal marker.
+  + l'amministratore sta visualizzando l'annuncio aperto dal _marker_.
 - *Postcondizioni*: il sistema espone la data e l'ora di tentativo di generazione annuncio.
 - *Scenario principale*:
   + L'amministratore visualizza la data e l'ora di tentativo di generazione annuncio.
 
-=== UC35bis - Visualizzazione flag sugli annunci nello storico inviati a noleggi attivi dell'annuncio aperto dal marker
+=== UC35bis - Visualizzazione flag sugli annunci nello storico inviati a noleggi attivi dell'annuncio aperto dal _marker_
 <uc35bis>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia dello stato del noleggio al quale è stato inviato l'annuncio, se è cioè ancora attivo o meno.
-  + l'amministratore sta visualizzando l'annuncio aperto dal marker.
+  + l'amministratore sta visualizzando l'annuncio aperto dal _marker_.
 - *Postcondizioni*: il sistema espone un _flag_ nel caso il noleggio al quale è stato inviato l'annuncio è ancora attivo.
 - *Scenario principale*:
   + L'amministratore visualizza il _flag_ nel caso in cui il noleggio relativo all'annuncio è ancora attivo.
 
-=== UC36bis - Visualizzazione del corpo dell'annuncio aperto dal marker <uc36bis>
+=== UC36bis - Visualizzazione del corpo dell'annuncio aperto dal _marker_ <uc36bis>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia degli annunci generati.
-  + l'amministratore sta visualizzando l'annuncio aperto dal marker.
+  + l'amministratore sta visualizzando l'annuncio aperto dal _marker_.
 - *Postcondizioni*: il sistema espone il corpo dell'annuncio per intero.
 - *Scenario principale*:
   + L'amministratore visualizza interamente il corpo dell'annuncio generato precedentemente.
 
-=== UC37bis - Visualizzazione categoria del punto di interesse collegato all'annuncio aperto dal marker<uc37bis>
+=== UC37bis - Visualizzazione categoria del punto di interesse collegato all'annuncio aperto dal _marker_<uc37bis>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia della categoria del punto di interesse collegato al relativo annuncio.
-  + l'amministratore sta visualizzando l'annuncio aperto dal marker.
+  + l'amministratore sta visualizzando l'annuncio aperto dal _marker_.
 - *Postcondizioni*: il sistema espone la categoria del punto di interesse collegato al relativo annuncio.
 - *Scenario principale*:
   + L'amministratore visualizza la categoria del punto di interesse.
@@ -442,7 +442,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #pagebreak()
 
-=== UC14 - Visualizzazione messaggio annuncio non generato tramite marker della mancata generazione di un annuncio sulla mappa
+=== UC14 - Visualizzazione messaggio annuncio non generato tramite _marker_ della mancata generazione di un annuncio sulla mappa
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia degli annunci non generati e le relative informazioni.
@@ -453,9 +453,9 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore interagisce col _marker_ che indica un annuncio non generato.
   + Viene visualizzato il messaggio con le informazioni dell'annuncio che non è stato generato in corrispondenza del _marker_ selezionato.
 - *Inclusioni*:
-  + Visualizzazione nome del punto di interesse dal marker della mancata generazione di un annuncio aperto dal _marker_(#link(<uc32tris>)[UC32tris]).
-  + Visualizzazione _e-mail_ dell'utente dal marker della mancata generazione di un annuncio aperto dal _marker_(#link(<uc33tris>)[UC33tris]).
-  + Visualizzazione data e ora di creazione del messaggio di mancata generazione annuncio aperto dal _marker_(#link(<uc34tris>)[UC34tris]).
+  + Visualizzazione nome del punto di interesse dal _marker_ della mancata generazione di un annuncio aperto dal _marker_ (#link(<uc32tris>)[UC32tris]).
+  + Visualizzazione _e-mail_ dell'utente dal _marker_ della mancata generazione di un annuncio aperto dal _marker_ (#link(<uc33tris>)[UC33tris]).
+  + Visualizzazione data e ora di creazione del messaggio di mancata generazione annuncio aperto dal _marker_ (#link(<uc34tris>)[UC34tris]).
 
 === UC32tris - Visualizzazione nome del punto di interesse nel messaggio di mancata generazione annuncio aperto dal _marker_<uc32tris>
 - *Attore principale*: Amministratore.
@@ -493,7 +493,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 #pagebreak()
 
 
-=== UC17 - Chiusura annuncio visualizzato tramite marker sulla mappa
+=== UC17 - Chiusura annuncio visualizzato tramite _marker_ sulla mappa
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + l'amministratore si trova nella _dashboard_ di visualizzazione della mappa.
@@ -503,7 +503,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore visualizza l'annuncio sulla mappa in corrispondenza del _marker_.
   + L'amministratore chiude l'annuncio.
 
-=== UC18 - Chiusura messaggio annuncio non generato visualizzato tramite marker sulla mappa
+=== UC18 - Chiusura messaggio annuncio non generato visualizzato tramite _marker_ sulla mappa
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + l'amministratore si trova nella _dashboard_ di visualizzazione della mappa.
