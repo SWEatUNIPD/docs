@@ -338,12 +338,28 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore interagisce col _marker_ che indica un punto di interesse.
   + Vengono visualizzate le informazioni in corrispondenza del _marker_ selezionato.
 - *Inclusioni*:
-  + VISUALIZZAZIONE INFORMAZIONI DEL POI
-#v(20pt)
-#figure(
-  image("../assets/use_cases/UC12.png"),
-  caption: [Diagramma del caso d'uso UC12],
-)
+  + Visualizzazione nome del punto di interesse dal _marker_ del punto di interesse (#link(<uc12bis>)[uc12bis])).
+  + Visualizzazione categoria del punto di interesse dal _marker_ del punto di interesse (#link(<uc12bis>)[uc12bis])).
+
+=== UC12bis - Visualizzazione nome del punto di interesse dal marker del punto di interesse <uc12bis>
+- *Attore principale*: Amministratore.
+- *Precondizioni*: 
+  + il sistema tiene traccia del nome di ciascun punto di interesse.
+  + il sistema sta esponendo la _dashboard_ con la mappa e i _marker_ all'amministratore.
+- *Postcondizioni*: il sistema espone il nome del punto di interesse.
+- *Scenario principale*:
+  + L'amministratore visualizza il nome del punto di interesse.
+
+=== UC12tris - Visualizzazione categoria del punto di interesse dal marker del punto di interesse <12tris>
+- *Attore principale*: Amministratore.
+- *Precondizioni*: 
+  + il sistema tiene traccia della categoria di ciascun punto di interesse.
+  + il sistema sta esponendo la _dashboard_ con la mappa e i _marker_ all'amministratore.
+- *Postcondizioni*: il sistema espone la categoria del punto di interesse.
+- *Scenario principale*:
+  + L'amministratore visualizza la categoria del punto di interesse.
+// TODO: fare UML per casi d'uso 12, 12bis e 12tris
+
 
 #pagebreak()
 
@@ -358,12 +374,71 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore interagisce col _marker_ che indica un annuncio generato.
   + Viene visualizzato l'annuncio generato in corrispondenza del _marker_ selezionato.
 - *Inclusioni*:
-  + Visualizzazione dettagli di un singolo annuncio (#link(<uc31>)[UC31]).
-#v(20pt)
-#figure(
-  image("../assets/use_cases/UC13.png"),
-  caption: [Diagramma del caso d'uso UC13],
-)
+  + Visualizzazione nome del punto di interesse dell'annuncio aperto dal marker(#link(<uc32bis>)[uc32bis]).
+  + Visualizzazione _e-mail_ dell'utente dell'annuncio aperto dal marker(#link(<uc33bis>)[uc33bis]).
+  + Visualizzazione data e ora di tentativo di generazione annuncio dell'annuncio aperto dal marker(#link(<uc34bis>)[uc34bis]).
+  + Visualizzazione _flag_ sugli annunci nello storico inviati a noleggi attivi dell'annuncio aperto dal marker(#link(<uc35bis>)[uc35bis]).
+  + Visualizzazione completa dell'annuncio aperto dal marker(#link(<uc36bis>)[uc36bis]).
+  + Visualizzazione categoria del punto di interesse collegato all'annuncio aperto dal marker(#link(<uc37bis>)[uc37bis]).
+
+#pagebreak()
+
+=== UC32bis - Visualizzazione nome del punto di interesse dell'annuncio aperto dal marker <uc32bis>
+- *Attore principale*: Amministratore.
+- *Precondizioni*: 
+  + il sistema tiene traccia del nome di ciascun punto di interesse.
+  + l'amministratore sta visualizzando l'annuncio aperto dal marker.
+- *Postcondizioni*: il sistema espone il nome del punto di interesse.
+- *Scenario principale*:
+  + L'amministratore visualizza il nome del punto di interesse.
+
+=== UC33bis - Visualizzazione e-mail dell'utente dell'annuncio aperto dal marker<uc33bis>
+- *Attore principale*: Amministratore.
+- *Precondizioni*: 
+  + il sistema tiene traccia dell'_e-mail_ di ciascun utente.
+  + l'amministratore sta visualizzando l'annuncio aperto dal marker.
+- *Postcondizioni*: il sistema espone l'_e-mail_ dell'utente.
+- *Scenario principale*:
+  + L'amministratore visualizza l'_e-mail_ dell'utente.
+
+=== UC34bis - Visualizzazione data e ora di tentativo di generazione annuncio dell'annuncio aperto dal marker<uc34bis>
+- *Attore principale*: Amministratore.
+- *Precondizioni*: 
+  + il sistema tiene traccia della data e dell'ora nelle quali il sistema ha richiesto di generare un annuncio.
+  + l'amministratore sta visualizzando l'annuncio aperto dal marker.
+- *Postcondizioni*: il sistema espone la data e l'ora di tentativo di generazione annuncio.
+- *Scenario principale*:
+  + L'amministratore visualizza la data e l'ora di tentativo di generazione annuncio.
+
+=== UC35bis - Visualizzazione flag sugli annunci nello storico inviati a noleggi attivi dell'annuncio aperto dal marker
+<uc35bis>
+- *Attore principale*: Amministratore.
+- *Precondizioni*: 
+  + il sistema tiene traccia dello stato del noleggio al quale è stato inviato l'annuncio, se è cioè ancora attivo o meno.
+  + l'amministratore sta visualizzando l'annuncio aperto dal marker.
+- *Postcondizioni*: il sistema espone un _flag_ nel caso il noleggio al quale è stato inviato l'annuncio è ancora attivo.
+- *Scenario principale*:
+  + L'amministratore visualizza il _flag_ nel caso in cui il noleggio relativo all'annuncio è ancora attivo.
+
+=== UC36bis - Visualizzazione del corpo dell'annuncio aperto dal marker <uc36bis>
+- *Attore principale*: Amministratore.
+- *Precondizioni*: 
+  + il sistema tiene traccia degli annunci generati.
+  + l'amministratore sta visualizzando l'annuncio aperto dal marker.
+- *Postcondizioni*: il sistema espone il corpo dell'annuncio per intero.
+- *Scenario principale*:
+  + L'amministratore visualizza interamente il corpo dell'annuncio generato precedentemente.
+
+=== UC37bis - Visualizzazione categoria del punto di interesse collegato all'annuncio aperto dal marker<uc37bis>
+- *Attore principale*: Amministratore.
+- *Precondizioni*: 
+  + il sistema tiene traccia della categoria del punto di interesse collegato al relativo annuncio.
+  + l'amministratore sta visualizzando l'annuncio aperto dal marker.
+- *Postcondizioni*: il sistema espone la categoria del punto di interesse collegato al relativo annuncio.
+- *Scenario principale*:
+  + L'amministratore visualizza la categoria del punto di interesse.
+
+// TODO: fare UML per uc 13 e da 32bis a 37bis
 
 #pagebreak()
 
