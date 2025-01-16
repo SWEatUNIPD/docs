@@ -442,7 +442,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #pagebreak()
 
-=== UC14 - Visualizzazione messaggio annuncio non generato tramite marker sulla mappa
+=== UC14 - Visualizzazione messaggio annuncio non generato tramite marker della mancata generazione di un annuncio sulla mappa
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia degli annunci non generati e le relative informazioni.
@@ -453,26 +453,36 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore interagisce col _marker_ che indica un annuncio non generato.
   + Viene visualizzato il messaggio con le informazioni dell'annuncio che non è stato generato in corrispondenza del _marker_ selezionato.
 - *Inclusioni*:
-  + Visualizzazione nome del punto di interesse (#link(<uc15>)[UC15]).
-  + Visualizzazione _e-mail_ dell'utente (#link(<uc16>)[UC16]).
+  + Visualizzazione nome del punto di interesse dal marker della mancata generazione di un annuncio aperto dal _marker_(#link(<uc32tris>)[UC32tris]).
+  + Visualizzazione _e-mail_ dell'utente dal marker della mancata generazione di un annuncio aperto dal _marker_(#link(<uc33tris>)[UC33tris]).
+  + Visualizzazione data e ora di creazione del messaggio di mancata generazione annuncio aperto dal _marker_(#link(<uc34tris>)[UC34tris]).
 
-=== UC15 - Visualizzazione nome del punto di interesse dal marker sulla mappa <uc15>
+=== UC32tris - Visualizzazione nome del punto di interesse nel messaggio di mancata generazione annuncio aperto dal _marker_<uc32tris>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia del nome di ciascun punto di interesse.
-  + il sistema sta esponendo la _dashboard_ con la mappa e i _marker_ all'amministratore.
+  + l'amministratore sta visualizzando il messaggio di mancata generazione annuncio aperto dal _marker_.
 - *Postcondizioni*: il sistema espone il nome del punto di interesse.
 - *Scenario principale*:
   + L'amministratore visualizza il nome del punto di interesse.
 
-=== UC16 - Visualizzazione e-mail dell'utente dal marker sulla mappa <uc16>
+=== UC33tris - Visualizzazione e-mail dell'utente nel messaggio di mancata generazione annuncio aperto dal _marker_<uc33tris>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia dell'_e-mail_ di ciascun utente.
-  + il sistema sta esponendo la _dashboard_ con la mappa e i _marker_ all'amministratore.
+  + l'amministratore sta visualizzando il messaggio di mancata generazione annuncio aperto dal _marker_.
 - *Postcondizioni*: il sistema espone l'_e-mail_ dell'utente.
 - *Scenario principale*:
   + L'amministratore visualizza l'_e-mail_ dell'utente.
+
+=== UC34tris - Visualizzazione data e ora di creazione nel messaggio di mancata generazione annuncio aperto dal _marker_.<uc34tris>
+- *Attore principale*: Amministratore.
+- *Precondizioni*: 
+  + il sistema tiene traccia della data e dell'ora nelle quali il sistema ha richiesto di generare un annuncio.
+  + l'amministratore sta visualizzando il messaggio di mancata generazione annuncio aperto dal _marker_.
+- *Postcondizioni*: il sistema espone la data e l'ora di tentativo di generazione annuncio aperto dal _marker_.
+- *Scenario principale*:
+  + L'amministratore visualizza la data e l'ora di tentativo di generazione annuncio.
 
 #v(20pt)
 #figure(
