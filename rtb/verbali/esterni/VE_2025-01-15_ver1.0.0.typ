@@ -32,25 +32,25 @@ partecipanti: (
     "Andrea Precoma",
     "Davide Marin",
     "Davide Martinelli",
+    "Davide Picello",
     "Klaudio Merja",
     "Riccardo Milan"
   ),
 )
 
 = Sintesi dell'incontro
-Prossimi alla consegna dell'RTB abbiamo esposto le ultime questioni relative all'Analisi dei Requisiti. Sono stati chiariti i dubbi riguardo alcuni casi d'uso, il diagramma delle attività delle azioni del sistema e alcuni requisiti.
+Prossimi alla consegna dell'RTB abbiamo esposto le ultime questioni relative all'Analisi dei Requisiti. Sono stati chiariti i dubbi riguardo ad alcuni casi d'uso, il diagramma delle attività per descrivere le azioni del sistema e alcuni requisiti.
 
 = Risposte alle domande
-
 L'incontro era mirato a chiarire gli ultimi punti in modo da sistemare l'Analisi dei Requisiti in vista della consegna dell'RTB.
 
 == Casi d'uso relativi al sensore
 Poiché il sensore invia diversi dati al sistema avevamo pensato di creare delle inclusioni in modo da specificare quali dati sono condivisi col sistema. Questa soluzione tuttavia sembra eccessivamente precisa in quanto nello scenario e nel titolo del caso d'uso principale è già descritto quali dati sono inviati.
 
 == Diagramma delle attività
-Come suggerito dal prof. Cardin durante un ricevimento ci è stata confermata la scelta di descrivere le azioni del sistema tramite un diagramma delle attività. Le seguenti azioni infatti non possono essere descritte dai casi d'uso ma sono importanti per analizzare il prodotto _software_:
+La scelta di descrivere le azioni del sistema tramite un diagramma delle attività, come suggerito dal prof. Cardin durante un ricevimento, ci è stata approvata. Le seguenti azioni infatti non possono essere descritte dai casi d'uso ma sono importanti per analizzare il prodotto _software_:
 - Elaborazione dei dati inviati dal sensore.
-- Invio della richiesta alla #rifGlossario("LLM") di generare un annuncio nel caso un utente sia sufficientemente vicino ad un punto di interesse e non ne abbia già ricevuto uno.
+- Invio della richiesta alla #rifGlossario("LLM") di generare un annuncio nel caso in cui un utente sia sufficientemente vicino ad un punto di interesse e non ne abbia già ricevuto uno per quello stesso punto durante il noleggio in corso.
 - Ricezione della risposta della LLM.
 - Storicizzazione della risposta della LLM.
 
