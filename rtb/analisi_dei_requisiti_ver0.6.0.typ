@@ -271,8 +271,23 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   + L'amministratore accede alla mappa sulla _dashboard_.
   + L'amministratore visualizza il percorso del mezzo noleggiato.
-- *Inclusioni*:
-  + Visualizzazione _marker_ sul tracciato dei mezzi con noleggio attivo in corrispondenza del dato GPS (#link(<uc9>)[UC9]).
+// TODO: fare uml per UC8 singolo
+
+
+=== UC8bis - Visualizzazione marker sul tracciato dei mezzi con noleggio attivo <uc8bis>
+- *Attore principale*: Amministratore.
+- *Precondizioni*: 
+  + il sistema riceve in tempo reale i dati con le posizioni dei mezzi con noleggio attivo.
+  + il dato ricevuto dal sensore innesca dei meccanismi nel sistema.
+  + l'amministratore si trova nella _dashboard_ di visualizzazione della mappa.
+- *Postcondizioni*: il sistema espone sulla mappa un marker basato su ciò che è successo dopo aver ricevuto il dato dal sensore.
+- *Scenario principale*:
+  + L'amministratore accede alla mappa sulla _dashboard_.
+  + L'amministratore visualizza un marker in base al meccanismo che il dato ha scatenato nel sistema.
+- *Generalizzazioni*:
+  + Visualizzazione _marker_ sul tracciato dei mezzi con noleggio attivo in corrispondenza del dato GPS (#link(<uc9>)[uc9])).
+  + Visualizzazione _marker_ sul tracciato dei mezzi con noleggio attivo in corrispondenza della generazione di un annuncio (#link(<uc10>)[uc10])).
+  + Visualizzazione _marker_ sul tracciato dei mezzi con noleggio attivo in corrispondenza della mancata generazione di un annuncio (#link(<uc10>)[uc11])).
 
 === UC9 - Visualizzazione marker sul tracciato dei mezzi con noleggio attivo in corrispondenza del dato GPS <uc9>
 - *Attore principale*: Amministratore.
@@ -283,11 +298,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   + L'amministratore accede alla mappa sulla _dashboard_.
   + L'amministratore visualizza un _marker_ in corrispondenza di ogni dato GPS ritornato dal sensore di un relativo mezzo in noleggio.
-#v(20pt)
-#figure(
-  image("../assets/use_cases/UC8-9.png"),
-  caption: [Diagramma dei casi d'uso UC8 e UC9],
-)
 
 #pagebreak()
 
@@ -300,11 +310,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   + L'amministratore accede alla mappa sulla _dashboard_.
   + L'amministratore visualizza un _marker_ in corrispondenza delle posizioni nelle quali è stato generato un annuncio.
-#v(20pt)
-#figure(
-  image("../assets/use_cases/UC10.png"),
-  caption: [Diagramma del caso d'uso UC10],
-)
 
 #pagebreak()
 
@@ -317,11 +322,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   + L'amministratore accede alla mappa sulla _dashboard_.
   + L'amministratore visualizza un _marker_ in corrispondenza delle posizioni nelle quali la LLM non ha generato un annuncio.
-#v(20pt)
-#figure(
-  image("../assets/use_cases/UC11.png"),
-  caption: [Diagramma del caso d'uso UC11],
-)
+// TODO: fare UML per UC 8bis (da rinumerare), 9, 10, 11
 
 #pagebreak()
 
