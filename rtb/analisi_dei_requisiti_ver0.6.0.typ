@@ -575,11 +575,22 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #pagebreak()
 
-=== UC23 - Visualizzazione storico degli annunci
+=== UC23a - Visualizzazione sezione storico annunci <uc23a>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + Il sistema tiene traccia di tutti gli annunci generati per gli utenti dell'amministratore.
   + L'amministratore accede alla sezione apposita degli annunci.
+- *Postcondizioni*: Il sistema espone la sezione dello storico annunci.
+- *Scenario principale*:
+  + Il sistema espone la sezione dello storico annunci.
+- *Inclusioni*:
+  + Visualizzazione storico degli annunci (#link(<uc23>)[UC23]).
+
+=== UC23 - Visualizzazione storico degli annunci <uc23>
+- *Attore principale*: Amministratore.
+- *Precondizioni*: 
+  + Il sistema tiene traccia di tutti gli annunci generati per gli utenti dell'amministratore.
+  + L'amministratore si trova nella sezione apposita degli annunci.
 - *Postcondizioni*: il sistema espone gli annunci generati fino a quel momento ordinati dal più recente.
 - *Scenario principale*:
   + Il sistema espone le _preview_ degli annunci con le informazioni principali.
