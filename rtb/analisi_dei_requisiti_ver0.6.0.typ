@@ -25,7 +25,7 @@
   uso: "Esterno",
   versioni: (
     "0.6.0",
-    [13/01/2025],
+    [17/01/2025],
     "Davide Marin\nRiccardo Milan",
     "Andrea Perozzo \nDavide Martinelli",
     [
@@ -287,7 +287,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Generalizzazioni*:
   + Visualizzazione _marker_ sul tracciato dei mezzi con noleggio attivo in corrispondenza del dato GPS (#link(<uc9>)[uc9])).
   + Visualizzazione _marker_ sul tracciato dei mezzi con noleggio attivo in corrispondenza della generazione di un annuncio (#link(<uc10>)[uc10])).
-  + Visualizzazione _marker_ sul tracciato dei mezzi con noleggio attivo in corrispondenza della mancata generazione di un annuncio (#link(<uc10>)[uc11])).
+  + Visualizzazione _marker_ sul tracciato dei mezzi con noleggio attivo in corrispondenza della mancata generazione di un annuncio (#link(<uc11>)[uc11])).
 
 === UC9 - Visualizzazione _marker_ sul tracciato dei mezzi con noleggio attivo in corrispondenza del dato GPS <uc9>
 - *Attore principale*: Amministratore.
@@ -299,7 +299,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore accede alla mappa sulla _dashboard_.
   + L'amministratore visualizza un _marker_ in corrispondenza di ogni dato GPS ritornato dal sensore di un relativo mezzo in noleggio.
 
-#pagebreak()
 
 === UC10 - Visualizzazione _marker_ sul tracciato dei mezzi con noleggio attivo in corrispondenza della generazione di un annuncio <uc10>
 - *Attore principale*: Amministratore.
@@ -311,7 +310,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore accede alla mappa sulla _dashboard_.
   + L'amministratore visualizza un _marker_ in corrispondenza delle posizioni nelle quali è stato generato un annuncio.
 
-#pagebreak()
 
 === UC11 - Visualizzazione _marker_ sul tracciato dei mezzi con noleggio attivo in corrispondenza della mancata generazione di un annuncio <uc11>
 - *Attore principale*: Amministratore.
@@ -377,11 +375,11 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + Visualizzazione nome del punto di interesse dell'annuncio aperto dal _marker_ (#link(<uc32bis>)[uc32bis]).
   + Visualizzazione _e-mail_ dell'utente dell'annuncio aperto dal _marker_ (#link(<uc33bis>)[uc33bis]).
   + Visualizzazione data e ora di tentativo di generazione annuncio dell'annuncio aperto dal _marker_ (#link(<uc34bis>)[uc34bis]).
-  + Visualizzazione _flag_ sugli annunci inviati a noleggi attivi dell'annuncio aperto dal _marker_ (#link(<uc35bis>)[uc35bis]).
+  + Visualizzazione _flag_ sugli annunci nello storico inviati a noleggi attivi dell'annuncio aperto dal _marker_ (#link(<uc35bis>)[uc35bis]).
   + Visualizzazione completa dell'annuncio aperto dal _marker_ (#link(<uc36bis>)[uc36bis]).
   + Visualizzazione categoria del punto di interesse collegato all'annuncio aperto dal _marker_ (#link(<uc37bis>)[uc37bis]).
 
-#pagebreak()
+
 
 === UC32bis - Visualizzazione nome del punto di interesse dell'annuncio aperto dal _marker_ <uc32bis>
 - *Attore principale*: Amministratore.
@@ -410,7 +408,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   + L'amministratore visualizza la data e l'ora di tentativo di generazione annuncio.
 
-=== UC35bis - Visualizzazione flag sugli annunci nello storico inviati a noleggi attivi dell'annuncio aperto dal _marker_
+=== UC35bis - Visualizzazione _flag_ sugli annunci nello storico inviati a noleggi attivi dell'annuncio aperto dal _marker_
 <uc35bis>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
@@ -453,8 +451,8 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore interagisce col _marker_ che indica un annuncio non generato.
   + Viene visualizzato il messaggio con le informazioni dell'annuncio che non è stato generato in corrispondenza del _marker_ selezionato.
 - *Inclusioni*:
-  + Visualizzazione nome del punto di interesse dal _marker_ della tentativo di generazione di un annuncio nella vista aperta dal _marker_ (#link(<uc32tris>)[UC32tris]).
-  + Visualizzazione _e-mail_ dell'utente dal _marker_ della tentativo di generazione annuncio nella vista aperta dal _marker_ (#link(<uc33tris>)[UC33tris]).
+  + Visualizzazione nome del punto di interesse nel messaggio di tentativo di generazione annuncio nella vista aperta dal _marker_ (#link(<uc32tris>)[UC32tris]).
+  + Visualizzazione _e-mail_ dell'utente nel messaggio di tentativo di generazione annuncio nella vista aperta dal _marker_ (#link(<uc33tris>)[UC33tris]).
   + Visualizzazione data e ora di creazione nel messaggio di tentativo di generazione annuncio nella vista aperta dal _marker_ (#link(<uc34tris>)[UC34tris]).
 
 === UC32tris - Visualizzazione nome del punto di interesse nel messaggio di tentativo di generazione annuncio nella vista aperta dal _marker_<uc32tris>
@@ -466,7 +464,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   + L'amministratore visualizza il nome del punto di interesse.
 
-=== UC33tris - Visualizzazione e-mail dell'utente nel messaggio di tentativo di generazione annuncio nella vista aperta dal _marker_<uc33tris>
+=== UC33tris - Visualizzazione _e-mail_ dell'utente nel messaggio di tentativo di generazione annuncio nella vista aperta dal _marker_<uc33tris>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia dell'_e-mail_ di ciascun utente.
@@ -487,7 +485,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 #v(20pt)
 #figure(
   image("../assets/use_cases/UC14-15-16.png"),
-  caption: [Diagramma dei caso d'uso UC14, UC15, UC16],
+  caption: [Diagramma dei caso d'uso UC32tris, UC33tris, UC34tris],
 )
 
 #pagebreak()
@@ -757,7 +755,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   // Martinelli effettivamente non sarebbe inclusione, perciò bisogna toglierlo dall'uml e fare un uml
   // solo per lui da mettere sotto
   image("../assets/use_cases/UC31-32-33-34-35-36-37-38.png"),
-  caption: [Diagramma dei casi d'uso UC31, UC32, UC33, UC34, UC35, UC36, UC37 e UC38],
+  caption: [Diagramma dei casi d'uso UC31, UC32, UC33, UC34, UC35, UC36 e UC37],
 )
 
 === UC38 - Chiusura della finestra di dialogo di visualizzazione dettagli di un singolo annuncio <uc38>
@@ -771,7 +769,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 #figure(
   // TODO [Marin]: come scritto sopra qua va fatto un unico uml per il 38 da solo
   image("../assets/use_cases/UC31-32-33-34-35-36-37-38.png"),
-  caption: [Diagramma dei casi d'uso UC31, UC32, UC33, UC34, UC35, UC36, UC37 e UC38],
+  caption: [Diagramma del caso d'uso UC38],
 )
 
 #pagebreak()
@@ -824,7 +822,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   // TODO: prima i casi d'uso sopra erano una generalizzazione con il vecchio UC39
   // ora UC39 non esiste più e occorre spezzettare l'UML in più parti, ognuna per il corrispondente caso d'uso
   image("../assets/use_cases/UC39-40-41-42-43.png"),
-  caption: [Diagramma dei casi d'uso UC39, UC40, UC41, UC42 e UC43],
+  caption: [Diagramma dei casi d'uso UC39, UC40, UC41 e UC42],
 )
 
 #pagebreak()
@@ -864,7 +862,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 #figure(
   // TODO: i casi d'uso sono stati rinominati, serve rifare UML e sistemare caption
   image("../assets/use_cases/UC44-45-46-47.png"),
-  caption: [Diagramma dei casi d'uso UC44, UC45, UC46, UC47],
+  caption: [Diagramma dei casi d'uso UC44, UC45 e UC46],
 )
 
 #pagebreak()
@@ -945,7 +943,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 #figure(
   // TODO: i casi d'uso sono stati rinumerarti: server rifare UML e caption
   image("../assets/use_cases/UC48-49-50-51-52-53.png"),
-  caption: [Diagramma dei casi d'uso UC48, UC49, UC50, UC51, UC52 e UC53],
+  caption: [Diagramma dei casi d'uso UC48, UC49, UC50, UC51 e UC52],
 )
 
 #pagebreak()
