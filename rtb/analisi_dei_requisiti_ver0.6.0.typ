@@ -243,7 +243,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore è autenticato alla _dashboard_ del sistema.
   + La _dashboard_ del sistema espone una mappa geografica del territorio.
 - *Inclusioni*:
-  + Visualizzazione _#rifGlossario("_marker_")_ sulla mappa per i punti di interesse (#link(<uc7>)[UC7]).
+  + Visualizzazione _#rifGlossario("marker")_ sulla mappa per i punti di interesse (#link(<uc7>)[UC7]).
 
 === UC7 - Visualizzazione _marker_ sulla mappa per i punti di interesse <uc7>
 - *Attore principale*: Amministratore.
@@ -278,12 +278,12 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema riceve in tempo reale i dati con le posizioni dei mezzi con noleggio attivo.
-  + il dato ricevuto dal sensore innesca dei meccanismi nel sistema.
+  + il dato ricevuto dal sensore è stato elaborato dal sistema.
   + l'amministratore si trova nella _dashboard_ di visualizzazione della mappa.
-- *Postcondizioni*: il sistema espone sulla mappa un _marker_ basato su ciò che è successo dopo aver ricevuto il dato dal sensore.
+- *Postcondizioni*: il sistema espone sulla mappa un _marker_ specifico basato su ciò che è successo dopo aver ricevuto il dato dal sensore.
 - *Scenario principale*:
   + L'amministratore accede alla mappa sulla _dashboard_.
-  + L'amministratore visualizza un _marker_ in base al meccanismo che il dato ha scatenato nel sistema.
+  + L'amministratore visualizza un _marker_ specifico in base al tipo di risultato che ha prodotto l'elaborazione del dato geospaziale.
 - *Generalizzazioni*:
   + Visualizzazione _marker_ sul tracciato dei mezzi con noleggio attivo in corrispondenza del dato GPS (#link(<uc9>)[uc9])).
   + Visualizzazione _marker_ sul tracciato dei mezzi con noleggio attivo in corrispondenza della generazione di un annuncio (#link(<uc10>)[uc10])).
@@ -292,7 +292,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 === UC9 - Visualizzazione _marker_ sul tracciato dei mezzi con noleggio attivo in corrispondenza del dato GPS <uc9>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
-  + il sistema riceve in tempo reale i dati GPS dei sensori quando il mezzo sul quale sono installati ha un noleggio attivo.
+  + il sistema riceve in tempo reale i dati GPS dei sensori relativi ai mezzi con un noleggio attivo.
   + l'amministratore si trova nella _dashboard_ di visualizzazione della mappa.
 - *Postcondizioni*: il sistema espone sulla mappa un _marker_ in corrispondenza di ciascuna posizione GPS fornita dal sensore.
 - *Scenario principale*:
@@ -321,7 +321,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Postcondizioni*: il sistema espone sulla mappa un _marker_ in corrispondenza dei punti in cui la LLM non ha ritenuto l'utente interessato, quindi non è stato generato l'annuncio.
 - *Scenario principale*:
   + L'amministratore accede alla mappa sulla _dashboard_.
-  + L'amministratore visualizza un _marker_ in corrispondenza delle posizioni nelle quali la LLM non ha generato un annuncio.
+  + L'amministratore visualizza un _marker_ in corrispondenza delle posizioni nelle quali la LLM non ha generato un annuncio perché ha valutato l'utente come non interessato al punto di interesse in base alla sua profilazione.
 // TODO: fare UML per UC 8bis (da rinumerare), 9, 10, 11
 
 #pagebreak()
@@ -339,7 +339,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + Vengono visualizzate le informazioni in corrispondenza del _marker_ selezionato.
 - *Inclusioni*:
   + Visualizzazione nome del punto di interesse dal _marker_ del punto di interesse (#link(<uc12bis>)[uc12bis])).
-  + Visualizzazione categoria del punto di interesse dal _marker_ del punto di interesse (#link(<uc12bis>)[uc12bis])).
+  + Visualizzazione categoria del punto di interesse dal _marker_ del punto di interesse (#link(<uc12tris>)[uc12tris])).
 
 === UC12bis - Visualizzazione nome del punto di interesse dal _marker_ del punto di interesse <uc12bis>
 - *Attore principale*: Amministratore.
@@ -350,7 +350,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   + L'amministratore visualizza il nome del punto di interesse.
 
-=== UC12tris - Visualizzazione categoria del punto di interesse dal _marker_ del punto di interesse <12tris>
+=== UC12tris - Visualizzazione categoria del punto di interesse dal _marker_ del punto di interesse <uc12tris>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia della categoria di ciascun punto di interesse.
@@ -377,7 +377,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + Visualizzazione nome del punto di interesse dell'annuncio aperto dal _marker_ (#link(<uc32bis>)[uc32bis]).
   + Visualizzazione _e-mail_ dell'utente dell'annuncio aperto dal _marker_ (#link(<uc33bis>)[uc33bis]).
   + Visualizzazione data e ora di tentativo di generazione annuncio dell'annuncio aperto dal _marker_ (#link(<uc34bis>)[uc34bis]).
-  + Visualizzazione _flag_ sugli annunci nello storico inviati a noleggi attivi dell'annuncio aperto dal _marker_ (#link(<uc35bis>)[uc35bis]).
+  + Visualizzazione _flag_ sugli annunci inviati a noleggi attivi dell'annuncio aperto dal _marker_ (#link(<uc35bis>)[uc35bis]).
   + Visualizzazione completa dell'annuncio aperto dal _marker_ (#link(<uc36bis>)[uc36bis]).
   + Visualizzazione categoria del punto di interesse collegato all'annuncio aperto dal _marker_ (#link(<uc37bis>)[uc37bis]).
 
@@ -453,34 +453,34 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore interagisce col _marker_ che indica un annuncio non generato.
   + Viene visualizzato il messaggio con le informazioni dell'annuncio che non è stato generato in corrispondenza del _marker_ selezionato.
 - *Inclusioni*:
-  + Visualizzazione nome del punto di interesse dal _marker_ della mancata generazione di un annuncio aperto dal _marker_ (#link(<uc32tris>)[UC32tris]).
-  + Visualizzazione _e-mail_ dell'utente dal _marker_ della mancata generazione di un annuncio aperto dal _marker_ (#link(<uc33tris>)[UC33tris]).
-  + Visualizzazione data e ora di creazione del messaggio di mancata generazione annuncio aperto dal _marker_ (#link(<uc34tris>)[UC34tris]).
+  + Visualizzazione nome del punto di interesse dal _marker_ della tentativo di generazione di un annuncio nella vista aperta dal _marker_ (#link(<uc32tris>)[UC32tris]).
+  + Visualizzazione _e-mail_ dell'utente dal _marker_ della tentativo di generazione annuncio nella vista aperta dal _marker_ (#link(<uc33tris>)[UC33tris]).
+  + Visualizzazione data e ora di creazione nel messaggio di tentativo di generazione annuncio nella vista aperta dal _marker_ (#link(<uc34tris>)[UC34tris]).
 
-=== UC32tris - Visualizzazione nome del punto di interesse nel messaggio di mancata generazione annuncio aperto dal _marker_<uc32tris>
+=== UC32tris - Visualizzazione nome del punto di interesse nel messaggio di tentativo di generazione annuncio nella vista aperta dal _marker_<uc32tris>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia del nome di ciascun punto di interesse.
-  + l'amministratore sta visualizzando il messaggio di mancata generazione annuncio aperto dal _marker_.
+  + l'amministratore sta visualizzando il messaggio di tentativo di generazione annuncio nella vista aperta dal _marker_.
 - *Postcondizioni*: il sistema espone il nome del punto di interesse.
 - *Scenario principale*:
   + L'amministratore visualizza il nome del punto di interesse.
 
-=== UC33tris - Visualizzazione e-mail dell'utente nel messaggio di mancata generazione annuncio aperto dal _marker_<uc33tris>
+=== UC33tris - Visualizzazione e-mail dell'utente nel messaggio di tentativo di generazione annuncio nella vista aperta dal _marker_<uc33tris>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia dell'_e-mail_ di ciascun utente.
-  + l'amministratore sta visualizzando il messaggio di mancata generazione annuncio aperto dal _marker_.
+  + l'amministratore sta visualizzando il messaggio di tentativo di generazione annuncio nella vista aperta dal _marker_.
 - *Postcondizioni*: il sistema espone l'_e-mail_ dell'utente.
 - *Scenario principale*:
   + L'amministratore visualizza l'_e-mail_ dell'utente.
 
-=== UC34tris - Visualizzazione data e ora di creazione nel messaggio di mancata generazione annuncio aperto dal _marker_.<uc34tris>
+=== UC34tris - Visualizzazione data e ora di creazione nel messaggio di tentativo di generazione annuncio nella vista aperta dal _marker_.<uc34tris>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia della data e dell'ora nelle quali il sistema ha richiesto di generare un annuncio.
-  + l'amministratore sta visualizzando il messaggio di mancata generazione annuncio aperto dal _marker_.
-- *Postcondizioni*: il sistema espone la data e l'ora di tentativo di generazione annuncio aperto dal _marker_.
+  + l'amministratore sta visualizzando il messaggio di tentativo di generazione annuncio nella vista aperta dal _marker_.
+- *Postcondizioni*: il sistema espone la data e l'ora di tentativo di generazione annuncio nella vista aperta dal _marker_.
 - *Scenario principale*:
   + L'amministratore visualizza la data e l'ora di tentativo di generazione annuncio.
 
