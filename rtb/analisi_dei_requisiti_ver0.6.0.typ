@@ -375,7 +375,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + Visualizzazione nome del punto di interesse dell'annuncio aperto dal _marker_ (#link(<uc32bis>)[uc32bis]).
   + Visualizzazione _e-mail_ dell'utente dell'annuncio aperto dal _marker_ (#link(<uc33bis>)[uc33bis]).
   + Visualizzazione data e ora di tentativo di generazione annuncio dell'annuncio aperto dal _marker_ (#link(<uc34bis>)[uc34bis]).
-  + Visualizzazione _flag_ sugli annunci nello storico inviati a noleggi attivi dell'annuncio aperto dal _marker_ (#link(<uc35bis>)[uc35bis]).
   + Visualizzazione completa dell'annuncio aperto dal _marker_ (#link(<uc36bis>)[uc36bis]).
   + Visualizzazione categoria del punto di interesse collegato all'annuncio aperto dal _marker_ (#link(<uc37bis>)[uc37bis]).
 
@@ -407,16 +406,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Postcondizioni*: il sistema espone la data e l'ora di tentativo di generazione annuncio.
 - *Scenario principale*:
   + L'amministratore visualizza la data e l'ora di tentativo di generazione annuncio.
-
-=== UC35bis - Visualizzazione _flag_ sugli annunci nello storico inviati a noleggi attivi dell'annuncio aperto dal _marker_
-<uc35bis>
-- *Attore principale*: Amministratore.
-- *Precondizioni*: 
-  + il sistema tiene traccia dello stato del noleggio al quale è stato inviato l'annuncio, se è cioè ancora attivo o meno.
-  + l'amministratore sta visualizzando l'annuncio aperto dal _marker_.
-- *Postcondizioni*: il sistema espone un _flag_ nel caso il noleggio al quale è stato inviato l'annuncio è ancora attivo.
-- *Scenario principale*:
-  + L'amministratore visualizza il _flag_ nel caso in cui il noleggio relativo all'annuncio è ancora attivo.
 
 === UC36bis - Visualizzazione del corpo dell'annuncio aperto dal _marker_ <uc36bis>
 - *Attore principale*: Amministratore.
@@ -578,11 +567,11 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 === UC23a - Visualizzazione sezione storico annunci <uc23a>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
-  + Il sistema tiene traccia di tutti gli annunci generati per gli utenti dell'amministratore.
-  + L'amministratore accede alla sezione apposita degli annunci.
-- *Postcondizioni*: Il sistema espone la sezione dello storico annunci.
-- *Scenario principale*:
-  + Il sistema espone la sezione dello storico annunci.
+  + il sistema tiene traccia di tutti gli annunci generati per gli utenti dell'amministratore.
+- *Postcondizioni*: 
+  + il sistema espone la sezione dello storico annunci.
+- *Scenario principale*: 
+  + l'amministratore accede alla sezione dello storico degli annunci.
 - *Inclusioni*:
   + Visualizzazione storico degli annunci (#link(<uc23>)[UC23]).
 
@@ -591,7 +580,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Precondizioni*: 
   + Il sistema tiene traccia di tutti gli annunci generati per gli utenti dell'amministratore.
   + L'amministratore si trova nella sezione apposita degli annunci.
-- *Postcondizioni*: il sistema espone gli annunci generati fino a quel momento ordinati dal più recente.
+- *Postcondizioni*: il sistema espone gli annunci generati fino a quel momento.
 - *Scenario principale*:
   + Il sistema espone le _preview_ degli annunci con le informazioni principali.
 - *Generalizzazioni*:
@@ -603,7 +592,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 === UC24 - Visualizzazione storico annunci in lista <uc24>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
-  + il sistema espone gli annunci generati fino a quel momento ordinati dal più recente.
+  + il sistema espone gli annunci generati fino a quel momento.
   + l'amministratore ha selezionato l'opzione per visualizzare gli annunci sotto forma di lista.
 - *Postcondizioni*: gli annunci vengono mostrati nella dashboard all'amministratore sotto forma di lista.
 - *Scenario principale*:
@@ -614,7 +603,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 === UC25 - Visualizzazione storico annunci in griglia <uc25>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
-  + il sistema espone gli annunci generati fino a quel momento ordinati dal più recente.
+  + il sistema espone gli annunci generati fino a quel momento.
   + l'amministratore ha selezionato l'opzione per visualizzare gli annunci sotto forma di griglia.
 - *Postcondizioni*: gli annunci vengono mostrati nella dashboard all'amministratore sottoforma di griglia.
 - *Scenario principale*:
@@ -769,6 +758,8 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   caption: [Diagramma dei casi d'uso UC31, UC32, UC33, UC34, UC35, UC36 e UC37],
 )
 
+#pagebreak()
+
 === UC38 - Chiusura della finestra di dialogo di visualizzazione dettagli di un singolo annuncio <uc38>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: il sistema espone una finestra di dialogo per i dettagli di un annuncio con la quale l'amministratore può interagire.
@@ -881,15 +872,24 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 // OPZIONALI
 
-=== UC47 - Visualizzazione statistiche in grafici
+=== UC47a - Visualizzazione sezione grafici
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema mantiene delle informazioni utili per una analisi statistica.
+- *Postcondizioni*: il sistema espone la vista dedicata ai grafici.
+- *Scenario principale*:
   + l'amministratore entra nella _dashboard_ con i grafici per le analisi sui dati.
+- *Inclusioni*:
+  + Visualizzazione singolo grafico (#link(<uc47>)[UC47]).
+
+=== UC47 - Visualizzazione statistiche in grafici <uc47>
+- *Attore principale*: Amministratore.
+- *Precondizioni*: 
+  + il sistema mantiene delle informazioni utili per una analisi statistica.
+  + il sistema sta esponendo la vista dedicata ai grafici.
 - *Postcondizioni*: il sistema espone dei grafici che rappresentino le informazioni.
 - *Scenario principale*:
-  + L'amministratore accede alla sezione apposita dei grafici.
-  + Il sistema espone dei grafici relativi alle analisi proposte.
+  + L'amministratore visualizza i grafici con le analisi sui dati.
 - *Inclusioni*:
   + Visualizzazione singolo grafico (#link(<uc48>)[UC48]).
 
