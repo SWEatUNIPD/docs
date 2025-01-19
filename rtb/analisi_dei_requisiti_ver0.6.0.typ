@@ -142,6 +142,15 @@ Il prodotto si rivolge a due tipologie di utenti:
 
 #pagebreak()
 
+= Diagramma delle attività
+#v(20pt)
+#figure(
+  image("../assets/diagrams/activity-diagram.png"),
+  caption: [Diagramma delle attività],
+)
+
+#pagebreak()
+
 = Casi d'uso
 == Introduzione
 La seguente sezione descrive i casi d'uso individuati per il progetto _Near You - Smart custom advertising platform_ all'interno del capitolato d'appalto e a seguito delle varie riunioni sostenute con l'azienda proponente Sync Lab S.r.l..
