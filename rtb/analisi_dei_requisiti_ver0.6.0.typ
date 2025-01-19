@@ -29,6 +29,8 @@
     "Davide Marin\nRiccardo Milan",
     "Andrea Perozzo \nDavide Martinelli",
     [
+      - Aggiunto diagramma delle attività
+      - Aggiunti nuovi casi d'uso
       - Aggiunti casi d'uso per evitare riutilizzo nelle generalizzazioni
       - Sistemate precondizioni di tutti i casi d'uso
       - Sistemati e aggiornati gli UML rispettivi ai casi d'uso cambiati ed aggiunti
@@ -182,7 +184,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + Il sensore invia a intervalli di tempo regolari i dati di identificazione e localizzazione GPS del mezzo.
 #v(20pt)
 #figure(
-  // TODO: il caso d'uso è stato rinominato, occorre rinominarlo anche nell'UML
   image("../assets/use_cases/UC1.png"),
   caption: [Diagramma del caso d'uso UC1],
 )
@@ -298,9 +299,9 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore accede alla mappa sulla _dashboard_.
   + L'amministratore visualizza un _marker_ specifico in base al tipo di risultato che ha prodotto l'elaborazione del dato geospaziale.
 - *Generalizzazioni*:
-  + Visualizzazione _marker_ sul tracciato dei mezzi con noleggio attivo in corrispondenza del dato GPS (#link(<uc10>)[uc10])).
-  + Visualizzazione _marker_ sul tracciato dei mezzi con noleggio attivo in corrispondenza della generazione di un annuncio (#link(<uc11>)[uc11])).
-  + Visualizzazione _marker_ sul tracciato dei mezzi con noleggio attivo in corrispondenza della mancata generazione di un annuncio (#link(<uc12>)[uc12])).
+  + Visualizzazione _marker_ sul tracciato dei mezzi con noleggio attivo in corrispondenza del dato GPS (#link(<uc10>)[UC10]).
+  + Visualizzazione _marker_ sul tracciato dei mezzi con noleggio attivo in corrispondenza della generazione di un annuncio (#link(<uc11>)[UC11]).
+  + Visualizzazione _marker_ sul tracciato dei mezzi con noleggio attivo in corrispondenza della mancata generazione di un annuncio (#link(<uc12>)[UC12]).
 
 === UC10 - Visualizzazione _marker_ sul tracciato dei mezzi con noleggio attivo in corrispondenza del dato GPS <uc10>
 - *Attore principale*: Amministratore.
@@ -353,8 +354,8 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore interagisce col _marker_ che indica un punto di interesse.
   + Vengono visualizzate le informazioni in corrispondenza del _marker_ selezionato.
 - *Inclusioni*:
-  + Visualizzazione nome del punto di interesse dal _marker_ del punto di interesse (#link(<uc14>)[uc14])).
-  + Visualizzazione categoria del punto di interesse dal _marker_ del punto di interesse (#link(<uc15>)[uc15])).
+  + Visualizzazione nome del punto di interesse dal _marker_ del punto di interesse (#link(<uc14>)[UC14]).
+  + Visualizzazione categoria del punto di interesse dal _marker_ del punto di interesse (#link(<uc15>)[UC15]).
 
 === UC14 - Visualizzazione nome del punto di interesse dal _marker_ del punto di interesse <uc14>
 - *Attore principale*: Amministratore.
@@ -393,11 +394,11 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore interagisce col _marker_ che indica un annuncio generato.
   + Viene visualizzato l'annuncio generato in corrispondenza del _marker_ selezionato.
 - *Inclusioni*:
-  + Visualizzazione nome del punto di interesse dell'annuncio aperto dal _marker_ (#link(<uc17>)[uc17]).
-  + Visualizzazione _e-mail_ dell'utente dell'annuncio aperto dal _marker_ (#link(<uc18>)[uc18]).
-  + Visualizzazione data e ora di tentativo di generazione annuncio dell'annuncio aperto dal _marker_ (#link(<uc19>)[uc19]).
-  + Visualizzazione completa dell'annuncio aperto dal _marker_ (#link(<uc20>)[uc20]).
-  + Visualizzazione categoria del punto di interesse collegato all'annuncio aperto dal _marker_ (#link(<uc21>)[uc21]).
+  + Visualizzazione nome del punto di interesse dell'annuncio aperto dal _marker_ (#link(<uc17>)[UC17]).
+  + Visualizzazione _e-mail_ dell'utente dell'annuncio aperto dal _marker_ (#link(<uc18>)[UC18]).
+  + Visualizzazione data e ora di tentativo di generazione annuncio dell'annuncio aperto dal _marker_ (#link(<uc19>)[UC19]).
+  + Visualizzazione completa dell'annuncio aperto dal _marker_ (#link(<uc20>)[UC20]).
+  + Visualizzazione categoria del punto di interesse collegato all'annuncio aperto dal _marker_ (#link(<uc21>)[UC21]).
 
 
 
@@ -550,7 +551,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 #v(20pt)
 #figure(
   image("../assets/use_cases/UC28.png"),
-  caption: [Diagramma dei casi d'uso UC28],
+  caption: [Diagramma del casi d'uso UC28],
 )
 
 #pagebreak()
@@ -636,7 +637,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Precondizioni*: 
   + il sistema espone gli annunci generati fino a quel momento.
   + l'amministratore ha selezionato l'opzione per visualizzare gli annunci sotto forma di griglia.
-- *Postcondizioni*: gli annunci vengono mostrati nella dashboard all'amministratore sottoforma di griglia.
+- *Postcondizioni*: gli annunci vengono mostrati nella _dashboard_ all'amministratore sotto forma di griglia.
 - *Scenario principale*:
   + L'amministratore accede alla _dashboard_ principale.
   + L'amministratore accede alla sezione apposita degli annunci.
@@ -919,7 +920,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   + l'amministratore entra nella _dashboard_ con i grafici per le analisi sui dati.
 - *Inclusioni*:
-  + Visualizzazione singolo grafico (#link(<uc58>)[UC58]).
+  + Visualizzazione statistiche in grafici (#link(<uc58>)[UC58]).
 
 === UC58 - Visualizzazione statistiche in grafici <uc58>
 - *Attore principale*: Amministratore.
@@ -1038,7 +1039,7 @@ Viene riportata di seguito il significato e i possibili valori dei campi present
   [#link(<uc5>)[UC5]],
 
   [ROF-x],
-  [L'amministratore, una volta autenticato, deve poter visualizzare all'interno della dashboard la mappa geografica dove verranno posizionate le varie informazioni.],
+  [L'amministratore, una volta autenticato, deve poter visualizzare all'interno della _dashboard_ la mappa geografica dove verranno posizionate le varie informazioni.],
   [#link(<uc6>)[UC6]],
 
   [ROF-x],
