@@ -551,7 +551,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 #v(20pt)
 #figure(
   image("../assets/use_cases/UC28.png"),
-  caption: [Diagramma del casi d'uso UC28],
+  caption: [Diagramma del caso d'uso UC28],
 )
 
 #pagebreak()
