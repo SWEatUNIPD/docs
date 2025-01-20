@@ -25,7 +25,7 @@
   uso: "Esterno",
   versioni: (
     "0.6.0",
-    [17/01/2025],
+    [20/01/2025],
     "Davide Marin\nRiccardo Milan",
     "Andrea Perozzo \nDavide Martinelli",
     [
