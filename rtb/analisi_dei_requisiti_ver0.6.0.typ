@@ -308,7 +308,8 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Precondizioni*: 
   + il sistema riceve in tempo reale i dati GPS dei sensori relativi ai mezzi con un noleggio attivo.
   + l'amministratore si trova nella _dashboard_ di visualizzazione della mappa.
-- *Postcondizioni*: il sistema espone sulla mappa un _marker_ in corrispondenza di ciascuna posizione GPS fornita dal sensore.
+- *Postcondizioni*: il sistema espone sulla mappa un _marker_ in corrispondenza di ciascuna posizione GPS fornita dal sensore che non è nelle vicinanze
+ di un punto di interesse, o che ne è nelle vicinanze ma ha ricevuto da poco un annuncio per quello stesso punto di interesse.
 - *Scenario principale*:
   + L'amministratore accede alla mappa sulla _dashboard_.
   + L'amministratore visualizza un _marker_ in corrispondenza di ogni dato GPS ritornato dal sensore di un relativo mezzo in noleggio.
