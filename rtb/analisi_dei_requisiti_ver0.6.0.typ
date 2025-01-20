@@ -255,7 +255,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Inclusioni*:
   + Visualizzazione _#rifGlossario("marker")_ sulla mappa per i punti di interesse (#link(<uc7>)[UC7]).
 
-=== UC7 - Visualizzazione _marker_ sulla mappa per i punti di interesse <uc7>
+=== UC7 - Visualizzazione marker sulla mappa per i punti di interesse <uc7>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia della posizione di ciascun punto di interesse.
@@ -288,7 +288,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 )
 
 
-=== UC9 - Visualizzazione _marker_ sul tracciato dei mezzi con noleggio attivo <uc9>
+=== UC9 - Visualizzazione marker sul tracciato dei mezzi con noleggio attivo <uc9>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema riceve in tempo reale i dati con le posizioni dei mezzi con noleggio attivo.
@@ -303,7 +303,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + Visualizzazione _marker_ sul tracciato dei mezzi con noleggio attivo in corrispondenza della generazione di un annuncio (#link(<uc11>)[UC11]).
   + Visualizzazione _marker_ sul tracciato dei mezzi con noleggio attivo in corrispondenza della mancata generazione di un annuncio (#link(<uc12>)[UC12]).
 
-=== UC10 - Visualizzazione _marker_ sul tracciato dei mezzi con noleggio attivo in corrispondenza del dato GPS <uc10>
+=== UC10 - Visualizzazione marker sul tracciato dei mezzi con noleggio attivo in corrispondenza del dato GPS <uc10>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema riceve in tempo reale i dati GPS dei sensori relativi ai mezzi con un noleggio attivo.
@@ -314,7 +314,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore visualizza un _marker_ in corrispondenza di ogni dato GPS ritornato dal sensore di un relativo mezzo in noleggio.
 
 
-=== UC11 - Visualizzazione _marker_ sul tracciato dei mezzi con noleggio attivo in corrispondenza della generazione di un annuncio <uc11>
+=== UC11 - Visualizzazione marker sul tracciato dei mezzi con noleggio attivo in corrispondenza della generazione di un annuncio <uc11>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema memorizza gli annunci generati e le relative informazioni.
@@ -325,7 +325,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore visualizza un _marker_ in corrispondenza delle posizioni nelle quali è stato generato un annuncio.
 
 
-=== UC12 - Visualizzazione _marker_ sul tracciato dei mezzi con noleggio attivo in corrispondenza della mancata generazione di un annuncio <uc12>
+=== UC12 - Visualizzazione marker sul tracciato dei mezzi con noleggio attivo in corrispondenza della mancata generazione di un annuncio <uc12>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema memorizza le mancate generazioni degli annunci e le relative informazioni.
@@ -343,7 +343,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 #pagebreak()
 
 
-=== UC13 - Visualizzazione informazioni punto di interesse tramite _marker_ sulla mappa <uc13>
+=== UC13 - Visualizzazione informazioni punto di interesse tramite marker sulla mappa <uc13>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia delle informazioni di ciascun punto di interesse.
@@ -357,7 +357,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + Visualizzazione nome del punto di interesse dal _marker_ del punto di interesse (#link(<uc14>)[UC14]).
   + Visualizzazione categoria del punto di interesse dal _marker_ del punto di interesse (#link(<uc15>)[UC15]).
 
-=== UC14 - Visualizzazione nome del punto di interesse dal _marker_ del punto di interesse <uc14>
+=== UC14 - Visualizzazione nome del punto di interesse dal marker del punto di interesse <uc14>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia del nome di ciascun punto di interesse.
@@ -366,7 +366,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   + L'amministratore visualizza il nome del punto di interesse.
 
-=== UC15 - Visualizzazione categoria del punto di interesse dal _marker_ del punto di interesse <uc15>
+=== UC15 - Visualizzazione categoria del punto di interesse dal marker del punto di interesse <uc15>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia della categoria di ciascun punto di interesse.
@@ -383,7 +383,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #pagebreak()
 
-=== UC16 - Visualizzazione annuncio tramite _marker_ sulla mappa <uc16>
+=== UC16 - Visualizzazione annuncio tramite marker sulla mappa <uc16>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia degli annunci generati e le relative informazioni.
@@ -402,7 +402,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 
 
-=== UC17 - Visualizzazione nome del punto di interesse dell'annuncio aperto dal _marker_ <uc17>
+=== UC17 - Visualizzazione nome del punto di interesse dell'annuncio aperto dal marker <uc17>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia del nome di ciascun punto di interesse.
@@ -411,7 +411,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   + L'amministratore visualizza il nome del punto di interesse.
 
-=== UC18 - Visualizzazione e-mail dell'utente dell'annuncio aperto dal _marker_<uc18>
+=== UC18 - Visualizzazione e-mail dell'utente dell'annuncio aperto dal marker <uc18>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia dell'_e-mail_ di ciascun utente.
@@ -420,7 +420,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   + L'amministratore visualizza l'_e-mail_ dell'utente.
 
-=== UC19 - Visualizzazione data e ora di tentativo di generazione annuncio dell'annuncio aperto dal _marker_<uc19>
+=== UC19 - Visualizzazione data e ora di tentativo di generazione annuncio dell'annuncio aperto dal marker <uc19>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia della data e dell'ora nelle quali il sistema ha richiesto di generare un annuncio.
@@ -429,7 +429,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   + L'amministratore visualizza la data e l'ora di tentativo di generazione annuncio.
 
-=== UC20 - Visualizzazione del corpo dell'annuncio aperto dal _marker_ <uc20>
+=== UC20 - Visualizzazione del corpo dell'annuncio aperto dal marker <uc20>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia degli annunci generati.
@@ -438,7 +438,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   + L'amministratore visualizza interamente il corpo dell'annuncio generato precedentemente.
 
-=== UC21 - Visualizzazione categoria del punto di interesse collegato all'annuncio aperto dal _marker_<uc21>
+=== UC21 - Visualizzazione categoria del punto di interesse collegato all'annuncio aperto dal marker<uc21>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia della categoria del punto di interesse collegato al relativo annuncio.
@@ -455,7 +455,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #pagebreak()
 
-=== UC22 - Visualizzazione messaggio annuncio non generato tramite _marker_ della mancata generazione di un annuncio sulla mappa <uc22>
+=== UC22 - Visualizzazione messaggio annuncio non generato tramite marker della mancata generazione di un annuncio sulla mappa <uc22>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia degli annunci non generati e le relative informazioni.
@@ -468,9 +468,9 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Inclusioni*:
   + Visualizzazione nome del punto di interesse nel messaggio di tentativo di generazione annuncio nella vista aperta dal _marker_ (#link(<uc23>)[UC23]).
   + Visualizzazione _e-mail_ dell'utente nel messaggio di tentativo di generazione annuncio nella vista aperta dal _marker_ (#link(<uc24>)[UC24]).
-  + Visualizzazione data e ora di creazione nel messaggio di tentativo di generazione annuncio nella vista aperta dal _marker_ (#link(<uc25>)[UC25]).
+  + Visualizzazione data e ora di tentata generazione annuncio nel messaggio di tentativo di generazione annuncio nella vista aperta dal _marker_ (#link(<uc25>)[UC25]).
 
-=== UC23 - Visualizzazione nome del punto di interesse nel messaggio di tentativo di generazione annuncio nella vista aperta dal _marker_<uc23>
+=== UC23 - Visualizzazione nome del punto di interesse nel messaggio di tentativo di generazione annuncio nella vista aperta dal marker <uc23>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia del nome di ciascun punto di interesse.
@@ -479,7 +479,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   + L'amministratore visualizza il nome del punto di interesse.
 
-=== UC24 - Visualizzazione _e-mail_ dell'utente nel messaggio di tentativo di generazione annuncio nella vista aperta dal _marker_<uc24>
+=== UC24 - Visualizzazione _e-mail_ dell'utente nel messaggio di tentativo di generazione annuncio nella vista aperta dal marker <uc24>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia dell'_e-mail_ di ciascun utente.
@@ -488,7 +488,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   + L'amministratore visualizza l'_e-mail_ dell'utente.
 
-=== UC25 - Visualizzazione data e ora di creazione nel messaggio di tentativo di generazione annuncio nella vista aperta dal _marker_.<uc25>
+=== UC25 - Visualizzazione data e ora di tentata generazione annuncio nel messaggio di tentativo di generazione annuncio nella vista aperta dal marker.<uc25>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia della data e dell'ora nelle quali il sistema ha richiesto di generare un annuncio.
@@ -506,7 +506,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 #pagebreak()
 
 
-=== UC26 - Chiusura annuncio visualizzato tramite _marker_ sulla mappa <uc26>
+=== UC26 - Chiusura annuncio visualizzato tramite marker sulla mappa <uc26>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + l'amministratore si trova nella _dashboard_ di visualizzazione della mappa.
@@ -522,7 +522,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 )
 
 
-=== UC27 - Chiusura messaggio annuncio non generato visualizzato tramite _marker_ sulla mappa <uc27>
+=== UC27 - Chiusura messaggio annuncio non generato visualizzato tramite marker sulla mappa <uc27>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + l'amministratore si trova nella _dashboard_ di visualizzazione della mappa.
@@ -789,13 +789,13 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #pagebreak()
 
-=== UC48 - Chiusura della finestra di dialogo di visualizzazione dettagli di un singolo annuncio <uc48>
+=== UC48 - Chiusura della vista di visualizzazione dettagli di un singolo annuncio <uc48>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema espone una finestra di dialogo per i dettagli di un annuncio con la quale l'amministratore può interagire.
-- *Postcondizioni*: il sistema chiude la finestra di dialogo.
+- *Precondizioni*: il sistema espone una vista per i dettagli di un annuncio con la quale l'amministratore può interagire.
+- *Postcondizioni*: il sistema chiude la vista di dettaglio di un singolo annuncio.
 - *Scenario principale*:
-  + L'amministratore visualizza una finestra di dialogo aperta.
-  + L'amministratore chiude la finestra di dialogo aperta.
+  + L'amministratore visualizza una vista con i dettagli di un annuncio.
+  + L'amministratore chiude la vista.
 #v(20pt)
 #figure(
   image("../assets/use_cases/UC48.png"),
@@ -992,7 +992,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + l'amministratore visualizza i dati sul grafico.
 #v(20pt)
 #figure(
-  // TODO: i casi d'uso sono stati rinumerarti: server rifare UML e caption
   image("../assets/use_cases/UC57-58-59-60-61-62-63.png"),
   caption: [Diagramma dei casi d'uso UC57, UC58, UC59, UC60, UC61, UC62, UC63],
 )
