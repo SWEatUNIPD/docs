@@ -6,10 +6,18 @@
   destinatari: ("Gruppo SWE@",),
   responsabile: "-",
   redattori: ("Andrea Precoma", "Davide Marin", "Davide Martinelli", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
-  verificatori: ("Andrea Precoma", "Davide Marin", "Davide Martinelli", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
+  verificatori: ("Andrea Perozzo", "Andrea Precoma", "Davide Marin", "Davide Martinelli", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
   titolo: "Norme di Progetto",
   uso: "Interno",
   versioni: (
+    "0.9.0",
+    "12/01/2025",
+    "Davide Marin",
+    "Andrea Perozzo\nDavide Martinelli",
+    [
+      //sistemare tutti i todo
+    ],
+
     "0.8.0",
     "12/01/2025",
     "Davide Marin",
@@ -81,8 +89,6 @@
   ),
   content: content,
 )
-
-//TODO: I vari processi (primari, di supporto e organizzativi) sono presenti nell'ISO/IEC 12207:1995 (T02 slide n. 12) -> introdurre come prossimo aggiornamento del documento quando andranno descritte
 
 = Introduzione
 == Scopo del documento
@@ -1102,26 +1108,6 @@ La manutenibilità è la capacità del prodotto di essere modificato, includendo
   - *Nome*: Correttezza Ortografica
   - *Descrizione*: Indica il numero di errori ortografici trovati nel testo.
 
-/*  DA SPOSTARE NELLA SEZIONE "Metriche per la qualità di prodotto"
-==== Verifica
-
-- *MPC-BC*: <MPC-BC>
-  - *Nome*: _Branch Coverage_
-  - *Descrizione*: Indica la percentuale di rami condizionali coperti dai _test_.
-  - *Formula*: $ "BC" = ("RC" / "RT") * 100 $
-  - *Parametri*:
-    - *RC*: Numero di rami condizionali coperti dai _test_.
-    - *RT*: Numero totale di rami condizionali.
-
-- *MPC-PTP*: <MPC-PTP>
-  - *Nome*: Percentuale di _test_ passati
-  - *Descrizione*: Indica la percentuale di _test_ che attualmente danno risultato positivo.
-  - *Formula*: $ "PTP" = ("TP" / "TT") * 100 $
-  - *Parametri*:
-    - *TP*: Numero di _test_ positivi.
-    - *TT*: Numero totale di _test_.
-*/
-
 ==== Gestione della qualità
 
 - *MPC-PMS*: <MPC-PMS>
@@ -1225,8 +1211,8 @@ La manutenibilità è la capacità del prodotto di essere modificato, includendo
   - *Formula*:
   #align(center)[$ "COC" = "NDI" / "NTM" * 100 $]
   - *Parametri*:
-    -*NDI*: Numero di Dipendenze Interne.
-    -*NTM*: Numero Totale di Moduli.
+    - *NDI*: Numero di Dipendenze Interne.
+    - *NTM*: Numero Totale di Moduli.
 
 - *MPD-SFI*
   - *Nome*: Structure Fan In
