@@ -427,9 +427,9 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   - Il sistema tiene traccia del nome di ciascun punto di interesse.
   - L'amministratore sta visualizzando le informazioni dell'annuncio aperto dal _marker_.
 - *Postcondizioni*: 
-  - Il sistema espone il nome del punto di interesse.
+  - Il sistema espone il nome del punto di interesse dell'annuncio aperto dal _marker_.
 - *Scenario principale*:
-  + L'amministratore visualizza il nome del punto di interesse.
+  + L'amministratore visualizza il nome del punto di interesse dell'annuncio aperto dal _marker_.
 
 === UC18 - Visualizzazione e-mail dell'utente dell'annuncio aperto dal marker <uc18>
 - *Attore principale*: Amministratore.
@@ -437,9 +437,9 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   - Il sistema tiene traccia dell'_e-mail_ di ciascun utente.
   - L'amministratore sta visualizzando le informazioni dell'annuncio aperto dal _marker_.
 - *Postcondizioni*: 
-  - Il sistema espone l'_e-mail_ dell'utente.
+  - Il sistema espone l'_e-mail_ dell'utente dell'annuncio aperto dal _marker_.
 - *Scenario principale*:
-  + L'amministratore visualizza l'_e-mail_ dell'utente.
+  + L'amministratore visualizza l'_e-mail_ dell'utente dell'annuncio aperto dal _marker_.
 
 === UC19 - Visualizzazione data e ora di generazione annuncio dell'annuncio aperto dal marker <uc19>
 - *Attore principale*: Amministratore.
@@ -447,9 +447,9 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   - Il sistema tiene traccia della data e dell'ora nelle quali il sistema ha richiesto di generare un annuncio.
   - L'amministratore sta visualizzando le informazioni dell'annuncio aperto dal _marker_.
 - *Postcondizioni*: 
-  - Il sistema espone la data e l'ora di tentativo di generazione annuncio.
+  - Il sistema espone la data e l'ora di tentativo di generazione dell'annuncio aperto dal _marker_.
 - *Scenario principale*:
-  + L'amministratore visualizza la data e l'ora di tentativo di generazione annuncio.
+  + L'amministratore visualizza la data e l'ora di tentativo di generazione annuncio dell'annuncio aperto dal _marker_.
 
 === UC20 - Visualizzazione del corpo dell'annuncio aperto dal marker <uc20>
 - *Attore principale*: Amministratore.
@@ -457,9 +457,9 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   - Il sistema tiene traccia degli annunci generati.
   - L'amministratore sta visualizzando le informazioni dell'annuncio aperto dal _marker_.
 - *Postcondizioni*: 
-  - Il sistema espone il corpo dell'annuncio per intero.
+  - Il sistema espone il corpo dell'annuncio aperto dal _marker_ per intero.
 - *Scenario principale*:
-  + L'amministratore visualizza interamente il corpo dell'annuncio generato.
+  + L'amministratore visualizza interamente il corpo dell'annuncio generato aperto dal _marker_.
 
 === UC21 - Visualizzazione categoria del punto di interesse dell'annuncio aperto dal marker<uc21>
 - *Attore principale*: Amministratore.
@@ -467,9 +467,9 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   - Il sistema tiene traccia della categoria del punto di interesse collegato al relativo annuncio.
   - L'amministratore sta visualizzando le informazioni dell'annuncio aperto dal _marker_.
 - *Postcondizioni*: 
-  - Il sistema espone la categoria del punto di interesse collegato al relativo annuncio.
+  - Il sistema espone la categoria del punto di interesse collegato al relativo annuncio aperto dal _marker_.
 - *Scenario principale*:
-  + L'amministratore visualizza la categoria del punto di interesse.
+  + L'amministratore visualizza la categoria del punto di interesse collegato al relativo annuncio aperto dal _marker_.
 #v(20pt)
 #figure(
   image("../assets/use_cases/UC16-17-18-19-20-21.png"),
@@ -515,7 +515,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   + L'amministratore visualizza l'_e-mail_ dell'utente.
 
-=== UC25 - Visualizzazione data e ora di tentata generazione annuncio nel messaggio di tentativo di generazione annuncio nella vista aperta dal marker.<uc25>
+=== UC25 - Visualizzazione data e ora di tentata generazione annuncio nel messaggio di tentativo di generazione annuncio nella vista aperta dal marker <uc25>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   - Il sistema tiene traccia della data e dell'ora nelle quali il sistema ha richiesto di generare un annuncio.
@@ -702,9 +702,9 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   - Il sistema tiene traccia del nome di ciascun punto di interesse.
   - L'amministratore sta visualizzando un singolo annuncio nello storico.
 - *Postcondizioni*: 
-  - Il sistema espone il nome del punto di interesse.
+  - Il sistema espone il nome del punto di interesse del singolo annuncio nello storico.
 - *Scenario principale*:
-  + L'amministratore visualizza il nome del punto di interesse.
+  + L'amministratore visualizza il nome del punto di interesse del singolo annuncio nello storico.
 
 === UC38 - Visualizzazione e-mail dell'utente dall'annuncio nello storico <uc38>
 - *Attore principale*: Amministratore.
@@ -712,9 +712,9 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   - Il sistema tiene traccia dell'_e-mail_ di ciascun utente.
   - L'amministratore sta visualizzando un singolo annuncio nello storico.
 - *Postcondizioni*: 
-  - Il sistema espone l'_e-mail_ dell'utente.
+  - Il sistema espone l'_e-mail_ dell'utente del singolo annuncio nello storico.
 - *Scenario principale*:
-  + L'amministratore visualizza l'_e-mail_ dell'utente.
+  + L'amministratore visualizza l'_e-mail_ dell'utente del singolo annuncio nello storico.
 
 === UC39 - Visualizzazione data e ora di tentativo di generazione annuncio dall'annuncio nello storico <uc39>
 - *Attore principale*: Amministratore.
@@ -722,9 +722,9 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   - Il sistema tiene traccia della data e dell'ora nelle quali il sistema ha richiesto di generare un annuncio.
   - L'amministratore sta visualizzando un singolo annuncio nello storico.
 - *Postcondizioni*: 
-  - Il sistema espone la data e l'ora di tentativo di generazione annuncio.
+  - Il sistema espone la data e l'ora di tentativo di generazione del singolo annuncio nello storico.
 - *Scenario principale*:
-  + L'amministratore visualizza la data e l'ora di tentativo di generazione annuncio.
+  + L'amministratore visualizza la data e l'ora di tentativo di generazione del singolo annuncio nello storico.
 
 === UC40 - Visualizzazione flag sugli annunci nello storico inviati a noleggi attivi dall'annuncio nello storico
 <uc40>
@@ -733,9 +733,9 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   - Il sistema tiene traccia dello stato del noleggio al quale è stato inviato l'annuncio, se è cioè ancora attivo o meno.
   - L'amministratore sta visualizzando un singolo annuncio nello storico.
 - *Postcondizioni*: 
-  - Il sistema espone un _flag_ nel caso il noleggio al quale è stato inviato l'annuncio è ancora attivo.
+  - Il sistema espone un _flag_ nel caso il noleggio al quale è stato inviato il singolo annuncio nello storico è ancora attivo.
 - *Scenario principale*:
-  + L'amministratore visualizza il _flag_ nel caso in cui il noleggio relativo all'annuncio è ancora attivo.
+  + L'amministratore visualizza il _flag_ nel caso in cui il noleggio relativo al singolo annuncio nello storico è ancora attivo.
 #v(20pt)
 #figure(
   image("../assets/use_cases/UC32-33-34-35-36-37-38-39-40.png"),
@@ -755,73 +755,73 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore seleziona l'opzione per visualizzare i dettagli dell'annuncio desiderato.
   + Viene esposto l'annuncio insieme alle relative informazioni.
 - *Inclusioni*:
-  - Visualizzazione nome del punto di interesse dal dettaglio di un annuncio (#link(<uc42>)[UC42]).
-  - Visualizzazione _e-mail_ dell'utente dal dettaglio di un annuncio (#link(<uc43>)[UC43]).
-  - Visualizzazione data e ora di tentativo di generazione annuncio dal dettaglio di un annuncio (#link(<uc44>)[UC44]).
-  - Visualizzazione _flag_ sugli annunci nello storico inviati a noleggi attivi dal suo dettaglio (#link(<uc45>)[UC45]).
-  - Visualizzazione completa dell'annuncio dal suo dettaglio (#link(<uc46>)[UC46]).
-  - Visualizzazione categoria del punto di interesse collegato all'annuncio dal suo dettaglio (#link(<uc47>)[UC47]).
+  - Visualizzazione nome del punto di interesse dal dettaglio di un annuncio aperto dallo storico (#link(<uc42>)[UC42]).
+  - Visualizzazione _e-mail_ dell'utente dal dettaglio di un annuncio aperto dallo storico (#link(<uc43>)[UC43]).
+  - Visualizzazione data e ora di tentativo di generazione annuncio dal dettaglio di un annuncio aperto dallo storico (#link(<uc44>)[UC44]).
+  - Visualizzazione _flag_ sugli annunci nello storico inviati a noleggi attivi dal dettaglio di un annuncio  aperto dallo storico (#link(<uc45>)[UC45]).
+  - Visualizzazione del corpo dell'annuncio dal suo dettaglio aperto dallo storico (#link(<uc46>)[UC46]).
+  - Visualizzazione categoria del punto di interesse collegato all'annuncio dal suo dettaglio aperto dallo storico (#link(<uc47>)[UC47]).
 
-=== UC42 - Visualizzazione nome del punto di interesse dal dettaglio di un annuncio <uc42>
+=== UC42 - Visualizzazione nome del punto di interesse dal dettaglio di un annuncio aperto dallo storico <uc42>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   - Il sistema tiene traccia del nome di ciascun punto di interesse.
-  - L'amministratore sta visualizzando il dettaglio di un singolo annuncio.
+  - L'amministratore sta visualizzando il dettaglio di un singolo annuncio aperto dallo storico.
 - *Postcondizioni*: 
-  - Il sistema espone il nome del punto di interesse.
+  - Il sistema espone il nome del punto di interesse nel dettaglio di un annuncio aperto dallo storico.
 - *Scenario principale*:
-  + L'amministratore visualizza il nome del punto di interesse.
+  + L'amministratore visualizza il nome del punto di interesse nel dettaglio di un annuncio aperto dallo storico.
 
-=== UC43 - Visualizzazione e-mail dell'utente dal dettaglio di un annuncio<uc43>
+=== UC43 - Visualizzazione e-mail dell'utente dal dettaglio di un annuncio aperto dallo storico <uc43>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   - Il sistema tiene traccia dell'_e-mail_ di ciascun utente.
-  - L'amministratore sta visualizzando il dettaglio di un singolo annuncio.
+  - L'amministratore sta visualizzando il dettaglio di un singolo annuncio aperto dallo storico.
 - *Postcondizioni*: 
-  - Il sistema espone l'_e-mail_ dell'utente.
+  - Il sistema espone l'_e-mail_ dell'utente nel dettaglio di un annuncio aperto dallo storico.
 - *Scenario principale*:
-  + L'amministratore visualizza l'_e-mail_ dell'utente.
+  + L'amministratore visualizza l'_e-mail_ dell'utente nel dettaglio di un annuncio aperto dallo storico.
 
-=== UC44 - Visualizzazione data e ora di tentativo di generazione annuncio dal dettaglio di un annuncio <uc44>
+=== UC44 - Visualizzazione data e ora di tentativo di generazione annuncio dal dettaglio di un annuncio aperto dallo storico <uc44>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   - Il sistema tiene traccia della data e dell'ora nelle quali il sistema ha richiesto di generare un annuncio.
-  - L'amministratore sta visualizzando il dettaglio di un singolo annuncio.
+  - L'amministratore sta visualizzando il dettaglio di un singolo annuncio aperto dallo storico.
 - *Postcondizioni*: 
-  - Il sistema espone la data e l'ora di tentativo di generazione annuncio.
+  - Il sistema espone la data e l'ora di tentativo di generazione annuncio nel dettaglio di un annuncio aperto dallo storico.
 - *Scenario principale*:
-  + L'amministratore visualizza la data e l'ora di tentativo di generazione annuncio.
+  + L'amministratore visualizza la data e l'ora di tentativo di generazione annuncio aperto dallo storico.
 
-=== UC45 - Visualizzazione flag sugli annunci nello storico inviati a noleggi attivi dal dettaglio di un annuncio
+=== UC45 - Visualizzazione flag sugli annunci nello storico inviati a noleggi attivi dal dettaglio di un annuncio  aperto dallo storico
 <uc45>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   - Il sistema tiene traccia dello stato del noleggio al quale è stato inviato l'annuncio, se è cioè ancora attivo o meno.
-  - L'amministratore sta visualizzando il dettaglio di un singolo annuncio.
+  - L'amministratore sta visualizzando il dettaglio di un singolo annuncio aperto dallo storico.
 - *Postcondizioni*: 
-  - Il sistema espone un _flag_ nel caso il noleggio al quale è stato inviato l'annuncio è ancora attivo.
+  - Il sistema espone un _flag_ nel caso il noleggio al quale è stato inviato l'annuncio aperto dallo storico è ancora attivo .
 - *Scenario principale*:
-  + L'amministratore visualizza il _flag_ nel caso in cui il noleggio relativo all'annuncio è ancora attivo.
+  + L'amministratore visualizza il _flag_ nel caso in cui il noleggio relativo all'annuncio aperto dallo storico è ancora attivo.
 
-=== UC46 - Visualizzazione del corpo dell'annuncio dal suo dettaglio <uc46>
+=== UC46 - Visualizzazione del corpo dell'annuncio dal suo dettaglio aperto dallo storico <uc46>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   - Il sistema tiene traccia degli annunci generati.
-  - L'amministratore sta visualizzando il dettaglio di un singolo annuncio.
+  - L'amministratore sta visualizzando il dettaglio di un singolo annuncio aperto dallo storico.
 - *Postcondizioni*: 
-  - Il sistema espone il corpo dell'annuncio per intero.
+  - Il sistema espone il corpo dell'annuncio aperto dallo storico per intero.
 - *Scenario principale*:
-  + L'amministratore visualizza interamente il corpo dell'annuncio generato precedentemente.
+  + L'amministratore visualizza interamente il corpo dell'annuncio generato aperto dallo storico.
 
-=== UC47 - Visualizzazione categoria del punto di interesse collegato all'annuncio dal suo dettaglio <uc47>
+=== UC47 - Visualizzazione categoria del punto di interesse collegato all'annuncio dal suo dettaglio aperto dallo storico <uc47>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
-  - Il sistema tiene traccia della categoria del punto di interesse collegato al relativo annuncio.
+  - Il sistema tiene traccia della categoria del punto di interesse collegato al relativo annuncio aperto dallo storico.
   - L'amministratore sta visualizzando il dettaglio di un singolo annuncio.
 - *Postcondizioni*: 
-  - Il sistema espone la categoria del punto di interesse collegato al relativo annuncio.
+  - Il sistema espone la categoria del punto di interesse collegato al relativo annuncio aperto dallo storico.
 - *Scenario principale*:
-  + L'amministratore visualizza la categoria del punto di interesse.
+  + L'amministratore visualizza la categoria del punto di interesse collegato al relativo annuncio aperto dallo storico.
 #v(20pt)
 #figure(
   image("../assets/use_cases/UC41-42-43-44-45-46-47.png"),
@@ -830,14 +830,14 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #pagebreak()
 
-=== UC48 - Chiusura della vista di visualizzazione dettagli di un singolo annuncio <uc48>
+=== UC48 - Chiusura della vista di visualizzazione dettagli di un singolo annuncio aperto dallo storico <uc48>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
-  - Il sistema espone una vista per i dettagli di un annuncio con la quale l'amministratore può interagire.
+  - Il sistema espone una vista per i dettagli di un annuncio aperto dallo storico con la quale l'amministratore può interagire.
 - *Postcondizioni*: 
-  - Il sistema chiude la vista di dettaglio di un singolo annuncio.
+  - Il sistema chiude la vista di dettaglio di un singolo annuncio aperto dallo storico.
 - *Scenario principale*:
-  + L'amministratore visualizza una vista con i dettagli di un annuncio.
+  + L'amministratore visualizza una vista con i dettagli di un annuncio aperto dallo storico.
   + L'amministratore chiude la vista.
 #v(20pt)
 #figure(
