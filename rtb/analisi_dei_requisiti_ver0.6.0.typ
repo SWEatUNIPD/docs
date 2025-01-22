@@ -456,7 +456,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #pagebreak()
 
-=== UC22 - Visualizzazione messaggio annuncio non generato tramite marker della mancata generazione di un annuncio sulla mappa <uc22>
+=== UC22 - Visualizzazione messaggio annuncio non generato tramite marker sulla mappa <uc22>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia degli annunci non generati e le relative informazioni.
