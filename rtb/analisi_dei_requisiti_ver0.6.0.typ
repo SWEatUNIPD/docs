@@ -168,7 +168,7 @@ Ogni caso d'uso è identificato da un codice univoco, che segue la nomenclatura 
 
 == Attori
 Gli attori coinvolti nei casi d'uso sono i seguenti:
-- *Amministratore*: gestore di un servizio di noleggio autenticato al sistema.
+- *Amministratore*: Gestore di un servizio di noleggio autenticato al sistema.
 - *Amministratore non autenticato*: gestore di un servizio di noleggio non autenticato al sistema.
 - *Sensore*: strumento attraverso il quale il mezzo noleggiato da uno specifico utente trasmette la sua posizione in tempo reale.
 // - *#rifGlossario("LLM")*: servizio esterno che si occupa della generazione degli annunci pubblicitari personalizzati tramite #rifGlossario("prompt") fornito dal sistema.
@@ -178,7 +178,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 === UC1 - Trasmissione dei dati di identificazione e localizzazione del sensore <uc1>
 - *Attore principale*: Sensore.
 - *Precondizioni*: il sistema monitora i sensori sui mezzi con un noleggio attivo. In particolare mantiene l'informazione riguardo la posizione #rifGlossario("GPS") inviata dal sensore in tempo reale.
-- *Postcondizioni*: il sistema riceve l'informazione riguardo la posizione GPS (espressa tramite longitudine e latitudine) del sensore in quel momento.
+- *Postcondizioni*: il sistema riceve le informazioni riguardo la posizione GPS (espressa tramite longitudine e latitudine) del sensore in quel momento e i suoi dati di identificazione.
 - *Scenario principale*:
   + L'utente noleggia un mezzo.
   + Il sensore invia a intervalli di tempo regolari i dati di identificazione e localizzazione GPS del mezzo.
@@ -309,10 +309,10 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + il sistema riceve in tempo reale i dati GPS dei sensori relativi ai mezzi con un noleggio attivo.
   + l'amministratore si trova nella _dashboard_ di visualizzazione della mappa.
 - *Postcondizioni*: il sistema espone sulla mappa un _marker_ in corrispondenza di ciascuna posizione GPS fornita dal sensore che non è nelle vicinanze
- di un punto di interesse, o che ne è nelle vicinanze ma ha ricevuto da poco un annuncio per quello stesso punto di interesse.
+ di un punto di interesse, o che ne è nelle vicinanze ma ha già ricevuto un annuncio per quello stesso punto di interesse durante il suo noleggio ancora attivo.
 - *Scenario principale*:
   + L'amministratore accede alla mappa sulla _dashboard_.
-  + L'amministratore visualizza un _marker_ in corrispondenza di ogni dato GPS ritornato dal sensore di un relativo mezzo in noleggio.
+  + L'amministratore visualizza un _marker_ in corrispondenza di ogni dato GPS ritornato dal sensore di un relativo mezzo in noleggio che non è nelle vicinanze di un punto di interesse, o che ne è nelle vicinanze ma ha già ricevuto un annuncio per quello stesso punto di interesse durante il suo noleggio ancora attivo.
 
 
 === UC11 - Visualizzazione marker sul tracciato dei mezzi con noleggio attivo in corrispondenza della generazione di un annuncio <uc11>
@@ -362,7 +362,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia del nome di ciascun punto di interesse.
-  + il sistema sta esponendo la _dashboard_ con la mappa e i _marker_ all'amministratore.
+  + il sistema sta esponendo la _dashboard_ con la mappa e l'amministratore ha interagito col _marker_ del punto di interesse.
 - *Postcondizioni*: il sistema espone il nome del punto di interesse.
 - *Scenario principale*:
   + L'amministratore visualizza il nome del punto di interesse.
@@ -371,7 +371,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia della categoria di ciascun punto di interesse.
-  + il sistema sta esponendo la _dashboard_ con la mappa e i _marker_ all'amministratore.
+  + il sistema sta esponendo la _dashboard_ con la mappa e l'amministratore ha interagito col _marker_ del punto di interesse.
 - *Postcondizioni*: il sistema espone la categoria del punto di interesse.
 - *Scenario principale*:
   + L'amministratore visualizza la categoria del punto di interesse.
@@ -397,7 +397,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Inclusioni*:
   + Visualizzazione nome del punto di interesse dell'annuncio aperto dal _marker_ (#link(<uc17>)[UC17]).
   + Visualizzazione _e-mail_ dell'utente dell'annuncio aperto dal _marker_ (#link(<uc18>)[UC18]).
-  + Visualizzazione data e ora di tentativo di generazione annuncio dell'annuncio aperto dal _marker_ (#link(<uc19>)[UC19]).
+  + Visualizzazione data e ora di generazione annuncio dell'annuncio aperto dal _marker_ (#link(<uc19>)[UC19]).
   + Visualizzazione completa dell'annuncio aperto dal _marker_ (#link(<uc20>)[UC20]).
   + Visualizzazione categoria del punto di interesse collegato all'annuncio aperto dal _marker_ (#link(<uc21>)[UC21]).
 
@@ -407,7 +407,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia del nome di ciascun punto di interesse.
-  + l'amministratore sta visualizzando l'annuncio aperto dal _marker_.
+  + l'amministratore sta visualizzando le informazioni dell'annuncio aperto dal _marker_.
 - *Postcondizioni*: il sistema espone il nome del punto di interesse.
 - *Scenario principale*:
   + L'amministratore visualizza il nome del punto di interesse.
@@ -416,16 +416,16 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia dell'_e-mail_ di ciascun utente.
-  + l'amministratore sta visualizzando l'annuncio aperto dal _marker_.
+  + l'amministratore sta visualizzando le informazioni dell'annuncio aperto dal _marker_.
 - *Postcondizioni*: il sistema espone l'_e-mail_ dell'utente.
 - *Scenario principale*:
   + L'amministratore visualizza l'_e-mail_ dell'utente.
 
-=== UC19 - Visualizzazione data e ora di tentativo di generazione annuncio dell'annuncio aperto dal marker <uc19>
+=== UC19 - Visualizzazione data e ora di generazione annuncio dell'annuncio aperto dal marker <uc19>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia della data e dell'ora nelle quali il sistema ha richiesto di generare un annuncio.
-  + l'amministratore sta visualizzando l'annuncio aperto dal _marker_.
+  + l'amministratore sta visualizzando le informazioni dell'annuncio aperto dal _marker_.
 - *Postcondizioni*: il sistema espone la data e l'ora di tentativo di generazione annuncio.
 - *Scenario principale*:
   + L'amministratore visualizza la data e l'ora di tentativo di generazione annuncio.
@@ -434,16 +434,16 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia degli annunci generati.
-  + l'amministratore sta visualizzando l'annuncio aperto dal _marker_.
+  + l'amministratore sta visualizzando le informazioni dell'annuncio aperto dal _marker_.
 - *Postcondizioni*: il sistema espone il corpo dell'annuncio per intero.
 - *Scenario principale*:
-  + L'amministratore visualizza interamente il corpo dell'annuncio generato precedentemente.
+  + L'amministratore visualizza interamente il corpo dell'annuncio generato.
 
-=== UC21 - Visualizzazione categoria del punto di interesse collegato all'annuncio aperto dal marker<uc21>
+=== UC21 - Visualizzazione categoria del punto di interesse dell'annuncio aperto dal marker<uc21>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   + il sistema tiene traccia della categoria del punto di interesse collegato al relativo annuncio.
-  + l'amministratore sta visualizzando l'annuncio aperto dal _marker_.
+  + l'amministratore sta visualizzando le informazioni dell'annuncio aperto dal _marker_.
 - *Postcondizioni*: il sistema espone la categoria del punto di interesse collegato al relativo annuncio.
 - *Scenario principale*:
   + L'amministratore visualizza la categoria del punto di interesse.
@@ -821,6 +821,8 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   caption: [Diagramma del caso d'uso UC49],
 )
 
+#pagebreak()
+
 === UC50 - Ricerca degli annunci nello storico per nome del punto di interesse <uc50>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
@@ -837,6 +839,8 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   caption: [Diagramma del caso d'uso UC50],
 )
 
+#pagebreak()
+
 === UC51 - Ricerca degli annunci nello storico per intervallo di date di emissione <uc51>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
@@ -852,6 +856,8 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   image("../assets/use_cases/UC51.png"),
   caption: [Diagramma del caso d'uso UC51],
 )
+
+#pagebreak()
 
 === UC52 - Ricerca degli annunci nello storico per fascia oraria di emissione <uc52>
 - *Attore principale*: Amministratore.
