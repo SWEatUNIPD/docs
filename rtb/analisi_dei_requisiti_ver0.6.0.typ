@@ -1101,6 +1101,124 @@ Viene riportata di seguito il significato e i possibili valori dei campi present
   [ROF-x],
   [L'amministratore deve poter visualizzare il nome del punto di interesse per cui si è stato effettuato un tentativo di generazione all'interno del messaggio di annuncio non generato.],
   [/*Visualizzazione nome del punto di interesse nel messaggio di tentativo di generazione annuncio nella vista aperta dal marker*/],
+
+  [ROF-x],
+  [L'amministratore deve poter visualizzare l'_email_ dell'utente destinatario dell'annuncio per cui è stato effettuato un tentativo di generazione.],
+  [/* Visualizzazione e-mail dell’utente nel messaggio di tentativo di generazione
+annuncio nella vista aperta dal marker */],
+
+  [ROF-x],
+  [L'amministratore deve poter visualizzare la data e l'ora di tentativo di generazione annuncio nella vista aperta dal marker.],
+  [/*Visualizzazione data e ora di tentata generazione annuncio nel messaggio di
+tentativo di generazione annuncio nella vista aperta dal marker*/],
+
+  [ROF-x],
+  [L'amministratore deve poter chiudere l'annuncio generato, visualizzato sulla mappa tramite marker.],
+  [/* Chiusura annuncio visualizzato tramite marker sulla mappa */],
+
+  [ROF-x],
+  [L'amministratore deve poter chiudere l'annuncio non generato, visualizzato sulla mappa tramite marker.],
+  [/* Chiusura messaggio annuncio non generato visualizzato tramite marker sulla
+mappa */],
+
+  [ROF-x],
+  [L'amministratore deve essere in grado di interagire con la mappa per spostare il centro della visuale.],
+  [/* Spostamento della visuale sulla mappa */],
+
+  [ROF-x],
+  [L'amministratore deve essere in grado di interagire con la mappa per modificare l'ampiezza della visuale.],
+  [/* Modifica ampiezza della visuale sulla mappa */],
+
+  [ROF-x],
+  [L'amministratore deve essere in grado di interagire con la mappa per ampliare l'ampiezza della visuale.],
+  [/* Ampliamento della visuale sulla mappa */],
+
+  [ROF-x],
+  [L'amministratore deve essere in grado di interagire con la mappa per ridurre l'ampiezza della visuale.],
+  [/* Restringimento della visuale sulla mappa */],
+
+  [ROF-x],
+  [L'amministratore deve essere in grado di accedere allo storico degli annunci generati.],
+  [/* Visualizzazione sezione storico annunci */],
+
+  [ROF-x],
+  [L'amministratore deve essere in grado di visualizzare lo storico degli annunci generati.],
+  [/* Visualizzazione storico degli annunci */],
+
+  [ROF-x],
+  [L'amministratore deve essere in grado di visualizzare lo storico degli annunci generati sotto forma di lista.],
+  [/* Visualizzazione storico annunci in lista */],
+
+  [ROF-x],
+  [L'amministratore deve essere in grado di visualizzare lo storico degli annunci generati sotto forma di griglia.],
+  [/* Visualizzazione storico annunci in griglia */],
+
+  [ROF-x],
+  [L'amministratore deve essere in grado di visualizzare i dettagli di un singolo annuncio dello storico.],
+  [/* Visualizzazione singolo annuncio nello storico */],
+
+  [ROF-x],
+  [L'amministratore deve essere in grado di visualizzare il nome del punto di interesse di ogni annuncio dello storico.],
+  [/* Visualizzazione nome del punto di interesse dall'annuncio nello storico */],
+
+  [ROF-x],
+  [L'amministratore deve essere in grado di visualizzare l'_e-mail_ dell'utente che ha scatenato l'annuncio, per ogni voce dello storico.],
+  [/* Visualizzazione e-mail dell’utente dall'annuncio nello storico */],
+
+  [ROF-x],
+  [L'amministratore deve essere in grado di visualizzare data e ora di tentativo di generazione annuncio, per ogni voce dello storico.],
+  [/* Visualizzazione data e ora di tentativo di generazione annuncio dall'annuncio
+nello storico */],
+
+  [ROF-x],
+  [L'amministratore deve essere in grado di visualizzare la flag riguardo agli annunci che sono stati effettivamente inviati a noleggi attivi, per ogni voce dello storico.],
+  [/* Visualizzazione flag sugli annunci nello storico inviati a noleggi attivi
+dall'annuncio nello storico */],
+
+  [ROF-x],
+  [L'amministratore, interagendoci, deve essere in grado di visualizzare i dettagli di ogni annuncio dello storico.],
+  [/* Visualizzazione dettagli di un singolo annuncio dopo aver interagito con un
+elemento nello storico */],
+
+  [ROF-x],
+  [L'amministratore, interagendoci, deve essere in grado di visualizzare i dettagli di ogni annuncio dello storico, tra cui il nome del punto di interesse.],
+  [/* Visualizzazione nome del punto di interesse dal dettaglio di un annuncio */],
+
+  [ROF-x],
+  [L'amministratore, interagendoci, deve essere in grado di visualizzare i dettagli di ogni annuncio dello storico, tra cui l'email dell'utente che ha scatenato l'annuncio.],
+  [/* Visualizzazione e-mail dell’utente dal dettaglio di un annuncio */],
+
+  [ROF-x],
+  [L'amministratore, interagendoci, deve essere in grado di visualizzare i dettagli di ogni annuncio dello storico, tra cui data e ora di tentativo di generazione annuncio.],
+  [/* Visualizzazione data e ora di tentativo di generazione annuncio dal dettaglio di un annuncio */],
+
+  [ROF-x],
+  [L'amministratore, interagendoci, deve essere in grado di visualizzare i dettagli di ogni annuncio dello storico, tra cui la flag riguardo agli annunci che sono stati effettivamente inviati a noleggi attivi.],
+  [/* Visualizzazione flag sugli annunci nello storico inviati a noleggi attivi dal suo dettaglio */],
+
+  [ROF-x],
+  [L'amministratore, interagendoci, deve essere in grado di visualizzare i dettagli di ogni annuncio dello storico, tra cui il corpo dell'annuncio generato.],
+  [/* Visualizzazione del corpo dell’annuncio dal suo dettaglio */],
+
+  [ROF-x],
+  [L'amministratore, interagendoci, deve essere in grado di visualizzare i dettagli di ogni annuncio dello storico, tra cui la categoria del punto di interesse collegato all’annuncio.],
+  [/* Visualizzazione categoria del punto di interesse collegato all’annuncio dal suo dettaglio */],
+
+  [ROF-x],
+  [L'amministratore deve essere in grado di chiudere la vista di visualizzazione dettagli di un singolo annuncio.],
+  [/* Chiusura della vista di visualizzazione dettagli di un singolo annuncio */],
+
+  [ROF-x],
+  [L'amministratore deve essere in grado, tramite un sistema di filtraggio, di ricercare gli annunci dello storico per nome del punto di interesse.],
+  [/* Ricerca degli annunci nello storico per nome del punto di interesse */],
+
+  [ROF-x],
+  [L'amministratore deve essere in grado, tramite un sistema di filtraggio, di ricercare gli annunci dello storico generati in un intervallo di date.],
+  [/* Ricerca degli annunci nello storico per intervallo di date di emissione */],
+
+  [ROF-x],
+  [L'amministratore deve essere in grado, tramite un sistema di filtraggio, di ricercare gli annunci dello storico generati in una determinata fascia oraria.],
+  [/* Ricerca degli annunci nello storico per fascia oraria di emissione */],
 )
 === Requisiti di qualità
 #table(
