@@ -592,6 +592,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Precondizioni*: 
   - L'amministratore si trova nella _dashboard_ di visualizzazione della mappa.
   - Il sistema tiene traccia della porzione di territorio mostrata dalla mappa sulla _dashboard_.
+  - L'amministratore ha selezionato l'opzione per modificare la porzione di mappa visualizzata.
 - *Postcondizioni*: 
   - Il sistema fa visualizzare sulla mappa una porzione di territorio più o meno ampia a seconda dell'azione dell'amministratore.
 - *Scenario principale*:
@@ -606,6 +607,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Precondizioni*:
   - L'amministratore si trova nella _dashboard_ di visualizzazione della mappa. 
   - Il sistema tiene traccia della porzione di territorio mostrata dalla mappa sulla _dashboard_.
+  - L'amministratore ha selezionato l'opzione per ampliare la porzione di mappa visualizzata.
 - *Postcondizioni*: 
   - Il sistema fa visualizzare sulla mappa una porzione di territorio più ampia.
 - *Scenario principale*:
@@ -617,6 +619,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Precondizioni*: 
   - L'amministratore si trova nella _dashboard_ di visualizzazione della mappa.
   - Il sistema tiene traccia della porzione di territorio mostrata dalla mappa sulla _dashboard_.
+  - L'amministratore ha selezionato l'opzione per restringere la porzione di mappa visualizzata.
 - *Postcondizioni*: 
   - Il sistema fa visualizzare sulla mappa una porzione di territorio meno ampia.
 - *Scenario principale*:
@@ -664,7 +667,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Postcondizioni*: 
   - Gli annunci vengono mostrati nella dashboard all'amministratore sotto forma di lista.
 - *Scenario principale*:
-  + L'amministratore accede alla _dashboard_ principale.
   + L'amministratore accede alla sezione apposita degli annunci.
   + L'amministratore selezione l'opzione per visualizzare gli annunci in lista.
 
@@ -676,7 +678,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Postcondizioni*: 
   - Gli annunci vengono mostrati nella _dashboard_ all'amministratore sotto forma di griglia.
 - *Scenario principale*:
-  + L'amministratore accede alla _dashboard_ principale.
   + L'amministratore accede alla sezione apposita degli annunci.
   + L'amministratore selezione l'opzione per visualizzare gli annunci in griglia.
 
@@ -686,9 +687,9 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   - Il sistema tiene traccia delle informazioni principali degli annunci generati per gli utenti dell'amministratore. 
   - L'amministratore sta visualizzando lo storico degli annunci.
 - *Postcondizioni*: 
-  - Il sistema espone le informazioni principali relative al singolo annuncio, ovvero nome del punto di interesse collegato, _e-mail_ dell'utente destinatario, data e ora di emissione e un _flag_ che indica se il noleggio al quale è stato inviato l'annuncio è ancora attivo.
+  - Il sistema espone le informazioni principali relative al singolo annuncio.
 - *Scenario principale*:
-  + L'amministratore visualizza le informazioni principali relative all'annuncio.
+  + L'amministratore visualizza un elemento della lista degli annunci contenente le informazioni principali di quell'elemento.
 - *Inclusioni*:
   - Visualizzazione nome del punto di interesse dall'annuncio nello storico (#link(<uc37>)[UC37]).
   - Visualizzazione _e-mail_ dell'utente dall'annuncio nello storico (#link(<uc38>)[UC38]).
@@ -699,7 +700,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   - Il sistema tiene traccia del nome di ciascun punto di interesse.
-  - L'amministratore sta visualizzando lo storico degli annunci.
+  - L'amministratore sta visualizzando un singolo annuncio nello storico.
 - *Postcondizioni*: 
   - Il sistema espone il nome del punto di interesse.
 - *Scenario principale*:
@@ -709,7 +710,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   - Il sistema tiene traccia dell'_e-mail_ di ciascun utente.
-  - L'amministratore sta visualizzando lo storico degli annunci.
+  - L'amministratore sta visualizzando un singolo annuncio nello storico.
 - *Postcondizioni*: 
   - Il sistema espone l'_e-mail_ dell'utente.
 - *Scenario principale*:
@@ -719,7 +720,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   - Il sistema tiene traccia della data e dell'ora nelle quali il sistema ha richiesto di generare un annuncio.
-  - L'amministratore sta visualizzando lo storico degli annunci.
+  - L'amministratore sta visualizzando un singolo annuncio nello storico.
 - *Postcondizioni*: 
   - Il sistema espone la data e l'ora di tentativo di generazione annuncio.
 - *Scenario principale*:
@@ -730,7 +731,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   - Il sistema tiene traccia dello stato del noleggio al quale è stato inviato l'annuncio, se è cioè ancora attivo o meno.
-  - L'amministratore sta visualizzando lo storico degli annunci.
+  - L'amministratore sta visualizzando un singolo annuncio nello storico.
 - *Postcondizioni*: 
   - Il sistema espone un _flag_ nel caso il noleggio al quale è stato inviato l'annuncio è ancora attivo.
 - *Scenario principale*:
@@ -749,7 +750,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   - Il sistema tiene traccia di tutte le informazioni degli annunci generati per gli utenti dell'amministratore.
   - L'amministratore entra nel dettaglio di un annuncio dallo storico.
 - *Postcondizioni*: 
-  - Il sistema espone interamente l'annuncio insieme alle relative informazioni, ovvero nome del punto di interesse collegato, categoria del punto di interesse collegato, _e-mail_ dell'utente destinatario, data e ora di erogazione e un _flag_ che indica se il noleggio al quale è stato inviato l'annuncio è ancora attivo.
+  - Il sistema espone interamente l'annuncio insieme alle relative informazioni.
 - *Scenario principale*:
   + L'amministratore seleziona l'opzione per visualizzare i dettagli dell'annuncio desiderato.
   + Viene esposto l'annuncio insieme alle relative informazioni.
@@ -925,11 +926,11 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 === UC53 - Visualizzazione errore "Il server non risponde" <uc53>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
-  - Il sistema tenta di comunicare con il _server_ per ricevere o inviare informazioni, ma si verifica un errore.
+  - Il sistema di visualizzazione dell'amministratore tenta comunicare con il _server_ per ricevere o inviare informazioni, ma si verifica un errore.
 - *Postcondizioni*: 
   - Il sistema espone il messaggio di errore che segnala un problema con il _server_.
 - *Scenario principale*:
-  + Il _server_ restituisce un errore (ad esempio, codice HTTP 500 o simile) durante la comunicazione.
+  + Il _server_ restituisce un errore durante la comunicazione.
   + L'amministratore visualizza il messaggio di errore sulla _dashboard_.
 
 === UC54 - Visualizzazione errore "Connessione persa" <uc54>
@@ -939,13 +940,13 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Postcondizioni*: 
   - Il sistema espone il messaggio di errore relativo alla perdita di connessione.
 - *Scenario principale*:
-  + Il sistema rileva che la connessione di rete è persa o instabile.
+  + Il sistema rileva che la connessione di rete è persa o scarsa.
   + L'amministratore visualizza il messaggio di errore sulla _dashboard_.
 
 === UC55 - Visualizzazione errore "Sensore malfunzionante" <uc55>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
-  - Il sistema monitora le risposte dei sensori attivi, cioè installati su mezzi con noleggio attivo e rileva uno o più errori.
+  - Il sistema monitora le risposte dei sensori attivi, cioè installati su mezzi con noleggio attivo e rileva un errore.
 - *Postcondizioni*: 
   - Il sistema espone il messaggio di malfunzionamento di un sensore.
 - *Scenario principale*:
@@ -955,7 +956,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 === UC56 - Visualizzazione errore "Generazione impossibile dell'annuncio" <uc56>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
-  - Il sistema comunica con una LLM per far generare gli annunci, ma si verifica un errore.
+  - Il sistema comunica con ls LLM per far generare gli annunci, ma si verifica un errore.
 - *Postcondizioni*: 
   - Il sistema espone il messaggio di impossibilità di comunicazione con la LLM.
 - *Scenario principale*:
@@ -1001,7 +1002,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   - L'amministratore si trova nella _dashboard_ con i grafici per le analisi sui dati.
   - Il sistema sta esponendo i grafici con le analisi sui dati.
 - *Postcondizioni*: 
-  - l'amministratore visualizza il grafico con le relative informazioni, ovvero titolo del grafico, etichetta dell'asse delle ascisse, etichetta dell'asse delle ordinate, etichette dei valori sugli assi e dati del grafico.
+  - l'amministratore visualizza il grafico con le relative informazioni.
 - *Scenario principale*:
   + L'amministratore visualizza il grafico con le relative informazioni.
 - *Inclusioni*:
