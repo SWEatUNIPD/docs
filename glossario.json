@@ -19,6 +19,7 @@
     "ClickUp": "Piattaforma di gestione del lavoro che combina strumenti per pianificazione, organizzazione e collaborazione su progetti."
   },
   "D": {
+    "Dashboard": "Interfaccia grafica composta da vari elementi che servono all'utente a visualizzare dati o a gestire un sistema.",
     "Database": "Sistema strutturato per la raccolta, l'archiviazione e la gestione di dati.",
     "Data Broker": "Tipo di tecnologia che facilita la raccolta, l'integrazione e la distribuzione di dati tra diverse fonti e utenti, garantendo accesso sicuro e scalabile per analisi e applicazioni.",
     "Data Generator": "Strumento o un software che produce dati sintetici o simulati, utilizzati per testare applicazioni, addestrare modelli di machine learning o simulare scenari realistici.",
