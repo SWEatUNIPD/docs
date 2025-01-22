@@ -40,7 +40,7 @@
     "Andrea Perozzo\nAndrea Precoma",
     "Davide Marin\nKlaudio Merja",
     [
-      - Aggiunti casi d'uso relativi alla mappa, agli anunci e ai grafici
+      - Aggiunti casi d'uso relativi alla mappa, agli annunci e ai grafici
       - Sistemati i primi casi d'uso
       - Aggiunti casi d'uso relativi alle interazioni con la mappa
       - Aggiunti casi d'uso relativi agli errori
@@ -126,12 +126,21 @@ Il prodotto dovrà fornire le seguenti funzionalità:
 - *Visualizzazione nella _dashboard_ degli annunci pubblicitari generati*: il sistema dovrà essere in grado di mostrare in tempo reale gli annunci pubblicitari che vengono visualizzati dagli utenti.
 - *Visualizzazione nella _dashboard_ dello storico degli annunci pubblicitari*: il sistema dovrà essere in grado di mostrare uno storico degli annunci pubblicitari visualizzati dagli utenti a disposizione degli amministratori del sistema.
 
-L'azienda proponente richiede inoltre la dimostrazione del corretto funzionamento dei servizi e delle funzionalità del sitema, garantendo una copertura di test di più dell'80% e correlata da report. Viene richiesto inoltre che il prodotto sia in grado di mantenere un elevato flusso di dati in entrata dovuto ai dati di localizzazione emessi dai sensori.
+L'azienda proponente richiede inoltre la dimostrazione del corretto funzionamento dei servizi e delle funzionalità del sistema, garantendo una copertura di test di più dell'80% e correlata da report. Viene richiesto inoltre che il prodotto sia in grado di mantenere un elevato flusso di dati in entrata dovuto ai dati di localizzazione emessi dai sensori.
 
 == Utenti e loro caratteristiche
 Il prodotto si rivolge a due tipologie di utenti:
 - *Gestore del servizio di noleggio*: utente che gestisce il servizio di noleggio, ovvero un nostro cliente, che ha accesso tramite _dashboard_ a tutte le funzionalità del sistema ed è interessato quindi, oltre che al monitoraggio della flotta, anche all'andamento delle campagne pubblicitarie nel tempo.
 - *Utente*: utente che utilizza il servizio di noleggio e che ha accesso solo alla funzionalità di visualizzazione degli annunci pubblicitari.
+
+#pagebreak()
+
+= Diagramma delle attività
+#v(20pt)
+#figure(
+  image("../assets/diagrams/activity-diagram.png"),
+  caption: [Diagramma delle attività],
+)
 
 #pagebreak()
 
@@ -143,7 +152,6 @@ Ogni caso d'uso è identificato da un codice univoco, che segue la nomenclatura 
 - *Attori secondari* (se presenti)
 - *Precondizioni*
 - *Postcondizioni*
-- *Trigger*
 - *Scenario principale*
 - *Generalizzazioni* (se presenti)
 - *Inclusioni* (se presenti)
@@ -154,18 +162,17 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Amministratore*: gestore di un servizio di noleggio autenticato al sistema.
 - *Amministratore non autenticato*: gestore di un servizio di noleggio non autenticato al sistema.
 - *Sensore*: strumento attraverso il quale il mezzo noleggiato da uno specifico utente trasmette la sua posizione in tempo reale.
-- *#rifGlossario("LLM")*: servizio esterno che si occupa della generazione degli annunci pubblicitari personalizzati tramite #rifGlossario("prompt") fornito dal sistema.
+// - *#rifGlossario("LLM")*: servizio esterno che si occupa della generazione degli annunci pubblicitari personalizzati tramite #rifGlossario("prompt") fornito dal sistema.
 
 == Elenco dei casi d'uso
 
-=== UC1 - Trasmissione dei dati di localizzazione <uc1>
+=== UC1 - Trasmissione dei dati di identificazione e localizzazione del sensore <uc1>
 - *Attore principale*: Sensore.
-- *Precondizioni*: il sistema monitora i sensori sui mezzi con un noleggio attivo. In particolare mantiene l'informazione riguardo l'ultima posizione #rifGlossario("GPS") inviata dal sensore.
-- *Postcondizioni*: il sistema riceve l'informazione riguardo la posizione GPS del sensore in quel momento.
-- *Trigger*: il sensore intende notificare al sistema la localizzazione GPS del mezzo sul quale è installato.
+- *Precondizioni*: il sistema monitora i sensori sui mezzi con un noleggio attivo. In particolare mantiene l'informazione riguardo la posizione #rifGlossario("GPS") inviata dal sensore in tempo reale.
+- *Postcondizioni*: il sistema riceve l'informazione riguardo la posizione GPS (espressa tramite longitudine e latitudine) del sensore in quel momento.
 - *Scenario principale*:
   + L'utente noleggia un mezzo.
-  + Il sensore invia a intervalli di tempo regolari i dati di localizzazione GPS del mezzo.
+  + Il sensore invia a intervalli di tempo regolari i dati di identificazione e localizzazione GPS del mezzo.
 #v(20pt)
 #figure(
   image("../assets/use_cases/UC1.png"),
@@ -176,9 +183,10 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 === UC2 - Autenticazione alla dashboard del sistema <uc2>
 - *Attori principali*: Amministratore non autenticato.
-- *Precondizioni*: il sistema possiede le credenziali dell'amministratore che in quel momento non è autenticato. L'amministratore non autenticato accede alla pagina di _login_.
+- *Precondizioni*: 
+  + il sistema possiede le credenziali dell'amministratore che in quel momento non è autenticato.
+  + l'amministratore non autenticato accede alla pagina di _login_.
 - *Postcondizioni*: il sistema accetta le credenziali inserite e fa accedere l'amministratore alla _dashboard_ personale.
-- *Trigger*: l'amministratore intende accedere alla _dashboard_ personale.
 - *Scenario principale*:
   + L'amministratore non autenticato accede alla pagina di _login_ del sistema.
   + L'amministratore non autenticato inserisce le proprie credenziali di accesso.
@@ -191,18 +199,22 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 === UC3 - Inserimento e-mail per l'autenticazione alla dashboard <uc3>
 - *Attore principale*: Amministratore non autenticato.
-- *Precondizioni*: il sistema possiede l'_e-mail_ dell'amministratore che in quel momento non è autenticato. L'amministratore non autenticato accede alla pagina di _login_.
+- *Precondizioni*: 
+  + il sistema possiede l'_e-mail_ dell'amministratore che in quel momento non è autenticato.
+  + l'amministratore non autenticato si trova nella pagina di _login_. 
+  + il sistema si aspetta di ricevere un indirizzo _e-mail_.
 - *Postcondizioni*: il sistema accetta l'_e-mail_ inserita.
-- *Trigger*: l'amministratore intende accedere alla _dashboard_ personale.
 - *Scenario principale*:
   + L'amministratore non autenticato accede alla pagina di _login_ del sistema.
   + L'amministratore non autenticato inserisce l'_e-mail_ con la quale è registrato nel sistema.
 
 === UC4 - Inserimento password per l'autenticazione alla dashboard <uc4>
 - *Attore principale*: Amministratore non autenticato.
-- *Precondizioni*: il sistema possiede la _password_ dell'amministratore che in quel momento non è autenticato. L'amministratore non autenticato accede alla pagina di _login_.
+- *Precondizioni*: 
+  + il sistema possiede la _password_ dell'amministratore che in quel momento non è autenticato.
+  + l'amministratore non autenticato si trova nella pagina di _login_. 
+  + il sistema si aspetta di ricevere una _password_.
 - *Postcondizioni*: il sistema accetta la _password_ inserita.
-- *Trigger*: l'amministratore intende accedere alla _dashboard_ personale.
 - *Scenario principale*:
   + L'amministratore non autenticato accede alla pagina di _login_ del sistema.
   + L'amministratore non autenticato inserisce la _password_ con la quale è registrato nel sistema.
@@ -211,7 +223,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Attori principali*: Amministratore non autenticato.
 - *Precondizioni*: il sistema riceve le credenziali inserite dall'amministratore non autenticato.
 - *Postcondizioni*: il sistema individua un'incoerenza tra le credenziali inserite e quelle memorizzate.
-- *Trigger*: l'amministratore non autenticato inserisce delle credenziali errate.
 - *Scenario principale*:
   + L'amministratore inserisce delle credenziali errate durante la fase di autenticazione alla _dashboard_.
   + L'amministratore riceve un messaggio di errore il quale segnala che le credenziali inserite sono non valide.
@@ -225,9 +236,10 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 === UC6 - Visualizzazione della mappa geografica sulla dashboard <uc6>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia delle informazioni relative ai mezzi noleggiati, ai punti di interesse e agli annunci.
+- *Precondizioni*: 
+  + il sistema tiene traccia delle informazioni relative ai mezzi noleggiati, ai punti di interesse e agli annunci.
+  + l'amministratore accede alla _dashboard_ di visualizzazione della mappa.
 - *Postcondizioni*: il sistema espone una mappa geografica sulla _dashboard_ dell'amministratore.
-- *Trigger*: l'amministratore intende visualizzare la mappa geografica sulla propria _dashboard_.
 - *Scenario principale*:
   + L'amministratore è autenticato alla _dashboard_ del sistema.
   + La _dashboard_ del sistema espone una mappa geografica del territorio.
@@ -236,9 +248,10 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 === UC7 - Visualizzazione marker sulla mappa per i punti di interesse <uc7>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia della posizione di ciascun punto di interesse.
+- *Precondizioni*: 
+  + il sistema tiene traccia della posizione di ciascun punto di interesse.
+  + l'amministratore si trova nella _dashboard_ di visualizzazione della mappa.
 - *Postcondizioni*: il sistema espone sulla mappa dei _marker_ in corrispondenza dei punti di interesse.
-- *Trigger*: l'amministratore intende visualizzare sulla mappa le locazioni dei punti di interesse.
 - *Scenario principale*:
   + L'amministratore accede alla mappa sulla _dashboard_.
   + L'amministratore visualizza un _marker_ in corrispondenza di ciascun punto di interesse.
@@ -252,593 +265,727 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 === UC8 - Visualizzazione percorso del mezzo in noleggio sulla mappa <uc8>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia delle posizioni nel tempo dei mezzi con noleggio attivo.
+- *Precondizioni*: 
+  + il sistema tiene traccia nel tempo delle posizioni dei mezzi con noleggio attivo.
+  + l'amministratore si trova nella _dashboard_ di visualizzazione della mappa.
 - *Postcondizioni*: il sistema espone sulla mappa il percorso dei mezzi con noleggio attivo.
-- *Trigger*: l'amministratore desidera visualizzare il percorso di un mezzo dall'inizio del suo noleggio fino a quel momento.
 - *Scenario principale*:
   + L'amministratore accede alla mappa sulla _dashboard_.
   + L'amministratore visualizza il percorso del mezzo noleggiato.
-- *Inclusioni*:
-  + Visualizzazione _marker_ sul tracciato dei mezzi con noleggio attivo in corrispondenza del dato GPS (#link(<uc9>)[UC9]).
+#v(20pt)
+#figure(
+  image("../assets/use_cases/UC8.png"),
+  caption: [Diagramma del caso d'uso UC8],
+)
 
-=== UC9 - Visualizzazione marker sul tracciato dei mezzi con noleggio attivo in corrispondenza del dato GPS <uc9>
+
+=== UC9 - Visualizzazione marker sul tracciato dei mezzi con noleggio attivo <uc9>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema memorizza i dati GPS dei sensori quando il mezzo sul quale sono installati ha un noleggio attivo.
-- *Postcondizioni*: il sistema espone sulla mappa un _marker_ in corrispondenza di ciascuna coordinata GPS fornita dal sensore.
-- *Trigger*: l'amministratore intende visualizzare sulla mappa le posizioni del mezzo in noleggio fino a quel momento.
+- *Precondizioni*: 
+  + il sistema riceve in tempo reale i dati con le posizioni dei mezzi con noleggio attivo.
+  + il dato ricevuto dal sensore è stato elaborato dal sistema.
+  + l'amministratore si trova nella _dashboard_ di visualizzazione della mappa.
+- *Postcondizioni*: il sistema espone sulla mappa un _marker_ specifico basato su ciò che è successo dopo aver ricevuto il dato dal sensore.
+- *Scenario principale*:
+  + L'amministratore accede alla mappa sulla _dashboard_.
+  + L'amministratore visualizza un _marker_ specifico in base al tipo di risultato che ha prodotto l'elaborazione del dato geospaziale.
+- *Generalizzazioni*:
+  + Visualizzazione _marker_ sul tracciato dei mezzi con noleggio attivo in corrispondenza del dato GPS (#link(<uc10>)[UC10]).
+  + Visualizzazione _marker_ sul tracciato dei mezzi con noleggio attivo in corrispondenza della generazione di un annuncio (#link(<uc11>)[UC11]).
+  + Visualizzazione _marker_ sul tracciato dei mezzi con noleggio attivo in corrispondenza della mancata generazione di un annuncio (#link(<uc12>)[UC12]).
+
+=== UC10 - Visualizzazione marker sul tracciato dei mezzi con noleggio attivo in corrispondenza del dato GPS <uc10>
+- *Attore principale*: Amministratore.
+- *Precondizioni*: 
+  + il sistema riceve in tempo reale i dati GPS dei sensori relativi ai mezzi con un noleggio attivo.
+  + l'amministratore si trova nella _dashboard_ di visualizzazione della mappa.
+- *Postcondizioni*: il sistema espone sulla mappa un _marker_ in corrispondenza di ciascuna posizione GPS fornita dal sensore che non è nelle vicinanze
+ di un punto di interesse, o che ne è nelle vicinanze ma ha ricevuto da poco un annuncio per quello stesso punto di interesse.
 - *Scenario principale*:
   + L'amministratore accede alla mappa sulla _dashboard_.
   + L'amministratore visualizza un _marker_ in corrispondenza di ogni dato GPS ritornato dal sensore di un relativo mezzo in noleggio.
-#v(20pt)
-#figure(
-  image("../assets/use_cases/UC8-9.png"),
-  caption: [Diagramma dei casi d'uso UC8 e UC9],
-)
 
-#pagebreak()
 
-=== UC10 - Visualizzazione marker sul tracciato dei mezzi con noleggio attivo in corrispondenza della generazione di un annuncio <uc10>
+=== UC11 - Visualizzazione marker sul tracciato dei mezzi con noleggio attivo in corrispondenza della generazione di un annuncio <uc11>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema memorizza gli annunci generati e le relative informazioni.
+- *Precondizioni*: 
+  + il sistema memorizza gli annunci generati e le relative informazioni.
+  + l'amministratore si trova nella _dashboard_ di visualizzazione della mappa.
 - *Postcondizioni*: il sistema espone sulla mappa un _marker_ in corrispondenza dei punti in cui è stato generato un annuncio.
-- *Trigger*: l'amministratore intende visualizzare sulla mappa le posizioni del mezzo in noleggio nelle quali è stato generato un annuncio.
 - *Scenario principale*:
   + L'amministratore accede alla mappa sulla _dashboard_.
   + L'amministratore visualizza un _marker_ in corrispondenza delle posizioni nelle quali è stato generato un annuncio.
-#v(20pt)
-#figure(
-  image("../assets/use_cases/UC10.png"),
-  caption: [Diagramma del caso d'uso UC10],
-)
 
-#pagebreak()
 
-=== UC11 - Visualizzazione marker sul tracciato dei mezzi con noleggio attivo in corrispondenza della mancata generazione di un annuncio <uc11>
+=== UC12 - Visualizzazione marker sul tracciato dei mezzi con noleggio attivo in corrispondenza della mancata generazione di un annuncio <uc12>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema memorizza le mancate generazioni degli annunci e le relative informazioni.
+- *Precondizioni*: 
+  + il sistema memorizza le mancate generazioni degli annunci e le relative informazioni.
+  + l'amministratore si trova nella _dashboard_ di visualizzazione della mappa.
 - *Postcondizioni*: il sistema espone sulla mappa un _marker_ in corrispondenza dei punti in cui la LLM non ha ritenuto l'utente interessato, quindi non è stato generato l'annuncio.
-- *Trigger*: l'amministratore intende visualizzare sulla mappa le posizioni del mezzo in noleggio nelle quali la LLM non ha generato un annuncio.
 - *Scenario principale*:
   + L'amministratore accede alla mappa sulla _dashboard_.
-  + L'amministratore visualizza un _marker_ in corrispondenza delle posizioni nelle quali la LLM non ha generato un annuncio.
+  + L'amministratore visualizza un _marker_ in corrispondenza delle posizioni nelle quali la LLM non ha generato un annuncio perché ha valutato l'utente come non interessato al punto di interesse in base alla sua profilazione.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC11.png"),
-  caption: [Diagramma del caso d'uso UC11],
+  image("../assets/use_cases/UC9-10-11-12.png"),
+  caption: [Diagramma dei caso d'uso UC9, UC10, UC11, UC12],
 )
 
 #pagebreak()
 
 
-=== UC12 - Visualizzazione informazioni punto di interesse tramite marker sulla mappa <uc12>
+=== UC13 - Visualizzazione informazioni punto di interesse tramite marker sulla mappa <uc13>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia delle informazioni di ciascun punto di interesse.
+- *Precondizioni*: 
+  + il sistema tiene traccia delle informazioni di ciascun punto di interesse.
+  + l'amministratore si trova nella _dashboard_ di visualizzazione della mappa.
 - *Postcondizioni*: il sistema espone le informazioni del punto di interesse selezionato in corrispondenza del _marker_ sulla mappa.
-- *Trigger*: l'amministratore desidera visualizzare le informazioni del punto di interesse in corrispondenza del _marker_ sulla mappa.
 - *Scenario principale*:
   + L'amministratore accede alla mappa sulla _dashboard_.
   + L'amministratore interagisce col _marker_ che indica un punto di interesse.
   + Vengono visualizzate le informazioni in corrispondenza del _marker_ selezionato.
 - *Inclusioni*:
-  + VISUALIZZAZIONE INFORMAZIONI DEL POI
+  + Visualizzazione nome del punto di interesse dal _marker_ del punto di interesse (#link(<uc14>)[UC14]).
+  + Visualizzazione categoria del punto di interesse dal _marker_ del punto di interesse (#link(<uc15>)[UC15]).
+
+=== UC14 - Visualizzazione nome del punto di interesse dal marker del punto di interesse <uc14>
+- *Attore principale*: Amministratore.
+- *Precondizioni*: 
+  + il sistema tiene traccia del nome di ciascun punto di interesse.
+  + il sistema sta esponendo la _dashboard_ con la mappa e i _marker_ all'amministratore.
+- *Postcondizioni*: il sistema espone il nome del punto di interesse.
+- *Scenario principale*:
+  + L'amministratore visualizza il nome del punto di interesse.
+
+=== UC15 - Visualizzazione categoria del punto di interesse dal marker del punto di interesse <uc15>
+- *Attore principale*: Amministratore.
+- *Precondizioni*: 
+  + il sistema tiene traccia della categoria di ciascun punto di interesse.
+  + il sistema sta esponendo la _dashboard_ con la mappa e i _marker_ all'amministratore.
+- *Postcondizioni*: il sistema espone la categoria del punto di interesse.
+- *Scenario principale*:
+  + L'amministratore visualizza la categoria del punto di interesse.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC12.png"),
-  caption: [Diagramma del caso d'uso UC12],
+  image("../assets/use_cases/UC13-14-15.png"),
+  caption: [Diagramma dei caso d'uso UC13, UC14, UC15],
 )
+
 
 #pagebreak()
 
-=== UC13 - Visualizzazione annuncio tramite marker sulla mappa <uc13>
+=== UC16 - Visualizzazione annuncio tramite marker sulla mappa <uc16>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia degli annunci generati e le relative informazioni.
+- *Precondizioni*: 
+  + il sistema tiene traccia degli annunci generati e le relative informazioni.
+  + l'amministratore si trova nella _dashboard_ di visualizzazione della mappa.
 - *Postcondizioni*: il sistema espone l'annuncio generato, con le relative informazioni, in corrispondenza del _marker_ sulla mappa.
-- *Trigger*: l'amministratore desidera visualizzare l'annuncio generato in corrispondenza del _marker_ sulla mappa.
 - *Scenario principale*:
   + L'amministratore accede alla mappa sulla _dashboard_.
   + L'amministratore interagisce col _marker_ che indica un annuncio generato.
   + Viene visualizzato l'annuncio generato in corrispondenza del _marker_ selezionato.
 - *Inclusioni*:
-  + Visualizzazione dettagli di un singolo annuncio (#link(<uc33>)[UC33]).
+  + Visualizzazione nome del punto di interesse dell'annuncio aperto dal _marker_ (#link(<uc17>)[UC17]).
+  + Visualizzazione _e-mail_ dell'utente dell'annuncio aperto dal _marker_ (#link(<uc18>)[UC18]).
+  + Visualizzazione data e ora di tentativo di generazione annuncio dell'annuncio aperto dal _marker_ (#link(<uc19>)[UC19]).
+  + Visualizzazione completa dell'annuncio aperto dal _marker_ (#link(<uc20>)[UC20]).
+  + Visualizzazione categoria del punto di interesse collegato all'annuncio aperto dal _marker_ (#link(<uc21>)[UC21]).
+
+
+
+=== UC17 - Visualizzazione nome del punto di interesse dell'annuncio aperto dal marker <uc17>
+- *Attore principale*: Amministratore.
+- *Precondizioni*: 
+  + il sistema tiene traccia del nome di ciascun punto di interesse.
+  + l'amministratore sta visualizzando l'annuncio aperto dal _marker_.
+- *Postcondizioni*: il sistema espone il nome del punto di interesse.
+- *Scenario principale*:
+  + L'amministratore visualizza il nome del punto di interesse.
+
+=== UC18 - Visualizzazione e-mail dell'utente dell'annuncio aperto dal marker <uc18>
+- *Attore principale*: Amministratore.
+- *Precondizioni*: 
+  + il sistema tiene traccia dell'_e-mail_ di ciascun utente.
+  + l'amministratore sta visualizzando l'annuncio aperto dal _marker_.
+- *Postcondizioni*: il sistema espone l'_e-mail_ dell'utente.
+- *Scenario principale*:
+  + L'amministratore visualizza l'_e-mail_ dell'utente.
+
+=== UC19 - Visualizzazione data e ora di tentativo di generazione annuncio dell'annuncio aperto dal marker <uc19>
+- *Attore principale*: Amministratore.
+- *Precondizioni*: 
+  + il sistema tiene traccia della data e dell'ora nelle quali il sistema ha richiesto di generare un annuncio.
+  + l'amministratore sta visualizzando l'annuncio aperto dal _marker_.
+- *Postcondizioni*: il sistema espone la data e l'ora di tentativo di generazione annuncio.
+- *Scenario principale*:
+  + L'amministratore visualizza la data e l'ora di tentativo di generazione annuncio.
+
+=== UC20 - Visualizzazione del corpo dell'annuncio aperto dal marker <uc20>
+- *Attore principale*: Amministratore.
+- *Precondizioni*: 
+  + il sistema tiene traccia degli annunci generati.
+  + l'amministratore sta visualizzando l'annuncio aperto dal _marker_.
+- *Postcondizioni*: il sistema espone il corpo dell'annuncio per intero.
+- *Scenario principale*:
+  + L'amministratore visualizza interamente il corpo dell'annuncio generato precedentemente.
+
+=== UC21 - Visualizzazione categoria del punto di interesse collegato all'annuncio aperto dal marker<uc21>
+- *Attore principale*: Amministratore.
+- *Precondizioni*: 
+  + il sistema tiene traccia della categoria del punto di interesse collegato al relativo annuncio.
+  + l'amministratore sta visualizzando l'annuncio aperto dal _marker_.
+- *Postcondizioni*: il sistema espone la categoria del punto di interesse collegato al relativo annuncio.
+- *Scenario principale*:
+  + L'amministratore visualizza la categoria del punto di interesse.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC13.png"),
-  caption: [Diagramma del caso d'uso UC13],
+  image("../assets/use_cases/UC16-17-18-19-20-21.png"),
+  caption: [Diagramma dei caso d'uso UC16, UC17, UC18, UC19, UC20, UC21],
 )
+
 
 #pagebreak()
 
-=== UC14 - Visualizzazione messaggio annuncio non generato tramite marker sulla mappa
+=== UC22 - Visualizzazione messaggio annuncio non generato tramite marker della mancata generazione di un annuncio sulla mappa <uc22>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia degli annunci non generati e le relative informazioni.
+- *Precondizioni*: 
+  + il sistema tiene traccia degli annunci non generati e le relative informazioni.
+  + l'amministratore si trova nella _dashboard_ di visualizzazione della mappa.
 - *Postcondizioni*: il sistema espone un messaggio circa l'annuncio non generato, con le relative informazioni, in corrispondenza del _marker_ sulla mappa.
-- *Trigger*: l'amministratore desidera visualizzare le informazioni dell'annuncio non generato in corrispondenza del _marker_ sulla mappa.
 - *Scenario principale*:
   + L'amministratore accede alla mappa sulla _dashboard_.
   + L'amministratore interagisce col _marker_ che indica un annuncio non generato.
   + Viene visualizzato il messaggio con le informazioni dell'annuncio che non è stato generato in corrispondenza del _marker_ selezionato.
 - *Inclusioni*:
-  + Visualizzazione nome del punto di interesse (#link(<uc29>)[UC29]).
-  + Visualizzazione _e-mail_ dell'utente (#link(<uc30>)[UC30]).
+  + Visualizzazione nome del punto di interesse nel messaggio di tentativo di generazione annuncio nella vista aperta dal _marker_ (#link(<uc23>)[UC23]).
+  + Visualizzazione _e-mail_ dell'utente nel messaggio di tentativo di generazione annuncio nella vista aperta dal _marker_ (#link(<uc24>)[UC24]).
+  + Visualizzazione data e ora di tentata generazione annuncio nel messaggio di tentativo di generazione annuncio nella vista aperta dal _marker_ (#link(<uc25>)[UC25]).
+
+=== UC23 - Visualizzazione nome del punto di interesse nel messaggio di tentativo di generazione annuncio nella vista aperta dal marker <uc23>
+- *Attore principale*: Amministratore.
+- *Precondizioni*: 
+  + il sistema tiene traccia del nome di ciascun punto di interesse.
+  + l'amministratore sta visualizzando il messaggio di tentativo di generazione annuncio nella vista aperta dal _marker_.
+- *Postcondizioni*: il sistema espone il nome del punto di interesse.
+- *Scenario principale*:
+  + L'amministratore visualizza il nome del punto di interesse.
+
+=== UC24 - Visualizzazione _e-mail_ dell'utente nel messaggio di tentativo di generazione annuncio nella vista aperta dal marker <uc24>
+- *Attore principale*: Amministratore.
+- *Precondizioni*: 
+  + il sistema tiene traccia dell'_e-mail_ di ciascun utente.
+  + l'amministratore sta visualizzando il messaggio di tentativo di generazione annuncio nella vista aperta dal _marker_.
+- *Postcondizioni*: il sistema espone l'_e-mail_ dell'utente.
+- *Scenario principale*:
+  + L'amministratore visualizza l'_e-mail_ dell'utente.
+
+=== UC25 - Visualizzazione data e ora di tentata generazione annuncio nel messaggio di tentativo di generazione annuncio nella vista aperta dal marker.<uc25>
+- *Attore principale*: Amministratore.
+- *Precondizioni*: 
+  + il sistema tiene traccia della data e dell'ora nelle quali il sistema ha richiesto di generare un annuncio.
+  + l'amministratore sta visualizzando il messaggio di tentativo di generazione annuncio nella vista aperta dal _marker_.
+- *Postcondizioni*: il sistema espone la data e l'ora di tentativo di generazione annuncio nella vista aperta dal _marker_.
+- *Scenario principale*:
+  + L'amministratore visualizza la data e l'ora di tentativo di generazione annuncio.
+
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC14.png"),
-  caption: [Diagramma del caso d'uso UC14],
+  image("../assets/use_cases/UC22-23-24-25.png"),
+  caption: [Diagramma dei caso d'uso UC22, UC23, UC24, UC25],
 )
 
 #pagebreak()
 
-=== UC15 - Chiusura annuncio visualizzato tramite marker sulla mappa
-- *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia dell'annuncio visualizzato sulla mappa tramite una interazione con il _marker_ corrispondente.
-- *Postcondizioni*: il sistema chiude l'annuncio visualizzato tramite una interazione con il _marker_ corrispondente.
-- *Trigger*: l'amministratore desidera chiudere l'annuncio fatto comparire sulla mappa in corrispondenza del _marker_.
-- *Scenario principale*:
-  + L'amministratore visualiza l'annuncio sulla mappa in corrispondenza del _marker_.
-  + L'amministratore chiude l'annuncio.
 
-=== UC16 - Chiusura messaggio annuncio non generato visualizzato tramite marker sulla mappa
+=== UC26 - Chiusura annuncio visualizzato tramite marker sulla mappa <uc26>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia del messaggio di annuncio non generato visualizzato sulla mappa in corrispondenza del _marker_.
-- *Postcondizioni*: il sistema chiude il messaggio di annuncio non generato visualizzato tramite una interazione con il _marker_ corrispondente.
-- *Trigger*: l'amministratore desidera chiudere il messaggio di annuncio non generato fatto comparire sulla mappa in corrispondenza del _marker_.
+- *Precondizioni*: 
+  + l'amministratore si trova nella _dashboard_ di visualizzazione della mappa.
+  + l'amministratore ha aperto l'annuncio tramite un'interazione con il _marker_ sulla mappa.
+- *Postcondizioni*: il sistema chiude l'annuncio visualizzato tramite una interazione con il _marker_ corrispondente.
 - *Scenario principale*:
-  + L'amministratore visualiza il messaggio di annuncio non generato sulla mappa in corrispondenza del _marker_.
+  + L'amministratore visualizza l'annuncio sulla mappa in corrispondenza del _marker_.
+  + L'amministratore chiude l'annuncio.
+#v(20pt)
+#figure(
+  image("../assets/use_cases/UC26.png"),
+  caption: [Diagramma del caso d'uso UC26],
+)
+
+
+=== UC27 - Chiusura messaggio annuncio non generato visualizzato tramite marker sulla mappa <uc27>
+- *Attore principale*: Amministratore.
+- *Precondizioni*: 
+  + l'amministratore si trova nella _dashboard_ di visualizzazione della mappa.
+  + l'amministratore ha aperto la visualizzazione di mancata generazione di un annuncio tramite un'interazione con il _marker_ sulla mappa.
+- *Postcondizioni*: il sistema chiude il messaggio di annuncio non generato visualizzato tramite una interazione con il _marker_ corrispondente.
+- *Scenario principale*:
+  + L'amministratore visualizza il messaggio di annuncio non generato sulla mappa in corrispondenza del _marker_.
   + L'amministratore chiude il messaggio.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC15-16.png"),
-  caption: [Diagramma dei casi d'uso UC15 e UC16],
+  image("../assets/use_cases/UC27.png"),
+  caption: [Diagramma del caso d'uso UC27],
 )
 
 #pagebreak()
 
-=== UC17 - Spostamento della visuale sulla mappa
+=== UC28 - Spostamento della visuale sulla mappa <uc28>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia del centro della porzione di territorio visualizzata sulla mappa.
+- *Precondizioni*: 
+  + l'amministratore si trova nella _dashboard_ di visualizzazione della mappa.
+  + il sistema tiene traccia del centro della porzione di territorio visualizzata sulla mappa.
 - *Postcondizioni*: il sistema fa visualizzare sulla mappa una porzione di territorio centrata su un nuovo punto.
-- *Trigger*: l'amministratore desidera spostare la visuale sulla mappa.
 - *Scenario principale*:
   + L'amministratore accede alla mappa sulla _dashboard_.
   + L'amministratore interagisce con la mappa per spostare il centro della mappa, quindi anche l'intera visuale.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC17.png"),
-  caption: [Diagramma dei casi d'uso UC17],
+  image("../assets/use_cases/UC28.png"),
+  caption: [Diagramma del caso d'uso UC28],
 )
 
 #pagebreak()
 
-=== UC18 - Modifica ampiezza della visuale sulla mappa
+=== UC29 - Modifica ampiezza della visuale sulla mappa <uc29>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia della porzione di territorio mostrata dalla mappa sulla _dashboard_.
+- *Precondizioni*: 
+  + l'amministratore si trova nella _dashboard_ di visualizzazione della mappa.
+  + il sistema tiene traccia della porzione di territorio mostrata dalla mappa sulla _dashboard_.
 - *Postcondizioni*: il sistema fa visualizzare sulla mappa una porzione di territorio più o meno ampia a seconda dell'azione dell'amministratore.
-- *Trigger*: l'amministratore desidera modificare l'ampiezza della visuale sulla mappa.
 - *Scenario principale*:
   + L'amministratore accede alla mappa sulla _dashboard_.
   + L'amministratore interagisce con la mappa per modificare l'ampiezza della visuale.
 - *Generalizzazioni*:
-  + Ampliamento della visuale sulla mappa (#link(<uc19>)[UC19])).
-  + Restringimento della visuale sulla mappa (#link(<uc20>)[UC208])).
+  + Ampliamento della visuale sulla mappa (#link(<uc30>)[UC30])).
+  + Restringimento della visuale sulla mappa (#link(<uc31>)[UC31])).
 
-=== UC19 - Ampliamento della visuale sulla mappa <uc19>
+=== UC30 - Ampliamento della visuale sulla mappa <uc30>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia della porzione di territorio mostrata dalla mappa sulla _dashboard_.
+- *Precondizioni*:
+  + l'amministratore si trova nella _dashboard_ di visualizzazione della mappa. 
+  + il sistema tiene traccia della porzione di territorio mostrata dalla mappa sulla _dashboard_.
 - *Postcondizioni*: il sistema fa visualizzare sulla mappa una porzione di territorio più ampia.
-- *Trigger*: l'amministratore desidera ampliare la visuale sulla mappa.
 - *Scenario principale*:
-  + L'amministratore accede alla mappa sulla _dashboard_.
-  + L'amministratore interagisce con la mappa per ampliare la visuale.
+  + l'amministratore accede alla mappa sulla _dashboard_.
+  + l'amministratore interagisce con la mappa per ampliare la visuale.
 
-=== UC20 - Restringimento della visuale sulla mappa <uc20>
+=== UC31 - Restringimento della visuale sulla mappa <uc31>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia della porzione di territorio mostrata dalla mappa sulla _dashboard_.
+- *Precondizioni*: 
+  + l'amministratore si trova nella _dashboard_ di visualizzazione della mappa.
+  + il sistema tiene traccia della porzione di territorio mostrata dalla mappa sulla _dashboard_.
 - *Postcondizioni*: il sistema fa visualizzare sulla mappa una porzione di territorio meno ampia.
-- *Trigger*: l'amministratore desidera restringere la visuale sulla mappa.
 - *Scenario principale*:
-  + L'amministratore accede alla mappa sulla _dashboard_.
-  + L'amministratore interagisce con la mappa per restringere la visuale.
+  + l'amministratore accede alla mappa sulla _dashboard_.
+  + l'amministratore interagisce con la mappa per restringere la visuale.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC18-19-20.png"),
-  caption: [Diagramma dei casi d'uso UC18, UC19 e UC20],
+  image("../assets/use_cases/UC29-30-31.png"),
+  caption: [Diagramma dei casi d'uso UC29, UC30 e UC31],
 )
 
 #pagebreak()
 
-=== UC21 - Visualizzazione notifica di un annuncio generato
+=== UC32 - Visualizzazione sezione storico annunci <uc32>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema ha generato un annuncio personalizzato ad un utente.
-- *Postcondizioni*: il sistema mostra una notifica sulla _dashboard_ contenente le informazioni principlai riguardo l'annuncio appena generato.
-- *Trigger*: l'amministratore desidera prendere visione della notifica.
-- *Scenario principale*:
-  + Un utente si avvicina a un punto di interesse e il sistema genera un annuncio personalizzato che viene inviato all'utente.
-  + Nello stesso istante, nella _dashboard_, viene mostrata una notifica che informa l'amministratore con i seguenti dettagli:
-    - E-mail dell'utente destinatario.
-    - Punto di interesse associato all'annuncio.
+- *Precondizioni*: 
+  + il sistema tiene traccia di tutti gli annunci generati per gli utenti dell'amministratore.
+- *Postcondizioni*: 
+  + il sistema espone la sezione dello storico annunci.
+- *Scenario principale*: 
+  + l'amministratore accede alla sezione dello storico degli annunci.
 - *Inclusioni*:
-  + Visualizzazione nome del punto di interesse (#link(<uc29>)[UC29]).
-  + Visualizzazione _e-mail_ dell'utente (#link(<uc30>)[UC30]).
+  + Visualizzazione storico degli annunci (#link(<uc33>)[UC33]).
 
-#v(20pt)
-#figure(
-  image("../assets/use_cases/UC21.png"),
-  caption: [Diagramma dei caso d'uso UC21, UC29, UC30],
-)
-
-#pagebreak()
-
-=== UC22 - Visualizzazione notifica di mancata generazione di un annuncio
+=== UC33 - Visualizzazione storico degli annunci <uc33>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema ha valutato un utente come disinteressato ad un punto di interesse.
-- *Postcondizioni*: il sistema mostra una notifica sulla _dashboard_ contenente le informazioni principali riguardo alla mancata generazione di un annuncio.
-- *Trigger*: l'amministratore desidera prendere visione della notifica.
+- *Precondizioni*: 
+  + Il sistema tiene traccia di tutti gli annunci generati per gli utenti dell'amministratore.
+  + L'amministratore si trova nella sezione apposita degli annunci.
+- *Postcondizioni*: il sistema espone gli annunci generati fino a quel momento.
 - *Scenario principale*:
-  + Un utente si avvicina a un punto di interesse e il sistema valuta che l'utente non è interessato.
-  + Nello stesso istante, nella _dashboard_, viene mostrata una notifica contenente un messaggio che informa l'amministratore che l'utente non è interessato al punto di interesse.
-- *Inclusioni*:
-  + Visualizzazione nome del punto di interesse (#link(<uc29>)[UC29]).
-  + Visualizzazione _e-mail_ dell'utente (#link(<uc30>)[UC30]).
-
-#v(20pt)
-#figure(
-  image("../assets/use_cases/UC22.png"),
-  caption: [Diagramma dei caso d'uso UC22, UC29, UC30],
-)
-
-#pagebreak()
-
-=== UC23 - Apertura dettagli singolo annuncio dalla notifica
-- *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema ha generato un annuncio personalizzato ad un utente. L'amministratore ha ricevuto una notifica di annuncio generato.
-- *Postcondizioni*: il sistema espone i dettagli dell'annuncio generato.
-- *Trigger*: l'amministratore desidera prendere visione dei dettagli dell'annuncio generato.
-- *Scenario principale*:
-  + L'amministratore riceve sulla _dashboard_ la notifica relativa ad un annuncio generato.
-  + L'amministratore interagisce con la notifica per visualizzare i dettagli dell'annuncio generato.
-- *Inclusioni*:
-  + Visualizzazione dettagli di un singolo annuncio(#link(<uc33>)[UC33]).
-
-#v(20pt)
-#figure(
-  image("../assets/use_cases/UC23.png"),
-  caption: [Diagramma dei caso d'uso UC23, UC29, UC30, UC31, UC32, UC33, UC34, UC35, UC36],
-)
-
-#pagebreak()
-
-=== UC24 - Chiusura di una notifica
-- *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema ha generato un annuncio personalizzato ad un utente. L'amministratore ha ricevuto una notifica.
-- *Postcondizioni*: il sistema chiude la notifica.
-- *Trigger*: l'amministratore vuole chiudere la notifica.
-- *Scenario principale*:
-  + L'amministratore riceve sulla _dashboard_ una notifica.
-  + L'amministratore interagisce con la notifica per farla scomparire dalla _dashboard_.
-
-#v(20pt)
-#figure(
-  image("../assets/use_cases/UC24.png"),
-  caption: [Diagramma del caso d'uso UC24],
-)
-
-#pagebreak()
-
-=== UC25 - Visualizzazione storico degli annunci
-- *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia di tutti gli annunci generati per gli utenti dell'amministratore.
-- *Postcondizioni*: il sistema espone gli annunci generati fino a quel momento ordinati dal più recente.
-- *Trigger*: l'amministratore desidera prendere visione degli annunci generati fino a quel momento.
-- *Scenario principale*:
-  + L'amministratore accede alla sezione apposita degli annunci.
   + Il sistema espone le _preview_ degli annunci con le informazioni principali.
 - *Generalizzazioni*:
-  + Visualizzazione storico annunci in lista (#link(<uc26>)[UC26]).
-  + Visualizzazione storico annunci in griglia (#link(<uc27>)[UC27]).
+  + Visualizzazione storico annunci in lista (#link(<uc34>)[UC34]).
+  + Visualizzazione storico annunci in griglia (#link(<uc35>)[UC35]).
 - *Inclusioni*:
-  + Visualizzazione singolo annuncio nello storico (#link(<uc28>)[UC28]).
+  + Visualizzazione singolo annuncio nello storico (#link(<uc36>)[UC36]).
 
-=== UC26 - Visualizzazione storico annunci in lista <uc26>
+=== UC34 - Visualizzazione storico annunci in lista <uc34>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia di tutti gli annunci generati per gli utenti dell'amministratore. Questo visualizza la sezione dedicata agli annunci.
-- *Postcondizioni*: il sistema espone gli annunci generati fino a quel momento.
-- *Trigger*: l'amministratore vuole prendere visione degli annunci generati fino a quel momento in lista.
+- *Precondizioni*: 
+  + il sistema espone gli annunci generati fino a quel momento.
+  + l'amministratore ha selezionato l'opzione per visualizzare gli annunci sotto forma di lista.
+- *Postcondizioni*: gli annunci vengono mostrati nella dashboard all'amministratore sotto forma di lista.
 - *Scenario principale*:
   + L'amministratore accede alla _dashboard_ principale.
   + L'amministratore accede alla sezione apposita degli annunci.
   + L'amministratore selezione l'opzione per visualizzare gli annunci in lista.
 
-=== UC27 - Visualizzazione storico annunci in griglia <uc27>
+=== UC35 - Visualizzazione storico annunci in griglia <uc35>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia di tutti gli annunci generati per gli utenti dell'amministratore. Questo visualizza la sezione dedicata agli annunci.
-- *Postcondizioni*: il sistema espone gli annunci generati fino a quel momento ordinati dal più recente in griglia.
-- *Trigger*: l'amministratore vuole prendere visione degli annunci generati fino a quel momento in griglia.
+- *Precondizioni*: 
+  + il sistema espone gli annunci generati fino a quel momento.
+  + l'amministratore ha selezionato l'opzione per visualizzare gli annunci sotto forma di griglia.
+- *Postcondizioni*: gli annunci vengono mostrati nella _dashboard_ all'amministratore sotto forma di griglia.
 - *Scenario principale*:
   + L'amministratore accede alla _dashboard_ principale.
   + L'amministratore accede alla sezione apposita degli annunci.
   + L'amministratore selezione l'opzione per visualizzare gli annunci in griglia.
 
-=== UC28 - Visualizzazione singolo annuncio nello storico <uc28>
+=== UC36 - Visualizzazione singolo annuncio nello storico <uc36>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia delle informazioni principali degli annunci generati per gli utenti dell'amministratore. Questo visualizza la sezione dedicata agli annunci.
+- *Precondizioni*: 
+  + il sistema tiene traccia delle informazioni principali degli annunci generati per gli utenti dell'amministratore. 
+  + l'amministratore sta visualizzando lo storico degli annunci.
 - *Postcondizioni*: il sistema espone le informazioni principali relative al singolo annuncio:
   - Nome del punto di interesse collegato.
   - _E-mail_ dell'utente destinatario.
   - Data e ora di emissione.
   - Un _flag_ che indica se il noleggio al quale è stato inviato l'annuncio è ancora attivo.
-- *Trigger*: l'amministratore desidera visualizzare le informazioni principali di un annuncio.
 - *Scenario principale*:
   + L'amministratore visualizza le informazioni principali relative all'annuncio.
 - *Inclusioni*:
-  + Visualizzazione nome del punto di interesse (#link(<uc29>)[UC29]).
-  + Visualizzazione _e-mail_ dell'utente (#link(<uc30>)[UC30]).
-  + Visualizzazione data e ora di tentativo di generazione annuncio (#link(<uc31>)[UC31]).
-  + Visualizzazione _flag_ sugli annunci nello storico inviati a noleggi attivi (#link(<uc32>)[UC32]).
+  + Visualizzazione nome del punto di interesse dall'annuncio nello storico (#link(<uc37>)[UC37]).
+  + Visualizzazione _e-mail_ dell'utente dall'annuncio nello storico (#link(<uc38>)[UC38]).
+  + Visualizzazione data e ora di tentativo di generazione annuncio dall'annuncio nello storico (#link(<uc39>)[UC39]).
+  + Visualizzazione _flag_ sugli annunci nello storico inviati a noleggi attivi dall'annuncio nello storico (#link(<uc40>)[UC40]).
 
-=== UC29 - Visualizzazione nome del punto di interesse <uc29>
+=== UC37 - Visualizzazione nome del punto di interesse dall'annuncio nello storico <uc37>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia del nome di ciascun punto di interesse.
+- *Precondizioni*: 
+  + il sistema tiene traccia del nome di ciascun punto di interesse.
+  + l'amministratore sta visualizzando lo storico degli annunci.
 - *Postcondizioni*: il sistema espone il nome del punto di interesse.
-- *Trigger*: l'amministratore desidera visualizzare il nome del punto di interesse.
 - *Scenario principale*:
   + L'amministratore visualizza il nome del punto di interesse.
 
-=== UC30 - Visualizzazione e-mail dell'utente <uc30>
+=== UC38 - Visualizzazione e-mail dell'utente dall'annuncio nello storico <uc38>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia dell'_e-mail_ di ciascun utente.
+- *Precondizioni*: 
+  + il sistema tiene traccia dell'_e-mail_ di ciascun utente.
+  + l'amministratore sta visualizzando lo storico degli annunci.
 - *Postcondizioni*: il sistema espone l'_e-mail_ dell'utente.
-- *Trigger*: l'amministratore desidera visualizzare l'_e-mail_ dell'utente.
 - *Scenario principale*:
   + L'amministratore visualizza l'_e-mail_ dell'utente.
 
-=== UC31 - Visualizzazione data e ora di tentativo di generazione annuncio <uc31>
+=== UC39 - Visualizzazione data e ora di tentativo di generazione annuncio dall'annuncio nello storico <uc39>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia della data e dell'ora nelle quali il sistema ha richiesto di generare un annuncio.
+- *Precondizioni*: 
+  + il sistema tiene traccia della data e dell'ora nelle quali il sistema ha richiesto di generare un annuncio.
+  + l'amministratore sta visualizzando lo storico degli annunci.
 - *Postcondizioni*: il sistema espone la data e l'ora di tentativo di generazione annuncio.
-- *Trigger*: l'amministratore desidera visualizzare la data e l'ora di quando il sistema ha richiesto di generare un annuncio.
 - *Scenario principale*:
-  + L'amministratore visualizza la data e l'ora di tentaivo di generazione annuncio.
+  + L'amministratore visualizza la data e l'ora di tentativo di generazione annuncio.
 
-=== UC32 - Visualizzazione flag sugli annunci nello storico inviati a noleggi attivi
-<uc32>
+=== UC40 - Visualizzazione flag sugli annunci nello storico inviati a noleggi attivi dall'annuncio nello storico
+<uc40>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia dello stato del noleggio al quale è stato inviato l'annuncio, se è cioè ancora attivo o meno.
+- *Precondizioni*: 
+  + il sistema tiene traccia dello stato del noleggio al quale è stato inviato l'annuncio, se è cioè ancora attivo o meno.
+  + l'amministratore sta visualizzando lo storico degli annunci.
 - *Postcondizioni*: il sistema espone un _flag_ nel caso il noleggio al quale è stato inviato l'annuncio è ancora attivo.
-- *Trigger*: l'amministratore desidera visualizzare se l'annuncio è stato inviato ad un mezzo con noleggio attivo.
 - *Scenario principale*:
   + L'amministratore visualizza il _flag_ nel caso in cui il noleggio relativo all'annuncio è ancora attivo.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC25-26-27-28-29-30-31-32.png"),
-  caption: [Diagramma dei casi d'uso UC25, UC26, UC27, UC28, UC29, UC30, UC31 e UC32],
+  image("../assets/use_cases/UC32-33-34-35-36-37-38-39-40.png"),
+  caption: [Diagramma dei casi d'uso UC32, UC33, UC34, UC35, UC36, UC37, UC38, UC39 e UC40],
 )
 
 #pagebreak()
 
-=== UC33 - Visualizzazione dettagli di un singolo annuncio <uc33>
+=== UC41 - Visualizzazione dettagli di un singolo annuncio dopo aver interagito con un elemento nello storico <uc41>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia di tutte le informazioni degli annunci generati per gli utenti dell'amministratore.
+- *Precondizioni*: 
+  + il sistema tiene traccia di tutte le informazioni degli annunci generati per gli utenti dell'amministratore.
+  + l'amministratore entra nel dettaglio di un annuncio dallo storico.
 - *Postcondizioni*: il sistema espone interamente l'annuncio insieme alle relative informazioni:
   - Nome del punto di interesse collegato.
   - Categoria del punto di interesse collegato.
   - _E-mail_ dell'utente destinatario.
   - Data e ora di erogazione.
   - _Flag_ che indica se il noleggio al quale è stato inviato l'annuncio è ancora attivo.
-- *Trigger*: l'amministratore desidera visualizzare l'annuncio insieme alle relative informazioni.
 - *Scenario principale*:
   + L'amministratore seleziona l'opzione per visualizzare i dettagli dell'annuncio desiderato.
   + Viene esposto l'annuncio insieme alle relative informazioni.
 - *Inclusioni*:
-  + Visualizzazione nome del punto di interesse (#link(<uc29>)[UC29]).
-  + Visualizzazione _e-mail_ dell'utente (#link(<uc30>)[UC30]).
-  + Visualizzazione data e ora di tentativo di generazione annuncio (#link(<uc31>)[UC31]).
-  + Visualizzazione _flag_ sugli annunci nello storico inviati a noleggi attivi (#link(<uc32>)[UC32]).
-  + Visualizzazione completa dell'annuncio (#link(<uc34>)[UC34]).
-  + Visualizzazione categoria del punto di interesse collegato all'annuncio (#link(<uc35>)[UC35]).
-  + Chiusura della finestra di dialogo aperta (#link(<uc36>)[UC36]).
+  + Visualizzazione nome del punto di interesse dal dettaglio di un annuncio (#link(<uc42>)[UC42]).
+  + Visualizzazione _e-mail_ dell'utente dal dettaglio di un annuncio (#link(<uc43>)[UC43]).
+  + Visualizzazione data e ora di tentativo di generazione annuncio dal dettaglio di un annuncio (#link(<uc44>)[UC44]).
+  + Visualizzazione _flag_ sugli annunci nello storico inviati a noleggi attivi dal suo dettaglio (#link(<uc45>)[UC45]).
+  + Visualizzazione completa dell'annuncio dal suo dettaglio (#link(<uc46>)[UC46]).
+  + Visualizzazione categoria del punto di interesse collegato all'annuncio dal suo dettaglio (#link(<uc47>)[UC47]).
 
-=== UC34 - Visualizzazione completa dell'annuncio <uc34>
+=== UC42 - Visualizzazione nome del punto di interesse dal dettaglio di un annuncio <uc42>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia degli annunci generati.
-- *Postcondizioni*: il sistema espone l'annuncio per intero.
-- *Trigger*: l'amministratore desidera visualizzare l'annuncio generato precedentemente.
+- *Precondizioni*: 
+  + il sistema tiene traccia del nome di ciascun punto di interesse.
+  + l'amministratore sta visualizzando il dettaglio di un singolo annuncio.
+- *Postcondizioni*: il sistema espone il nome del punto di interesse.
 - *Scenario principale*:
-  + L'amministratore visualizza interamente l'annuncio generato precedentemente.
+  + L'amministratore visualizza il nome del punto di interesse.
 
-=== UC35 - Visualizzazione categoria del punto di interesse collegato all'annuncio <uc35>
+=== UC43 - Visualizzazione e-mail dell'utente dal dettaglio di un annuncio<uc43>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia della categoria del punto di interesse collegato al relativo annuncio.
+- *Precondizioni*: 
+  + il sistema tiene traccia dell'_e-mail_ di ciascun utente.
+  + l'amministratore sta visualizzando il dettaglio di un singolo annuncio.
+- *Postcondizioni*: il sistema espone l'_e-mail_ dell'utente.
+- *Scenario principale*:
+  + L'amministratore visualizza l'_e-mail_ dell'utente.
+
+=== UC44 - Visualizzazione data e ora di tentativo di generazione annuncio dal dettaglio di un annuncio <uc44>
+- *Attore principale*: Amministratore.
+- *Precondizioni*: 
+  + il sistema tiene traccia della data e dell'ora nelle quali il sistema ha richiesto di generare un annuncio.
+  + l'amministratore sta visualizzando il dettaglio di un singolo annuncio.
+- *Postcondizioni*: il sistema espone la data e l'ora di tentativo di generazione annuncio.
+- *Scenario principale*:
+  + L'amministratore visualizza la data e l'ora di tentativo di generazione annuncio.
+
+=== UC45 - Visualizzazione flag sugli annunci nello storico inviati a noleggi attivi dal dettaglio di un annuncio
+<uc45>
+- *Attore principale*: Amministratore.
+- *Precondizioni*: 
+  + il sistema tiene traccia dello stato del noleggio al quale è stato inviato l'annuncio, se è cioè ancora attivo o meno.
+  + l'amministratore sta visualizzando il dettaglio di un singolo annuncio.
+- *Postcondizioni*: il sistema espone un _flag_ nel caso il noleggio al quale è stato inviato l'annuncio è ancora attivo.
+- *Scenario principale*:
+  + L'amministratore visualizza il _flag_ nel caso in cui il noleggio relativo all'annuncio è ancora attivo.
+
+=== UC46 - Visualizzazione del corpo dell'annuncio dal suo dettaglio <uc46>
+- *Attore principale*: Amministratore.
+- *Precondizioni*: 
+  + il sistema tiene traccia degli annunci generati.
+  + l'amministratore sta visualizzando il dettaglio di un singolo annuncio.
+- *Postcondizioni*: il sistema espone il corpo dell'annuncio per intero.
+- *Scenario principale*:
+  + L'amministratore visualizza interamente il corpo dell'annuncio generato precedentemente.
+
+=== UC47 - Visualizzazione categoria del punto di interesse collegato all'annuncio dal suo dettaglio <uc47>
+- *Attore principale*: Amministratore.
+- *Precondizioni*: 
+  + il sistema tiene traccia della categoria del punto di interesse collegato al relativo annuncio.
+  + l'amministratore sta visualizzando il dettaglio di un singolo annuncio.
 - *Postcondizioni*: il sistema espone la categoria del punto di interesse collegato al relativo annuncio.
-- *Trigger*: l'amministratore desidera visualizzare la categoria del punto di interesse collegato al relativo annuncio.
 - *Scenario principale*:
   + L'amministratore visualizza la categoria del punto di interesse.
-
-=== UC36 - Chiusura della finestra di dialogo aperta <uc36>
-- *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema espone una finestra di dialogo con la quale l'amministratore può interagire.
-- *Postcondizioni*: il sistema chiude la finestra di dialogo.
-- *Trigger*: l'amministratore desidera chiudere la finestra di dialogo aperta.
-- *Scenario principale*:
-  + L'amministratore visualizza una finestra di dialogo aperta.
-  + L'amministratore chiude la finestra di dialogo aperta.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC33-34-35-36.png"),
-  caption: [Diagramma dei casi d'uso UC29, UC30, UC31, UC32, UC33, UC34, UC35 e UC36],
+  image("../assets/use_cases/UC41-42-43-44-45-46-47.png"),
+  caption: [Diagramma dei casi d'uso UC41, UC42, UC43, UC44, UC45, UC46 e UC47],
 )
 
 #pagebreak()
 
-=== UC37 - Ricerca degli annunci nello storico
+=== UC48 - Chiusura della vista di visualizzazione dettagli di un singolo annuncio <uc48>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia di tutti gli annunci generati per gli utenti dell'amministratore. Questo visualizza la sezione dedicata agli annunci.
-- *Postcondizioni*: il sistema espone gli annuci filtrati secondo alcune opzioni fornite: _e-mail_ dell'utente destinatario dell'annuncio, nome del punto di interesse collegato all'annuncio, intervallo di date e fascia oraria di emissione.
-- *Trigger*: l'amministratore desidera prendere visione di alcuni specifici annunci generati precedentemente.
+- *Precondizioni*: il sistema espone una vista per i dettagli di un annuncio con la quale l'amministratore può interagire.
+- *Postcondizioni*: il sistema chiude la vista di dettaglio di un singolo annuncio.
 - *Scenario principale*:
-  + L'amministratore accede alla sezione apposita degli annunci.
-  + L'amministratore esegue una ricerca degli annunci desiderati.
-- *Inclusioni*:
-  + Ricerca degli annunci nello storico per _e-mail_ utente (#link(<uc38>)[UC38]).
-  + Ricerca degli annnunci nello storico per nome del punto di interesse (#link(<uc39>)[UC39]).
-  + Ricerca degli annunci nello storico per intervallo di date di emissione (#link(<uc40>)[UC40]).
-  + Ricerca degli annunci nello storico per fascia oraria di emissione (#link(<uc41>)[UC41]).
+  + L'amministratore visualizza una vista con i dettagli di un annuncio.
+  + L'amministratore chiude la vista.
+#v(20pt)
+#figure(
+  image("../assets/use_cases/UC48.png"),
+  caption: [Diagramma del caso d'uso UC48],
+)
 
-=== UC38 - Ricerca degli annunci nello storico per e-mail utente <uc38>
+#pagebreak()
+
+=== UC49 - Ricerca degli annunci nello storico per e-mail utente <uc49>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia di tutti gli annunci generati per l'utente selezionato. Questo visualizza la sezione dedicata agli annunci.
+- *Precondizioni*: 
+  + il sistema tiene traccia di tutti gli annunci generati per l'utente selezionato. 
+  + l'amministratore sta visualizzando la sezione dedicata agli annunci.
+  + l'amministratore ha selezionato l'opzione per filtrare gli annunci per _e-mail_ utente.
 - *Postcondizioni*: il sistema espone lo storico degli annunci destinati all'utente selezionato.
-- *Trigger*: l'amministratore desidera prendere visione degli annunci generati fino a quel momento per uno specifico utente.
 - *Scenario principale*:
   + L'amministratore seleziona l'_e-mail_ di un utente.
   + Vengono visualizzati solo gli annunci destinati all'utente selezionato.
+#v(20pt)
+#figure(
+  image("../assets/use_cases/UC49.png"),
+  caption: [Diagramma del caso d'uso UC49],
+)
 
-=== UC39 - Ricerca degli annunci nello storico per nome del punto di interesse <uc39>
+=== UC50 - Ricerca degli annunci nello storico per nome del punto di interesse <uc50>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia di tutti gli annunci generati collegati al punto di interesse selezionato. Questo visualizza la sezione dedicata agli annunci.
+- *Precondizioni*: 
+  + il sistema tiene traccia di tutti gli annunci generati collegati al punto di interesse selezionato.
+  + l'amministratore sta visualizzando la sezione dedicata agli annunci.
+  + l'amministratore ha selezionato l'opzione per filtrare gli annunci per nome del punto di interesse.
 - *Postcondizioni*: il sistema espone lo storico degli annunci collegati al punto di interesse selezionato.
-- *Trigger*: l'amministratore desidera prendere visione degli annunci generati fino a quel momento per uno specifico punto di interesse.
 - *Scenario principale*:
   + L'amministratore seleziona il nome di un punto di interesse.
   + Vengono visualizzati solo gli annunci collegati al punto di interesse selezionato.
+#v(20pt)
+#figure(
+  image("../assets/use_cases/UC50.png"),
+  caption: [Diagramma del caso d'uso UC50],
+)
 
-=== UC40 - Ricerca degli annunci nello storico per intervallo di date di emissione <uc40>
+=== UC51 - Ricerca degli annunci nello storico per intervallo di date di emissione <uc51>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia di tutti gli annunci emessi nell'intervallo di date selezionato. Questo visualizza la sezione dedicata agli annunci.
+- *Precondizioni*: 
+  + il sistema tiene traccia di tutti gli annunci emessi nell'intervallo di date selezionato.
+  + l'amministratore sta visualizzando la sezione dedicata agli annunci.
+  + l'amministratore ha selezionato l'opzione per filtrare gli annunci per intervallo di date di emissione.
 - *Postcondizioni*: il sistema espone lo storico degli annunci emessi nell'intervallo di date selezionato.
-- *Trigger*: l'amministratore desidera prendere visione degli annunci generati fino a quel momento in un determinato intervallo di date.
 - *Scenario principale*:
   + L'amministratore seleziona un intervallo di date.
   + Vengono visualizzati solo gli annunci emessi nell'intervallo di date selezionato.
+#v(20pt)
+#figure(
+  image("../assets/use_cases/UC51.png"),
+  caption: [Diagramma del caso d'uso UC51],
+)
 
-=== UC41 - Ricerca degli annunci nello storico per fascia oraria di emissione <uc41>
+=== UC52 - Ricerca degli annunci nello storico per fascia oraria di emissione <uc52>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia di tutti gli annunci emessi nella fascia oraria selezionata. Questo visualizza la sezione dedicata agli annunci.
+- *Precondizioni*:
+  + il sistema tiene traccia di tutti gli annunci emessi nell'intervallo di date selezionato.
+  + l'amministratore sta visualizzando la sezione dedicata agli annunci.
+  + l'amministratore ha selezionato l'opzione per filtrare gli annunci per fascia oraria di emissione.
 - *Postcondizioni*: il sistema espone lo storico degli annunci emessi nella fascia oraria selezionata.
-- *Trigger*: l'amministratore desidera prendere visione degli annunci generati fino a quel momento in una determinata fascia oraria.
 - *Scenario principale*:
   + L'amministratore seleziona una fascia oraria.
   + Vengono visualizzati solo gli annunci emessi nella fascia oraria selezionata.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC37-38-39-40-41.png"),
-  caption: [Diagramma dei casi d'uso UC37, UC38, UC39, UC40 e UC41],
+  image("../assets/use_cases/UC52.png"),
+  caption: [Diagramma del caso d'uso UC52],
 )
 
 #pagebreak()
 
-=== UC42 - Visualizzazione errore "Il server non risponde"
+=== UC53 - Visualizzazione errore "Il server non risponde" <uc53>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tenta di comunicare con il _server_ per ricevere o inviare informazioni.
+- *Precondizioni*: il sistema tenta di comunicare con il _server_ per ricevere o inviare informazioni, ma si verifica un errore.
 - *Postcondizioni*: il sistema espone il messaggio di errore che segnala un problema con il _server_.
-- *Trigger*: l'amministratore desidera prendere visione del messaggio di errore quando il _server_ non risponde correttamente.
 - *Scenario principale*:
   + Il _server_ restituisce un errore (ad esempio, codice HTTP 500 o simile) durante la comunicazione.
   + L'amministratore visualizza il messaggio di errore sulla _dashboard_.
 
-=== UC43 - Visualizzazione errore "Connessione persa"
+=== UC54 - Visualizzazione errore "Connessione persa" <uc54>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema monitora lo stato della connessione di rete.
+- *Precondizioni*: il sistema monitora lo stato della connessione di rete e non rileva connessione.
 - *Postcondizioni*: il sistema espone il messaggio di errore relativo alla perdita di connessione.
-- *Trigger*: l'amministratore desidera prendere visione del messaggio di errore quando la connessione di rete è assente.
 - *Scenario principale*:
   + Il sistema rileva che la connessione di rete è persa o instabile.
   + L'amministratore visualizza il messaggio di errore sulla _dashboard_.
 
-=== UC44 - Visualizzazione errore "Sensore malfunzionante"
+=== UC55 - Visualizzazione errore "Sensore malfunzionante" <uc55>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema monitora le risposte dei sensori attivi, cioè installati su mezzi con noleggio attivo.
+- *Precondizioni*: il sistema monitora le risposte dei sensori attivi, cioè installati su mezzi con noleggio attivo e rileva uno o più errori.
 - *Postcondizioni*: il sistema espone il messaggio di malfunzionamento di un sensore.
-- *Trigger*: l'amministratore desidera prendere visione del messaggio di errore di malfunzionamento di un sensore.
 - *Scenario principale*:
   + Il sensore non comunica correttamente i dati al sistema.
   + L'amministratore visualizza il messaggio di errore sulla _dashboard_.
 
-=== UC45 - Visualizzazione errore "Generazione impossibile dell'annuncio"
+=== UC56 - Visualizzazione errore "Generazione impossibile dell'annuncio" <uc56>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema comunica con una LLM per far generare gli annunci.
+- *Precondizioni*: il sistema comunica con una LLM per far generare gli annunci, ma si verifica un errore.
 - *Postcondizioni*: il sistema espone il messaggio di impossibilità di comunicazione con la LLM.
-- *Trigger*: l'amministratore desidera prendere visione del messaggio di errore di impossibiltà di connessione con la LLM.
 - *Scenario principale*:
   + Il sistema non riesce a comunicare correttamente con la LLM, non riesce cioè a inviare o ricevere messaggi.
-  + L'amministratore viualizza il messaggio di errore sulla _dashboard_.
+  + L'amministratore visualizza il messaggio di errore sulla _dashboard_.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC42-43-44-45.png"),
-  caption: [Diagramma dei casi d'uso UC42, UC43, UC44, UC45],
+  image("../assets/use_cases/UC53-54-55-56.png"),
+  caption: [Diagramma dei casi d'uso UC53, UC54, UC55 e UC56],
 )
 
 #pagebreak()
 
 
-// OPZIONALI (rimesso da @klamerja... non sono sicuro alla fine siano opzionali o meno. Da confermare con @ErPreco)
+// OPZIONALI
 
-=== UC46 - Visualizzazione statistiche in grafici
+=== UC57 - Visualizzazione sezione grafici <uc57>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema mantiene delle informazioni utili per una anlisi statistica.
-- *Postcondizioni*: il sistema espone dei grafici che rappresentino le informazioni.
-- *Trigger*: l'amministratore desidera prendere visione dei grafici per osservare l'andamento di alcuni dati.
+- *Precondizioni*: 
+  + il sistema mantiene delle informazioni utili per una analisi statistica.
+- *Postcondizioni*: il sistema espone la vista dedicata ai grafici.
 - *Scenario principale*:
-  + L'amministratore accede alla sezione apposita dei grafici.
-  + Il sistema espone dei grafici relativi alle analisi proposte.
+  + l'amministratore entra nella _dashboard_ con i grafici per le analisi sui dati.
 - *Inclusioni*:
-  + Visualizzazione singolo grafico (#link(<uc47>)[UC47]).
+  + Visualizzazione statistiche in grafici (#link(<uc58>)[UC58]).
 
-=== UC47 - Visualizzazione singolo grafico <uc47>
+=== UC58 - Visualizzazione statistiche in grafici <uc58>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia delle informazioni dei grafici. L'amministratore accede alla sezione dedicata ai grafici.
+- *Precondizioni*: 
+  + il sistema mantiene delle informazioni utili per una analisi statistica.
+  + il sistema sta esponendo la vista dedicata ai grafici.
+- *Postcondizioni*: il sistema espone dei grafici che rappresentino le informazioni.
+- *Scenario principale*:
+  + L'amministratore visualizza i grafici con le analisi sui dati.
+- *Inclusioni*:
+  + Visualizzazione singolo grafico (#link(<uc59>)[UC59]).
+
+=== UC59 - Visualizzazione singolo grafico <uc59>
+- *Attore principale*: Amministratore.
+- *Precondizioni*: 
+  + il sistema mantiene delle informazioni utili per una analisi statistica.
+  + l'amministratore si trova nella _dashboard_ con i grafici per le analisi sui dati.
+  + il sistema sta esponendo i grafici con le analisi sui dati.
 - *Postcondizioni*: l'amministratore visualizza il grafico con le relative informazioni:
   - Titolo del grafico.
   - Etichetta dell'asse delle ascisse.
   - Etichetta dell'asse delle ordinate.
   - Etichette dei valori sugli assi.
   - Dati del grafico.
-- *Trigger*: l'amministratore desidera prendere visione del grafico che espone l'andamento di uno specifico parametro.
 - *Scenario principale*:
   + L'amministratore visualizza il grafico con le relative informazioni.
 - *Inclusioni*:
-  + Visualizzazione titolo del grafico (#link(<uc48>)[UC48]).
-  + Visualizzazione etichetta asse delle ascisse e relativi valori (#link(<uc49>)[UC49]).
-  + Visualizzazione etichetta asse delle ordinate e relativi valori (#link(<uc50>)[UC50]).
-  + Visualizzazione dati sul grafico (#link(<uc51>)[UC51]).
+  + Visualizzazione titolo del grafico (#link(<uc60>)[UC60]).
+  + Visualizzazione etichetta asse delle ascisse e relativi valori (#link(<uc61>)[UC61]).
+  + Visualizzazione etichetta asse delle ordinate e relativi valori (#link(<uc62>)[UC62]).
+  + Visualizzazione dati sul grafico (#link(<uc63>)[UC63]).
 
-=== UC48 - Visualizzazione titolo del grafico <uc48>
+=== UC60 - Visualizzazione titolo del grafico <uc60>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia del titolo del grafico. L'amministratore visualizza un grafico.
+- *Precondizioni*: 
+  + il sistema tiene traccia del titolo del grafico. 
+  + l'amministratore sta visualizzando un grafico.
 - *Postcondizioni*: il sistema espone il titolo del grafico.
-- *Trigger*: l'amministratore desidera prendere visione del titolo del grafico.
 - *Scenario principale*:
   + L'amministratore visualizza il titolo del grafico.
 
-=== UC49 - Visualizzazione etichetta asse delle ascisse e relativi valori <uc49>
+=== UC61 - Visualizzazione etichetta asse delle ascisse e relativi valori <uc61>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia delle etichette dell'asse delle ascisse e dei relativi valori di ciascun grafico. L'amministratore visualizza un grafico.
+- *Precondizioni*: 
+  + il sistema tiene traccia delle etichette dell'asse delle ascisse e dei relativi valori di ciascun grafico.
+  + l'amministratore sta visualizzando un grafico.
 - *Postcondizioni*: il sistema espone le etichette dell'asse delle ascisse e dei relativi valori.
-- *Trigger*: l'amministratore desidera prendere visione delle etichette dell'asse delle ascisse e dei rispettivi valori.
 - *Scenario principale*:
   + L'amministratore visualizza l'etichetta dell'asse delle ascisse del relativo grafico.
   + L'amministratore visualizza le etichette dei valori segnati sull'asse delle ascisse del relativo grafico.
 
-=== UC50 - Visualizzazione etichetta asse delle ordinate e relativi valori <uc50>
+=== UC62 - Visualizzazione etichetta asse delle ordinate e relativi valori <uc62>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: il sistema tiene traccia delle etichette dell'asse delle ordinate e dei relativi valori di ciascun grafico. L'amministratore visualizza un grafico.
+- *Precondizioni*: 
+  + il sistema tiene traccia delle etichette dell'asse delle ordinate e dei relativi valori di ciascun grafico.
+  + l'amministratore sta visualizzando un grafico. 
 - *Postcondizioni*: il sistema espone le etichette dell'asse delle ordinate e dei relativi valori.
-- *Trigger*: l'amministratore desidera prendere visione delle etichette dell'asse delle ordinate e dei rispettivi valori.
 - *Scenario principale*:
-  + L'amministratore visualizza l'etichetta dell'asse delle ordinate del relativo grafico.
-  + L'amministratore visualizza le etichette dei valori segnati sull'asse delle ordinate del relativo grafico.
+  + l'amministratore visualizza l'etichetta dell'asse delle ordinate del relativo grafico.
+  + l'amministratore visualizza le etichette dei valori segnati sull'asse delle ordinate del relativo grafico.
 
-// TODO: si possono mettere dati sul grafico?
-=== UC51 - Visualizzazione dati sul grafico <uc51>
+=== UC63 - Visualizzazione dati sul grafico <uc63>
 - *Attore principale*: Amministratore.
-- *Precondizioni*: lil sistema tiene traccia dei dati di ciascun grafico. L'amministratore visualizza un grafico.
+- *Precondizioni*: 
+  + il sistema tiene traccia dei dati di ciascun grafico.
+  + l'amministratore sta visualizzando un grafico. 
 - *Postcondizioni*: l'amministratore visualizza i dati sul relativo grafico.
-- *Trigger*: l'amministratore desidera prendere visione dei dati del parametro in esame sul grafico.
 - *Scenario principale*:
-  + L'amministratore visualizza i dati sul grafico.
+  + l'amministratore visualizza i dati sul grafico.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC46-47-48-49-50-51.png"),
-  caption: [Diagramma dei casi d'uso UC46, UC47, UC48, UC49, UC50 e UC51],
+  image("../assets/use_cases/UC57-58-59-60-61-62-63.png"),
+  caption: [Diagramma dei casi d'uso UC57, UC58, UC59, UC60, UC61, UC62, UC63],
 )
 
 #pagebreak()
@@ -851,7 +998,7 @@ I requisiti sono frutto dell'analisi del capitolato d'appalto, dalle varie inter
 Ogni requisito è identificato univocamente da un codice che presenta la seguente struttura:
 #align(center)[*R[Importanza][Tipo]-[ID]*]
 Viene riportata di seguito il significato e i possibili valori dei campi presenti all'interno di ogni identificativo:
-- *Importanza*: indica il grado di importanza di ogni requisito, che si disingue in:
+- *Importanza*: indica il grado di importanza di ogni requisito, che si distingue in:
   - *O*: requisito obbligatorio, ovvero che viene richiesto esplicitamente dall'azienda e strettamente necessario.
   - *D*: requisito desiderabile, ovvero che non è strettamente necessario ma da valore aggiunto al prodotto finale.
   - *F*: requisito facoltativo, ovvero che non è necessario ma può essere utile ai fini del prodotto finale. Quest'ultimi possono essere contrattati in seguito con l'azienda.
