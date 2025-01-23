@@ -25,9 +25,13 @@
   titolo: "Analisi dei Requisiti",
   uso: "Esterno",
   versioni: (
+    "1.0.0",
+    "Davide Picello\n Klaudio Merja",
+    "Andrea Perozzo\n Davide Martinelli",
+    "Approvazione versione finale del documento per rilascio in RTB"
     "0.7.0",
-    [14/01/2025],
-    "Klaudio Merja\nDavide Picello",
+    [23/01/2025],
+    "Davide Picello\n Klaudio Merja",
     "Andrea Perozzo\nDavide Martinelli",
     [- Raffinamento e completamento della stesura dei requisiti],
     "0.6.0",
