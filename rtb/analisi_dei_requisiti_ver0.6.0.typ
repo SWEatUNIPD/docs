@@ -1151,7 +1151,7 @@ Viene riportata di seguito il significato e i possibili valori dei campi present
   [#link(<uc39>)[UC39]],
 
   [ROF-x],
-  [L'amministratore deve essere in grado di visualizzare la flag riguardo all'attività o meno di un noleggio a cui è destinato l'annuncio per ogni singola voce di annuncio visualizzata all'interno dello storico.],
+  [L'amministratore deve essere in grado di visualizzare la _flag_ riguardo all'attività o meno di un noleggio a cui è destinato l'annuncio per ogni singola voce di annuncio visualizzata all'interno dello storico.],
   [#link(<uc40>)[UC40]],
 
   [ROF-x],
@@ -1171,7 +1171,7 @@ Viene riportata di seguito il significato e i possibili valori dei campi present
   [#link(<uc41>)[UC41]\ #link(<uc44>)[UC44]],
 
   [ROF-x],
-  [L'amministratore deve essere in grado di visualizzare una flag che segnala l'attività o meno di un noleggio a cui è destinato un annuncio tramite la visualizzazione dei dettagli dello stesso.],
+  [L'amministratore deve essere in grado di visualizzare una _flag_ che segnala l'attività o meno di un noleggio a cui è destinato un annuncio tramite la visualizzazione dei dettagli dello stesso.],
   [#link(<uc41>)[UC41]\ #link(<uc45>)[UC45]],
 
   [ROF-x],
@@ -1203,7 +1203,7 @@ Viene riportata di seguito il significato e i possibili valori dei campi present
   [#link(<uc52>)[UC52]],
 
   [ROF-x],
-  [L'amministrato deve poter ricevere un messaggio di errore con corpo "Il server non risponde" nel caso in cui il sistema non risponda o smetta di funzionare, ritornando per esempio un errore 500.],
+  [L'amministrato deve poter ricevere un messaggio di errore con corpo "Il _server_ non risponde" nel caso in cui il sistema non risponda o smetta di funzionare, ritornando per esempio un errore 500.],
   [#link(<uc53>)[UC53]],
 
   [ROF-x],
