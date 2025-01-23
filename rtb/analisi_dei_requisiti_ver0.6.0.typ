@@ -217,7 +217,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   - L'amministratore non autenticato si trova nella pagina di _login_. 
   - Il sistema si aspetta di ricevere un indirizzo _e-mail_.
 - *Postcondizioni*: 
-  - Il sistema accetta l'_e-mail_ inserita.
+  - Il sistema reputa valida l'_e-mail_ inserita.
 - *Scenario principale*:
   + L'amministratore non autenticato accede alla pagina di _login_ del sistema.
   + L'amministratore non autenticato inserisce l'_e-mail_ con la quale è registrato nel sistema.
@@ -229,7 +229,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   - L'amministratore non autenticato si trova nella pagina di _login_. 
   - Il sistema si aspetta di ricevere una _password_.
 - *Postcondizioni*: 
-  - Il sistema accetta la _password_ inserita.
+  - Il sistema reputa valida la _password_ inserita.
 - *Scenario principale*:
   + L'amministratore non autenticato accede alla pagina di _login_ del sistema.
   + L'amministratore non autenticato inserisce la _password_ con la quale è registrato nel sistema.
@@ -416,8 +416,8 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   - Visualizzazione nome del punto di interesse dell'annuncio aperto dal _marker_ (#link(<uc17>)[UC17]).
   - Visualizzazione _e-mail_ dell'utente dell'annuncio aperto dal _marker_ (#link(<uc18>)[UC18]).
   - Visualizzazione data e ora di generazione annuncio dell'annuncio aperto dal _marker_ (#link(<uc19>)[UC19]).
-  - Visualizzazione completa dell'annuncio aperto dal _marker_ (#link(<uc20>)[UC20]).
-  - Visualizzazione categoria del punto di interesse collegato all'annuncio aperto dal _marker_ (#link(<uc21>)[UC21]).
+  - Visualizzazione del corpo dell'annuncio aperto dal _marker_ (#link(<uc20>)[UC20]).
+  - Visualizzazione categoria del punto di interesse dell'annuncio aperto dal _marker_ (#link(<uc21>)[UC21]).
 
 
 
@@ -461,7 +461,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   + L'amministratore visualizza interamente il corpo dell'annuncio generato aperto dal _marker_.
 
-=== UC21 - Visualizzazione categoria del punto di interesse dell'annuncio aperto dal marker<uc21>
+=== UC21 - Visualizzazione categoria del punto di interesse dell'annuncio aperto dal marker <uc21>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
   - Il sistema tiene traccia della categoria del punto di interesse collegato al relativo annuncio.
@@ -726,14 +726,14 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   + L'amministratore visualizza la data e l'ora di tentativo di generazione del singolo annuncio nello storico.
 
-=== UC40 - Visualizzazione flag sugli annunci nello storico inviati a noleggi attivi dall'annuncio nello storico
+=== UC40 - Visualizzazione flag sugli annunci nello storico legati a noleggi attivi dall'annuncio nello storico
 <uc40>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
-  - Il sistema tiene traccia dello stato del noleggio al quale è stato inviato l'annuncio, se è cioè ancora attivo o meno.
+  - Il sistema tiene traccia dello stato del noleggio al quale è legato l'annuncio, se è cioè ancora attivo o meno.
   - L'amministratore sta visualizzando un singolo annuncio nello storico.
 - *Postcondizioni*: 
-  - Il sistema espone un _flag_ nel caso il noleggio al quale è stato inviato il singolo annuncio nello storico è ancora attivo.
+  - Il sistema espone un _flag_ nel caso il noleggio al quale è legato il singolo annuncio nello storico è ancora attivo.
 - *Scenario principale*:
   + L'amministratore visualizza il _flag_ nel caso in cui il noleggio relativo al singolo annuncio nello storico è ancora attivo.
 #v(20pt)
@@ -792,14 +792,14 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   + L'amministratore visualizza la data e l'ora di tentativo di generazione annuncio aperto dallo storico.
 
-=== UC45 - Visualizzazione flag sugli annunci nello storico inviati a noleggi attivi dal dettaglio di un annuncio  aperto dallo storico
+=== UC45 - Visualizzazione flag sugli annunci nello storico legati a noleggi attivi dal dettaglio di un annuncio  aperto dallo storico
 <uc45>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
-  - Il sistema tiene traccia dello stato del noleggio al quale è stato inviato l'annuncio, se è cioè ancora attivo o meno.
+  - Il sistema tiene traccia dello stato del noleggio al quale è legato l'annuncio, se è cioè ancora attivo o meno.
   - L'amministratore sta visualizzando il dettaglio di un singolo annuncio aperto dallo storico.
 - *Postcondizioni*: 
-  - Il sistema espone un _flag_ nel caso il noleggio al quale è stato inviato l'annuncio aperto dallo storico è ancora attivo .
+  - Il sistema espone un _flag_ nel caso il noleggio al quale è legato l'annuncio aperto dallo storico è ancora attivo .
 - *Scenario principale*:
   + L'amministratore visualizza il _flag_ nel caso in cui il noleggio relativo all'annuncio aperto dallo storico è ancora attivo.
 
@@ -907,7 +907,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 === UC52 - Ricerca degli annunci nello storico per fascia oraria di emissione <uc52>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
-  - Il sistema tiene traccia di tutti gli annunci emessi nell'intervallo di date selezionato.
+  - Il sistema tiene traccia di tutti gli annunci emessi nella fascia oraria selezionata.
   - L'amministratore sta visualizzando la sezione dedicata agli annunci.
   - L'amministratore ha selezionato l'opzione per filtrare gli annunci per fascia oraria di emissione.
 - *Postcondizioni*: 
@@ -956,7 +956,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 === UC56 - Visualizzazione errore "Generazione impossibile dell'annuncio" <uc56>
 - *Attore principale*: Amministratore.
 - *Precondizioni*: 
-  - Il sistema comunica con ls LLM per far generare gli annunci, ma si verifica un errore.
+  - Il sistema comunica con la LLM per far generare gli annunci, ma si verifica un errore.
 - *Postcondizioni*: 
   - Il sistema espone il messaggio di impossibilità di comunicazione con la LLM.
 - *Scenario principale*:
