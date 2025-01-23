@@ -39,24 +39,24 @@ partecipanti: (
 )
 
 = Sintesi dell'incontro
-Abbiamo presentato il diagramma delle attività sul quale nutrivamo alcuni dubbi. Sono stati chiariti facendo anche emergere alcune osservazioni importanti. È seguita poi l'esibizione del #rifGlossario("PoC") rispetto al quale abbiamo ricevuto dei complimenti.
+Abbiamo presentato il diagramma delle attività sul quale nutrivamo alcuni dubbi. Questi sono stati chiariti facendo anche emergere alcune osservazioni importanti. È seguita poi l'esposizione del #rifGlossario("PoC") rispetto al quale abbiamo ricevuto dei complimenti.
 
 = Risposte alle domande
 
 == Diagramma delle attività
 Abbiamo presentato il diagramma delle attività discutendo poi sulla correttezza del flusso. Dialogando principalmente con Fabio Pallaro ci siamo accorti che deve essere aggiunta la fase di controllo riguardo alla possibilità dell'utente di aver già ricevuto l'annuncio per il punto di interesse.
 
-Si è sollevata anche una questione circa alla responsabilità di controllare se l'utente può essere interessato al punto di interesse. Sono state evidenziate tre possibilità:
+Si è sollevata anche una questione circa la modalità con cui viene controllato se l'utente può essere interessato al punto di interesse. Sono state evidenziate tre possibilità:
 + Eseguire una sola richiesta alla #rifGlossario("LLM"), questa deve valutare la profilazione dell'utente ed eventualmente generare l'annuncio.
 + Eseguire due richieste alla LLM, la prima per valutare la profilazione dell'utente ed eventualmente la seconda per far generare l'annuncio.
 + Valutare internamente al sistema la profilazione dell'utente ed eventualmente richiedere la generazione dell'annuncio.
-Fabio Pallaro ci ha fatto notare che affidare l'intero compito alla LLM potrebbe portare ad una saturazione delle richieste disponibili. Tuttavia ci sembra più efficace la valutazione di una LLM specie considerando che l'informazione principale della profilazione è un campo di testo libero. Al momento quindi abbiamo quindi optato per la prima soluzione.
+Fabio Pallaro ci ha fatto notare che affidare l'intero compito alla LLM potrebbe portare ad una saturazione delle richieste disponibili. Tuttavia ci sembra più efficace la valutazione di una LLM, specie considerando che l'informazione principale della profilazione è un campo di testo libero. Al momento quindi abbiamo optato per la prima soluzione.
 
 == PoC
-Abbiamo presentato l'ultima istanza del PoC che sarà quella presentata alla consegna della _milestone_. Ci è stato confermato il lavoro con un solo accorgimento da apportare, cioè scostare il punto di interesse dal tracciato del mezzo in modo che sia più realistico e visibile.
+Abbiamo presentato l'ultima istanza del PoC che sarà quella presentata alla consegna della _milestone_. Ci è stato confermato il lavoro con un solo accorgimento da apportare, cioè scostare il punto di interesse dal centro della strada in modo che sia più realistico e visibile.
 
 = Conclusioni
-Chiarendo le ultime questioni riguardo il diagramma delle attività abbiamo concluso il lavoro di analisi dei requisiti e dei casi d'uso. Avendo ricevuto riscontri positivi sia per la documentazione sia per il PoC programmiamo di concludere e approvare gli ultimi lavori entro il fine settimana. La consegna è quindi stata sposta a lunedì 27 gennaio.
+Chiarendo le ultime questioni riguardo il diagramma delle attività abbiamo concluso il lavoro di analisi dei requisiti e dei casi d'uso. Avendo ricevuto riscontri positivi sia per la documentazione sia per il PoC programmiamo di concludere e approvare gli ultimi lavori entro il fine settimana. La consegna è stata quindi sposta a lunedì 27 gennaio.
 
 = Tabella delle decisioni
 #backlog(
