@@ -665,10 +665,10 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   - Il sistema espone gli annunci generati fino a quel momento.
   - L'amministratore ha selezionato l'opzione per visualizzare gli annunci sotto forma di lista.
 - *Postcondizioni*: 
-  - Gli annunci vengono mostrati nella dashboard all'amministratore sotto forma di lista.
+  - Gli annunci vengono mostrati nella _dashboard_ all'amministratore sotto forma di lista.
 - *Scenario principale*:
   + L'amministratore accede alla sezione apposita degli annunci.
-  + L'amministratore selezione l'opzione per visualizzare gli annunci in lista.
+  + L'amministratore seleziona l'opzione per visualizzare gli annunci in lista.
 
 === UC35 - Visualizzazione storico annunci in griglia <uc35>
 - *Attore principale*: Amministratore.
@@ -679,7 +679,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   - Gli annunci vengono mostrati nella _dashboard_ all'amministratore sotto forma di griglia.
 - *Scenario principale*:
   + L'amministratore accede alla sezione apposita degli annunci.
-  + L'amministratore selezione l'opzione per visualizzare gli annunci in griglia.
+  + L'amministratore seleziona l'opzione per visualizzare gli annunci in griglia.
 
 === UC36 - Visualizzazione singolo annuncio nello storico <uc36>
 - *Attore principale*: Amministratore.
