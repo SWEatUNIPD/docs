@@ -8,6 +8,12 @@
   titolo: "Glossario",
   verificatori: ("Andrea Perozzo", "Andrea Precoma", "Davide Marin", "Davide Picello", "Riccardo Milan"),
   versioni: (
+    "0.14.0",
+    "23/01/2025",
+    "Davide Marin\nRiccardo Milan",
+    "Andrea Perozzo\nDavide Martinelli",
+    [- Aggiunto il termine "Dashboard"],
+
     "0.13.0",
     "24/12/2024",
     "Riccardo Milan",
