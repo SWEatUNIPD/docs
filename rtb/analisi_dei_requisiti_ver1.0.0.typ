@@ -26,6 +26,7 @@
   uso: "Esterno",
   versioni: (
     "1.0.0",
+    "24/01/2025",
     "Davide Picello\n Klaudio Merja",
     "Andrea Perozzo\n Davide Martinelli",
     "Approvazione versione finale del documento per rilascio in RTB",
