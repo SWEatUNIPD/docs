@@ -3,7 +3,7 @@
 #show: content => verbale(
   data: "25 novembre 2024",
   destinatari: ("Gruppo SWE@", "Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "Sync Lab S.r.L."),
-  responsabile: "-",
+  responsabile: "Andrea Precoma",
   redattori: (
     "Andrea Perozzo",
     "Andrea Precoma",
@@ -28,7 +28,7 @@
     "1.0.0",
     "Davide Picello\n Klaudio Merja",
     "Andrea Perozzo\n Davide Martinelli",
-    "Approvazione versione finale del documento per rilascio in RTB"
+    "Approvazione versione finale del documento per rilascio in RTB",
     "0.7.0",
     [23/01/2025],
     "Davide Picello\n Klaudio Merja",
