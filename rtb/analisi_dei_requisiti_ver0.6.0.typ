@@ -1030,7 +1030,7 @@ Viene riportata di seguito il significato e i possibili valori dei campi present
   [#link(<uc4>)[UC4]],
 
   [ROF-x],
-  [Se l'amministratore inserisce delle credenziali invalide, come una _e-mail_ o _password_ non valida, il sistema deve ritornare il messaggio di errore "Credenziali errate".],
+  [Se l'amministratore inserisce delle credenziali non valide, come una _e-mail_ o _password_ non valida, il sistema deve ritornare il messaggio di errore "Credenziali errate".],
   [#link(<uc5>)[UC5]],
 
   [ROF-x],
@@ -1046,7 +1046,7 @@ Viene riportata di seguito il significato e i possibili valori dei campi present
   [#link(<uc8>)[UC8]],
 
   [ROF-x],
-  [L'amministratore deve poter visualizzare il _marker_ in corrispondenza di un dato GPS trasmesso dal sensore all'interno della mappa quando non è in prossimità di un punto di interesse oppure è già stata richiesta in precedenza la generazione di un annuncio per lo stesso punto di interesse.],
+  [L'amministratore deve poter visualizzare il _marker_ in corrispondenza di un dato GPS trasmesso dal sensore all'interno della mappa quando non è in prossimità di un punto di interesse, oppure quando è già stata richiesta in precedenza la generazione di un annuncio per lo stesso punto di interesse.],
   [#link(<uc9>)[UC9]\ #link(<uc10>)[UC10]],
 
   [ROF-x],
@@ -1057,17 +1057,17 @@ Viene riportata di seguito il significato e i possibili valori dei campi present
   [L'amministratore deve poter visualizzare i _marker_ in corrispondenza di una posizione in prossimità di un punto di interesse che non ha causato la generazione dell'annuncio tramite LLM in quanto l'utente viene considerato non interessato.],
   [#link(<uc9>)[UC9]\ #link(<uc12>)[UC12]],
 
-  //FIXME: @Davide Picello: secondo me potevamo lasciare anche separate. Piuttosto aggiungo un riferimento allo stesso use case (da chiedere anche a revisori e responsabile)
+  //FIXME: secondo me potevamo lasciare anche separate. Piuttosto aggiungo un riferimento allo stesso use case (da chiedere anche a revisori e responsabile)
   [ROF-x],
-  [L'amministratore deve poter visualizzare tramite l'interazione con il _marker_ (come un _hover_ o un _click_) del punto di interesse le informazioni relative.],
+  [L'amministratore deve poter visualizzare tramite l'interazione con il _marker_ (come un _hover_ o un _click_) le informazioni relative al punto di interesse.],
   [#link(<uc13>)[UC13]],
 
   [ROF-x],
-  [L'amministratore deve poter visualizzare dalle informazioni fornite dal _marker_ del punto di interesse il nome della stesso.],
+  [L'amministratore deve poter visualizzare, dalle informazioni fornite dal _marker_ del punto di interesse, il nome della stesso.],
   [#link(<uc13>)[UC13]\ #link(<uc14>)[UC14]],
 
   [ROF-x],
-  [L'amministratore deve poter visualizzare dalle informazioni fornite dal _marker_ del punto di interesse la categoria del suo esercizio commerciale (e.g. alimentare, sportivo ed etc.).],
+  [L'amministratore deve poter visualizzare, dalle informazioni fornite dal _marker_ del punto di interesse, la categoria del suo esercizio commerciale (e.g. alimentare, sportivo ed etc.).],
   [#link(<uc13>)[UC13]\ #link(<uc15>)[UC15]],
 
   [ROF-x],
@@ -1075,39 +1075,39 @@ Viene riportata di seguito il significato e i possibili valori dei campi present
   [#link(<uc16>)[UC16]],
 
   [ROF-x],
-  [L'amministratore deve poter visualizzare il nome del punto di interesse attraverso l'annuncio visualizzato tramite un _marker_ di generazione annuncio.],
+  [L'amministratore deve poter visualizzare il nome del punto di interesse,  attraverso l'annuncio visualizzato, tramite un _marker_ di generazione annuncio.],
   [#link(<uc16>)[UC16]\ #link(<uc17>)[UC17]],
 
   [ROF-x],
-  [L'amministratore deve poter visualizzare l'email dell'utente destinatario attraverso l'annuncio visualizzato tramite un _marker_ di generazione annuncio.],
+  [L'amministratore deve poter visualizzare l'email dell'utente destinatario,  attraverso l'annuncio visualizzato, tramite un _marker_ di generazione annuncio.],
   [#link(<uc16>)[UC16]\ #link(<uc18>)[UC18]],
 
   [ROF-x],
-  [L'amministratore deve poter visualizzare la data e l'ora di generazione dell'annuncio attraverso l'annuncio visualizzato un _marker_ di generazione annuncio.],
+  [L'amministratore deve poter visualizzare la data e l'ora di generazione dell'annuncio,  attraverso l'annuncio visualizzato, un _marker_ di generazione annuncio.],
   [#link(<uc16>)[UC16]\ #link(<uc19>)[UC19]],
 
   [ROF-x],
-  [L'amministratore deve poter visualizzare il corpo dell'annuncio attraverso l'annuncio visualizzato tramite un _marker_ di generazione annuncio.],
+  [L'amministratore deve poter visualizzare il corpo dell'annuncio,  attraverso l'annuncio visualizzato, tramite un _marker_ di generazione annuncio.],
   [#link(<uc16>)[UC16]\ #link(<uc20>)[UC20]],
 
   [ROF-x],
-  [L'amministratore deve poter visualizzare la categoria di esercizio commerciale del punto di interesse coinvolto nella generazione attraverso l'annuncio visualizzato tramite un _marker_ di generazione annuncio.],
-  [#link(<uc16>)[UC16]\ #link(<uc20>)[UC21]],
+  [L'amministratore deve poter visualizzare la categoria di esercizio commerciale del punto di interesse coinvolto nella generazione,  attraverso l'annuncio visualizzato, tramite un _marker_ di generazione annuncio.],
+  [#link(<uc16>)[UC16]\ #link(<uc21>)[UC21]],
 
   [ROF-x],
-  [L'amministratore deve poter visualizzare un messaggio di annuncio non generato tramite l'interazione con un _marker_ di generazione fallita.], //TODO: la rivedrei un attimo
+  [L'amministratore deve poter visualizzare un messaggio con le informazioni di un annuncio non generato, tramite l'interazione con un _marker_ di mancata generazione.],
   [#link(<uc22>)[UC22]],
 
   [ROF-x],
-  [L'amministratore deve poter visualizzare il nome del punto di interesse per cui è stato effettuato un tentativo di generazione all'interno del messaggio di annuncio non generato visualizzato tramite il _marker_ di generazione fallita.],
+  [L'amministratore deve poter visualizzare un messaggio con le informazioni di un annuncio non generato, tramite l'interazione con un _marker_ di mancata generazione, tra cui il nome del punto di interesse.],
   [#link(<uc22>)[UC22]\ #link(<uc23>)[UC23]],
 
   [ROF-x],
-  [L'amministratore deve poter visualizzare l'_email_ dell'utente destinatario per cui è stato effettuato un tentativo di generazione all'interno del messaggio di annuncio non generato visualizzato tramite il marker di generazione fallita.],
+  [L'amministratore deve poter visualizzare un messaggio con le informazioni di un annuncio non generato, tramite l'interazione con un _marker_ di mancata generazione, tra cui l'_e-mail_ dell’utente.],
   [#link(<uc22>)[UC22]\ #link(<uc24>)[UC24]],
 
   [ROF-x],
-  [L'amministratore deve poter visualizzare la data e l'ora di tentativo di generazione all'interno del messaggio di annuncio non generato visualizzato tramite il _marker_ di generazione fallita.],
+  [L'amministratore deve poter visualizzare un messaggio con le informazioni di un annuncio non generato, tramite l'interazione con un _marker_ di mancata generazione, tra cui la data e ora di tentata generazione.],
   [#link(<uc22>)[UC22]\ #link(<uc25>)[UC25]],
 
   [ROF-x],
@@ -1115,19 +1115,19 @@ Viene riportata di seguito il significato e i possibili valori dei campi present
   [#link(<uc26>)[UC26]],
 
   [ROF-x],
-  [L'amministratore deve poter chiudere il messaggio di annuncio non generato visualizzato sulla mappa tramite l'interazione con un _marker_ di generazione fallita.],
+  [L'amministratore deve poter chiudere il messaggio di annuncio non generato visualizzato sulla mappa tramite l'interazione con un _marker_ di mancata generazione.],
   [#link(<uc27>)[UC27]],
 
   [ROF-x],
-  [L'amministratore deve essere in grado di interagire con la mappa per spostare il centro della visuale all'interno della stessa.],
+  [L'amministratore deve essere in grado di interagire con la mappa per spostare il centro della visuale.],
   [#link(<uc28>)[UC28]],
 
   [ROF-x],
   [L'amministratore deve essere in grado di modificare l'ampiezza della visuale sulla mappa. In particolare bisogna permettere l'ampliamento e il restringimento del campo visivo che l'amministratore ha sul territorio visualizzato all'interno della mappa.],
-  [#link(<uc29>)[UC29]\ #link(<uc30>)[UC30]\ #link(<uc31>)[UC31]], //FIXME: Kla x Pic: ho messo assieme questi 3 use case in quanto molto banali, vedi te comunque
+  [#link(<uc29>)[UC29]\ #link(<uc30>)[UC30]\ #link(<uc31>)[UC31]],
 
   [ROF-x],
-  [L'amministratore deve essere in grado di visualizzare la sezione dedicato allo storico degli annunci generati all'interno della _dashboard_.],
+  [L'amministratore deve essere in grado di accedere la sezione dedicata allo storico degli annunci generati all'interno della _dashboard_.],
   [#link(<uc32>)[UC32]],
 
   [ROF-x],
@@ -1167,7 +1167,7 @@ Viene riportata di seguito il significato e i possibili valori dei campi present
   [#link(<uc41>)[UC41]\ #link(<uc43>)[UC43]],
 
   [ROF-x],
-  [L'amministratore deve essere in grado di visualizzare l'email dell'utente destinatario di un annuncio tramite la visualizzazione dei dettagli dello stesso.],
+  [L'amministratore deve essere in grado di visualizzare data e ora del tentativo di generazione di un annuncio tramite la visualizzazione dei dettagli dello stesso.],
   [#link(<uc41>)[UC41]\ #link(<uc44>)[UC44]],
 
   [ROF-x],
@@ -1187,35 +1187,35 @@ Viene riportata di seguito il significato e i possibili valori dei campi present
   [#link(<uc48>)[UC48]],
 
   [ROF-x],
-  [L'amministratore deve essere in grado, tramite un sistema di filtraggio e di ricerca, di ricercare gli annunci dello storico per _e-mail_ dell'utente destinatario dell'annuncio.],
+  [L'amministratore deve essere in grado, tramite un sistema di filtraggio e di ricerca, di visualizzare gli annunci dello storico per _e-mail_ dell'utente destinatario dell'annuncio.],
   [#link(<uc49>)[UC49]],
 
   [ROF-x],
-  [L'amministratore deve essere in grado, tramite un sistema di filtraggio e di ricerca, di ricercare gli annunci dello storico per nome del punto di interesse collegato all'annuncio.],
+  [L'amministratore deve essere in grado, tramite un sistema di filtraggio e di ricerca, di visualizzare gli annunci dello storico per nome del punto di interesse collegato all'annuncio.],
   [#link(<uc50>)[UC50]],
 
   [ROF-x],
-  [L'amministratore deve essere in grado, tramite un sistema di filtraggio e di ricerca, di ricercare gli annunci dello storico generati in un intervallo di date di emissione degli annunci.],
+  [L'amministratore deve essere in grado, tramite un sistema di filtraggio e di ricerca, di visualizzare gli annunci dello storico generati in un intervallo di date di emissione degli annunci.],
   [#link(<uc51>)[UC51]],
 
   [ROF-x],
-  [L'amministratore deve essere in grado, tramite un sistema di filtraggio e di ricerca, di ricercare gli annunci dello storico generati in una determinata fascia oraria.],
+  [L'amministratore deve essere in grado, tramite un sistema di filtraggio e di ricerca, di visualizzare gli annunci dello storico generati in una determinata fascia oraria.],
   [#link(<uc52>)[UC52]],
 
   [ROF-x],
-  [L'amministrato deve poter ricevere un errore con corpo "Il server non risponde" nel caso in cui il sistema non risponda o smetta di funzionare, ritornando per esempio un errore 500.],
+  [L'amministrato deve poter ricevere un messaggio di errore con corpo "Il server non risponde" nel caso in cui il sistema non risponda o smetta di funzionare, ritornando per esempio un errore 500.],
   [#link(<uc53>)[UC53]],
 
   [ROF-x],
-  [L'amministratore deve poter ricevere un errore con il corpo "Connessione persa" nel caso in cui la connessione con il sistema venga persa o sia instabile.],
+  [L'amministratore deve poter ricevere un messaggio di errore con il corpo "Connessione persa" nel caso in cui la connessione con il sistema venga persa o sia instabile.],
   [#link(<uc54>)[UC54]],
 
   [ROF-x],
-  [L'amministratore deve poter ricevere un errore con il corpo "Sensore malfunzionante" nel caso in cui il sensore non sia in grado di trasmettere i dati di localizzazione in maniera corretta o non trasmetta dopo un determinato intervallo di tempo.],
+  [L'amministratore deve poter ricevere un messaggio di errore con il corpo "Sensore malfunzionante" nel caso in cui il sensore non sia in grado di trasmettere i dati di localizzazione in maniera corretta o non trasmetta dopo un determinato intervallo di tempo.],
   [#link(<uc55>)[UC55]],
 
   [ROF-x],
-  [L'amministratore deve poter visualizzare l'errore con il corpo "Generazione impossibile dell'annuncio" nel caso in cui il sistema non sia in grado di stabilire una connessione e comunicare con il servizio di LLM, non permettendo così la trasmissione e la ricezione di dati da parte di quest'ultimo.],
+  [L'amministratore deve poter visualizzare un messaggio di errore con il corpo "Generazione impossibile dell'annuncio" nel caso in cui il sistema non sia in grado di stabilire una connessione e comunicare con il servizio di LLM, non permettendo così la trasmissione e la ricezione di dati da parte di quest'ultimo.],
   [#link(<uc56>)[UC56]],
 
   [ROF-x],
@@ -1223,7 +1223,7 @@ Viene riportata di seguito il significato e i possibili valori dei campi present
   [#link(<uc57>)[UC57]],
 
   [ROF-x],
-  [L'amministratore deve poter visualizzare le statistiche relative ai dati in analisi dal sistema in degli opportuni grafici.],
+  [L'amministratore deve poter visualizzare le statistiche relative ai dati del sistema, in degli opportuni grafici.],
   [#link(<uc58>)[UC58]],
 
   [ROF-x],
@@ -1235,12 +1235,8 @@ Viene riportata di seguito il significato e i possibili valori dei campi present
   [#link(<uc60>)[UC60]],
 
   [ROF-x],
-  [L'amministratore deve poter visualizzare un'etichetta relativa alla tipologia di misura rappresentata sull'asse delle ascisse di uno specifico grafico e i relativi valori.],
-  [#link(<uc61>)[UC61]],
-
-  [ROF-x],
-  [L'amministratore deve poter visualizzare un'etichetta relativa alla tipologia di misura rappresentata sull'asse delle ordinate di uno specifico grafico e i relativi valori.],
-  [#link(<uc62>)[UC62]], //FIXME: queste ultime due si potrebbero unire @Davide Picello
+  [L'amministratore deve poter visualizzare un'etichetta relativa alla tipologia di misura rappresentata sulle assi delle ascisse e delle ordinate di uno specifico grafico e i relativi valori.],
+  [#link(<uc61>)[UC61]\ #link(<uc62>)[UC62]],
   //Cosa si intende con "relativi valori".. la scala?
 
   [ROF-x],
