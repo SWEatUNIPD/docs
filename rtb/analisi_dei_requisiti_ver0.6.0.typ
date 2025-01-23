@@ -1015,210 +1015,237 @@ Viene riportata di seguito il significato e i possibili valori dei campi present
   table.header([*Codice*], [*Descrizione*], [*Origine*]),
   [ROF-x],
   [Il sensore deve trasmettere i suoi dati di identificazione e localizzazione al sistema a intervalli regolari.],
-  [/*Trasmissione dei dati di identificazione e localizzazione del sensore*/],
+  [#link(<uc1>)[UC1]],
 
   [ROF-x],
   [La _dashboard_ dell'amministratore, per essere accessibile solamente da quest'ultimo, deve essere protetta da un sistema di autenticazione. Per poter visualizzare la _dashboard_ l'amministratore deve quindi autenticarsi con le proprie credenziali.],
-  [/*Autenticazione alla dashboard del sistema*/],
+  [#link(<uc2>)[UC2]],
 
   [ROF-x],
   [L'amministratore, per poter accedere alla _dashboard_, deve fornire l'indirizzo _e-mail_ dell'_account_ con cui è registrato all'interno del sistema.],
-  [/*Inserimento e-mail per l'autenticazione alla dashboard*/],
+  [#link(<uc3>)[UC3]],
 
   [ROF-x],
   [L'amministratore, per poter accedere alla _dashboard_, deve fornire la _password_ dell'_account_ con cui è registrato all'interno del sistema.],
-  [/*Inserimento password per l'autenticazione alla dashboard*/],
+  [#link(<uc4>)[UC4]],
 
   [ROF-x],
-  [Se l'amministratore inserisce delle credenziali invalide, come una _e-mail_ o _password_ non valida, il sistema deve ritornare un avviso che informi l'utente riguardo l'errore.],
-  [/*Visualizzazione errore Credenziali errate*/],
+  [Se l'amministratore inserisce delle credenziali invalide, come una _e-mail_ o _password_ non valida, il sistema deve ritornare il messaggio di errore "Credenziali errate".],
+  [#link(<uc5>)[UC5]],
 
   [ROF-x],
-  [L'amministratore, una volta autenticato, deve poter visualizzare la mappa geografica sulla dashboard.],
-  [/*Visualizzazione della mappa geografica sulla dashboard*/],
+  [L'amministratore, una volta autenticato, deve poter visualizzare la mappa geografica sulla _dashboard_ del sistema.],
+  [#link(<uc6>)[UC6]],
 
   [ROF-x],
-  [L'amministratore deve poter visualizzare tutti i punti di interesse all'interno della mappa geografica mediante l'ausilio dei _marker_.],
-  [/*Visualizzazione marker sulla mappa per i punti di interesse*/],
+  [L'amministratore deve poter visualizzare i punti di interesse presenti all'interno del sistema tramite i _marker_ posizionati all'interno della mappa geografica.],
+  [#link(<uc7>)[UC7]],
 
   [ROF-x],
-  [L'amministratore deve poter visualizzare il tracciato percorso da un mezzo a noleggio per ogni noleggio attivo che viene erogato dal sistema.],
-  [/*Visualizzazione percorso del mezzo in noleggio sulla mappa*/],
+  [L'amministratore deve poter visualizzare il tracciato percorso da un mezzo a noleggio per ogni noleggio attivo che viene erogato dal sistema attraverso la mappa geografica.],
+  [#link(<uc8>)[UC8]],
 
   [ROF-x],
-  [L'amministratore deve poter visualizzare il _marker_ sul tracciato percorso da un mezzo a noleggio all'interno della mappa.],
-  [/*Visualizzazione marker sul tracciato dei mezzi con noleggio attivo*/],
-
-  [ROF-x],
-  [L'amministratore deve poter visualizzare il _marker_ in corrispondenza di un dato GPS trasmesso dal sensore all'interno della mappa quando non è in prossimità di un punto di interesse oppure è già stato generato un annuncio in precedenza per lo stesso punto di interesse.],
-  [/*Visualizzazione marker sul tracciato dei mezzi con noleggio attivo in corrispondenza di un dato GPS*/],
+  [L'amministratore deve poter visualizzare il _marker_ in corrispondenza di un dato GPS trasmesso dal sensore all'interno della mappa quando non è in prossimità di un punto di interesse oppure è già stata richiesta in precedenza la generazione di un annuncio per lo stesso punto di interesse.],
+  [#link(<uc9>)[UC9]\ #link(<uc10>)[UC10]],
 
   [ROF-x],
   [L'amministratore deve poter visualizzare il _marker_ in corrispondenza di una posizione in prossimità di un punto di interesse e che ha causato la generazione di un annuncio tramite LLM.],
-  [/*Visualizzazione marker sul tracciato dei mezzi con noleggio attivo in corrispondenza della generazione di un annuncio*/],
+  [#link(<uc9>)[UC9]\ #link(<uc11>)[UC11]],
 
   [ROF-x],
-  [L'amministratore deve poter visualizzare i _marker_ in corrispondenza di una posizione in prossimità di un punto di interesse che non ha causato la generazione di un annuncio tramite LLM.],
-  [/*Visualizzazione marker sul tracciato dei mezzi con noleggio attivo in corrispondenza della mancata generazione di un annuncio*/],
+  [L'amministratore deve poter visualizzare i _marker_ in corrispondenza di una posizione in prossimità di un punto di interesse che non ha causato la generazione dell'annuncio tramite LLM in quanto l'utente viene considerato non interessato.],
+  [#link(<uc9>)[UC9]\ #link(<uc12>)[UC12]],
 
-  /*FIXME: questi 3 casi d'uso si possono compattare in un unico requisito -> da valutare*/
+  //FIXME: @Davide Picello: secondo me potevamo lasciare anche separate. Piuttosto aggiungo un riferimento allo stesso use case (da chiedere anche a revisori e responsabile)
   [ROF-x],
-  [L'amministratore deve poter visualizzare le informazioni relative ad un particolare punto di interesse tramite l'interazione (come un _hover_ o un _click_) con il marker dello stesso.],
-  [/*Visualizzazione informazioni punto di interesse tramite marker sulla mappa*/],
-
-  [ROF-x],
-  [L'amministratore deve poter visualizzare il nome del punto di interesse tramite l'interazione con il marker dello stesso.],
-  [/*Visualizzazione nome del punto di interesse dal marker del punto di interesse*/],
+  [L'amministratore deve poter visualizzare tramite l'interazione con il _marker_ (come un _hover_ o un _click_) del punto di interesse le informazioni relative.],
+  [#link(<uc13>)[UC13]],
 
   [ROF-x],
-  [L'amministratore deve poter visualizzare la categoria di mercato del punto di interesse tramite l'interazione con il marker dello stesso.],
-  [/*Visualizzazione categoria del punto di interesse dal marker del punto di interesse*/],
+  [L'amministratore deve poter visualizzare dalle informazioni fornite dal _marker_ del punto di interesse il nome della stesso.],
+  [#link(<uc13>)[UC13]\ #link(<uc14>)[UC14]],
 
   [ROF-x],
-  [L'amministratore deve poter visualizzare l'annuncio generato tramite l'interazione con un marker di generazione annuncio.],
-  [/*Visualizzazione annuncio tramite marker sulla mappa*/],
+  [L'amministratore deve poter visualizzare dalle informazioni fornite dal _marker_ del punto di interesse la categoria del suo esercizio commerciale (e.g. alimentare, sportivo ed etc.).],
+  [#link(<uc13>)[UC13]\ #link(<uc15>)[UC15]],
 
   [ROF-x],
-  [L'amministratore deve poter visualizzare il nome del punto di interesse relativo all'annuncio generato.],
-  [/*Visualizzazione nome del punto di interesse dell'annuncio aperto dal marker*/],
+  [L'amministratore deve poter visualizzare l'annuncio generato tramite l'interazione con un _marker_ di generazione annuncio.],
+  [#link(<uc16>)[UC16]],
 
   [ROF-x],
-  [L'amministratore deve poter visualizzare l'email dell'utente destinatario dell'annuncio generato.],
-  [/*Visualizzazione e-mail dell'utente dell'annuncio aperto dal marker*/],
+  [L'amministratore deve poter visualizzare il nome del punto di interesse attraverso l'annuncio visualizzato tramite un _marker_ di generazione annuncio.],
+  [#link(<uc16>)[UC16]\ #link(<uc17>)[UC17]],
 
   [ROF-x],
-  [L'amministratore deve poter visualizzare la data e l'ora di tentativo di generazione dell'annuncio generato.],
-  [/*Visualizzazione data e ora di tentativo di generazione annuncio dell'annuncio aperto dal marker*/],
+  [L'amministratore deve poter visualizzare l'email dell'utente destinatario attraverso l'annuncio visualizzato tramite un _marker_ di generazione annuncio.],
+  [#link(<uc16>)[UC16]\ #link(<uc18>)[UC18]],
 
   [ROF-x],
-  [L'amministratore deve poter visualizzare il corpo dell'annuncio generato.],
-  [/*Visualizzazione del corpo dell'annuncio aperto dal marker*/],
+  [L'amministratore deve poter visualizzare la data e l'ora di generazione dell'annuncio attraverso l'annuncio visualizzato un _marker_ di generazione annuncio.],
+  [#link(<uc16>)[UC16]\ #link(<uc19>)[UC19]],
 
   [ROF-x],
-  [L'amministratore deve poter visualizzare il messaggio di annuncio non generato a seguito dell'interazione con il marker di mancata generazione.],
-  [/*Visualizzazione messaggio annuncio non generato tramite marker della mancata generazione di un annuncio sulla mappa*/],
+  [L'amministratore deve poter visualizzare il corpo dell'annuncio attraverso l'annuncio visualizzato tramite un _marker_ di generazione annuncio.],
+  [#link(<uc16>)[UC16]\ #link(<uc20>)[UC20]],
 
   [ROF-x],
-  [L'amministratore deve poter visualizzare il nome del punto di interesse per cui si è stato effettuato un tentativo di generazione all'interno del messaggio di annuncio non generato.],
-  [/*Visualizzazione nome del punto di interesse nel messaggio di tentativo di generazione annuncio nella vista aperta dal marker*/],
+  [L'amministratore deve poter visualizzare la categoria di esercizio commerciale del punto di interesse coinvolto nella generazione attraverso l'annuncio visualizzato tramite un _marker_ di generazione annuncio.],
+  [#link(<uc16>)[UC16]\ #link(<uc20>)[UC21]],
 
   [ROF-x],
-  [L'amministratore deve poter visualizzare l'_email_ dell'utente destinatario dell'annuncio per cui è stato effettuato un tentativo di generazione.],
-  [/* Visualizzazione e-mail dell’utente nel messaggio di tentativo di generazione
-annuncio nella vista aperta dal marker */],
+  [L'amministratore deve poter visualizzare un messaggio di annuncio non generato tramite l'interazione con un _marker_ di generazione fallita.], //TODO: la rivedrei un attimo
+  [#link(<uc22>)[UC22]],
 
   [ROF-x],
-  [L'amministratore deve poter visualizzare la data e l'ora di tentativo di generazione annuncio nella vista aperta dal marker.],
-  [/*Visualizzazione data e ora di tentata generazione annuncio nel messaggio di
-tentativo di generazione annuncio nella vista aperta dal marker*/],
+  [L'amministratore deve poter visualizzare il nome del punto di interesse per cui è stato effettuato un tentativo di generazione all'interno del messaggio di annuncio non generato visualizzato tramite il _marker_ di generazione fallita.],
+  [#link(<uc22>)[UC22]\ #link(<uc23>)[UC23]],
 
   [ROF-x],
-  [L'amministratore deve poter chiudere l'annuncio generato, visualizzato sulla mappa tramite marker.],
-  [/* Chiusura annuncio visualizzato tramite marker sulla mappa */],
+  [L'amministratore deve poter visualizzare l'_email_ dell'utente destinatario per cui è stato effettuato un tentativo di generazione all'interno del messaggio di annuncio non generato visualizzato tramite il marker di generazione fallita.],
+  [#link(<uc22>)[UC22]\ #link(<uc24>)[UC24]],
 
   [ROF-x],
-  [L'amministratore deve poter chiudere l'annuncio non generato, visualizzato sulla mappa tramite marker.],
-  [/* Chiusura messaggio annuncio non generato visualizzato tramite marker sulla
-mappa */],
+  [L'amministratore deve poter visualizzare la data e l'ora di tentativo di generazione all'interno del messaggio di annuncio non generato visualizzato tramite il _marker_ di generazione fallita.],
+  [#link(<uc22>)[UC22]\ #link(<uc25>)[UC25]],
 
   [ROF-x],
-  [L'amministratore deve essere in grado di interagire con la mappa per spostare il centro della visuale.],
-  [/* Spostamento della visuale sulla mappa */],
+  [L'amministratore deve poter chiudere l'annuncio generato visualizzato sulla mappa tramite l'interazione con un _marker_ di generazione annuncio.],
+  [#link(<uc26>)[UC26]],
 
   [ROF-x],
-  [L'amministratore deve essere in grado di interagire con la mappa per modificare l'ampiezza della visuale.],
-  [/* Modifica ampiezza della visuale sulla mappa */],
+  [L'amministratore deve poter chiudere il messaggio di annuncio non generato visualizzato sulla mappa tramite l'interazione con un _marker_ di generazione fallita.],
+  [#link(<uc27>)[UC27]],
 
   [ROF-x],
-  [L'amministratore deve essere in grado di interagire con la mappa per ampliare l'ampiezza della visuale.],
-  [/* Ampliamento della visuale sulla mappa */],
+  [L'amministratore deve essere in grado di interagire con la mappa per spostare il centro della visuale all'interno della stessa.],
+  [#link(<uc28>)[UC28]],
 
   [ROF-x],
-  [L'amministratore deve essere in grado di interagire con la mappa per ridurre l'ampiezza della visuale.],
-  [/* Restringimento della visuale sulla mappa */],
+  [L'amministratore deve essere in grado di modificare l'ampiezza della visuale sulla mappa. In particolare bisogna permettere l'ampliamento e il restringimento del campo visivo che l'amministratore ha sul territorio visualizzato all'interno della mappa.],
+  [#link(<uc29>)[UC29]\ #link(<uc30>)[UC30]\ #link(<uc31>)[UC31]], //FIXME: Kla x Pic: ho messo assieme questi 3 use case in quanto molto banali, vedi te comunque
 
   [ROF-x],
-  [L'amministratore deve essere in grado di accedere allo storico degli annunci generati.],
-  [/* Visualizzazione sezione storico annunci */],
+  [L'amministratore deve essere in grado di visualizzare la sezione dedicato allo storico degli annunci generati all'interno della _dashboard_.],
+  [#link(<uc32>)[UC32]],
 
   [ROF-x],
-  [L'amministratore deve essere in grado di visualizzare lo storico degli annunci generati.],
-  [/* Visualizzazione storico degli annunci */],
+  [L'amministratore deve essere in grado di visualizzare lo storico degli annunci generati dal sistema sotto forma di lista oppure di griglia a seconda delle preferenze dell'amministratore stesso.],
+  [#link(<uc33>)[UC33]\ #link(<uc34>)[UC34]\ #link(<uc35>)[UC35]],
 
   [ROF-x],
-  [L'amministratore deve essere in grado di visualizzare lo storico degli annunci generati sotto forma di lista.],
-  [/* Visualizzazione storico annunci in lista */],
+  [L'amministratore deve essere in grado di visualizzare un singolo annuncio all'interno dello storico.],
+  [#link(<uc36>)[UC36]],
 
   [ROF-x],
-  [L'amministratore deve essere in grado di visualizzare lo storico degli annunci generati sotto forma di griglia.],
-  [/* Visualizzazione storico annunci in griglia */],
+  [L'amministratore deve essere in grado di visualizzare il nome del punto di interesse di ogni singola voce di annuncio visualizzato all'interno dello storico.],
+  [#link(<uc37>)[UC37]],
 
   [ROF-x],
-  [L'amministratore deve essere in grado di visualizzare i dettagli di un singolo annuncio dello storico.],
-  [/* Visualizzazione singolo annuncio nello storico */],
+  [L'amministratore deve essere in grado di visualizzare l'_email_ dell'utente destinatario di ogni singola voce di annuncio visualizzato all'interno dello storico.],
+  [#link(<uc38>)[UC38]],
 
   [ROF-x],
-  [L'amministratore deve essere in grado di visualizzare il nome del punto di interesse di ogni annuncio dello storico.],
-  [/* Visualizzazione nome del punto di interesse dall'annuncio nello storico */],
+  [L'amministratore deve essere in grado di visualizzare data e ora relativi al tentativo di generazione di ogni singola voce di annuncio visualizzato all'interno dello storico.], //FIXME: solito problema: tentativo si intende di generazione fallita o anche quella effettiva?
+  [#link(<uc39>)[UC39]],
 
   [ROF-x],
-  [L'amministratore deve essere in grado di visualizzare l'_e-mail_ dell'utente che ha scatenato l'annuncio, per ogni voce dello storico.],
-  [/* Visualizzazione e-mail dell’utente dall'annuncio nello storico */],
+  [L'amministratore deve essere in grado di visualizzare la flag riguardo all'attività o meno di un noleggio a cui è destinato l'annuncio per ogni singola voce di annuncio visualizzata all'interno dello storico.],
+  [#link(<uc40>)[UC40]],
 
   [ROF-x],
-  [L'amministratore deve essere in grado di visualizzare data e ora di tentativo di generazione annuncio, per ogni voce dello storico.],
-  [/* Visualizzazione data e ora di tentativo di generazione annuncio dall'annuncio
-nello storico */],
+  [L'amministratore deve essere in grado di visualizzare i dettagli di un singolo annuncio tramite l'interazione (in questo caso un _click_) con il singolo annuncio visualizzato all'interno dello storico.],
+  [#link(<uc41>)[UC41]],
 
   [ROF-x],
-  [L'amministratore deve essere in grado di visualizzare la flag riguardo agli annunci che sono stati effettivamente inviati a noleggi attivi, per ogni voce dello storico.],
-  [/* Visualizzazione flag sugli annunci nello storico inviati a noleggi attivi
-dall'annuncio nello storico */],
+  [L'amministratore deve essere in grado di visualizzare il nome del punto di interesse relativo ad un annuncio tramite la visualizzazione dei dettagli dello stesso.],
+  [#link(<uc41>)[UC41]\ #link(<uc42>)[UC42]],
 
   [ROF-x],
-  [L'amministratore, interagendoci, deve essere in grado di visualizzare i dettagli di ogni annuncio dello storico.],
-  [/* Visualizzazione dettagli di un singolo annuncio dopo aver interagito con un
-elemento nello storico */],
+  [L'amministratore deve essere in grado di visualizzare l'email dell'utente destinatario di un annuncio tramite la visualizzazione dei dettagli dello stesso.],
+  [#link(<uc41>)[UC41]\ #link(<uc43>)[UC43]],
 
   [ROF-x],
-  [L'amministratore, interagendoci, deve essere in grado di visualizzare i dettagli di ogni annuncio dello storico, tra cui il nome del punto di interesse.],
-  [/* Visualizzazione nome del punto di interesse dal dettaglio di un annuncio */],
+  [L'amministratore deve essere in grado di visualizzare l'email dell'utente destinatario di un annuncio tramite la visualizzazione dei dettagli dello stesso.],
+  [#link(<uc41>)[UC41]\ #link(<uc44>)[UC44]],
 
   [ROF-x],
-  [L'amministratore, interagendoci, deve essere in grado di visualizzare i dettagli di ogni annuncio dello storico, tra cui l'email dell'utente che ha scatenato l'annuncio.],
-  [/* Visualizzazione e-mail dell’utente dal dettaglio di un annuncio */],
+  [L'amministratore deve essere in grado di visualizzare una flag che segnala l'attività o meno di un noleggio a cui è destinato un annuncio tramite la visualizzazione dei dettagli dello stesso.],
+  [#link(<uc41>)[UC41]\ #link(<uc45>)[UC45]],
 
   [ROF-x],
-  [L'amministratore, interagendoci, deve essere in grado di visualizzare i dettagli di ogni annuncio dello storico, tra cui data e ora di tentativo di generazione annuncio.],
-  [/* Visualizzazione data e ora di tentativo di generazione annuncio dal dettaglio di un annuncio */],
+  [L'amministratore deve essere in grado di visualizzare il corpo dell'annuncio tramite la visualizzazione dei dettagli dello stesso.],
+  [#link(<uc41>)[UC41]\ #link(<uc46>)[UC46]],
 
   [ROF-x],
-  [L'amministratore, interagendoci, deve essere in grado di visualizzare i dettagli di ogni annuncio dello storico, tra cui la flag riguardo agli annunci che sono stati effettivamente inviati a noleggi attivi.],
-  [/* Visualizzazione flag sugli annunci nello storico inviati a noleggi attivi dal suo dettaglio */],
+  [L'amministratore deve essere in grado di visualizzare la categoria del punto di interesse collegato all'annuncio tramite la visualizzazione dei dettagli dello stesso.],
+  [#link(<uc41>)[UC41]\ #link(<uc47>)[UC47]],
 
   [ROF-x],
-  [L'amministratore, interagendoci, deve essere in grado di visualizzare i dettagli di ogni annuncio dello storico, tra cui il corpo dell'annuncio generato.],
-  [/* Visualizzazione del corpo dell’annuncio dal suo dettaglio */],
+  [L'amministratore deve essere in grado di chiudere la vista di visualizzazione dei dettagli di un singolo annuncio.],
+  [#link(<uc48>)[UC48]],
 
   [ROF-x],
-  [L'amministratore, interagendoci, deve essere in grado di visualizzare i dettagli di ogni annuncio dello storico, tra cui la categoria del punto di interesse collegato all’annuncio.],
-  [/* Visualizzazione categoria del punto di interesse collegato all’annuncio dal suo dettaglio */],
+  [L'amministratore deve essere in grado, tramite un sistema di filtraggio e di ricerca, di ricercare gli annunci dello storico per _e-mail_ dell'utente destinatario dell'annuncio.],
+  [#link(<uc49>)[UC49]],
 
   [ROF-x],
-  [L'amministratore deve essere in grado di chiudere la vista di visualizzazione dettagli di un singolo annuncio.],
-  [/* Chiusura della vista di visualizzazione dettagli di un singolo annuncio */],
+  [L'amministratore deve essere in grado, tramite un sistema di filtraggio e di ricerca, di ricercare gli annunci dello storico per nome del punto di interesse collegato all'annuncio.],
+  [#link(<uc50>)[UC50]],
 
   [ROF-x],
-  [L'amministratore deve essere in grado, tramite un sistema di filtraggio, di ricercare gli annunci dello storico per nome del punto di interesse.],
-  [/* Ricerca degli annunci nello storico per nome del punto di interesse */],
+  [L'amministratore deve essere in grado, tramite un sistema di filtraggio e di ricerca, di ricercare gli annunci dello storico generati in un intervallo di date di emissione degli annunci.],
+  [#link(<uc51>)[UC51]],
 
   [ROF-x],
-  [L'amministratore deve essere in grado, tramite un sistema di filtraggio, di ricercare gli annunci dello storico generati in un intervallo di date.],
-  [/* Ricerca degli annunci nello storico per intervallo di date di emissione */],
+  [L'amministratore deve essere in grado, tramite un sistema di filtraggio e di ricerca, di ricercare gli annunci dello storico generati in una determinata fascia oraria.],
+  [#link(<uc52>)[UC52]],
 
   [ROF-x],
-  [L'amministratore deve essere in grado, tramite un sistema di filtraggio, di ricercare gli annunci dello storico generati in una determinata fascia oraria.],
-  [/* Ricerca degli annunci nello storico per fascia oraria di emissione */],
+  [L'amministrato deve poter ricevere un errore con corpo "Il server non risponde" nel caso in cui il sistema non risponda o smetta di funzionare, ritornando per esempio un errore 500.],
+  [#link(<uc53>)[UC53]],
+
+  [ROF-x],
+  [L'amministratore deve poter ricevere un errore con il corpo "Connessione persa" nel caso in cui la connessione con il sistema venga persa o sia instabile.],
+  [#link(<uc54>)[UC54]],
+
+  [ROF-x],
+  [L'amministratore deve poter ricevere un errore con il corpo "Sensore malfunzionante" nel caso in cui il sensore non sia in grado di trasmettere i dati di localizzazione in maniera corretta o non trasmetta dopo un determinato intervallo di tempo.],
+  [#link(<uc55>)[UC55]],
+
+  [ROF-x],
+  [L'amministratore deve poter visualizzare l'errore con il corpo "Generazione impossibile dell'annuncio" nel caso in cui il sistema non sia in grado di stabilire una connessione e comunicare con il servizio di LLM, non permettendo così la trasmissione e la ricezione di dati da parte di quest'ultimo.],
+  [#link(<uc56>)[UC56]],
+
+  [ROF-x],
+  [L'amministratore deve poter visualizzare la sezione dedicata ai grafici all'interno della _dashboard_ del sistema.],
+  [#link(<uc57>)[UC57]],
+
+  [ROF-x],
+  [L'amministratore deve poter visualizzare le statistiche relative ai dati in analisi dal sistema in degli opportuni grafici.],
+  [#link(<uc58>)[UC58]],
+
+  [ROF-x],
+  [L'amministratore deve poter visualizzare un singolo grafico relativo ad una particolare analisi dati.],
+  [#link(<uc59>)[UC59]],
+
+  [ROF-x],
+  [L'amministratore deve poter visualizzare il titolo di uno specifico grafico a seconda dell'analisi dati che viene rappresentata.],
+  [#link(<uc60>)[UC60]],
+
+  [ROF-x],
+  [L'amministratore deve poter visualizzare un'etichetta relativa alla tipologia di misura rappresentata sull'asse delle ascisse di uno specifico grafico e i relativi valori.],
+  [#link(<uc61>)[UC61]],
+
+  [ROF-x],
+  [L'amministratore deve poter visualizzare un'etichetta relativa alla tipologia di misura rappresentata sull'asse delle ordinate di uno specifico grafico e i relativi valori.],
+  [#link(<uc62>)[UC62]], //FIXME: queste ultime due si potrebbero unire @Davide Picello
+  //Cosa si intende con "relativi valori".. la scala?
+
+  [ROF-x],
+  [L'amministratore deve poter visualizzare la rappresentazione grafica di uno specifico _set_ di dati forniti dal sistema all'interno di un grafico.],
+  [#link(<uc63>)[UC63]], //FIXME: Rivedrei un attimo quest'ultima
 )
 === Requisiti di qualità
 #table(
@@ -1227,7 +1254,7 @@ elemento nello storico */],
   table.header([*Codice*], [*Descrizione*], [*Origine*]),
   //TODO: CODE COVERAGE è presente a glossario?
   [ROQ-x],
-  [Superamento dei _test_ che dimostrano il corretto funzionamento dei servizi e delle funzionalità. In particolare i _test_ devono garantire un _code coverage_ dell'80% o più, correlata da _report_.],
+  [Superamento dei _test_ che dimostrano il corretto funzionamento dei servizi e delle funzionalità, garantendo un _code coverage_ dell'80% o più e correlati da _report_.],
   [Capitolato],
 )
 === Requisiti di vincolo
@@ -1251,3 +1278,12 @@ elemento nello storico */],
 === Requisiti funzionali
 === Requisiti di qualità
 === Requisiti di vincolo
+== Riepilogo
+#table(
+  align: (left, left, left, left, left),
+  columns: (1.3fr, 1fr, 1fr, 1fr, 1fr),
+  table.header([*Tipologia*], [*Obbligatori*], [*Desiderabili*], [*Opzionali*], [*Totale*]),
+  [Funzionali], [0], [0], [0], [0],
+  [Qualità], [0], [0], [0], [0],
+  [Vincolo], [0], [0], [0], [0],
+)
