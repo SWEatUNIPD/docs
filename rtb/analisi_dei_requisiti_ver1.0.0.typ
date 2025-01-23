@@ -1248,6 +1248,10 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
   [ROV-2],
   [Il generatore deve generare dei percorsi che siano realistici, ovvero che seguano le varie strade, vie e piste ciclabili che una bicicletta può percorrere.],
   [Capitolato],
+
+  [ROV-3],
+  [Viene richiesta la documentazione riguardante le scelte implementative e progettuali effettuate e le relative motivazioni],
+  [Capitolato],
 )
 == Requisiti desiderabili
 === Requisiti funzionali
@@ -1361,14 +1365,18 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
   [RFF-6],
   [L'amministratore deve poter visualizzare la rappresentazione grafica di uno specifico _set_ di dati forniti dal sistema all'interno di un grafico.],
   [#link(<uc63>)[UC63]], //FIXME: Rivedrei un attimo quest'ultima
+
+  [RFF-7],
+  [Viene richiesta la creazione di uno strumento di visualizzazione degli annunci in tempo reale lato _client_.],
+  [Capitolato],
 )
 == Riepilogo
 #table(
   align: (left, left, left, left, left),
   columns: (1.3fr, 1fr, 1fr, 1fr, 1fr),
   table.header([*Tipologia*], [*Obbligatori*], [*Desiderabili*], [*Opzionali*], [*Totale*]),
-  [Funzionali], [32], [19], [6], [57],
+  [Funzionali], [32], [19], [7], [58],
   [Qualità], [2], [0], [0], [2],
-  [Vincolo], [2], [0], [0], [2],
-  [*Totale*], [36], [19], [6], [*61*],
+  [Vincolo], [3], [0], [0], [2],
+  [*Totale*], [37], [19], [7], [*62*],
 )
