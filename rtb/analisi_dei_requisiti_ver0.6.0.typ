@@ -997,11 +997,11 @@ I requisiti sono frutto dell'analisi del capitolato d'appalto, dalle varie inter
 
 Ogni requisito è identificato univocamente da un codice che presenta la seguente struttura:
 #align(center)[*R[Importanza][Tipo]-[ID]*]
-Viene riportata di seguito il significato e i possibili valori dei campi presenti all'interno di ogni identificativo:
+Viene riportato di seguito il significato e i possibili valori dei campi presenti all'interno di ogni identificativo:
 - *Importanza*: indica il grado di importanza di ogni requisito, che si distingue in:
-  - *O*: requisito obbligatorio, ovvero che viene richiesto esplicitamente dall'azienda e strettamente necessario.
+  - *O*: requisito obbligatorio, ovvero che viene richiesto esplicitamente dall'azienda e, di conseguenza, strettamente necessario.
   - *D*: requisito desiderabile, ovvero che non è strettamente necessario ma da valore aggiunto al prodotto finale.
-  - *F*: requisito facoltativo, ovvero che non è necessario ma può essere utile ai fini del prodotto finale. Quest'ultimi possono essere contrattati in seguito con l'azienda.
+  - *F*: requisito facoltativo, ovvero che non è necessario ma può essere utile ai fini del prodotto finale. Quest'ultimo può essere contrattato in seguito con l'azienda.
 - *Tipo*: indica la tipologia di requisito che si distingue in:
   - *F*: requisito funzionale
   - *Q*: requisito di qualità
@@ -1042,11 +1042,13 @@ Viene riportata di seguito il significato e i possibili valori dei campi present
   [#link(<uc7>)[UC7]],
 
   [ROF-x],
-  [L'amministratore deve poter visualizzare il tracciato percorso da un mezzo a noleggio per ogni noleggio attivo che viene erogato dal sistema attraverso la mappa geografica.],
+  [L'amministratore, per ogni noleggio attivo che viene erogato, deve poter visualizzare il tracciato percorso da un mezzo a noleggio attraverso la mappa geografica.],
   [#link(<uc8>)[UC8]],
 
   [ROF-x],
-  [L'amministratore deve poter visualizzare il _marker_ in corrispondenza di un dato GPS trasmesso dal sensore all'interno della mappa quando non è in prossimità di un punto di interesse, oppure quando è già stata richiesta in precedenza la generazione di un annuncio per lo stesso punto di interesse.],
+  [L'amministratore deve poter visualizzare il _marker_ sulla mappa in corrispondenza di un dato GPS trasmesso dal sensore nel momento in cui:
+    - non è in prossimità di un punto di interesse
+    - quando è già stata richiesta in precedenza la generazione di un annuncio per lo stesso punto di interesse.],
   [#link(<uc9>)[UC9]\ #link(<uc10>)[UC10]],
 
   [ROF-x],
@@ -1063,7 +1065,7 @@ Viene riportata di seguito il significato e i possibili valori dei campi present
   [#link(<uc13>)[UC13]],
 
   [ROF-x],
-  [L'amministratore deve poter visualizzare, dalle informazioni fornite dal _marker_ del punto di interesse, il nome della stesso.],
+  [L'amministratore deve poter visualizzare dalle informazioni fornite dal _marker_ del punto di interesse il nome dello stesso.],
   [#link(<uc13>)[UC13]\ #link(<uc14>)[UC14]],
 
   [ROF-x],
@@ -1075,23 +1077,23 @@ Viene riportata di seguito il significato e i possibili valori dei campi present
   [#link(<uc16>)[UC16]],
 
   [ROF-x],
-  [L'amministratore deve poter visualizzare il nome del punto di interesse,  attraverso l'annuncio visualizzato, tramite un _marker_ di generazione annuncio.],
+  [L'amministratore deve poter visualizzare il nome del punto di interesse, attraverso l'annuncio visualizzato, tramite un _marker_ di generazione annuncio.],
   [#link(<uc16>)[UC16]\ #link(<uc17>)[UC17]],
 
   [ROF-x],
-  [L'amministratore deve poter visualizzare l'email dell'utente destinatario,  attraverso l'annuncio visualizzato, tramite un _marker_ di generazione annuncio.],
+  [L'amministratore deve poter visualizzare l'email dell'utente destinatario, attraverso l'annuncio visualizzato, tramite un _marker_ di generazione annuncio.],
   [#link(<uc16>)[UC16]\ #link(<uc18>)[UC18]],
 
   [ROF-x],
-  [L'amministratore deve poter visualizzare la data e l'ora di generazione dell'annuncio,  attraverso l'annuncio visualizzato, un _marker_ di generazione annuncio.],
+  [L'amministratore deve poter visualizzare la data e l'ora di generazione dell'annuncio, attraverso l'annuncio visualizzato, tramite un _marker_ di generazione annuncio.],
   [#link(<uc16>)[UC16]\ #link(<uc19>)[UC19]],
 
   [ROF-x],
-  [L'amministratore deve poter visualizzare il corpo dell'annuncio,  attraverso l'annuncio visualizzato, tramite un _marker_ di generazione annuncio.],
+  [L'amministratore deve poter visualizzare il corpo dell'annuncio, attraverso l'annuncio visualizzato, tramite un _marker_ di generazione annuncio.],
   [#link(<uc16>)[UC16]\ #link(<uc20>)[UC20]],
 
   [ROF-x],
-  [L'amministratore deve poter visualizzare la categoria di esercizio commerciale del punto di interesse coinvolto nella generazione,  attraverso l'annuncio visualizzato, tramite un _marker_ di generazione annuncio.],
+  [L'amministratore deve poter visualizzare la categoria di esercizio commerciale del punto di interesse coinvolto nella generazione, attraverso l'annuncio visualizzato, tramite un _marker_ di generazione annuncio.],
   [#link(<uc16>)[UC16]\ #link(<uc21>)[UC21]],
 
   [ROF-x],
@@ -1127,7 +1129,7 @@ Viene riportata di seguito il significato e i possibili valori dei campi present
   [#link(<uc29>)[UC29]\ #link(<uc30>)[UC30]\ #link(<uc31>)[UC31]],
 
   [ROF-x],
-  [L'amministratore deve essere in grado di accedere la sezione dedicata allo storico degli annunci generati all'interno della _dashboard_.],
+  [L'amministratore deve essere in grado di accedere alla sezione dedicata allo storico degli annunci generati all'interno della _dashboard_.],
   [#link(<uc32>)[UC32]],
 
   [ROF-x],
@@ -1155,7 +1157,7 @@ Viene riportata di seguito il significato e i possibili valori dei campi present
   [#link(<uc40>)[UC40]],
 
   [ROF-x],
-  [L'amministratore deve essere in grado di visualizzare i dettagli di un singolo annuncio tramite l'interazione (in questo caso un _click_) con il singolo annuncio visualizzato all'interno dello storico.],
+  [L'amministratore deve essere in grado di poter visualizzare i dettagli di un singolo annuncio visualizzato all'interno dello storico.],
   [#link(<uc41>)[UC41]],
 
   [ROF-x],
@@ -1191,7 +1193,7 @@ Viene riportata di seguito il significato e i possibili valori dei campi present
   [#link(<uc49>)[UC49]],
 
   [ROF-x],
-  [L'amministratore deve essere in grado, tramite un sistema di filtraggio e di ricerca, di visualizzare gli annunci dello storico per nome del punto di interesse collegato all'annuncio.],
+  [L'amministratore deve essere in grado, tramite un sistema di filtraggio e di ricerca, di visualizzare gli annunci dello storico per nome del punto di interesse.],
   [#link(<uc50>)[UC50]],
 
   [ROF-x],
@@ -1235,7 +1237,7 @@ Viene riportata di seguito il significato e i possibili valori dei campi present
   [#link(<uc60>)[UC60]],
 
   [ROF-x],
-  [L'amministratore deve poter visualizzare un'etichetta relativa alla tipologia di misura rappresentata sulle assi delle ascisse e delle ordinate di uno specifico grafico e i relativi valori.],
+  [L'amministratore deve poter visualizzare in uno specifico grafico un'etichetta relativa alla tipologia di misura rappresentata sulle assi delle ascisse e delle ordinate e, infine, i relativi valori.],
   [#link(<uc61>)[UC61]\ #link(<uc62>)[UC62]],
   //Cosa si intende con "relativi valori".. la scala?
 
