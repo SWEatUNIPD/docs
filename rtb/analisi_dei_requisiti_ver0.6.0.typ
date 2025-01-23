@@ -1105,7 +1105,7 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
   [#link(<uc22>)[UC22]\ #link(<uc23>)[UC23]],
 
   [ROF-x],
-  [L'amministratore deve poter visualizzare un messaggio con le informazioni di un annuncio non generato, tramite l'interazione con un _marker_ di mancata generazione, tra cui l'_e-mail_ dell’utente.],
+  [L'amministratore deve poter visualizzare un messaggio con le informazioni di un annuncio non generato, tramite l'interazione con un _marker_ di mancata generazione, tra cui l'_e-mail_ dell'utente.],
   [#link(<uc22>)[UC22]\ #link(<uc24>)[UC24]],
 
   [ROF-x],
