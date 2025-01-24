@@ -704,7 +704,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   - Visualizzazione nome del punto di interesse dall'elemento nello storico (#link(<uc37>)[UC37]).
   - Visualizzazione _e-mail_ dell'utente dall'elemento nello storico (#link(<uc38>)[UC38]).
   - Visualizzazione data e ora di tentativo di generazione annuncio dall'elemento nello storico (#link(<uc39>)[UC39]).
-  - Visualizzazione _flag_ sugli annunci nello storico inviati a noleggi attivi dall'elemento nello storico (#link(<uc40>)[UC40]).
+  - Visualizzazione _flag_ sull'elemento nello storico legato all'annuncio emesso verso un noleggio attivo (#link(<uc40>)[UC40]).
 
 === UC37 - Visualizzazione nome del punto di interesse dall'elemento nello storico <uc37>
 - *Attore principale*: Amministratore.
@@ -771,7 +771,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   - Visualizzazione nome del punto di interesse dai dettagli aperti dall'elemento nello storico (#link(<uc42>)[UC42]).
   - Visualizzazione _e-mail_ dell'utente dai dettagli aperti dall'elemento nello storico (#link(<uc43>)[UC43]).
   - Visualizzazione data e ora di tentativo di generazione annuncio dai dettagli aperti dall'elemento nello storico (#link(<uc44>)[UC44]).
-  - Visualizzazione flag sugli annunci nello storico legati a noleggi attivi dai dettagli aperti dall'elemento nello storico (#link(<uc45>)[UC45]).
+  - Visualizzazione _flag_ sugli annunci nello storico legati a noleggi attivi dai dettagli aperti dall'elemento nello storico (#link(<uc45>)[UC45]).
   - Visualizzazione dell'annuncio dai dettagli aperti dall'elemento nello storico (#link(<uc46>)[UC46]).
   - Visualizzazione categoria del punto di interesse collegato all'annuncio dai dettagli aperti dall'elemento nello storico (#link(<uc47>)[UC47]).
 
@@ -1143,10 +1143,9 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
   [#link(<uc9>)[UC9]\ #link(<uc11>)[UC11]\ Capitolato\ Riunioni esterne],
 
   [ROF-11],
-  [L'amministratore deve poter visualizzare i _marker_ in corrispondenza di una posizione, in prossimità di un punto di interesse, dove la LLM non ha generato un annuncio perché ha valutato l'utente come non interessato al punto di interesse in base alla sua profilazione.],
+  [L'amministratore deve poter visualizzare un _marker_ in corrispondenza di una posizione, in prossimità di un punto di interesse, dove la LLM non ha generato un annuncio perché ha valutato l'utente come non interessato al punto di interesse in base alla sua profilazione.],
   [#link(<uc9>)[UC9]\ #link(<uc12>)[UC12]\ Capitolato\ Riunioni esterne],
 
-  //FIXME: secondo me potevamo lasciare anche separate. Piuttosto aggiungo un riferimento allo stesso use case (da chiedere anche a revisori e responsabile)
   [ROF-12],
   [L'amministratore deve poter visualizzare tramite un'interazione con il _marker_ (come un _hover_ o un _click_) le informazioni relative al punto di interesse.],
   [#link(<uc13>)[UC13]\ Capitolato\ Riunioni esterne],
@@ -1164,19 +1163,19 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
   [#link(<uc16>)[UC16]\ Capitolato\ Riunioni esterne],
 
   [ROF-16],
-  [L'amministratore deve poter visualizzare il nome del punto di interesse legato all'annuncio visualizzato tramite l'interazione con un _marker_ di generazione annuncio.],
+  [L'amministratore deve poter visualizzare il nome del punto di interesse legato all'annuncio dalle informazioni visualizzate tramite l'interazione con un _marker_ di generazione annuncio.],
   [#link(<uc16>)[UC16]\ #link(<uc17>)[UC17]\ Riunioni interne\ Riunioni esterne],
 
   [ROF-17],
-  [L'amministratore deve poter visualizzare l'_e-mail_ dell'utente destinatario tramite un _marker_ di generazione annuncio.],
+  [L'amministratore deve poter visualizzare l'_e-mail_ dell'utente destinatario dalle informazioni visualizzate tramite l'interazione con un _marker_ di generazione annuncio.],
   [#link(<uc16>)[UC16]\ #link(<uc18>)[UC18]\ Riunioni interne\ Riunioni esterne],
 
   [ROF-18],
-  [L'amministratore deve poter visualizzare la data e l'ora di generazione dell'annuncio tramite un _marker_ di generazione annuncio.],
+  [L'amministratore deve poter visualizzare la data e l'ora di generazione dell'annuncio dalle informazioni visualizzate tramite l'interazione con un _marker_ di generazione annuncio.],
   [#link(<uc16>)[UC16]\ #link(<uc19>)[UC19]\ Riunioni interne\ Riunioni esterne],
 
   [ROF-19],
-  [L'amministratore deve poter visualizzare l'annuncio tramite un _marker_ di generazione annuncio.],
+  [L'amministratore deve poter visualizzare l'annuncio dalle informazioni visualizzate tramite l'interazione con un _marker_ di generazione annuncio.],
   [#link(<uc16>)[UC16]\ #link(<uc20>)[UC20]\ Riunioni esterne],
 
   [ROF-20],
@@ -1200,7 +1199,7 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
   [#link(<uc22>)[UC22]\ #link(<uc25>)[UC25]\ Riunioni interne\ Riunioni esterne],
 
   [ROF-25],
-  [L'amministratore deve poter chiudere l'annuncio generato visualizzato sulla mappa tramite l'interazione con un _marker_ di generazione annuncio.],
+  [L'amministratore deve poter chiudere la vista con le informazioni sull'annuncio generato visualizzata sulla mappa tramite l'interazione con un _marker_ di generazione annuncio.],
   [#link(<uc26>)[UC26]\ Riunioni interne],
 
   [ROF-26],
@@ -1272,27 +1271,27 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
   [#link(<uc33>)[UC33]\ #link(<uc34>)[UC34]\ #link(<uc35>)[UC35]\ Riunioni esterne],
 
   [RDF-3],
-  [L'amministratore deve essere in grado di visualizzare un singolo annuncio all'interno dello storico.],
+  [L'amministratore deve essere in grado di visualizzare un singolo elemento con le informazioni degli annunci all'interno dello storico.],
   [#link(<uc36>)[UC36]\ Riunioni esterne],
 
   [RDF-4],
-  [L'amministratore deve essere in grado di visualizzare il nome del punto di interesse di ogni singola voce presente all'interno dello storico.],
+  [L'amministratore deve essere in grado di visualizzare il nome del punto di interesse di ogni singolo elemento presente all'interno dello storico.],
   [#link(<uc37>)[UC37]\ Riunioni esterne],
 
   [RDF-5],
-  [L'amministratore deve essere in grado di visualizzare l'_e-mail_ dell'utente destinatario di ogni singola voce di annuncio visualizzato all'interno dello storico.],
+  [L'amministratore deve essere in grado di visualizzare l'_e-mail_ dell'utente destinatario di ogni singolo elemento all'interno dello storico.],
   [#link(<uc38>)[UC38]\ Riunioni esterne],
 
   [RDF-6],
-  [L'amministratore deve essere in grado di visualizzare data e ora relativi al tentativo di generazione di ogni singola voce di annuncio visualizzato all'interno dello storico.], //FIXME: solito problema: tentativo si intende di generazione fallita o anche quella effettiva?
+  [L'amministratore deve essere in grado di visualizzare data e ora relativi al tentativo di generazione di ogni singolo elemento all'interno dello storico.],
   [#link(<uc39>)[UC39]\ Riunioni esterne],
 
   [RDF-7],
-  [L'amministratore deve essere in grado di visualizzare la _flag_ riguardo allo stato di attività del noleggio a cui è destinato l'annuncio per ogni singola voce di annuncio visualizzata all'interno dello storico.],
+  [L'amministratore deve essere in grado di visualizzare la _flag_ riguardo allo stato di attività del noleggio a cui è destinato l'annuncio per ogni singolo elemento all'interno dello storico.],
   [#link(<uc40>)[UC40]\ Riunioni esterne],
 
   [RDF-8],
-  [L'amministratore deve essere in grado di poter visualizzare i dettagli di un singolo elemento visualizzato all'interno dello storico.],
+  [L'amministratore deve essere in grado di poter visualizzare i dettagli di un singolo elemento all'interno dello storico.],
   [#link(<uc41>)[UC41]\ Riunioni esterne],
 
   [RDF-9],
