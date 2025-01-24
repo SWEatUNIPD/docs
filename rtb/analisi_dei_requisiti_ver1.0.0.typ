@@ -26,7 +26,7 @@
   uso: "Esterno",
   versioni: (
     "1.0.0",
-    "24/01/2025",
+    [24/01/2025],
     "Davide Picello\nKlaudio Merja",
     "Andrea Perozzo\nDavide Martinelli",
     "Approvazione versione finale del documento per rilascio in RTB",
@@ -1134,7 +1134,7 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
   [#link(<uc9>)[UC9]\ #link(<uc11>)[UC11]],
 
   [ROF-11],
-  [L'amministratore deve poter visualizzare i _marker_ in corrispondenza di una posizione, in prossimità di un punto di interesse, dove la LLM non ha generato un annuncio perché ha valutato l’utente come non interessato al punto di interesse in base alla sua profilazione.],
+  [L'amministratore deve poter visualizzare i _marker_ in corrispondenza di una posizione, in prossimità di un punto di interesse, dove la LLM non ha generato un annuncio perché ha valutato l'utente come non interessato al punto di interesse in base alla sua profilazione.],
   [#link(<uc9>)[UC9]\ #link(<uc12>)[UC12]],
 
   //FIXME: secondo me potevamo lasciare anche separate. Piuttosto aggiungo un riferimento allo stesso use case (da chiedere anche a revisori e responsabile)
@@ -1207,19 +1207,19 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
   [#link(<uc29>)[UC29]\ #link(<uc30>)[UC30]\ #link(<uc31>)[UC31]],
 
   [ROF-29],
-  [L'amministrato deve poter ricevere un messaggio di errore con corpo "Il _server_ non risponde" nel caso in cui il sistema non risponda o smetta di funzionare, ritornando per esempio un errore 500.],
+  [L'amministrato deve poter ricevere il messaggio di errore "Il _server_ non risponde" nel caso in cui il sistema non risponda o smetta di funzionare.],
   [#link(<uc53>)[UC53]],
 
   [ROF-30],
-  [L'amministratore deve poter ricevere un messaggio di errore con il corpo "Connessione persa" nel caso in cui la connessione con il sistema venga persa o sia scarsa.],
+  [L'amministratore deve poter ricevere il messaggio di errore "Connessione persa" nel caso in cui la connessione con il sistema venga persa o sia scarsa.],
   [#link(<uc54>)[UC54]],
 
   [ROF-31],
-  [L'amministratore deve poter ricevere un messaggio di errore con il corpo "Sensore malfunzionante" nel caso in cui il sensore non sia in grado di trasmettere i dati di localizzazione in maniera corretta o non trasmetta dopo un determinato intervallo di tempo.],
+  [L'amministratore deve poter ricevere il messaggio di errore "Sensore malfunzionante" nel caso in cui il sensore non sia in grado di trasmettere i dati di localizzazione in maniera corretta o non trasmetta dopo un determinato intervallo di tempo.],
   [#link(<uc55>)[UC55]],
 
   [ROF-32],
-  [L'amministratore deve poter visualizzare un messaggio di errore con il corpo "Generazione impossibile dell'annuncio" nel caso in cui il sistema non sia in grado di stabilire una connessione e comunicare con il servizio di LLM, non permettendo così la trasmissione e la ricezione di dati da parte di quest'ultimo.],
+  [L'amministratore deve poter visualizzare il messaggio di errore "Generazione impossibile dell'annuncio" nel caso in cui il sistema non sia in grado di stabilire una connessione e comunicare con il servizio di LLM, non permettendo così la trasmissione e la ricezione di dati da parte di quest'ultimo.],
   [#link(<uc56>)[UC56]],
 )
 === Requisiti di qualità
@@ -1267,7 +1267,7 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
   [#link(<uc36>)[UC36]\ Riunioni esterne],
 
   [RDF-4],
-  [L'amministratore deve essere in grado di visualizzare il nome del punto di interesse di ogni singola voce presente all'interno dello storico.],  
+  [L'amministratore deve essere in grado di visualizzare il nome del punto di interesse di ogni singola voce presente all'interno dello storico.],
   [#link(<uc37>)[UC37]\ Riunioni esterne],
 
   [RDF-5],
@@ -1315,19 +1315,19 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
   [#link(<uc48>)[UC48]\ Riunioni esterne],
 
   [RDF-16],
-  [L'amministratore deve essere in grado, tramite un sistema di filtraggio e di ricerca, di visualizzare gli annunci dello storico per _e-mail_ dell'utente destinatario dell'annuncio.],
+  [L'amministratore deve essere in grado, tramite un sistema di filtraggio, di visualizzare gli annunci dello storico per _e-mail_ dell'utente destinatario dell'annuncio.],
   [#link(<uc49>)[UC49]\ Riunioni esterne],
 
   [RDF-17],
-  [L'amministratore deve essere in grado, tramite un sistema di filtraggio e di ricerca, di visualizzare gli annunci dello storico per nome del punto di interesse.],
+  [L'amministratore deve essere in grado, tramite un sistema di filtraggio, di visualizzare gli annunci dello storico per nome del punto di interesse.],
   [#link(<uc50>)[UC50]\ Riunioni esterne],
 
   [RDF-18],
-  [L'amministratore deve essere in grado, tramite un sistema di filtraggio e di ricerca, di visualizzare gli annunci dello storico generati in un intervallo di date di emissione degli annunci.],
+  [L'amministratore deve essere in grado, tramite un sistema di filtraggio, di visualizzare gli annunci dello storico generati in un intervallo di date di emissione degli annunci.],
   [#link(<uc51>)[UC51]\ Riunioni esterne],
 
   [RDF-19],
-  [L'amministratore deve essere in grado, tramite un sistema di filtraggio e di ricerca, di visualizzare gli annunci dello storico generati in una determinata fascia oraria.],
+  [L'amministratore deve essere in grado, tramite un sistema di filtraggio, di visualizzare gli annunci dello storico generati in una determinata fascia oraria.],
   [#link(<uc52>)[UC52]\ Riunioni esterne],
 )
 == Requisiti facoltativi
@@ -1355,14 +1355,13 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
   [RFF-5],
   [L'amministratore deve poter visualizzare in uno specifico grafico un'etichetta relativa alla tipologia di misura rappresentata sulle assi delle ascisse e delle ordinate e, infine, i relativi valori.],
   [#link(<uc61>)[UC61]\ #link(<uc62>)[UC62]\ Riunioni esterne],
-  //Cosa si intende con "relativi valori".. la scala?
 
   [RFF-6],
-  [L'amministratore deve poter visualizzare la rappresentazione grafica di uno specifico _set_ di dati forniti dal sistema all'interno di un grafico.],
-  [#link(<uc63>)[UC63]\ Riunioni esterne], //FIXME: Rivedrei un attimo quest'ultima
+  [L'amministratore deve poter visualizzare, all'interno di ciascun grafico, la rappresentazione dello specifico _set_ di dati previsti per quel grafico.],
+  [#link(<uc63>)[UC63]\ Riunioni esterne],
 
   [RFF-7],
-  [Viene richiesta la creazione di uno strumento di visualizzazione degli annunci in tempo reale, per l'utente utilizzatore del servizio.],
+  [Viene richiesta la creazione di uno strumento di visualizzazione degli annunci in tempo reale per l'utente utilizzatore del servizio.],
   [Capitolato],
 )
 == Riepilogo
