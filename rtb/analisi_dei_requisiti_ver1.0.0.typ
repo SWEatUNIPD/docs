@@ -353,7 +353,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   - Il sistema memorizza le mancate generazioni degli annunci e le relative informazioni.
   - L'amministratore si trova nella _dashboard_ di visualizzazione della mappa.
 - *Postcondizioni*:
-  - Il sistema espone sulla mappa un _marker_ in corrispondenza dei punti in cui la LLM non ha ritenuto l'utente interessato, quindi non è stato generato l'annuncio.
+  - Il sistema espone sulla mappa un _marker_ in corrispondenza dei punti in cui la #rifGlossario("LLM") non ha ritenuto l'utente interessato, quindi non è stato generato l'annuncio.
 - *Scenario principale*:
   + L'amministratore accede alla mappa sulla _dashboard_.
   + L'amministratore visualizza un _marker_ in corrispondenza delle posizioni nelle quali la LLM non ha generato un annuncio perché ha valutato l'utente come non interessato al punto di interesse in base alla sua profilazione.
@@ -1081,15 +1081,15 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
   - *D*: requisito desiderabile, ovvero che non è strettamente necessario ma da valore aggiunto al prodotto finale.
   - *F*: requisito facoltativo, ovvero che non è necessario ma può essere utile ai fini del prodotto finale. Quest'ultimo può essere contrattato in seguito con l'azienda.
 - *Tipo*: indica la tipologia di requisito che si distingue in:
-  - *F*: requisito funzionale
-  - *Q*: requisito di qualità
-  - *V*: requisito di vincolo
+  - *F*: requisito funzionale, ovvero che descrive una funzionalità del sistema.
+  - *Q*: requisito di qualità, ovvero descrive una caratteristica di qualità del prodotto.
+  - *V*: requisito di vincolo, ovvero un limite imposto da capitolato e che il prodotto deve rispettare.
 - *ID*: numero progressivo che identifica univocamente il requisito nella sua categoria.
 == Requisiti obbligatori
 === Requisiti funzionali
 #table(
   align: (center, left, center),
-  columns: (0.8fr, 3fr, 0.8fr),
+  columns: (0.6fr, 3fr, 0.9fr),
   table.header([*Codice*], [*Descrizione*], [*Origine*]),
   [ROF-1],
   [Il sensore deve trasmettere i suoi dati di identificazione e localizzazione al sistema a intervalli regolari.],
@@ -1225,21 +1225,16 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
 === Requisiti di qualità
 #table(
   align: (center, left, center),
-  columns: (0.8fr, 3fr, 0.8fr),
+  columns: (0.6fr, 3fr, 0.9fr),
   table.header([*Codice*], [*Descrizione*], [*Origine*]),
-  //TODO: CODE COVERAGE è presente a glossario?
   [ROQ-1],
-  [Superamento dei _test_ che dimostrano il corretto funzionamento dei servizi e delle funzionalità, garantendo un _code coverage_ dell'80% o più e correlati da _report_.],
-  [Capitolato],
-
-  [ROQ-2],
-  [],
+  [Superamento dei _test_ che dimostrano il corretto funzionamento dei servizi e delle funzionalità, garantendo un _#rifGlossario("code coverage")_ dell'80% o più e correlati da _report_.],
   [Capitolato],
 )
 === Requisiti di vincolo
 #table(
   align: (center, left, center),
-  columns: (0.8fr, 3fr, 0.8fr),
+  columns: (0.6fr, 3fr, 0.9fr),
   table.header([*Codice*], [*Descrizione*], [*Origine*]),
   [ROV-1],
   [Creazione di un generatore di dati GPS per simulare il funzionamento di un sensore che interagisce col sistema.],
@@ -1257,114 +1252,114 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
 === Requisiti funzionali
 #table(
   align: (center, left, center),
-  columns: (0.8fr, 3fr, 0.8fr),
+  columns: (0.6fr, 3fr, 0.9fr),
   table.header([*Codice*], [*Descrizione*], [*Origine*]),
   [RDF-1],
   [L'amministratore deve essere in grado di accedere alla sezione dedicata allo storico degli annunci generati all'interno della _dashboard_.],
-  [#link(<uc32>)[UC32]],
+  [#link(<uc32>)[UC32]\ Riunioni esterne],
 
   [RDF-2],
   [L'amministratore deve essere in grado di visualizzare lo storico degli annunci generati dal sistema sotto forma di lista oppure di griglia a seconda delle preferenze dell'amministratore stesso.],
-  [#link(<uc33>)[UC33]\ #link(<uc34>)[UC34]\ #link(<uc35>)[UC35]],
+  [#link(<uc33>)[UC33]\ #link(<uc34>)[UC34]\ #link(<uc35>)[UC35]\ Riunioni esterne],
 
   [RDF-3],
   [L'amministratore deve essere in grado di visualizzare un singolo annuncio all'interno dello storico.],
-  [#link(<uc36>)[UC36]],
+  [#link(<uc36>)[UC36]\ Riunioni esterne],
 
   [RDF-4],
   [L'amministratore deve essere in grado di visualizzare il nome del punto di interesse di ogni singola voce di annuncio visualizzato all'interno dello storico.],
-  [#link(<uc37>)[UC37]],
+  [#link(<uc37>)[UC37]\ Riunioni esterne],
 
   [RDF-5],
   [L'amministratore deve essere in grado di visualizzare l'_email_ dell'utente destinatario di ogni singola voce di annuncio visualizzato all'interno dello storico.],
-  [#link(<uc38>)[UC38]],
+  [#link(<uc38>)[UC38]\ Riunioni esterne],
 
   [RDF-6],
   [L'amministratore deve essere in grado di visualizzare data e ora relativi al tentativo di generazione di ogni singola voce di annuncio visualizzato all'interno dello storico.], //FIXME: solito problema: tentativo si intende di generazione fallita o anche quella effettiva?
-  [#link(<uc39>)[UC39]],
+  [#link(<uc39>)[UC39]\ Riunioni esterne],
 
   [RDF-7],
   [L'amministratore deve essere in grado di visualizzare la _flag_ riguardo all'attività o meno di un noleggio a cui è destinato l'annuncio per ogni singola voce di annuncio visualizzata all'interno dello storico.],
-  [#link(<uc40>)[UC40]],
+  [#link(<uc40>)[UC40]\ Riunioni esterne],
 
   [RDF-8],
   [L'amministratore deve essere in grado di poter visualizzare i dettagli di un singolo annuncio visualizzato all'interno dello storico.],
-  [#link(<uc41>)[UC41]],
+  [#link(<uc41>)[UC41]\ Riunioni esterne],
 
   [RDF-9],
   [L'amministratore deve essere in grado di visualizzare il nome del punto di interesse relativo ad un annuncio tramite la visualizzazione dei dettagli dello stesso.],
-  [#link(<uc41>)[UC41]\ #link(<uc42>)[UC42]],
+  [#link(<uc41>)[UC41]\ #link(<uc42>)[UC42]\ Riunioni esterne],
 
   [RDF-10],
   [L'amministratore deve essere in grado di visualizzare l'email dell'utente destinatario di un annuncio tramite la visualizzazione dei dettagli dello stesso.],
-  [#link(<uc41>)[UC41]\ #link(<uc43>)[UC43]],
+  [#link(<uc41>)[UC41]\ #link(<uc43>)[UC43]\ Riunioni esterne],
 
   [RDF-11],
   [L'amministratore deve essere in grado di visualizzare data e ora del tentativo di generazione di un annuncio tramite la visualizzazione dei dettagli dello stesso.],
-  [#link(<uc41>)[UC41]\ #link(<uc44>)[UC44]],
+  [#link(<uc41>)[UC41]\ #link(<uc44>)[UC44]\ Riunioni esterne],
 
   [RDF-12],
   [L'amministratore deve essere in grado di visualizzare una _flag_ che segnala l'attività o meno di un noleggio a cui è destinato un annuncio tramite la visualizzazione dei dettagli dello stesso.],
-  [#link(<uc41>)[UC41]\ #link(<uc45>)[UC45]],
+  [#link(<uc41>)[UC41]\ #link(<uc45>)[UC45]\ Riunioni esterne],
 
   [RDF-13],
   [L'amministratore deve essere in grado di visualizzare il corpo dell'annuncio tramite la visualizzazione dei dettagli dello stesso.],
-  [#link(<uc41>)[UC41]\ #link(<uc46>)[UC46]],
+  [#link(<uc41>)[UC41]\ #link(<uc46>)[UC46]\ Riunioni esterne],
 
   [RDF-14],
   [L'amministratore deve essere in grado di visualizzare la categoria del punto di interesse collegato all'annuncio tramite la visualizzazione dei dettagli dello stesso.],
-  [#link(<uc41>)[UC41]\ #link(<uc47>)[UC47]],
+  [#link(<uc41>)[UC41]\ #link(<uc47>)[UC47]\ Riunioni esterne],
 
   [RDF-15],
   [L'amministratore deve essere in grado di chiudere la vista di visualizzazione dei dettagli di un singolo annuncio.],
-  [#link(<uc48>)[UC48]],
+  [#link(<uc48>)[UC48]\ Riunioni esterne],
 
   [RDF-16],
   [L'amministratore deve essere in grado, tramite un sistema di filtraggio e di ricerca, di visualizzare gli annunci dello storico per _e-mail_ dell'utente destinatario dell'annuncio.],
-  [#link(<uc49>)[UC49]],
+  [#link(<uc49>)[UC49]\ Riunioni esterne],
 
   [RDF-17],
   [L'amministratore deve essere in grado, tramite un sistema di filtraggio e di ricerca, di visualizzare gli annunci dello storico per nome del punto di interesse.],
-  [#link(<uc50>)[UC50]],
+  [#link(<uc50>)[UC50]\ Riunioni esterne],
 
   [RDF-18],
   [L'amministratore deve essere in grado, tramite un sistema di filtraggio e di ricerca, di visualizzare gli annunci dello storico generati in un intervallo di date di emissione degli annunci.],
-  [#link(<uc51>)[UC51]],
+  [#link(<uc51>)[UC51]\ Riunioni esterne],
 
   [RDF-19],
   [L'amministratore deve essere in grado, tramite un sistema di filtraggio e di ricerca, di visualizzare gli annunci dello storico generati in una determinata fascia oraria.],
-  [#link(<uc52>)[UC52]],
+  [#link(<uc52>)[UC52]\ Riunioni esterne],
 )
 == Requisiti facoltativi
 === Requisiti funzionali
 #table(
   align: (center, left, center),
-  columns: (0.8fr, 3fr, 0.8fr),
+  columns: (0.6fr, 3fr, 0.9fr),
   table.header([*Codice*], [*Descrizione*], [*Origine*]),
   [RFF-1],
   [L'amministratore deve poter visualizzare la sezione dedicata ai grafici all'interno della _dashboard_ del sistema.],
-  [#link(<uc57>)[UC57]],
+  [#link(<uc57>)[UC57]\ Riunioni esterne],
 
   [RFF-2],
   [L'amministratore deve poter visualizzare le statistiche relative ai dati del sistema, in degli opportuni grafici.],
-  [#link(<uc58>)[UC58]],
+  [#link(<uc58>)[UC58]\ Riunioni esterne],
 
   [RFF-3],
   [L'amministratore deve poter visualizzare un singolo grafico relativo ad una particolare analisi dati.],
-  [#link(<uc59>)[UC59]],
+  [#link(<uc59>)[UC59]\ Riunioni esterne],
 
   [RFF-4],
   [L'amministratore deve poter visualizzare il titolo di uno specifico grafico a seconda dell'analisi dati che viene rappresentata.],
-  [#link(<uc60>)[UC60]],
+  [#link(<uc60>)[UC60]\ Riunioni esterne],
 
   [RFF-5],
   [L'amministratore deve poter visualizzare in uno specifico grafico un'etichetta relativa alla tipologia di misura rappresentata sulle assi delle ascisse e delle ordinate e, infine, i relativi valori.],
-  [#link(<uc61>)[UC61]\ #link(<uc62>)[UC62]],
+  [#link(<uc61>)[UC61]\ #link(<uc62>)[UC62]\ Riunioni esterne],
   //Cosa si intende con "relativi valori".. la scala?
 
   [RFF-6],
   [L'amministratore deve poter visualizzare la rappresentazione grafica di uno specifico _set_ di dati forniti dal sistema all'interno di un grafico.],
-  [#link(<uc63>)[UC63]], //FIXME: Rivedrei un attimo quest'ultima
+  [#link(<uc63>)[UC63]\ Riunioni esterne], //FIXME: Rivedrei un attimo quest'ultima
 
   [RFF-7],
   [Viene richiesta la creazione di uno strumento di visualizzazione degli annunci in tempo reale lato _client_.],
@@ -1376,7 +1371,7 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
   columns: (1.3fr, 1fr, 1fr, 1fr, 1fr),
   table.header([*Tipologia*], [*Obbligatori*], [*Desiderabili*], [*Opzionali*], [*Totale*]),
   [Funzionali], [32], [19], [7], [58],
-  [Qualità], [2], [0], [0], [2],
-  [Vincolo], [3], [0], [0], [2],
-  [*Totale*], [37], [19], [7], [*62*],
+  [Qualità], [1], [0], [0], [1],
+  [Vincolo], [3], [0], [0], [3],
+  [*Totale*], [36], [19], [7], [*62*],
 )
