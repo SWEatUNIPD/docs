@@ -1071,16 +1071,16 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 = Requisiti
 In questa sezione vengono elencati i requisiti relativi al sistema oggetto del progetto didattico _Near You_ fornito dalla proponente Sync Lab S.r.l..
 
-I requisiti sono frutto dell'analisi del capitolato d'appalto, dalle varie interazioni con la proponente e a seguito dei vari dialoghi interni avvenuti con i vari membri del gruppo.
+I requisiti sono frutto dell'analisi del capitolato d'appalto, dalle varie interazioni con la proponente e a seguito dei vari dialoghi interni avvenuti tra i vari membri del gruppo.
 
 Ogni requisito è identificato univocamente da un codice che presenta la seguente struttura:
 #align(center)[*R[Importanza][Tipo]-[ID]*]
 Viene riportato di seguito il significato e i possibili valori dei campi presenti all'interno di ogni identificativo:
 - *Importanza*: indica il grado di importanza di ogni requisito, che si distingue in:
   - *O*: requisito obbligatorio, ovvero che viene richiesto esplicitamente dall'azienda e, di conseguenza, strettamente necessario.
-  - *D*: requisito desiderabile, ovvero che non è strettamente necessario ma da valore aggiunto al prodotto finale.
+  - *D*: requisito desiderabile, ovvero che non è strettamente necessario ma dà valore aggiunto al prodotto finale.
   - *F*: requisito facoltativo, ovvero che non è necessario ma può essere utile ai fini del prodotto finale. Quest'ultimo può essere contrattato in seguito con l'azienda.
-- *Tipo*: indica la tipologia di requisito che si distingue in:
+- *Tipo*: indica la tipologia di requisito, che si distingue in:
   - *F*: requisito funzionale, ovvero che descrive una funzionalità del sistema.
   - *Q*: requisito di qualità, ovvero descrive una caratteristica di qualità del prodotto.
   - *V*: requisito di vincolo, ovvero un limite imposto da capitolato e che il prodotto deve rispettare.
@@ -1116,38 +1116,38 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
   [#link(<uc6>)[UC6]],
 
   [ROF-7],
-  [L'amministratore deve poter visualizzare i punti di interesse presenti all'interno del sistema tramite i _marker_ posizionati all'interno della mappa geografica.],
+  [L'amministratore deve poter visualizzare i punti di interesse presenti all'interno del sistema tramite dei _marker_ posizionati all'interno della mappa geografica.],
   [#link(<uc7>)[UC7]],
 
   [ROF-8],
-  [L'amministratore, per ogni noleggio attivo che viene erogato, deve poter visualizzare il tracciato percorso da un mezzo a noleggio attraverso la mappa geografica.],
+  [L'amministratore, per ogni noleggio attivo che viene erogato, deve poter visualizzare il tracciato percorso dal mezzo a noleggio attraverso la mappa geografica.],
   [#link(<uc8>)[UC8]],
 
   [ROF-9],
-  [L'amministratore deve poter visualizzare il _marker_ sulla mappa in corrispondenza di un dato GPS trasmesso dal sensore nel momento in cui:
+  [L'amministratore deve poter visualizzare un _marker_ sulla mappa in corrispondenza di un dato GPS trasmesso dal sensore nel momento in cui:
     - non è in prossimità di un punto di interesse
-    - quando è già stata richiesta in precedenza la generazione di un annuncio per lo stesso punto di interesse.],
+    - è già stata richiesta in precedenza per l'utente del mezzo la generazione di un annuncio per lo stesso punto di interesse.],
   [#link(<uc9>)[UC9]\ #link(<uc10>)[UC10]],
 
   [ROF-10],
-  [L'amministratore deve poter visualizzare il _marker_ in corrispondenza di una posizione in prossimità di un punto di interesse e che ha causato la generazione di un annuncio tramite LLM.],
+  [L'amministratore deve poter visualizzare un _marker_ in corrispondenza di una posizione, in prossimità di un punto di interesse, che ha causato la generazione di un annuncio tramite LLM per l'utente del mezzo.],
   [#link(<uc9>)[UC9]\ #link(<uc11>)[UC11]],
 
   [ROF-11],
-  [L'amministratore deve poter visualizzare i _marker_ in corrispondenza di una posizione in prossimità di un punto di interesse che non ha causato la generazione dell'annuncio tramite LLM in quanto l'utente viene considerato non interessato.],
+  [L'amministratore deve poter visualizzare i _marker_ in corrispondenza di una posizione, in prossimità di un punto di interesse, dove la LLM non ha generato un annuncio perché ha valutato l’utente come non interessato al punto di interesse in base alla sua profilazione.],
   [#link(<uc9>)[UC9]\ #link(<uc12>)[UC12]],
 
   //FIXME: secondo me potevamo lasciare anche separate. Piuttosto aggiungo un riferimento allo stesso use case (da chiedere anche a revisori e responsabile)
   [ROF-12],
-  [L'amministratore deve poter visualizzare tramite l'interazione con il _marker_ (come un _hover_ o un _click_) le informazioni relative al punto di interesse.],
+  [L'amministratore deve poter visualizzare tramite un'interazione con il _marker_ (come un _hover_ o un _click_) le informazioni relative al punto di interesse.],
   [#link(<uc13>)[UC13]],
 
   [ROF-13],
-  [L'amministratore deve poter visualizzare dalle informazioni fornite dal _marker_ del punto di interesse il nome dello stesso.],
+  [L'amministratore deve poter visualizzare dalle informazioni fornite tramite l'interazione con il _marker_ del punto di interesse il nome dello stesso.],
   [#link(<uc13>)[UC13]\ #link(<uc14>)[UC14]],
 
   [ROF-14],
-  [L'amministratore deve poter visualizzare, dalle informazioni fornite dal _marker_ del punto di interesse, la categoria del suo esercizio commerciale (e.g. alimentare, sportivo ed etc.).],
+  [L'amministratore deve poter visualizzare, dalle informazioni fornite tramite interazione con il _marker_ del punto di interesse, la categoria di esercizio commerciale (e.g. alimentare, sportivo, etc.).],
   [#link(<uc13>)[UC13]\ #link(<uc15>)[UC15]],
 
   [ROF-15],
@@ -1155,7 +1155,7 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
   [#link(<uc16>)[UC16]],
 
   [ROF-16],
-  [L'amministratore deve poter visualizzare il nome del punto di interesse, attraverso l'annuncio visualizzato, tramite un _marker_ di generazione annuncio.],
+  [L'amministratore deve poter visualizzare il nome del punto di interesse legato all'annuncio visualizzato tramite l'interazione con un _marker_ di generazione annuncio.],
   [#link(<uc16>)[UC16]\ #link(<uc17>)[UC17]],
 
   [ROF-17],
@@ -1171,7 +1171,7 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
   [#link(<uc16>)[UC16]\ #link(<uc20>)[UC20]],
 
   [ROF-20],
-  [L'amministratore deve poter visualizzare la categoria di esercizio commerciale del punto di interesse coinvolto nella generazione, attraverso l'annuncio visualizzato, tramite un _marker_ di generazione annuncio.],
+  [L'amministratore deve poter visualizzare la categoria di esercizio commerciale del punto di interesse coinvolto nella generazione dell'annuncio visualizzato tramite un'interazione con un _marker_ di generazione annuncio.],
   [#link(<uc16>)[UC16]\ #link(<uc21>)[UC21]],
 
   [ROF-21],
@@ -1211,7 +1211,7 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
   [#link(<uc53>)[UC53]],
 
   [ROF-30],
-  [L'amministratore deve poter ricevere un messaggio di errore con il corpo "Connessione persa" nel caso in cui la connessione con il sistema venga persa o sia instabile.],
+  [L'amministratore deve poter ricevere un messaggio di errore con il corpo "Connessione persa" nel caso in cui la connessione con il sistema venga persa o sia scarsa.],
   [#link(<uc54>)[UC54]],
 
   [ROF-31],
@@ -1267,7 +1267,7 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
   [#link(<uc36>)[UC36]\ Riunioni esterne],
 
   [RDF-4],
-  [L'amministratore deve essere in grado di visualizzare il nome del punto di interesse di ogni singola voce di annuncio visualizzato all'interno dello storico.],
+  [L'amministratore deve essere in grado di visualizzare il nome del punto di interesse di ogni singola voce presente all'interno dello storico.],  
   [#link(<uc37>)[UC37]\ Riunioni esterne],
 
   [RDF-5],
@@ -1279,7 +1279,7 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
   [#link(<uc39>)[UC39]\ Riunioni esterne],
 
   [RDF-7],
-  [L'amministratore deve essere in grado di visualizzare la _flag_ riguardo all'attività o meno di un noleggio a cui è destinato l'annuncio per ogni singola voce di annuncio visualizzata all'interno dello storico.],
+  [L'amministratore deve essere in grado di visualizzare la _flag_ riguardo allo stato di attività del noleggio a cui è destinato l'annuncio per ogni singola voce di annuncio visualizzata all'interno dello storico.],
   [#link(<uc40>)[UC40]\ Riunioni esterne],
 
   [RDF-8],
@@ -1299,7 +1299,7 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
   [#link(<uc41>)[UC41]\ #link(<uc44>)[UC44]\ Riunioni esterne],
 
   [RDF-12],
-  [L'amministratore deve essere in grado di visualizzare una _flag_ che segnala l'attività o meno di un noleggio a cui è destinato un annuncio tramite la visualizzazione dei dettagli dello stesso.],
+  [L'amministratore deve essere in grado di visualizzare una _flag_ che segnala lo stato di attività del noleggio a cui è destinato un annuncio tramite la visualizzazione dei dettagli dello stesso.],
   [#link(<uc41>)[UC41]\ #link(<uc45>)[UC45]\ Riunioni esterne],
 
   [RDF-13],
@@ -1341,7 +1341,7 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
   [#link(<uc57>)[UC57]\ Riunioni esterne],
 
   [RFF-2],
-  [L'amministratore deve poter visualizzare le statistiche relative ai dati del sistema, in degli opportuni grafici.],
+  [L'amministratore deve poter visualizzare delle statistiche relative ai dati nel sistema, in degli opportuni grafici.],
   [#link(<uc58>)[UC58]\ Riunioni esterne],
 
   [RFF-3],
@@ -1362,7 +1362,7 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
   [#link(<uc63>)[UC63]\ Riunioni esterne], //FIXME: Rivedrei un attimo quest'ultima
 
   [RFF-7],
-  [Viene richiesta la creazione di uno strumento di visualizzazione degli annunci in tempo reale lato _client_.],
+  [Viene richiesta la creazione di uno strumento di visualizzazione degli annunci in tempo reale, per l'utente utilizzatore del servizio.],
   [Capitolato],
 )
 == Riepilogo
