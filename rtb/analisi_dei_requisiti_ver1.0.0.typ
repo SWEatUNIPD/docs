@@ -155,7 +155,10 @@ Il prodotto si rivolge a due tipologie di utenti:
 #pagebreak()
 
 = Diagramma delle attività
-#v(20pt)
+La seguente sezione espone il diagramma delle attività relativo al sistema in sviluppo dal nostro _team_ e proposto dall'azienda proponente Sync Lab S.r.l..
+
+L'acronimo *PdI* indica il "Punto di Interesse".
+#v(10pt)
 #figure(
   image("../assets/diagrams/activity-diagram.png"),
   caption: [Diagramma delle attività],
@@ -409,7 +412,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #pagebreak()
 
-=== UC16 - Visualizzazione annuncio tramite marker sulla mappa <uc16>
+=== UC16 - Visualizzazione informazioni dell'annuncio tramite marker sulla mappa <uc16>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema tiene traccia degli annunci generati e le relative informazioni.
@@ -418,13 +421,13 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   - Il sistema espone l'annuncio generato, con le relative informazioni, in corrispondenza del _marker_ sulla mappa.
 - *Scenario principale*:
   + L'amministratore accede alla mappa sulla _dashboard_.
-  + L'amministratore interagisce col _marker_ che indica un annuncio generato.
-  + Viene visualizzato l'annuncio generato in corrispondenza del _marker_ selezionato.
+  + L'amministratore interagisce col _marker_ che indica la generazione dell'annuncio.
+  + Vengono visualizzati le informazioni dell'annuncio generato in corrispondenza del _marker_ selezionato.
 - *Inclusioni*:
   - Visualizzazione nome del punto di interesse dell'annuncio aperto dal _marker_ (#link(<uc17>)[UC17]).
   - Visualizzazione _e-mail_ dell'utente dell'annuncio aperto dal _marker_ (#link(<uc18>)[UC18]).
   - Visualizzazione data e ora di generazione annuncio dell'annuncio aperto dal _marker_ (#link(<uc19>)[UC19]).
-  - Visualizzazione del corpo dell'annuncio aperto dal _marker_ (#link(<uc20>)[UC20]).
+  - Visualizzazione dell'annuncio aperto dal _marker_ (#link(<uc20>)[UC20]).
   - Visualizzazione categoria del punto di interesse dell'annuncio aperto dal _marker_ (#link(<uc21>)[UC21]).
 
 
@@ -459,15 +462,15 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   + L'amministratore visualizza la data e l'ora di tentativo di generazione annuncio dell'annuncio aperto dal _marker_.
 
-=== UC20 - Visualizzazione del corpo dell'annuncio aperto dal marker <uc20>
+=== UC20 - Visualizzazione dell'annuncio aperto dal marker <uc20>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema tiene traccia degli annunci generati.
   - L'amministratore sta visualizzando le informazioni dell'annuncio aperto dal _marker_.
 - *Postcondizioni*:
-  - Il sistema espone il corpo dell'annuncio aperto dal _marker_ per intero.
+  - Il sistema espone l'annuncio aperto dal _marker_ per intero.
 - *Scenario principale*:
-  + L'amministratore visualizza interamente il corpo dell'annuncio generato aperto dal _marker_.
+  + L'amministratore visualizza interamente l'annuncio generato aperto dal _marker_.
 
 === UC21 - Visualizzazione categoria del punto di interesse dell'annuncio aperto dal marker <uc21>
 - *Attore principale*: Amministratore.
@@ -542,16 +545,16 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 #pagebreak()
 
 
-=== UC26 - Chiusura annuncio visualizzato tramite marker sulla mappa <uc26>
+=== UC26 - Chiusura vista delle informazioni dell'annuncio visualizzate tramite marker sulla mappa <uc26>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - L'amministratore si trova nella _dashboard_ di visualizzazione della mappa.
-  - L'amministratore ha aperto l'annuncio tramite un'interazione con il _marker_ sulla mappa.
+  - L'amministratore ha aperto le informazioni relative all'annuncio tramite un'interazione con il _marker_ sulla mappa.
 - *Postcondizioni*:
-  - Il sistema chiude l'annuncio visualizzato tramite una interazione con il _marker_ corrispondente.
+  - Il sistema chiude la vista delle informazioni dell'annuncio visualizzata tramite una interazione con il _marker_ corrispondente.
 - *Scenario principale*:
-  + L'amministratore visualizza l'annuncio sulla mappa in corrispondenza del _marker_.
-  + L'amministratore chiude l'annuncio.
+  + L'amministratore visualizza le informazioni dell'annuncio sulla mappa in corrispondenza del _marker_.
+  + L'amministratore chiude la vista delle informazioni.
 #v(20pt)
 #figure(
   image("../assets/use_cases/UC26.png"),
@@ -665,7 +668,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   - Visualizzazione storico annunci in lista (#link(<uc34>)[UC34]).
   - Visualizzazione storico annunci in griglia (#link(<uc35>)[UC35]).
 - *Inclusioni*:
-  - Visualizzazione singolo annuncio nello storico (#link(<uc36>)[UC36]).
+  - Visualizzazione elemento nello storico (#link(<uc36>)[UC36]).
 
 === UC34 - Visualizzazione storico annunci in lista <uc34>
 - *Attore principale*: Amministratore.
@@ -689,57 +692,56 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore accede alla sezione apposita degli annunci.
   + L'amministratore seleziona l'opzione per visualizzare gli annunci in griglia.
 
-=== UC36 - Visualizzazione singolo annuncio nello storico <uc36>
+=== UC36 - Visualizzazione elemento nello storico <uc36>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema tiene traccia delle informazioni principali degli annunci generati per gli utenti dell'amministratore.
   - L'amministratore sta visualizzando lo storico degli annunci.
 - *Postcondizioni*:
-  - Il sistema espone le informazioni principali relative al singolo annuncio.
+  - Il sistema espone le informazioni principali relative al singolo elemento nello storico.
 - *Scenario principale*:
-  + L'amministratore visualizza un elemento della lista degli annunci contenente le informazioni principali di quell'elemento.
+  + L'amministratore visualizza un elemento contenente le informazioni principali di un annuncio.
 - *Inclusioni*:
-  - Visualizzazione nome del punto di interesse dall'annuncio nello storico (#link(<uc37>)[UC37]).
-  - Visualizzazione _e-mail_ dell'utente dall'annuncio nello storico (#link(<uc38>)[UC38]).
-  - Visualizzazione data e ora di tentativo di generazione annuncio dall'annuncio nello storico (#link(<uc39>)[UC39]).
-  - Visualizzazione _flag_ sugli annunci nello storico inviati a noleggi attivi dall'annuncio nello storico (#link(<uc40>)[UC40]).
+  - Visualizzazione nome del punto di interesse dall'elemento nello storico (#link(<uc37>)[UC37]).
+  - Visualizzazione _e-mail_ dell'utente dall'elemento nello storico (#link(<uc38>)[UC38]).
+  - Visualizzazione data e ora di tentativo di generazione annuncio dall'elemento nello storico (#link(<uc39>)[UC39]).
+  - Visualizzazione _flag_ sugli annunci nello storico inviati a noleggi attivi dall'elemento nello storico (#link(<uc40>)[UC40]).
 
-=== UC37 - Visualizzazione nome del punto di interesse dall'annuncio nello storico <uc37>
+=== UC37 - Visualizzazione nome del punto di interesse dall'elemento nello storico <uc37>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema tiene traccia del nome di ciascun punto di interesse.
-  - L'amministratore sta visualizzando un singolo annuncio nello storico.
+  - L'amministratore sta visualizzando un elemento nello storico.
 - *Postcondizioni*:
-  - Il sistema espone il nome del punto di interesse del singolo annuncio nello storico.
+  - Il sistema espone il nome del punto di interesse dell'annuncio nell'elemento dello storico.
 - *Scenario principale*:
-  + L'amministratore visualizza il nome del punto di interesse del singolo annuncio nello storico.
+  + L'amministratore visualizza il nome del punto di interesse dell'annuncio nell'elemento dello storico.
 
-=== UC38 - Visualizzazione e-mail dell'utente dall'annuncio nello storico <uc38>
+=== UC38 - Visualizzazione e-mail dell'utente dall'elemento nello storico <uc38>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema tiene traccia dell'_e-mail_ di ciascun utente.
-  - L'amministratore sta visualizzando un singolo annuncio nello storico.
+  - L'amministratore sta visualizzando un elemento nello storico.
 - *Postcondizioni*:
-  - Il sistema espone l'_e-mail_ dell'utente del singolo annuncio nello storico.
+  - Il sistema espone l'_e-mail_ dell'utente destinatario dell'annuncio nell'elemento dello storico.
 - *Scenario principale*:
-  + L'amministratore visualizza l'_e-mail_ dell'utente del singolo annuncio nello storico.
+  + L'amministratore visualizza l'_e-mail_ dell'utente destinatario dell'annuncio nell'elemento dello storico.
 
-=== UC39 - Visualizzazione data e ora di tentativo di generazione annuncio dall'annuncio nello storico <uc39>
+=== UC39 - Visualizzazione data e ora di tentativo di generazione annuncio dall'elemento nello storico <uc39>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema tiene traccia della data e dell'ora nelle quali il sistema ha richiesto di generare un annuncio.
-  - L'amministratore sta visualizzando un singolo annuncio nello storico.
+  - L'amministratore sta visualizzando un elemento nello storico.
 - *Postcondizioni*:
-  - Il sistema espone la data e l'ora di tentativo di generazione del singolo annuncio nello storico.
+  - Il sistema espone la data e l'ora di tentativo di generazione dell'annuncio nell'elemento dello storico.
 - *Scenario principale*:
-  + L'amministratore visualizza la data e l'ora di tentativo di generazione del singolo annuncio nello storico.
+  + L'amministratore visualizza la data e l'ora di tentativo di generazione dell'annuncio nell'elemento dello storico.
 
-=== UC40 - Visualizzazione flag sugli annunci nello storico legati a noleggi attivi dall'annuncio nello storico
-<uc40>
+=== UC40 - Visualizzazione flag sull'elemento nello storico legato all'annuncio emesso verso un noleggio attivo <uc40>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema tiene traccia dello stato del noleggio al quale è legato l'annuncio, se è cioè ancora attivo o meno.
-  - L'amministratore sta visualizzando un singolo annuncio nello storico.
+  - L'amministratore sta visualizzando un elemento nello storico.
 - *Postcondizioni*:
   - Il sistema espone un _flag_ nel caso il noleggio al quale è legato il singolo annuncio nello storico è ancora attivo.
 - *Scenario principale*:
@@ -763,73 +765,72 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore seleziona l'opzione per visualizzare i dettagli dell'annuncio desiderato.
   + Viene esposto l'annuncio insieme alle relative informazioni.
 - *Inclusioni*:
-  - Visualizzazione nome del punto di interesse dal dettaglio di un annuncio aperto dallo storico (#link(<uc42>)[UC42]).
-  - Visualizzazione _e-mail_ dell'utente dal dettaglio di un annuncio aperto dallo storico (#link(<uc43>)[UC43]).
-  - Visualizzazione data e ora di tentativo di generazione annuncio dal dettaglio di un annuncio aperto dallo storico (#link(<uc44>)[UC44]).
-  - Visualizzazione _flag_ sugli annunci nello storico inviati a noleggi attivi dal dettaglio di un annuncio aperto dallo storico (#link(<uc45>)[UC45]).
-  - Visualizzazione del corpo dell'annuncio dal suo dettaglio aperto dallo storico (#link(<uc46>)[UC46]).
-  - Visualizzazione categoria del punto di interesse collegato all'annuncio dal suo dettaglio aperto dallo storico (#link(<uc47>)[UC47]).
+  - Visualizzazione nome del punto di interesse dai dettagli aperti dall'elemento nello storico (#link(<uc42>)[UC42]).
+  - Visualizzazione _e-mail_ dell'utente dai dettagli aperti dall'elemento nello storico (#link(<uc43>)[UC43]).
+  - Visualizzazione data e ora di tentativo di generazione annuncio dai dettagli aperti dall'elemento nello storico (#link(<uc44>)[UC44]).
+  - Visualizzazione flag sugli annunci nello storico legati a noleggi attivi dai dettagli aperti dall'elemento nello storico (#link(<uc45>)[UC45]).
+  - Visualizzazione dell'annuncio dai dettagli aperti dall'elemento nello storico (#link(<uc46>)[UC46]).
+  - Visualizzazione categoria del punto di interesse collegato all'annuncio dai dettagli aperti dall'elemento nello storico (#link(<uc47>)[UC47]).
 
-=== UC42 - Visualizzazione nome del punto di interesse dal dettaglio di un annuncio aperto dallo storico <uc42>
+=== UC42 - Visualizzazione nome del punto di interesse dai dettagli aperti dall'elemento nello storico <uc42>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema tiene traccia del nome di ciascun punto di interesse.
-  - L'amministratore sta visualizzando il dettaglio di un singolo annuncio aperto dallo storico.
+  - L'amministratore sta visualizzando il dettaglio di un singolo elemento aperto nello storico.
 - *Postcondizioni*:
-  - Il sistema espone il nome del punto di interesse nel dettaglio di un annuncio aperto dallo storico.
+  - Il sistema espone il nome del punto di interesse nei dettagli di un elemento aperto nello storico.
 - *Scenario principale*:
-  + L'amministratore visualizza il nome del punto di interesse nel dettaglio di un annuncio aperto dallo storico.
+  + L'amministratore visualizza il nome del punto di interesse nei dettagli di un elemento aperto nello storico.
 
-=== UC43 - Visualizzazione e-mail dell'utente dal dettaglio di un annuncio aperto dallo storico <uc43>
+=== UC43 - Visualizzazione e-mail dell'utente dai dettagli aperti dall'elemento nello storico <uc43>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema tiene traccia dell'_e-mail_ di ciascun utente.
-  - L'amministratore sta visualizzando il dettaglio di un singolo annuncio aperto dallo storico.
+  - L'amministratore sta visualizzando il dettaglio di un singolo elemento aperto nello storico.
 - *Postcondizioni*:
-  - Il sistema espone l'_e-mail_ dell'utente nel dettaglio di un annuncio aperto dallo storico.
+  - Il sistema espone l'_e-mail_ dell'utente nei dettagli di un elemento aperto nello storico.
 - *Scenario principale*:
-  + L'amministratore visualizza l'_e-mail_ dell'utente nel dettaglio di un annuncio aperto dallo storico.
+  + L'amministratore visualizza l'_e-mail_ dell'utente nei dettagli di un elemento aperto nello storico.
 
-=== UC44 - Visualizzazione data e ora di tentativo di generazione annuncio dal dettaglio di un annuncio aperto dallo storico <uc44>
+=== UC44 - Visualizzazione data e ora di tentativo di generazione annuncio dai dettagli aperti dall'elemento nello storico <uc44>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema tiene traccia della data e dell'ora nelle quali il sistema ha richiesto di generare un annuncio.
-  - L'amministratore sta visualizzando il dettaglio di un singolo annuncio aperto dallo storico.
+  - L'amministratore sta visualizzando il dettaglio di un singolo elemento aperto nello storico.
 - *Postcondizioni*:
-  - Il sistema espone la data e l'ora di tentativo di generazione annuncio nel dettaglio di un annuncio aperto dallo storico.
+  - Il sistema espone la data e l'ora di tentativo di generazione annuncio nei dettagli di un elemento aperto nello storico.
 - *Scenario principale*:
-  + L'amministratore visualizza la data e l'ora di tentativo di generazione annuncio aperto dallo storico.
+  + L'amministratore visualizza la data e l'ora di tentativo di generazione annuncio nei dettagli di un elemento aperto nello storico.
 
-=== UC45 - Visualizzazione flag sugli annunci nello storico legati a noleggi attivi dal dettaglio di un annuncio aperto dallo storico
-<uc45>
+=== UC45 - Visualizzazione flag sugli annunci nello storico legati a noleggi attivi dai dettagli aperti dall'elemento nello storico <uc45>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema tiene traccia dello stato del noleggio al quale è legato l'annuncio, se è cioè ancora attivo o meno.
-  - L'amministratore sta visualizzando il dettaglio di un singolo annuncio aperto dallo storico.
+  - L'amministratore sta visualizzando il dettaglio di un singolo elemento aperto nello storico.
 - *Postcondizioni*:
-  - Il sistema espone un _flag_ nel caso il noleggio al quale è legato l'annuncio aperto dallo storico è ancora attivo .
+  - Il sistema espone un _flag_ nel caso in cui il noleggio al quale è legato l'annuncio, aperto dall'elemento nello storico, sia ancora attivo.
 - *Scenario principale*:
-  + L'amministratore visualizza il _flag_ nel caso in cui il noleggio relativo all'annuncio aperto dallo storico è ancora attivo.
+  + L'amministratore visualizza il _flag_ nel caso in cui il noleggio relativo all'annuncio, aperto dall'elemento nello storico, sia ancora attivo.
 
-=== UC46 - Visualizzazione del corpo dell'annuncio dal suo dettaglio aperto dallo storico <uc46>
+=== UC46 - Visualizzazione dell'annuncio dai dettagli aperti dall'elemento nello storico <uc46>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema tiene traccia degli annunci generati.
-  - L'amministratore sta visualizzando il dettaglio di un singolo annuncio aperto dallo storico.
+  - L'amministratore sta visualizzando il dettaglio di un singolo elemento aperto nello storico.
 - *Postcondizioni*:
-  - Il sistema espone il corpo dell'annuncio aperto dallo storico per intero.
+  - Il sistema espone l'annuncio aperto dall'elemento nello storico.
 - *Scenario principale*:
-  + L'amministratore visualizza interamente il corpo dell'annuncio generato aperto dallo storico.
+  + L'amministratore visualizza interamente l'annuncio generato aperto dall'elemento nello storico.
 
-=== UC47 - Visualizzazione categoria del punto di interesse collegato all'annuncio dal suo dettaglio aperto dallo storico <uc47>
+=== UC47 - Visualizzazione categoria del punto di interesse collegato all'annuncio dai dettagli aperti dall'elemento nello storico <uc47>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema tiene traccia della categoria del punto di interesse collegato al relativo annuncio aperto dallo storico.
-  - L'amministratore sta visualizzando il dettaglio di un singolo annuncio.
+  - L'amministratore sta visualizzando il dettaglio di un singolo elemento aperto nello storico.
 - *Postcondizioni*:
-  - Il sistema espone la categoria del punto di interesse collegato al relativo annuncio aperto dallo storico.
+  - Il sistema espone la categoria del punto di interesse nei dettagli di un elemento aperto nello storico.
 - *Scenario principale*:
-  + L'amministratore visualizza la categoria del punto di interesse collegato al relativo annuncio aperto dallo storico.
+  + L'amministratore visualizza la categoria del punto di interesse nei dettagli di un elemento aperto nello storico.
 #v(20pt)
 #figure(
   image("../assets/use_cases/UC41-42-43-44-45-46-47.png"),
@@ -838,7 +839,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #pagebreak()
 
-=== UC48 - Chiusura della vista di visualizzazione dettagli di un singolo annuncio aperto dallo storico <uc48>
+=== UC48 - Chiusura della vista di visualizzazione dettagli di un singolo elemento aperto nello storico <uc48>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema espone una vista per i dettagli di un annuncio aperto dallo storico con la quale l'amministratore può interagire.
@@ -1090,143 +1091,143 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
 #table(
   align: (center, left, center),
   columns: (0.6fr, 3fr, 0.9fr),
-  table.header([*Codice*], [*Descrizione*], [*Origine*]),
+  table.header([*Codice*], [*Descrizione*], [*Fonti*]),
   [ROF-1],
   [Il sensore deve trasmettere i suoi dati di identificazione e localizzazione al sistema a intervalli regolari.],
-  [#link(<uc1>)[UC1]],
+  [#link(<uc1>)[UC1]\ Capitolato],
 
   [ROF-2],
   [La _dashboard_ dell'amministratore, per essere accessibile solamente da quest'ultimo, deve essere protetta da un sistema di autenticazione. Per poter visualizzare la _dashboard_ l'amministratore deve quindi autenticarsi con le proprie credenziali.],
-  [#link(<uc2>)[UC2]],
+  [#link(<uc2>)[UC2]\ Riunioni esterne],
 
   [ROF-3],
   [L'amministratore, per poter accedere alla _dashboard_, deve fornire l'indirizzo _e-mail_ dell'_account_ con cui è registrato all'interno del sistema.],
-  [#link(<uc3>)[UC3]],
+  [#link(<uc3>)[UC3]\ Riunioni interne],
 
   [ROF-4],
   [L'amministratore, per poter accedere alla _dashboard_, deve fornire la _password_ dell'_account_ con cui è registrato all'interno del sistema.],
-  [#link(<uc4>)[UC4]],
+  [#link(<uc4>)[UC4]\ Riunioni interne],
 
   [ROF-5],
   [Se l'amministratore inserisce delle credenziali non valide, come una _e-mail_ o _password_ non valida, il sistema deve ritornare il messaggio di errore "Credenziali errate".],
-  [#link(<uc5>)[UC5]],
+  [#link(<uc5>)[UC5]\ Riunioni interne],
 
   [ROF-6],
   [L'amministratore, una volta autenticato, deve poter visualizzare la mappa geografica sulla _dashboard_ del sistema.],
-  [#link(<uc6>)[UC6]],
+  [#link(<uc6>)[UC6]\ Capitolato],
 
   [ROF-7],
   [L'amministratore deve poter visualizzare i punti di interesse presenti all'interno del sistema tramite dei _marker_ posizionati all'interno della mappa geografica.],
-  [#link(<uc7>)[UC7]],
+  [#link(<uc7>)[UC7]\ Capitolato],
 
   [ROF-8],
   [L'amministratore, per ogni noleggio attivo che viene erogato, deve poter visualizzare il tracciato percorso dal mezzo a noleggio attraverso la mappa geografica.],
-  [#link(<uc8>)[UC8]],
+  [#link(<uc8>)[UC8]\ Capitolato],
 
   [ROF-9],
   [L'amministratore deve poter visualizzare un _marker_ sulla mappa in corrispondenza di un dato GPS trasmesso dal sensore nel momento in cui:
     - non è in prossimità di un punto di interesse
     - è già stata richiesta in precedenza per l'utente del mezzo la generazione di un annuncio per lo stesso punto di interesse.],
-  [#link(<uc9>)[UC9]\ #link(<uc10>)[UC10]],
+  [#link(<uc9>)[UC9]\ #link(<uc10>)[UC10]\ Capitolato\ Riunioni esterne],
 
   [ROF-10],
   [L'amministratore deve poter visualizzare un _marker_ in corrispondenza di una posizione, in prossimità di un punto di interesse, che ha causato la generazione di un annuncio tramite LLM per l'utente del mezzo.],
-  [#link(<uc9>)[UC9]\ #link(<uc11>)[UC11]],
+  [#link(<uc9>)[UC9]\ #link(<uc11>)[UC11]\ Capitolato\ Riunioni esterne],
 
   [ROF-11],
   [L'amministratore deve poter visualizzare i _marker_ in corrispondenza di una posizione, in prossimità di un punto di interesse, dove la LLM non ha generato un annuncio perché ha valutato l'utente come non interessato al punto di interesse in base alla sua profilazione.],
-  [#link(<uc9>)[UC9]\ #link(<uc12>)[UC12]],
+  [#link(<uc9>)[UC9]\ #link(<uc12>)[UC12]\ Capitolato\ Riunioni esterne],
 
   //FIXME: secondo me potevamo lasciare anche separate. Piuttosto aggiungo un riferimento allo stesso use case (da chiedere anche a revisori e responsabile)
   [ROF-12],
   [L'amministratore deve poter visualizzare tramite un'interazione con il _marker_ (come un _hover_ o un _click_) le informazioni relative al punto di interesse.],
-  [#link(<uc13>)[UC13]],
+  [#link(<uc13>)[UC13]\ Capitolato\ Riunioni esterne],
 
   [ROF-13],
   [L'amministratore deve poter visualizzare dalle informazioni fornite tramite l'interazione con il _marker_ del punto di interesse il nome dello stesso.],
-  [#link(<uc13>)[UC13]\ #link(<uc14>)[UC14]],
+  [#link(<uc13>)[UC13]\ #link(<uc14>)[UC14]\ Riunioni interne\ Riunioni esterne],
 
   [ROF-14],
   [L'amministratore deve poter visualizzare, dalle informazioni fornite tramite interazione con il _marker_ del punto di interesse, la categoria di esercizio commerciale (e.g. alimentare, sportivo, etc.).],
-  [#link(<uc13>)[UC13]\ #link(<uc15>)[UC15]],
+  [#link(<uc13>)[UC13]\ #link(<uc15>)[UC15]\ Riunioni interne\ Riunioni esterne],
 
   [ROF-15],
-  [L'amministratore deve poter visualizzare l'annuncio generato tramite l'interazione con un _marker_ di generazione annuncio.],
-  [#link(<uc16>)[UC16]],
+  [L'amministratore deve poter visualizzare le informazioni relative all'annuncio generato tramite l'interazione con un _marker_ di generazione annuncio.],
+  [#link(<uc16>)[UC16]\ Capitolato\ Riunioni esterne],
 
   [ROF-16],
   [L'amministratore deve poter visualizzare il nome del punto di interesse legato all'annuncio visualizzato tramite l'interazione con un _marker_ di generazione annuncio.],
-  [#link(<uc16>)[UC16]\ #link(<uc17>)[UC17]],
+  [#link(<uc16>)[UC16]\ #link(<uc17>)[UC17]\ Riunioni interne\ Riunioni esterne],
 
   [ROF-17],
-  [L'amministratore deve poter visualizzare l'email dell'utente destinatario, attraverso l'annuncio visualizzato, tramite un _marker_ di generazione annuncio.],
-  [#link(<uc16>)[UC16]\ #link(<uc18>)[UC18]],
+  [L'amministratore deve poter visualizzare l'_e-mail_ dell'utente destinatario tramite un _marker_ di generazione annuncio.],
+  [#link(<uc16>)[UC16]\ #link(<uc18>)[UC18]\ Riunioni interne\ Riunioni esterne],
 
   [ROF-18],
-  [L'amministratore deve poter visualizzare la data e l'ora di generazione dell'annuncio, attraverso l'annuncio visualizzato, tramite un _marker_ di generazione annuncio.],
-  [#link(<uc16>)[UC16]\ #link(<uc19>)[UC19]],
+  [L'amministratore deve poter visualizzare la data e l'ora di generazione dell'annuncio tramite un _marker_ di generazione annuncio.],
+  [#link(<uc16>)[UC16]\ #link(<uc19>)[UC19]\ Riunioni interne\ Riunioni esterne],
 
   [ROF-19],
-  [L'amministratore deve poter visualizzare il corpo dell'annuncio, attraverso l'annuncio visualizzato, tramite un _marker_ di generazione annuncio.],
-  [#link(<uc16>)[UC16]\ #link(<uc20>)[UC20]],
+  [L'amministratore deve poter visualizzare l'annuncio tramite un _marker_ di generazione annuncio.],
+  [#link(<uc16>)[UC16]\ #link(<uc20>)[UC20]\ Riunioni esterne],
 
   [ROF-20],
   [L'amministratore deve poter visualizzare la categoria di esercizio commerciale del punto di interesse coinvolto nella generazione dell'annuncio visualizzato tramite un'interazione con un _marker_ di generazione annuncio.],
-  [#link(<uc16>)[UC16]\ #link(<uc21>)[UC21]],
+  [#link(<uc16>)[UC16]\ #link(<uc21>)[UC21]\ Riunioni interne\ Riunioni esterne],
 
   [ROF-21],
   [L'amministratore deve poter visualizzare un messaggio con le informazioni di un annuncio non generato, tramite l'interazione con un _marker_ di mancata generazione.],
-  [#link(<uc22>)[UC22]],
+  [#link(<uc22>)[UC22]\ Riunioni esterne],
 
   [ROF-22],
-  [L'amministratore deve poter visualizzare un messaggio con le informazioni di un annuncio non generato, tramite l'interazione con un _marker_ di mancata generazione, tra cui il nome del punto di interesse.],
-  [#link(<uc22>)[UC22]\ #link(<uc23>)[UC23]],
+  [L'amministratore deve poter visualizzare il nome del punto di interesse sul messaggio con le informazioni di un annuncio non generato, tramite l'interazione con un _marker_ di mancata generazione.],
+  [#link(<uc22>)[UC22]\ #link(<uc23>)[UC23]\ Riunioni interne\ Riunioni esterne],
 
   [ROF-23],
-  [L'amministratore deve poter visualizzare un messaggio con le informazioni di un annuncio non generato, tramite l'interazione con un _marker_ di mancata generazione, tra cui l'_e-mail_ dell'utente.],
-  [#link(<uc22>)[UC22]\ #link(<uc24>)[UC24]],
+  [L'amministratore deve poter visualizzare l'_e-mail_ dell'utente destinatario sul messaggio con le informazioni di un annuncio non generato, tramite l'interazione con un _marker_ di mancata generazione.],
+  [#link(<uc22>)[UC22]\ #link(<uc24>)[UC24]\ Riunioni interne\ Riunioni esterne],
 
   [ROF-24],
-  [L'amministratore deve poter visualizzare un messaggio con le informazioni di un annuncio non generato, tramite l'interazione con un _marker_ di mancata generazione, tra cui la data e ora di tentata generazione.],
-  [#link(<uc22>)[UC22]\ #link(<uc25>)[UC25]],
+  [L'amministratore deve poter visualizzare la data e ora di tentata generazione sul messaggio con le informazioni di un annuncio non generato, tramite l'interazione con un _marker_ di mancata generazione.],
+  [#link(<uc22>)[UC22]\ #link(<uc25>)[UC25]\ Riunioni interne\ Riunioni esterne],
 
   [ROF-25],
   [L'amministratore deve poter chiudere l'annuncio generato visualizzato sulla mappa tramite l'interazione con un _marker_ di generazione annuncio.],
-  [#link(<uc26>)[UC26]],
+  [#link(<uc26>)[UC26]\ Riunioni interne],
 
   [ROF-26],
   [L'amministratore deve poter chiudere il messaggio di annuncio non generato visualizzato sulla mappa tramite l'interazione con un _marker_ di mancata generazione.],
-  [#link(<uc27>)[UC27]],
+  [#link(<uc27>)[UC27]\ Riunioni interne],
 
   [ROF-27],
   [L'amministratore deve essere in grado di interagire con la mappa per spostare il centro della visuale.],
-  [#link(<uc28>)[UC28]],
+  [#link(<uc28>)[UC28]\ Riunioni interne],
 
   [ROF-28],
   [L'amministratore deve essere in grado di modificare l'ampiezza della visuale sulla mappa. In particolare bisogna permettere l'ampliamento e il restringimento del campo visivo che l'amministratore ha sul territorio visualizzato all'interno della mappa.],
-  [#link(<uc29>)[UC29]\ #link(<uc30>)[UC30]\ #link(<uc31>)[UC31]],
+  [#link(<uc29>)[UC29]\ #link(<uc30>)[UC30]\ #link(<uc31>)[UC31]\ Riunioni interne],
 
   [ROF-29],
-  [L'amministrato deve poter ricevere il messaggio di errore "Il _server_ non risponde" nel caso in cui il sistema non risponda o smetta di funzionare.],
-  [#link(<uc53>)[UC53]],
+  [L'amministratore deve poter ricevere il messaggio di errore "Il _server_ non risponde" nel caso in cui il sistema non risponda o smetta di funzionare.],
+  [#link(<uc53>)[UC53]\ Riunioni interne],
 
   [ROF-30],
   [L'amministratore deve poter ricevere il messaggio di errore "Connessione persa" nel caso in cui la connessione con il sistema venga persa o sia scarsa.],
-  [#link(<uc54>)[UC54]],
+  [#link(<uc54>)[UC54]\ Riunioni interne],
 
   [ROF-31],
   [L'amministratore deve poter ricevere il messaggio di errore "Sensore malfunzionante" nel caso in cui il sensore non sia in grado di trasmettere i dati di localizzazione in maniera corretta o non trasmetta dopo un determinato intervallo di tempo.],
-  [#link(<uc55>)[UC55]],
+  [#link(<uc55>)[UC55]\ Riunioni interne],
 
   [ROF-32],
   [L'amministratore deve poter visualizzare il messaggio di errore "Generazione impossibile dell'annuncio" nel caso in cui il sistema non sia in grado di stabilire una connessione e comunicare con il servizio di LLM, non permettendo così la trasmissione e la ricezione di dati da parte di quest'ultimo.],
-  [#link(<uc56>)[UC56]],
+  [#link(<uc56>)[UC56]\ Riunioni interne],
 )
 === Requisiti di qualità
 #table(
   align: (center, left, center),
   columns: (0.6fr, 3fr, 0.9fr),
-  table.header([*Codice*], [*Descrizione*], [*Origine*]),
+  table.header([*Codice*], [*Descrizione*], [*Fonti*]),
   [ROQ-1],
   [Superamento dei _test_ che dimostrano il corretto funzionamento dei servizi e delle funzionalità, garantendo un _#rifGlossario("code coverage")_ dell'80% o più e correlati da _report_.],
   [Capitolato],
@@ -1235,7 +1236,7 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
 #table(
   align: (center, left, center),
   columns: (0.6fr, 3fr, 0.9fr),
-  table.header([*Codice*], [*Descrizione*], [*Origine*]),
+  table.header([*Codice*], [*Descrizione*], [*Fonti*]),
   [ROV-1],
   [Creazione di un generatore di dati GPS per simulare il funzionamento di un sensore che interagisce col sistema.],
   [Capitolato],
@@ -1245,7 +1246,7 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
   [Capitolato],
 
   [ROV-3],
-  [Viene richiesta la documentazione riguardante le scelte implementative e progettuali effettuate e le relative motivazioni],
+  [Viene richiesta la documentazione riguardante le scelte implementative e progettuali effettuate e le relative motivazioni.],
   [Capitolato],
 )
 == Requisiti desiderabili
@@ -1253,7 +1254,7 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
 #table(
   align: (center, left, center),
   columns: (0.6fr, 3fr, 0.9fr),
-  table.header([*Codice*], [*Descrizione*], [*Origine*]),
+  table.header([*Codice*], [*Descrizione*], [*Fonti*]),
   [RDF-1],
   [L'amministratore deve essere in grado di accedere alla sezione dedicata allo storico degli annunci generati all'interno della _dashboard_.],
   [#link(<uc32>)[UC32]\ Riunioni esterne],
@@ -1271,7 +1272,7 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
   [#link(<uc37>)[UC37]\ Riunioni esterne],
 
   [RDF-5],
-  [L'amministratore deve essere in grado di visualizzare l'_email_ dell'utente destinatario di ogni singola voce di annuncio visualizzato all'interno dello storico.],
+  [L'amministratore deve essere in grado di visualizzare l'_e-mail_ dell'utente destinatario di ogni singola voce di annuncio visualizzato all'interno dello storico.],
   [#link(<uc38>)[UC38]\ Riunioni esterne],
 
   [RDF-6],
@@ -1283,31 +1284,31 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
   [#link(<uc40>)[UC40]\ Riunioni esterne],
 
   [RDF-8],
-  [L'amministratore deve essere in grado di poter visualizzare i dettagli di un singolo annuncio visualizzato all'interno dello storico.],
+  [L'amministratore deve essere in grado di poter visualizzare i dettagli di un singolo elemento visualizzato all'interno dello storico.],
   [#link(<uc41>)[UC41]\ Riunioni esterne],
 
   [RDF-9],
-  [L'amministratore deve essere in grado di visualizzare il nome del punto di interesse relativo ad un annuncio tramite la visualizzazione dei dettagli dello stesso.],
+  [L'amministratore deve essere in grado di visualizzare il nome del punto di interesse relativo ad un annuncio tramite la visualizzazione dei dettagli dell'elemento nello storico.],
   [#link(<uc41>)[UC41]\ #link(<uc42>)[UC42]\ Riunioni esterne],
 
   [RDF-10],
-  [L'amministratore deve essere in grado di visualizzare l'email dell'utente destinatario di un annuncio tramite la visualizzazione dei dettagli dello stesso.],
+  [L'amministratore deve essere in grado di visualizzare l'_e-mail_ dell'utente destinatario di un annuncio tramite la visualizzazione dei dettagli dell'elemento nello storico.],
   [#link(<uc41>)[UC41]\ #link(<uc43>)[UC43]\ Riunioni esterne],
 
   [RDF-11],
-  [L'amministratore deve essere in grado di visualizzare data e ora del tentativo di generazione di un annuncio tramite la visualizzazione dei dettagli dello stesso.],
+  [L'amministratore deve essere in grado di visualizzare data e ora del tentativo di generazione di un annuncio tramite la visualizzazione dei dettagli dell'elemento nello storico.],
   [#link(<uc41>)[UC41]\ #link(<uc44>)[UC44]\ Riunioni esterne],
 
   [RDF-12],
-  [L'amministratore deve essere in grado di visualizzare una _flag_ che segnala lo stato di attività del noleggio a cui è destinato un annuncio tramite la visualizzazione dei dettagli dello stesso.],
+  [L'amministratore deve essere in grado di visualizzare una _flag_ che segnala lo stato di attività del noleggio a cui è destinato un annuncio tramite la visualizzazione dei dettagli dell'elemento nello storico.],
   [#link(<uc41>)[UC41]\ #link(<uc45>)[UC45]\ Riunioni esterne],
 
   [RDF-13],
-  [L'amministratore deve essere in grado di visualizzare il corpo dell'annuncio tramite la visualizzazione dei dettagli dello stesso.],
+  [L'amministratore deve essere in grado di visualizzare il corpo dell'annuncio tramite la visualizzazione dei dettagli dell'elemento nello storico.],
   [#link(<uc41>)[UC41]\ #link(<uc46>)[UC46]\ Riunioni esterne],
 
   [RDF-14],
-  [L'amministratore deve essere in grado di visualizzare la categoria del punto di interesse collegato all'annuncio tramite la visualizzazione dei dettagli dello stesso.],
+  [L'amministratore deve essere in grado di visualizzare la categoria del punto di interesse collegato all'annuncio tramite la visualizzazione dei dettagli dell'elemento nello storico.],
   [#link(<uc41>)[UC41]\ #link(<uc47>)[UC47]\ Riunioni esterne],
 
   [RDF-15],
@@ -1323,7 +1324,7 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
   [#link(<uc50>)[UC50]\ Riunioni esterne],
 
   [RDF-18],
-  [L'amministratore deve essere in grado, tramite un sistema di filtraggio, di visualizzare gli annunci dello storico generati in un intervallo di date di emissione degli annunci.],
+  [L'amministratore deve essere in grado, tramite un sistema di filtraggio, di visualizzare gli annunci dello storico generati in un certo intervallo di date.],
   [#link(<uc51>)[UC51]\ Riunioni esterne],
 
   [RDF-19],
@@ -1335,7 +1336,7 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
 #table(
   align: (center, left, center),
   columns: (0.6fr, 3fr, 0.9fr),
-  table.header([*Codice*], [*Descrizione*], [*Origine*]),
+  table.header([*Codice*], [*Descrizione*], [*Fonti*]),
   [RFF-1],
   [L'amministratore deve poter visualizzare la sezione dedicata ai grafici all'interno della _dashboard_ del sistema.],
   [#link(<uc57>)[UC57]\ Riunioni esterne],
