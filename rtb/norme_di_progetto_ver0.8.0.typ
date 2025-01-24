@@ -11,11 +11,12 @@
   uso: "Interno",
   versioni: (
     "0.9.0",
-    "12/01/2025",
+    "24/01/2025",
     "Davide Marin",
     "Andrea Perozzo\nDavide Martinelli",
     [
-      //sistemare tutti i todo
+      - Aggiunta descrizione della repo NearYou
+      - Ultimazione di alcuni paragrafi
     ],
 
     "0.8.0",
@@ -623,14 +624,50 @@ La _repository_ è costituita da un unico _branch_ nel quale è caricato tutto i
   - `README.md`
   - _File_ utili alla configurazione e al trasferimento dati.
 ]
-
+#pagebreak()
 ==== Struttura della repository NearYou
+La _repository_ è strutturata da due _branch_: "_main_" e "_dev_".
+Il branch "_main_" è utilizzato per effettuare le _release_ ufficiali, rispettive quindi a RTB e PB, mentre il _branch_ "_dev_" è adibito allo sviluppo del codice.
+All'occorenza di svolgere azioni dettate dal _backlog_ si crea un _branch_ temporaneo che, successivamente alla verifica, viene unito nel ramo "_dev_". 
+La _repository_ è presentata dal `README.md`, contiene il _file_ `.gitignore` usato dalla Action per escludere alcuni _file_ dalla compilazione.
+Le cartelle sono strutturate nel seguente modo:
 
-
-// TODO: al massimo aggiungere un paragrafo branch per ogni repo (cambia da docs a codice)
-// === Branch
-// Nella _repository_ è presente solo il _branch_ principale "main" nel quale vengono pubblicati i _file_ sorgente della documentazione verificati all'ultima versione. Nel caso in cui si dovesse apportare delle modifiche a un documento, questo viene lavorato in un nuovo _branch_ temporaneo collegato ad una _issue_. Una volta verificati i cambiamenti il _branch_ temporaneo viene unito al principale e successivamente eliminato in modo automatico.
-
+#tree-list()[
+  - *`.github`*
+    - *`workflows`*: contiene i _file_ `.yml` per la Action.
+  - *`asset`*
+    - *`img`*: contiene il logo e le immagini usate nei documenti.
+  - *`client`*
+    - *`sensordata`*: contiene i dati delle coordinate #rifGlossario("GPS") di un sensore.
+    - _File_ utili per il funzionamento del sensore.
+  - *`data`*:
+    - *`grafana`*:
+      - *`plugins`*:
+        - *`grafana-lokiexplore-app`*:
+          - *`img`*: immagini relative a #rifGlossario("Grafana").
+          - _File_ utili per il funzionamento della _dashboard_ di Grafana.
+        - *`hamedkarbasi93-kafka-datasource`*
+          - *`img`*: immagini relative a Kafka.
+          - _File_ utili per il funzionamento di Kafka.
+    - `grafana.db`
+  - *`src`*:
+    - *`main`*:
+      - *`resources`*:
+        - `application.properties`
+      - *`java/io/github/unipd/Nearyou`*:
+        - *`config`*:
+          - `KafkaConsumerConfig.java`
+          - `KafkaTopicConfig.java`
+        - *`entity`*: contiene i file `.java` che descrivono le "entità" presenti nel programma.
+        - *`repository`*: contiene i file che descrivono le _repository_ delle "entità" nel programma.
+        - `KafkaListeners.java`
+        - `NearYouApplication.java`
+    - *`test/java/io/github/unipd/Nearyou`*:
+      - `NearYouApplicationTests.java`
+  - `README.md`
+  - _File_ utili alla _build_ e al funzionamento del programma.
+]
+#pagebreak()
 === Backlog
 Il _product backlog_ è rappresentato da una GitHub _board_ con tre sezioni:
 - *Todo*
