@@ -17,7 +17,7 @@
   riassunto: [Sono stati chiariti alcuni dubbi riguardo il diagramma delle attività ed è stato confermato il lavoro sul PoC.],
   versioni: (
     "1.0.0", 
-    [22/01/2025], 
+    [24/01/2025], 
     "Andrea Precoma", "Davide Martinelli",
     [- Stesura del verbale],
   ),
@@ -56,7 +56,7 @@ Fabio Pallaro ci ha fatto notare che affidare l'intero compito alla LLM potrebbe
 Abbiamo presentato l'ultima istanza del PoC che sarà quella presentata alla consegna della _milestone_. Ci è stato confermato il lavoro con un solo accorgimento da apportare, cioè scostare il punto di interesse dal centro della strada in modo che sia più realistico e visibile.
 
 = Conclusioni
-Chiarendo le ultime questioni riguardo il diagramma delle attività abbiamo concluso il lavoro di analisi dei requisiti e dei casi d'uso. Avendo ricevuto riscontri positivi sia per la documentazione sia per il PoC programmiamo di concludere e approvare gli ultimi lavori entro il fine settimana. La consegna è stata quindi sposta a lunedì 27 gennaio.
+Chiarendo le ultime questioni riguardo il diagramma delle attività abbiamo concluso il lavoro di analisi dei requisiti e dei casi d'uso. Avendo ricevuto riscontri positivi sia per la documentazione sia per il PoC programmiamo di concludere e approvare gli ultimi lavori entro il fine settimana. La consegna è stata quindi spostata a lunedì 27 gennaio.
 
 = Tabella delle decisioni
 #backlog(
