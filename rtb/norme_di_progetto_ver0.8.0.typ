@@ -4,7 +4,7 @@
 #show: content => verbale(
   data: "14 Novembre 2024",
   destinatari: ("Gruppo SWE@",),
-  responsabile: "-",
+  responsabile: "Andrea Precoma",
   redattori: ("Andrea Precoma", "Davide Marin", "Davide Martinelli", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
   verificatori: ("Andrea Perozzo", "Andrea Precoma", "Davide Marin", "Davide Martinelli", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
   titolo: "Norme di Progetto",
@@ -199,7 +199,7 @@ Esempio:
 Nei casi d'uso possiamo avere i seguenti tipi di relazione tra attore e caso d'uso.
 
 ======= Associazione 
-Congiunge semplicemente gli attori con i casi d'uso a cui prendono parte. Un attore può essere associato a qualsiasi numero di casi d'uso e viceversa. L'associzione implica uno scambio di informazioni tra attore e caso d'uso associato. Viene indicata nel diagramma con una linea nera.
+Congiunge semplicemente gli attori con i casi d'uso a cui prendono parte. Un attore può essere associato a qualsiasi numero di casi d'uso e viceversa. L'associazione implica uno scambio di informazioni tra attore e caso d'uso associato. Viene indicata nel diagramma con una linea nera.
 
 ======= Generalizzazione
 Riguarda sia gli attori che i casi d'uso e rappresenta una relazione tra una classe, un caso d'uso o un attore più generale (superclasse) ed uno più specifico (sottoclasse). Questo tipo di relazione segue il principio dell'ereditarietà, in cui la sottoclasse eredita le caratteristiche dalla superclasse e può aggiungere o modificare specifici dettagli. La generalizzazione si rappresenta con una linea che collega le due entità (classi, attori o casi d'uso) e termina con un triangolo vuoto sulla punta, che indica la direzione verso la classe o entità più generale.
@@ -227,7 +227,7 @@ I diagrammi UML rappresentano graficamente i casi d'uso, gli attori e le relazio
 Gli elementi grafici principali da utilizzare in questi diagrammi sono:
 - *Sistema*: Il sistema è rappresentato da un rettangolo vuoto al cui interno vengono inseriti gli elementi grafici rappresentanti le sue caratteristiche. Gli elementi che invece rappresentano entità esterne sono posizionati all'esterno del rettangolo.
 - *Attore*: Rappresentati graficamente da un'icona rappresentante un omino stilizzato con la relativa etichetta univoca.
-- *Caso d'uso*: Rappresentato graficamente come un'elisse contenente il nome del caso d'uso. Concretamente rappresenta una funzione o servizio offerto dal sistema ad uno o più attori.
+- *Caso d'uso*: Rappresentato graficamente come un'ellisse contenente il nome del caso d'uso. Concretamente rappresenta una funzione o servizio offerto dal sistema ad uno o più attori.
 - *Associazione*: Relazione tra attori e casi d'uso. Essa implica uno scambio di informazioni tra attore e caso d'uso associato.
 
 Vediamo un esempio di un diagramma UML semplice, relativo ad un caso d'uso rappresentante uno _use case_ in cui l'amministratore (*attore*) si interfaccia con il *sistema* tramite un'*associazione*, al fine di eseguire un'azione (*caso d'uso*):
@@ -242,6 +242,12 @@ Il Piano di Progetto è un documento il cui scopo è quello di definire in modo 
 Viene redatto e aggiornato dal responsabile, con il supporto degli amministratori, durante l'intera durata del progetto.
 
 /*
+Il documento conterrà le seguenti informazioni:
+- *Analisi dei rischi*: Utile a individuare le possibili difficoltà che il gruppo può incontrare.
+- *Modello di sviluppo*: Descrive quale modello di sviluppo è stato scelto ed adottato dal gruppo per lo svolgimento del progetto.
+- *Pianificazione*: Contiene ed espone in quale modo il gruppo ha deciso di pianificare le attività da svolgere.
+
+
 Dovrebbe contenere le seguenti informazioni/sessioni:
 - Analisi dei rischi
 - Modello di sviluppo
@@ -256,7 +262,7 @@ Il Piano di Qualifica è un documento formale che definisce le strategie, le att
 Il suo scopo principale è assicurare che il prodotto finale sia conforme alle specifiche richieste e alle aspettative del committente, monitorando il progresso rispetto agli obiettivi prefissati. Ogni membro del _team_ coinvolto nello sviluppo farà riferimento a questo documento per mantenere e garantire i livelli di qualità stabiliti.
 
 /*
-Dovrebbe contenere le seguenti informazioni/sessioni:
+Dovrebbe contenere le seguenti informazioni:
 - Qualità di processo
 - Qualità di prodotto
 - Test
@@ -422,7 +428,7 @@ La seconda pagina è dedicata al registro delle modifiche. Le informazioni sono 
 - *Data*: La data nella quale è stata apportata l'ultima modifica nel formato DD/MM/YYYY.
 - *Redattori*
 - *Verificatori*
-- *Decrizione*: Una breve descrizione delle modifiche apportate.
+- *Descrizione*: Una breve descrizione delle modifiche apportate.
 
 ==== Indice
 Nella pagina successiva all'ultima occupata dal registro delle modifiche è posto un indice per facilitare la navigazione. Questo viene aggiornato automaticamente con la modifica dei paragrafi nel documento.
@@ -529,10 +535,10 @@ Nei documenti vengono applicate le seguenti regole di stile testuali:
 Per riferirsi ad una sezione del documento per una spiegazione più dettagliata si adotta la dicitura "sez. [I]" dove I indica l'indice della sezione (ad esempio "(sez. 3.2)"). Per un corretto collegamento si veda il paragrafo apposito (#link(<stile_testo>)[sez. 3.1.8]). \ Nel caso si tratti di un riferimento alla descrizione di una metrica (e quindi solo in questo documento) è sufficiente lasciare come dicitura il codice della metrica stessa (ad esempio "MPC-IG").
 
 ==== Ipertestuali
-Per esporre un _link_ ad una pagina esterna al docuento si utilizza la funzione `#formatLink` (#link(<stile_testo>)[sez. 3.1.8]) esplicitando l'interezza dell'_url_ anche nella _label_. Unica eccezione di stile per i riferimenti alle _issue_ nella tabella delle decisioni (#link(<stile_testo>)[sez. 3.1.8]).
+Per esporre un _link_ ad una pagina esterna al documento si utilizza la funzione `#formatLink` (#link(<stile_testo>)[sez. 3.1.8]) esplicitando l'interezza dell'_url_ anche nella _label_. Unica eccezione di stile per i riferimenti alle _issue_ nella tabella delle decisioni (#link(<stile_testo>)[sez. 3.1.8]).
 
 === Elenchi puntati
-Una lista è preferibile a un elenco narrativo, da valutare se renderlo numerato o meno a seconda della circostanza. I punti della descrizione nel registro delle modifiche vengono sempre rappresentati in un elenco. Se le voci dell'elenco sono costituite da delle frasi vengono chiuse da ".", se invece possiedono solo poche parole, che ad esempio indicano il nome di una tecnologia, non viene messo nessun segno di punteggiatura al termine. Le voci dell'elenco della descrizione nel registro delle modifche non vengono chiuse da punteggiatura.
+Una lista è preferibile a un elenco narrativo, da valutare se renderlo numerato o meno a seconda della circostanza. I punti della descrizione nel registro delle modifiche vengono sempre rappresentati in un elenco. Se le voci dell'elenco sono costituite da delle frasi vengono chiuse da ".", se invece possiedono solo poche parole, che ad esempio indicano il nome di una tecnologia, non viene messo nessun segno di punteggiatura al termine. Le voci dell'elenco della descrizione nel registro delle modifiche non vengono chiuse da punteggiatura.
 
 === Formato delle date
 Sotto il titolo nella prima pagina dei verbali viene indicata la data per iscritto, quindi nel formato "DD mese YYYY". Le date nei documenti vengono scritte nel formato DD/MM/YYYY, nei nomi dei documenti invece YYYY-MM-DD per mantenere l'ordine cronologico. In tutti i casi si segue la seguente convenzione:
@@ -571,7 +577,7 @@ Il gruppo utilizza due _repository_ all'interno della propria organizzazione Git
 - *NearYou* (#formatLink(label: "https://github.com/SWEatUNIPD/NearYou", url: "https://github.com/SWEatUNIPD/NearYou")) contenente il codice sorgente dell'applicativo.
 
 ==== Struttura della repository docs
-La _repository_ è strutturata da un unico _branch_ adibito al mantenimento di tutti i documenti Typst verificati. All'occorenza di svolgere azioni dettate dal _backlog_ si crea un _branch_ temporaneo che, successivamente alla verifica, viene unito nel ramo principale. La _repository_ è presentata dal `README.md`, contiene il _file_ `.gitignore` usato dalla Action per escludere alcuni _file_ dalla compilazione e il _file_ `script.js` usato per pubblicare la documentazione nel sito _web_. `test.js` è utilizzato per controllare la presenza dei termini del Glossario all'interno dei documenti, mentre `glossario.json` è una struttura dati che contiene i termini e la loro definizione, usato per la stesura del documento dal _file_ `glossario_verX.Y.Z.typ`. Le cartelle sono strutturate nel seguente modo: \
+La _repository_ è strutturata da un unico _branch_ adibito al mantenimento di tutti i documenti Typst verificati. All'occorrenza di svolgere azioni dettate dal _backlog_ si crea un _branch_ temporaneo che, successivamente alla verifica, viene unito nel ramo principale. La _repository_ è presentata dal `README.md`, contiene il _file_ `.gitignore` usato dalla Action per escludere alcuni _file_ dalla compilazione e il _file_ `script.js` usato per pubblicare la documentazione nel sito _web_. `test.js` è utilizzato per controllare la presenza dei termini del Glossario all'interno dei documenti, mentre `glossario.json` è una struttura dati che contiene i termini e la loro definizione, usato per la stesura del documento dal _file_ `glossario_verX.Y.Z.typ`; è presente inoltre il file `gulpease.js` usato per misurare l'Indice di Gulpease richiesto dalla metrica #link(<MPC-IG>)[MPC-IG]. Le cartelle sono strutturate nel seguente modo: \
 #tree-list()[
   - *`.github`*
     - *`workflows`*: contiene i _file_ `.yml` per le configurazioni delle GitHub Action.
@@ -627,8 +633,8 @@ La _repository_ è costituita da un unico _branch_ nel quale è caricato tutto i
 #pagebreak()
 ==== Struttura della repository NearYou
 La _repository_ è strutturata da due _branch_: "_main_" e "_dev_".
-Il branch "_main_" è utilizzato per effettuare le _release_ ufficiali, rispettive quindi a RTB e PB, mentre il _branch_ "_dev_" è adibito allo sviluppo del codice.
-All'occorenza di svolgere azioni dettate dal _backlog_ si crea un _branch_ temporaneo che, successivamente alla verifica, viene unito nel ramo "_dev_". 
+Il _branch_ "_main_" contiene la _release_ ufficiale più recente e viene aggiornato ad ogni _milestone_, ovvero nel nostro caso RTB e PB, mentre il _branch_ "_dev_" è adibito allo sviluppo del codice.
+Ad ogni necessità di svolgere azioni dettate da una _issue_ del _backlog_ si crea un _branch_ temporaneo che, successivamente alla verifica, viene riunito al ramo "_dev_" secondo il meccansimo delle _pull request_. 
 La _repository_ è presentata dal `README.md` il quale, inoltre, fornisce istruzioni su come avviare il sistema tramite #rifGlossario("Docker"). La _repository_ contiene anche il _file_ `.gitignore` usato per escludere alcuni _file_ dal caricamento in _repository_ al momento del _commit_.
 Le cartelle sono strutturate nel seguente modo:
 
@@ -652,8 +658,8 @@ Le cartelle sono strutturate nel seguente modo:
         - *`config`*:
           - `KafkaConsumerConfig.java`
           - `KafkaTopicConfig.java`
-        - *`entity`*: contiene i file `.java` che descrivono le "entità" presenti nel programma.
-        - *`repository`*: contiene i file che descrivono le _repository_ delle "entità" nel programma.
+        - *`entity`*
+        - *`repository`*
         - `KafkaListeners.java`
         - `NearYouApplication.java`
     - *`test/java/io/github/unipd/Nearyou`*:
@@ -915,7 +921,7 @@ La gestione della comunicazione interna ed esterna, la conduzione delle riunioni
 
 ==== Comunicazioni
 ===== Comunicazioni interne
-Le comunicazioni internte vengono gestite con due strumenti separati: Telegram per le comunicazioni rapide da dispositivi _mobile_ e Discord per le riunioni e le chiamate tra i membri del _team_.
+Le comunicazioni interne vengono gestite con due strumenti separati: Telegram per le comunicazioni rapide da dispositivi _mobile_ e Discord per le riunioni e le chiamate tra i membri del _team_.
 
 
 ===== Comunicazioni esterne
@@ -974,7 +980,7 @@ Innanzitutto occorre stabilire una serie di processi organizzativi per l'intero 
 Una volta identificati i potenziali miglioramenti questi vanno effettivamente implementati secondo le corrette e adeguate metodologie. Nella retrospettiva seguente all'applicazione di queste migliorie verrà effettuato un altro _#rifGlossario("feedback")_ a riguardo per progredire ciclicamente.
 
 === Strumenti
-Lo strumento principale per misurare l'efficacia delle modifiche apportate ad un processo e per identificare eventuali aree di miglioramento sono le metriche, ognuna delle quali analizzerà un aspetto chiave del processo stesso. Il loro andamento è consultabule nel Cruscotto della Qualità.
+Lo strumento principale per misurare l'efficacia delle modifiche apportate ad un processo e per identificare eventuali aree di miglioramento sono le metriche, ognuna delle quali analizzerà un aspetto chiave del processo stesso. Il loro andamento è consultabile nel Cruscotto della Qualità.
 
 == Formazione
 === Descrizione
