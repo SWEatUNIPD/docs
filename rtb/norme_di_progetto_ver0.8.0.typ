@@ -5,11 +5,33 @@
   data: "14 Novembre 2024",
   destinatari: ("Gruppo SWE@",),
   responsabile: "Klaudio Merja",
-  redattori: ("Andrea Precoma", "Davide Marin", "Davide Martinelli", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
-  verificatori: ("Andrea Perozzo", "Andrea Precoma", "Davide Marin", "Davide Martinelli", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
+  redattori: (
+    "Andrea Precoma",
+    "Davide Marin",
+    "Davide Martinelli",
+    "Davide Picello",
+    "Klaudio Merja",
+    "Riccardo Milan",
+  ),
+  verificatori: (
+    "Andrea Perozzo",
+    "Andrea Precoma",
+    "Davide Marin",
+    "Davide Martinelli",
+    "Davide Picello",
+    "Klaudio Merja",
+    "Riccardo Milan",
+  ),
   titolo: "Norme di Progetto",
   uso: "Interno",
   versioni: (
+    "1.0.0",
+    "26/01/2025",
+    "Davide Marin",
+    "Andrea Perozzo\nDavide Martinelli",
+    [
+      Approvazione versione finale del documento per rilascio in RTB
+    ],
     "0.9.0",
     "24/01/2025",
     "Davide Marin",
@@ -18,7 +40,6 @@
       - Aggiunta descrizione della _repository_ NearYou
       - Ultimazione di alcuni paragrafi
     ],
-
     "0.8.0",
     "12/01/2025",
     "Davide Marin",
@@ -26,7 +47,6 @@
     [
       - Aggiunte metriche per la qualità di prodotto
     ],
-
     "0.7.0",
     "8/01/2025",
     "Davide Martinelli",
@@ -36,7 +56,6 @@
       - Stesura sezione "Standard per la qualità"
       - Ampliamento sezioni "Verifica" e "Validazione"
     ],
-
     "0.6.0",
     "22/12/2024",
     "Davide Picello",
@@ -44,7 +63,6 @@
     [
       - Scrittura della sezione "Casi d'uso" in "Processi primari"
     ],
-
     "0.5.0",
     "22/12/2024",
     "Riccardo Milan",
@@ -53,7 +71,6 @@
       - Aggiunta del capitolo "Processi organizzativi"
       - Correzioni di stile
     ],
-
     "0.4.0",
     "30/11/2024",
     "Andrea Precoma",
@@ -64,7 +81,6 @@
       - Aggiunta struttura della _repository_ NearYou
       - Correzione ortografica e di stile
     ],
-
     "0.3.0",
     "27/11/2024",
     "Davide Picello",
@@ -72,7 +88,6 @@
     [
       - Scrittura del capitolo "Processi primari"
     ],
-
     "0.2.0",
     "26/11/2024",
     "Andrea Precoma",
@@ -81,7 +96,6 @@
       - Struttura della sezione "Processi di supporto"
       - Stesura dei principali paragrafi
     ],
-    
     "0.1.0",
     "14/11/2024",
     "Klaudio Merja",
@@ -113,6 +127,7 @@ La prima occorrenza di un termine definito all'interno del glossario presente al
 - Regolamento del progetto didattico\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")
 - ISO/IEC 12207:1995\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf")
 === Riferimenti informativi
+- Glossario
 - Capitolato C4 (Sync Lab)\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
 
 #pagebreak()
@@ -134,26 +149,26 @@ Le attività che compongono questo processo sono:
 - Consegna e completamento
 
 === Comunicazioni con il proponente
-L'azienda si è resa raggiungibile, per via testuale, tramite e-mail per le comunicazioni ufficiali. Tramite la piattaforma di messaggistica istantanea Discord, invece, per le comunicazioni più veloci. È stato deciso, inoltre, di utilizzare l'applicazione di teleconferenza Google Meet per le riunioni in cui è prevista la presenza di tutto il gruppo. L'azienda, comunque, si è resa disponibile anche ad accogliere il gruppo nei loro uffici.
+L'azienda si è resa raggiungibile, per via testuale, tramite e-mail per le comunicazioni ufficiali. Tramite la piattaforma di messaggistica istantanea Discord, invece, per le comunicazioni più veloci. È stato deciso, inoltre, di utilizzare l'applicazione di teleconferenza Google Meet per le riunioni in cui è prevista la presenza di tutto il gruppo. L'azienda si è resa tuttavia disponibile anche ad accogliere il gruppo nei loro uffici.
 
 Per ogni incontro, verrà redatto un verbale riguardante le discussioni e decisioni avvenute nello stesso. Questi verbali, dopo essere stati approvati e firmati dall'azienda, saranno disponibili presso il sito _web_ del gruppo #formatLink(label: "https://sweatunipd.github.io", url: "https://sweatunipd.github.io").
 
 ==== SAL
-È stato anche concordato un incontro settimanale di 45 minuti, tendenzialmente il mercoledì pomeriggio, riguardo allo Stato di Avanzamento dei Lavori #rifGlossario("SAL"). Il gruppo esporrà i progressi e i dubbi dell'ultima settimana di lavoro, confrontandosi con il proponente e delineando le attività da svolgere nella settimana a venire.
+È stato inoltre concordato un incontro settimanale di 45 minuti, tendenzialmente il mercoledì pomeriggio, riguardo allo Stato di Avanzamento dei Lavori (#rifGlossario("SAL")). Il gruppo esporrà i progressi e i dubbi dell'ultima settimana di lavoro, confrontandosi con il proponente e delineando le attività da svolgere nella settimana a venire.
 
-==== Sessioni deep dive
-Il proponente si è anche reso disponibile per organizzare delle sessioni di #rifGlossario("deep dive") per approfondire l'utilizzo di alcune tecnologie che potrebbero rivelarsi particolarmente ostiche per il gruppo.
+==== Sessioni di deep dive tecnologico
+Il proponente si è anche reso disponibile per organizzare delle sessioni di #rifGlossario("deep dive") tecnologico per approfondire l'utilizzo di alcune tecnologie che potrebbero rivelarsi particolarmente ostiche per il gruppo.
 Queste verranno fissate quando necessarie.
 
 
 === Documentazione fornita
-Di seguito l'elenco dei documenti che il gruppo consegnerà all'azienda proponente Sync Lab e ai committenti Prof. Tullio Vardanega e Prof. Riccardo Cardin.
+Di seguito viene riportato l'elenco dei documenti che il gruppo consegnerà all'azienda proponente Sync Lab S.r.l. e ai committenti, nonché i Prof. Tullio Vardanega e Prof. Riccardo Cardin.
 
 ==== Analisi dei Requisiti
 L'Analisi dei Requisiti è un documento redatto dagli analisti che definisce le funzionalità necessarie per soddisfare le richieste del proponente.
 
 ===== Casi d'uso
-In questo documento rientra la realizzazione dei casi d'uso (_use case_): descrizioni formali di come un sistema _software_ interagisce con utenti o con altre entità esterne al sistema, chiamati attori, per raggiungere un obiettivo specifico. Questi sono composti da testo puro e sono usati per documentare le varie funzionalità attese dal sistema ad alto livello, quindi non specificando i dettagli implementativi. A un caso d'uso è preferibile abbinare anche il relativo diagramma #rifGlossario("UML").
+In questo documento rientra la realizzazione dei casi d'uso (_use case_): descrizioni formali di come un sistema _software_ interagisce con utenti o con altre entità esterne al sistema, chiamati attori, per raggiungere un obiettivo specifico. Questi sono composti da una descrizione testuale e dal loro diagramma e sono usati per documentare le varie funzionalità attese dal sistema ad alto livello, quindi non specificando i dettagli implementativi.
 
 Ogni caso d'uso deve comprendere le seguenti informazioni:
 
@@ -172,41 +187,21 @@ Esistono più tipi di attori:
 ====== Precondizioni
 Condizioni che devono essere vere o soddisfatte affinché il caso d'uso possa iniziare. Definiscono lo stato iniziale del sistema ed i requisiti che devono essere garantiti affinché il caso d'uso sia valido.
 
-Esempi: 
-- Un utente deve essere autenticato nel sistema.
-- Un prodotto deve essere aggiunto al carrello.
-
 
 ====== Postcondizioni
 Stato finale del sistema dopo che il caso d'uso è stato completato. Utili per verificare che l'obiettivo sia stato raggiunto e per documentare le modifiche apportate al sistema.
 
-Esempio: Dopo un pagamento andato a buon fine, il sistema aggiorna lo stato dell'ordine a 'confermato' e invia una ricevuta via email.
-
-====== Trigger
-Il _trigger_ rappresenta l'evento o l'azione che scatena il caso d'uso. Questo può essere un'azione compiuta da un attore, come un _click_ su un pulsante, oppure un evento esterno come il ricevimento di un messaggio da un altro sistema.
-
-Esempio: L'utente clicca sul pulsante 'Effettua pagamento'.
-
 ====== Scenario principale
 Lo scenario principale descrive la sequenza di azioni _standard_ che l'attore ed il sistema eseguono per raggiungere l'obiettivo del caso d'uso. Include tutti i passi principali in ordine sequenziale.
-
-Esempio:
-1. L'amministratore inserisce i dati di accesso.
-2. Il sistema verifica le credenziali.
-3. L'amministratore visualizza la propria _dashboard_.
 
 ====== Relazioni
 Nei casi d'uso possiamo avere i seguenti tipi di relazione tra attore e caso d'uso.
 
-======= Associazione 
+======= Associazione
 Congiunge semplicemente gli attori con i casi d'uso a cui prendono parte. Un attore può essere associato a qualsiasi numero di casi d'uso e viceversa. L'associazione implica uno scambio di informazioni tra attore e caso d'uso associato. Viene indicata nel diagramma con una linea nera.
 
 ======= Generalizzazione
 Riguarda sia gli attori che i casi d'uso e rappresenta una relazione tra una classe, un caso d'uso o un attore più generale (superclasse) ed uno più specifico (sottoclasse). Questo tipo di relazione segue il principio dell'ereditarietà, in cui la sottoclasse eredita le caratteristiche dalla superclasse e può aggiungere o modificare specifici dettagli. La generalizzazione si rappresenta con una linea che collega le due entità (classi, attori o casi d'uso) e termina con un triangolo vuoto sulla punta, che indica la direzione verso la classe o entità più generale.
-
-Esempi: 
-- Un attore generico, come 'Utente', può essere specializzato in 'Cliente' e 'Amministratore'.
-- Un caso d'uso generico, come 'Gestire account', può essere specializzato in 'Eliminare account' e 'Modificare account'.
 
 
 ======= Inclusione
@@ -215,26 +210,18 @@ Le inclusioni rappresentano funzionalità o comportamenti comuni che possono ess
 Esempio: Un caso d'uso 'Autenticazione' utente può essere incluso in casi d'uso come 'Acquista prodotto' o 'Gestione profilo'.
 
 ======= Estensione
-Le estensioni definiscono variazioni opzionali o eccezioni al comportamento principale del caso d'uso. Questi flussi si attivano solo se si verificano determinate condizioni. Viene indicata nel diagramma come una freccia tratteggiata con indicato '"_extend_"'. La funzione alla base della freccia può essere impiegata nel contesto della funzione alla punta della freccia. 
+Le estensioni definiscono variazioni opzionali o eccezioni al comportamento principale del caso d'uso. Questi flussi si attivano solo se si verificano determinate condizioni. Viene indicata nel diagramma come una freccia tratteggiata con indicato '"_extend_"'. La funzione alla base della freccia può essere impiegata nel contesto della funzione alla punta della freccia.
 Indichiamo esplicitamente anche la condizione per l'estensione e l'_extension point_, che identifica il punto nel caso d'uso di base in cui è possibile inserire il comportamento del caso d'uso esteso.
 
-Esempio: Se il pagamento fallisce, il sistema richiede all'utente di selezionare un metodo alternativo.
 
-
-====== Diagrammi UML dei casi d'uso 
-I diagrammi UML rappresentano graficamente i casi d'uso, gli attori e le relazioni tra loro, rendendo più intuitivo comprendere le interazioni tra il sistema e i suoi attori. 
+====== Diagrammi dei casi d'uso
+I diagrammi dei casi d'uso rappresentano graficamente i casi d'uso, gli attori e le relazioni tra loro, rendendo più intuitivo comprendere le interazioni tra il sistema e i suoi attori.
 
 Gli elementi grafici principali da utilizzare in questi diagrammi sono:
 - *Sistema*: Il sistema è rappresentato da un rettangolo vuoto al cui interno vengono inseriti gli elementi grafici rappresentanti le sue caratteristiche. Gli elementi che invece rappresentano entità esterne sono posizionati all'esterno del rettangolo.
 - *Attore*: Rappresentati graficamente da un'icona rappresentante un omino stilizzato con la relativa etichetta univoca.
 - *Caso d'uso*: Rappresentato graficamente come un'ellisse contenente il nome del caso d'uso. Concretamente rappresenta una funzione o servizio offerto dal sistema ad uno o più attori.
 - *Associazione*: Relazione tra attori e casi d'uso. Essa implica uno scambio di informazioni tra attore e caso d'uso associato.
-
-Vediamo un esempio di un diagramma UML semplice, relativo ad un caso d'uso rappresentante uno _use case_ in cui l'amministratore (*attore*) si interfaccia con il *sistema* tramite un'*associazione*, al fine di eseguire un'azione (*caso d'uso*):
-#figure(image("../assets/img/NdP/esempioUseCase1.png", width: 80%), caption: [Caso d'uso semplice])
-
-Ora vediamo invece un esempio di un diagramma UML dove vengono usate inclusione ed estensione:
-#figure(image("../assets/img/NdP/esempioUseCase2.png", width: 80%), caption: [Caso d'uso con inclusione ed estensione])
 
 ==== Piano di Progetto
 Il Piano di Progetto è un documento il cui scopo è quello di definire in modo dettagliato l'organizzazione, le attività, le risorse, i tempi e i criteri necessari per completare con successo il progetto.
@@ -257,7 +244,7 @@ Dovrebbe contenere le seguenti informazioni/sessioni:
 */
 
 ==== Piano di Qualifica
-Il Piano di Qualifica è un documento formale che definisce le strategie, le attività e gli approcci necessari per garantire la qualità del prodotto _software_, durante tutto il corso del progetto. Descrive le modalità di verifica e validazione, gli _standard_ adottati e le procedure di qualità da seguire.
+Il Piano di Qualifica è un documento formale che definisce le strategie, le attività e gli approcci necessari per garantire la qualità del prodotto _software_ durante tutto il corso del progetto. Descrive le modalità di verifica e validazione, gli _standard_ adottati e le procedure di qualità da seguire.
 
 Il suo scopo principale è assicurare che il prodotto finale sia conforme alle specifiche richieste e alle aspettative del committente, monitorando il progresso rispetto agli obiettivi prefissati. Ogni membro del _team_ coinvolto nello sviluppo farà riferimento a questo documento per mantenere e garantire i livelli di qualità stabiliti.
 
@@ -273,34 +260,34 @@ Dovrebbe contenere le seguenti informazioni:
 Il Glossario è un documento di supporto che raccoglie i termini tecnici e specifici utilizzati all'interno del progetto, fornendone definizioni chiare e univoche. È destinato a tutti gli _stakeholder_, i membri del _team_, i committenti e l'azienda proponente, con l'obiettivo di prevenire ambiguità e incomprensioni. Questo strumento è fondamentale per migliorare la coerenza e la qualità della documentazione prodotta.
 
 ==== Lettera di presentazione
-La Lettera di Presentazione è un documento formale attraverso il quale il gruppo esprime la propria intenzione di partecipare alla fase di revisione del progetto. Include la documentazione prodotta dal gruppo e, se necessario, un aggiornamento sui costi e sulle tempistiche.
+La Lettera di Presentazione è un documento formale attraverso il quale il gruppo esprime la propria intenzione a partecipare alla fase di revisione del progetto di una determinata _milestone_. Include la documentazione prodotta dal gruppo e, se necessario, un aggiornamento sui costi e sulle tempistiche.
 
 La lettera sottolinea l'impegno del _team_ nel rispettare le scadenze e le aspettative fissate.
 
 
 === Strumenti
-Gli strumenti adottati per il processo di fornitura sono i seguenti:
+Vengono riportati di seguito tutti gli strumenti adottati per il processo di fornitura.
 
 ==== Discord
-Piattaforma di messaggistica in tempo reale che consente _chat_ testuali, vocali e video. Il gruppo la utilizza per comunicare internamente tramite delle chiamate e per interagire velocemente con l'azienda tramite il loro _server_ dedicato.
+Piattaforma di messaggistica in tempo reale che consente _chat_ testuali, vocali e video. Il gruppo utilizza tale strumento per comunicare e per interagire velocemente con l'azienda tramite il loro _server_ dedicato.
 
 ==== Telegram
 Applicazione di messaggistica istantanea utilizzata per comunicazioni rapide e brevi all'interno del gruppo.
 
 ==== Fogli di Google (Google Sheets)
-Applicazione web per la creazione e la gestione di fogli di calcolo. Il gruppo la utilizza per tenere traccia in modo informale delle ore lavorate settimanalmente, che saranno successivamente riportate nel documento ufficiale Piano di Progetto.
+Applicazione web per la creazione e la gestione di fogli di calcolo. Il gruppo utilizza tale strumento per tenere traccia delle ore produttive impiegate in ogni _sprint_, che saranno successivamente riportate nel documento ufficiale Piano di Progetto.
 
 ==== GitHub
-Piattaforma per il controllo di versione e la collaborazione su progetti _software_. Il gruppo lo utilizza come strumento per gestire le _repository_ per codice e documentazione, monitorare le attività del progetto, assegnarle ai membri e seguirne lo stato di avanzamento.
+Piattaforma per il versionamento del codice e la collaborazione su progetti _software_. Il gruppo utilizza questo strumento per gestire le _repository_ relative al prodotto software oggetto del capitolato e per la documentazione, monitorare le attività del progetto, assegnarle ai membri e seguirne lo stato di avanzamento.
 
 ==== Typst
-#rifGlossario("Typst") è un nuovo sistema di impaginazione basato su _markup_, progettato per essere potente quanto LaTeX ma molto più facile da imparare e utilizzare.
+#rifGlossario("Typst") è io sistema di impaginazione basato su _markup_ che viene adottato dal gruppo per la redazione della documentazione del progetto. Soluzione preferita rispetto a LaTeX per la sua semplicità.
 
 === Metriche
 Le metriche adottate per il processo di fornitura sono le seguenti:
 
 #figure(
-  table( 
+  table(
     columns: 2,
     table.header[*ID Metrica*][*Nome*],
     [#link(<MPC-PV>)[MPC-PV]], [_Planned Value_],
@@ -312,13 +299,13 @@ Le metriche adottate per il processo di fornitura sono le seguenti:
     [#link(<MPC-BV>)[MPC-BV]], [_Budget Variance_],
     [#link(<MPC-ETC>)[MPC-ETC]], [_Estimate to Complete_],
   ),
-  caption: [Metriche per la fornitura]
+  caption: [Metriche per la fornitura],
 )
 
 == Sviluppo
 Sempre secondo lo _standard_ ISO/IEC 12207:1995 lo scopo del processo di sviluppo è di descrivere le attività e i compiti necessari per creare e mantenere un sistema _software_, garantendo che il prodotto finale soddisfi i requisiti specificati nel contratto.
 
-Il processo di sviluppo è composto dalle seguenti attività:
+Di seguito vengono riportate le attività che compongono il processo di sviluppo.
 
 === Implementazione del processo
 Nella fase di implementazione, il fornitore deve stabilire o selezionare un modello di ciclo di vita appropriato per il progetto. Le attività di sviluppo e i compiti associati vengono mappati su tale modello, considerando che possono essere eseguiti in modo iterativo o ricorsivo. Il fornitore documenta i risultati secondo il processo di documentazione, ne gestisce le modifiche con un sistema di configurazione e risolve eventuali problemi di conformità. Devono essere selezionati strumenti, metodi e linguaggi di programmazione adeguati, e vengono pianificate le azioni necessarie per rispettare gli _standard_ di qualità, sicurezza e conformità. Tutto questo è accompagnato dalla creazione di piani documentati e implementabili.
@@ -363,12 +350,12 @@ Il fornitore supporta il cliente nella revisione e nei _test_ di accettazione de
 Le metriche adottate per il processo di sviluppo sono le seguenti:
 
 #figure(
-  table( 
+  table(
     columns: 2,
     table.header[*ID Metrica*][*Nome*],
     [#link(<MPC-ISR>)[MPC-ISR]], [Indice di Stabilità dei Requisiti],
   ),
-  caption: [Metriche per lo sviluppo]
+  caption: [Metriche per lo sviluppo],
 )
 
 #pagebreak()
@@ -385,13 +372,13 @@ Alla fine di ogni riunione si aggiorna il _#rifGlossario("backlog")_ con le nuov
 ==== Lavoro sul documento <lavoro_doc>
 Per lavorare su un documento bisogna attenersi ai seguenti passaggi utilizzando il sistema #rifGlossario("Git"):
 + Posizionarsi sulla cartella della _repository_ nella macchina locale e scaricare le eventuali modifiche in tutti i _branch_ locali eliminando gli eventuali rami che in remoto sono stati eliminati. Se si vuole sincronizzare solo il ramo corrente si deve omettere il _flag_ *`--all`*. \
-	*`git pull -p --all`*
+  *`git pull -p --all`*
 + Posizionarsi sul _branch_ collegato alla _issue_. \
-	*`git checkout [nome_branch]`*
+  *`git checkout [nome_branch]`*
 + Caricare le modifiche effettuate nella _repository_ remota. \
-	*`git add .`* \
-	*`git commit -m "[commento del commit]"`* \
-	*`git push`* \
+  *`git add .`* \
+  *`git commit -m "[commento del commit]"`* \
+  *`git push`* \
 + Dall'interfaccia _web_ bisogna spostarsi nella sezione _*pull request*_ e crearne una nuova assicurandosi di assegnare il verificatore e una _label_. Se si desidera sottoporre le modifiche a un rapido controllo si può creare un _*draft*_.
 + In caso il verificatore richieda delle correzioni è sufficiente ripetere i passaggi citati senza questa volta creare una nuova _pull request_ perché già esistente. Si ricorda che si può evitare di scaricare le modifiche su tutti i _branch_ e che se si è già posizionati sul ramo corretto si può evitare il comando *`git checkout [nome_branch]`*.
 
@@ -402,7 +389,7 @@ Se si individuano dei nuovi termini da aggiungere al Glossario si inseriscono se
 === Ciclo di vita
 Il ciclo di vita di un documento è composto da 6 fasi:
 + *Creazione e adattamento al _template_*: Dopo aver impostato l'ambiente nel modo corretto si può creare il file `.typ` seguendo le norme di nomenclatura e assegnando la versione 1.0.0. Si importa il _file_ `template.typ` nella cartella `templates` e si compilano i campi delle funzioni in base al documento che si sta redigendo.
-+ *Pianificazione dei paragrafi*: Oltre ai paragrafi dettati dal tipo di documento come specificato dalle norme, si devono aggiungere dei paragrafi che raggruppino gli argomenti trattati. 
++ *Pianificazione dei paragrafi*: Oltre ai paragrafi dettati dal tipo di documento come specificato dalle norme, si devono aggiungere dei paragrafi che raggruppino gli argomenti trattati.
 + *Stesura del documento*: Il redattore deve stilare il documento seguendo le norme concordate dal gruppo. In caso fosse indeciso su alcuni punti è libero di contattare altri membri del gruppo in modo da scrivere un contenuto il più corretto possibile.
 + *Revisione*: Una volta caricato correttamente il documento viene notificato automaticamente il verificatore il quale deve assicurarsi che non vi siano errori.
 + *Approvazione*: Il documento è approvato dal verificatore e viene contattato il responsabile che deve confermare la pubblicazione nel _branch_ principale.
@@ -414,7 +401,7 @@ Ogni documento prodotto è costituito dalle seguenti sezioni.
 ==== Intestazione
 - *Logo del gruppo*: Presente nella cartella `assets/img`.
 - *Titolo del documento*
-- *Data*: Data in cui è stato creato o, nel caso dei verbali, in cui è avvenuta la riunione.
+- *Data*: Data in cui è stata versionata la _Major_ del documento o, nel caso dei verbali, in cui è avvenuta la riunione.
 - *Uso*: Interno o Esterno.
 - *Destinatari*
 - *Responsabile*
@@ -436,11 +423,11 @@ Nella pagina successiva all'ultima occupata dal registro delle modifiche è post
 ==== Corpo dei verbali
 Nei verbali è importante non limitarsi a descrivere cosa si è discusso bensì enfatizzare sulle decisioni prese e sulle motivazioni che hanno mosso le stesse. Così facendo si agevola la comprensione dei colleghi che in futuro dovranno consultare i documenti. I verbali condividono una struttura di base comune generata dal _template_:
 - *Informazioni generali*
-	- *Luogo e data della riunione*
-		- *Luogo*
-		- *Data*: Data in cui si è tenuta la riunione nel formato DD/MM/YYYY.
-		- *Ora*: Ora di inizio della riunione.
-		- *Durata*: Durata della riunione in formato per iscritto (ad esempio 2 ore e 20 minuti).
+  - *Luogo e data della riunione*
+    - *Luogo*
+    - *Data*: Data in cui si è tenuta la riunione nel formato DD/MM/YYYY.
+    - *Ora*: Ora di inizio della riunione.
+    - *Durata*: Durata della riunione in formato per iscritto (ad esempio 2 ore e 20 minuti).
 - *Conclusioni*: Le conclusioni della riunione con le motivazioni alle scelte prese e una previsione delle azioni future.
 - *Tabella delle decisioni*: Per una descrizione dettagliata consultare la sezione omonima.
 
@@ -459,10 +446,11 @@ I verbali esterni aggiungono le seguenti sezioni:
 ==== Tabella delle decisioni
 Una tabella che racchiude le informazioni necessarie per rintracciare gli elementi nel _backlog_. Sono riportati i seguenti dati:
 - *ID*: Identificativo della decisione:
-	- *[X][ID _issue_]* nel caso fosse rintracciabile mediante _issue_ (deve essere fornito un collegamento alla stessa) dove l'ID è scritto con quattro cifre. la X indica una lettera che identifica univocamente la #rifGlossario("GitHub") _repository_ alla quale è legata la _issue_:
-		- *D*: docs
-		- *S*: sweatunipd.github.io
-	- *ORG* nel caso fosse una decisione di natura organizzativa, ad esempio contattare il proponente.
+  - *[X][ID _issue_]* nel caso fosse rintracciabile mediante _issue_ (deve essere fornito un collegamento alla stessa) dove l'ID è scritto con quattro cifre. la X indica una lettera che identifica univocamente la #rifGlossario("GitHub") _repository_ alla quale è legata la _issue_:
+    - *D*: docs
+    - *S*: sweatunipd.github.io
+    - *N*: NearYou
+  - *ORG* nel caso fosse una decisione di natura organizzativa, ad esempio contattare il proponente.
 - *Assegnatari*: Il membro del gruppo incaricato di svolgere quel compito. Si assegna "Gruppo" nel caso in cui coinvolgesse tutti i membri.
 - *Descrizione*: Il titolo della _issue_ se esistente, altrimenti una breve descrizione delle azioni da compiere.
 
@@ -506,7 +494,7 @@ Notare che nei titoli dei documenti e dei paragrafi lo stile rimane quello di _d
 === Stile del testo <stile_testo>
 Nei documenti vengono applicate le seguenti regole di stile testuali:
 - *Grassetto* col comando `*termine*`:
-	- Termini importanti.
+  - Termini importanti.
 - #underline([Sottolineato]) col comando `#link("url")[label]`:
   - ID _issue_ nella tabella delle decisioni.
   - Riferimenti contestuali segnando la destinazione con `<dest>` e modificando il comando `#link(<dest>)[label]`.
@@ -515,8 +503,8 @@ Nei documenti vengono applicate le seguenti regole di stile testuali:
 - #rifGlossario("Sottolineato con apice") col comando `#rifGlossario("termine")`:
   - Termini presenti nel Glossario.
 - "Virgolette" col comando `"termine"`:
-	- Enfatizzare singoli caratteri.
-	- Espressioni tecnicamente imprecise (ad esempio "usa e getta")
+  - Enfatizzare singoli caratteri.
+  - Espressioni tecnicamente imprecise (ad esempio "usa e getta")
 - _Corsivo_ col comando `_termine_`:
   - Termini in lingua inglese (esclusi se si tratta di nomi di prodotti _software_ o simili)
   - Titolo del capitolato _NearYou - Smart custom advertising platform_
@@ -525,10 +513,10 @@ Nei documenti vengono applicate le seguenti regole di stile testuali:
   - Nomi di cartelle.
   - Estensioni file.
 - Maiuscole:
-	- Iniziali di nomi propri.
-	- Acronimi (ad esempio "Proof of Concept (#rifGlossario("PoC"))").
-	- Prima lettera dei paragrafi se citati nel testo.
-	- Nomi dei documenti (ad esempio "Norme di Progetto").
+  - Iniziali di nomi propri.
+  - Acronimi (ad esempio "Proof of Concept (#rifGlossario("PoC"))").
+  - Prima lettera dei paragrafi se citati nel testo.
+  - Nomi dei documenti (ad esempio "Norme di Progetto").
 
 === Riferimenti
 ==== Contestuali
@@ -556,13 +544,13 @@ Sono stati scelti i seguenti strumenti per redigere e mantenere la documentazion
 Le metriche adottate per la documentazione sono le seguenti:
 
 #figure(
-  table( 
+  table(
     columns: 2,
     table.header[*ID Metrica*][*Nome*],
     [#link(<MPC-IG>)[MPC-IG]], [#rifGlossario("Indice Gulpease")],
     [#link(<MPC-CO>)[MPC-CO]], [Correttezza Ortografica],
   ),
-  caption: [Metriche per la documentazione]
+  caption: [Metriche per la documentazione],
 )
 
 == Gestione della configurazione
@@ -571,20 +559,21 @@ Per gestire la documentazione è stato creata una _repository_ contenente tutti 
 L'operazione di _directory listing_ di GitHub offre una visione degli artefatti strutturata in cartelle, seguente quindi la composizione della _repository_, all'indirizzo #formatLink(label: "https://sweatunipd.github.io/docs", url: "https://sweatunipd.github.io/docs").
 
 === Repository
-Il gruppo utilizza due _repository_ all'interno della propria organizzazione GitHub:
+Il gruppo utilizza tre _repository_ all'interno della propria organizzazione GitHub:
 - *docs* (#formatLink(label: "https://github.com/SWEatUNIPD/docs", url: "https://github.com/SWEatUNIPD/docs")) contenente tutta la documentazione del progetto.
 - *sweatunipd.github.io* (#formatLink(label: "https://github.com/SWEatUNIPD/sweatunipd.github.io", url: "https://github.com/SWEatUNIPD/sweatunipd.github.io")) contenente i _file_ necessari alla struttura e presentazione del sito _web_.
 - *NearYou* (#formatLink(label: "https://github.com/SWEatUNIPD/NearYou", url: "https://github.com/SWEatUNIPD/NearYou")) contenente il codice sorgente dell'applicativo.
 
 ==== Struttura della repository docs
-La _repository_ è strutturata da un unico _branch_ adibito al mantenimento di tutti i documenti Typst verificati. All'occorrenza di svolgere azioni dettate dal _backlog_ si crea un _branch_ temporaneo che, successivamente alla verifica, viene unito nel ramo principale. La _repository_ è presentata dal `README.md`, contiene il _file_ `.gitignore` usato dalla Action per escludere alcuni _file_ dalla compilazione e il _file_ `script.js` usato per pubblicare la documentazione nel sito _web_. `test.js` è utilizzato per controllare la presenza dei termini del Glossario all'interno dei documenti, mentre `glossario.json` è una struttura dati che contiene i termini e la loro definizione, usato per la stesura del documento dal _file_ `glossario_verX.Y.Z.typ`; è presente inoltre il file `gulpease.js` usato per misurare l'Indice di Gulpease richiesto dalla metrica #link(<MPC-IG>)[MPC-IG]. Le cartelle sono strutturate nel seguente modo: \
+La _repository_ è strutturata da un unico _branch_ adibito al mantenimento di tutti i documenti Typst verificati. All'occorrenza di svolgere azioni dettate dal _backlog_ si crea un _branch_ temporaneo che, successivamente alla verifica, viene unito nel ramo principale. La _repository_ è presentata dal `README.md`, contiene il _file_ `.gitignore` usato da Git per escludere alcuni _file_ dai _commit_ in _repository_ e il _file_ `script.js` usato per pubblicare la documentazione nel sito _web_. `test.js` è utilizzato per controllare la presenza dei termini del Glossario all'interno dei documenti, mentre `glossario.json` è una struttura dati che contiene i termini e la loro definizione, usato per la stesura del documento dal _file_ `glossario_verX.Y.Z.typ`; è presente inoltre il file `gulpease.js` usato per misurare l'Indice di Gulpease richiesto dalla metrica #link(<MPC-IG>)[MPC-IG]. Le cartelle sono strutturate nel seguente modo: \
 #tree-list()[
   - *`.github`*
     - *`workflows`*: contiene i _file_ `.yml` per le configurazioni delle GitHub Action.
-  - *`.vscode`*: contiene le impostazioni Visual Studio Code per i _font_ dei documenti.
+  - *`.vscode`*: contiene le impostazioni di Visual Studio Code specifiche per il progetto.
   - *`assets`*
     - *`font`*: contiene i _file_ `.ttf` dei _font_ usati nei documenti.
     - *`img`*: contiene il logo e le immagini usate nei documenti.
+    - *`use_cases`*: cartella dedicata ai diagrammi dei casi d'uso usati nell'Analisi dei Requisiti.
   - *`candidatura`*
     - *`verbali`*
       - *`esterni`*: contiene i `.typ` e i `.pdf` dei verbali esterni.
@@ -600,16 +589,17 @@ La _repository_ è strutturata da un unico _branch_ adibito al mantenimento di t
       - `glossario_ver1.0.0.typ`
       - `norme_di_progetto_ver1.0.0.typ`
       - `piano_di_progetto_ver1.0.0.typ`
+      - `piano_di_qualifica_ver1.0.0.typ`
   - *`templates`*
     - `diario_di_bordo.pptx`
     - `template.typ`
   - `.gitignore`
   - `README.md`
-  - _File_ `.js` utili per la struttura del glossario e i _test_ associati.
+  - _File_ `.js` utili per il glossario, per l'Indice di Gulpease e per aggiungere i _file_ al sito.
 ]
 
 ==== Struttura della repository sweatunipd.github.io
-La _repository_ è costituita da un unico _branch_ nel quale è caricato tutto il materiale necessario per strutturare il sito _web_ e popolarlo dinamicamente con la documentazione della _repository_ docs. La _repository_ è presentata dal `README.md`, contiene il _file_ `.gitignore` necessario per escludere alcuni _file_ dal lavoro della Action. Le cartelle sono strutturate nel seguente modo: \
+La _repository_ è costituita da un unico _branch_ nel quale è caricato tutto il materiale necessario per strutturare il sito _web_ e popolarlo dinamicamente con la documentazione della _repository_ docs. La _repository_ è presentata dal `README.md`, contiene il _file_ `.gitignore` necessario per escludere alcuni _file_ dai _commit_ in _repository_. Le cartelle sono strutturate nel seguente modo: \
 #tree-list()[
   - *`.github`*
     - *`workflows`*: contiene i _file_ `.yml` per le configurazioni delle GitHub Action.
@@ -619,7 +609,7 @@ La _repository_ è costituita da un unico _branch_ nel quale è caricato tutto i
     - `layout.tsx`
     - `page.tsx`
   - *`components`*
-    - *`ui`*: contiene i _file_ `.tsx` usati per la parte grafica.
+    - *`ui`*: contiene i _file_ `.tsx` usati per i componenti grafici del sito.
   - *`lib`*: contiene funzioni di _#rifGlossario("utility")_ di una libreria esterna.
   - *`logo`*
     - `logo.svg`
@@ -634,8 +624,8 @@ La _repository_ è costituita da un unico _branch_ nel quale è caricato tutto i
 ==== Struttura della repository NearYou
 La _repository_ è strutturata da due _branch_: "_main_" e "_dev_".
 Il _branch_ "_main_" contiene la _release_ ufficiale più recente e viene aggiornato ad ogni _milestone_, ovvero nel nostro caso RTB e PB, mentre il _branch_ "_dev_" è adibito allo sviluppo del codice.
-Ad ogni necessità di svolgere azioni dettate da una _issue_ del _backlog_ si crea un _branch_ temporaneo che, successivamente alla verifica, viene riunito al ramo "_dev_" secondo il meccansimo delle _pull request_. 
-La _repository_ è presentata dal `README.md` il quale, inoltre, fornisce istruzioni su come avviare il sistema tramite #rifGlossario("Docker"). La _repository_ contiene anche il _file_ `.gitignore` usato per escludere alcuni _file_ dal caricamento in _repository_ al momento del _commit_.
+Ad ogni necessità di svolgere azioni dettate da una _issue_ del _backlog_ si crea un _branch_ temporaneo che, successivamente alla verifica, viene riunito al ramo "_dev_" secondo il meccanismo delle _pull request_. //Per la prossima consegna, introdurre il concetto di Git Feature Branch Workflow e magari Conventional Commits (da valutare)
+La _repository_ è presentata dal `README.md` il quale, inoltre, fornisce istruzioni su come avviare il sistema tramite #rifGlossario("Docker"). La _repository_ contiene anche il _file_ `.gitignore` usato per escludere alcuni _file_ dai _commit_ in _repository_.
 Le cartelle sono strutturate nel seguente modo:
 
 #tree-list()[
@@ -649,7 +639,7 @@ Le cartelle sono strutturate nel seguente modo:
   - *`data`*:
     - *`grafana`*:
       - *`plugins`*: contiene i _plugins_ installati per il corretto funzionamento di #rifGlossario("Grafana").
-    - `grafana.db`:  _database_ di Grafana, utilizzato per la _dashboard_ e le informazioni al suo interno.
+    - `grafana.db`: _database_ di Grafana, utilizzato per la _dashboard_ e le informazioni al suo interno.
   - *`src`*:
     - *`main`*:
       - *`resources`*:
@@ -665,14 +655,15 @@ Le cartelle sono strutturate nel seguente modo:
     - *`test/java/io/github/unipd/Nearyou`*:
       - `NearYouApplicationTests.java`
   - `README.md`
+  - `.gitignore`
   - _File_ utili alla _build_ e al funzionamento del programma.
 ]
 #pagebreak()
 === Backlog
 Il _product backlog_ è rappresentato da una GitHub _board_ con tre sezioni:
-- *Todo*
-- *In Progress*
-- *Done*
+- *Todo*: l'attività non è ancora stata iniziata.
+- *In Progress*: l'attività è in corso di svolgimento.
+- *Done*: l'attività è stata completata.
 
 === Ticketing
 Alla fine di ogni riunione interna si aggiorna il _backlog_ con le nuove _issue_ (corrispondenti alle decisioni prese durante la riunione). Esse devono specificare in modo esaustivo il compito da svolgere nel titolo, arricchite da una breve descrizione e dai riferimenti al verificatore e al verbale nel quale è scaturita quella decisione, in modo che in futuro sia sempre tracciabile il motivo dell'inserimento di quella _issue_. Per una corretta impostazione si chiede di seguire il seguente schema:
@@ -702,7 +693,9 @@ Sono state create le seguenti _label_ per migliorare l'organizzazione delle _iss
 - *Verbale*
 
 === GitHub Action
-Viene adoperata una Action per facilitare il processo di verifica in quanto crea un _file_ `.zip` con i documenti in formato `.pdf` ad ogni _commit_, e automatizza la pubblicazione dei documenti approvati nel sito del gruppo. Per i verbali esterni si è scelto un approccio differente in quanto bisogna aspettare la firma del proponente per presa visione. Non potendo quindi essere pubblicati direttamente nel sito i verbali esterni vanno compilati localmente e mandati alla controparte. Una volta restituiti firmati vanno caricati manualmente nella stessa cartella dove risiede il codice sorgente e la Action si occuperà di pubblicarli nel sito. Per caricare i documenti firmati bisogna forzare l'operazione col seguente comando: \
+Vengono adoperate delle Action per facilitare il processo di verifica tramite la pubblicazione di un _file_ `.zip` nei messaggi delle _pull request_ contente i documenti modificati in formato `.pdf` ad ogni _commit_, per automatizzare la pubblicazione dei documenti approvati nel sito del gruppo, per verificare l'Indice di Gulpease dei documenti e per verificare la presenza di termini a glossario non contrassegnati nei documenti.
+
+Per i verbali esterni si è scelto un approccio differente in quanto bisogna aspettare la firma del proponente per presa visione. Non potendo quindi essere pubblicati direttamente nel sito i verbali esterni vanno compilati localmente e mandati alla controparte. Una volta restituiti firmati vanno caricati manualmente nella stessa cartella dove risiede il codice sorgente e la Action si occuperà di pubblicarli nel sito. Per caricare i documenti firmati bisogna forzare l'operazione col seguente comando: \
 *`git add [file_name] --force`*
 
 == Verifica
@@ -784,7 +777,7 @@ e, nei casi in cui sia necessario:
 
 === Criteri di accettazione
 All'interno del Piano di Qualifica sono definiti i criteri di accettazione per le metriche adottate. Questi criteri sono stabiliti in modo da garantire che i prodotti e i servizi soddisfino i requisiti specificati e che siano conformi agli _standard_ di qualità stabiliti.
-Ad ogni metrica è associata una soglia di accettazione e una soglia di ottimalità. 
+Ad ogni metrica è associata una soglia di accettazione e una soglia di ottimalità.
 - La soglia di accettazione rappresenta il valore minimo (o massimo) che la metrica deve rispettare per essere considerata accettabile.
 - La soglia di ottimalità rappresenta il valore minimo (o massimo) che la metrica deve rispettare per essere considerata ottimale.
 
@@ -792,13 +785,12 @@ Ad ogni metrica è associata una soglia di accettazione e una soglia di ottimali
 Le metriche adottate per la gestione della qualità sono le seguenti:
 
 #figure(
-  table( 
+  table(
     columns: 2,
     table.header[*ID Metrica*][*Nome*],
     [#link(<MPC-PMS>)[MPC-PMS]], [Percentuale di Metriche Soddisfatte],
-    
   ),
-  caption: [Metriche per la gestione della qualità]
+  caption: [Metriche per la gestione della qualità],
 )
 
 #pagebreak()
@@ -812,23 +804,23 @@ Secondo lo _standard_ ISO/IEC 12207:1997 la gestione dei processi mira a stabili
 
 === Descrizione
 Le attività di gestione dei processi sono:
-1. Definizione dei processi: 
-    - Identificare e documentare i processi.
-    - Stabilire linee guida e procedure per l’esecuzione di ciascun processo.
+1. Definizione dei processi:
+  - Identificare e documentare i processi.
+  - Stabilire linee guida e procedure per l’esecuzione di ciascun processo.
 2. Pianificazione e monitoraggio:
-    - Elaborare piani dettagliati per l’esecuzione dei processi.
-    - Monitorare costantemente l’avanzamento, l’efficacia e la conformità ai requisiti.
-    - Stimare i tempi, le risorse ed i costi.
+  - Elaborare piani dettagliati per l’esecuzione dei processi.
+  - Monitorare costantemente l’avanzamento, l’efficacia e la conformità ai requisiti.
+  - Stimare i tempi, le risorse ed i costi.
 3. Esecuzione, revisione e valutazione:
-    - Monitorare l'avanzamento dei processi per identificare aree problematiche o di miglioramento.
-    - Con l'avanzamento implementare azioni correttive e preventive per ottimizzare i processi.
+  - Monitorare l'avanzamento dei processi per identificare aree problematiche o di miglioramento.
+  - Con l'avanzamento implementare azioni correttive e preventive per ottimizzare i processi.
 4. Formazione e competenze:
-    - Assicurare che il personale coinvolto in un processo sia adeguatamente formato rispetto al dominio d'uso di esso.
+  - Assicurare che il personale coinvolto in un processo sia adeguatamente formato rispetto al dominio d'uso di esso.
 5. Chiusura.
 
 === Pianificazione
 ==== Descrizione
-Come stabilito dallo _standard_ ISO/IEC 12207:1997 il responsabile è responsabile della preparazione dei piani per l'esecuzione di tutte le attività relative alla pianificazione del periodo di carica. 
+Come stabilito dallo _standard_ ISO/IEC 12207:1997 il responsabile è responsabile della preparazione dei piani per l'esecuzione di tutte le attività relative alla pianificazione del periodo di carica.
 Ogni attività dovrà avere associata una descrizione, il personale incaricato di gestire i processi di essa e una scadenza da rispettare.
 
 Il responsabile di ciascuno _sprint_ ha il compito di redigere questa pianificazione all'interno del documento Piano di Progetto, che riporterà le attività da svolgere in quel periodo.
@@ -892,23 +884,23 @@ Lo stato di avanzamento delle _issues_ è consultabile all'interno della _projec
 
 
 Le _issues_ sono create dal responsabile e sono composte da:
-- *Id*: identifica in modo univoco la _issue_ e viene riportato nel _backlog_ e nella tabella delle decisioni del verbale in cui viene presa la decisione.
-- *Titolo*: identifica in modo univoco il compito da svolgere.
+- *ID*: identifica in modo univoco la _issue_ e viene riportato nel _backlog_ e nella tabella delle decisioni del verbale in cui viene presa la decisione.
+- *Titolo*: identifica il compito da svolgere.
 - *Descrizione*: descrizione breve dell'attività da svolgere, riferimento al verbale in cui è stata presa tale decisione per avere più informazioni riguardo ad essa e i membri del gruppo che dovranno verificare l'attività svolta.
 - *Assegnatario*: i componenti del gruppo incaricati a svolgere l'attività.
 - *Milestone*: la _release_ in cui deve essere pubblicato il risultato dell'attività.
 - *Etichetta*: la categoria a cui appartiene quella attività.
 - *Stato*: avanzamento del _task_.
-- *Data di inizio attività*: momento di presa in carico dell'attività (solitamente coincide con la data di inizio _sprint_), fondamentale per aggiornare il diagramma gantt.
-- *Data di fine attività*: il termine indicato per portare a termine l'attività (solitamente coincide con la data di fine _sprint_), fondamentale per aggiornare il diagramma gantt.
+- *Data di inizio attività*: momento di presa in carico dell'attività (solitamente coincide con la data di inizio _sprint_), fondamentale per aggiornare il diagramma di gantt.
+- *Data di fine attività*: il termine indicato per portare a termine l'attività (solitamente coincide con la data di fine _sprint_), fondamentale per aggiornare il diagramma di Gantt.
 Ogni qualvolta ci sia la necessità di portare a termine un compito è necessario seguire la seguente procedura:
 + Il responsabile, dopo aver concordato in una riunione il da farsi, crea una nuova _issue_ con stato "_To do_" su GitHub e la assegna.
-+ All'inizio del lavoro di produzione, l'assegnatario cambia la _issue_ di stato, passando da "_To do_" ad "_In progress_", inoltre crea un nuovo _branch_ apposito staccato dal ramo principale per eseguire l'attività.
++ All'inizio del lavoro di produzione, l'assegnatario cambia la _issue_ di stato, passando da "To Do" ad "In Progress", inoltre crea un nuovo _branch_ apposito staccato dal ramo principale per eseguire l'attività.
 + Contestualmente l'assegnatario apre una _pull request_ su GitHub e assegna i verificatori per quell'attività.
 + Il verificatore controlla il lavoro svolto:
   - Se la verifica ha esito positivo:
     + Il verificatore approva su GitHub la _pull request_ e chiede al responsabile di effettuare il _merge_ nel ramo principale .
-    + La _issue_ viene marcata "_Done_" su GitHub automaticamente.
+    + La _issue_ viene marcata "Done" su GitHub automaticamente.
   - Se la verifica ha esito negativo:
     + Il verificatore rilascia una lista di cambiamenti suggeriti nella _pull request_.
     + L'incaricato apporta le modifiche suggerite e si torna al punto 4.
@@ -925,7 +917,7 @@ Le comunicazioni interne vengono gestite con due strumenti separati: Telegram pe
 
 
 ===== Comunicazioni esterne
-Il responsabile del progetto sarà incaricato di gestire il dialogo esterno attraverso l'indirizzo _email_ #formatLink(url: "mailto:sweat.unipd@gmail.com").
+Il responsabile del progetto sarà incaricato di gestire il dialogo con l'esterno attraverso l'indirizzo _e-mail_ #formatLink(url: "mailto:sweat.unipd@gmail.com").
 Per quanto riguarda il mezzo di comunicazione per i SAL con i proponenti lo strumento utilizzato è _Google Meet_ che rende le videochiamate accessibili a tutti.
 
 ==== Riunioni
@@ -956,13 +948,12 @@ Per quanto riguarda le riunioni con i proponenti valgono le stesse regole di que
 === Metriche
 
 #figure(
-  table( 
+  table(
     columns: 2,
     table.header[*ID Metrica*][*Nome*],
     [#link(<MPC-ET>)[MPC-ET]], [Efficienza Temporale],
-    
   ),
-  caption: [Metriche per la gestione dei processi]
+  caption: [Metriche per la gestione dei processi],
 )
 
 
@@ -984,15 +975,15 @@ Lo strumento principale per misurare l'efficacia delle modifiche apportate ad un
 
 == Formazione
 === Descrizione
-Per iniziare a formare i membri del gruppo, è necessario prima comprendere completamente il dominio del problema. È necessario quindi comprendere quali argomenti sono necessari per essere approfonditi e quali abilità sono necessarie per i vari processi. 
+Per iniziare a formare i membri del gruppo, è necessario prima comprendere completamente il dominio del problema. È necessario quindi comprendere quali argomenti sono necessari per essere approfonditi e quali abilità sono necessarie per i vari processi.
 
 Si deve quindi passare all'individuazione del materiale di formazione che aumenterà nel tempo poiché il nostro livello di conoscenza e comprensione del problema dovrà aumentare man mano che il progetto avanza.
 
 Infine tutti i membri del gruppo devono imparare da dove e cosa studiare e devono anche aggiornarsi individualmente, se possibile, con l'aiuto di altri membri più esperti.
 
 === Strumenti
-Al fine di agevolare il processo di formazione ogni membro del gruppo incaricato in un determinato _sprint_ di approfondire un determinato argomento dovrà essere in grado di tramandare la propria conoscenza agli altri. 
-Per aiutarci nel processo di apprendimento l'azienda Sync Lab ci fornisce, durante lo svolgimento del progetto, materiali quali video e risorse utili alle tecnologie di dominio d'uso del nostro capitolato, nonché delle sedute di _deep dive_ concordate a calendario.
+Al fine di agevolare il processo di formazione ogni membro del gruppo incaricato in un determinato _sprint_ di approfondire un determinato argomento dovrà essere in grado di tramandare la propria conoscenza agli altri.
+Per aiutarci nel processo di apprendimento l'azienda Sync Lab S.r.l. ci fornisce, durante lo svolgimento del progetto, materiali quali video e risorse utili alle tecnologie di dominio d'uso del nostro capitolato, nonché delle sedute di _deep dive_ tecnologico concordate a calendario.
 
 = Standard per la qualità
 Per la valutazione della qualità del _software_ prodotto il gruppo si prefigge di adottare le linee guida dello _standard_ ISO/IEC 9126.
@@ -1004,39 +995,39 @@ Di seguito forniamo una panoramica delle caratteristiche del modello di qualità
 
 === Funzionalità
 La funzionalità è la capacità del prodotto _software_ di fornire funzioni che soddisfano le esigenze esplicite e implicite necessarie per operare. \ Questa caratteristica è composta dalle seguenti sotto-caratteristiche:
-  - *Appropriatezza*: capacità del prodotto di fornire un adeguato insieme di funzioni per consentire all'utente di perseguire i suoi specifici compiti e obiettivi.
-  - *Accuratezza*: capacità del prodotto di fornire i risultati o gli effetti attesi.
-  - *Interoperabilità*: capacità del prodotto di interagire con uno o più sistemi specificati.
-  - *Conformità*: capacità del prodotto di aderire a _standard_, convenzioni e regolamentazioni rilevanti per il settore operativo a cui vengono applicate.
-  - *Sicurezza*: capacità del prodotto di proteggere i dati e le funzioni da accessi non autorizzati.
+- *Appropriatezza*: capacità del prodotto di fornire un adeguato insieme di funzioni per consentire all'utente di perseguire i suoi specifici compiti e obiettivi.
+- *Accuratezza*: capacità del prodotto di fornire i risultati o gli effetti attesi.
+- *Interoperabilità*: capacità del prodotto di interagire con uno o più sistemi specificati.
+- *Conformità*: capacità del prodotto di aderire a _standard_, convenzioni e regolamentazioni rilevanti per il settore operativo a cui vengono applicate.
+- *Sicurezza*: capacità del prodotto di proteggere i dati e le funzioni da accessi non autorizzati.
 
 === Affidabilità
 L'affidabilità è la capacità del prodotto di mantenere un certo livello di prestazioni in condizioni specificate per un periodo di tempo specificato. \ Le sue sotto-caratteristiche sono:
-  - *Maturità*: capacità del prodotto di evitare errori, malfunzionamenti o arresti inaspettati.
-  - *Tolleranza agli errori*: capacità del prodotto di mantenere un livello prestabilito di prestazioni in caso di errori.
-  - *Recuperabilità*: capacità del prodotto di ripristinare il livello di prestazioni e i dati in caso di malfunzionamenti.
-  - *Aderenza*: capacità del prodotto di aderire a _standard_, convenzioni e regolamentazioni riguardanti l'affidabilità.
+- *Maturità*: capacità del prodotto di evitare errori, malfunzionamenti o arresti inaspettati.
+- *Tolleranza agli errori*: capacità del prodotto di mantenere un livello prestabilito di prestazioni in caso di errori.
+- *Recuperabilità*: capacità del prodotto di ripristinare il livello di prestazioni e i dati in caso di malfunzionamenti.
+- *Aderenza*: capacità del prodotto di aderire a _standard_, convenzioni e regolamentazioni riguardanti l'affidabilità.
 
 === Efficienza
 L'efficienza è la capacità del prodotto di fornire prestazioni appropriate rispetto alla quantità di risorse utilizzate. \ Le sue sotto-caratteristiche sono:
-  - *Comportamento rispetto al tempo*: capacità del prodotto di fornire, sotto certe condizioni, adeguati tempi di risposta, elaborazione e velocità di attraversamento.
-  - *Utilizzo delle risorse*: capacità del prodotto di utilizzare adeguatamente risorse come memoria, CPU e spazio su disco.
-  - *Conformità*: capacità del prodotto di aderire a _standard_ e specifiche per l'efficienza.
+- *Comportamento rispetto al tempo*: capacità del prodotto di fornire, sotto certe condizioni, adeguati tempi di risposta, elaborazione e velocità di attraversamento.
+- *Utilizzo delle risorse*: capacità del prodotto di utilizzare adeguatamente risorse come memoria, CPU e spazio su disco.
+- *Conformità*: capacità del prodotto di aderire a _standard_ e specifiche per l'efficienza.
 
 === Usabilità
 L'usabilità è la capacità del prodotto di essere compreso, appreso, utilizzato e attraente per l'utente. \ Le sue sotto-caratteristiche sono:
-  - *Comprensibilità*: capacità del prodotto di rendere i suoi concetti facilmente comprensibili all'utente, permettendogli di valutare se il prodotto è adatto alle sue esigenze.
-  - *Apprendibilità*: capacità del prodotto essere facilmente apprendibile per gli utenti che non ne conoscono già il funzionamento.
-  - *Operabilità*: capacità del prodotto di essere utilizzato dagli utenti per i propri scopi e controllandone l'uso.
-  - *Attrattività*: capacità del prodotto di essere piacevole da utilizzare per l'utente.
-  - *Conformità*: capacità del prodotto di aderire a _standard_ o convenzioni per l'usabilità.
+- *Comprensibilità*: capacità del prodotto di rendere i suoi concetti facilmente comprensibili all'utente, permettendogli di valutare se il prodotto è adatto alle sue esigenze.
+- *Apprendibilità*: capacità del prodotto essere facilmente apprendibile per gli utenti che non ne conoscono già il funzionamento.
+- *Operabilità*: capacità del prodotto di essere utilizzato dagli utenti per i propri scopi e controllandone l'uso.
+- *Attrattività*: capacità del prodotto di essere piacevole da utilizzare per l'utente.
+- *Conformità*: capacità del prodotto di aderire a _standard_ o convenzioni per l'usabilità.
 
 === Manutenibilità
 La manutenibilità è la capacità del prodotto di essere modificato, includendo correzioni, miglioramenti o adattamenti. \ Le sue sotto-caratteristiche sono:
-  - *Analizzabilità*: capacità del prodotto di essere facilmente analizzato per identificare difetti o cause di malfunzionamenti.
-  - *Modificabilità*: capacità del prodotto di essere facilmente modificato (sostituendo componenti).
-  - *Stabilità*: capacità del prodotto di evitare effetti indesiderati derivanti da modifiche.
-  - *Testabilità*: capacità del prodotto di essere facilmente testato così da validare le modifiche apportate.
+- *Analizzabilità*: capacità del prodotto di essere facilmente analizzato per identificare difetti o cause di malfunzionamenti.
+- *Modificabilità*: capacità del prodotto di essere facilmente modificato (sostituendo componenti).
+- *Stabilità*: capacità del prodotto di evitare effetti indesiderati derivanti da modifiche.
+- *Testabilità*: capacità del prodotto di essere facilmente testato così da validare le modifiche apportate.
 
 
 = Metriche per la qualità <metriche>
@@ -1048,7 +1039,7 @@ La manutenibilità è la capacità del prodotto di essere modificato, includendo
 - *MPC-PV*: <MPC-PV>
   - *Nome*: _Planned Value_
   - *Descrizione*: Indica il valore che si prevede di aver prodotto fino a quel momento.
-  - *Formula*: 
+  - *Formula*:
   $ "PV" = "%LSP" * "BAC" $
   - *Parametri*:
     - *%LSP*: Percentuale di Lavoro Svolto secondo la Pianificazione (ore pianificate rispetto alle ore totali disponibili).
@@ -1057,7 +1048,7 @@ La manutenibilità è la capacità del prodotto di essere modificato, includendo
 - *MPC-EV*: <MPC-EV>
   - *Nome*: _Earned Value_
   - *Descrizione*: Indica il valore del lavoro effettivamente svolto fino a quel momento.
-  - *Formula*: 
+  - *Formula*:
   $ "EV" = "%LSE" * "BAC" $
   - *Parametri*:
     - *%LSE*: Percentuale di Lavoro Svolto Effettivamente (ore consumate rispetto al totale disponibile).
@@ -1070,7 +1061,7 @@ La manutenibilità è la capacità del prodotto di essere modificato, includendo
 - *MPC-CPI*: <MPC-CPI>
   - *Nome*: _Cost Performance Index_
   - *Descrizione*: Indica il rapporto tra il valore guadagnato e il costo effettivo. Più grande il suo valore, maggiore sarà l’efficienza.
-  - *Formula*: 
+  - *Formula*:
   $ "CPI" = "EV" / "AC" $
   - *Parametri*:
     - *EV*: _Earned Value_, ovvero il valore guadagnato.
@@ -1079,7 +1070,7 @@ La manutenibilità è la capacità del prodotto di essere modificato, includendo
 - *MPC-EAC*: <MPC-EAC>
   - *Nome*: _Estimated at Completion_
   - *Descrizione*: Indica il costo stimato per terminare il progetto se si mantenesse l'attuale efficienza nell'utilizzo delle risorse.
-  - *Formula*: 
+  - *Formula*:
   $ "EAC" = "BAC" / "CPI" $
   - *Parametri*:
     - *BAC*: _Budget at Completion_.
@@ -1088,7 +1079,7 @@ La manutenibilità è la capacità del prodotto di essere modificato, includendo
 - *MPC-SV*: <MPC-SV>
   - *Nome*: _Schedule Variance_
   - *Descrizione*: Indica se il progetto è in anticipo (valore positivo), in pari (valore zero) o in ritardo (valore negativo) rispetto alla pianificazione.
-  - *Formula*: 
+  - *Formula*:
   $ "SV" = "EV" - "PV" $
   - *Parametri*:
     - *EV*: _Earned Value_.
@@ -1097,7 +1088,7 @@ La manutenibilità è la capacità del prodotto di essere modificato, includendo
 - *MPC-BV*: <MPC-BV>
   - *Nome*: _Budget Variance_
   - *Descrizione*: Indica se i costi finora sostenuti per il progetto sono meno (valore positivo) o più (valore negativo) del previsto.
-  - *Formula*: 
+  - *Formula*:
   $ "BV" = "PV" - "AC" $
   - *Parametri*:
     - *PV*: _Planned Value_.
@@ -1106,7 +1097,7 @@ La manutenibilità è la capacità del prodotto di essere modificato, includendo
 - *MPC-ETC*: <MPC-ETC>
   - *Nome*: _Estimate to Complete_
   - *Descrizione*: Costo stimato per poter completare il progetto allo stato attuale.
-  - *Formula*: 
+  - *Formula*:
   $ "ETC" = "EAC" - "AC" $
   - *Parametri*:
     - *EAC*: _Estimated at Completion_.
@@ -1117,7 +1108,7 @@ La manutenibilità è la capacità del prodotto di essere modificato, includendo
 - *MPC-ISR*: <MPC-ISR>
   - *Nome*: Indice di Stabilità dei Requisiti
   - *Descrizione*: Indice che misura la variazione dei requisiti nel corso del tempo. #h(1fr)
-  - *Formula*: 
+  - *Formula*:
   $ "ISR" = 100 - (("RM" + "RC" + "RA") / "RT") * 100 $
   - *Parametri*:
     - *RM*: Numero di Requisiti Modificati.
@@ -1130,17 +1121,17 @@ La manutenibilità è la capacità del prodotto di essere modificato, includendo
 ==== Documentazione
 - *MPC-IG*: <MPC-IG>
   - *Nome*: Indice Gulpease
-  - *Descrizione*: Indica il livello di leggibilità di un testo: 
+  - *Descrizione*: Indica il livello di leggibilità di un testo:
     - Inferiore a 80: difficile da leggere per chi ha la licenza elementare.
     - Inferiore a 60: difficile da leggere per chi ha la licenza media.
     - Inferiore a 40: difficile da leggere per chi ha la licenza superiore. #h(1fr)
   - *Formula*:
   $ "IG" = 89 + (300 * "NDF" - 10 * "NDL") / "NDP" $
-  - *Parametri*: 
+  - *Parametri*:
     - *NDF*: Numero di Frasi presenti nel testo.
     - *NDL*: Numero di Lettere presenti nel testo.
     - *NDP*: Numero di Parole presenti nel testo.
-  
+
 - *MPC-CO*: <MPC-CO>
   - *Nome*: Correttezza Ortografica
   - *Descrizione*: Indica il numero di errori ortografici trovati nel testo.
@@ -1150,7 +1141,7 @@ La manutenibilità è la capacità del prodotto di essere modificato, includendo
 - *MPC-PMS*: <MPC-PMS>
   - *Nome*: Percentuale di Metriche Soddisfatte
   - *Descrizione*: Indica la percentuale di metriche che risultano soddisfare gli obiettivi minimi di qualità previsti dal Piano di Qualifica.
-  - *Formula*: 
+  - *Formula*:
   $ "PMS" = ("MS" / "MT") * 100 $
   - *Parametri*:
     - *MS*: Numero di Metriche Soddisfatte.
@@ -1162,7 +1153,7 @@ La manutenibilità è la capacità del prodotto di essere modificato, includendo
 - *MPC-ET*: <MPC-ET>
   - *Nome*: Efficienza Temporale
   - *Descrizione*: Indica la percentuale di tempo disponibile che il _team_ è riuscito a impiegare svolgendo attività produttive, ossia quelle che contribuiscono direttamente al raggiungimento degli obiettivi del progetto.
-  - *Formula*: 
+  - *Formula*:
   $ "ET" = ("OO" / "OE") * 100 $
   - *Parametri*:
     - *OO*: Ore di Orologio (tempo totale trascorso).
@@ -1174,7 +1165,7 @@ La manutenibilità è la capacità del prodotto di essere modificato, includendo
   - *Nome*: Requisiti Obbligatori Soddisfatti
   - *Descrizione*: Misura la percentuale di requisiti obbligatori soddisfatti dal prodotto.
   - *Formula*:
-  #align(center)[$ "%ROS" = "NROS" / "NTRO" * 100 $] 
+  #align(center)[$ "%ROS" = "NROS" / "NTRO" * 100 $]
   - *Parametri*:
     - *NROS*: Numero di Requisiti Obbligatori Soddisfatti.
     - *NTRO*: Numero Totale di Requisiti Obbligatori.
@@ -1183,16 +1174,16 @@ La manutenibilità è la capacità del prodotto di essere modificato, includendo
   - *Nome*: Requisiti Desiderabili Soddisfatti
   - *Descrizione*: Misura la percentuale di requisiti desiderabili soddisfatti dal prodotto.
   - *Formula*:
-  #align(center)[$ "%RDS" = "NRDS" / "NTRD" * 100 $] 
+  #align(center)[$ "%RDS" = "NRDS" / "NTRD" * 100 $]
   - *Parametri*:
-    - *NRDS*: Numero di Requisiti Desiderabili Soddisfatti. 
+    - *NRDS*: Numero di Requisiti Desiderabili Soddisfatti.
     - *NTRD*: Numero Totale di Requisiti Desiderabili.
 
 - *MPD-ROPS*
   - *Nome*: Requisiti Opzionali Soddisfatti
   - *Descrizione*: Misura la percentuale di requisiti opzionali soddisfatti dal prodotto.
   - *Formula*:
-  #align(center)[$ "%ROPS" = "NROPS" / "NTROP" * 100 $] 
+  #align(center)[$ "%ROPS" = "NROPS" / "NTROP" * 100 $]
   - *Parametri*:
     - *NROPS*: Numero di Requisiti Opzionali Soddisfatti.
     - *NTROP*: Numero Totale di Requisiti Opzionali.
@@ -1226,7 +1217,7 @@ La manutenibilità è la capacità del prodotto di essere modificato, includendo
 === Usabilità
 - *MPD-FU*
   - *Nome*: Facilità di Utilizzo
-  - *Descrizione*: Misura il numero di errori commessi dagli utenti durante l’interazione. Un valore minimo indica un’interfaccia intuitiva. 
+  - *Descrizione*: Misura il numero di errori commessi dagli utenti durante l’interazione. Un valore minimo indica un’interfaccia intuitiva.
 - *MPD-TA*
   - *Nome*: Tempo di Apprendimento
   - *Descrizione*: Valuta il tempo necessario a un utente per imparare a utilizzare il _software_.
@@ -1236,7 +1227,7 @@ La manutenibilità è la capacità del prodotto di essere modificato, includendo
   - *Nome*: Complessità Ciclomatica per Metodo
   - *Descrizione*: Valuta la complessità per metodo del codice sorgente attraverso la misurazione del numero di cammini indipendenti attraverso il grafo di controllo del flusso.
   - *Formula*:
-  #align(center)[$ "CC" = "e" - "n" + 2 $] 
+  #align(center)[$ "CC" = "e" - "n" + 2 $]
 
 - *MPD-CS*
   - *Nome*: Code Smell
@@ -1244,7 +1235,7 @@ La manutenibilità è la capacità del prodotto di essere modificato, includendo
 
 - *MPD-COC*
   - *Nome*: Coefficient Of Coupling
-  - *Descrizione*: Misura il grado di dipendenza tra i moduli o le componenti di un sistema. Un alto COC implica che i moduli siano strettamente interconnessi il che rende difficile apportare modifiche a un modulo senza influenzarne altri. 
+  - *Descrizione*: Misura il grado di dipendenza tra i moduli o le componenti di un sistema. Un alto COC implica che i moduli siano strettamente interconnessi il che rende difficile apportare modifiche a un modulo senza influenzarne altri.
   - *Formula*:
   #align(center)[$ "COC" = "NDI" / "NTM" * 100 $]
   - *Parametri*:
@@ -1256,10 +1247,10 @@ La manutenibilità è la capacità del prodotto di essere modificato, includendo
   - *Descrizione*: Indica il numero di moduli o componenti che dipendono direttamente da un modulo o funzione specifica. Un alto valore di fan-in suggerisce che molte parti del sistema dipendono da quel modulo.
 
 - *MPD-SFO*
-  - *Nome*: Structure Fan Out 
+  - *Nome*: Structure Fan Out
   - *Descrizione*: Misura il numero di dipendenze o connessioni che un modulo o componente ha con altri. Un elevato fan-out può indicare che il modulo è fortemente interconnesso con altri.
 
-- *MPD-RM* 
+- *MPD-RM*
   - *Nome*: Ripercussione delle Modifiche
   - *Descrizione*: Misura la percentuale del sistema che è stato affetto dalle modifiche apportate.
   - *Formula*:
