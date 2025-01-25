@@ -4,7 +4,7 @@
 #show: content => verbale(
   data: "14 Novembre 2024",
   destinatari: ("Gruppo SWE@",),
-  responsabile: "Andrea Precoma",
+  responsabile: "Klaudio Merja",
   redattori: ("Andrea Precoma", "Davide Marin", "Davide Martinelli", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
   verificatori: ("Andrea Perozzo", "Andrea Precoma", "Davide Marin", "Davide Martinelli", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
   titolo: "Norme di Progetto",
