@@ -487,3 +487,31 @@
       }),
     )]
 }
+
+#let plotGrafico(tabCaption:none, data1:none, data2:none, data3:none) = {
+  import "@preview/cetz:0.3.2"
+  import "@preview/cetz-plot:0.1.1"
+
+  figure(
+    kind: image,
+    caption: tabCaption,
+    cetz.canvas({
+      import cetz.draw: *
+      import cetz-plot: *
+      
+        set-style(axes: (stroke: .5pt, tick: (stroke: .5pt)),
+            legend: (stroke: none, orientation: ttb, item: (spacing: .3), scale: 80%))
+
+      plot.plot(size: (15, 8), {
+      plot.add(data1)
+      plot.add(data2)
+      plot.add(data3)
+
+      plot.add-legend("Prova")
+      plot.add-legend("Prova")
+      plot.add-legend("Prova")
+      })
+    })
+  )
+  
+}

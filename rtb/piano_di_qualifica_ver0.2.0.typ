@@ -446,3 +446,11 @@ Misura l'efficacia nell'utilizzo del tempo per completare le attività, confront
 
 === RTB
 // Tabella RTB
+
+= Prove tabelle
+#plotGrafico(
+  tabCaption: "Prova 1",
+  data1: ((0,3), (1,2), (2, 2), (3,1)),
+  data2: ((0,2), (1,3), (2, 3), (3,4)),
+  data3: ((0,1), (1,4), (2, 4), (3,6)),
+)
