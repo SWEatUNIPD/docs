@@ -15,7 +15,7 @@
     "Davide Marin",
     "Andrea Perozzo\nDavide Martinelli",
     [
-      - Aggiunta descrizione della repo NearYou
+      - Aggiunta descrizione della _repository_ NearYou
       - Ultimazione di alcuni paragrafi
     ],
 
@@ -574,7 +574,7 @@ Il gruppo utilizza due _repository_ all'interno della propria organizzazione Git
 La _repository_ è strutturata da un unico _branch_ adibito al mantenimento di tutti i documenti Typst verificati. All'occorenza di svolgere azioni dettate dal _backlog_ si crea un _branch_ temporaneo che, successivamente alla verifica, viene unito nel ramo principale. La _repository_ è presentata dal `README.md`, contiene il _file_ `.gitignore` usato dalla Action per escludere alcuni _file_ dalla compilazione e il _file_ `script.js` usato per pubblicare la documentazione nel sito _web_. `test.js` è utilizzato per controllare la presenza dei termini del Glossario all'interno dei documenti, mentre `glossario.json` è una struttura dati che contiene i termini e la loro definizione, usato per la stesura del documento dal _file_ `glossario_verX.Y.Z.typ`. Le cartelle sono strutturate nel seguente modo: \
 #tree-list()[
   - *`.github`*
-    - *`workflows`*: contiene i _file_ `.yml` per la Action.
+    - *`workflows`*: contiene i _file_ `.yml` per le configurazioni delle GitHub Action.
   - *`.vscode`*: contiene le impostazioni Visual Studio Code per i _font_ dei documenti.
   - *`assets`*
     - *`font`*: contiene i _file_ `.ttf` dei _font_ usati nei documenti.
@@ -603,10 +603,10 @@ La _repository_ è strutturata da un unico _branch_ adibito al mantenimento di t
 ]
 
 ==== Struttura della repository sweatunipd.github.io
-La _repository_ è costituita da un unico _branch_ nel quale è caricato tutto il materiale necessario per strutturare il sito _web_ e popolarlo dinamicamente con la documentazione della _repository_ docs. La _repository_ è presentata dal `README.md` e contiene il _file_ `.gitignore` necessario per escludere alcuni _file_ dal lavoro della Action. Le cartelle sono strutturate nel seguente modo: \
+La _repository_ è costituita da un unico _branch_ nel quale è caricato tutto il materiale necessario per strutturare il sito _web_ e popolarlo dinamicamente con la documentazione della _repository_ docs. La _repository_ è presentata dal `README.md`, contiene il _file_ `.gitignore` necessario per escludere alcuni _file_ dal lavoro della Action. Le cartelle sono strutturate nel seguente modo: \
 #tree-list()[
   - *`.github`*
-    - *`workflows`*: contiene i _file_ `.yml` per la Action.
+    - *`workflows`*: contiene i _file_ `.yml` per le configurazioni delle GitHub Action.
   - *`app`*
     - *`fonts`*: contiene i _file_ `.woff` dei _font_ usati nel sito.
     - `global.css`
@@ -629,31 +629,25 @@ La _repository_ è costituita da un unico _branch_ nel quale è caricato tutto i
 La _repository_ è strutturata da due _branch_: "_main_" e "_dev_".
 Il branch "_main_" è utilizzato per effettuare le _release_ ufficiali, rispettive quindi a RTB e PB, mentre il _branch_ "_dev_" è adibito allo sviluppo del codice.
 All'occorenza di svolgere azioni dettate dal _backlog_ si crea un _branch_ temporaneo che, successivamente alla verifica, viene unito nel ramo "_dev_". 
-La _repository_ è presentata dal `README.md`, contiene il _file_ `.gitignore` usato dalla Action per escludere alcuni _file_ dalla compilazione.
+La _repository_ è presentata dal `README.md` il quale, inoltre, fornisce istruzioni su come avviare il sistema tramite #rifGlossario("Docker"). La _repository_ contiene anche il _file_ `.gitignore` usato per escludere alcuni _file_ dal caricamento in _repository_ al momento del _commit_.
 Le cartelle sono strutturate nel seguente modo:
 
 #tree-list()[
   - *`.github`*
-    - *`workflows`*: contiene i _file_ `.yml` per la Action.
-  - *`asset`*
-    - *`img`*: contiene il logo e le immagini usate nei documenti.
+    - *`workflows`*: contiene i _file_ `.yml` per le configurazioni delle GitHub Action.
+  - *`assets`*
+    - *`img`*: contiene le immagini usate all'interno dei _file_.
   - *`client`*
-    - *`sensordata`*: contiene i dati delle coordinate #rifGlossario("GPS") di un sensore.
-    - _File_ utili per il funzionamento del sensore.
+    - *`sensor_data`*: contiene i _file_ `.txt` relativi alle coordinate #rifGlossario("GPS") utilizzate dal simulatore GPS.
+    - _File_ contenenti il codice sorgente del simulatore di coordinate GPS.
   - *`data`*:
     - *`grafana`*:
-      - *`plugins`*:
-        - *`grafana-lokiexplore-app`*:
-          - *`img`*: immagini relative a #rifGlossario("Grafana").
-          - _File_ utili per il funzionamento della _dashboard_ di Grafana.
-        - *`hamedkarbasi93-kafka-datasource`*
-          - *`img`*: immagini relative a Kafka.
-          - _File_ utili per il funzionamento di Kafka.
-    - `grafana.db`
+      - *`plugins`*: contiene i _plugins_ installati per il corretto funzionamento di #rifGlossario("Grafana").
+    - `grafana.db`:  _database_ di Grafana, utilizzato per la _dashboard_ e le informazioni al suo interno.
   - *`src`*:
     - *`main`*:
       - *`resources`*:
-        - `application.properties`
+        - `application.properties`: file relativo alla configurazione del sistema.
       - *`java/io/github/unipd/Nearyou`*:
         - *`config`*:
           - `KafkaConsumerConfig.java`
