@@ -11,7 +11,7 @@
     "1.0.0",
     "25/01/2025",
     "Picello Davide",
-    "Andrea Perozzo\nDavide Martinelli",
+    "Andrea Precoma",
     [- Approvazione versione finale del documento per rilascio in RTB],
 
     "0.14.0",
