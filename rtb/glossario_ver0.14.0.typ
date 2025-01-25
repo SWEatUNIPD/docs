@@ -3,11 +3,17 @@
 #show: content => verbale(
   data: "11 novembre 2024",
   uso: "Interno",
-  responsabile: "Davide Martinelli",
+  responsabile: "Davide Picello",
   redattori: ("Andrea Perozzo", "Andrea Precoma", "Davide Marin", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
   titolo: "Glossario",
   verificatori: ("Andrea Perozzo", "Andrea Precoma", "Davide Marin", "Davide Picello", "Riccardo Milan"),
   versioni: (
+    "1.0.0",
+    "25/01/2025",
+    "Picello Davide",
+    "Andrea Perozzo\nDavide Martinelli",
+    [- Approvazione versione finale del documento per rilascio in RTB],
+
     "0.14.0",
     "23/01/2025",
     "Davide Marin\nRiccardo Milan",
