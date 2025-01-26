@@ -271,7 +271,7 @@ Piattaforma di messaggistica in tempo reale che consente _chat_ testuali, vocali
 ==== Telegram
 Applicazione di messaggistica istantanea utilizzata per comunicazioni rapide e brevi all'interno del gruppo.
 
-==== Fogli di Google (Google Sheets)
+==== Fogli di Google
 Applicazione web per la creazione e la gestione di fogli di calcolo. Il gruppo utilizza tale strumento per tenere traccia delle ore produttive impiegate in ogni _sprint_, che saranno successivamente riportate nel documento ufficiale Piano di Progetto.
 
 ==== GitHub
@@ -523,7 +523,7 @@ Per riferirsi ad una sezione del documento per una spiegazione più dettagliata 
 Per esporre un _link_ ad una pagina esterna al documento si utilizza la funzione `#formatLink` (#link(<stile_testo>)[sez. 3.1.8]) esplicitando l'interezza dell'_url_ anche nella _label_. Unica eccezione di stile per i riferimenti alle _issue_ nella tabella delle decisioni (#link(<stile_testo>)[sez. 3.1.8]).
 
 === Elenchi puntati
-Una lista è preferibile a un elenco narrativo, da valutare se renderlo numerato o meno a seconda della circostanza. I punti della descrizione nel registro delle modifiche vengono sempre rappresentati in un elenco. Se le voci dell'elenco sono costituite da delle frasi vengono chiuse da ".", se invece possiedono solo poche parole, che ad esempio indicano il nome di una tecnologia, non viene messo nessun segno di punteggiatura al termine. Le voci dell'elenco della descrizione nel registro delle modifiche non vengono chiuse da punteggiatura, ad eccezione fatta per le voci relative all'approvazione del documento in vista di una _milestone_.
+Una lista è preferibile a un elenco narrativo, da valutare se renderlo numerato o meno a seconda della circostanza. I punti della descrizione nel registro delle modifiche vengono sempre rappresentati in un elenco, eccezione fatta per l'approvazione dei documenti generali. Se le voci dell'elenco sono costituite da delle frasi vengono chiuse da ".", se invece possiedono solo poche parole, che ad esempio indicano il nome di una tecnologia, non viene messo nessun segno di punteggiatura al termine. Le voci dell'elenco della descrizione nel registro delle modifiche non vengono chiuse da punteggiatura.
 
 === Formato delle date
 Sotto il titolo nella prima pagina dei verbali viene indicata la data per iscritto, quindi nel formato "DD mese YYYY". Le date nei documenti vengono scritte nel formato DD/MM/YYYY, nei nomi dei documenti invece YYYY-MM-DD per mantenere l'ordine cronologico. In tutti i casi si segue la seguente convenzione:
