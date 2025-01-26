@@ -17,7 +17,7 @@
   "C": {
     "ClickHouse": "ClickHouse è un database di analisi _open source_ orientato alle colonne per casi di utilizzo in ambito _big data_.",
     "ClickUp": "Piattaforma di gestione del lavoro che combina strumenti per pianificazione, organizzazione e collaborazione su progetti.",
-    "Code Coverage": "Metrica che misura la percentuale di codice sorgente coperto da _test_, utile per valutare l'efficacia dei _test_ e l'affidabilità del software."
+    "Code Coverage": "Metrica che misura la percentuale di codice sorgente coperto da _test_, utile per valutare l'efficacia dei _test_ e l'affidabilità del _software_."
   },
   "D": {
     "Dashboard": "Interfaccia grafica composta da vari elementi che servono all'utente per visualizzare dati o a gestire un sistema.",
@@ -28,7 +28,7 @@
     "Deep dive": "Una sessione di _deep dive_ è un incontro in cui esperti esterni al gruppo si mettono a disposizione per approfondire determinati argomenti. Questi incontri sono progettati per affrontare temi complessi o aree in cui il _team_ destinatario potrebbe non avere esperienza sufficiente o stia incontrando difficoltà.",
     "Diagramma di Gantt": "Strumento di supporto alla gestione di progetti, usato principalmente nelle attività di gestione di progetto. È costruito partendo da un asse orizzontale, che rappresenta l'arco temporale, e da un asse verticale che rappresenta le mansioni o attività che costituiscono il progetto.",
     "Docker": "Piattaforma _software_ _open source_ che consente di sviluppare, distribuire ed eseguire applicazioni in _container_, unità leggere e portatili che includono tutto il necessario per eseguire un'applicazione, garantendo che funzionino in modo coerente su qualsiasi ambiente.",
-    "Docker Compose": "È uno strumento di Docker che permette la creazione e condivisione di applicazioni composte da più container. Lo strumento permette di definire i servizi in un file YAML e di avviare l'intera applicazione mediante un singolo comando."
+    "Docker Compose": "È uno strumento di Docker che permette la creazione e condivisione di applicazioni composte da più _container_. Lo strumento permette di definire i servizi in un file YAML e di avviare l'intera applicazione mediante un singolo comando."
   },
   "E": {
     "Event-driven Architecture": "È un _design pattern_ che si occupa della produzione e della gestione degli eventi, permettendo di comunicare oppure avviare servizi disaccoppiati tra di loro."
@@ -49,7 +49,7 @@
   },
   "H": {
     "Hive MQ": "_Broker_ MQTT _open source_ ad alte prestazioni per l'IoT.",
-    "Hosting": "Servizio che fornisce uno spazio online per archiviare, gestire e condividere dei documenti. Nel contesto attuale viene riferito ad un _hosting_ di _repository_, un ambiente dove versionare codice sorgente e documentazione."
+    "Hosting": "Servizio che fornisce uno spazio _online_ per archiviare, gestire e condividere dei documenti. Nel contesto attuale viene riferito ad un _hosting_ di _repository_, un ambiente dove versionare codice sorgente e documentazione."
   },
   "K": {
     "Kubernetes": "Sistema _open source_ di orchestrazione di _container_."
@@ -59,7 +59,7 @@
     "LLM": "_Large Language Model_, modello di intelligenza artificiale addestrato su grandi quantità di testo per comprendere, generare e rispondere al linguaggio naturale, utilizzato in _chatbot_, traduttori e assistenti virtuali."
   },
   "M": {
-    "Mockup": "Modello o replica di un prodotto o di un sistema (come l'interfaccia utente) utilizzato a scopo di test o presentazione.",
+    "Mockup": "Modello o replica di un prodotto o di un sistema (come l'interfaccia utente) utilizzato a scopo di _test_ o presentazione.",
     "MVP": "Acronimo di _Minimum Viable Product_, rappresenta la versione iniziale di un prodotto con le funzionalità minime indispensabili per essere testato dagli utenti e validato sul mercato.",
     "Marker": "Punto di riferimento utilizzato per identificare una posizione specifica all'interno della mappa."
   },
