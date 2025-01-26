@@ -2,7 +2,7 @@
 #import "@preview/treet:0.1.1": *
 
 #show: content => verbale(
-  data: "14 Novembre 2024",
+  data: "26 Novembre 2024",
   destinatari: ("Gruppo SWE@",),
   responsabile: "Klaudio Merja",
   redattori: (
@@ -28,7 +28,7 @@
     "1.0.0",
     "26/01/2025",
     "Davide Marin",
-    "Andrea Perozzo\nDavide Martinelli",
+    "Andrea Perozzo",
     [
       Approvazione versione finale del documento per rilascio in RTB
     ],
@@ -149,12 +149,12 @@ Le attività che compongono questo processo sono:
 - Consegna e completamento
 
 === Comunicazioni con il proponente
-L'azienda si è resa raggiungibile, per via testuale, tramite e-mail per le comunicazioni ufficiali. Tramite la piattaforma di messaggistica istantanea Discord, invece, per le comunicazioni più veloci. È stato deciso, inoltre, di utilizzare l'applicazione di teleconferenza Google Meet per le riunioni in cui è prevista la presenza di tutto il gruppo. L'azienda si è resa tuttavia disponibile anche ad accogliere il gruppo nei loro uffici.
+L'azienda si è resa raggiungibile, per via testuale, tramite _e-mail_ per le comunicazioni ufficiali. Tramite la piattaforma di messaggistica istantanea Discord, invece, per le comunicazioni più veloci. È stato deciso inoltre di utilizzare l'applicazione di teleconferenza Google Meet per le riunioni in cui è prevista la presenza di tutto il gruppo. L'azienda si è resa disponibile anche ad accogliere il gruppo nei loro uffici.
 
 Per ogni incontro, verrà redatto un verbale riguardante le discussioni e decisioni avvenute nello stesso. Questi verbali, dopo essere stati approvati e firmati dall'azienda, saranno disponibili presso il sito _web_ del gruppo #formatLink(label: "https://sweatunipd.github.io", url: "https://sweatunipd.github.io").
 
 ==== SAL
-È stato inoltre concordato un incontro settimanale di 45 minuti, tendenzialmente il mercoledì pomeriggio, riguardo allo Stato di Avanzamento dei Lavori (#rifGlossario("SAL")). Il gruppo esporrà i progressi e i dubbi dell'ultima settimana di lavoro, confrontandosi con il proponente e delineando le attività da svolgere nella settimana a venire.
+È stato inoltre concordato un incontro settimanale di circa 20-30 minuti, tendenzialmente il mercoledì pomeriggio, riguardo allo Stato di Avanzamento dei Lavori (#rifGlossario("SAL")). In questi incontri il gruppo è tenuto a esporre i progressi e i dubbi dell'ultima settimana di lavoro, confrontandosi con il proponente e delineando le attività da svolgere nella settimana a venire.
 
 ==== Sessioni di deep dive tecnologico
 Il proponente si è anche reso disponibile per organizzare delle sessioni di #rifGlossario("deep dive") tecnologico per approfondire l'utilizzo di alcune tecnologie che potrebbero rivelarsi particolarmente ostiche per il gruppo.
@@ -228,33 +228,30 @@ Il Piano di Progetto è un documento il cui scopo è quello di definire in modo 
 
 Viene redatto e aggiornato dal responsabile, con il supporto degli amministratori, durante l'intera durata del progetto.
 
-/*
+
 Il documento conterrà le seguenti informazioni:
 - *Analisi dei rischi*: Utile a individuare le possibili difficoltà che il gruppo può incontrare.
 - *Modello di sviluppo*: Descrive quale modello di sviluppo è stato scelto ed adottato dal gruppo per lo svolgimento del progetto.
-- *Pianificazione*: Contiene ed espone in quale modo il gruppo ha deciso di pianificare le attività da svolgere.
-
-
-Dovrebbe contenere le seguenti informazioni/sessioni:
-- Analisi dei rischi
-- Modello di sviluppo
-- Pianificazione
-- Preventivo
-- Consuntivo
-*/
+- *Pianificazione*: Contiene ed espone in quale modo il gruppo ha deciso di pianificare le attività da svolgere e la loro suddivisione in periodi. Per ogni periodo inoltre sarnno indicati:
+  - *Introduzione del periodo*: Breve introduzione con informazioni chiave come data di inizio e fine periodo e i rischi attesi all'interno dello stesso.
+  - *Attività*: Descrive le attività pianificate che dovranno essere svolte entro il termine del periodo.
+  - *Preventivo*: Contiene il ruolo e il preventivo orario per ciascun membro del gruppo.
+  - *Consuntivo*: Viene redatto alla fine di ogni periodo, contiene il numero di ore effetivamente impiegato da ogni membro del gruppo, utile per avere un riscontro del lavoro svolto ed efettuare analisi sull'efficienza.
+  - *Retrospettiva*: Sezione redatta a fine periodo, contiene una descrizione testuale delle difficoltà riscontrate e consigli utili da adottare per il lavoro futuro.
 
 ==== Piano di Qualifica
 Il Piano di Qualifica è un documento formale che definisce le strategie, le attività e gli approcci necessari per garantire la qualità del prodotto _software_ durante tutto il corso del progetto. Descrive le modalità di verifica e validazione, gli _standard_ adottati e le procedure di qualità da seguire.
 
 Il suo scopo principale è assicurare che il prodotto finale sia conforme alle specifiche richieste e alle aspettative del committente, monitorando il progresso rispetto agli obiettivi prefissati. Ogni membro del _team_ coinvolto nello sviluppo farà riferimento a questo documento per mantenere e garantire i livelli di qualità stabiliti.
 
-/*
-Dovrebbe contenere le seguenti informazioni:
-- Qualità di processo
-- Qualità di prodotto
-- Test
-- Cruscotto delle metriche/ Valutazioni per il miglioramento
-*/
+Al suo interno, sono presenti le seguenti informazioni:
+- *Introduzione*: Descrizione dello scopo del documento e del prodotto da noi sviluppati, contiene inoltre i riferimenti normativi e informativi utili per la stesura e lettura del documento.
+- *Obiettivi di qualità*: Sezione che definisce gli obiettivi di qualità posti dal gruppo, si suddivide in:
+  - *Qualità di processo*: Descrizione di metriche e parametri da seguire per rispettare gli obiettivi di qualità per i processi.
+  - *Qualità di prodotto*: Descrizione di metriche e parametri da seguire per rispettare gli obiettivi di qualità per il prodotto finale.
+- *Specifiche dei test*: Descrive le attività di _testing_ che saranno effettuate per garantire il rispetto dei vincoli definiti nei requisiti del progetto.
+- *Cruscotto di monitoraggio della qualità*: Contiene una descrizione più dettagliata di ogni metrica, il suo scopo e come ricavarla.
+
 
 ==== Glossario
 Il Glossario è un documento di supporto che raccoglie i termini tecnici e specifici utilizzati all'interno del progetto, fornendone definizioni chiare e univoche. È destinato a tutti gli _stakeholder_, i membri del _team_, i committenti e l'azienda proponente, con l'obiettivo di prevenire ambiguità e incomprensioni. Questo strumento è fondamentale per migliorare la coerenza e la qualità della documentazione prodotta.
@@ -281,7 +278,7 @@ Applicazione web per la creazione e la gestione di fogli di calcolo. Il gruppo u
 Piattaforma per il versionamento del codice e la collaborazione su progetti _software_. Il gruppo utilizza questo strumento per gestire le _repository_ relative al prodotto software oggetto del capitolato e per la documentazione, monitorare le attività del progetto, assegnarle ai membri e seguirne lo stato di avanzamento.
 
 ==== Typst
-#rifGlossario("Typst") è io sistema di impaginazione basato su _markup_ che viene adottato dal gruppo per la redazione della documentazione del progetto. Soluzione preferita rispetto a LaTeX per la sua semplicità.
+#rifGlossario("Typst") è il sistema di impaginazione basato su _markup_ che viene adottato dal gruppo per la stesura della documentazione del progetto. Soluzione preferita rispetto a LaTeX per la sua semplicità.
 
 === Metriche
 Le metriche adottate per il processo di fornitura sono le seguenti:
@@ -401,7 +398,7 @@ Ogni documento prodotto è costituito dalle seguenti sezioni.
 ==== Intestazione
 - *Logo del gruppo*: Presente nella cartella `assets/img`.
 - *Titolo del documento*
-- *Data*: Data in cui è stata versionata la _Major_ del documento o, nel caso dei verbali, in cui è avvenuta la riunione.
+- *Data*: Data in cui è stato approvato il documento o, nel caso dei verbali, in cui è avvenuta la riunione.
 - *Uso*: Interno o Esterno.
 - *Destinatari*
 - *Responsabile*
@@ -526,7 +523,7 @@ Per riferirsi ad una sezione del documento per una spiegazione più dettagliata 
 Per esporre un _link_ ad una pagina esterna al documento si utilizza la funzione `#formatLink` (#link(<stile_testo>)[sez. 3.1.8]) esplicitando l'interezza dell'_url_ anche nella _label_. Unica eccezione di stile per i riferimenti alle _issue_ nella tabella delle decisioni (#link(<stile_testo>)[sez. 3.1.8]).
 
 === Elenchi puntati
-Una lista è preferibile a un elenco narrativo, da valutare se renderlo numerato o meno a seconda della circostanza. I punti della descrizione nel registro delle modifiche vengono sempre rappresentati in un elenco. Se le voci dell'elenco sono costituite da delle frasi vengono chiuse da ".", se invece possiedono solo poche parole, che ad esempio indicano il nome di una tecnologia, non viene messo nessun segno di punteggiatura al termine. Le voci dell'elenco della descrizione nel registro delle modifiche non vengono chiuse da punteggiatura.
+Una lista è preferibile a un elenco narrativo, da valutare se renderlo numerato o meno a seconda della circostanza. I punti della descrizione nel registro delle modifiche vengono sempre rappresentati in un elenco. Se le voci dell'elenco sono costituite da delle frasi vengono chiuse da ".", se invece possiedono solo poche parole, che ad esempio indicano il nome di una tecnologia, non viene messo nessun segno di punteggiatura al termine. Le voci dell'elenco della descrizione nel registro delle modifiche non vengono chiuse da punteggiatura, ad eccezione fatta per le voci relative all'approvazione del documento in vista di una _milestone_.
 
 === Formato delle date
 Sotto il titolo nella prima pagina dei verbali viene indicata la data per iscritto, quindi nel formato "DD mese YYYY". Le date nei documenti vengono scritte nel formato DD/MM/YYYY, nei nomi dei documenti invece YYYY-MM-DD per mantenere l'ordine cronologico. In tutti i casi si segue la seguente convenzione:
@@ -625,7 +622,7 @@ La _repository_ è costituita da un unico _branch_ nel quale è caricato tutto i
 La _repository_ è strutturata da due _branch_: "_main_" e "_dev_".
 Il _branch_ "_main_" contiene la _release_ ufficiale più recente e viene aggiornato ad ogni _milestone_, ovvero nel nostro caso RTB e PB, mentre il _branch_ "_dev_" è adibito allo sviluppo del codice.
 Ad ogni necessità di svolgere azioni dettate da una _issue_ del _backlog_ si crea un _branch_ temporaneo che, successivamente alla verifica, viene riunito al ramo "_dev_" secondo il meccanismo delle _pull request_. //Per la prossima consegna, introdurre il concetto di Git Feature Branch Workflow e magari Conventional Commits (da valutare)
-La _repository_ è presentata dal `README.md` il quale, inoltre, fornisce istruzioni su come avviare il sistema tramite #rifGlossario("Docker"). La _repository_ contiene anche il _file_ `.gitignore` usato per escludere alcuni _file_ dai _commit_ in _repository_.
+La _repository_ è presentata dal `README.md` il quale fornisce anche le istruzioni su come avviare il sistema tramite #rifGlossario("Docker"). La _repository_ contiene anche il _file_ `.gitignore` usato per escludere alcuni _file_ dai _commit_ in _repository_.
 Le cartelle sono strutturate nel seguente modo:
 
 #tree-list()[
@@ -891,11 +888,11 @@ Le _issues_ sono create dal responsabile e sono composte da:
 - *Milestone*: la _release_ in cui deve essere pubblicato il risultato dell'attività.
 - *Etichetta*: la categoria a cui appartiene quella attività.
 - *Stato*: avanzamento del _task_.
-- *Data di inizio attività*: momento di presa in carico dell'attività (solitamente coincide con la data di inizio _sprint_), fondamentale per aggiornare il diagramma di gantt.
-- *Data di fine attività*: il termine indicato per portare a termine l'attività (solitamente coincide con la data di fine _sprint_), fondamentale per aggiornare il diagramma di Gantt.
+- *Data di inizio attività*: momento di presa incarico dell'attività, fondamentale per aggiornare il diagramma di Gantt.
+- *Data di fine attività*: il termine indicato per portare a termine l'attività, fondamentale per aggiornare il diagramma di Gantt.
 Ogni qualvolta ci sia la necessità di portare a termine un compito è necessario seguire la seguente procedura:
 + Il responsabile, dopo aver concordato in una riunione il da farsi, crea una nuova _issue_ con stato "_To do_" su GitHub e la assegna.
-+ All'inizio del lavoro di produzione, l'assegnatario cambia la _issue_ di stato, passando da "To Do" ad "In Progress", inoltre crea un nuovo _branch_ apposito staccato dal ramo principale per eseguire l'attività.
++ All'inizio del lavoro di produzione l'assegnatario cambia la _issue_ di stato, passando da "To Do" ad "In Progress", creando un nuovo _branch_ apposito staccato dal ramo principale per eseguire l'attività.
 + Contestualmente l'assegnatario apre una _pull request_ su GitHub e assegna i verificatori per quell'attività.
 + Il verificatore controlla il lavoro svolto:
   - Se la verifica ha esito positivo:
