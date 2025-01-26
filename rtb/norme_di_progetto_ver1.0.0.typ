@@ -888,7 +888,7 @@ Le _issues_ sono create dal responsabile e sono composte da:
 - *Milestone*: la _release_ in cui deve essere pubblicato il risultato dell'attività.
 - *Etichetta*: la categoria a cui appartiene quella attività.
 - *Stato*: avanzamento del _task_.
-- *Data di inizio attività*: momento di presa incarico dell'attività, fondamentale per aggiornare il #rifGlossario("diagramma di Gantt").
+- *Data di inizio attività*: momento di presa in carico dell'attività, fondamentale per aggiornare il #rifGlossario("diagramma di Gantt").
 - *Data di fine attività*: il termine indicato per portare a termine l'attività, fondamentale per aggiornare il diagramma di Gantt.
 Ogni qualvolta ci sia la necessità di portare a termine un compito è necessario seguire la seguente procedura:
 + Il responsabile, dopo aver concordato in una riunione il da farsi, crea una nuova _issue_ con stato "To Do" su GitHub e la assegna.
