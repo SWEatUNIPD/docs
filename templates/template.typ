@@ -488,7 +488,8 @@
     )]
 }
 
-#let plotGrafico(tabCaption:none, data1:none, data2:none, data3:none) = {
+//Funzioni per i grafici
+#let plotGrafico1(tabCaption:none, data1:none,) = {
   import "@preview/cetz:0.3.2"
   import "@preview/cetz-plot:0.1.1"
 
@@ -499,19 +500,76 @@
       import cetz.draw: *
       import cetz-plot: *
       
-        set-style(axes: (stroke: .5pt, tick: (stroke: .5pt)),
-            legend: (stroke: none, orientation: ttb, item: (spacing: .3), scale: 80%))
+        //set-style(axes: (stroke: .5pt, tick: (stroke: .5pt)), legend: (stroke: none, orientation: ttb, item: (spacing: .3), scale: 80%))
 
-      plot.plot(size: (15, 8), {
-      plot.add(data1)
-      plot.add(data2)
-      plot.add(data3)
+      plot.plot(size: (15, 8), x-tick-step: none, 
+      x-ticks: ((0, [Inizio]), (1, [Sprint 1]), (2, [Sprint 2]), (3, [Sprint 3]), (4, [Sprint 4])),
+      x-grid: true, y-grid: true,
+      legend: auto, 
+      {
+        plot.add(data1)
 
-      plot.add-legend("Prova")
-      plot.add-legend("Prova")
-      plot.add-legend("Prova")
+        plot.add-legend("Prova")
+        plot.add-legend("Prova")
+        plot.add-legend("Prova")
+        plot.add-legend("Prova")
+        plot.add-legend("Prova")
       })
     })
   )
-  
+}
+
+#let plotGrafico2(tabCaption:none, data1:none, data2:none,) = {
+  import "@preview/cetz:0.3.2"
+  import "@preview/cetz-plot:0.1.1"
+
+  figure(
+    kind: image,
+    caption: tabCaption,
+    cetz.canvas({
+      import cetz.draw: *
+      import cetz-plot: *
+      
+      //set-style(axes: (stroke: .5pt, tick: (stroke: .5pt)), legend: (stroke: none, orientation: ttb, item: (spacing: .3), scale: 80%))
+
+      plot.plot(size: (15, 8), x-tick-step: none, 
+        x-ticks: ((0, [Inizio]), (1, [Sprint 1]), (2, [Sprint 2]), (3, [Sprint 3]), (4, [Sprint 4])),
+        x-grid: true, y-grid: true,
+        legend: auto, 
+      {      
+        plot.add(data1)
+        plot.add(data2)
+      })
+    })
+  )
+}
+
+#let plotGrafico3(tabCaption:none, data1:none, data2:none, data3:none) = {
+  import "@preview/cetz:0.3.2"
+  import "@preview/cetz-plot:0.1.1"
+
+  figure(
+    kind: image,
+    caption: tabCaption,
+    cetz.canvas({
+      import cetz.draw: *
+      import cetz-plot: *
+      
+      //set-style(axes: (stroke: .5pt, tick: (stroke: .5pt)), legend: (stroke: none, orientation: ttb, item: (spacing: .3), scale: 80%))
+
+      plot.plot(size: (15, 8), x-tick-step: none, 
+        x-ticks: ((0, [Inizio]), (1, [Sprint 1]), (2, [Sprint 2]), (3, [Sprint 3]), (4, [Sprint 4])),
+        x-grid: true, y-grid: true,
+        legend: auto, 
+      {      
+        plot.add(data1)
+        plot.add(data2)
+        plot.add(data3)
+
+        plot.add-legend("Prova")
+        plot.add-legend("Prova")
+        plot.add-legend("Prova")
+      })
+    })
+  )
 }

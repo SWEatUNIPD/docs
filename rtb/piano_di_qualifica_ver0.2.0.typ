@@ -448,9 +448,7 @@ Misura l'efficacia nell'utilizzo del tempo per completare le attività, confront
 // Tabella RTB
 
 = Prove tabelle
-#plotGrafico(
-  tabCaption: "Prova 1",
-  data1: ((0,3), (1,2), (2, 2), (3,1)),
-  data2: ((0,2), (1,3), (2, 3), (3,4)),
-  data3: ((0,1), (1,4), (2, 4), (3,6)),
-)
+
+
+#plotGrafico1(tabCaption: "Tabella EAC",
+              data1: ((0,13620.42), (1,13402.94), (2,13292.46), (3,13374.76), (4,13404.62)))
