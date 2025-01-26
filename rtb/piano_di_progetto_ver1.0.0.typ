@@ -485,7 +485,7 @@ Per quanto riguarda l'Analisi dei Requisiti l'attività di stesura è proseguita
 ==== Attività dello sprint
 Le attività che il _team_ si è prefissato di portare a termine durante il quarto _sprint_ sono le seguenti:
 - Redazione del verbale esterno ed interno del 23/12/2024.
-- Codifica dello _script_ per il calcolo automatico dell'#rifGlossario("indice Gulpease").
+- Codifica dello _script_ per il calcolo automatico dell'indice #rifGlossario("Gulpease").
 - Ampliamento del documento Norme di Progetto, in particolare occupandosi delle sezioni:
   - Metriche di qualità del prodotto.
   - Metriche di qualità del processo.
