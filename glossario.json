@@ -1,99 +1,99 @@
 {
   "A": {
-    "Apache Airflow": "Orchestratore di flussi di lavoro open-source per applicazioni data-intensive.",
-    "Apache Flink": "Framework di elaborazione dati a flusso open-source, ottimizzato per applicazioni in tempo reale.",
-    "Apache Kafka": "Piattaforma di broker e data streaming che consente di gestire e trasferire big data in tempo reale.",
-    "Apache NiFi": "Sistema di integrazione di dati open-source per l'elaborazione e la distribuzione di flussi di dati.",
-    "Apache Spark": "Elaborazione dati in-memory open-source, ad alte prestazioni, progettato per eseguire elaborazioni complesse su grandi volumi di dati in modo rapido e scalabile.",
-    "Apache Superset": "Piattaforma open-source di business intelligence per esplorare e visualizzare dati in modo interattivo.",
-    "API": "Acronimo di Application Programming Interface, sono un insieme di regole e strumenti che permette a software diversi di comunicare e interagire tra loro."
+    "Apache Airflow": "Orchestratore di flussi di lavoro _open source_ per applicazioni _data-intensive_.",
+    "Apache Flink": "_Framework_ di elaborazione dati a flusso _open source_, ottimizzato per applicazioni in tempo reale.",
+    "Apache Kafka": "Piattaforma di _broker_ e _data streaming_ che consente di gestire e trasferire _big data_ in tempo reale.",
+    "Apache NiFi": "Sistema di integrazione di dati _open source_ per l'elaborazione e la distribuzione di flussi di dati.",
+    "Apache Spark": "Elaborazione dati _in-memory_ _open source_, ad alte prestazioni, progettato per eseguire elaborazioni complesse su grandi volumi di dati in modo rapido e scalabile.",
+    "Apache Superset": "Piattaforma _open source_ di _business intelligence_ per esplorare e visualizzare dati in modo interattivo.",
+    "API": "Acronimo di _Application Programming Interface_, sono un insieme di regole e strumenti che permette a _software_ diversi di comunicare e interagire tra loro."
   },
   "B": {
-    "Backlog": "Il backlog, concetto fondamentale nella metodologia Agile, è un elenco ordinato e dinamico di tutti gli elementi necessari per lo sviluppo e il miglioramento di un prodotto. Questi elementi possono includere nuove funzionalità, modifiche a quelle esistenti, correzioni di bug e attività tecniche.",
+    "Backlog": "Il _backlog_, concetto fondamentale nella metodologia Agile, è un elenco ordinato e dinamico di tutti gli elementi necessari per lo sviluppo e il miglioramento di un prodotto. Questi elementi possono includere nuove funzionalità, modifiche a quelle esistenti, correzioni di _bug_ e attività tecniche.",
     "Bike-sharing": "Servizio di noleggio bici a tariffa oraria, che permette all'utente di noleggiare e restituire la bici in una serie di punti di raccolta distribuiti in una città in maniera autonoma, solitamente tramite l'ausilio di un'applicazione fornita dal fornitore del servizio.",
     "Branch": "In ambito di versionamento del codice, rappresenta un flusso di sviluppo.",
-    "Broker di Eventi": "Componente software che funge da intermediario per lo scambio asincrono di eventi tra diversi sistemi o applicazioni."
+    "Broker di Eventi": "Componente _software_ che funge da intermediario per lo scambio asincrono di eventi tra diversi sistemi o applicazioni."
   },
   "C": {
-    "ClickHouse": "ClickHouse è un database di analisi open source orientato alle colonne per casi di utilizzo in ambito big data.",
+    "ClickHouse": "ClickHouse è un database di analisi _open source_ orientato alle colonne per casi di utilizzo in ambito _big data_.",
     "ClickUp": "Piattaforma di gestione del lavoro che combina strumenti per pianificazione, organizzazione e collaborazione su progetti.",
-    "Code Coverage": "Metrica che misura la percentuale di codice sorgente coperto da test, utile per valutare l'efficacia dei test e l'affidabilità del software."
+    "Code Coverage": "Metrica che misura la percentuale di codice sorgente coperto da _test_, utile per valutare l'efficacia dei _test_ e l'affidabilità del software."
   },
   "D": {
     "Dashboard": "Interfaccia grafica composta da vari elementi che servono all'utente per visualizzare dati o a gestire un sistema.",
     "Database": "Sistema strutturato per la raccolta, l'archiviazione e la gestione di dati.",
     "Data Broker": "Tipo di tecnologia che facilita la raccolta, l'integrazione e la distribuzione di dati tra diverse fonti e utenti, garantendo accesso sicuro e scalabile per analisi e applicazioni.",
-    "Data Generator": "Strumento o un software che produce dati sintetici o simulati, utilizzati per testare applicazioni, addestrare modelli di machine learning o simulare scenari realistici.",
+    "Data Generator": "Strumento o _software_ che produce dati sintetici o simulati, utilizzati per testare applicazioni, addestrare modelli di _machine learning_ o simulare scenari realistici.",
     "Data Visualization": "Rappresentazione grafica di dati e informazioni, al fine di facilitarne la comprensione e l'interpretazione.",
-    "Deep dive": "Una sessione deep dive è un incontro in cui esperti esterni al gruppo si mettono a disposizione per approfondire argomenti e tematiche. Questi incontri sono progettati per affrontare temi complessi o aree in cui il team destinatario potrebbe non avere esperienza sufficiente o stia incontrando difficoltà.",
+    "Deep dive": "Una sessione di _deep dive_ è un incontro in cui esperti esterni al gruppo si mettono a disposizione per approfondire determinati argomenti. Questi incontri sono progettati per affrontare temi complessi o aree in cui il _team_ destinatario potrebbe non avere esperienza sufficiente o stia incontrando difficoltà.",
     "Diagramma di Gantt": "Strumento di supporto alla gestione di progetti, usato principalmente nelle attività di gestione di progetto. È costruito partendo da un asse orizzontale, che rappresenta l'arco temporale, e da un asse verticale che rappresenta le mansioni o attività che costituiscono il progetto.",
-    "Docker": "Piattaforma software open-source che consente di sviluppare, distribuire ed eseguire applicazioni in container, unità leggere e portatili che includono tutto il necessario per eseguire un'applicazione, garantendo che funzionino in modo coerente su qualsiasi ambiente.",
+    "Docker": "Piattaforma _software_ _open source_ che consente di sviluppare, distribuire ed eseguire applicazioni in _container_, unità leggere e portatili che includono tutto il necessario per eseguire un'applicazione, garantendo che funzionino in modo coerente su qualsiasi ambiente.",
     "Docker Compose": "È uno strumento di Docker che permette la creazione e condivisione di applicazioni composte da più container. Lo strumento permette di definire i servizi in un file YAML e di avviare l'intera applicazione mediante un singolo comando."
   },
   "E": {
-    "Event-driven Architecture": "È un design pattern che si occupa della produzione e della gestione degli eventi, permettendo di comunicare oppure avviare servizi disaccoppiati tra di loro."
+    "Event-driven Architecture": "È un _design pattern_ che si occupa della produzione e della gestione degli eventi, permettendo di comunicare oppure avviare servizi disaccoppiati tra di loro."
   },
   "F": {
-    "Faker": "Libreria Python utilizzata per generare dati fittizi, come nomi, indirizzi, numeri di telefono e altri tipi di informazioni, utili per test, sviluppo o simulazioni senza utilizzare dati reali.",
+    "Faker": "Libreria Python utilizzata per generare dati fittizi, come nomi, indirizzi, numeri di telefono e altri tipi di informazioni, utili per _test_, sviluppo o simulazioni senza utilizzare dati reali.",
     "Feedback": "Solitamente si intende l'opinione di una persona. Nel nostro caso, il termine trova utilizzo quando il proponente condivide le proprie idee e le proprie opinioni circa l'avanzamento dei lavori e sull'incremento effettuato in una determinata iterazione."
   },
   "G": {
-    "GenAI": "Acronimo di \"Generative Artificial Intelligence\", si intende tutte le tecnologie di intelligenza artificiale capaci di generare contenuti come testo, immagini, codice, idee ed altro con l'obiettivo di simulare le attività di un essere umano.",
-    "Git": "Sistema di controllo di versione distribuito open-source, che permette di tracciare e gestire le modifiche al codice sorgente in progetti software, supportando il lavoro collaborativo.",
-    "GitHub": "Piattaforma basata su Git che offre strumenti per la gestione del codice sorgente e la collaborazione, con funzionalità avanzate come il tracking delle issues, le pull requests e l'integrazione continua.",
-    "GitLab": "Piattaforma DevOps all-in-one che offre strumenti per gestione del codice sorgente, CI/CD e gestione progetti.",
-    "GPS": "Global Positioning System, sistema globale di navigazione satellitare che consente di determinare la posizione geografica di un dispositivo in tempo reale, utilizzato in applicazioni di mappatura, navigazione e localizzazione.",
+    "GenAI": "Acronimo di \"_Generative Artificial Intelligence_\", si intende tutte le tecnologie di intelligenza artificiale capaci di generare contenuti come testo, immagini, codice, idee ed altro con l'obiettivo di simulare le attività di un essere umano.",
+    "Git": "Sistema di controllo di versione distribuito _open source_, che permette di tracciare e gestire le modifiche al codice sorgente in progetti _software_, supportando il lavoro collaborativo.",
+    "GitHub": "Piattaforma basata su Git che offre strumenti per la gestione del codice sorgente e la collaborazione, con funzionalità avanzate come il _tracking_ delle _issues_, le _pull requests_ e l'integrazione continua.",
+    "GitLab": "Piattaforma DevOps _all-in-one_ che offre strumenti per gestione del codice sorgente, CI/CD e gestione progetti.",
+    "GPS": "_Global Positioning System_, sistema globale di navigazione satellitare che consente di determinare la posizione geografica di un dispositivo in tempo reale, utilizzato in applicazioni di mappatura, navigazione e localizzazione.",
     "GPX": "Formato di file XML standard per la memorizzazione di dati di localizzazione GPS, come punti di interesse, tracce e percorsi, utilizzato in applicazioni geospaziali.",
-    "Grafana": "Piattaforma interattiva open source per la visualizzazione dei dati. Permette agli utenti di visualizzare i dati attraverso diagrammi e grafici unificati in una singola dashboard."
+    "Grafana": "Piattaforma interattiva _open source_ per la visualizzazione dei dati. Permette agli utenti di visualizzare i dati attraverso diagrammi e grafici unificati in una singola _dashboard_."
   },
   "H": {
-    "Hive MQ": "Broker MQTT open-source ad alte prestazioni per l'IoT.",
-    "Hosting": "Servizio che fornisce uno spazio online per archiviare, gestire e condividere dei documenti. Nel contesto attuale viene riferito ad un hosting di repository, un ambiente dove versionare codice sorgente e documentazione."
+    "Hive MQ": "_Broker_ MQTT _open source_ ad alte prestazioni per l'IoT.",
+    "Hosting": "Servizio che fornisce uno spazio online per archiviare, gestire e condividere dei documenti. Nel contesto attuale viene riferito ad un _hosting_ di _repository_, un ambiente dove versionare codice sorgente e documentazione."
   },
   "I": {
-    "Indice Gulpease": "L'Indice Gulpease è un indice di leggibilità di un testo tarato sulla lingua italiana. Rispetto ad altri ha il vantaggio di utilizzare la lunghezza delle parole in lettere anziché in sillabe, semplificandone il calcolo automatico."
+    "Gulpease": "L'indice di Gulpease è un indice di leggibilità di un testo tarato sulla lingua italiana. Rispetto ad altri ha il vantaggio di utilizzare la lunghezza delle parole in lettere anziché in sillabe, semplificandone il calcolo automatico."
   },
   "K": {
-    "Kubernetes": "Sistema open-source di orchestrazione di container."
+    "Kubernetes": "Sistema _open source_ di orchestrazione di _container_."
   },
   "L": {
-    "LangChain": "Framework open-source per la creazione di applicazioni basate su LLM, che consente di collegare questi modelli a diverse fonti di dati e API.",
-    "LLM": "Large Language Model, modello di intelligenza artificiale addestrato su grandi quantità di testo per comprendere, generare e rispondere al linguaggio naturale, utilizzato in chatbot, traduttori e assistenti virtuali."
+    "LangChain": "_Framework open source_ per la creazione di applicazioni basate su LLM, che consente di collegare questi modelli a diverse fonti di dati e API.",
+    "LLM": "_Large Language Model_, modello di intelligenza artificiale addestrato su grandi quantità di testo per comprendere, generare e rispondere al linguaggio naturale, utilizzato in _chatbot_, traduttori e assistenti virtuali."
   },
   "M": {
     "Mockup": "Modello o replica di un prodotto o di un sistema (come l'interfaccia utente) utilizzato a scopo di test o presentazione.",
-    "MVP": "Acronimo di Minimum Viable Product, rappresenta la versione iniziale di un prodotto con le funzionalità minime indispensabili per essere testato dagli utenti e validato sul mercato.",
+    "MVP": "Acronimo di _Minimum Viable Product_, rappresenta la versione iniziale di un prodotto con le funzionalità minime indispensabili per essere testato dagli utenti e validato sul mercato.",
     "Marker": "Punto di riferimento utilizzato per identificare una posizione specifica all'interno della mappa."
   },
   "P": {
-    "PoC": "Acronimo di Proof of Concept, è un prototipo o un modello iniziale creato per dimostrare la fattibilità di un'idea o concetto, senza dover sviluppare un prodotto completo.",
-    "PostGIS": "Estensione open-source di PostgreSQL per la gestione di dati spaziali.",
-    "PostgreSQL": "Sistema di gestione di basi di dati (in inglese: Database Management System) open source conforme agli standard SQL. Supporta una vasta gamma di funzionalità e vanta una grande stabilità grazie ai 20 anni di sviluppo della community.",
+    "PoC": "Acronimo di _Proof of Concept_, è un prototipo o un modello iniziale creato per dimostrare la fattibilità di un'idea o concetto, senza dover sviluppare un prodotto completo.",
+    "PostGIS": "Estensione _open source_ di PostgreSQL per la gestione di dati spaziali.",
+    "PostgreSQL": "Sistema di gestione di basi di dati (in inglese: _Database Management System_) _open source_ conforme agli standard SQL. Supporta una vasta gamma di funzionalità e vanta una grande stabilità grazie ai 20 anni di sviluppo della _community_.",
     "Processor": "Componente che elabora dati o istruzioni, eseguendo operazioni specifiche in un sistema o flusso di lavoro.",
-    "Prompt": "Testo in linguaggio naturale richiesto in input dall'IA generativa con lo scopo di generare un output dalla stessa."
+    "Prompt": "Testo in linguaggio naturale richiesto in _input_ dall'IA generativa con lo scopo di generare un _output_ dalla stessa."
   },
   "R": {
-    "Rabbit MQ": "Broker di messaggi open-source AMQP utilizzato per creare sistemi di messaggistica asincrona.",
-    "ROI": "Acronimo di \"Return On Investment\", è un indice economico che misura la redditività di un investimento, calcolato dal rapporto tra i risultati economici ottenuti e il capitale investito."
+    "Rabbit MQ": "_Broker_ di messaggi _open source_ AMQP utilizzato per creare sistemi di messaggistica asincrona.",
+    "ROI": "Acronimo di \"_Return On Investment_:\", è un indice economico che misura la redditività di un investimento, calcolato dal rapporto tra i risultati economici ottenuti e il capitale investito."
   },
   "S": {
     "SAL": "Stato Avanzamento Lavori per misurare il progresso delle attività rispetto alla pianificazione.",
     "SimPy": "Libreria Python per la simulazione di eventi discreti, ideale per modellare sistemi come code, risorse condivise e processi, permettendo di analizzare il comportamento di sistemi complessi.",
-    "Spring": "Framework Java open-source che semplifica lo sviluppo di applicazioni enterprise, fornendo strumenti per gestione di componenti e integrazione.",
+    "Spring": "_Framework_ Java _open source_ che semplifica lo sviluppo di applicazioni enterprise, fornendo strumenti per gestione di componenti e integrazione.",
     "Sprint": "Periodo di tempo di durata fissa, in questo progetto della durata di 2 settimane, entro il quale il gruppo si impegna a portare a termine una serie di attività prefissate.",
     "Stakeholder": "Conosciuto anche come portatore di interesse, è una persona o un insieme di persone coinvolte all'interno del progetto che hanno degli interessi verso lo stesso.",
     "Stream Processing": "Paradigma di programmazione parallela di tipo SIMD che permette ad alcune applicazioni di sfruttare semplicemente una forma limitata di elaborazione parallela di dati in tempo reale, man mano che vengono generati."
   },
   "T": {
-    "TimeScale": "Database relazionale basato su PostgreSQL, progettato per gestire e analizzare dati temporali (time-series) in modo efficiente, ideale per applicazioni IoT, monitoraggio e analisi di dati in tempo reale.",
+    "TimeScale": "_Database_ relazionale basato su PostgreSQL, progettato per gestire e analizzare dati temporali (_time-series_) in modo efficiente, ideale per applicazioni IoT, monitoraggio e analisi di dati in tempo reale.",
     "Trello": "Strumento di gestione progetti basato su bacheche visive, utile per organizzare attività e flussi di lavoro in modo collaborativo.",
-    "Typst": "Linguaggio di markup per la formattazione dei documenti e strumento di typesetting, simile a LaTeX, progettato per creare documenti complessi con sintassi moderna e funzionalità avanzate."
+    "Typst": "Linguaggio di _markup_ per la formattazione dei documenti e strumento di _typesetting_, simile a LaTeX, progettato per creare documenti complessi con sintassi moderna e funzionalità avanzate."
   },
   "U": {
-    "UML": "Acronimo di \"Unified Modeling Language\", è un linguaggio standardizzato di modellazione e di specifica basato sul paradigma orientato agli oggetti. Viene utilizzato per rappresentare i componenti e le interazioni tra loro.",
+    "UML": "Acronimo di \"_Unified Modeling Language_\", è un linguaggio standardizzato di modellazione e di specifica basato sul paradigma orientato agli oggetti. Viene utilizzato per rappresentare i componenti e le interazioni tra loro.",
     "Utility": "Insieme di funzioni predefinite per facilitare compiti comuni, spesso abbinato al contesto delle librerie che integrano metodi riutilizzabili in molti programmi."
   },
   "W": {
-    "Way of Working": "Letteralmente \"modo di lavorare\", si intende l'insieme di regole, best practice e strumenti utilizzati per organizzare al meglio le attività del gruppo. Permette al gruppo di svolgere il proprio lavoro in maniera efficiente e professionale e di operare allo stato dell'arte."
+    "Way of Working": "Letteralmente \"modo di lavorare\", si intende l'insieme di regole, _best practice_ e strumenti utilizzati per organizzare al meglio le attività del gruppo. Permette al gruppo di svolgere il proprio lavoro in maniera efficiente e professionale e di operare allo stato dell'arte."
   }
 }
