@@ -2,7 +2,7 @@
 #import "@preview/treet:0.1.1": *
 
 #show: content => verbale(
-  data: "26 Novembre 2024",
+  data: "26 Gennaio 2025",
   destinatari: ("Gruppo SWE@",),
   responsabile: "Klaudio Merja",
   redattori: (
@@ -112,7 +112,7 @@ Lo scopo principale del documento Norme di Progetto è quello di documentare il 
 Il documento adotta un approccio di tipo incrementale, ovvero è frutto di una serie di fasi di modifica che avvengono durante il suo ciclo di vita. È quindi soggetto durante lo svolgimento del progetto didattico a continui aggiornamenti, a seguito delle decisioni prese dal gruppo, volti a migliorare il _way of working_ stesso. I membri del gruppo sono quindi tenuti a prendere visione del documento ogni qual volta esso sia oggetto di modifiche.
 
 == Scopo del progetto didattico
-Lo scopo principale del progetto _NearYou - Smart custom advertising platform_ proposto dall'azienda Sync Lab S.r.l. è quello di sviluppare un prodotto che sfrutti la #rifGlossario("GenAI") per la creazione di pubblicità mirate sui singoli utenti, sfruttando come _#rifGlossario("prompt")_ dati come la posizione in tempo reale, le informazioni personali e i dati di profilazione degli utenti stessi.
+Lo scopo principale del progetto _NearYou - Smart custom advertising platform_ proposto dall'azienda Sync Lab S.r.l. è quello di sviluppare un prodotto che sfrutti la #rifGlossario("GenAI") per la creazione di pubblicità mirate sui singoli utenti, utilizzando all'interno di _#rifGlossario("prompt")_ dati come la posizione in tempo reale, le informazioni personali e i dati di profilazione degli utenti stessi.
 
 
 L'obiettivo del prodotto è quello di rendere le campagne pubblicitarie delle aziende interessate il più personalizzate e ottimizzate possibili ed aumentare il coinvolgimento dell'utente finale, con lo scopo di ridurre la disconnessione tra messaggio e destinatario e portare un miglioramento sul #rifGlossario("ROI") della campagna stessa.
@@ -132,7 +132,7 @@ La prima occorrenza di un termine definito all'interno del glossario presente al
 
 #pagebreak()
 = Processi primari
-Lo _standard_ ISO/IEC 12207:1995, riferimento internazionale per i processi del ciclo di vita del _software_, definisce come processi primari le attività di: acquisizione, fornitura, sviluppo, gestione operativa e di manutenzione.
+Lo _standard_ ISO/IEC 12207:1995, riferimento internazionale per i processi del ciclo di vita del _software_, definisce come processi primari le attività di: acquisizione, fornitura, sviluppo, gestione operativa e manutenzione.
 
 Tuttavia, data la natura didattica del progetto, saremo tenuti ad occuparci solo delle parti di fornitura e sviluppo.
 
@@ -144,12 +144,12 @@ Le attività che compongono questo processo sono:
 - Preparazione della risposta
 - Contratto
 - Pianificazione
-- Esecuzione e Controllo
+- Esecuzione e controllo
 - Revisione e valutazione
 - Consegna e completamento
 
 === Comunicazioni con il proponente
-L'azienda si è resa raggiungibile, per via testuale, tramite _e-mail_ per le comunicazioni ufficiali. Tramite la piattaforma di messaggistica istantanea Discord, invece, per le comunicazioni più veloci. È stato deciso inoltre di utilizzare l'applicazione di teleconferenza Google Meet per le riunioni in cui è prevista la presenza di tutto il gruppo. L'azienda si è resa disponibile anche ad accogliere il gruppo nei loro uffici.
+L'azienda si è resa raggiungibile, per via testuale, tramite _e-mail_ per le comunicazioni ufficiali e tramite la piattaforma di messaggistica istantanea Discord, invece, per le comunicazioni più veloci. È stato deciso inoltre di utilizzare l'applicazione di teleconferenza Google Meet per le riunioni in cui è prevista la presenza di tutto il gruppo. L'azienda si è resa disponibile anche ad accogliere il gruppo nei loro uffici.
 
 Per ogni incontro, verrà redatto un verbale riguardante le discussioni e decisioni avvenute nello stesso. Questi verbali, dopo essere stati approvati e firmati dall'azienda, saranno disponibili presso il sito _web_ del gruppo #formatLink(label: "https://sweatunipd.github.io", url: "https://sweatunipd.github.io").
 
@@ -168,7 +168,7 @@ Di seguito viene riportato l'elenco dei documenti che il gruppo consegnerà all'
 L'Analisi dei Requisiti è un documento redatto dagli analisti che definisce le funzionalità necessarie per soddisfare le richieste del proponente.
 
 ===== Casi d'uso
-In questo documento rientra la realizzazione dei casi d'uso (_use case_): descrizioni formali di come un sistema _software_ interagisce con utenti o con altre entità esterne al sistema, chiamati attori, per raggiungere un obiettivo specifico. Questi sono composti da una descrizione testuale e dal loro diagramma e sono usati per documentare le varie funzionalità attese dal sistema ad alto livello, quindi non specificando i dettagli implementativi.
+In questo documento rientra la realizzazione dei casi d'uso (_use case_): descrizioni formali di come un sistema _software_ interagisce con utenti o con altre entità esterne al sistema, chiamati attori, per raggiungere un obiettivo specifico. Questi sono composti da una descrizione testuale e dal loro diagramma, essi sono usati per documentare le varie funzionalità attese dal sistema ad alto livello, quindi non specificando i dettagli implementativi.
 
 Ogni caso d'uso deve comprendere le seguenti informazioni:
 
@@ -205,9 +205,9 @@ Riguarda sia gli attori che i casi d'uso e rappresenta una relazione tra una cla
 
 
 ======= Inclusione
-Le inclusioni rappresentano funzionalità o comportamenti comuni che possono essere riutilizzati in più casi d'uso per evitare duplicazioni. Viene indicata nel diagramma come una freccia tratteggiata con indicato '"_include_"'. La funzione alla base della freccia include completamente la funzione alla punta della freccia.
+Le inclusioni rappresentano funzionalità o comportamenti comuni che possono essere riutilizzati in più casi d'uso per evitare duplicazioni, inoltre indicano che l'esecuzione di una funzione implica l'esecuzione di tutte le sue inclusioni. Viene indicata nel diagramma come una freccia tratteggiata con indicato '"_include_"'. La funzione alla base della freccia include completamente la funzione alla punta della freccia.
 
-Esempio: Un caso d'uso 'Autenticazione' utente può essere incluso in casi d'uso come 'Acquista prodotto' o 'Gestione profilo'.
+Esempio: Un caso d'uso 'Inserimento credenziali utente' può essere incluso in casi d'uso come 'Autenticazione'.
 
 ======= Estensione
 Le estensioni definiscono variazioni opzionali o eccezioni al comportamento principale del caso d'uso. Questi flussi si attivano solo se si verificano determinate condizioni. Viene indicata nel diagramma come una freccia tratteggiata con indicato '"_extend_"'. La funzione alla base della freccia può essere impiegata nel contesto della funzione alla punta della freccia.
@@ -219,7 +219,7 @@ I diagrammi dei casi d'uso rappresentano graficamente i casi d'uso, gli attori e
 
 Gli elementi grafici principali da utilizzare in questi diagrammi sono:
 - *Sistema*: Il sistema è rappresentato da un rettangolo vuoto al cui interno vengono inseriti gli elementi grafici rappresentanti le sue caratteristiche. Gli elementi che invece rappresentano entità esterne sono posizionati all'esterno del rettangolo.
-- *Attore*: Rappresentati graficamente da un'icona rappresentante un omino stilizzato con la relativa etichetta univoca.
+- *Attore*: Rappresentato graficamente da un'icona raffigurante un omino stilizzato con la relativa etichetta univoca.
 - *Caso d'uso*: Rappresentato graficamente come un'ellisse contenente il nome del caso d'uso. Concretamente rappresenta una funzione o servizio offerto dal sistema ad uno o più attori.
 - *Associazione*: Relazione tra attori e casi d'uso. Essa implica uno scambio di informazioni tra attore e caso d'uso associato.
 
@@ -232,11 +232,11 @@ Viene redatto e aggiornato dal responsabile, con il supporto degli amministrator
 Il documento conterrà le seguenti informazioni:
 - *Analisi dei rischi*: Utile a individuare le possibili difficoltà che il gruppo può incontrare.
 - *Modello di sviluppo*: Descrive quale modello di sviluppo è stato scelto ed adottato dal gruppo per lo svolgimento del progetto.
-- *Pianificazione*: Contiene ed espone in quale modo il gruppo ha deciso di pianificare le attività da svolgere e la loro suddivisione in periodi. Per ogni periodo inoltre sarnno indicati:
+- *Pianificazione*: Contiene ed espone in quale modo il gruppo ha deciso di pianificare le attività da svolgere e la loro suddivisione in periodi. Per ogni periodo inoltre saranno indicati:
   - *Introduzione del periodo*: Breve introduzione con informazioni chiave come data di inizio e fine periodo e i rischi attesi all'interno dello stesso.
   - *Attività*: Descrive le attività pianificate che dovranno essere svolte entro il termine del periodo.
   - *Preventivo*: Contiene il ruolo e il preventivo orario per ciascun membro del gruppo.
-  - *Consuntivo*: Viene redatto alla fine di ogni periodo, contiene il numero di ore effetivamente impiegato da ogni membro del gruppo, utile per avere un riscontro del lavoro svolto ed efettuare analisi sull'efficienza.
+  - *Consuntivo*: Viene redatto alla fine di ogni periodo, contiene il numero di ore effettivamente impiegato da ogni membro del gruppo, utile per avere un riscontro del lavoro svolto ed effettuare analisi sull'efficienza.
   - *Retrospettiva*: Sezione redatta a fine periodo, contiene una descrizione testuale delle difficoltà riscontrate e consigli utili da adottare per il lavoro futuro.
 
 ==== Piano di Qualifica
@@ -257,7 +257,7 @@ Al suo interno, sono presenti le seguenti informazioni:
 Il Glossario è un documento di supporto che raccoglie i termini tecnici e specifici utilizzati all'interno del progetto, fornendone definizioni chiare e univoche. È destinato a tutti gli _stakeholder_, i membri del _team_, i committenti e l'azienda proponente, con l'obiettivo di prevenire ambiguità e incomprensioni. Questo strumento è fondamentale per migliorare la coerenza e la qualità della documentazione prodotta.
 
 ==== Lettera di presentazione
-La Lettera di Presentazione è un documento formale attraverso il quale il gruppo esprime la propria intenzione a partecipare alla fase di revisione del progetto di una determinata _milestone_. Include la documentazione prodotta dal gruppo e, se necessario, un aggiornamento sui costi e sulle tempistiche.
+La Lettera di Presentazione è un documento formale attraverso il quale il gruppo esprime la propria volontà di partecipare alla fase di revisione del progetto di una determinata _milestone_. Include la documentazione prodotta dal gruppo e, se necessario, un aggiornamento sui costi e sulle tempistiche.
 
 La lettera sottolinea l'impegno del _team_ nel rispettare le scadenze e le aspettative fissate.
 
@@ -372,7 +372,7 @@ Per lavorare su un documento bisogna attenersi ai seguenti passaggi utilizzando 
   *`git pull -p --all`*
 + Posizionarsi sul _branch_ collegato alla _issue_. \
   *`git checkout [nome_branch]`*
-+ Caricare le modifiche effettuate nella _repository_ remota. \
++ Caricare le modifiche effettuate in locale nella _repository_ remota. \
   *`git add .`* \
   *`git commit -m "[commento del commit]"`* \
   *`git push`* \
@@ -385,7 +385,7 @@ Se si individuano dei nuovi termini da aggiungere al Glossario si inseriscono se
 
 === Ciclo di vita
 Il ciclo di vita di un documento è composto da 6 fasi:
-+ *Creazione e adattamento al _template_*: Dopo aver impostato l'ambiente nel modo corretto si può creare il file `.typ` seguendo le norme di nomenclatura e assegnando la versione 1.0.0. Si importa il _file_ `template.typ` nella cartella `templates` e si compilano i campi delle funzioni in base al documento che si sta redigendo.
++ *Creazione e adattamento al _template_*: Dopo aver impostato l'ambiente nel modo corretto si può creare il file `.typ` seguendo le norme di nomenclatura. Si importa il _file_ `template.typ` della cartella `templates` e si compilano i campi delle funzioni in base al documento che si sta redigendo.
 + *Pianificazione dei paragrafi*: Oltre ai paragrafi dettati dal tipo di documento come specificato dalle norme, si devono aggiungere dei paragrafi che raggruppino gli argomenti trattati.
 + *Stesura del documento*: Il redattore deve stilare il documento seguendo le norme concordate dal gruppo. In caso fosse indeciso su alcuni punti è libero di contattare altri membri del gruppo in modo da scrivere un contenuto il più corretto possibile.
 + *Revisione*: Una volta caricato correttamente il documento viene notificato automaticamente il verificatore il quale deve assicurarsi che non vi siano errori.
@@ -891,8 +891,8 @@ Le _issues_ sono create dal responsabile e sono composte da:
 - *Data di inizio attività*: momento di presa incarico dell'attività, fondamentale per aggiornare il #rifGlossario("diagramma di Gantt").
 - *Data di fine attività*: il termine indicato per portare a termine l'attività, fondamentale per aggiornare il diagramma di Gantt.
 Ogni qualvolta ci sia la necessità di portare a termine un compito è necessario seguire la seguente procedura:
-+ Il responsabile, dopo aver concordato in una riunione il da farsi, crea una nuova _issue_ con stato "_To do_" su GitHub e la assegna.
-+ All'inizio del lavoro di produzione l'assegnatario cambia la _issue_ di stato, passando da "To Do" ad "In Progress", creando un nuovo _branch_ apposito staccato dal ramo principale per eseguire l'attività.
++ Il responsabile, dopo aver concordato in una riunione il da farsi, crea una nuova _issue_ con stato "To Do" su GitHub e la assegna.
++ All'inizio del lavoro di produzione l'assegnatario cambia lo stato della _issue_, passando da "To Do" ad "In Progress", creando un nuovo _branch_ apposito staccato dal ramo principale per eseguire l'attività.
 + Contestualmente l'assegnatario apre una _pull request_ su GitHub e assegna i verificatori per quell'attività.
 + Il verificatore controlla il lavoro svolto:
   - Se la verifica ha esito positivo:
@@ -976,7 +976,7 @@ Per iniziare a formare i membri del gruppo, è necessario prima comprendere comp
 
 Si deve quindi passare all'individuazione del materiale di formazione che aumenterà nel tempo poiché il nostro livello di conoscenza e comprensione del problema dovrà aumentare man mano che il progetto avanza.
 
-Infine tutti i membri del gruppo devono imparare da dove e cosa studiare e devono anche aggiornarsi individualmente, se possibile, con l'aiuto di altri membri più esperti.
+Infine tutti i membri del gruppo devono imparare da dove e cosa studiare e devono anche aggiornarsi individualmente, se possibile, o con l'aiuto di altri membri più esperti.
 
 === Strumenti
 Al fine di agevolare il processo di formazione ogni membro del gruppo incaricato in un determinato _sprint_ di approfondire un determinato argomento dovrà essere in grado di tramandare la propria conoscenza agli altri.
@@ -988,7 +988,7 @@ Per la valutazione della qualità del _software_ prodotto il gruppo si prefigge 
 == Standard ISO/IEC 9126
 L'ISO/IEC 9126 è uno _standard_ internazionale creato per la valutazione della qualità del _software_. Definisce un modello di qualità del _software_ in termini di sei caratteristiche generali e venticinque sotto-caratteristiche. Questo _standard_ è stato sostituito dall'ISO/IEC 25010, ma rimane comunque un riferimento importante per la valutazione della qualità del _software_.
 
-Di seguito forniamo una panoramica delle caratteristiche del modello di qualità descritto dallo _standard_ ISO/IEC 9126.
+Di seguito forniamo una panoramica delle caratteristiche reputate rilevanti per il nostro progetto del modello di qualità descritto dallo _standard_ ISO/IEC 9126.
 
 === Funzionalità
 La funzionalità è la capacità del prodotto _software_ di fornire funzioni che soddisfano le esigenze esplicite e implicite necessarie per operare. \ Questa caratteristica è composta dalle seguenti sotto-caratteristiche:
