@@ -229,7 +229,7 @@ Ogni iterazione è caratterizzata da:
 - *Retrospettiva*: analisi svolta alla fine di ogni _sprint_ con lo scopo di evidenziare ciò che ha funzionato e ciò che non ha funzionato durante l'iterazione, sottolineando i vari problemi e difficoltà riscontrati che hanno causato rallentamenti, con il fine di migliorare le prossime iterazioni.
 
 Il gruppo si pone come _milestone_ del progetto le due consegne previste dai committenti, nonché i Prof.ssori Tullio Vardanega e Riccardo Cardin, ovvero:
-- *RTB* con data di consegna 24/01/2025
+- *RTB* con data di consegna 27/01/2025
 - *PB* con data di consegna 21/03/2025
 
 Gli _sprint_ vengono quindi divisi nelle due _milestone_ precedentemente elencate per garantire una separazione netta degli stessi e delle attività che ne comportano.
@@ -560,11 +560,11 @@ In ultima i miglioramenti alla dashboard Grafana non sono stati fatti in quanto,
 
 === Sprint 5
 - *Inizio*: 09/01/2025
-- *Fine*: 22/01/2025
+- *Fine*: 26/01/2025
 - *Rischi attesi*: #link(<RO-1>)[RO-1], #link(<RO-3>)[RO-3], #link(<RO-4>)[RO-4]
 
 ==== Attività dello sprint
-In vista della scadenza della _milestone_, e quindi della consegna prevista per venerdì 24 gennaio, le attività che il _team_ si è prefissato di portare a termine durante il quinto _sprint_ sono le seguenti:
+In vista della scadenza della _milestone_, e quindi della consegna prevista per lunedì 27 gennaio, le attività che il _team_ si è prefissato di portare a termine durante il quinto _sprint_ sono le seguenti:
 - Redazione dei verbali per le rispettive riunioni interne ed esterne.
 - Compilazione del Piano di Progetto con la sezione relativa al quinto _sprint_.
 - Completamento delle Norme di Progetto, in particolare:
@@ -577,6 +577,8 @@ In vista della scadenza della _milestone_, e quindi della consegna prevista per 
   - Modificare i casi d'uso relativi alle notifiche.
   - Rendere più specifiche alcune funzionalità.
   - Concludere la copiatura dei requisiti. È stato scelto di mantenere questa operazione come ultima per ridurre il più possibile il lavoro di riscrittura dei riferimenti ai casi d'uso.
+- Stesura della lettera di consegna RTB.
+- Approvazione di tutti i documenti di carattere generale.
 - Presentare la _repository_ NearYou tramite `README.md`.
 - Ultimare la struttura del PoC, in particolare:
   - Completare l'infrastruttura con #rifGlossario("Docker Compose").
@@ -590,7 +592,7 @@ In vista della scadenza della _milestone_, e quindi della consegna prevista per 
 ==== Preventivo orario
 #rendicontazioneOre(
   (
-    (0, 0,	0, 0,	0, 5),
+    (0, 0, 0, 0, 0, 5),
     (5, 0, 0, 0, 0, 0),
     (0, 1, 5, 0, 0, 0),
     (0, 0, 0, 0, 0, 5),
@@ -604,7 +606,7 @@ In vista della scadenza della _milestone_, e quindi della consegna prevista per 
 ==== Consuntivo orario e di spesa
 #consuntivoOre(
   preventivo: (
-    (0, 0,	0, 0,	0, 5),
+    (0, 0, 0, 0, 0, 5),
     (5, 0, 0, 0, 0, 0),
     (0, 1, 5, 0, 0, 0),
     (0, 0, 0, 0, 0, 5),
@@ -613,7 +615,7 @@ In vista della scadenza della _milestone_, e quindi della consegna prevista per 
     (0, 0, 7, 0, 0, 0.5),
   ),
   consuntivo: (
-    (0, 0,	0, 0,	0, 5),
+    (0, 0, 0, 0, 0, 5),
     (5.5, 0, 0, 0, 0, 0),
     (0, 1, 5, 0, 0, 0),
     (0, 0, 0, 0, 0, 5.5),
