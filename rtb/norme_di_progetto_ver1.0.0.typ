@@ -675,7 +675,7 @@ Alla fine di ogni riunione interna si aggiorna il _backlog_ con le nuove _issue_
 
 Devono inoltre essere collegate alla _board_ (corrispondente al _backlog_) assicurandosi appaiano nella colonna "Todo", ad una _milestone_, ad una _label_ e ad un assegnatario. Una volta create si deve generare, sempre da interfaccia _web_, il _branch_ temporaneo nel quale si andrà a lavorare. In questa operazione è sufficiente rinominare il _branch_, collegarci l'assegnatario e assegnarci una _label_.
 
-Si ricorda di aggiornare lo stato di avanzamento della _issue_ nel _backlog_ alla sezione "_In progress_" quando la si sta risolvendo. Una volta approvata la _pull request_ il sistema chiude in automatico la _issue_ posizionandola nella colonna "_Done_".
+Si ricorda di aggiornare lo stato di avanzamento della _issue_ nel _backlog_ alla sezione "In progress" quando la si sta risolvendo. Una volta approvata la _pull request_ il sistema chiude in automatico la _issue_ posizionandola nella colonna "Done".
 
 === Label
 Sono state create le seguenti _label_ per migliorare l'organizzazione delle _issue_ e facilitarne la ricerca tramite filtro:
