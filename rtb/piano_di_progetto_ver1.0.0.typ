@@ -415,7 +415,7 @@ Le attività che il _team_ si è prefissato di portare a termine durante il terz
 - Aggiornamento della sezione "Processi primari" nel documento Norme di Progetto. Nello specifico si dovrà normare la descrizione dei casi d'uso.
 - Continuazione del documento di Analisi dei Requisiti, che per questo _sprint_ si concentrerà sullo studio di nuovi casi d'uso con l'obiettivo raccogliere eventuali nuovi dubbi da poter chiarire durante il ricevimento con il professor Cardin (previsto per il 19/12/2024).
 - Studio della fattibilità di creare uno _#rifGlossario("stream processor") custom_ sfruttando #rifGlossario("Spring"), possibilmente sviluppandone un prototipo.
-- Affinamento della _dashboard_ in Grafana effettuando migliorie di carattere estetico e funzionale.
+- Affinamento della _#rifGlossario("dashboard")_ in Grafana effettuando migliorie di carattere estetico e funzionale.
 - Continuazione della stesura del Piano di Progetto come da prassi, in particolare:
   - Scrittura retrospettiva secondo _sprint_.
   - Scrittura pianificazione terzo _sprint_.
