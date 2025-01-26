@@ -198,9 +198,9 @@ Per il processo di gestione dei rischi il gruppo adotta il modello fornito da Ia
 
 #pagebreak()
 = Modello di sviluppo
-Il modello di sviluppo che viene adottato dal gruppo è il modello Agile che, a differenza dei modelli di sviluppo più rigidi come il modello a cascata dove si predilige una stretta sequenzialità delle fasi e, soprattutto, non ammette modifiche nei requisiti in corso d'opera, permette maggiore flessibilità e un coinvolgimento maggiore dello _#rifGlossario("stakeholder")_ (nel nostro caso l'azienda proponente) all'interno del progetto grazie alla sua natura iterativa e incrementale.
+Il modello di sviluppo che viene adottato dal gruppo è il modello Agile che, a differenza dei modelli di sviluppo più rigidi come il modello a cascata dove si predilige una stretta sequenzialità delle fasi e, soprattutto, non ammette modifiche nei requisiti in corso d'opera, permette maggiore flessibilità e un coinvolgimento maggiore degli _#rifGlossario("stakeholder")_ (nel nostro caso l'azienda proponente) all'interno del progetto grazie alla sua natura iterativa e incrementale.
 
-Il modello Agile prevede la suddivisione del progetto in iterazioni chiamate _#rifGlossario("sprint")_ durante il quale il gruppo si impegna a completare un insieme di attività prefissate al fine di produrre un incremento del prodotto finale. La serie di _sprint_ permette quindi di ottenere un prodotto finale che più si avvicina alle aspettative del proponente.
+Il modello Agile prevede la suddivisione del progetto in iterazioni chiamate _#rifGlossario("sprint")_ durante le quale il gruppo si impegna a completare un insieme di attività prefissate al fine di produrre un incremento del prodotto finale. La serie di _sprint_ permette quindi di ottenere un prodotto finale che più si avvicina alle aspettative del proponente.
 
 I punti di forza che hanno portato il gruppo ad adottare il modello Agile come modello di sviluppo sono molteplici.
 
@@ -213,22 +213,22 @@ Inoltre il modello permette un incremento parallelo dell'attività di analisi e 
 #pagebreak()
 
 = Pianificazione
-Come frutto della scelta del modello Agile la pianificazione delle attività da svolgere all'interno del progetto sono suddivise in degli _sprint_, ovvero delle iterazioni della durata di due settimane ciascuna in cui vengono pianificate le attività da svolgere per raggiungere gli obiettivi prefissati.
+Come frutto della scelta del modello Agile la pianificazione delle attività da svolgere all'interno del progetto è suddivisa in degli _sprint_, ovvero delle iterazioni della durata di due settimane ciascuna in cui vengono pianificate le attività da svolgere per raggiungere gli obiettivi prefissati.
 
 Alla fine di ogni _sprint_ viene svolta una riunione con l'azienda proponente in cui si analizza quanto prodotto durante l'iterazione, si effettua una retrospettiva su quanto avvenuto analizzando difficoltà e problemi riscontrati e si pianifica il lavoro da svolgere e gli obiettivi da raggiungere per la seguente iterazione.
 
-A metà di ogni _sprint_ l'azienda si rende disponibile al gruppo per eventuali chiarimenti o dubbi che possono venire a galla durante lo svolgimento dell'attività da parte dei membri del gruppo.
+A metà di ogni _sprint_ l'azienda si rende disponibile chiarire eventuali dubbi che possono emergere durante lo svolgimento delle attività da parte dei membri del gruppo.
 
 Ogni iterazione è caratterizzata da:
 - *Inizio*: data in cui ha inizio un determinato _sprint_.
 - *Fine*: data in cui termina lo _sprint_.
-- *Rischi attesi*: elenco degli identificativi che il gruppo si aspetta di incontrare durante lo _sprint_.
+- *Rischi attesi*: elenco degli identificativi dei rischi che il gruppo si aspetta di incontrare durante lo _sprint_.
 - *Attività dello _sprint_*: attività che il gruppo si impone di raggiungere durante la durata dello _sprint_ al fine di raggiungere determinati obiettivi.
-- *Preventivo orario*: stima delle ore che ciascun membro deve dedicare nelle vesti di un determinato ruolo al fine di concludere le attività.
-- *Consuntivo orario e di spesa*: ore produttive dedicate da parte di ogni membro nei vari ruoli ricoperti durante l'iterazione al fine di concludere le attività previste e breve schema su quanto speso durante l'iterazione.
+- *Preventivo orario*: stima delle ore che ciascun membro deve dedicare nelle vesti di un determinato ruolo al fine di concludere le attività. Svolto in fase di pianificazione a inizio _sprint_.
+- *Consuntivo orario e di spesa*: ore produttive dedicate da parte di ogni membro nei vari ruoli ricoperti durante l'iterazione al fine di concludere le attività previste. Sono accompagnate da un breve schema su quanto speso durante l'iterazione. Svolto in fase di conclusione dello _sprint_. 
 - *Retrospettiva*: analisi svolta alla fine di ogni _sprint_ con lo scopo di evidenziare ciò che ha funzionato e ciò che non ha funzionato durante l'iterazione, sottolineando i vari problemi e difficoltà riscontrati che hanno causato rallentamenti, con il fine di migliorare le prossime iterazioni.
 
-Il gruppo si pone come _milestone_ del progetto le due consegne previste dai committenti, nonché i Prof.ssori Tullio Vardanega e Riccardo Cardin, ovvero:
+Il gruppo si pone come _milestone_ del progetto le due consegne previste dai committenti, nonché i professori Tullio Vardanega e Riccardo Cardin, ovvero:
 - *RTB* con data di consegna 27/01/2025
 - *PB* con data di consegna 21/03/2025
 
@@ -293,14 +293,15 @@ Le attività che il gruppo si prefissa di concludere durante queste due settiman
   chartCaption: [Grafico percentuale dell'allocazione delle ore per ruolo nel primo _sprint_],
 )
 
+#v(10pt)
 ==== Retrospettiva
 Il primo _sprint_ si è concluso con un bilancio molto positivo, dato il completamento di tutte le attività pianificate. 
 
 Ciononostante il gruppo ha riscontrato alcune difficoltà. In particolare, in queste due settimane di lavoro, è apparso evidente l'impatto che le Norme di Progetto hanno avuto all'interno del gruppo, adottando una serie di convenzioni e regole che hanno permesso di uniformare il lavoro svolto dai vari redattori. Tuttavia, essendo la prima versione delle Norme di Progetto, a causa dei frequenti cambiamenti all'interno del documento, si è reso necessario più volte dover rivedere e correggere in corso d'opera alcuni documenti più volte. Nonostante ciò, il gruppo ritiene il lavoro svolto in linea con le aspettative.
 
-Si evidenzia come difetto la possibilità di lavorare su una stessa _#rifGlossario("branch")_ a più membri in quanto questa causerebbe problemi di conflitti tra i file modificati.
+È emersa la difficoltà nel lavorare su una stessa _#rifGlossario("branch")_ a più membri in quanto questa causa facilmente molti problemi di conflitti tra i file modificati.
 
-Gli analisti evidenziano le difficoltà e i dubbi relativi alla comprensione dei casi d'uso del prodotto richiesto dal proponente, che hanno però trovato risposta nella riunione di fine primo _sprint_ da parte del proponente e che verranno approfonditi in quello successivo. Incentivano a lavorare in maniera più collaborativa nella fase di analisi e non limitarsi semplicemente all'esecuzione delle attività in maniera parallela.
+Gli analisti evidenziano le difficoltà e i dubbi relativi alla comprensione dei casi d'uso. Molte questioni tuttavia sono state risolte nella riunione di fine primo _sprint_ da parte del proponente e verranno approfonditi in quello successivo. In particolare nei primi periodi è fondamentale a lavorare in maniera più collaborativa nella fase di analisi e non limitarsi semplicemente all'esecuzione delle attività in maniera parallela.
 
 I verificatori suggeriscono infine di incaricare più di una persona alla verifica dei documenti ad alto contenuto, quali possono essere le Norme di Progetto e il Piano di Progetto, al fine di garantire una verifica ottimale.
 
@@ -325,7 +326,7 @@ Le attività che il _team_ si è prefissato di portare a termine durante il seco
   - Scrittura retrospettiva primo _sprint_.
   - Scrittura pianificazione secondo _sprint_.
 - Inizio stesura del Piano di Qualifica.
-- Modifica alle Norme di Progetto, per via del nuovo aggiornamento riguardo al sistema di _versioning_ (spiegazione completa nel VI_2024-11-27).
+- Modifica alle Norme di Progetto, per via del nuovo aggiornamento riguardo al sistema di _versioning_.
 - Modifica delle versioni dei seguenti documenti, per coerenza con il nuovo sistema di versionamento:
   - Glossario
   - Analisi dei Requisiti
@@ -338,6 +339,7 @@ Le attività che il _team_ si è prefissato di portare a termine durante il seco
   - La modifica al _test_ del Glossario è necessaria in quanto, attualmente, segnala dei falsi positivi. Per esempio quando abbiamo parole appartenenti al Glossario contenute in altre parole, oppure la segnalazione di termini del Glossario che in realtà sono comandi #rifGlossario("Typst").
 - Informarsi ed eventualmente dotarsi di un _software_ per la creazione e gestione di un #rifGlossario("diagramma di Gantt") per coordinare le attività del gruppo.
 
+#v(10pt)
 #figure(
   image("../assets/img/PdP/gantt_s2.png"),
   caption: [Diagramma di Gantt dello _sprint_ 2],
@@ -382,6 +384,7 @@ Le attività che il _team_ si è prefissato di portare a termine durante il seco
   chartCaption: [Grafico percentuale dell'allocazione delle ore per ruolo nel secondo _sprint_],
 )
 
+#v(10pt)
 ==== Retrospettiva
 Il secondo _sprint_ è stato un periodo proficuo, in cui il _team_ è riuscito a portare a completamento tutte le attività prefissate.
 
@@ -420,6 +423,7 @@ Le attività che il _team_ si è prefissato di portare a termine durante il terz
   - Scrittura retrospettiva secondo _sprint_.
   - Scrittura pianificazione terzo _sprint_.
 
+#v(10pt)
 #figure(
   image("../assets/img/PdP/gantt_s3.png"),
   caption: [Diagramma di Gantt dello _sprint_ 3],
@@ -464,14 +468,15 @@ Le attività che il _team_ si è prefissato di portare a termine durante il terz
   chartCaption: [Grafico percentuale dell'allocazione delle ore per ruolo nel terzo _sprint_],
 )
 
+#v(10pt)
 ==== Retrospettiva
 Il terzo _sprint_ si è concluso con un bilancio tutto sommato positivo, nonostante alcune difficoltà riscontrate.
 
-In primo luogo si è dovuto accantonare per questo _sprint_ la prosecuzione dello sviluppo della _dashboard_ in Grafana in quanto, vista anche la durata ridotta dello _sprint_, si è preferito dare più priorità e tempo allo sviluppo dello _stream processor_ in Spring, che peraltro è già attualmente in grado di sostituire il _software_ precedentemente costruito con Apache NiFi. Da questa scelta ne beneficerà anche lo sviluppo della _dashboard_ stessa visto che si avrà a disposizione un _back-end_ funzionante e semidefinitivo rispetto alla prossima _milestone_.
+In primo luogo si è dovuto accantonare per questo _sprint_ la prosecuzione dello sviluppo della _dashboard_ in Grafana in quanto, vista anche la durata ridotta dello _sprint_, si è preferito dare più priorità e tempo allo sviluppo dello _stream processor_ in Spring. Questo peraltro è già attualmente in grado di sostituire il _software_ precedentemente costruito con Apache NiFi. Da questa scelta ne beneficerà anche lo sviluppo della _dashboard_ stessa visto che si avrà a disposizione un _back-end_ funzionante e semidefinitivo rispetto alla prossima _milestone_.
 
 La risorsa che avrebbe dovuto lavorare alla _dashboard_ è stata quindi riallocata, nel corso dello _sprint_, alla stesura delle Norme di Progetto, documento che in questo _sprint_ è stato ampliato in modo considerevole.
 
-Tuttavia, a causa sia di stime troppo ottimistiche da parte del responsabile che dallo stretto legame tra lo studio delle metriche e la stesura delle Norme di Progetto, si è riscontrato un ritardo nel completare queste attività entro i tempi preventivati. Queste quindi si protrarranno anche nella prima parte prossimo _sprint_.
+A causa sia di stime troppo ottimistiche da parte del responsabile che dallo stretto legame tra lo studio delle metriche e la stesura delle Norme di Progetto, si è riscontrato un ritardo nel completare queste attività entro i tempi preventivati. Queste quindi si protrarranno anche nella prima parte prossimo _sprint_.
 
 Per quanto riguarda l'Analisi dei Requisiti l'attività di stesura è proseguita come previsto. Il gruppo ha riscontrato delle difficoltà nell'identificazione dei casi d'uso e, più nello specifico, nel delineare il confine tra analisi dei requisiti e progettazione. È risultato quindi utile il confronto avvenuto con il professor Cardin, che ha permesso di chiarire molti dubbi. Ciò si è ripercosso anche nella stesura della parte riguardante la descrizione dei casi d'uso all'interno delle Norme di Progetto, che ora riporta per iscritto le _best practice_ imparate dal gruppo fino a questo momento.
 
@@ -499,6 +504,7 @@ Le attività che il _team_ si è prefissato di portare a termine durante il quar
   - Scrittura pianificazione quarto _sprint_.
   - Scrittura retrospettiva quarto _sprint_ in concomitanza con la fine dello _sprint_.
 
+#v(10pt)
 #figure(
   image("../assets/img/PdP/gantt_s4.png"),
   caption: [Diagramma di Gantt dello _sprint_ 4],
@@ -543,6 +549,7 @@ Le attività che il _team_ si è prefissato di portare a termine durante il quar
   chartCaption: [Grafico percentuale dell'allocazione delle ore per ruolo nel quarto _sprint_],
 )
 
+#v(10pt)
 ==== Retrospettiva
 Il quarto _sprint_ si è concluso con risultati molto soddisfacenti in termini di qualità del materiale prodotto, ma a causa del rischio atteso #link(<RO-4>)[RO-4] dovuto alle festività occorse durante lo _sprint_, le ultime attività pianificate sono terminate con due giorni di ritardo. 
 
@@ -584,6 +591,7 @@ In vista della scadenza della _milestone_, e quindi della consegna prevista per 
   - Completare l'infrastruttura con #rifGlossario("Docker Compose").
   - Integrare la parte di _back-end_ con quella di _front-end_.
 
+#v(10pt)
 #figure(
   image("../assets/img/PdP/gantt_s5.png"),
   caption: [Diagramma di Gantt dello _sprint_ 5],
@@ -628,6 +636,7 @@ In vista della scadenza della _milestone_, e quindi della consegna prevista per 
   chartCaption: [Grafico percentuale dell'allocazione delle ore per ruolo nel quinto _sprint_],
 )
 
+#v(10pt)
 ==== Retrospettiva
 Il gruppo è riuscito a terminare tutte le attività pianificate nei tempi stabiliti. Sono state fondamentali riunioni sincrone sia interne che esterne per concludere gli ultimi punti dei documenti. Per garantire il risultato atteso entro la data di consegna RTB il gruppo si è tenuto costantemente aggiornato sulle piattaforme di comunicazione Telegram e Discord.
 
