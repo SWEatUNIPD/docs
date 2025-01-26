@@ -44,14 +44,12 @@
     "GitLab": "Piattaforma DevOps _all-in-one_ che offre strumenti per gestione del codice sorgente, CI/CD e gestione progetti.",
     "GPS": "_Global Positioning System_, sistema globale di navigazione satellitare che consente di determinare la posizione geografica di un dispositivo in tempo reale, utilizzato in applicazioni di mappatura, navigazione e localizzazione.",
     "GPX": "Formato di file XML standard per la memorizzazione di dati di localizzazione GPS, come punti di interesse, tracce e percorsi, utilizzato in applicazioni geospaziali.",
-    "Grafana": "Piattaforma interattiva _open source_ per la visualizzazione dei dati. Permette agli utenti di visualizzare i dati attraverso diagrammi e grafici unificati in una singola _dashboard_."
+    "Grafana": "Piattaforma interattiva _open source_ per la visualizzazione dei dati. Permette agli utenti di visualizzare i dati attraverso diagrammi e grafici unificati in una singola _dashboard_.",
+    "Gulpease": "L'indice di Gulpease è un indice di leggibilità di un testo tarato sulla lingua italiana. Rispetto ad altri ha il vantaggio di utilizzare la lunghezza delle parole in lettere anziché in sillabe, semplificandone il calcolo automatico."
   },
   "H": {
     "Hive MQ": "_Broker_ MQTT _open source_ ad alte prestazioni per l'IoT.",
     "Hosting": "Servizio che fornisce uno spazio online per archiviare, gestire e condividere dei documenti. Nel contesto attuale viene riferito ad un _hosting_ di _repository_, un ambiente dove versionare codice sorgente e documentazione."
-  },
-  "I": {
-    "Gulpease": "L'indice di Gulpease è un indice di leggibilità di un testo tarato sulla lingua italiana. Rispetto ad altri ha il vantaggio di utilizzare la lunghezza delle parole in lettere anziché in sillabe, semplificandone il calcolo automatico."
   },
   "K": {
     "Kubernetes": "Sistema _open source_ di orchestrazione di _container_."

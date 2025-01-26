@@ -13,31 +13,26 @@
     "Picello Davide",
     "Andrea Precoma",
     [- Approvazione versione finale del documento per rilascio in RTB],
-
     "0.14.0",
     "23/01/2025",
     "Davide Marin\nRiccardo Milan",
     "Andrea Perozzo\nDavide Martinelli",
     [- Aggiunto il termine "Dashboard"],
-
     "0.13.0",
     "24/12/2024",
     "Riccardo Milan",
     "Davide Martinelli",
-    [- Aggiunta l'espressione "Indice Gulpease"],
-
+    [- Aggiunta il termine "Gulpease"],
     "0.12.0",
     "21/12/2024",
     "Davide Picello",
     "Davide Marin\nKlaudio Merja",
     [- Aggiunto il termine "UML"],
-
     "0.11.0",
     "12/12/2024",
     "Davide Picello",
     "Andrea Precoma",
     [- Aggiunto il termine "PostgreSQL" e "Diagramma di Gantt"],
-
     "0.10.0",
     "10/12/2024",
     "Davide Marin\nKlaudio Merja",
