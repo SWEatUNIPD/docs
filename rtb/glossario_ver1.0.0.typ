@@ -1,7 +1,7 @@
 #import "/templates/template.typ": *
 
 #show: content => verbale(
-  data: "11 novembre 2024",
+  data: "26 gennaio 2025",
   uso: "Interno",
   responsabile: "Davide Picello",
   redattori: ("Andrea Perozzo", "Andrea Precoma", "Davide Marin", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
@@ -9,7 +9,7 @@
   verificatori: ("Andrea Perozzo", "Andrea Precoma", "Davide Marin", "Davide Picello", "Riccardo Milan"),
   versioni: (
     "1.0.0",
-    "25/01/2025",
+    "26/01/2025",
     "Picello Davide",
     "Andrea Precoma",
     [- Approvazione versione finale del documento per rilascio in RTB],
