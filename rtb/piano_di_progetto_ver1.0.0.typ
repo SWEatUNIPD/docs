@@ -1,14 +1,30 @@
 #import "/templates/template.typ": *
 
 #show: content => verbale(
-  data: "27 novembre 2024",
+  data: "26 gennaio 2025",
   destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "Sync Lab S.r.l.", "Gruppo SWE@"),
-  responsabile: "-",
+  responsabile: "Klaudio Merja",
   redattori: ("Andrea Precoma", "Davide Martinelli", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
   verificatori: ("Andrea Perozzo", "Andrea Precoma", "Davide Marin", "Davide Martinelli", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
   titolo: "Piano di Progetto",
   uso: "Esterno",
   versioni: (
+    "1.0.0",
+    "26/01/2025",
+    "Andrea Precoma",
+    "Riccardo Milan",
+    [
+      Approvazione per conclusione _milestone_ RTB
+    ],
+
+    "0.9.0",
+    "26/01/2025",
+    "Andrea Precoma",
+    "Riccardo Milan",
+    [
+      - Stesura retrospettiva quinto _sprint_
+    ],
+
     "0.8.0",
     "13/01/2025",
     "Andrea Precoma",
@@ -566,21 +582,21 @@ In vista della scadenza della _milestone_, e quindi della consegna prevista per 
   - Completare l'infrastruttura con #rifGlossario("Docker Compose").
   - Integrare la parte di _back-end_ con quella di _front-end_.
 
-// #figure(
-//   image("../assets/img/PdP/gantt_s5.png"),
-//   caption: [Diagramma di Gantt dello _sprint_ 5],
-// )
+#figure(
+  image("../assets/img/PdP/gantt_s5.png"),
+  caption: [Diagramma di Gantt dello _sprint_ 5],
+)
 
 ==== Preventivo orario
 #rendicontazioneOre(
   (
-    (0, 0, 0, 0, 0, 4),
-    (4, 0, 0, 0, 0, 2),
-    (0, 0, 3, 0, 0, 0),
-    (0, 0, 0, 0, 0, 4),
-    (0, 0, 4, 0, 0, 0),
-    (0, 0, 3, 0, 2, 0),
-    (0, 0.5, 3, 0, 0, 0),
+    (0, 0,	0, 0,	0, 5),
+    (5, 0, 0, 0, 0, 0),
+    (0, 1, 5, 0, 0, 0),
+    (0, 0, 0, 0, 0, 5),
+    (0, 0, 5, 0, 0, 0),
+    (1, 0, 3, 0, 1, 0),
+    (0, 0, 7, 0, 0, 0.5),
   ),
   caption: [Preventivo delle ore nel quinto _sprint_ per membro e per ruolo],
 )
@@ -588,22 +604,22 @@ In vista della scadenza della _milestone_, e quindi della consegna prevista per 
 ==== Consuntivo orario e di spesa
 #consuntivoOre(
   preventivo: (
-    (0, 0, 0, 0, 0, 4),
-    (4, 0, 0, 0, 0, 2),
-    (0, 0, 3, 0, 0, 0),
-    (0, 0, 0, 0, 0, 4),
-    (0, 0, 4, 0, 0, 0),
-    (0, 0, 3, 0, 2, 0),
-    (0, 0.5, 3, 0, 0, 0),
+    (0, 0,	0, 0,	0, 5),
+    (5, 0, 0, 0, 0, 0),
+    (0, 1, 5, 0, 0, 0),
+    (0, 0, 0, 0, 0, 5),
+    (0, 0, 5, 0, 0, 0),
+    (1, 0, 3, 0, 1, 0),
+    (0, 0, 7, 0, 0, 0.5),
   ),
   consuntivo: (
-    (0, 0, 0, 0, 0, 4),
-    (4, 0, 0, 0, 0, 2),
-    (0, 0, 3, 0, 0, 0),
-    (0, 0, 0, 0, 0, 4),
-    (0, 0, 4, 0, 0, 0),
-    (0, 0, 3, 0, 2, 0),
-    (0, 0.5, 3, 0, 0, 0),
+    (0, 0,	0, 0,	0, 5),
+    (5.5, 0, 0, 0, 0, 0),
+    (0, 1, 5, 0, 0, 0),
+    (0, 0, 0, 0, 0, 5.5),
+    (0, 0, 6, 0, 0, 0),
+    (1, 0, 3, 0, 1, 0),
+    (0, 0, 7, 0, 0, 0.5),
   ),
   tabCaption: [Consuntivo delle ore nel quinto _sprint_ per membro e per ruolo],
   costTabCaption: [Costi sostenuti nel quinto _sprint_],
@@ -611,3 +627,6 @@ In vista della scadenza della _milestone_, e quindi della consegna prevista per 
 )
 
 ==== Retrospettiva
+Il gruppo è riuscito a terminare tutte le attività pianificate nei tempi stabiliti. Sono state fondamentali riunioni sincrone sia interne che esterne per concludere gli ultimi punti dei documenti. Per garantire il risultato atteso entro la data di consegna RTB il gruppo si è tenuto costantemente aggiornato sulle piattaforme di comunicazione Telegram e Discord.
+
+Ricevendo continuamente riscontri positivi da parte della proponente rispetto all'Analisi dei Requisiti e al PoC abbiamo valutato di concludere la _milestone_ entro il giorno 27 gennaio 2025. È stata concordato il colloquio con il prof. Cardin per il giorno 29 gennaio, quindi le uniche attività da svolgere prima dell'incontro sono produrre due brevi presentazioni, una per il prof. Cardin e l'altra per il prof. Vardanega.
