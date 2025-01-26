@@ -3,7 +3,7 @@
 #show: content => verbale(
   data: "26 gennaio 2025",
   destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "Sync Lab S.r.l.", "Gruppo SWE@"),
-  responsabile: "Klaudio Merja",
+  responsabile: "Davide Marin",
   redattori: ("Andrea Precoma", "Davide Martinelli", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
   verificatori: ("Andrea Perozzo", "Andrea Precoma", "Davide Marin", "Davide Martinelli", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
   titolo: "Piano di Progetto",
