@@ -272,7 +272,7 @@ Piattaforma di messaggistica in tempo reale che consente _chat_ testuali, vocali
 Applicazione di messaggistica istantanea utilizzata per comunicazioni rapide e brevi all'interno del gruppo.
 
 ==== Fogli di Google
-Applicazione web per la creazione e la gestione di fogli di calcolo. Il gruppo utilizza tale strumento per tenere traccia delle ore produttive impiegate in ogni _sprint_, che saranno successivamente riportate nel documento ufficiale Piano di Progetto.
+Applicazione web per la creazione e la gestione di fogli di calcolo. Il gruppo utilizza tale strumento per tenere traccia delle ore produttive impiegate in ogni _#rifGlossario("sprint")_, che saranno successivamente riportate nel documento ufficiale Piano di Progetto.
 
 ==== GitHub
 Piattaforma per il versionamento del codice e la collaborazione su progetti _software_. Il gruppo utilizza questo strumento per gestire le _repository_ relative al prodotto software oggetto del capitolato e per la documentazione, monitorare le attività del progetto, assegnarle ai membri e seguirne lo stato di avanzamento.
@@ -481,12 +481,12 @@ Le cartelle sono divise per _milestone_ (candidatura, RTB e PB) ciascuna contene
 I titoli dei documenti devono seguire le seguenti indicazioni:
 - *Verbali Interni*: [NOR] riunione, dove NOR indica il numero ordinale della riunione (ad esempio Prima o Dodicesima).
 - *Verbali Esterni*:
-  - *SAL fine [NOS] #rifGlossario("sprint")*, dove NOS indica il numero ordinale dello _sprint_ (ad esempio primo o dodicesimo) nel caso si trattasse del SAL di fine _sprint_.
+  - *SAL fine [NOS] sprint*, dove NOS indica il numero ordinale dello _sprint_ (ad esempio primo o dodicesimo) nel caso si trattasse del SAL di fine _sprint_.
   - *SAL intermedio [NOS] sprint*, dove NOS indica il numero ordinale dello _sprint_ (ad esempio primo o dodicesimo) nel caso si trattasse di un SAL informativo a metà dello _sprint_.
   - Nel caso non si trattasse di un SAL si deve cercare un titolo breve ma efficace.
 - *Documenti*: Per documenti che non sono verbali il titolo deve semplicemente indicare lo scopo del documento (ad esempio Norme di Progetto).
 
-Notare che nei titoli dei documenti e dei paragrafi lo stile rimane quello di _default_ di #rifGlossario("Typst"), non vanno aggiunti quindi corsivi o altre personalizzazioni.
+Notare che nei titoli dei documenti e dei paragrafi lo stile rimane quello di _default_ di Typst, non vanno aggiunti quindi corsivi o altre personalizzazioni.
 
 === Stile del testo <stile_testo>
 Nei documenti vengono applicate le seguenti regole di stile testuali:
@@ -544,7 +544,7 @@ Le metriche adottate per la documentazione sono le seguenti:
   table(
     columns: 2,
     table.header[*ID Metrica*][*Nome*],
-    [#link(<MPC-IG>)[MPC-IG]], [#rifGlossario("Indice Gulpease")],
+    [#link(<MPC-IG>)[MPC-IG]], [Indice Gulpease],
     [#link(<MPC-CO>)[MPC-CO]], [Correttezza Ortografica],
   ),
   caption: [Metriche per la documentazione],
@@ -636,7 +636,7 @@ Le cartelle sono strutturate nel seguente modo:
   - *`data`*:
     - *`grafana`*:
       - *`plugins`*: contiene i _plugins_ installati per il corretto funzionamento di #rifGlossario("Grafana").
-    - `grafana.db`: _database_ di Grafana, utilizzato per la _dashboard_ e le informazioni al suo interno.
+    - `grafana.db`: _database_ di Grafana, utilizzato per la _#rifGlossario("dashboard")_ e le informazioni al suo interno.
   - *`src`*:
     - *`main`*:
       - *`resources`*:
@@ -888,7 +888,7 @@ Le _issues_ sono create dal responsabile e sono composte da:
 - *Milestone*: la _release_ in cui deve essere pubblicato il risultato dell'attività.
 - *Etichetta*: la categoria a cui appartiene quella attività.
 - *Stato*: avanzamento del _task_.
-- *Data di inizio attività*: momento di presa incarico dell'attività, fondamentale per aggiornare il diagramma di Gantt.
+- *Data di inizio attività*: momento di presa incarico dell'attività, fondamentale per aggiornare il #rifGlossario("diagramma di Gantt").
 - *Data di fine attività*: il termine indicato per portare a termine l'attività, fondamentale per aggiornare il diagramma di Gantt.
 Ogni qualvolta ci sia la necessità di portare a termine un compito è necessario seguire la seguente procedura:
 + Il responsabile, dopo aver concordato in una riunione il da farsi, crea una nuova _issue_ con stato "_To do_" su GitHub e la assegna.
@@ -1117,7 +1117,7 @@ La manutenibilità è la capacità del prodotto di essere modificato, includendo
 === Processi di supporto
 ==== Documentazione
 - *MPC-IG*: <MPC-IG>
-  - *Nome*: Indice Gulpease
+  - *Nome*: Indice #rifGlossario("Gulpease")
   - *Descrizione*: Indica il livello di leggibilità di un testo:
     - Inferiore a 80: difficile da leggere per chi ha la licenza elementare.
     - Inferiore a 60: difficile da leggere per chi ha la licenza media.
@@ -1187,7 +1187,7 @@ La manutenibilità è la capacità del prodotto di essere modificato, includendo
 
 === Affidabilità
 - *MPD-CC*
-  - *Nome*: Code Coverage
+  - *Nome*: #rifGlossario("Code Coverage")
   - *Descrizione*: Misura la percentuale di codice eseguita durante i _test_. Per questo progetto è richiesta una copertura pari o superiore all’80%.
 
 - *MPD-BC*
