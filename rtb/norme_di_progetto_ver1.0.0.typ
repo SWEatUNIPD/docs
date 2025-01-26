@@ -126,11 +126,11 @@ La prima occorrenza di un termine definito all'interno del glossario presente al
 === Riferimenti normativi
 - Regolamento del progetto didattico\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")
 - ISO/IEC 12207:1995\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf")
-- Lezione T07 - Qualità del software \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T07.pdf")
-- Lezione T08 - Qualità di processo \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T08.pdf")
 === Riferimenti informativi
 - Glossario
 - Capitolato C4 (Sync Lab)\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
+- Lezione T07 - Qualità del software \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T07.pdf")
+- Lezione T08 - Qualità di processo \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T08.pdf")
 
 #pagebreak()
 = Processi primari
@@ -177,8 +177,6 @@ Ogni caso d'uso deve comprendere le seguenti informazioni:
 ====== Identificazione
 Ogni caso d'uso deve essere identificato da un codice univoco, secondo la nomenclatura *UC[numero_use_case]*, un trattino ed un breve titolo esplicativo.
 
-Esempio: 'UC1 - Trasmissione dei dati di localizzazione'
-
 ====== Attori
 Gli attori rappresentano entità esterne che interagiscono con il sistema. Ogni caso d'uso specifica una funzionalità creata per un determinato attore.
 
@@ -208,8 +206,6 @@ Riguarda sia gli attori che i casi d'uso e rappresenta una relazione tra una cla
 
 ======= Inclusione
 Le inclusioni rappresentano funzionalità o comportamenti comuni che possono essere riutilizzati in più casi d'uso per evitare duplicazioni, inoltre indicano che l'esecuzione di una funzione implica l'esecuzione di tutte le sue inclusioni. Viene indicata nel diagramma come una freccia tratteggiata con indicato '"_include_"'. La funzione alla base della freccia include completamente la funzione alla punta della freccia.
-
-Esempio: Un caso d'uso 'Inserimento credenziali utente' può essere incluso in casi d'uso come 'Autenticazione'.
 
 ======= Estensione
 Le estensioni definiscono variazioni opzionali o eccezioni al comportamento principale del caso d'uso. Questi flussi si attivano solo se si verificano determinate condizioni. Viene indicata nel diagramma come una freccia tratteggiata con indicato '"_extend_"'. La funzione alla base della freccia può essere impiegata nel contesto della funzione alla punta della freccia.
@@ -313,34 +309,34 @@ Nella fase di implementazione, il fornitore deve stabilire o selezionare un mode
 In questa fase, si analizzano le esigenze specifiche del sistema da sviluppare, documentando i requisiti funzionali, di sicurezza, di manutenzione, ergonomici e di interfaccia. Tali requisiti vengono valutati rispetto alla loro tracciabilità, consistenza con le esigenze iniziali, testabilità e fattibilità tecnica. Il risultato è una specifica dettagliata dei requisiti del sistema.
 
 === Progettazione architetturale del sistema
-Il sistema viene suddiviso in elementi _hardware_, _software_ e operazioni manuali, con l’allocazione dei requisiti a ciascun elemento. L’architettura risultante rappresenta un progetto di alto livello che assicura la tracciabilità rispetto ai requisiti e la fattibilità operativa. La documentazione prodotta include la descrizione dell’architettura del sistema e l’assegnazione dei requisiti ai vari componenti.
+Il sistema viene suddiviso in elementi _hardware_, _software_ e operazioni manuali, con l'allocazione dei requisiti a ciascun elemento. L'architettura risultante rappresenta un progetto di alto livello che assicura la tracciabilità rispetto ai requisiti e la fattibilità operativa. La documentazione prodotta include la descrizione dell'architettura del sistema e l'assegnazione dei requisiti ai vari componenti.
 
 === Analisi dei requisiti software
 Per ogni componente _software_ individuato, vengono stabiliti e documentati i requisiti dettagliati, tra cui specifiche funzionali, di sicurezza, di ergonomia e requisiti per il #rifGlossario("database"). Tali requisiti sono valutati per verificarne tracciabilità, coerenza interna ed esterna, testabilità e fattibilità progettuale. La fase si conclude con una revisione congiunta per stabilire una _baseline_ di requisiti approvati.
 
 === Progettazione architetturale del software
-I requisiti _software_ vengono trasformati in un’architettura che descrive la struttura generale del _software_ e identifica i componenti principali. Si definiscono e documentano le interfacce e le prime versioni della documentazione utente, oltre ai requisiti di _test_ preliminari per l’integrazione. La valutazione di questa fase si concentra sulla tracciabilità rispetto ai requisiti, sulla coerenza interna e sull’adeguatezza dei metodi di progettazione utilizzati.
+I requisiti _software_ vengono trasformati in un'architettura che descrive la struttura generale del _software_ e identifica i componenti principali. Si definiscono e documentano le interfacce e le prime versioni della documentazione utente, oltre ai requisiti di _test_ preliminari per l'integrazione. La valutazione di questa fase si concentra sulla tracciabilità rispetto ai requisiti, sulla coerenza interna e sull'adeguatezza dei metodi di progettazione utilizzati.
 
 === Progettazione dettagliata del software
 Si sviluppano progetti dettagliati per ogni componente _software_, che vengono suddivisi in unità più piccole, codificabili e testabili. La documentazione comprende dettagli delle interfacce, del _database_ e requisiti specifici per il _testing_. Anche in questa fase, la progettazione è sottoposta a valutazioni che ne verificano tracciabilità, coerenza interna, testabilità e conformità agli _standard_ di progettazione.
 
 === Codifica e testing del software
-I componenti _software_ vengono codificati e testati per garantire che soddisfino i requisiti definiti. I risultati dei _test_ vengono documentati e la documentazione utente viene aggiornata. Questa fase include anche la preparazione dei requisiti di _test_ per l’integrazione _software_ e una revisione dell’adeguatezza del codice e dei risultati dei _test_.
+I componenti _software_ vengono codificati e testati per garantire che soddisfino i requisiti definiti. I risultati dei _test_ vengono documentati e la documentazione utente viene aggiornata. Questa fase include anche la preparazione dei requisiti di _test_ per l'integrazione _software_ e una revisione dell'adeguatezza del codice e dei risultati dei _test_.
 
 === Integrazione del software
-Le unità e i componenti _software_ sono integrate per formare un unico elemento _software_. Durante l’integrazione, vengono eseguiti _test_ per verificare che ciascun aggregato soddisfi i requisiti. Si sviluppano piani di _test_ e procedure per la qualifica del _software_ integrato. L’integrazione è valutata considerando la tracciabilità, la coerenza e la copertura dei requisiti.
+Le unità e i componenti _software_ sono integrate per formare un unico elemento _software_. Durante l'integrazione, vengono eseguiti _test_ per verificare che ciascun aggregato soddisfi i requisiti. Si sviluppano piani di _test_ e procedure per la qualifica del _software_ integrato. L'integrazione è valutata considerando la tracciabilità, la coerenza e la copertura dei requisiti.
 
 === Test di qualifica del software
-Il _software_ integrato viene sottoposto a _test_ di qualifica per verificarne la conformità ai requisiti. I risultati di questi _test_ vengono documentati. A seguito del completamento con successo, il _software_ è pronto per le fasi successive, come l’integrazione di sistema o l’installazione.
+Il _software_ integrato viene sottoposto a _test_ di qualifica per verificarne la conformità ai requisiti. I risultati di questi _test_ vengono documentati. A seguito del completamento con successo, il _software_ è pronto per le fasi successive, come l'integrazione di sistema o l'installazione.
 
 === Integrazione del sistema
-Il _software_ viene integrato con componenti _hardware_, operazioni manuali e altri sistemi, se richiesto. Vengono condotti _test_ sugli aggregati del sistema per verificarne la conformità ai requisiti. La documentazione prodotta include i risultati dell’integrazione e i _test_ effettuati.
+Il _software_ viene integrato con componenti _hardware_, operazioni manuali e altri sistemi, se richiesto. Vengono condotti _test_ sugli aggregati del sistema per verificarne la conformità ai requisiti. La documentazione prodotta include i risultati dell'integrazione e i _test_ effettuati.
 
 === Test di qualifica del sistema
-L’intero sistema viene testato per verificare la conformità alle specifiche contrattuali e la prontezza per la consegna. I risultati sono documentati e valutati per garantire la copertura dei requisiti e la fattibilità operativa.
+L'intero sistema viene testato per verificare la conformità alle specifiche contrattuali e la prontezza per la consegna. I risultati sono documentati e valutati per garantire la copertura dei requisiti e la fattibilità operativa.
 
 === Installazione del software
-Si sviluppa e implementa un piano per l’installazione del _software_ nell’ambiente di destinazione. Si verifica che il _software_ funzioni come previsto e si supportano attività di transizione, se necessario. Gli eventi e i risultati dell’installazione sono documentati.
+Si sviluppa e implementa un piano per l'installazione del _software_ nell'ambiente di destinazione. Si verifica che il _software_ funzioni come previsto e si supportano attività di transizione, se necessario. Gli eventi e i risultati dell'installazione sono documentati.
 
 === Supporto all'accettazione del software
 Il fornitore supporta il cliente nella revisione e nei _test_ di accettazione del _software_, che comprendono la valutazione di tutti i risultati ottenuti nelle fasi precedenti. Viene completata la consegna del prodotto _software_ e fornite eventuali attività di formazione e supporto iniziale.
@@ -805,10 +801,10 @@ Secondo lo _standard_ ISO/IEC 12207:1997 la gestione dei processi mira a stabili
 Le attività di gestione dei processi sono:
 1. Definizione dei processi:
   - Identificare e documentare i processi.
-  - Stabilire linee guida e procedure per l’esecuzione di ciascun processo.
+  - Stabilire linee guida e procedure per l'esecuzione di ciascun processo.
 2. Pianificazione e monitoraggio:
-  - Elaborare piani dettagliati per l’esecuzione dei processi.
-  - Monitorare costantemente l’avanzamento, l’efficacia e la conformità ai requisiti.
+  - Elaborare piani dettagliati per l'esecuzione dei processi.
+  - Monitorare costantemente l'avanzamento, l'efficacia e la conformità ai requisiti.
   - Stimare i tempi, le risorse ed i costi.
 3. Esecuzione, revisione e valutazione:
   - Monitorare l'avanzamento dei processi per identificare aree problematiche o di miglioramento.
@@ -831,7 +827,7 @@ Gli scopi della pianificazione sono avere un piano reale di quelli che sono gli 
 I ruoli descritti sotto verranno assegnati ad ogni _sprint_ in base alle esigenze della fase del progetto, con una pianificazione in accordo con il documento di Dichiarazione Impegni e Preventivo Costi presentato in fase di candidatura.
 
 ===== Responsabile
-Il responsabile si occuperà dell’allocazione delle risorse e della pianificazione generale e si assicurerà che il progetto proceda in modo efficiente e soddisfi gli obiettivi nel rispetto delle scadenze. Sarà inoltre la figura incaricata a rappresentare i _team_ nelle varie interazioni con i proponenti e i committenti.
+Il responsabile si occuperà dell'allocazione delle risorse e della pianificazione generale e si assicurerà che il progetto proceda in modo efficiente e soddisfi gli obiettivi nel rispetto delle scadenze. Sarà inoltre la figura incaricata a rappresentare i _team_ nelle varie interazioni con i proponenti e i committenti.
 I suoi compiti sono:
 - Approvare la documentazione.
 - Gestire la pianificazione e la retrospettiva dello _sprint_ in cui è incaricato.
@@ -839,7 +835,7 @@ I suoi compiti sono:
 - Rappresentare il gruppo nelle comunicazioni con l'esterno.
 
 ===== Amministratore
-L'amministratore garantirà che l’ambiente e l’infrastruttura necessari per lo sviluppo e l’esecuzione del progetto siano robusti, sicuri ed affidabili e che ciascun membro del _team_ sappia come usarli senza incorrere in alcun tipo di problema.
+L'amministratore garantirà che l'ambiente e l'infrastruttura necessari per lo sviluppo e l'esecuzione del progetto siano robusti, sicuri ed affidabili e che ciascun membro del _team_ sappia come usarli senza incorrere in alcun tipo di problema.
 I suoi compiti sono:
 - Sostituire il responsabile in caso di emergenze.
 - Migliorare l'ambiente di lavoro automatizzando il più possibile i processi.
@@ -958,7 +954,7 @@ Per quanto riguarda le riunioni con i proponenti valgono le stesse regole di que
 
 == Miglioramento
 === Descrizione
-Secondo lo _standard_ ISO/IEC 12207:1995 il processo di miglioramento nel ciclo di vita del _software_ è finalizzato a stabilire, misurare, controllare e migliorare i processi che lo compongono. L’attività di miglioramento è composta da:
+Secondo lo _standard_ ISO/IEC 12207:1995 il processo di miglioramento nel ciclo di vita del _software_ è finalizzato a stabilire, misurare, controllare e migliorare i processi che lo compongono. L'attività di miglioramento è composta da:
 
 - Analisi: identificare le aree di miglioramento dei processi.
 - Miglioramento: implementare le modifiche necessarie per migliorare i processi di sviluppo del _software_.
@@ -1059,7 +1055,7 @@ La manutenibilità è la capacità del prodotto di essere modificato, includendo
 
 - *MPC-CPI*: <MPC-CPI>
   - *Nome*: _Cost Performance Index_
-  - *Descrizione*: Indica il rapporto tra il valore guadagnato e il costo effettivo. Più grande il suo valore, maggiore sarà l’efficienza.
+  - *Descrizione*: Indica il rapporto tra il valore guadagnato e il costo effettivo. Più grande il suo valore, maggiore sarà l'efficienza.
   - *Formula*:
   $ "CPI" = "EV" / "AC" $
   - *Parametri*:
@@ -1153,7 +1149,7 @@ La manutenibilità è la capacità del prodotto di essere modificato, includendo
   - *Nome*: Efficienza Temporale
   - *Descrizione*: Indica la percentuale di tempo disponibile che il _team_ è riuscito a impiegare svolgendo attività produttive, ossia quelle che contribuiscono direttamente al raggiungimento degli obiettivi del progetto.
   - *Formula*:
-  $ "ET" = ("OO" / "OE") * 100 $
+  $ "ET" = ("OO" / "OP") * 100 $
   - *Parametri*:
     - *OO*: Ore di Orologio (tempo totale trascorso).
     - *OP*: Ore Produttive (tempo effettivamente dedicato ad attività produttive).
@@ -1190,7 +1186,7 @@ La manutenibilità è la capacità del prodotto di essere modificato, includendo
 === Affidabilità
 - *MPD-CC*
   - *Nome*: #rifGlossario("Code Coverage")
-  - *Descrizione*: Misura la percentuale di codice eseguita durante i _test_. Per questo progetto è richiesta una copertura pari o superiore all’80%.
+  - *Descrizione*: Misura la percentuale di codice eseguita durante i _test_. Per questo progetto è richiesta una copertura pari o superiore all'80%.
 
 - *MPD-BC*
   - *Nome*: Branch Coverage
@@ -1211,12 +1207,12 @@ La manutenibilità è la capacità del prodotto di essere modificato, includendo
 === Efficienza
 - *MPD-UR*
   - *Nome*: Utilizzo di Risorse
-  - *Descrizione*: Misura l’efficienza del sistema in termini di utilizzo delle risorse _hardware_, come CPU, memoria e altre risorse di sistema.
+  - *Descrizione*: Misura l'efficienza del sistema in termini di utilizzo delle risorse _hardware_, come CPU, memoria e altre risorse di sistema.
 
 === Usabilità
 - *MPD-FU*
   - *Nome*: Facilità di Utilizzo
-  - *Descrizione*: Misura il numero di errori commessi dagli utenti durante l’interazione. Un valore minimo indica un’interfaccia intuitiva.
+  - *Descrizione*: Misura il numero di errori commessi dagli utenti durante l'interazione. Un valore minimo indica un'interfaccia intuitiva.
 - *MPD-TA*
   - *Nome*: Tempo di Apprendimento
   - *Descrizione*: Valuta il tempo necessario a un utente per imparare a utilizzare il _software_.
