@@ -475,7 +475,7 @@ Dal grafico si nota che il valore dell'*AC* è cresciuto in modo proporzionale a
 )
 
 === RTB
-Dal grafico si può notare che le variazioni sono sempre state contenute, rientrando ampiamente nei limiti accettabili. E comunque non discostandosi molto dal valore ottimo.
+Dal grafico si può notare che le variazioni sono sempre state contenute: rientrano sempre ampiamente nei limiti accettabili e non si discostano molto dal valore ottimo. Il *BV* indica che abbiamo sempre speso leggermente oltre il _budget_ pianificato, tuttavia abbiamo una prospettiva positiva come indica il *SV*.
 
 
 #pagebreak()
