@@ -160,7 +160,7 @@ Forniscono servizi e attività che assistono i processi primari. Includono: docu
 Processo necessario per il tracciamento di tutte le attività relative al progetto.
 
 ===== Indice Gulpease (MPC-IG)
-L'#rifGlossario("Indice gulpease") è una metrica utilizzata per valutare la leggibilità di un testo in lingua italiana. Tiene conto della lunghezza delle parole e delle frasi, fornendo un punteggio da 0 a 100. Punteggi più alti indicano una maggiore leggibilità.
+L' indice #rifGlossario("gulpease") è una metrica utilizzata per valutare la leggibilità di un testo in lingua italiana. Tiene conto della lunghezza delle parole e delle frasi, fornendo un punteggio da 0 a 100. Punteggi più alti indicano una maggiore leggibilità.
 
 ===== Correttezza Ortografica (MPC-CO)
 La metrica della Correttezza Ortografica misura il numero di errori grammaticali e ortografici presenti in un documento.
@@ -277,7 +277,7 @@ Indica il numero di fallimenti correttamente riscontrati per unità di dimension
     fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
     table.header[*Metrica*][*Nome*][*Valore accettabile*][*Valore desiderabile*],
     
-    [MDP-CC], [_Code coverage_], [$≥ 80\%$], [$100\%$],
+    [MDP-CC], [_#rifGlossario("Code coverage")_], [$≥ 80\%$], [$100\%$],
     [MDP-BC], [_Branch coverage_], [$≥ 60\%$], [$100\%$],
     [MDP-SC], [_Statement coverage_], [$≥ 60\%$], [$100\%$],
     [MDP-PTCP], [_Passed test cases percentage_], [$≥ 80\%$], [$100\%$],
