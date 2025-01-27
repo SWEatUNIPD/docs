@@ -98,7 +98,6 @@
   pagebreak()
 
   context {
-
     let numTables = query(figure.where(kind: table, outlined: true)).len()
     if numTables > 0 {
       {
@@ -128,7 +127,6 @@
       }
       pagebreak()
     }
-
   }
   content
   if uso == "Esterno" and firmaRichiesta == true {
@@ -161,9 +159,7 @@
   align(
     center + top,
     [
-      #figure(
-        image("/assets/img/logo.svg", width: 50%),
-      )
+      #figure(image("/assets/img/logo.svg", width: 50%))
       #v(10pt);
       #text(size: 23pt, weight: "bold", titolo) \
       #text(size: 15pt, [#data])
@@ -186,9 +182,7 @@
   align(
     center + bottom,
     [
-      #figure(
-        image("/assets/img/unipd.png", width: 16%),
-      )
+      #figure(image("/assets/img/unipd.png", width: 16%))
       Corso di Ingegneria del Software\ A.A. 2024/25\
     ],
   )
@@ -287,8 +281,10 @@
     for word in glossario.at(key).keys() {
       [
         #text(weight: "bold", size: 12pt, word)
+        #let value = glossario.at(key).at(word)
 
-        #glossario.at(key).at(word)
+        #eval(value, mode: "markup")
+        //This function should only be used as a last resort.https://typst.app/docs/reference/foundations/eval/
         #v(10pt)
       ]
     }
@@ -328,12 +324,12 @@
       ..membri
         .enumerate()
         .map(((index, value)) => {
-            (
-              membri.at(index),
-              ..content.at(index).map(elem => str(elem)),
-              str(content.at(index).sum()),
-            )
-          })
+          (
+            membri.at(index),
+            ..content.at(index).map(elem => str(elem)),
+            str(content.at(index).sum()),
+          )
+        })
         .flatten(),
       [*Totale per ruolo*],
       ..(0, 1, 2, 3, 4, 5).map(idx => {
@@ -378,17 +374,20 @@
       ..membri
         .enumerate()
         .map(((i, _)) => {
-            (
-              membri.at(i),
-              ..consuntivo.at(i).enumerate().map(((j, _)) => {
+          (
+            membri.at(i),
+            ..consuntivo
+              .at(i)
+              .enumerate()
+              .map(((j, _)) => {
                 let diff = consuntivo.at(i).at(j) - preventivo.at(i).at(j)
-                return [#str(
-                    consuntivo.at(i).at(j),
-                  ) #if diff > 0 [(#text(red)[+#str(diff)])] else if diff < 0 [(#text(green)[#str(diff)])]]
+                return [#str(consuntivo.at(i).at(j)) #if diff > 0 [(#text(red)[+#str(diff)])] else if (
+                    diff < 0
+                  ) [(#text(green)[#str(diff)])]]
               }),
-              [#str(consuntivo.at(i).sum())],
-            )
-          })
+            [#str(consuntivo.at(i).sum())],
+          )
+        })
         .flatten(),
       [*Totale per ruolo*],
       ..range(6).map(idx => {
@@ -422,13 +421,15 @@
     ("Verificatore", 15),
   )
 
-  let data = ruoli.enumerate().map(((index, value)) => {
-    let costo = 0
-    for i in range(0, 7) {
-      costo += consuntivo.at(i).at(index)
-    }
-    return (ruoli.at(index).at(0), [#str(costo * ruoli.at(index).at(1)) €])
-  })
+  let data = ruoli
+    .enumerate()
+    .map(((index, value)) => {
+      let costo = 0
+      for i in range(0, 7) {
+        costo += consuntivo.at(i).at(index)
+      }
+      return (ruoli.at(index).at(0), [#str(costo * ruoli.at(index).at(1)) €])
+    })
 
   let costoFinale = {
     let somma = 0
