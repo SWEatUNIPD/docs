@@ -1,9 +1,9 @@
 #import "/templates/template.typ": *
 
 #show: content => verbale(
-  data: "7 dicembre 2024",
+  data: "26 gennaio 2025",
   destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "Sync Lab S.r.l.", "Gruppo SWE@"),
-  responsabile: "Davide Marin",
+  responsabile: "Riccardo Milan",
   redattori: ("Davide Martinelli", "Davide Picello"),
   verificatori: ("Andrea Precoma", "Davide Martinelli", "Davide Marin", "Riccardo Milan"),
   titolo: "Piano di Qualifica",
@@ -404,7 +404,7 @@ L'*EAC* rappresenta una stima aggiornata del costo totale previsto per completar
   ((0, 13620.42), (1, 13402.94), (2, 13292.46), (3, 13374.76), (4,12648.46)),
   "EAC",
   ((0, 12740), (1, 12740), (2, 12740), (3, 12740), (4, 12740)),
-  "BAC",
+  "BAC (valore ideale)",
   ((0, 13377), (1, 13377), (2, 13377), (3, 13377), (4, 13377)),
   "Valore massimo accettabile",
   ((0, 12103), (1, 12103), (2, 12103), (3, 12103), (4, 12103)),
@@ -412,7 +412,9 @@ L'*EAC* rappresenta una stima aggiornata del costo totale previsto per completar
 )
 
 === RTB
-Dal grafico si può notare che il valore dell'*EAC* si è avvicinato, per 4 iterazioni su 5, al valore ideale del *BAC*, ma è rimasto sempre al di sopra del valore minimo accettabile e, per la maggior parte del tempo, al di sotto del valore massimo accettabile per arrivare, all'ultima iterazione, molto vicino al valore ideale.
+Dal grafico si può notare che il valore dell'*EAC* si è avvicinato, per 4 iterazioni su 5, al valore ideale del *BAC*, rimanendo sempre al di sopra del valore minimo accettabile e, per la maggior parte del tempo, al di sotto del valore massimo accettabile per arrivare, all'ultima iterazione, molto vicino al valore ideale.
+
+Questi dati sottolineano il continuo automiglioramento che il team ha sempre cercato di perseguire.
 
 
 #pagebreak()
@@ -433,7 +435,7 @@ Dal grafico si può notare che il valore dell'*EAC* si è avvicinato, per 4 iter
 )
 
 === RTB
-Dal grafico si può notare che il valore dell'*EV* è cresciuto pari pari al valore del *PV*, indicando che il lavoro svolto è stato eseguito secondo la pianificazione.
+Dal grafico si può notare che il valore dell'*EV* è cresciuto pari pari al valore del *PV*, indicando che il lavoro svolto è stato effettivamente eseguito secondo la pianificazione.
 
 #pagebreak()
 == Actual Cost (AC) e Estimate to Completion (ETC)
@@ -473,7 +475,8 @@ Dal grafico si nota che il valore dell'*AC* è cresciuto in modo proporzionale a
 )
 
 === RTB
-// Tabella RTB
+
+
 
 #pagebreak()
 == Requirements stability index (RSI)
@@ -482,7 +485,7 @@ L'*RSI* misura la stabilità dei requisiti del progetto nel tempo, valutando qua
 #plotGrafico3(
   "Tabella RSI",
   ((0, 0), (1, 0), (2, 70), (3, 39), (4, 85)),
-  "Requisiti",
+  "RSI",
   ((0, 75), (1, 75), (2, 75), (3, 75), (4, 75)),
   "Valore accettabile",
   ((0, 100), (1, 100), (2, 100), (3, 100), (4, 100)),
@@ -490,10 +493,12 @@ L'*RSI* misura la stabilità dei requisiti del progetto nel tempo, valutando qua
 )
 
 === RTB
-Sprint 4 così giù perchè colloqui Cardin.
+Il grafico è per la maggior parte ascendente tranne nella quarta iterazione, dove i requisiti hanno subito una forte modifica dovuta al colloquio con il Professor Cardin, al quale hanno seguito numerose correzioni.
+
+Nell'ultimo periodo, quindi quello relativo alla consegna RTB, si è finalmente raggiunto il valore accettabile dell'RSI.
 
 #pagebreak()
-== Indice Gulpease
+== Indice Gulpease (IG)
 Indice che valuta la leggibilità dei documenti scritti in italiano.
 
 #plotGrafico7(
@@ -515,10 +520,13 @@ Indice che valuta la leggibilità dei documenti scritti in italiano.
 )
 
 === RTB
-// Tabella RTB
+Si nota che i valori sono sempre sopra al valore accettabile, anche se ancora ben distanti dal valore ottimo. Tuttavia si nota per la maggior parte dei documenti una stabilizzazione del valore, con solo qualche piccola variazione.
+
+I documenti che alla prima iterazione hanno valore pari a zero lo devono alla loro creazione, avvenuta più tardi.
+
 
 #pagebreak()
-== Correttezza Ortografica
+== Correttezza Ortografica (CO)
 Metriche che misurano la presenza di errori ortografici nei documenti, valutando la qualità formale del contenuto.
 
 #plotGrafico7(
@@ -540,10 +548,11 @@ Metriche che misurano la presenza di errori ortografici nei documenti, valutando
 )
 
 === RTB
-// Tabella RTB
+Da questo grafico si nota che tutti i documenti hanno avuto qualche piccolo errore, quasi sempre di battitura, che sono sfuggiti agli occhi attenti dei revisori. Tuttavia, nel quarto sprint, con l'introduzione di uno strumento di _spell checking_ siamo riusciti finalmente a raggiungere il valore ottimo di zero errori per tutti i documenti.
+
 
 #pagebreak()
-== Quality Metrics Satisfied
+== Percentuale di Metriche Soddisfatte (PMS)
 Percentuale di metriche di qualità definite per il progetto che sono state soddisfatte rispetto agli obiettivi prefissati.
 
 // Da fare alla fine
@@ -553,8 +562,10 @@ Percentuale di metriche di qualità definite per il progetto che sono state sodd
 
 
 #pagebreak()
-== Efficienza Temporale 
+== Efficienza Temporale (ET)
 Misura l'efficacia nell'utilizzo del tempo per completare le attività, confrontando il tempo effettivamente impiegato con quello previsto.
 
 === RTB
-Decisa tardi, quindi iniziato a misurarla tardi. Solo ultima misurazione: 1.8
+Questa metrica è stata decisa tardi, nell'ultimo sprint. Risulta quindi impossibile recuperare i valori passati e crearne un grafico, anche se siamo confidenti nel dire che il valore è progressivamente diminuito, in quanto, il team ha imparato sempre più a lavorare asincronamente, massimizzando il tempo produttivo. Il team confida sarà una metrica utile in fase di PB.
+
+L'unico valore che possiamo dare di questa metrica è quindi quello dell'ultima iterazione, pari ad un rapporto di 1.8, che è ampiamente al di sotto del valore accettabile di 3 ma ancora al di sopra del valore desiderabile di 1.
