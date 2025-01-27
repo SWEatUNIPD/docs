@@ -1,7 +1,7 @@
 #import "/templates/template.typ": *
 
 #show: content => verbale(
-  data: "26 gennaio 2025",
+  data: "27 gennaio 2025",
   destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "Sync Lab S.r.l.", "Gruppo SWE@"),
   responsabile: "Riccardo Milan",
   redattori: ("Davide Martinelli", "Davide Picello"),
@@ -10,7 +10,7 @@
   uso: "Esterno",
   versioni: (
     "1.0.0",
-    "26/01/2025",
+    "27/01/2025",
     "Davide Picello",
     "Andrea Precoma",
     [Approvazione versione finale del documento per rilascio in RTB],
@@ -86,28 +86,28 @@ Fanno parte dei processi primari le attività di acquisizione, fornitura, svilup
 ==== Fornitura
 Attività e compiti del fornitore, il quale dovrà accordarsi con il proponente per stabilire ufficialmente i vari vincoli e requisiti del progetto.
 
-===== Planned value (PV)
+===== Planned value (MPC-PV)
 Rappresenta il valore pianificato del lavoro da completare entro una certa data.
 
-===== Earned value (EV)
+===== Earned value (MPC-EV)
 Misura il valore del lavoro completato fino a un determinato momento rispetto al _budget_ pianificato.
 
-===== Actual cost (AC)
+===== Actual cost (MPC-AC)
 Indica il costo effettivamente sostenuto per il lavoro completato fino a un determinato momento.
 
-===== Cost performance index (CPI)
+===== Cost performance index (MPC-CPI)
 Misura l'efficienza del costo per il lavoro svolto fino a un determinato momento, valutando quanto valore si ottiene per ogni unità monetaria spesa.
 
-===== Estimated at completion (EAC)
+===== Estimated at completion (MPC-EAC)
 Fornisce una stima del costo totale del progetto basata sulle condizioni attuali.
 
-===== Schedule variance (SV)
+===== Schedule variance (MPC-SV)
 Indica la differenza tra il valore guadagnato (EV) e il valore pianificato (PV). Valori negativi mostrano ritardi rispetto alla pianificazione.
 
-===== Budget variance (BV)
+===== Budget variance (MPC-BV)
 Misura la differenza tra il valore pianificato (PV) e il costo effettivo (AC) alla data corrente. Valori negativi indicano un superamento del _budget_ pianificato.
 
-===== Estimate to completion (ETC)
+===== Estimate to completion (MPC-ETC)
 Stima i costi aggiuntivi necessari per completare il progetto.
 
 
@@ -127,8 +127,8 @@ Ricordiamo che il *BAC* rappresenta il _Budget at Completion_, ovvero il costo t
     [MPC-AC], [_Actual cost_], [$≥ 0$], [$≤$ EAC],
     [MPC-CPI], [_Cost performance index_], [tra 0.95 e 1.05], [1],
     [MPC-EAC], [_Estimated at completion_], [$± 5%$ rispetto BAC], [BAC],
-    [MPC-SV], [_Schedule variance_], [$± 10%$ rispetto BAC], [$0%$],
-    [MPC-BV], [_Budget variance_], [$± 10%$ rispetto BAC], [$0%$],
+    [MPC-SV], [_Schedule variance_], [$± 5%$ rispetto BAC], [$0%$],
+    [MPC-BV], [_Budget variance_], [$± 5%$ rispetto BAC], [$0%$],
     [MPC-ETC], [_Estimated to completion_], [$≥ 0$], [$≤$ EAC],
   )
 )
@@ -136,7 +136,7 @@ Ricordiamo che il *BAC* rappresenta il _Budget at Completion_, ovvero il costo t
 ==== Sviluppo
 Composta da attività il cui scopo è di descrivere le attività e i compiti necessari per creare e mantenere un sistema _software_, garantendo che il prodotto finale soddisfi i requisiti specificati nel contratto. Elenchiamo di seguito le metriche relative.
 
-===== Indice di Stabilità dei Requisiti (ISR)
+===== Indice di Stabilità dei Requisiti (MPC-ISR)
 Valuta la stabilità dei requisiti nel corso del tempo.
 
 ===== Tabella metriche sviluppo
@@ -159,10 +159,10 @@ Forniscono servizi e attività che assistono i processi primari. Includono: docu
 ==== Documentazione
 Processo necessario per il tracciamento di tutte le attività relative al progetto.
 
-===== Indice Gulpease (IG)
+===== Indice Gulpease (MPC-IG)
 L'#rifGlossario("Indice gulpease") è una metrica utilizzata per valutare la leggibilità di un testo in lingua italiana. Tiene conto della lunghezza delle parole e delle frasi, fornendo un punteggio da 0 a 100. Punteggi più alti indicano una maggiore leggibilità.
 
-===== Correttezza Ortografica (CO)
+===== Correttezza Ortografica (MPC-CO)
 La metrica della Correttezza Ortografica misura il numero di errori grammaticali e ortografici presenti in un documento.
 
 ===== Tabella metriche documentazione
@@ -180,7 +180,7 @@ La metrica della Correttezza Ortografica misura il numero di errori grammaticali
 )
 
 ==== Gestione della qualità
-===== Percentuale di Metriche Soddisfatte (PMS)
+===== Percentuale di Metriche Soddisfatte (MPC-PMS)
 Indica la percentuale di metriche che risultano soddisfare gli obiettivi minimi di
 qualità.
 
@@ -200,7 +200,7 @@ qualità.
 === Processi organizzativi
 Riguardano la gestione e l'organizzazione del progetto. Includono: gestione dei processi, miglioramento, e formazione.
 
-===== Efficienza temporale (ET)
+===== Efficienza temporale (MPC-ET)
 Questa metrica valuta l'efficienza con cui il tempo disponibile viene impiegato in attività produttive, ossia quelle che contribuiscono direttamente al raggiungimento degli obiettivi del progetto.
 
 ===== Tabella metriche gestione dei processi
@@ -222,13 +222,13 @@ La qualità del prodotto si concentra sulla valutazione del _software_ sviluppat
 === Funzionalità
 La funzionalità misura la capacità del _software_ di soddisfare i requisiti obbligatori, desiderabili e opzionali.
 
-==== Requisiti obbligatori soddisfatti (ROS)
+==== Requisiti obbligatori soddisfatti (MDP-ROS)
 Indica la percentuale di requisiti obbligatori implementati nel prodotto. Deve essere sempre pari al 100% per garantire la conformità alle specifiche.
 
-==== Requisiti desiderabili soddisfatti (RDS)
+==== Requisiti desiderabili soddisfatti (MDP-RDS)
 Misura la percentuale di requisiti desiderabili implementati nel prodotto. Valori più elevati migliorano la soddisfazione del cliente.
 
-==== Requisiti opzionali soddisfatti (ROPS)
+==== Requisiti opzionali soddisfatti (MDP-ROPS)
 Rappresenta la percentuale di requisiti opzionali implementati. Una copertura opzionale più alta può aggiungere valore al prodotto.
 
 ==== Tabella metriche funzionalità
@@ -250,19 +250,19 @@ Rappresenta la percentuale di requisiti opzionali implementati. Una copertura op
 === Affidabilità
 L'affidabilità valuta la capacità del _software_ di funzionare correttamente sotto condizioni specifiche.
 
-==== Code coverage (CC)
+==== Code coverage (MDP-CC)
 Misura la percentuale di codice eseguita durante i _test_. Valori più alti indicano una migliore copertura del codice. Per questo progetto è richiesta una copertura pari o superiore all'$80%$.
 
-==== Branch coverage (BC)
+==== Branch coverage (MDP-BC)
 Calcola la percentuale di rami decisionali (_#rifGlossario("branch")_) del codice eseguiti durante i _test_. Aiuta a identificare scenari non testati.
 
-==== Statement coverage (SC)
+==== Statement coverage (MDP-SC)
 Rappresenta la percentuale di istruzioni eseguite durante i _test_. Un valore alto garantisce un'analisi più approfondita del codice.
 
-==== Passed test cases percentage (PTCP)
+==== Passed test cases percentage (MDP-PTCP)
 Misura la percentuale di casi di _test_ superati rispetto al totale dei _test_ eseguiti. Un alto valore indica che il _software_ soddisfa i requisiti funzionali e non funzionali previsti.
 
-==== Failure density (FD)
+==== Failure density (MDP-FD)
 Indica il numero di fallimenti correttamente riscontrati per unità di dimensione del _software_, spesso misurata in linee di codice (LOC) o punti funzione. Valori più bassi denotano un _software_ di qualità superiore, con meno difetti rispetto alla sua complessità o dimensione.
 
 
@@ -287,7 +287,7 @@ Indica il numero di fallimenti correttamente riscontrati per unità di dimension
 
 === Efficienza
 
-==== Utilizzo risorse (UR)
+==== Utilizzo risorse (MDP-UR)
 Misura l'efficienza del sistema in termini di utilizzo delle risorse hardware, come CPU, memoria e altre risorse di sistema. Un uso efficiente delle risorse garantisce che il sistema funzioni in modo ottimale senza sovraccaricare le risorse disponibili.
 
 ==== Tabella metriche efficienza
@@ -307,10 +307,10 @@ Misura l'efficienza del sistema in termini di utilizzo delle risorse hardware, c
 === Usabilità
 L'usabilità si riferisce alla facilità con cui un utente può interagire con il software.
 
-==== Facilità di utilizzo (FU)
+==== Facilità di utilizzo (MDP-FU)
 Misura il numero di errori commessi dagli utenti durante l'interazione. Un valore minimo indica un'interfaccia intuitiva.
 
-==== Tempo di apprendimento (TA)
+==== Tempo di apprendimento (MDP-TA)
 Valuta il tempo necessario a un utente per imparare a utilizzare il _software_. Tempi più brevi migliorano l'esperienza utente.
 
 ==== Tabella metriche usabilità
@@ -331,23 +331,23 @@ Valuta il tempo necessario a un utente per imparare a utilizzare il _software_. 
 
 === Manutenibilità
 
-==== Complessità ciclomatica per metodo (CCM)
+==== Complessità ciclomatica per metodo (MDP-CCM)
 La complessità ciclomatica valuta la complessità del codice sorgente attraverso la misurazione del numero di cammini indipendenti attraverso il grafo di controllo del flusso. Una complessità ciclomatica più alta indica che il codice è più difficile da comprendere e manutenere.
 
 
-==== Code smell (CS)
+==== Code smell (MDP-CS)
 Rileva potenziali problemi di progettazione o codice che potrebbero richiedere manutenzione. Segnala parti del codice che potrebbero non essere ottimali e che potrebbero causare difficoltà nel futuro, come un'architettura poco chiara o sezioni di codice ripetitive.
 
-==== Coefficient of Coupling (COC)
+==== Coefficient of Coupling (MDP-COC)
 Il Coefficient of Coupling misura il grado di dipendenza tra i moduli o le componenti di un sistema. Un alto COC implica che i moduli siano strettamente interconnessi, il che può rendere difficile apportare modifiche a un modulo senza influenzare altri.
 
-==== Structure fan in (SFI)
+==== Structure fan in (MDP-SFI)
 Indica il numero di moduli o componenti che dipendono direttamente da un modulo o funzione specifica. Un alto valore di _fan-in_ suggerisce che molte parti del sistema dipendono da quel modulo, quindi modifiche a tale modulo potrebbero avere un ampio impatto.
 
-==== Structure fan out (SFO)
+==== Structure fan out (MDP-SFO)
 Misura il numero di dipendenze o connessioni che un modulo o componente ha con altri. Un elevato _fan-out_ può indicare che il modulo è fortemente interconnesso con altri, il che può comportare una maggiore complessità nelle modifiche o nella manutenzione del sistema.
 
-==== Ripercussione delle Modifiche (RM)
+==== Ripercussione delle Modifiche (MDP-RM)
 Misura la percentuale del sistema che è stato affetto dalle modifiche apportate.
 
 ==== Tabella metriche manutenibilità
@@ -396,7 +396,7 @@ Condotti insieme al committente, servono a garantire che il prodotto finale sia 
 = Cruscotto di monitoraggio della qualità <cruscotto>
 //Rimane da fare resoconto a fine periodo RTB
 
-== Estimated at Completion (EAC)
+== Estimated at Completion (MPC-EAC)
 L'*EAC* rappresenta una stima aggiornata del costo totale previsto per completare un progetto, basata sui costi sostenuti e sulle previsioni future.
 
 #plotGrafico4(
@@ -418,7 +418,7 @@ Questi dati sottolineano il continuo automiglioramento che il team ha sempre cer
 
 
 #pagebreak()
-== Earned Value (EV) e Planned Value (PV)
+== Earned Value (MPC-EV) e Planned Value (MPC-PV)
 - *Earned Value* (*EV*): Indica il valore del lavoro effettivamente completato in termini di _budget_ approvato.
 - *Planned Value* (*PV*): Rappresenta il valore pianificato del lavoro che avrebbe dovuto essere completato entro un determinato momento.
 
@@ -438,7 +438,7 @@ Questi dati sottolineano il continuo automiglioramento che il team ha sempre cer
 Dal grafico si può notare che il valore dell'*EV* è cresciuto pari pari al valore del *PV*, indicando che il lavoro svolto è stato effettivamente eseguito secondo la pianificazione.
 
 #pagebreak()
-== Actual Cost (AC) e Estimate to Completion (ETC)
+== Actual Cost (MPC-AC) e Estimate to Completion (MPC-ETC)
 - *Actual Cost* (*AC*): Costo reale sostenuto per il lavoro eseguito fino a un determinato punto.
 - *Estimate to Completion* (*ETC*): Stima dei costi rimanenti necessari per completare il progetto.
 
@@ -456,31 +456,31 @@ Dal grafico si può notare che il valore dell'*EV* è cresciuto pari pari al val
 Dal grafico si nota che il valore dell'*AC* è cresciuto in modo proporzionale alla decrescita dell'*ETC*, ed entrambi sono rimasti per tutto il tempo al di sotto del valore desiderato, cioè quello dell'*EAC*.
 
 #pagebreak()
-== Budget Variance (BV) e Schedule Variance (SV)
+== Budget Variance (MPC-BV) e Schedule Variance (MPC-SV)
 - *Budget Variance* (*BV*): Differenza tra il valore guadagnato (EV) e il costo reale (AC), indica se il progetto è sotto o sopra il _budget_.
 - *Schedule Variance* (*SV*): Differenza tra il valore guadagnato (EV) e il valore pianificato (PV), mostra se il progetto è in anticipo o in ritardo rispetto alla pianificazione.
 
 #plotGrafico5(
   "Tabella BV e SV",
-  ((0, 12740-59.72), (1, 12740-110.83), (2, 12740-263.50), (3, 12740-266.89), (4, 12740-123.33)),
+  ((0, -59.72), (1, -110.83), (2, -263.50), (3, -266.89), (4, -123.33)),
   "BV",
-  ((0, 12740+10.11), (1, 12740+30.33), (2, 12740+161.78), (3, 12740+111.22), (4, 12740+151.67)),
+  ((0, 10.11), (1, 30.33), (2, 161.78), (3, 111.22), (4, 151.67)),
   "SV",
-  ((0, 14014), (1, 14014), (2, 14014), (3, 14014), (4, 14014)),
+  ((0, 637), (1, 637), (2, 637), (3, 637), (4, 637)),
   "Limite massimo accettabile",
-  ((0, 11466), (1, 11466 ), (2, 11466), (3, 11466), (4, 11466)),
+  ((0, -637), (1, -637 ), (2, -637), (3, -637), (4, -637)),
   "Limite minimo accettabile",
-  ((0, 12740), (1, 12740 ), (2, 12740), (3, 12740), (4, 12740)),
+  ((0, 0), (1, 0 ), (2, 0), (3, 0), (4, 0)),
   "Valore ottimo",
 )
 
 === RTB
-
+Dal grafico si può notare che le variazioni sono sempre state contenute, rientrando ampiamente nei limiti accettabili. E comunque non discostandosi molto dal valore ottimo.
 
 
 #pagebreak()
-== Requirements stability index (RSI)
-L'*RSI* misura la stabilità dei requisiti del progetto nel tempo, valutando quanto siano stati modificati o aggiornati durante il ciclo di vita.
+== Indice di Stabilità dei Requisiti (MPC-ISR)
+L'*ISR* misura la stabilità dei requisiti del progetto nel tempo, valutando quanto siano stati modificati o aggiornati durante il ciclo di vita.
 
 #plotGrafico3(
   "Tabella RSI",
@@ -493,12 +493,12 @@ L'*RSI* misura la stabilità dei requisiti del progetto nel tempo, valutando qua
 )
 
 === RTB
-Il grafico è per la maggior parte ascendente tranne nella quarta iterazione, dove i requisiti hanno subito una forte modifica dovuta al colloquio con il Professor Cardin, al quale hanno seguito numerose correzioni.
+Il grafico è per la maggior parte ascendente tranne nella quarta iterazione, dove i requisiti hanno subito una forte modifica dovuta al colloquio con il professor Cardin, al quale sono seguite numerose correzioni.
 
-Nell'ultimo periodo, quindi quello relativo alla consegna RTB, si è finalmente raggiunto il valore accettabile dell'RSI.
+Nell'ultimo periodo, quindi quello relativo alla consegna RTB, si è finalmente raggiunto il valore accettabile dell'ISR.
 
 #pagebreak()
-== Indice Gulpease (IG)
+== Indice Gulpease (MPC-IG)
 Indice che valuta la leggibilità dei documenti scritti in italiano.
 
 #plotGrafico7(
@@ -522,11 +522,11 @@ Indice che valuta la leggibilità dei documenti scritti in italiano.
 === RTB
 Si nota che i valori sono sempre sopra al valore accettabile, anche se ancora ben distanti dal valore ottimo. Tuttavia si nota per la maggior parte dei documenti una stabilizzazione del valore, con solo qualche piccola variazione.
 
-I documenti che alla prima iterazione hanno valore pari a zero lo devono alla loro creazione, avvenuta più tardi.
+Il valore nullo di alcuni documenti alla prima iterazione è dovuto alla stesura tardiva degli stessi. Lo sviluppo della documentazione si è infatti svolta parallelamente alle lezioni di teoria del corso.
 
 
 #pagebreak()
-== Correttezza Ortografica (CO)
+== Correttezza Ortografica (MPC-CO)
 Metriche che misurano la presenza di errori ortografici nei documenti, valutando la qualità formale del contenuto.
 
 #plotGrafico7(
@@ -548,24 +548,32 @@ Metriche che misurano la presenza di errori ortografici nei documenti, valutando
 )
 
 === RTB
-Da questo grafico si nota che tutti i documenti hanno avuto qualche piccolo errore, quasi sempre di battitura, che sono sfuggiti agli occhi attenti dei revisori. Tuttavia, nel quarto sprint, con l'introduzione di uno strumento di _spell checking_ siamo riusciti finalmente a raggiungere il valore ottimo di zero errori per tutti i documenti.
+Da questo grafico si nota che tutti i documenti hanno avuto alcuni difetti ortografici, quasi sempre di battitura. Tuttavia nel quarto _sprint_, con l'introduzione di uno strumento di _spell checking_, siamo riusciti a raggiungere il valore ottimo di zero errori per tutti i documenti.
 
 
 #pagebreak()
-== Percentuale di Metriche Soddisfatte (PMS)
+== Percentuale di Metriche Soddisfatte (MPC-PMS)
 Percentuale di metriche di qualità definite per il progetto che sono state soddisfatte rispetto agli obiettivi prefissati.
 
-// Da fare alla fine
+#plotGrafico3(
+  "Tabella PMS",
+  ((0, 70), (1, 70), (2, 80), (3, 90), (4, 100)),
+  "PMS",
+  ((0, 80), (1, 80), (2, 80), (3, 80), (4, 80)),
+  "Valore accettabile",
+  ((0, 100), (1, 100), (2, 100), (3, 100), (4, 100)),
+  "Valore ottimo",
+)
 
 === RTB
-// Tabella RTB
+Possiamo notare come la percentuale di metriche soddisfatte sia quasi sempre cresciuta, ma comunque mai diminuita, raggiungendo addirittura il valore ottimo nell'ultimo _sprint_. Questo simboleggia una grande attenzione da parte del team nel perseguire la qualità del progetto, tramite autovalutaizone ed automiglioramento.
 
 
 #pagebreak()
-== Efficienza Temporale (ET)
+== Efficienza Temporale (MPC-ET)
 Misura l'efficacia nell'utilizzo del tempo per completare le attività, confrontando il tempo effettivamente impiegato con quello previsto.
 
 === RTB
-Questa metrica è stata decisa tardi, nell'ultimo sprint. Risulta quindi impossibile recuperare i valori passati e crearne un grafico, anche se siamo confidenti nel dire che il valore è progressivamente diminuito, in quanto, il team ha imparato sempre più a lavorare asincronamente, massimizzando il tempo produttivo. Il team confida sarà una metrica utile in fase di PB.
+La metriche in esame è stata confermata solo al termine del quarto _sprint_. Risulta quindi impossibile recuperare i valori passati e crearne un grafico, anche se siamo confidenti nel dire che il valore è progressivamente diminuito. Il _team_ ha imparato sempre più a lavorare asincronamente massimizzando il tempo produttivo. Il gruppo confida sarà una metrica utile in fase di PB.
 
 L'unico valore che possiamo dare di questa metrica è quindi quello dell'ultima iterazione, pari ad un rapporto di 1.8, che è ampiamente al di sotto del valore accettabile di 3 ma ancora al di sopra del valore desiderabile di 1.
