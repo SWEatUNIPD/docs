@@ -557,6 +557,7 @@
         x-ticks: ((0, [Sprint 1]), (1, [Sprint 2]), (2, [Sprint 3]), (3, [Sprint 4]), (4, [Sprint 5])),
         x-grid: true, y-grid: true,
         legend: "south", 
+        y-min: 0,
       {      
         plot.add(data1, label: nomeData1, mark: "o")
         plot.add(data2, label: nomeData2, mark: "o")
