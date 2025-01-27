@@ -6,7 +6,7 @@
   content: content
 )
 
-Con la presente il gruppo SWE@ intende comunicarvi la propria partecipazione alla prima revisione del progetto denominata "_Requirements and Technology Baseline_" in data *27/01/2025* per il progetto _Near You - Smart Custom Advertising Platform_ erogato dall'azienda proponente SYnc Lab S.r.l..
+Con la presente il gruppo SWE@ intende comunicarvi la propria partecipazione alla prima revisione del progetto denominata "_Requirements and Technology Baseline_" in data *29/01/2025* per il progetto _Near You - Smart Custom Advertising Platform_ erogato dall'azienda proponente SYnc Lab S.r.l..
 
 #v(10pt)
 Tutta la documentazione viene resa disponibile pubblicamente all'indirizzo
