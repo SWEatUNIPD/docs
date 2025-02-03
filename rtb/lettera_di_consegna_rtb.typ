@@ -1,12 +1,12 @@
 #import "/templates/template.typ": *
 
 #show: content=>Lettera(
-  data: "27 gennaio 2025",
+  data: "3 Febbraio 2025",
   titolo: "Lettera di consegna RTB",
   content: content
 )
 
-Con la presente il gruppo SWE@ intende comunicarvi la propria partecipazione alla prima revisione del progetto denominata "_Requirements and Technology Baseline_" in data *29/01/2025* per il progetto _Near You - Smart Custom Advertising Platform_ erogato dall'azienda proponente SYnc Lab S.r.l..
+Con la presente il gruppo SWE@ intende comunicarvi la propria partecipazione alla prima revisione del progetto denominata "_Requirements and Technology Baseline_" a seguito dell'approvazione del Prof. Cardin per il progetto _Near You - Smart Custom Advertising Platform_ erogato dall'azienda proponente SYnc Lab S.r.l..
 
 #v(10pt)
 Tutta la documentazione viene resa disponibile pubblicamente all'indirizzo
