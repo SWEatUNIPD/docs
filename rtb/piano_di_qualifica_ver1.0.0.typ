@@ -4,29 +4,33 @@
   data: "27 gennaio 2025",
   destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "Sync Lab S.r.l.", "Gruppo SWE@"),
   responsabile: "Riccardo Milan",
-  redattori: ("Davide Martinelli", "Davide Picello"),
+  redattori: ("Davide Martinelli", "Davide Picello", "Klaudio Merja"),
   verificatori: ("Andrea Precoma", "Davide Martinelli", "Davide Marin", "Riccardo Milan"),
   titolo: "Piano di Qualifica",
   uso: "Esterno",
   versioni: (
+    "1.0.1",
+    "05/02/2025",
+    "Klaudio Merja",
+    "Andrea Precoma",
+    [
+      - Correzione dei riferimenti alla documentazione del gruppo
+    ],
     "1.0.0",
     "27/01/2025",
     "Davide Picello",
     "Andrea Precoma",
     [Approvazione versione finale del documento per rilascio in RTB],
-
     "0.3.0",
     "26/01/2025",
     "Davide Picello",
     "Davide Martinelli\nDavide Marin",
-    [- Creazione grafici nel cruscotto di monitoraggio della qualità.], 
-
+    [- Creazione grafici nel cruscotto di monitoraggio della qualità.],
     "0.2.0",
     "10/01/2025",
     "Davide Picello",
     "Davide Martinelli,\nDavide Marin",
     [- Definite le metriche di qualità di processo e di prodotto. Definita la struttura delle specifiche dei _test_ e del cruscotto di monitoraggio della qualità.],
-
     "0.1.0",
     "07/12/2024",
     "Davide Martinelli",
@@ -53,24 +57,22 @@ Nel documento i termini che, alla loro prima occorrenza, vengono contrassegnati 
 == Riferimenti
 
 === Riferimenti normativi
-- Norme di Progetto
+- Norme di Progetto (v1.0.1)\ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/norme_di_progetto_ver1.0.1.pdf")
+- ISO/IEC 12207:1995\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf")
 
 === Riferimenti informativi
+- Glossario (v1.0.0)\ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/glossario_ver1.0.0.pdf")
 - Capitolato d'appalto C4: _NearYou - Smart custom advertising platform_\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
-
-- Glossario
-
 - Lezione T07 - Qualità di prodotto\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T07.pdf")
-
 - Lezione T08 - Qualità di processo\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T08.pdf")
 
-- ISO/IEC 12207:1995\ #formatLink(url: "https://en.wikipedia.org/wiki/ISO/IEC_12207")
-
-/* 
+/*
 - ISO/IEC 9126:2001\ #formatLink(url: "https://en.wikipedia.org/wiki/ISO/IEC_9126")
 
 - ISO/IEC 25010:2011\ #formatLink(url: "https://en.wikipedia.org/wiki/ISO/IEC_25010")
 */
+
+#pagebreak()
 
 = Obiettivi di qualità
 In questa sezione vengono definiti gli obiettivi di qualità che il gruppo si prefigge di raggiungere nell'ambito del progetto, sia per i processi che per il prodotto, sulla base delle metriche definite nel documento Norme di Progetto.
@@ -115,13 +117,12 @@ Stima i costi aggiuntivi necessari per completare il progetto.
 Ricordiamo che il *BAC* rappresenta il _Budget at Completion_, ovvero il costo totale del progetto stabilito in fase di candidatura.
 #figure(
   kind: table,
-  caption: [Valori accettabili e desiderabili per ogni metrica riguardante il processo di fornitura], 
+  caption: [Valori accettabili e desiderabili per ogni metrica riguardante il processo di fornitura],
   table(
     align: center,
     columns: 4,
     fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
     table.header[*Metrica*][*Nome*][*Valore accettabile*][*Valore desiderabile*],
-    
     [MPC-PV], [_Planned value_], [$≥ 0$], [$≤$ BAC],
     [MPC-EV], [_Earned value_], [$≥ 0$], [$≤$ EAC],
     [MPC-AC], [_Actual cost_], [$≥ 0$], [$≤$ EAC],
@@ -130,7 +131,7 @@ Ricordiamo che il *BAC* rappresenta il _Budget at Completion_, ovvero il costo t
     [MPC-SV], [_Schedule variance_], [$± 5%$ rispetto BAC], [$0%$],
     [MPC-BV], [_Budget variance_], [$± 5%$ rispetto BAC], [$0%$],
     [MPC-ETC], [_Estimated to completion_], [$≥ 0$], [$≤$ EAC],
-  )
+  ),
 )
 
 ==== Sviluppo
@@ -142,15 +143,14 @@ Valuta la stabilità dei requisiti nel corso del tempo.
 ===== Tabella metriche sviluppo
 #figure(
   kind: table,
-  caption: [Valori accettabili e desiderabili per ogni metrica riguardante il processo di sviluppo], 
+  caption: [Valori accettabili e desiderabili per ogni metrica riguardante il processo di sviluppo],
   table(
     align: center,
     columns: 4,
     fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
     table.header[*Metrica*][*Nome*][*Valore accettabile*][*Valore desiderabile*],
-    [MPC-ISR], [Indice di Stabilità dei Requisiti], [$≥ 75%$], [$100$%]
-
-  )
+    [MPC-ISR], [Indice di Stabilità dei Requisiti], [$≥ 75%$], [$100$%],
+  ),
 )
 
 === Processi di supporto
@@ -168,15 +168,15 @@ La metrica della Correttezza Ortografica misura il numero di errori grammaticali
 ===== Tabella metriche documentazione
 #figure(
   kind: table,
-  caption: [Valori accettabili e desiderabili per ogni metrica riguardante il processo di documentazione], 
+  caption: [Valori accettabili e desiderabili per ogni metrica riguardante il processo di documentazione],
   table(
     align: center,
     columns: 4,
     fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
     table.header[*Metrica*][*Nome*][*Valore accettabile*][*Valore desiderabile*],
-    [MPC-IG],[Indice Gulpease],[$gt.eq 40$],[$gt.eq 80$],
-    [MPC-CO],[Correttezza Ortografica],[0],[0],
-  )
+    [MPC-IG], [Indice Gulpease], [$gt.eq 40$], [$gt.eq 80$],
+    [MPC-CO], [Correttezza Ortografica], [0], [0],
+  ),
 )
 
 ==== Gestione della qualità
@@ -187,14 +187,14 @@ qualità.
 ===== Tabella metriche gestione della qualità
 #figure(
   kind: table,
-  caption: [Valori accettabili e desiderabili per ogni metrica riguardante il processo di gestione della qualità], 
+  caption: [Valori accettabili e desiderabili per ogni metrica riguardante il processo di gestione della qualità],
   table(
     align: center,
     columns: 4,
     fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
     table.header[*Metrica*][*Nome*][*Valore accettabile*][*Valore desiderabile*],
-    [MPC-PMS],[Percentuale di Metriche Soddisfatte],[$≥ 80%$],[$100%$]
-  )
+    [MPC-PMS], [Percentuale di Metriche Soddisfatte], [$≥ 80%$], [$100%$],
+  ),
 )
 
 === Processi organizzativi
@@ -206,14 +206,14 @@ Questa metrica valuta l'efficienza con cui il tempo disponibile viene impiegato 
 ===== Tabella metriche gestione dei processi
 #figure(
   kind: table,
-  caption: [Valori accettabili e desiderabili per ogni metrica riguardante il processo di gestione dei processi], 
+  caption: [Valori accettabili e desiderabili per ogni metrica riguardante il processo di gestione dei processi],
   table(
     align: center,
     columns: 4,
     fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
     table.header[*Metrica*][*Nome*][*Valore accettabile*][*Valore desiderabile*],
-    [MPC-ET],[Efficienza temporale],[$≤ 3$],[$≤ 1$]
-  )
+    [MPC-ET], [Efficienza temporale], [$≤ 3$], [$≤ 1$],
+  ),
 )
 
 == Qualità di prodotto
@@ -240,11 +240,10 @@ Rappresenta la percentuale di requisiti opzionali implementati. Una copertura op
     columns: 4,
     fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
     table.header[*Metrica*][*Nome*][*Valore accettabile*][*Valore desiderabile*],
-    
     [MDP-ROS], [Requisiti obbligatori soddisfatti], [$100\%$], [$100\%$],
     [MDP-RDS], [Requisiti desiderabili soddisfatti], [$≥ 0\%$], [$100\%$],
     [MDP-ROPS], [Requisiti opzionali soddisfatti], [$≥ 0\%$], [$≥ 50\%$],
-  )
+  ),
 )
 
 === Affidabilità
@@ -276,13 +275,12 @@ Indica il numero di fallimenti correttamente riscontrati per unità di dimension
     columns: 4,
     fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
     table.header[*Metrica*][*Nome*][*Valore accettabile*][*Valore desiderabile*],
-    
     [MDP-CC], [_#rifGlossario("Code coverage")_], [$≥ 80\%$], [$100\%$],
     [MDP-BC], [_Branch coverage_], [$≥ 60\%$], [$100\%$],
     [MDP-SC], [_Statement coverage_], [$≥ 60\%$], [$100\%$],
     [MDP-PTCP], [_Passed test cases percentage_], [$≥ 80\%$], [$100\%$],
     [MDP-FD], [_Failure density_], [$100%$], [$100%$],
-  )
+  ),
 )
 
 === Efficienza
@@ -299,9 +297,8 @@ Misura l'efficienza del sistema in termini di utilizzo delle risorse hardware, c
     columns: 4,
     fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
     table.header[*Metrica*][*Nome*][*Valore accettabile*][*Valore desiderabile*],
-    
     [MPD-UR], [Utilizzo risorse], [$≥ 75\%$], [$100\%$],
-  )
+  ),
 )
 
 === Usabilità
@@ -322,10 +319,9 @@ Valuta il tempo necessario a un utente per imparare a utilizzare il _software_. 
     columns: 4,
     fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
     table.header[*Metrica*][*Nome*][*Valore accettabile*][*Valore desiderabile*],
-    
     [MPD-FU], [Facilità di utilizzo], [$≤ 3$ errori], [$0$ errori],
     [MPD-TA], [Tempo di apprendimento], [$≤ 15$ minuti], [$≤ 5$ minuti],
-  )
+  ),
 )
 
 
@@ -360,37 +356,36 @@ Misura la percentuale del sistema che è stato affetto dalle modifiche apportate
     columns: 4,
     fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
     table.header[*Metrica*][*Nome*][*Valore accettabile*][*Valore desiderabile*],
-    
     [MPD-CCM], [Complessità ciclomatica per metodo], [$≤ 5$], [$≤ 3$],
     [MPD-CS], [_Code smell_], [$0$], [$0$],
     [MPD-COC], [_Coefficient of coupling_], [$≤ 30\%$], [$≤ 10\%$],
     [MPD-SFI], [Structure _fan in_], [da determinare], [da determinare],
     [MPD-SFO], [Structure _fan out_], [da determinare], [da determinare],
     [MPD-RM], [Ripercussione delle Modifiche], [da determinare], [da determinare],
-  )
+  ),
 )
 
 = Specifiche dei test
 Questa sezione descrive le attività di _testing_ effettuate per garantire che i vincoli definiti nei requisiti siano pienamente soddisfatti. In linea con quanto specificato nel documento Norme di Progetto, il piano di _test_ adotta un approccio strutturato e si articola nelle seguenti categorie.
 
 //== Nomenclatura
-// Aggiungere parte relativa alla nomenclatura 
+// Aggiungere parte relativa alla nomenclatura
 
 == _Test_ di unità
 Mirano a verificare il funzionamento corretto dei componenti _software_ più piccoli e indipendenti, sviluppati principalmente nella fase di progettazione.
-// Da completare con tutti i test 
+// Da completare con tutti i test
 
 == _Test_ di integrazione
 Successivi ai _test_ di unità, hanno lo scopo di verificare l'interazione tra diverse unità _software_ per garantire che lavorino in sinergia per compiti specifici.
-// Da completare con tutti i test 
+// Da completare con tutti i test
 
 == _Test_ di sistema
 Si concentrano sul sistema completo, assicurando che tutte le specifiche funzionali, prestazionali e di qualità concordate siano rispettate.
-// Da completare con tutti i test 
+// Da completare con tutti i test
 
 == _Test_ di accettazione
 Condotti insieme al committente, servono a garantire che il prodotto finale sia conforme alle aspettative e ai requisiti contrattuali, permettendone il rilascio definitivo.
-// Da completare con tutti i test 
+// Da completare con tutti i test
 
 #pagebreak()
 = Cruscotto di monitoraggio della qualità <cruscotto>
@@ -401,7 +396,7 @@ L'*EAC* rappresenta una stima aggiornata del costo totale previsto per completar
 
 #plotGrafico4(
   "Tabella EAC",
-  ((0, 13620.42), (1, 13402.94), (2, 13292.46), (3, 13374.76), (4,12648.46)),
+  ((0, 13620.42), (1, 13402.94), (2, 13292.46), (3, 13374.76), (4, 12648.46)),
   "EAC",
   ((0, 12740), (1, 12740), (2, 12740), (3, 12740), (4, 12740)),
   "BAC (valore ideale)",
@@ -428,7 +423,7 @@ Questi dati sottolineano il continuo automiglioramento che il team ha sempre cer
   "EV",
   ((0, 717.89), (1, 1547.00), (2, 2345.78), (3, 3124.33), (4, 3943.33)),
   "PV",
-  ((0, 13620.42), (1, 13402.94), (2, 13292.46), (3, 13374.76), (4,12648.46)),
+  ((0, 13620.42), (1, 13402.94), (2, 13292.46), (3, 13374.76), (4, 12648.46)),
   "EAC",
   ((0, 12740), (1, 12740), (2, 12740), (3, 12740), (4, 12740)),
   "BAC",
@@ -448,7 +443,7 @@ Dal grafico si può notare che il valore dell'*EV* è cresciuto pari pari al val
   "AC",
   ((0, 12852.92), (1, 11775.44), (2, 10844.96), (3, 10094.76), (4, 8733.46)),
   "ETC",
-  ((0, 13620.42), (1, 13402.94), (2, 13292.46), (3, 13374.76), (4,12648.46)),
+  ((0, 13620.42), (1, 13402.94), (2, 13292.46), (3, 13374.76), (4, 12648.46)),
   "EAC",
 )
 
@@ -468,9 +463,9 @@ Dal grafico si nota che il valore dell'*AC* è cresciuto in modo proporzionale a
   "SV",
   ((0, 637), (1, 637), (2, 637), (3, 637), (4, 637)),
   "Limite massimo accettabile",
-  ((0, -637), (1, -637 ), (2, -637), (3, -637), (4, -637)),
+  ((0, -637), (1, -637), (2, -637), (3, -637), (4, -637)),
   "Limite minimo accettabile",
-  ((0, 0), (1, 0 ), (2, 0), (3, 0), (4, 0)),
+  ((0, 0), (1, 0), (2, 0), (3, 0), (4, 0)),
   "Valore ottimo",
 )
 

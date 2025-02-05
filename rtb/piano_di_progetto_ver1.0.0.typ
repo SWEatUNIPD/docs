@@ -5,10 +5,25 @@
   destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "Sync Lab S.r.l.", "Gruppo SWE@"),
   responsabile: "Davide Marin",
   redattori: ("Andrea Precoma", "Davide Martinelli", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
-  verificatori: ("Andrea Perozzo", "Andrea Precoma", "Davide Marin", "Davide Martinelli", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
+  verificatori: (
+    "Andrea Perozzo",
+    "Andrea Precoma",
+    "Davide Marin",
+    "Davide Martinelli",
+    "Davide Picello",
+    "Klaudio Merja",
+    "Riccardo Milan",
+  ),
   titolo: "Piano di Progetto",
   uso: "Esterno",
   versioni: (
+    "1.0.1",
+    "05/02/2025",
+    "Klaudio Merja",
+    "Andrea Precoma",
+    [
+      - Correzione dei riferimenti alla documentazione del gruppo
+    ],
     "1.0.0",
     "26/01/2025",
     "Andrea Precoma",
@@ -16,7 +31,6 @@
     [
       Approvazione per conclusione _milestone_ RTB
     ],
-
     "0.9.0",
     "26/01/2025",
     "Andrea Precoma",
@@ -24,7 +38,6 @@
     [
       - Stesura retrospettiva quinto _sprint_
     ],
-
     "0.8.0",
     "13/01/2025",
     "Andrea Precoma",
@@ -33,43 +46,36 @@
       - Stesura pianificazione quinto _sprint_,
       - Aggiunta immagini dei grafici di Gantt per tutti gli _sprint_
     ],
-
     "0.7.0",
     "09/01/2025",
     "Riccardo Milan",
     "Davide Martinelli\nDavide Picello",
     [- Stesura retrospettiva quarto _sprint_],
-
     "0.6.0",
     "24/12/2024",
     "Riccardo Milan",
     "Davide Martinelli\nDavide Picello",
     [- Stesura pianificazione quarto _sprint_],
-
     "0.5.0",
     "23/12/2024",
     "Davide Martinelli",
     "Klaudio Merja\nDavide Marin",
     [- Stesura retrospettiva terzo _sprint_],
-
     "0.4.0",
     "17/12/2024",
     "Davide Martinelli",
     "Klaudio Merja\nDavide Marin",
     [- Stesura pianificazione terzo _sprint_],
-
     "0.3.0",
     "14/12/2024",
     "Davide Picello",
     "Andrea Precoma\nRiccardo Milan",
     [- Stesura retrospettiva secondo _sprint_],
-
     "0.2.0",
     "1/12/2024",
     "Davide Picello",
     "Andrea Precoma\nRiccardo Milan",
     [- Stesura pianificazione secondo _sprint_],
-
     "0.1.1",
     "03/12/2024",
     "Klaudio Merja",
@@ -77,7 +83,6 @@
     [
       - Generazione dei grafici automatica
     ],
-    
     "0.1.0",
     "27/11/2024",
     "Klaudio Merja",
@@ -118,9 +123,10 @@ sottolineato e seguito dalla lettera g posta ad apice (e.g. #rifGlossario("termi
 
 == Riferimenti
 === Riferimenti normativi
-- Norme di Progetto
+- Norme di Progetto (v1.0.1)\ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/norme_di_progetto_ver1.0.1.pdf")
 - Regolamento del progetto didattico\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")
 === Riferimenti informativi
+- Glossario (v1.0.0)\ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/glossario_ver1.0.0.pdf")
 - Lezione T03 - Il ciclo di vita del software\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T03.pdf")
 - Lezione T04 - Gestione di progetto\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T04.pdf")
 #pagebreak()
@@ -225,7 +231,7 @@ Ogni iterazione è caratterizzata da:
 - *Rischi attesi*: elenco degli identificativi dei rischi che il gruppo si aspetta di incontrare durante lo _sprint_.
 - *Attività dello _sprint_*: attività che il gruppo si impone di raggiungere durante la durata dello _sprint_ al fine di raggiungere determinati obiettivi.
 - *Preventivo orario*: stima delle ore che ciascun membro deve dedicare nelle vesti di un determinato ruolo al fine di concludere le attività. Svolto in fase di pianificazione a inizio _sprint_.
-- *Consuntivo orario e di spesa*: ore produttive dedicate da parte di ogni membro nei vari ruoli ricoperti durante l'iterazione al fine di concludere le attività previste. Sono accompagnate da un breve schema su quanto speso durante l'iterazione. Svolto in fase di conclusione dello _sprint_. 
+- *Consuntivo orario e di spesa*: ore produttive dedicate da parte di ogni membro nei vari ruoli ricoperti durante l'iterazione al fine di concludere le attività previste. Sono accompagnate da un breve schema su quanto speso durante l'iterazione. Svolto in fase di conclusione dello _sprint_.
 - *Retrospettiva*: analisi svolta alla fine di ogni _sprint_ con lo scopo di evidenziare ciò che ha funzionato e ciò che non ha funzionato durante l'iterazione, sottolineando i vari problemi e difficoltà riscontrati che hanno causato rallentamenti, con il fine di migliorare le prossime iterazioni.
 
 Il gruppo si pone come _milestone_ del progetto le due consegne previste dai committenti, nonché i professori Tullio Vardanega e Riccardo Cardin, ovvero:
@@ -295,7 +301,7 @@ Le attività che il gruppo si prefissa di concludere durante queste due settiman
 
 #v(10pt)
 ==== Retrospettiva
-Il primo _sprint_ si è concluso con un bilancio molto positivo, dato il completamento di tutte le attività pianificate. 
+Il primo _sprint_ si è concluso con un bilancio molto positivo, dato il completamento di tutte le attività pianificate.
 
 Ciononostante il gruppo ha riscontrato alcune difficoltà. In particolare, in queste due settimane di lavoro, è apparso evidente l'impatto che le Norme di Progetto hanno avuto all'interno del gruppo, adottando una serie di convenzioni e regole che hanno permesso di uniformare il lavoro svolto dai vari redattori. Tuttavia, essendo la prima versione delle Norme di Progetto, a causa dei frequenti cambiamenti all'interno del documento, si è reso necessario più volte dover rivedere e correggere in corso d'opera alcuni documenti più volte. Nonostante ciò, il gruppo ritiene il lavoro svolto in linea con le aspettative.
 
@@ -319,7 +325,7 @@ Le attività che il _team_ si è prefissato di portare a termine durante il seco
 - Creare una prima versione del simulatore dati.
   - È stato deciso di dedicare la prima settimana dello _sprint_ allo studio e approfondimento delle tecnologie: #rifGlossario("Docker"), #rifGlossario("Apache Kafka"), #rifGlossario("Apache Nifi") e #rifGlossario("PostgreSQL").
   - La seconda settimana sarà invece riservata all'implementazione concreta del simulatore e del _#rifGlossario("database")_ dove verranno salvati i dati generati, grazie all'utilizzo delle tecnologie studiate.
-- Avanzamento nel documento Analisi dei Requisiti, in particolare: 
+- Avanzamento nel documento Analisi dei Requisiti, in particolare:
   - Migliorare i vecchi casi d'uso dopo aver risolto alcuni dubbi in seguito al confronto con l'azienda.
   - Scrivere nuovi casi d'uso.
 - Continuazione stesura Piano di Progetto, in particolare:
@@ -414,7 +420,7 @@ Le attività che il _team_ si è prefissato di portare a termine durante il terz
   - Verifica
   - Validazione
   - Processi organizzativi
-- In concomitanza con l'attività precedente si procederà con lo studio di possibili metriche per la valutazione della qualità, che andranno poi al vaglio del gruppo. 
+- In concomitanza con l'attività precedente si procederà con lo studio di possibili metriche per la valutazione della qualità, che andranno poi al vaglio del gruppo.
 - Aggiornamento della sezione "Processi primari" nel documento Norme di Progetto. Nello specifico si dovrà normare la descrizione dei casi d'uso.
 - Continuazione del documento di Analisi dei Requisiti, che per questo _sprint_ si concentrerà sullo studio di nuovi casi d'uso con l'obiettivo raccogliere eventuali nuovi dubbi da poter chiarire durante il ricevimento con il professor Cardin (previsto per il 19/12/2024).
 - Studio della fattibilità di creare uno _#rifGlossario("stream processor") custom_ sfruttando #rifGlossario("Spring"), possibilmente sviluppandone un prototipo.
@@ -551,7 +557,7 @@ Le attività che il _team_ si è prefissato di portare a termine durante il quar
 
 #v(10pt)
 ==== Retrospettiva
-Il quarto _sprint_ si è concluso con risultati molto soddisfacenti in termini di qualità del materiale prodotto, ma a causa del rischio atteso #link(<RO-4>)[RO-4] dovuto alle festività occorse durante lo _sprint_, le ultime attività pianificate sono terminate con due giorni di ritardo. 
+Il quarto _sprint_ si è concluso con risultati molto soddisfacenti in termini di qualità del materiale prodotto, ma a causa del rischio atteso #link(<RO-4>)[RO-4] dovuto alle festività occorse durante lo _sprint_, le ultime attività pianificate sono terminate con due giorni di ritardo.
 
 Tutti i verbali sono stati redatti, verificati e approvati tempestivamente e lo script per il calcolo dell'indice Gulpease è stato completato e funziona correttamente.
 

@@ -25,6 +25,13 @@
   titolo: "Norme di Progetto",
   uso: "Interno",
   versioni: (
+    "1.0.1",
+    "05/02/2025",
+    "Klaudio Merja",
+    "Andrea Precoma",
+    [
+      - Correzione dei riferimenti alla documentazione del gruppo
+    ],
     "1.0.0",
     "26/01/2025",
     "Davide Marin",
@@ -127,7 +134,7 @@ La prima occorrenza di un termine definito all'interno del glossario presente al
 - Regolamento del progetto didattico\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")
 - ISO/IEC 12207:1995\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf")
 === Riferimenti informativi
-- Glossario
+- Glossario (v1.0.0)\ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/glossario_ver1.0.0.pdf")
 - Capitolato C4 (Sync Lab)\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
 - Lezione T07 - Qualità del software \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T07.pdf")
 - Lezione T08 - Qualità di processo \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T08.pdf")
