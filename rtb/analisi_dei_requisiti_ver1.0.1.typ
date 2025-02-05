@@ -25,6 +25,13 @@
   titolo: "Analisi dei Requisiti",
   uso: "Esterno",
   versioni: (
+    "1.0.1",
+    "05/02/2025",
+    "Klaudio Merja",
+    "Andrea Precoma",
+    [
+      - Correzione dei riferimenti alla documentazione del gruppo
+    ],
     "1.0.0",
     [24/01/2025],
     "Davide Picello\nKlaudio Merja",
@@ -120,12 +127,12 @@ sottolineato e seguito dalla lettera g posta ad apice (e.g. #rifGlossario("termi
 
 == Riferimenti
 === Riferimenti normativi
-- Norme di Progetto
+- Norme di Progetto (v1.0.1)\ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/norme_di_progetto_ver1.0.1.pdf")
 - Regolamento del progetto didattico\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")
 - Capitolato C4 (Sync Lab)\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
 
 === Riferimenti informativi
-- Glossario
+- Glossario (v1.0.0)\ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/glossario_ver1.0.0.pdf")
 - T5 - Analisi dei Requisiti\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf")
 - P2 - I Diagrammi dei Casi d'Uso\ #formatLink(url: "https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi%20Use%20Case.pdf")
 #pagebreak()
