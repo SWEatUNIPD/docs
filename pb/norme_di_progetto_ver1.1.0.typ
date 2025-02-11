@@ -484,7 +484,7 @@ I documenti vengono approvati solo al termine del proprio ciclo di vita. In part
 === Nomenclatura
 Per la nomenclatura di tutti i file e cartelle si è scelto lo stile _snake case_ ad eccezione delle date, scritte in formato YYYY-MM-DD per mantenere l'ordine cronologico, separate dal trattino.
 
-Le cartelle sono divise per _milestone_ (candidatura, RTB e PB) ciascuna contenente i verbali interni ed esterni e i documenti del progetto prodotti nel rispettivo periodo. I documenti si dividono quindi in tre categorie:
+Le cartelle sono divise per _milestone_ (candidatura, RTB e PB) ciascuna contenente i verbali interni ed esterni e i documenti del progetto prodotti nel rispettivo periodo. I documenti si dividono quindi nelle seguenti tipologie:
 - *documenti soggetti a ciclo di vita*: [nome]\_ver[X.Y.Z].
 - *documenti non soggetti a ciclo di vita*:
   - *verbali*: [VI/VE]\_[YYYY-MM-DD] dove VI e VE indicano rispettivamente verbali interni ed esterni.
