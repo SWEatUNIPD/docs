@@ -418,7 +418,6 @@ Ogni documento prodotto è costituito dalle seguenti sezioni.
 - *Responsabile*
 - *Redattore*
 - *Verificatore*
-- *Riassunto del verbale*: Solo per i verbali, un breve sommario di cosa si è trattato durante la riunione.
 
 ==== Registro delle modifiche
 La seconda pagina è dedicata al registro delle modifiche per i documenti che possiedono un ciclo di vita. Vengono quindi esclusi i verbali e le lettere. Le informazioni sono organizzate in una tabella in ordine cronologico decrescente, quindi con l'ultima modifica effettuata nella prima riga in alto. La tabella riporta i seguenti dati:
