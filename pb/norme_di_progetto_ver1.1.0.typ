@@ -25,6 +25,15 @@
   titolo: "Norme di Progetto",
   uso: "Interno",
   versioni: (
+    "1.1.0",
+    "11/02/2025",
+    "Andrea Precoma",
+    "Andrea Perozzo",
+    [
+      - Rimozione identificativo ORG per attività organizzative
+      - Rimozione del registro delle modifiche e riassunto per i verbali
+      - Cambiamento della nomenclatura dei verbali
+    ],
     "1.0.1",
     "05/02/2025",
     "Klaudio Merja",
@@ -409,10 +418,9 @@ Ogni documento prodotto è costituito dalle seguenti sezioni.
 - *Responsabile*
 - *Redattore*
 - *Verificatore*
-- *Riassunto del verbale*: Solo per i verbali, un breve sommario di cosa si è trattato durante la riunione.
 
 ==== Registro delle modifiche
-La seconda pagina è dedicata al registro delle modifiche. Le informazioni sono organizzate in una tabella in ordine cronologico decrescente, quindi con l'ultima modifica effettuata nella prima riga in alto. La tabella riporta i seguenti dati:
+La seconda pagina è dedicata al registro delle modifiche per i documenti che possiedono un ciclo di vita. Vengono quindi esclusi i verbali e le lettere. Le informazioni sono organizzate in una tabella in ordine cronologico decrescente, quindi con l'ultima modifica effettuata nella prima riga in alto. La tabella riporta i seguenti dati:
 - *Versione*
 - *Data*: La data nella quale è stata apportata l'ultima modifica nel formato DD/MM/YYYY.
 - *Redattori*
@@ -431,11 +439,11 @@ Nei verbali è importante non limitarsi a descrivere cosa si è discusso bensì 
     - *Ora*: Ora di inizio della riunione.
     - *Durata*: Durata della riunione in formato per iscritto (ad esempio 2 ore e 20 minuti).
 - *Conclusioni*: Le conclusioni della riunione con le motivazioni alle scelte prese e una previsione delle azioni future.
-- *Tabella delle decisioni*: Per una descrizione dettagliata consultare la sezione omonima.
+- *Tabella delle decisioni*: Per una descrizione dettagliata consultare la sezione omonima (#link(<tab-dec>)[sez. 3.1.3.5]).
 
 ===== Verbali Interni
 I verbali interni aggiungono le seguenti sezioni:
-- *Partecipanti*: L'elenco dei partecipanti, incluso nella sezione Informazioni generali.
+- *Partecipanti*: L'elenco dei partecipanti, incluso nella sezione "Informazioni generali".
 - *Ordine del giorno*
 
 ===== Verbali Esterni
@@ -445,14 +453,13 @@ I verbali esterni aggiungono le seguenti sezioni:
 - *Sintesi dell'incontro*
 - *Risposte alle domande*
 
-==== Tabella delle decisioni
+==== Tabella delle decisioni <tab-dec>
 Una tabella che racchiude le informazioni necessarie per rintracciare gli elementi nel _backlog_. Sono riportati i seguenti dati:
 - *ID*: Identificativo della decisione:
   - *[X][ID _issue_]* nel caso fosse rintracciabile mediante _issue_ (deve essere fornito un collegamento alla stessa) dove l'ID è scritto con quattro cifre. la X indica una lettera che identifica univocamente la #rifGlossario("GitHub") _repository_ alla quale è legata la _issue_:
     - *D*: docs
     - *S*: sweatunipd.github.io
     - *N*: NearYou
-  - *ORG* nel caso fosse una decisione di natura organizzativa, ad esempio contattare il proponente.
 - *Assegnatari*: Il membro del gruppo incaricato di svolgere quel compito. Si assegna "Gruppo" nel caso in cui coinvolgesse tutti i membri.
 - *Descrizione*: Il titolo della _issue_ se esistente, altrimenti una breve descrizione delle azioni da compiere.
 
@@ -477,10 +484,11 @@ I documenti vengono approvati solo al termine del proprio ciclo di vita. In part
 === Nomenclatura
 Per la nomenclatura di tutti i file e cartelle si è scelto lo stile _snake case_ ad eccezione delle date, scritte in formato YYYY-MM-DD per mantenere l'ordine cronologico, separate dal trattino.
 
-Le cartelle sono divise per _milestone_ (candidatura, RTB e PB) ciascuna contenente i verbali interni ed esterni, il Piano di Progetto, il Piano di Qualifica, le Norme di Progetto e il Glossario. I documenti si dividono quindi in tre categorie:
-- *verbali*: [VI/VE]\_[YYYY-MM-DD]\_ver[X.Y.Z] dove VI e VE indicano rispettivamente verbali interni ed esterni.
+Le cartelle sono divise per _milestone_ (candidatura, RTB e PB) ciascuna contenente i verbali interni ed esterni e i documenti del progetto prodotti nel rispettivo periodo. I documenti si dividono quindi nelle seguenti tipologie:
 - *documenti soggetti a ciclo di vita*: [nome]\_ver[X.Y.Z].
-- *documenti non soggetti a ciclo di vita*: [nome].
+- *documenti non soggetti a ciclo di vita*:
+  - *verbali*: [VI/VE]\_[YYYY-MM-DD] dove VI e VE indicano rispettivamente verbali interni ed esterni.
+  - *lettere*: [nome].
 
 === Stile dei titoli
 I titoli dei documenti devono seguire le seguenti indicazioni:
