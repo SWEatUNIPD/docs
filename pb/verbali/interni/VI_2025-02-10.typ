@@ -11,7 +11,7 @@
 )
 
 = Ordine del giorno
-La riunione interna, svoltasi dopo il #rifGlossario("SAL") con l'azienda proponente per l'inizio del sesto _#rifGlossario("sprint")_, ha come principale obiettivo quello di fissare le attività necessarie ad aggiornare le norme di lavoro e correggere la documentazione secondo indicazioni dei professori dopo i colloqui della RTB.
+La riunione interna, svoltasi dopo il #rifGlossario("SAL") con l'azienda proponente per l'inizio del sesto _#rifGlossario("sprint")_, ha come principale obiettivo quello di fissare le attività necessarie ad aggiornare le norme di lavoro e correggere la documentazione in accordo con le indicazioni date dai professori dopo i colloqui della RTB.
 
 == Modalità di scrittura dei verbali
 Dopo il _#rifGlossario("feedback")_ ricevuto dal professor Vardanega in seguito al colloquio RTB, abbiamo rimosso la tabella del _changelog_ dal _template_ dei verbali e aggiornato la convenzione sui nomi di quest'ultimi, in quanto sono documenti di lavoro e l'ultima versione sovrascrive tutte quelle prima nella storia. Inoltre d'ora in poi gli unici destinatari dei verbali interni saranno i componenti del gruppo e non ci sarà più la sezione riassunto, dato che il verbale è già di per sé un riassunto. La sezione ordine del giorno dovrà precedere ogni altra sezione e abbiamo deciso di non tracciare più le decisioni "organizzative", in quanto creano confusione non essendo direttamente tracciabili.
