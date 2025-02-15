@@ -20,7 +20,7 @@ Dopo il _#rifGlossario("feedback")_ ricevuto dal professor Vardanega in seguito 
 Per quanto riguarda la _repo_ documentale, abbiamo deciso di renderla più navigabile, di nascondere le lettere e di riordinare i documenti dai più importanti ai meno importanti.
 
 == Aggiornamento convenzione per approvazione dei documenti
-D'ora in poi, l'approvazione che coincide con lo scatto di versione _major_ dei documenti, verrà eseguita in concomitanza con l'ultimo cambiamento avvenuto nella tabella del _changelog_, evitando così di avere una riga della tabella senza cambiamenti, solo per indicare l'approvazione del documento.
+D'ora in poi l'approvazione, che coincide con lo scatto di versione nella _major_ dei documenti, verrà eseguita in concomitanza con l'ultimo cambiamento avvenuto nella tabella del _changelog_, evitando così di avere una riga della tabella senza cambiamenti, solo per indicare l'approvazione del documento.
 
 == Correzioni Analisi dei Requisiti
 In ultima, ma non per importanza, è fondamentale sistemare i casi d'uso e i requisiti secondo indicazioni ricevute dal professor Cardin nel colloquio RTB.
