@@ -23,7 +23,7 @@ Per quanto riguarda la _repo_ documentale, abbiamo deciso di renderla più navig
 D'ora in poi l'approvazione, che coincide con lo scatto di versione nella _major_ dei documenti, verrà eseguita in concomitanza con l'ultimo cambiamento avvenuto nella tabella del _changelog_, evitando così di avere una riga della tabella senza cambiamenti, solo per indicare l'approvazione del documento.
 
 == Correzioni Analisi dei Requisiti
-In ultima, ma non per importanza, è fondamentale sistemare i casi d'uso e i requisiti secondo indicazioni ricevute dal professor Cardin nel colloquio RTB.
+In ultima istanza, ma non per importanza, è fondamentale sistemare i casi d'uso e i requisiti secondo le indicazioni ricevute dal professor Cardin nel colloquio RTB.
 
 = Conclusioni
 Per questo _sprint_ contiamo di rimetterci in regola rispetto alle mancanze e gli errori commessi nella prima _milestone_ di progetto, per poi poter partire con le nuove attività in vista della successiva _milestone_.
