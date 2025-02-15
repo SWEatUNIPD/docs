@@ -670,7 +670,7 @@ In seguito alla valutazione del RTB, il _team_ si è prefissato di apportare le 
 - Correzioni all'Analisi dei Requisiti, in particolare:
   - Arricchire la descrizione di alcuni casi d'uso.
   - Modificare i requisiti in base ai _feedback_ ricevuti.
-
+- Modificare il sito vetrina in base ai _feedback_ ricevuti.
 #v(10pt)
 #figure(
   image("../assets/img/PdP/gantt_s6.png"),
