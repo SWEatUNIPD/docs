@@ -17,7 +17,7 @@ La riunione interna, svoltasi dopo il #rifGlossario("SAL") con l'azienda propone
 Dopo il _#rifGlossario("feedback")_ ricevuto dal professor Vardanega in seguito al colloquio RTB, abbiamo rimosso la tabella del _changelog_ dal _template_ dei verbali e aggiornato la convenzione sui nomi di essi, in quanto sono documenti di lavoro, e l'ultima versione sovrascrive tutte quelle prima nella storia. Inoltre d'ora in poi gli unici destinatari dei verbali interni saranno i componenti del gruppo, e non ci sarà più la sezione riassunto, dato che il verbale è già di per sé un riassunto. La sezione ordine del giorno dovrà precedere ogni altra sezione e abbiamo deciso di non tracciare più le decisioni "organizzative", in quanto creano confusione non essendo direttamente tracciabili.
 
 == Sistemazione del sito vetrina
-Per quanto riguarda la _repo_ documentale, abbiamo deciso di renderla più navigabile, di nascondere le lettere e di riordinare i documenti dai più importanti ai meno importanti.
+Per quanto riguarda l'interfaccia verso l'esterno della _repo_ documentale, abbiamo deciso di renderla più navigabile, di nascondere le lettere di presentazione e di riordinare lungo l'asse verticale i documenti dai più importanti ai meno importanti.
 
 == Aggiornamento convenzione per approvazione dei documenti
 D'ora in poi l'approvazione, che coincide con lo scatto di versione nella _major_ dei documenti, verrà eseguita in concomitanza con l'ultimo cambiamento avvenuto nella tabella del _changelog_, evitando così di avere una riga della tabella senza cambiamenti, solo per indicare l'approvazione del documento.
