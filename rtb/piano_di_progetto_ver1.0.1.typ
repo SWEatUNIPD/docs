@@ -661,7 +661,7 @@ Ricevendo continuamente riscontri positivi da parte della proponente rispetto al
 - *Rischi attesi*: #link(<RO-1>)[RO-1], #link(<RO-2>)[RO-2], #link(<RO-4>)[RO-4]
 
 ==== Attività dello sprint
-In seguito alla valutazione del RTB, il _team_ si è prefissato di apportare le modifiche dovute alla documentazione in base ai _feedback_ ricevuti entro il termine del sesto _sprint_. In particolare, le attività da portare a termine sono le seguenti:
+In seguito alla valutazione del RTB, il _team_ si è prefissato di apportare le modifiche dovute alla documentazione, in base ai _feedback_ ricevuti, entro il termine del sesto _sprint_. In particolare, le attività da portare a termine sono le seguenti:
 - Redazione dei verbali per le rispettive riunioni interne ed esterne.
 - Compilazione del Piano di Progetto con la sezione relativa al sesto _sprint_.
 - Correzioni alle Norme di Progetto, in particolare:
