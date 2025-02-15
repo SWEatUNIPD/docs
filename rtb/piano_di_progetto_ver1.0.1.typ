@@ -4,7 +4,7 @@
   data: "26 gennaio 2025",
   destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "Sync Lab S.r.l.", "Gruppo SWE@"),
   responsabile: "Davide Marin",
-  redattori: ("Andrea Precoma", "Davide Martinelli", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
+  redattori: ("Andrea Precoma", "Davide Marin", "Davide Martinelli", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
   verificatori: (
     "Andrea Perozzo",
     "Andrea Precoma",
@@ -17,6 +17,11 @@
   titolo: "Piano di Progetto",
   uso: "Esterno",
   versioni: (
+    "1.1.0",
+    "15/02/2025",
+    "Davide Marin",
+    "Riccardo Milan",
+    [- Stesura pianificazione sesto _sprint_],
     "1.0.1",
     "05/02/2025",
     "Klaudio Merja",
@@ -647,3 +652,41 @@ In vista della scadenza della _milestone_, e quindi della consegna prevista per 
 Il gruppo è riuscito a terminare tutte le attività pianificate nei tempi stabiliti. Sono state fondamentali riunioni sincrone sia interne che esterne per concludere gli ultimi punti dei documenti. Per garantire il risultato atteso entro la data di consegna RTB il gruppo si è tenuto costantemente aggiornato sulle piattaforme di comunicazione Telegram e Discord.
 
 Ricevendo continuamente riscontri positivi da parte della proponente rispetto all'Analisi dei Requisiti e al PoC abbiamo valutato di concludere la _milestone_ entro il giorno 27 gennaio 2025. È stata concordato il colloquio con il prof. Cardin per il giorno 29 gennaio, quindi le uniche attività da svolgere prima dell'incontro sono produrre due brevi presentazioni, una per il prof. Cardin e l'altra per il prof. Vardanega.
+
+#pagebreak()
+
+=== Sprint 6
+- *Inizio*: 10/02/2025
+- *Fine*: 24/02/2025
+- *Rischi attesi*: #link(<RO-1>)[RO-1], #link(<RO-2>)[RO-2], #link(<RO-4>)[RO-4]
+
+==== Attività dello sprint
+In seguito alla valutazione del RTB, il _team_ si è prefissato di apportare le modifiche dovute alla documentazione in base ai _feedback_ ricevuti entro il termine del sesto _sprint_. In particolare, le attività da portare a termine sono le seguenti:
+- Redazione dei verbali per le rispettive riunioni interne ed esterne.
+- Compilazione del Piano di Progetto con la sezione relativa al sesto _sprint_.
+- Correzioni alle Norme di Progetto, in particolare:
+  - Modificare o eliminare le sezioni non più necessarie.
+- Modifiche ai template dei verbali e del glossario.
+- Correzioni all'Analisi dei Requisiti, in particolare:
+  - Arricchire la descrizione di alcuni casi d'uso.
+  - Modificare i requisiti in base ai _feedback_ ricevuti.
+
+#v(10pt)
+#figure(
+  image("../assets/img/PdP/gantt_s6.png"),
+  caption: [Diagramma di Gantt dello _sprint_ 6],
+)
+
+==== Preventivo orario
+#rendicontazioneOre(
+  (
+    (0, 0, 0, 0, 0, 1),
+    (0, 1, 0, 0, 0, 2),
+    (2, 0, 0, 0, 0, 0),
+    (0, 0, 3, 0, 0, 1),
+    (0, 0, 1, 0, 0, 1),
+    (0, 1, 0, 0, 0, 0),
+    (0, 1, 0, 0, 0, 2),
+  ),
+  caption: [Preventivo delle ore nel quinto _sprint_ per membro e per ruolo],
+)
