@@ -688,5 +688,5 @@ In seguito alla valutazione del RTB, il _team_ si è prefissato di apportare le 
     (0, 1, 0, 0, 0, 0),
     (0, 1, 0, 0, 0, 2),
   ),
-  caption: [Preventivo delle ore nel quinto _sprint_ per membro e per ruolo],
+  caption: [Preventivo delle ore nel sesto _sprint_ per membro e per ruolo],
 )
