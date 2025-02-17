@@ -25,7 +25,7 @@ D'ora in poi l'approvazione, che coincide con lo scatto di versione nella _major
 == Correzioni Analisi dei Requisiti
 In ultima istanza, ma non per importanza, è fondamentale sistemare i casi d'uso e i requisiti secondo le indicazioni ricevute dal professor Cardin nel colloquio RTB.
 
-== Allineamento Norme di progetto
+== Allineamento Norme di Progetto
 Per riflettere tutte le modifiche al _way of working_ e rafforzare i contenuti normativi, si rendono necessarie modifiche al documento Norme di Progetto.
 
 = Conclusioni
