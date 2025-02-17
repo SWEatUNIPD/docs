@@ -25,6 +25,14 @@
   ora: "11:30",
   durata: "mezz'ora",
   partecipantiEsterni: ("Fabio Pallaro", "Andrea Dorigo"),
+  partecipanti: (
+    "Andrea Perozzo",
+    "Andrea Precoma",
+    "Davide Marin",
+    "Davide Martinelli",
+    "Davide Picello",
+    "Klaudio Merja",
+  ),
 )
 
 = Sintesi dell'incontro
