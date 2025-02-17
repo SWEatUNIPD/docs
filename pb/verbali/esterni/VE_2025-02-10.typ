@@ -48,7 +48,7 @@ Un'altra osservazione riguardo l'Analisi dei Requisiti è stata la mancanza di u
 Successivamente è stato spiegato che probabilmente i più grandi errori commessi dal gruppo sono stati durante la fase di presentazione. Purtroppo durante il colloquio con il professor Cardin sono state eccedute le tempistiche di esposizione. Il #rifGlossario("PoC") è stato quindi presentato a generazione percorso già avvenuta, compromettendo l'interattività tipica della presentazione di un prodotto _software_ funzionante.
 
 == Statistiche
-Un'altra critica ricevuta è stata la superficialità con cui abbiamo parlato della sezione relativa alle statistiche, senza averle specificate. Questa sezione, essendo un requisito opzionale, non era ancora stata pensata nel dettaglio.
+Un'altra critica ricevuta è stata la superficialità con cui abbiamo parlato della sezione relativa alle statistiche, senza averle specificate. Questa sezione, essendo un requisito opzionale, non era ancora stata descritta dettagliatamente. Il gruppo ne aveva già pensate alcune, ma non erano state inserite ufficialmente nella documentazione.
 
 Cogliendo l'occasione ne abbiamo discusso direttamente con l'azienda, la quale ci ha lasciato molta libertà senza specificare vincoli stringenti, ma dandoci comunque qualche indicazione.
 
