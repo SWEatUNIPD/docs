@@ -58,4 +58,4 @@ Un'altra idea interessante è quella di capire, tramite i dati #rifGlossario("GP
 
 
 = Conclusioni
-L'azienda ha espresso soddisfazione per come il gruppo ha affrontato i colloqui RTB e del lavoro svolto in vista di questi. Il gruppo si impegna a migliorare tempestivamente le imperfezioni venute a galla durante i colloqui, per mettersi nelle condizioni di iniziare la fase di PB il prima possibile.
+L'azienda ha espresso soddisfazione per come il gruppo ha affrontato i colloqui RTB e per il lavoro svolto nella prima fase del progetto. Il gruppo si impegna a migliorare tempestivamente le imperfezioni venute a galla durante i colloqui, per mettersi nelle condizioni di iniziare la fase di PB il prima possibile.
