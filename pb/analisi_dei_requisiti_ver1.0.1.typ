@@ -203,6 +203,28 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   + L'utente noleggia un mezzo.
   + Il sensore invia a intervalli di tempo regolari i dati di identificazione e localizzazione GPS del mezzo.
+- *Inclusioni*:
+  - Trasmissione coordinate GPS del sensore (#link(<uc1.1>)[UC1.1]).
+  - Trasmissione codice identificativo del sensore (#link(<uc1.2>)[UC1.2]).
+
+=== UC1.1 - Trasmissione coordinate GPS del sensore <uc1.1>
+- *Attore principale*: Sensore.
+- *Precondizioni*:
+  - Il mezzo su cui è montato il sensore ha un noleggio attivo.
+- *Postcondizioni*:
+  - Il sistema riceve le coordinate GPS del sensore.
+- *Scenario principale*: 
+  + Il sensore invia a intervalli regolari le proprie coordinate GPS, corrispondenti a una coppia di valori latitudine-longitudine.
+
+=== UC1.2 - Trasmissione codice identificativo del sensore <uc1.2>
+- *Attore principale*: Sensore.   
+- *Precondizioni*:
+  - Il mezzo su cui è montato il sensore ha un noleggio attivo.
+- *Postcondizioni*:
+  - Il sistema riceve il codice identificativo del sensore.
+- *Scenario principale*: 
+  + Il sensore invia a intervalli regolari il proprio codice identificativo.
+
 #v(20pt)
 #figure(
   image("../assets/use_cases/UC1.png"),
@@ -595,7 +617,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   - Il sistema fa visualizzare sulla mappa una porzione di territorio centrata su un nuovo punto.
 - *Scenario principale*:
   + L'amministratore accede alla mappa sulla _dashboard_.
-  + L'amministratore interagisce con la mappa per spostare il centro della mappa, quindi anche l'intera visuale.
+  + L'amministratore interagisce con la mappa spostandone il centro, e quindi anche l'intera visuale, in una direzione qualsiasi (in inglese _to pan_).
 #v(20pt)
 #figure(
   image("../assets/use_cases/UC28.png"),
@@ -609,12 +631,12 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Precondizioni*:
   - L'amministratore si trova nella _dashboard_ di visualizzazione della mappa.
   - Il sistema tiene traccia della porzione di territorio mostrata dalla mappa sulla _dashboard_.
-  - L'amministratore ha selezionato l'opzione per modificare la porzione di mappa visualizzata.
+  - L'amministratore ha selezionato l'opzione per modificare l'ampiezza della porzione di mappa visualizzata.
 - *Postcondizioni*:
-  - Il sistema fa visualizzare sulla mappa una porzione di territorio più o meno ampia a seconda dell'azione dell'amministratore.
+  - Il sistema fa visualizzare sulla mappa una porzione di territorio più o meno ampia di prima a seconda dell'azione dell'amministratore.
 - *Scenario principale*:
   + L'amministratore accede alla mappa sulla _dashboard_.
-  + L'amministratore interagisce con la mappa per modificare l'ampiezza della visuale.
+  + L'amministratore interagisce con la mappa per modificare l'ampiezza del territorio visibile (in inglese _to zoom_).
 - *Generalizzazioni*:
   - Ampliamento della visuale sulla mappa (#link(<uc30>)[UC30])).
   - Restringimento della visuale sulla mappa (#link(<uc31>)[UC31])).
@@ -629,7 +651,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   - Il sistema fa visualizzare sulla mappa una porzione di territorio più ampia.
 - *Scenario principale*:
   + L'amministratore accede alla mappa sulla _dashboard_.
-  + L'amministratore interagisce con la mappa per ampliare la visuale.
+  + L'amministratore interagisce con la mappa per ampliare la porzione di territorio visualizzato (in inglese _to zoom out_), di conseguenza rimpicciolendone i dettagli.
 
 === UC31 - Restringimento della visuale sulla mappa <uc31>
 - *Attore principale*: Amministratore.
@@ -641,7 +663,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   - Il sistema fa visualizzare sulla mappa una porzione di territorio meno ampia.
 - *Scenario principale*:
   + L'amministratore accede alla mappa sulla _dashboard_.
-  + L'amministratore interagisce con la mappa per restringere la visuale.
+  + L'amministratore interagisce con la mappa per restringere la porzione di territorio visualizzato (in inglese _to zoom in_), di conseguenza ingrandendone i dettagli.
 #v(20pt)
 #figure(
   image("../assets/use_cases/UC29-30-31.png"),
@@ -655,9 +677,10 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Precondizioni*:
   - Il sistema tiene traccia di tutti gli annunci generati per gli utenti dell'amministratore.
 - *Postcondizioni*:
-  - Il sistema espone la sezione dello storico annunci.
+  - Il sistema espone la sezione dedicata alla visualizzazione dello storico annunci e al relativo filtraggio degli stessi.
 - *Scenario principale*:
-  + L'amministratore accede alla sezione dello storico degli annunci.
+  + L'amministratore accede alla sezione dello storico annunci.
+  + L'amministratore visualizza lo storico degli annunci generati e ha accesso alle opzioni di filtraggio degli stessi.
 - *Inclusioni*:
   - Visualizzazione storico degli annunci (#link(<uc33>)[UC33]).
 
@@ -665,11 +688,11 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema tiene traccia di tutti gli annunci generati per gli utenti dell'amministratore.
-  - L'amministratore si trova nella sezione apposita degli annunci.
+  - L'amministratore si trova nella sezione dello storico annunci.
 - *Postcondizioni*:
   - Il sistema espone gli annunci generati fino a quel momento.
 - *Scenario principale*:
-  + Il sistema espone le _preview_ degli annunci con le informazioni principali.
+  + Il sistema espone un insieme di annunci mostrando, per ognuno di essi, una _preview_ con le informazioni principali (UC36).
 - *Generalizzazioni*:
   - Visualizzazione storico annunci in lista (#link(<uc34>)[UC34]).
   - Visualizzazione storico annunci in griglia (#link(<uc35>)[UC35]).
@@ -996,23 +1019,44 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema mantiene delle informazioni utili per una analisi statistica.
-- *Postcondizioni*: il sistema espone la vista dedicata ai grafici.
+- *Postcondizioni*: il sistema espone la vista dedicata ai grafici, dove l'amministratore può visualizzare alcune statistiche generali .
 - *Scenario principale*:
   - L'amministratore entra nella _dashboard_ con i grafici per le analisi sui dati.
-- *Inclusioni*:
-  + Visualizzazione statistiche in grafici (#link(<uc58>)[UC58]).
 
-=== UC58 - Visualizzazione statistiche in grafici <uc58>
+  - L'amministratore può selezionare un punto di interesse per visualizzare delle statistiche relative ad esso.
+- *Inclusioni*:
+  + Visualizzazione statistiche generali (#link(<uc58>)[UC58]).
+  + Visualizzazione statistiche per un certo punto di interesse (#link(<uc69>)[UC69]).
+
+
+=== UC58 - Visualizzazione statistiche generali <uc58>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema mantiene delle informazioni utili per una analisi statistica.
   - Il sistema sta esponendo la vista dedicata ai grafici.
 - *Postcondizioni*:
-  - Il sistema espone dei grafici che rappresentino le informazioni.
+  - Il sistema espone dei grafici riguardanti alcune statistiche generali.
 - *Scenario principale*:
-  + L'amministratore visualizza i grafici con le analisi sui dati.
+  + L'amministratore accede alla sezione grafici.
+  + L'amministratore visualizza i grafici di alcune statistiche generali.
 - *Inclusioni*:
-  - Visualizzazione singolo grafico (#link(<uc59>)[UC59]).
+  - Visualizzazione grafico del numero di annunci generati nelle ultime 24 ore (#link(<uc65>)[UC65]).
+  - Visualizzazione grafico del numero medio di noleggi per mese (#link(<uc68>)[UC68]).
+
+=== UC69 - Visualizzazione statistiche per un certo punto di interesse <uc69>
+- *Attore principale*: Amministratore.
+- *Precondizioni*:
+  - L'amministratore si trova nella _dashboard_ con i grafici per le analisi sui dati.
+  - L'amministratore ha selezionato un punto di interesse.
+- *Postcondizioni*:
+  - Il sistema espone dei grafici che rappresentino le informazioni relative al punto di interesse selezionato.
+- *Scenario principale*: 
+  + L'amministratore seleziona un punto di interesse di cui vuole visualizzarne le statistiche.
+  + L'amministratore visualizza i grafici con le analisi sui dati relative al punto di interesse selezionato.
+- *Inclusioni*:
+  - Visualizzazione grafico del numero di annunci generati vs numero di annunci non generati per un certo punto di interesse nell'ultima settimana (#link(<uc66>)[UC66]).
+  - Visualizzazione grafico sul motivo di mancata generazione annuncio per un certo punto d'interesse (#link(<uc67>)[UC67]).
+
 
 === UC59 - Visualizzazione singolo grafico <uc59>
 - *Attore principale*: Amministratore.
@@ -1024,6 +1068,12 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   - l'amministratore visualizza il grafico con le relative informazioni.
 - *Scenario principale*:
   + L'amministratore visualizza il grafico con le relative informazioni.
+- *Generalizzazioni*:
+  - Visualizzazione grafico del numero di annunci generati nelle ultime 24 ore (#link(<uc65>)[UC65]). // a linee
+  - Visualizzazione grafico del numero di annunci generati vs numero di annunci non generati per un certo punto di interesse nell'ultima settimana (#link(<uc66>)[UC66]). // a barre (istogramma)
+  - Visualizzazione grafico sul motivo di mancata generazione annuncio per un certo punto d'interesse (#link(<uc67>)[UC67]). // a torta
+  // Visualizzazione grafico del numero di annunci generati vs numero di annunci non generati per ciascuna categoria di punto di interesse (nell'ultima settimana/giorno). // a barre (istogramma)
+  - Visualizzazione grafico del numero medio di noleggi per mese (#link(<uc68>)[UC68]). // a linee
 - *Inclusioni*:
   - Visualizzazione titolo del grafico (#link(<uc60>)[UC60]).
   - Visualizzazione etichetta asse delle ascisse e relativi valori (#link(<uc61>)[UC61]).
@@ -1082,6 +1132,54 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   caption: [Diagramma dei casi d'uso UC59, UC60, UC61, UC62 e UC63 (continuazione di Figura 23)],
 )
 
+=== UC65 - Visualizzazione grafico del numero di annunci generati nelle ultime 24 ore <uc65>
+- *Attore principale*: Amministratore.
+- *Precondizioni*:
+  - Il sistema tiene traccia degli annunci generati.
+  - L'amministratore sta visualizzando la sezione dedicata ai grafici.
+- *Postcondizioni*:
+  - Il sistema espone il grafico con il numero di annunci generati per ciascuna ora nell'arco delle ultime 24 ore.
+- *Scenario principale*:
+  + L'amministratore visualizza il grafico con il numero di annunci generati per ciascuna ora nelle ultime 24 ore.
+- *Inclusioni*:
+  - Visualizzazione singolo grafico (#link(<uc59>)[UC59]).
+
+=== UC66 - Visualizzazione grafico del numero di annunci generati vs numero di annunci non generati per un certo punto di interesse nell'ultima settimana <uc66>
+- *Attore principale*: Amministratore.
+- *Precondizioni*:
+  - Il sistema tiene traccia degli annunci generati e non generati per ciascun punto di interesse.
+  - L'amministratore sta visualizzando la sezione dedicata ai grafici.
+- *Postcondizioni*:
+  - Il sistema espone il grafico con il numero di annunci generati e non generati per ciascun punto di interesse nell'ultima settimana.
+- *Scenario principale*: 
+  + L'amministratore visualizza il grafico che mette a confronto il numero di annunci generati con il numero di annunci non generati per un certo punto di interesse nell'arco dell'ultima settimana.
+- *Inclusioni*:
+  - Visualizzazione singolo grafico (#link(<uc59>)[UC59]).
+
+=== UC67 - Visualizzazione grafico sul motivo di mancata generazione annuncio per un certo punto d'interesse <uc67>
+- *Attore principale*: Amministratore.
+- *Precondizioni*:
+  - Il sistema tiene traccia dei dati relativi alla mancata generazione di un annuncio.
+  - L'amministratore sta visualizzando la sezione dedicata ai grafici.
+- *Postcondizioni*:
+  - Il sistema espone il grafico che mette a confronto, per un certo punto d'interesse, il numero di annunci non generati per mancato interesse (UC) con il numero di annunci non generati perché l'utente è già stato raggiunto di recente (UC).
+- *Scenario principale*:
+  + L'amministratore visualizza il grafico che mette a confronto la frequenza delle due motivazioni per cui il sistema non ha generato un annuncio per un certo punto d'interesse.
+- *Inclusioni*:
+  - Visualizzazione singolo grafico (#link(<uc59>)[UC59]).
+
+=== UC68 - Visualizzazione grafico del numero medio di noleggi per mese <uc68>
+- *Attore principale*: Amministratore.
+- *Precondizioni*:
+  - Il sistema tiene traccia dei noleggi effettuati.
+  - L'amministratore sta visualizzando la sezione dedicata ai grafici.
+- *Postcondizioni*:
+  - Il sistema espone il grafico con il numero medio di noleggi che vengono effettuati in ciascun mese dell'anno.
+- *Scenario principale*: 
+  + L'amministratore visualizza il grafico che mostra il numero medio di noleggi che vengono effettuati in ciascun mese dell'anno solare.
+- *Inclusioni*:
+  - Visualizzazione singolo grafico (#link(<uc59>)[UC59]).
+
 #pagebreak()
 
 = Requisiti
@@ -1105,7 +1203,7 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
 === Requisiti funzionali
 #table(
   align: (center, left, center),
-  columns: (0.6fr, 3fr, 0.9fr),
+  columns: (0.6fr, 3fr, 1fr),
   table.header([*Codice*], [*Descrizione*], [*Fonti*]),
   [ROF-1],
   [Il sensore deve trasmettere i suoi dati di identificazione e localizzazione al sistema a intervalli regolari.],
@@ -1236,38 +1334,57 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
   [ROF-32],
   [L'amministratore deve poter visualizzare il messaggio di errore "Generazione impossibile dell'annuncio" nel caso in cui il sistema non sia in grado di stabilire una connessione e comunicare con il servizio di LLM, non permettendo così la trasmissione e la ricezione di dati da parte di quest'ultimo.],
   [#link(<uc56>)[UC56]\ Riunioni interne],
+
+  [ROF-33],
+  [Creazione di un generatore di dati GPS per simulare il funzionamento di un sensore che interagisce col sistema.],
+  [Capitolato],
+
+  [ROF-34],
+  [Il generatore deve generare dei percorsi che siano realistici, ovvero che seguano le varie strade, vie e piste ciclabili che una bicicletta può percorrere.],
+  [Capitolato],
 )
 === Requisiti di qualità
 #table(
   align: (center, left, center),
-  columns: (0.6fr, 3fr, 0.9fr),
+  columns: (0.6fr, 3fr, 1fr),
   table.header([*Codice*], [*Descrizione*], [*Fonti*]),
   [ROQ-1],
   [Superamento dei _test_ che dimostrano il corretto funzionamento dei servizi e delle funzionalità, garantendo un _#rifGlossario("code coverage")_ dell'80% o più e correlati da _report_.],
   [Capitolato],
+
+  [ROQ-2],
+  [Rispetto delle norme descritte nel documento Norme di Progetto (v2.0.0).],
+  [Riunioni interne,\ Norme di Progetto],
+
+  [ROQ-3],
+  [Rispetto dei vincoli sulle metriche stabiliti nel documento Piano di Qualifica (v2.0.0).],
+  [Decisione interna,\ Piano di Qualifica],
+
+  [ROQ-4],
+  [Deve essere consegnato un Manuale Utente che illustri le funzionalità del sistema e come utilizzarle.],
+  [Capitolato],
+
+  [ROQ-5],
+  [Viene richiesta la documentazione riguardante le scelte implementative e progettuali effettuate e le relative motivazioni.], // specifica tecnica
+  [Capitolato],
+
 )
 === Requisiti di vincolo
 #table(
   align: (center, left, center),
-  columns: (0.6fr, 3fr, 0.9fr),
+  columns: (0.6fr, 3fr, 1fr),
   table.header([*Codice*], [*Descrizione*], [*Fonti*]),
+
+  // TODO: Aggiungere versioni dei browser
   [ROV-1],
-  [Creazione di un generatore di dati GPS per simulare il funzionamento di un sensore che interagisce col sistema.],
-  [Capitolato],
-
-  [ROV-2],
-  [Il generatore deve generare dei percorsi che siano realistici, ovvero che seguano le varie strade, vie e piste ciclabili che una bicicletta può percorrere.],
-  [Capitolato],
-
-  [ROV-3],
-  [Viene richiesta la documentazione riguardante le scelte implementative e progettuali effettuate e le relative motivazioni.],
-  [Capitolato],
+  [Il sistema, essendo accessibile puramente via web, deve garantire la compatibilità con l'ultima versione dei principali browser in commercio: Google Chrome, Mozilla Firefox, Microsoft Edge e Safari.],
+  [Riunioni interne],
 )
 == Requisiti desiderabili
 === Requisiti funzionali
 #table(
   align: (center, left, center),
-  columns: (0.6fr, 3fr, 0.9fr),
+  columns: (0.6fr, 3fr, 1fr),
   table.header([*Codice*], [*Descrizione*], [*Fonti*]),
   [RDF-1],
   [L'amministratore deve essere in grado di accedere alla sezione dedicata allo storico degli annunci generati all'interno della _dashboard_.],
@@ -1349,36 +1466,134 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
 === Requisiti funzionali
 #table(
   align: (center, left, center),
-  columns: (0.6fr, 3fr, 0.9fr),
+  columns: (0.6fr, 3fr, 1fr),
   table.header([*Codice*], [*Descrizione*], [*Fonti*]),
   [RFF-1],
   [L'amministratore deve poter visualizzare la sezione dedicata ai grafici all'interno della _dashboard_ del sistema.],
   [#link(<uc57>)[UC57]\ Riunioni esterne],
 
   [RFF-2],
-  [L'amministratore deve poter visualizzare delle statistiche relative ai dati nel sistema, in degli opportuni grafici.],
+  [L'amministratore deve poter visualizzare, in opportuni grafici, delle statistiche di ambito generale relative ai dati nel sistema.],
   [#link(<uc58>)[UC58]\ Riunioni esterne],
 
   [RFF-3],
+  [L'amministratore deve poter visualizzare un grafico che mostri il numero di annunci generati dal sistema nelle ultime 24 ore, con granularità oraria.],
+  [#link(<uc65>)[UC65]\ Riunioni esterne],
+
+  [RFF-4],
+  [L'amministratore deve poter visualizzare un grafico raffigurante il numero medio di noleggi che vengono effettuati in ciascun mese dell'anno, risultato della media di noleggi effettuati in quel mese nel corso degli anni.],
+  [#link(<uc68>)[UC68]\ Riunioni esterne],
+
+  [RFF-5],
+  [L'amministratore deve poter selezionare uno specifico punto di interesse per poi visualizzare, in opportuni grafici, le statistiche relative ad esso.],
+  [#link(<uc59>)[UC59]\ Riunioni esterne],
+
+  [RFF-6],
+  [L'amministratore deve poter visualizzare un grafico che mette a confronto il numero di annunci generati con il numero di annunci non generati per un certo punto di interesse nell'ultima settimana.],
+  [#link(<uc66>)[UC66]\ Riunioni esterne],
+
+  [RFF-7],
+  [L'amministratore deve poter visualizzare, per un certo punto d'interesse, un grafico che mette a confronto il numero di annunci non generati per mancato interesse con il numero di annunci non generati perché l'utente è già stato raggiunto di recente da un annuncio relativo allo stesso punto di interesse.],
+  [#link(<uc67>)[UC67]\ Riunioni esterne],
+
+  [RFF-8],
   [L'amministratore deve poter visualizzare un singolo grafico relativo ad una particolare analisi dati.],
   [#link(<uc59>)[UC59]\ Riunioni esterne],
 
-  [RFF-4],
+  [RFF-9],
   [L'amministratore deve poter visualizzare il titolo di uno specifico grafico a seconda dell'analisi dati che viene rappresentata.],
   [#link(<uc60>)[UC60]\ Riunioni esterne],
 
-  [RFF-5],
+  [RFF-10],
   [L'amministratore deve poter visualizzare in uno specifico grafico un'etichetta relativa alla tipologia di misura rappresentata sulle assi delle ascisse e delle ordinate e, infine, i relativi valori.],
   [#link(<uc61>)[UC61]\ #link(<uc62>)[UC62]\ Riunioni esterne],
 
-  [RFF-6],
+  [RFF-11],
   [L'amministratore deve poter visualizzare, all'interno di ciascun grafico, la rappresentazione dello specifico _set_ di dati previsti per quel grafico.],
   [#link(<uc63>)[UC63]\ Riunioni esterne],
 
-  [RFF-7],
+  [RFF-12],
   [Viene richiesta la creazione di uno strumento di visualizzazione degli annunci in tempo reale per l'utente utilizzatore del servizio.],
   [Capitolato],
 )
+== Tracciamento
+=== Fonte - Requisito
+#align(
+  center,
+  table(
+    align: center + horizon,
+    columns: (200pt, 200pt),
+    table.header([*Fonte*], [*Requisito*]),
+    [UC1], [ROF-1],
+    [UC2], [ROF-2],
+    [UC3], [ROF-3],
+    [UC4], [ROF-4],
+    [UC5], [ROF-5],
+    [UC6], [ROF-6],
+    [UC7], [ROF-7],
+    [UC8], [ROF-8],
+    [UC9], [ROF-9, ROF-10, ROF-11],
+    [UC10], [ROF-9],
+    [UC11], [ROF-10],
+    [UC12], [ROF-11],
+    [UC13], [ROF-12, ROF-13, ROF-14],
+    [UC14], [ROF-13],
+    [UC15], [ROF-14],
+    [UC16], [ROF-15, ROF-16, ROF-17, ROF-18, ROF-19, ROF-20],
+    [UC17], [ROF-16],
+    [UC18], [ROF-17],
+    [UC19], [ROF-18],
+    [UC20], [ROF-19],
+    [UC21], [ROF-20],
+    [UC22], [ROF-21, ROF-22, ROF-23, ROF-24],
+    [UC23], [ROF-22],
+    [UC24], [ROF-23],
+    [UC25], [ROF-24],
+    [UC26], [ROF-25],
+    [UC27], [ROF-26],
+    [UC28], [ROF-27],
+    [UC29], [ROF-28],
+    [UC30], [ROF-28],
+    [UC31], [ROF-28],
+    [UC32], [RDF-1],
+    [UC33], [RDF-2],
+    [UC34], [RDF-2],
+    [UC35], [RDF-2],
+    [UC36], [RDF-3],
+    [UC37], [RDF-4],
+    [UC38], [RDF-5],
+    [UC39], [RDF-6],
+    [UC40], [RDF-7],
+    [UC41], [RDF-8, RDF-9, RDF-10, RDF-11, RDF-12, RDF-13, RDF-14],
+    [UC42], [RDF-9],
+    [UC43], [RDF-10],
+    [UC44], [RDF-11],
+    [UC45], [RDF-12],
+    [UC46], [RDF-13],
+    [UC47], [RDF-14],
+    [UC48], [RDF-15],
+    [UC49], [RDF-16],
+    [UC50], [RDF-17],
+    [UC51], [RDF-18],
+    [UC52], [RDF-19],
+    [UC53], [ROF-29],
+    [UC54], [ROF-30],
+    [UC55], [ROF-31],
+    [UC56], [ROF-32],
+    [UC57], [RFF-1],
+    [UC59], [RFF-3],
+    [UC60], [RFF-4],
+    [UC61], [RFF-5],
+    [UC62], [RFF-5],
+    [UC63], [RFF-6],
+    [Riunioni esterne], [ROF-2, ROF-6, ROF-7, ROF-8, ROF-9, ROF-10, ROF-11, ROF-12, ROF-13, ROF-14, ROF-15, ROF-16, ROF-17, ROF-18, ROF-19, ROF-20, ROF-21, ROF-22, ROF-23, ROF-24, ROF-25, ROF-26, ROF-27, ROF-28, ROF-29, ROF-30, ROF-31, ROF-32, ROV-1, ROV-2, ROV-3, ROV-4, ROQ-1, ROQ-2, ROQ-3, ROQ-4, ROV-3],
+    [Riunioni interne], [ROF-2, ROF-6, ROF-7, ROF-8, ROF-9, ROF-10, ROF-11, ROF-12, ROF-13, ROF-14, ROF-15, ROF-16, ROF-17, ROF-18, ROF-19, ROF-20, ROF-21, ROF-22, ROF-23, ROF-24, ROF-25, ROF-26, ROF-27, ROF-28, ROF-29, ROF-30, ROF-31, ROF-32, ROV-1, ROV-2, ROV-3, ROQ-2],
+    [Capitolato], [ROF-1, ROF-6, ROF-9, ROF-10, ROF-11, ROF-15, ROF-16, ROF-17, ROF-18, ROF-19, ROF-20, ROF-21, ROF-22, ROF-23, ROF-24, ROF-25, ROF-26, ROF-27, ROF-28, ROF-29, ROF-30, ROF-31, ROF-32, ROV-1, ROV-2, ROV-3, ROV-4, ROQ-1, ROQ-4],
+    [Norme di Progetto], [ROQ-2],
+    [Piano di Qualifica], [ROQ-3],
+  )
+)
+
 == Riepilogo
 #table(
   align: (left, left, left, left, left),
