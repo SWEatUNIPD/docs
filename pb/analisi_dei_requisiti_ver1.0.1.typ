@@ -227,8 +227,8 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC1.png"),
-  caption: [Diagramma del caso d'uso UC1],
+  image("../assets/use_cases/UC1-2-3.png"),
+  caption: [Diagramma dei casi d'uso UC1 UC2 e UC3],
 )
 
 #pagebreak()
@@ -285,7 +285,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore riceve un messaggio di errore il quale segnala che le credenziali inserite sono non valide.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC2-3-4-5.png"),
+  image("../assets/use_cases/UC4-5-6-7.png"),
   caption: [Diagramma dei casi d'uso UC4, UC5, UC6 e UC7],
 )
 
@@ -316,7 +316,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore visualizza un _marker_ in corrispondenza di ciascun punto di interesse.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC6-7.png"),
+  image("../assets/use_cases/UC8-9.png"),
   caption: [Diagramma dei casi d'uso UC8 e UC9],
 )
 
@@ -334,7 +334,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore visualizza il percorso del mezzo noleggiato.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC8.png"),
+  image("../assets/use_cases/UC10.png"),
   caption: [Diagramma del caso d'uso UC10],
 )
 #pagebreak()
@@ -392,7 +392,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore visualizza un _marker_ in corrispondenza delle posizioni nelle quali la LLM non ha generato un annuncio perché ha valutato l'utente come non interessato al punto di interesse in base alla sua profilazione.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC9-10-11-12.png"),
+  image("../assets/use_cases/UC11-12-13-14.png"),
   caption: [Diagramma dei caso d'uso UC11, UC12, UC13, UC14],
 )
 
@@ -435,7 +435,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore visualizza la categoria del punto di interesse.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC15-14-15.png"),
+  image("../assets/use_cases/UC15-16-17.png"),
   caption: [Diagramma dei caso d'uso UC15, UC16, UC17],
 )
 
@@ -511,7 +511,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore visualizza la categoria del punto di interesse collegato al relativo annuncio aperto dal _marker_.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC18-17-18-19-20-21.png"),
+  image("../assets/use_cases/UC18-19-20-21-22-23.png"),
   caption: [Diagramma dei caso d'uso UC18, UC19, UC20, UC21, UC22, UC23],
 )
 
@@ -566,7 +566,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC24-23-24-25.png"),
+  image("../assets/use_cases/UC24-25-26-27.png"),
   caption: [Diagramma dei caso d'uso UC24, UC25, UC26, UC27],
 )
 
@@ -666,7 +666,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore interagisce con la mappa per restringere la porzione di territorio visualizzato (in inglese _to zoom in_), di conseguenza ingrandendone i dettagli.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC31-30-31.png"),
+  image("../assets/use_cases/UC31-32-33.png"),
   caption: [Diagramma dei casi d'uso UC31, UC32 e UC33],
 )
 
@@ -777,12 +777,12 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore visualizza il _flag_ nel caso in cui il noleggio relativo al singolo annuncio nello storico è ancora attivo.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC34-33-34-35-36.png"),
+  image("../assets/use_cases/UC34-35-36-37-38.png"),
   caption: [Diagramma dei casi d'uso UC34, UC35, UC36, UC37, UC38],
 )
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC38-37-38-39-40.png"),
+  image("../assets/use_cases/UC38-39-40-41-42.png"),
   caption: [Diagramma dei casi d'uso UC38, UC39, UC40, UC41, UC42 (continuazione di Figura 14)],
 )
 #pagebreak()
@@ -866,7 +866,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore visualizza la categoria del punto di interesse nei dettagli di un elemento aperto nello storico.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC43-42-43-44-45-46-47.png"),
+  image("../assets/use_cases/UC43-44-45-46-47-48-49.png"),
   caption: [Diagramma dei casi d'uso UC43, UC44, UC45, UC46, UC47, UC48 e UC49],
 )
 
@@ -1006,7 +1006,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore visualizza il messaggio di errore sulla _dashboard_.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC55-54-55-56.png"),
+  image("../assets/use_cases/UC55-56-57-58.png"),
   caption: [Diagramma dei casi d'uso UC55, UC56, UC57 e UC58],
 )
 
@@ -1018,21 +1018,18 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 === UC59 - Visualizzazione sezione grafici <uc59>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
-  - Il sistema mantiene delle informazioni utili per una analisi statistica.
-- *Postcondizioni*: il sistema espone la vista dedicata ai grafici, dove l'amministratore può visualizzare alcune statistiche generali .
+  - Il sistema mantiene delle informazioni utili per un'analisi statistica.
+- *Postcondizioni*: il sistema espone la vista dedicata ai grafici, dove l'amministratore può visualizzare delle statistiche generali così come alcune più specifiche relative ad un certo punto di interesse, selezionabile da interfaccia.
 - *Scenario principale*:
-  - L'amministratore entra nella _dashboard_ con i grafici per le analisi sui dati.
-
-  - L'amministratore può selezionare un punto di interesse per visualizzare delle statistiche relative ad esso.
+  + L'amministratore entra nella _dashboard_ con i grafici per le analisi sui dati.
 - *Inclusioni*:
-  + Visualizzazione statistiche generali (#link(<uc60>)[UC60]).
-  + Visualizzazione statistiche per un certo punto di interesse (#link(<uc61>)[UC61]).
+  - Visualizzazione statistiche generali (#link(<uc60>)[UC60]).
+  - Visualizzazione statistiche per un certo punto di interesse (#link(<uc61>)[UC61]).
 
 
 === UC60 - Visualizzazione statistiche generali <uc60>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
-  - Il sistema mantiene delle informazioni utili per una analisi statistica.
   - Il sistema sta esponendo la vista dedicata ai grafici.
 - *Postcondizioni*:
   - Il sistema espone dei grafici riguardanti alcune statistiche generali.
@@ -1046,17 +1043,20 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 === UC61 - Visualizzazione statistiche per un certo punto di interesse <uc61>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
-  - L'amministratore si trova nella _dashboard_ con i grafici per le analisi sui dati.
-  - L'amministratore ha selezionato un punto di interesse.
+  - Il sistema sta esponendo la vista dedicata ai grafici.
 - *Postcondizioni*:
-  - Il sistema espone dei grafici che rappresentino le informazioni relative al punto di interesse selezionato.
+  - Il sistema espone i grafici relativi a delle statistiche riguardanti uno specifico punto di interesse.
 - *Scenario principale*: 
   + L'amministratore seleziona un punto di interesse di cui vuole visualizzarne le statistiche.
   + L'amministratore visualizza i grafici con le analisi sui dati relative al punto di interesse selezionato.
 - *Inclusioni*:
-  - Visualizzazione grafico del numero di annunci generati vs numero di annunci non generati per un certo punto di interesse nell'ultima settimana (#link(<uc68>)[UC68]).
+  - Visualizzazione grafico del rapporto tra numero di annunci generati e numero di annunci non generati per un certo punto di interesse nell'ultima settimana (#link(<uc68>)[UC68]).
   - Visualizzazione grafico sul motivo di mancata generazione annuncio per un certo punto d'interesse (#link(<uc69>)[UC69]).
-
+#v(20pt)
+#figure(
+  image("../assets/use_cases/UC57-58-59.png"),
+  caption: [Diagramma dei casi d'uso UC59, UC60, UC61],
+)
 
 === UC62 - Visualizzazione singolo grafico <uc62>
 - *Attore principale*: Amministratore.
@@ -1068,12 +1068,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   - l'amministratore visualizza il grafico con le relative informazioni.
 - *Scenario principale*:
   + L'amministratore visualizza il grafico con le relative informazioni.
-- *Generalizzazioni*:
-  - Visualizzazione grafico del numero di annunci generati nelle ultime 24 ore (#link(<uc67>)[UC67]). // a linee
-  - Visualizzazione grafico del numero di annunci generati vs numero di annunci non generati per un certo punto di interesse nell'ultima settimana (#link(<uc68>)[UC68]). // a barre (istogramma)
-  - Visualizzazione grafico sul motivo di mancata generazione annuncio per un certo punto d'interesse (#link(<uc69>)[UC69]). // a torta
-  // Visualizzazione grafico del numero di annunci generati vs numero di annunci non generati per ciascuna categoria di punto di interesse (nell'ultima settimana/giorno). // a barre (istogramma)
-  - Visualizzazione grafico del numero medio di noleggi per mese (#link(<uc70>)[UC70]). // a linee
 - *Inclusioni*:
   - Visualizzazione titolo del grafico (#link(<uc63>)[UC63]).
   - Visualizzazione etichetta asse delle ascisse e relativi valori (#link(<uc64>)[UC64]).
@@ -1121,15 +1115,10 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   - L'amministratore visualizza i dati sul relativo grafico.
 - *Scenario principale*:
   + L'amministratore visualizza i dati sul grafico.
-#v(20pt)
+
 #figure(
-  image("../assets/use_cases/UC59-58-59.png"),
-  caption: [Diagramma dei casi d'uso UC59, UC60, UC62],
-)
-#v(20pt)
-#figure(
-  image("../assets/use_cases/UC62-60-61-62-63.png", width: 90%),
-  caption: [Diagramma dei casi d'uso UC62, UC63, UC64, UC65 e UC66 (continuazione di Figura 23)],
+  image("../assets/use_cases/UC62-63-64-65-66.png", width: 90%),
+  caption: [Diagramma dei casi d'uso UC62, UC63, UC64, UC65 e UC66],
 )
 
 === UC67 - Visualizzazione grafico del numero di annunci generati nelle ultime 24 ore <uc67>
@@ -1144,7 +1133,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Inclusioni*:
   - Visualizzazione singolo grafico (#link(<uc62>)[UC62]).
 
-=== UC68 - Visualizzazione grafico del numero di annunci generati vs numero di annunci non generati per un certo punto di interesse nell'ultima settimana <uc68>
+=== UC68 - Visualizzazione grafico del rapporto tra numero di annunci generati e numero di annunci non generati per un certo punto di interesse nell'ultima settimana <uc68>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema tiene traccia degli annunci generati e non generati per ciascun punto di interesse.
@@ -1180,6 +1169,19 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Inclusioni*:
   - Visualizzazione singolo grafico (#link(<uc62>)[UC62]).
 
+#v(20pt)
+#figure(
+  image("../assets/use_cases/UC60-67-70.png"),
+  caption: [Diagramma dei casi d'uso UC60, UC67, UC70 (continuazione di Figura 23)],
+)
+#v(20pt)
+#figure(
+  image("../assets/use_cases/UC61-68-69.png"),
+  caption: [Diagramma dei casi d'uso UC61, UC68, UC69 (continuazione di Figura 23)],
+)
+
+ // Visualizzazione grafico del numero di annunci generati vs numero di annunci non generati per ciascuna categoria di punto di interesse (nell'ultima settimana/giorno). // a barre (istogramma)
+
 #pagebreak()
 
 = Requisiti
@@ -1207,7 +1209,7 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
   table.header([*Codice*], [*Descrizione*], [*Fonti*]),
   [ROF-1],
   [Il sensore deve trasmettere i suoi dati di identificazione e localizzazione al sistema a intervalli regolari.],
-  [#link(<uc1>)[UC1]\ Capitolato],
+  [#link(<uc1>)[UC1]\ #link(<uc2>)[UC2]\ #link(<uc3>)[UC3]\ Capitolato],
 
   [ROF-2],
   [La _dashboard_ dell'amministratore, per essere accessibile solamente da quest'ultimo, deve essere protetta da un sistema di autenticazione. Per poter visualizzare la _dashboard_ l'amministratore deve quindi autenticarsi con le proprie credenziali.],
@@ -1354,11 +1356,11 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
 
   [ROQ-2],
   [Rispetto delle norme descritte nel documento Norme di Progetto (v2.0.0).],
-  [Riunioni interne,\ Norme di Progetto],
+  [Riunioni interne\ Norme di Progetto],
 
   [ROQ-3],
   [Rispetto dei vincoli sulle metriche stabiliti nel documento Piano di Qualifica (v2.0.0).],
-  [Decisione interna,\ Piano di Qualifica],
+  [Riunioni interne\ Piano di Qualifica],
 
   [ROQ-4],
   [Deve essere consegnato un Manuale Utente che illustri le funzionalità del sistema e come utilizzarle.],
@@ -1486,7 +1488,7 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
 
   [RFF-5],
   [L'amministratore deve poter selezionare uno specifico punto di interesse per poi visualizzare, in opportuni grafici, le statistiche relative ad esso.],
-  [#link(<uc62>)[UC62]\ Riunioni esterne],
+  [#link(<uc61>)[UC61]\ Riunioni esterne],
 
   [RFF-6],
   [L'amministratore deve poter visualizzare un grafico che mette a confronto il numero di annunci generati con il numero di annunci non generati per un certo punto di interesse nell'ultima settimana.],
@@ -1525,6 +1527,8 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
     columns: (200pt, 200pt),
     table.header([*Fonte*], [*Requisito*]),
     [UC1], [ROF-1],
+    [UC2], [ROF-1],
+    [UC3], [ROF-1],
     [UC4], [ROF-2],
     [UC5], [ROF-3],
     [UC6], [ROF-4],
@@ -1581,14 +1585,20 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
     [UC57], [ROF-31],
     [UC58], [ROF-32],
     [UC59], [RFF-1],
-    [UC62], [RFF-3],
-    [UC63], [RFF-4],
-    [UC64], [RFF-5],
-    [UC65], [RFF-5],
-    [UC66], [RFF-6],
-    [Riunioni esterne], [ROF-2, ROF-6, ROF-7, ROF-8, ROF-9, ROF-10, ROF-11, ROF-12, ROF-13, ROF-14, ROF-15, ROF-16, ROF-17, ROF-18, ROF-19, ROF-20, ROF-21, ROF-22, ROF-23, ROF-24, ROF-25, ROF-26, ROF-27, ROF-28, ROF-29, ROF-30, ROF-31, ROF-32, ROV-1, ROV-2, ROV-3, ROV-4, ROQ-1, ROQ-2, ROQ-3, ROQ-4, ROV-3],
-    [Riunioni interne], [ROF-2, ROF-6, ROF-7, ROF-8, ROF-9, ROF-10, ROF-11, ROF-12, ROF-13, ROF-14, ROF-15, ROF-16, ROF-17, ROF-18, ROF-19, ROF-20, ROF-21, ROF-22, ROF-23, ROF-24, ROF-25, ROF-26, ROF-27, ROF-28, ROF-29, ROF-30, ROF-31, ROF-32, ROV-1, ROV-2, ROV-3, ROQ-2],
-    [Capitolato], [ROF-1, ROF-6, ROF-9, ROF-10, ROF-11, ROF-15, ROF-16, ROF-17, ROF-18, ROF-19, ROF-20, ROF-21, ROF-22, ROF-23, ROF-24, ROF-25, ROF-26, ROF-27, ROF-28, ROF-29, ROF-30, ROF-31, ROF-32, ROV-1, ROV-2, ROV-3, ROV-4, ROQ-1, ROQ-4],
+    [UC60], [RFF-2],
+    [UC61], [RFF-5],
+    [UC62], [RFF-8],
+    [UC63], [RFF-9],
+    [UC64], [RFF-10],
+    [UC65], [RFF-10],
+    [UC66], [RFF-11],
+    [UC67], [RFF-3],
+    [UC68], [RFF-6],
+    [UC69], [RFF-7],
+    [UC70], [RFF-4],
+    [Riunioni esterne], [ROF-2, ROF-9, ROF-10, ROF-11, ROF-12, ROF-13, ROF-14, ROF-15, ROF-16, ROF-17, ROF-18, ROF-19, ROF-20, ROF-21, ROF-22, ROF-23, ROF-24, ROF-25, ROF-26, ROF-27, ROF-28, ROF-29, ROF-30, ROF-31, ROF-32, ROF-33, ROF-34, RDF-1, RDF-2, RDF-3, RDF-4, RDF-5, RDF-6, RDF-7, RDF-8, RDF-9, RDF-10, RDF-11, RDF-12, RDF-13, RDF-14, RDF-15, RDF-16, RDF-17, RDF-18, RDF-19, RFF-1, RFF-2, RFF-3, RFF-4, RFF-5, RFF-6, RFF-7, RFF-8, RFF-9, RFF-10, RFF-11, RFF-12],
+    [Riunioni interne], [ROF-3, ROF-4, ROF-5, ROF-13, ROF-14, ROF-16, ROF-17, ROF-18, ROF-20, ROF-22, ROF-23, ROF-25, ROF-26, ROF-27, ROF-28, ROF-29, ROF-30, ROF-31, ROF-32, ROQ-2, ROQ-3, ROV-1],
+    [Capitolato], [ROF-1, ROF-6, ROF-7, ROF-8, ROF-9, ROF-10, ROF-11, ROF-12, ROF-15, ROF-16, ROF-17, ROF-18, ROF-19, ROF-20, ROF-21, ROF-22, ROF-23, ROF-24, ROF-25, ROF-26, ROF-27, ROF-28, ROF-29, ROF-30, ROF-31, ROF-32, ROF-33, ROF-34, ROQ-1, ROQ-4, ROQ-5, RFF-12],
     [Norme di Progetto], [ROQ-2],
     [Piano di Qualifica], [ROQ-3],
   )
@@ -1599,8 +1609,8 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
   align: (left, left, left, left, left),
   columns: (1.3fr, 1fr, 1fr, 1fr, 1fr),
   table.header([*Tipologia*], [*Obbligatori*], [*Desiderabili*], [*Opzionali*], [*Totale*]),
-  [Funzionali], [32], [19], [7], [58],
-  [Qualità], [1], [0], [0], [1],
-  [Vincolo], [3], [0], [0], [3],
-  [*Totale*], [36], [19], [7], [*62*],
+  [Funzionali], [34], [19], [12], [65],
+  [Qualità], [5], [0], [0], [5],
+  [Vincolo], [1], [0], [0], [1],
+  [*Totale*], [40], [19], [12], [*71*],
 )
