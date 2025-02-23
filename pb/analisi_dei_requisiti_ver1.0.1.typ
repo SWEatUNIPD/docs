@@ -1054,7 +1054,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   - Visualizzazione grafico sul motivo di mancata generazione annuncio per un certo punto d'interesse (#link(<uc69>)[UC69]).
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC57-58-59.png"),
+  image("../assets/use_cases/UC59-60-61.png"),
   caption: [Diagramma dei casi d'uso UC59, UC60, UC61],
 )
 
@@ -1172,12 +1172,12 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 #v(20pt)
 #figure(
   image("../assets/use_cases/UC60-67-70.png"),
-  caption: [Diagramma dei casi d'uso UC60, UC67, UC70 (continuazione di Figura 23)],
+  caption: [Diagramma dei casi d'uso UC60, UC62, UC67, UC70 (continuazione di Figura 23)],
 )
 #v(20pt)
 #figure(
   image("../assets/use_cases/UC61-68-69.png"),
-  caption: [Diagramma dei casi d'uso UC61, UC68, UC69 (continuazione di Figura 23)],
+  caption: [Diagramma dei casi d'uso UC61, UC62, UC68, UC69 (continuazione di Figura 23)],
 )
 
  // Visualizzazione grafico del numero di annunci generati vs numero di annunci non generati per ciascuna categoria di punto di interesse (nell'ultima settimana/giorno). // a barre (istogramma)
