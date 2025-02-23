@@ -1059,7 +1059,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore visualizza i grafici con le analisi sui dati relative al punto di interesse selezionato.
 - *Inclusioni*:
   - Visualizzazione grafico del rapporto tra numero di annunci generati e numero di annunci non generati per un certo punto di interesse nell'ultima settimana (#link(<uc68>)[UC68]).
-  - Visualizzazione grafico sul motivo di mancata generazione annuncio per un certo punto d'interesse (#link(<uc69>)[UC69]).
+  - Visualizzazione grafico sulla frequenza dei motivi di mancata generazione annuncio per un certo punto d'interesse (#link(<uc69>)[UC69]).
 #v(20pt)
 #figure(
   image("../assets/use_cases/UC59-60-61.png"),
@@ -1153,7 +1153,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Inclusioni*:
   - Visualizzazione singolo grafico (#link(<uc62>)[UC62]).
 
-=== UC69 - Visualizzazione grafico sul motivo di mancata generazione annuncio per un certo punto d'interesse <uc69>
+=== UC69 - Visualizzazione grafico sulla frequenza dei motivi di mancata generazione annuncio per un certo punto d'interesse <uc69>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema tiene traccia dei dati relativi alla mancata generazione di un annuncio.
