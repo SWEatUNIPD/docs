@@ -25,6 +25,14 @@
   titolo: "Analisi dei Requisiti",
   uso: "Esterno",
   versioni: (
+    "1.1.0",
+    [23/02/2025],
+    "Davide Martinelli",
+    "Riccardo Milan",
+    [
+      - Aggiunti alcuni use case e requisiti relativi all'analisi statistica
+      - Correzioni da valutazione RTB
+    ],
     "1.0.1",
     "05/02/2025",
     "Klaudio Merja",
@@ -1151,7 +1159,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   - Il sistema tiene traccia dei dati relativi alla mancata generazione di un annuncio.
   - L'amministratore sta visualizzando la sezione dedicata ai grafici.
 - *Postcondizioni*:
-  - Il sistema espone il grafico che mette a confronto, per un certo punto d'interesse, il numero di annunci non generati per mancato interesse (UC) con il numero di annunci non generati perché l'utente è già stato raggiunto di recente (UC).
+  - Il sistema espone il grafico che mette a confronto, per un certo punto d'interesse, il numero di annunci non generati per mancato interesse con il numero di annunci non generati perché l'utente è già stato raggiunto di recente.
 - *Scenario principale*:
   + L'amministratore visualizza il grafico che mette a confronto la frequenza delle due motivazioni per cui il sistema non ha generato un annuncio per un certo punto d'interesse.
 - *Inclusioni*:
