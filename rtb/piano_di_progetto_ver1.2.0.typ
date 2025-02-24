@@ -675,8 +675,11 @@ In seguito alla valutazione del RTB, il _team_ si è prefissato di apportare le 
   - Modificare o eliminare le sezioni non più necessarie.
 - Modifiche ai template dei verbali e del glossario.
 - Correzioni all'Analisi dei Requisiti, in particolare:
-  - Arricchire la descrizione di alcuni casi d'uso.
-  - Modificare i requisiti in base ai _feedback_ ricevuti.
+  - Specificare quali dati sono inviati dal sensore (UC1).
+  - Quali spostamenti è possibile fare sulla mappa (UC28).
+  - Definire cosa è presente nel UC32 che lo contraddistingue dal UC33.
+  - Definire statistiche sono disponibili esattamente (UC58).
+  - Modificare i requisiti di vincolo perché al momento descrivono in realtà dei requisiti funzionali.
 - Modificare il sito vetrina in base ai _feedback_ ricevuti.
 #v(10pt)
 #figure(
@@ -698,7 +701,7 @@ In seguito alla valutazione del RTB, il _team_ si è prefissato di apportare le 
   caption: [Preventivo delle ore nel sesto _sprint_ per membro e per ruolo],
 )
 
-==== Consuntivo orario e di spesa
+==== Consuntivo orario e di spesa dello _sprint_ corrente
 #consuntivoOre(
   preventivo: (
     (0, 0, 0, 0, 0, 1),
@@ -723,15 +726,44 @@ In seguito alla valutazione del RTB, il _team_ si è prefissato di apportare le 
   chartCaption: [Grafico percentuale dell'allocazione delle ore per ruolo nel sesto _sprint_],
 )
 
+=== Consultivo orario e di spesa complessivo
+#consuntivoOre(
+  preventivo: (
+    (8, 8, 12, 19, 23, 20),
+    (8, 8, 12, 19, 23, 20),
+    (8, 8, 12, 19, 23, 20),
+    (8, 8, 12, 19, 23, 20),
+    (8, 8, 12, 19, 23, 20),
+    (8, 8, 12, 19, 23, 20),
+    (8, 8, 12, 19, 23, 20),
+  ),
+  consuntivo: (
+    (4, 4, 11, 0, 0, 6),
+    (6, 5, 12, 0, 5.5, 4),
+    (2, 5, 12, 0, 0, 11),
+    (3, 5.5, 10, 0, 0, 10),
+    (5, 8, 10.5, 0, 0, 6),
+    (3, 5.5, 12, 0, 8, 10),
+    (3, 8, 0, 12, 0, 4.5),
+  ),
+  tabCaption: [Consuntivo delle ore complessive per membro per ruolo],
+  costTabCaption: [Costi sostenuti complessivamente],
+  chartCaption: [Grafico percentuale dell'allocazione delle ore complessive],
+)
+
+
 #v(10pt)
 ==== Retrospettiva
 Durante il sesto _sprint_ il gruppo ha lavorato per apportare le modifiche necessarie alla documentazione in seguito ai _feedback_ ricevuti durante il RTB. Le attività sono state quasi tutte completate nei tempi previsti, eccezzione fatta per le correzioni da apportare all'Analisi dei Requisiti, che proseguiranno durante il prossimo _sprint_.
 
 Nel corso del sesto _sprint_ si sono riscontrati i seguenti rishi:
-- #link(<RO-4>)[RO-4]: pianificato, siccome nelle ultime settimane si sono svolti gli ultimi esami. Il problema è stato comunque mitigato concentrando mmaggior parte del lavoro nella parte finale dello _sprint_.
+- #link(<RO-4>)[RO-4]: pianificato, siccome nelle ultime settimane si sono svolti gli ultimi esami. Il problema è stato comunque mitigato concentrando maggior parte del lavoro nella parte finale dello _sprint_.
 - #link(<RO-2>)[RO-2]: pianificato, sono stati stabiliti tempi più "larghi" del solito per i motivi sopra citati relativi agli esami. Il gruppo ha comunque mitigato il problema utilizzando del tempo per approfondire le architetture _software_ da utilizzare nelle prossime settimane.
 - #link(<RO-3>)[RO-3]: non pianificato, l'attività di correzione dell'Analisi dei Requisiti si è rivelata più onerosa del previsto, portando ad essere continuata nel prossimo _sprint_
 
 Il preventivo a finire rimane positivo seppur leggermente più alto rispetto allo _sprint_ precedente, si attesta infatti a 12,719.71€, a fronte di un preventivo iniziale di 12.740,00€.
+
+Nel prossimo periodo, siccome sono state apportate le modifiche dovute ai documenti in seguito al colloquio RTB, il gruppo inizierà la stesura dei documenti Manuale Utente e Specifica Tecnica.
+Inoltre si inizierà a lavorare sullo sviluppo del MVP con relativa progettazione, applicando dapprima le decisioni sull'architettura discusse anche con la proponente.
 
 #pagebreak()
