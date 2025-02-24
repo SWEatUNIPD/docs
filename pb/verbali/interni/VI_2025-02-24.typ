@@ -15,6 +15,12 @@
   data: "24/02/2025",
   ora: "12:00",
   durata: "1 ora",
+  partecipanti: ("Andrea Precoma",
+    "Andrea Perozzo",
+    "Davide Marin",
+    "Davide Martinelli",
+    "Klaudio Merja",
+    "Riccardo Milan",),
   partecipantiEsterni: (),
 )
 
