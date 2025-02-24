@@ -14,12 +14,6 @@
   verificatori: (
     "Davide Marin",
   ),
-  versioni: (
-    "1.0.0", 
-    [24/02/2025], 
-    "Andrea Perozzo", "Davide Marin",
-    [- Stesura del verbale],
-  ),
   content: content,
   firmaRichiesta: true,
 )
