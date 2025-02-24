@@ -17,6 +17,13 @@
   titolo: "Piano di Progetto",
   uso: "Esterno",
   versioni: (
+    "1.2.0",
+    "24/02/2025",
+    "Davide Marin",
+    "Andrea Precoma",
+    [
+      - Stesura retrospettiva sesto _sprint_
+    ],
     "1.1.0",
     "15/02/2025",
     "Davide Marin",
@@ -690,3 +697,41 @@ In seguito alla valutazione del RTB, il _team_ si è prefissato di apportare le 
   ),
   caption: [Preventivo delle ore nel sesto _sprint_ per membro e per ruolo],
 )
+
+==== Consuntivo orario e di spesa
+#consuntivoOre(
+  preventivo: (
+    (0, 0, 0, 0, 0, 1),
+    (0, 1, 0, 0, 0, 2),
+    (2, 0, 0, 0, 0, 0),
+    (0, 0, 3, 0, 0, 1),
+    (0, 0, 1, 0, 0, 1),
+    (0, 1, 0, 0, 0, 0),
+    (0, 1, 0, 0, 0, 2),
+  ),
+  consuntivo: (
+    (0, 0, 0, 0, 0, 1),
+    (0, 1, 0, 0, 0, 1),
+    (2, 0, 0, 0, 0, 0),
+    (0, 0, 3.5, 0, 0, 1),
+    (0, 0, 1.5, 0, 0, 0),
+    (0, 1, 0, 0, 1, 0),
+    (0.5, 1, 0, 0, 0, 1),
+  ),
+  tabCaption: [Consuntivo delle ore nel sesto _sprint_ per membro e per ruolo],
+  costTabCaption: [Costi sostenuti nel sesto _sprint_],
+  chartCaption: [Grafico percentuale dell'allocazione delle ore per ruolo nel sesto _sprint_],
+)
+
+#v(10pt)
+==== Retrospettiva
+Durante il sesto _sprint_ il gruppo ha lavorato per apportare le modifiche necessarie alla documentazione in seguito ai _feedback_ ricevuti durante il RTB. Le attività sono state quasi tutte completate nei tempi previsti, eccezzione fatta per le correzioni da apportare all'Analisi dei Requisiti, che proseguiranno durante il prossimo _sprint_.
+
+Nel corso del sesto _sprint_ si sono riscontrati i seguenti rishi:
+- #link(<RO-4>)[RO-4]: pianificato, siccome nelle ultime settimane si sono svolti gli ultimi esami. Il problema è stato comunque mitigato concentrando mmaggior parte del lavoro nella parte finale dello _sprint_.
+- #link(<RO-2>)[RO-2]: pianificato, sono stati stabiliti tempi più "larghi" del solito per i motivi sopra citati relativi agli esami. Il gruppo ha comunque mitigato il problema utilizzando del tempo per approfondire le architetture _software_ da utilizzare nelle prossime settimane.
+- #link(<RO-3>)[RO-3]: non pianificato, l'attività di correzione dell'Analisi dei Requisiti si è rivelata più onerosa del previsto, portando ad essere continuata nel prossimo _sprint_
+
+Il preventivo a finire rimane positivo seppur leggermente più alto rispetto allo _sprint_ precedente, si attesta infatti a 12,719.71€, a fronte di un preventivo iniziale di 12.740,00€.
+
+#pagebreak()
