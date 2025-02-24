@@ -41,7 +41,7 @@ function checkOccurrence(filePath, word) {
   const titlesPattern = /^=+\s.*/gm;
   const backlogFuncPattern = /#backlog\(.*\)[\s\n]*\)/gs;
   const formatLinkPattern =
-    /#formatLink\([\s\n]*(label:[\s\n]*"[^\s\n]*",[\s\n]*)?url:[\s\n]*"[^\s\n]*"(,[\s\n]*label:[\s\n]*"[^\s\n]*")?[\s\n]*\)/gm;
+    /formatLink\([\s\n]*(label:[\s\n]*"[^\s\n]*",[\s\n]*)?url:[\s\n]*"[^\s\n]*"(,[\s\n]*label:[\s\n]*"[^\s\n]*")?[\s\n]*\)/gm;
 
   const content = blob
     .toString()
@@ -62,7 +62,7 @@ function checkOccurrence(filePath, word) {
 
 const glossario = require("./glossario.json");
 
-searchFile(".").forEach((path) => {
+searchFile("./pb/").forEach((path) => {
   for (letter in glossario) {
     for (word in glossario[letter]) {
       if (checkOccurrence(path, word) == false)

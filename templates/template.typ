@@ -271,7 +271,7 @@
   } else {
     text(weight: "bold", fill: rgb("#04E824"), link(url)[#underline[#label]])
   }
-}//TODO: Verificare che i link a capo non siano buggati
+}
 
 #let generaGlossario(glossario) = {
   for key in glossario.keys() {
@@ -284,8 +284,10 @@
         #text(weight: "bold", size: 12pt, word)
         #let value = glossario.at(key).at(word)
 
-        #eval(value, mode: "markup")
-        //This function should only be used as a last resort.https://typst.app/docs/reference/foundations/eval/
+        #eval(
+          value,
+          mode: "markup",
+        )//This function should only be used as a last resort.https://typst.app/docs/reference/foundations/eval/
         #v(10pt)
       ]
     }
