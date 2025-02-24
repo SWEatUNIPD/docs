@@ -17,6 +17,14 @@
   titolo: "Piano di Progetto",
   uso: "Esterno",
   versioni: (
+    "1.3.0",
+    "24/02/2025",
+    "Riccardo Milan",
+    "Davide Martinelli",
+    [
+      - Stesura pianificazione settimo _sprint_
+    ],
+    // TODO: risolvere conflitti pianificazione e retrospettiva sprint 6
     "1.0.1",
     "05/02/2025",
     "Klaudio Merja",
@@ -647,3 +655,40 @@ In vista della scadenza della _milestone_, e quindi della consegna prevista per 
 Il gruppo è riuscito a terminare tutte le attività pianificate nei tempi stabiliti. Sono state fondamentali riunioni sincrone sia interne che esterne per concludere gli ultimi punti dei documenti. Per garantire il risultato atteso entro la data di consegna RTB il gruppo si è tenuto costantemente aggiornato sulle piattaforme di comunicazione Telegram e Discord.
 
 Ricevendo continuamente riscontri positivi da parte della proponente rispetto all'Analisi dei Requisiti e al PoC abbiamo valutato di concludere la _milestone_ entro il giorno 27 gennaio 2025. È stata concordato il colloquio con il prof. Cardin per il giorno 29 gennaio, quindi le uniche attività da svolgere prima dell'incontro sono produrre due brevi presentazioni, una per il prof. Cardin e l'altra per il prof. Vardanega.
+
+// TODO: risolvere conflitti pianificazione e retrospettiva sprint 6
+
+#pagebreak()
+
+=== Sprint 7
+- *Inizio*: 25/02/2025
+- *Fine*: 10/03/2025
+- *Rischi attesi*: #link(<RO-1>)[RO-1], #link(<RO-2>)[RO-2], #link(<RO-3>)[RO-3], #link(<RT-1>)[RT-1]
+
+==== Attività dello sprint
+In seguito alla riunione di inizio settimo _sprint_, il _team_ si è prefissato di iniziare il cilco di vita dei documenti relativi alla _milestone_ PB e iniziare la progettazione del _software_. In particolare, le attività da portare a termine sono le seguenti:
+- Redazione dei verbali per le rispettive riunioni interne ed esterne.
+- Compilazione del Piano di Progetto con la sezione relativa al sesto _sprint_.
+- Inizio stesura Manuale Utente.
+- Modifiche al test del glossario.
+- Inizio stesura Specifica Tecnica.
+- Ultimazione correzini e miglioramenti Analisi dei Requisiti.
+#v(10pt)
+#figure(
+  image("../assets/img/PdP/gantt_s7.png"),
+  caption: [Diagramma di Gantt dello _sprint_ 7],
+)
+
+==== Preventivo orario
+#rendicontazioneOre(
+  (
+    (0, 1, 0, 0, 0, 2),
+    (0, 3, 0, 4, 0, 1),
+    (0, 0, 0, 0, 0, 3),
+    (0, 0, 4, 0, 0, 1),
+    (0, 0, 0, 0, 0, 2),
+    (0, 1, 0, 4, 0, 0),
+    (3, 1, 0, 0, 0, 2),
+  ),
+  caption: [Preventivo delle ore nel settimo _sprint_ per membro e per ruolo],
+)
