@@ -2,7 +2,7 @@
 
 #show: content => verbale(
   data: "24 febbraio 2025",
-  responsabile: "Davide Picello",
+  responsabile: "Davide Marin",
   redattori: ("Riccardo Milan",),
   titolo: "Undicesima riunione",
   verificatori: ("Andrea Perozzo",),
