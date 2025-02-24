@@ -1,7 +1,7 @@
 #import "/templates/template.typ": *
 
 #show: content => verbale(
-  data: "10 febbraio 2025",
+  data: "24 febbraio 2025",
   responsabile: "Davide Picello",
   redattori: ("Riccardo Milan",),
   titolo: "Undicesima riunione",
