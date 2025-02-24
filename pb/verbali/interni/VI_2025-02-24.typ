@@ -27,7 +27,7 @@ La riunione interna, svoltasi dopo il #rifGlossario("SAL") con l'azienda propone
 Dopo aver sistemato quasi tutti gli errori dei documenti principali, segnalati nella consegna della _milestone_ RTB, possiamo iniziare per quanto possibile a redigere i nuovi documenti, ovvero Manuale Utente e Specifica Tecnica, necessari per l'avanzamento dei lavori e la futura _milestone_ PB.
 
 == Continuazione correzioni Analisi dei Requisiti
-I lavori di sistemazioni e miglioramenti dell'Analisi dei Requisiti, che avevano come termine fissato la fine del sesto _sprint_, si prolungheranno anche per il settimo, a causa di _feedback_ dell'azienda proponente che hanno reso necessari ulteriori cambiamenti.
+I lavori di sistemazioni e miglioramenti dell'Analisi dei Requisiti, che avevano come termine fissato la fine del sesto _sprint_, si prolungheranno anche per il settimo, a causa di _#rifGlossario("feedback")_ dell'azienda proponente che hanno reso necessari ulteriori cambiamenti.
 
 == Progettazione
 Oltre alle questioni legate al ciclo di vita della documentazione, in questo sprint abbiamo fissato l'obiettivo di iniziare la progettazione del _software_, definendo ad esempio l'architettura da utilizzare.
