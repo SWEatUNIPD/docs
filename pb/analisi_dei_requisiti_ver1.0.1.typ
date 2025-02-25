@@ -1027,62 +1027,35 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema mantiene delle informazioni utili per un'analisi statistica.
-- *Postcondizioni*: il sistema espone la vista dedicata ai grafici, dove l'amministratore può visualizzare delle statistiche generali così come alcune più specifiche relative ad un certo punto di interesse, selezionabile da interfaccia.
+- *Postcondizioni*: 
+  - Il sistema espone la vista dedicata ai grafici.
 - *Scenario principale*:
   + L'amministratore entra nella _dashboard_ con i grafici per le analisi sui dati.
 - *Inclusioni*:
-  - Visualizzazione statistiche generali (#link(<uc60>)[UC60]).
-  - Visualizzazione statistiche per un certo punto di interesse (#link(<uc61>)[UC61]).
+  - Visualizzazione singolo grafico (#link(<uc60>)[UC60]).
 
-
-=== UC60 - Visualizzazione statistiche generali <uc60>
-- *Attore principale*: Amministratore.
-- *Precondizioni*:
-  - Il sistema sta esponendo la vista dedicata ai grafici.
-- *Postcondizioni*:
-  - Il sistema espone dei grafici riguardanti alcune statistiche generali.
-- *Scenario principale*:
-  + L'amministratore accede alla sezione grafici.
-  + L'amministratore visualizza i grafici di alcune statistiche generali.
-- *Inclusioni*:
-  - Visualizzazione grafico del numero di annunci generati nelle ultime 24 ore (#link(<uc67>)[UC67]).
-  - Visualizzazione grafico del numero medio di noleggi per mese (#link(<uc70>)[UC70]).
-
-=== UC61 - Visualizzazione statistiche per un certo punto di interesse <uc61>
-- *Attore principale*: Amministratore.
-- *Precondizioni*:
-  - Il sistema sta esponendo la vista dedicata ai grafici.
-- *Postcondizioni*:
-  - Il sistema espone i grafici relativi a delle statistiche riguardanti uno specifico punto di interesse.
-- *Scenario principale*: 
-  + L'amministratore seleziona un punto di interesse di cui vuole visualizzarne le statistiche.
-  + L'amministratore visualizza i grafici con le analisi sui dati relative al punto di interesse selezionato.
-- *Inclusioni*:
-  - Visualizzazione grafico del rapporto tra numero di annunci generati e numero di annunci non generati per un certo punto di interesse nell'ultima settimana (#link(<uc68>)[UC68]).
-  - Visualizzazione grafico sulla frequenza dei motivi di mancata generazione annuncio per un certo punto d'interesse (#link(<uc69>)[UC69]).
-#v(20pt)
-#figure(
-  image("../assets/use_cases/UC59-60-61.png"),
-  caption: [Diagramma dei casi d'uso UC59, UC60, UC61],
-)
-
-=== UC62 - Visualizzazione singolo grafico <uc62>
+=== UC60 - Visualizzazione singolo grafico <uc60>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema mantiene delle informazioni utili per una analisi statistica.
   - L'amministratore si trova nella _dashboard_ con i grafici per le analisi sui dati.
   - Il sistema sta esponendo i grafici con le analisi sui dati.
 - *Postcondizioni*:
-  - l'amministratore visualizza il grafico con le relative informazioni.
+  - L'amministratore visualizza il grafico con le relative informazioni.
 - *Scenario principale*:
   + L'amministratore visualizza il grafico con le relative informazioni.
 - *Inclusioni*:
-  - Visualizzazione titolo del grafico (#link(<uc63>)[UC63]).
-  - Visualizzazione etichetta asse delle ascisse e relativi valori (#link(<uc64>)[UC64]).
-  - Visualizzazione etichetta asse delle ordinate e relativi valori (#link(<uc65>)[UC65]).
-  - Visualizzazione dati sul grafico (#link(<uc66>)[UC66]).
+  - Visualizzazione titolo del grafico (#link(<uc61>)[UC61]).
+  - Visualizzazione etichetta asse delle ascisse e relativi valori (#link(<uc62>)[UC62]).
+  - Visualizzazione etichetta asse delle ordinate e relativi valori (#link(<uc63>)[UC63]).
+  - Visualizzazione dati sul grafico (#link(<uc64>)[UC64]).
+- *Generalizzazioni*:
+  - Visualizzazione grafico del numero di annunci generati nelle ultime 24 ore (#link(<uc65>)[UC65]).
+  - Visualizzazione grafico del numero medio di noleggi per mese (#link(<uc66>)[UC66]).
+  - Visualizzazione grafico del rapporto tra numero di annunci generati e numero di annunci non generati per un certo punto di interesse nell'ultima settimana (#link(<uc67>)[UC67]).
+  - Visualizzazione grafico sulla frequenza dei motivi di mancata generazione annuncio per un certo punto d'interesse (#link(<uc68>)[UC68]).
 
-=== UC63 - Visualizzazione titolo del grafico <uc63>
+=== UC61 - Visualizzazione titolo del grafico <uc61>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema tiene traccia del titolo del grafico.
@@ -1092,7 +1065,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   + L'amministratore visualizza il titolo del grafico.
 
-=== UC64 - Visualizzazione etichetta asse delle ascisse e relativi valori <uc64>
+=== UC62 - Visualizzazione etichetta asse delle ascisse e relativi valori <uc62>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema tiene traccia delle etichette dell'asse delle ascisse e dei relativi valori di ciascun grafico.
@@ -1103,7 +1076,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore visualizza l'etichetta dell'asse delle ascisse del relativo grafico.
   + L'amministratore visualizza le etichette dei valori segnati sull'asse delle ascisse del relativo grafico.
 
-=== UC65 - Visualizzazione etichetta asse delle ordinate e relativi valori <uc65>
+=== UC63 - Visualizzazione etichetta asse delle ordinate e relativi valori <uc63>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema tiene traccia delle etichette dell'asse delle ordinate e dei relativi valori di ciascun grafico.
@@ -1114,7 +1087,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + l'amministratore visualizza l'etichetta dell'asse delle ordinate del relativo grafico.
   + l'amministratore visualizza le etichette dei valori segnati sull'asse delle ordinate del relativo grafico.
 
-=== UC66 - Visualizzazione dati sul grafico <uc66>
+=== UC64 - Visualizzazione dati sul grafico <uc64>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema tiene traccia dei dati di ciascun grafico.
@@ -1124,12 +1097,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   + L'amministratore visualizza i dati sul grafico.
 
-#figure(
-  image("../assets/use_cases/UC62-63-64-65-66.png", width: 90%),
-  caption: [Diagramma dei casi d'uso UC62, UC63, UC64, UC65 e UC66],
-)
-
-=== UC67 - Visualizzazione grafico del numero di annunci generati nelle ultime 24 ore <uc67>
+=== UC65 - Visualizzazione grafico del numero di annunci generati nelle ultime 24 ore <uc65>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema tiene traccia degli annunci generati.
@@ -1138,34 +1106,8 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   - Il sistema espone il grafico con il numero di annunci generati per ciascuna ora nell'arco delle ultime 24 ore.
 - *Scenario principale*:
   + L'amministratore visualizza il grafico con il numero di annunci generati per ciascuna ora nelle ultime 24 ore.
-- *Inclusioni*:
-  - Visualizzazione singolo grafico (#link(<uc62>)[UC62]).
 
-=== UC68 - Visualizzazione grafico del rapporto tra numero di annunci generati e numero di annunci non generati per un certo punto di interesse nell'ultima settimana <uc68>
-- *Attore principale*: Amministratore.
-- *Precondizioni*:
-  - Il sistema tiene traccia degli annunci generati e non generati per ciascun punto di interesse.
-  - L'amministratore sta visualizzando la sezione dedicata ai grafici.
-- *Postcondizioni*:
-  - Il sistema espone il grafico con il numero di annunci generati e non generati per ciascun punto di interesse nell'ultima settimana.
-- *Scenario principale*: 
-  + L'amministratore visualizza il grafico che mette a confronto il numero di annunci generati con il numero di annunci non generati per un certo punto di interesse nell'arco dell'ultima settimana.
-- *Inclusioni*:
-  - Visualizzazione singolo grafico (#link(<uc62>)[UC62]).
-
-=== UC69 - Visualizzazione grafico sulla frequenza dei motivi di mancata generazione annuncio per un certo punto d'interesse <uc69>
-- *Attore principale*: Amministratore.
-- *Precondizioni*:
-  - Il sistema tiene traccia dei dati relativi alla mancata generazione di un annuncio.
-  - L'amministratore sta visualizzando la sezione dedicata ai grafici.
-- *Postcondizioni*:
-  - Il sistema espone il grafico che mette a confronto, per un certo punto d'interesse, il numero di annunci non generati per mancato interesse con il numero di annunci non generati perché l'utente è già stato raggiunto di recente.
-- *Scenario principale*:
-  + L'amministratore visualizza il grafico che mette a confronto la frequenza delle due motivazioni per cui il sistema non ha generato un annuncio per un certo punto d'interesse.
-- *Inclusioni*:
-  - Visualizzazione singolo grafico (#link(<uc62>)[UC62]).
-
-=== UC70 - Visualizzazione grafico del numero medio di noleggi per mese <uc70>
+=== UC66 - Visualizzazione grafico del numero medio di noleggi per mese <uc66>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema tiene traccia dei noleggi effettuati.
@@ -1174,21 +1116,57 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   - Il sistema espone il grafico con il numero medio di noleggi che vengono effettuati in ciascun mese dell'anno.
 - *Scenario principale*: 
   + L'amministratore visualizza il grafico che mostra il numero medio di noleggi che vengono effettuati in ciascun mese dell'anno solare.
-- *Inclusioni*:
-  - Visualizzazione singolo grafico (#link(<uc62>)[UC62]).
+
+=== UC67 - Visualizzazione grafico del rapporto tra numero di annunci generati e numero di annunci non generati per un certo punto di interesse nell'ultima settimana <uc67>
+- *Attore principale*: Amministratore.
+- *Precondizioni*:
+  - Il sistema tiene traccia degli annunci generati e non generati per ciascun punto di interesse.
+  - L'amministratore sta visualizzando la sezione dedicata ai grafici.
+- *Postcondizioni*:
+  - Il sistema espone il grafico con il numero di annunci generati e non generati per ciascun punto di interesse nell'ultima settimana.
+- *Scenario principale*: 
+  + L'amministratore visualizza il grafico che mette a confronto il numero di annunci generati con il numero di annunci non generati per un certo punto di interesse nell'arco dell'ultima settimana.
+
+=== UC68 - Visualizzazione grafico sulla frequenza dei motivi di mancata generazione annuncio per un certo punto d'interesse <uc68>
+- *Attore principale*: Amministratore.
+- *Precondizioni*:
+  - Il sistema tiene traccia dei dati relativi alla mancata generazione di un annuncio.
+  - L'amministratore sta visualizzando la sezione dedicata ai grafici.
+- *Postcondizioni*:
+  - Il sistema espone il grafico che mette a confronto, per un certo punto d'interesse, il numero di annunci non generati per mancato interesse con il numero di annunci non generati perché l'utente è già stato raggiunto di recente.
+- *Scenario principale*:
+  + L'amministratore visualizza il grafico che mette a confronto la frequenza delle due motivazioni per cui il sistema non ha generato un annuncio per un certo punto d'interesse.
 
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC60-67-70.png"),
-  caption: [Diagramma dei casi d'uso UC60, UC62, UC67, UC70 (continuazione di Figura 23)],
-)
-#v(20pt)
-#figure(
-  image("../assets/use_cases/UC61-68-69.png"),
-  caption: [Diagramma dei casi d'uso UC61, UC62, UC68, UC69 (continuazione di Figura 23)],
+  image("../assets/use_cases/UC59-60-65-66-67-68.png"),
+  caption: [Diagramma dei casi d'uso UC59, UC60, UC65, UC66, UC67, UC68],
 )
 
- // Visualizzazione grafico del numero di annunci generati vs numero di annunci non generati per ciascuna categoria di punto di interesse (nell'ultima settimana/giorno). // a barre (istogramma)
+#v(20pt)
+#figure(
+  image("../assets/use_cases/UC60-61-62-63-64.png", width: 90%),
+  caption: [Diagramma dei casi d'uso UC60, UC61, UC62, UC63 e UC64 (continuazione di Figura 23)],
+)
+
+#pagebreak()
+
+=== UC69 - Selezione di un punto di interesse nella sezione grafici <uc69>
+- *Attore principale*: Amministratore.
+- *Precondizioni*:
+  - Il sistema tiene traccia degli annunci generati e non generati per ciascun punto di interesse.
+  - L'amministratore sta visualizzando la sezione dedicata ai grafici.
+- *Postcondizioni*:
+  - Il sistema espone i grafici relativi al punto di interesse selezionato.
+- *Scenario principale*:
+  + L'amministratore seleziona un punto di interesse.
+  + Vengono visualizzati i grafici relativi al punto di interesse selezionato.
+
+#v(20pt)
+#figure(
+  image("../assets/use_cases/UC69.png"),
+  caption: [Diagramma del caso d'uso UC69],
+)
 
 #pagebreak()
 
@@ -1483,46 +1461,42 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
   [#link(<uc59>)[UC59]\ Riunioni esterne],
 
   [RFF-2],
-  [L'amministratore deve poter visualizzare, in opportuni grafici, delle statistiche di ambito generale relative ai dati nel sistema.],
-  [#link(<uc60>)[UC60]\ Riunioni esterne],
+  [L'amministratore deve poter visualizzare un grafico che mostri il numero di annunci generati dal sistema nelle ultime 24 ore, con granularità oraria.],
+  [#link(<uc65>)[UC65]\ Riunioni esterne],
 
   [RFF-3],
-  [L'amministratore deve poter visualizzare un grafico che mostri il numero di annunci generati dal sistema nelle ultime 24 ore, con granularità oraria.],
-  [#link(<uc67>)[UC67]\ Riunioni esterne],
+  [L'amministratore deve poter visualizzare un grafico raffigurante il numero medio di noleggi che vengono effettuati in ciascun mese dell'anno, risultato della media di noleggi effettuati in quel mese nel corso degli anni.],
+  [#link(<uc66>)[UC66]\ Riunioni esterne],
 
   [RFF-4],
-  [L'amministratore deve poter visualizzare un grafico raffigurante il numero medio di noleggi che vengono effettuati in ciascun mese dell'anno, risultato della media di noleggi effettuati in quel mese nel corso degli anni.],
-  [#link(<uc70>)[UC70]\ Riunioni esterne],
+  [L'amministratore, dalla sezione dedicata ai grafici, deve poter selezionare uno specifico punto di interesse per poi visualizzare i grafici delle statistiche ad esso correlate.],
+  [#link(<uc69>)[UC69]\ Riunioni esterne],
 
   [RFF-5],
-  [L'amministratore deve poter selezionare uno specifico punto di interesse per poi visualizzare, in opportuni grafici, le statistiche relative ad esso.],
-  [#link(<uc61>)[UC61]\ Riunioni esterne],
+  [L'amministratore deve poter visualizzare un grafico che mette a confronto il numero di annunci generati con il numero di annunci non generati per un certo punto di interesse nell'ultima settimana.],
+  [#link(<uc67>)[UC67]\ Riunioni esterne],
 
   [RFF-6],
-  [L'amministratore deve poter visualizzare un grafico che mette a confronto il numero di annunci generati con il numero di annunci non generati per un certo punto di interesse nell'ultima settimana.],
+  [L'amministratore deve poter visualizzare, per un certo punto d'interesse, un grafico che mette a confronto il numero di annunci non generati per mancato interesse con il numero di annunci non generati perché l'utente è già stato raggiunto di recente da un annuncio relativo allo stesso punto di interesse.],
   [#link(<uc68>)[UC68]\ Riunioni esterne],
 
   [RFF-7],
-  [L'amministratore deve poter visualizzare, per un certo punto d'interesse, un grafico che mette a confronto il numero di annunci non generati per mancato interesse con il numero di annunci non generati perché l'utente è già stato raggiunto di recente da un annuncio relativo allo stesso punto di interesse.],
-  [#link(<uc69>)[UC69]\ Riunioni esterne],
+  [L'amministratore deve poter visualizzare un singolo grafico relativo ad una particolare analisi dati.],
+  [#link(<uc60>)[UC60]\ Riunioni esterne],
 
   [RFF-8],
-  [L'amministratore deve poter visualizzare un singolo grafico relativo ad una particolare analisi dati.],
-  [#link(<uc62>)[UC62]\ Riunioni esterne],
+  [L'amministratore deve poter visualizzare il titolo di uno specifico grafico a seconda dell'analisi dati che viene rappresentata.],
+  [#link(<uc61>)[UC61]\ Riunioni esterne],
 
   [RFF-9],
-  [L'amministratore deve poter visualizzare il titolo di uno specifico grafico a seconda dell'analisi dati che viene rappresentata.],
-  [#link(<uc63>)[UC63]\ Riunioni esterne],
+  [L'amministratore deve poter visualizzare in uno specifico grafico un'etichetta relativa alla tipologia di misura rappresentata sulle assi delle ascisse e delle ordinate e, infine, i relativi valori.],
+  [#link(<uc62>)[UC62]\ #link(<uc63>)[UC63]\ Riunioni esterne],
 
   [RFF-10],
-  [L'amministratore deve poter visualizzare in uno specifico grafico un'etichetta relativa alla tipologia di misura rappresentata sulle assi delle ascisse e delle ordinate e, infine, i relativi valori.],
-  [#link(<uc64>)[UC64]\ #link(<uc65>)[UC65]\ Riunioni esterne],
+  [L'amministratore deve poter visualizzare, all'interno di ciascun grafico, la rappresentazione dello specifico _set_ di dati previsti per quel grafico.],
+  [#link(<uc64>)[UC64]\ Riunioni esterne],
 
   [RFF-11],
-  [L'amministratore deve poter visualizzare, all'interno di ciascun grafico, la rappresentazione dello specifico _set_ di dati previsti per quel grafico.],
-  [#link(<uc66>)[UC66]\ Riunioni esterne],
-
-  [RFF-12],
   [Viene richiesta la creazione di uno strumento di visualizzazione degli annunci in tempo reale per l'utente utilizzatore del servizio.],
   [Capitolato],
 )
@@ -1593,20 +1567,19 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
     [UC57], [ROF-31],
     [UC58], [ROF-32],
     [UC59], [RFF-1],
-    [UC60], [RFF-2],
-    [UC61], [RFF-5],
-    [UC62], [RFF-8],
+    [UC60], [RFF-7],
+    [UC61], [RFF-8],
+    [UC62], [RFF-9],
     [UC63], [RFF-9],
     [UC64], [RFF-10],
-    [UC65], [RFF-10],
-    [UC66], [RFF-11],
-    [UC67], [RFF-3],
+    [UC65], [RFF-2],
+    [UC67], [RFF-5],
     [UC68], [RFF-6],
-    [UC69], [RFF-7],
-    [UC70], [RFF-4],
-    [Riunioni esterne], [ROF-2, ROF-9, ROF-10, ROF-11, ROF-12, ROF-13, ROF-14, ROF-15, ROF-16, ROF-17, ROF-18, ROF-19, ROF-20, ROF-21, ROF-22, ROF-23, ROF-24, RDF-1, RDF-2, RDF-3, RDF-4, RDF-5, RDF-6, RDF-7, RDF-8, RDF-9, RDF-10, RDF-11, RDF-12, RDF-13, RDF-14, RDF-15, RDF-16, RDF-17, RDF-18, RDF-19, RFF-1, RFF-2, RFF-3, RFF-4, RFF-5, RFF-6, RFF-7, RFF-8, RFF-9, RFF-10, RFF-11],
+    [UC66], [RFF-3],
+    [UC69], [RFF-4],
+    [Riunioni esterne], [ROF-2, ROF-9, ROF-10, ROF-11, ROF-12, ROF-13, ROF-14, ROF-15, ROF-16, ROF-17, ROF-18, ROF-19, ROF-20, ROF-21, ROF-22, ROF-23, ROF-24, RDF-1, RDF-2, RDF-3, RDF-4, RDF-5, RDF-6, RDF-7, RDF-8, RDF-9, RDF-10, RDF-11, RDF-12, RDF-13, RDF-14, RDF-15, RDF-16, RDF-17, RDF-18, RDF-19, RFF-1, RFF-2, RFF-3, RFF-4, RFF-5, RFF-6, RFF-7, RFF-8, RFF-9, RFF-10],
     [Riunioni interne], [ROF-3, ROF-4, ROF-5, ROF-13, ROF-14, ROF-16, ROF-17, ROF-18, ROF-20, ROF-22, ROF-23, ROF-24, ROF-25, ROF-26, ROF-27, ROF-28, ROF-29, ROF-30, ROF-31, ROF-32, ROQ-2, ROQ-3, ROV-1],
-    [Capitolato], [ROF-1, ROF-6, ROF-7, ROF-8, ROF-9, ROF-10, ROF-11, ROF-12, ROF-15, ROF-33, ROF-34, ROQ-1, ROQ-4, ROQ-5, RFF-12],
+    [Capitolato], [ROF-1, ROF-6, ROF-7, ROF-8, ROF-9, ROF-10, ROF-11, ROF-12, ROF-15, ROF-33, ROF-34, ROQ-1, ROQ-4, ROQ-5, RFF-11],
     [Norme di Progetto], [ROQ-2],
     [Piano di Qualifica], [ROQ-3],
   )
