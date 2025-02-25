@@ -787,20 +787,20 @@ Il preventivo a finire rimane positivo seppur leggermente più alto rispetto all
 ==== Retrospettiva
 Durante il sesto _sprint_ il gruppo ha lavorato per apportare le modifiche necessarie alla documentazione in seguito ai _feedback_ ricevuti durante il RTB. Le attività sono state quasi tutte completate nei tempi previsti, eccezzione fatta per le correzioni da apportare all'Analisi dei Requisiti, che proseguiranno durante il prossimo _sprint_.
 
-===== Cosa ha funzionato?
+===== Cosa ha funzionato
 Il gruppo è riuscito, nonostante il periodo in concomitanza con gli ultimi esami, a completare la maggior parte delle attività previste nei tempi pianificati. Apprezzato anche il continuo aggiornamento reciproco tramite i canali informali di comunicazione. 
 
-===== Cosa non ha funzionato?
-L'attività di correzione dell'Analisi dei Requisiti è stata sottostimata.
+===== Cosa non ha funzionato
+L'attività di correzione dell'Analisi dei Requisiti è stata iniziata tardi e la sua durata è stata sottostimata, inoltre il gruppo voleva prima discutere alcune modifiche con la proponente e non è stato possibile farlo entro la fine di questo _sprint_.
 
-===== Cosa fare per migliorare?
-Il gruppo si impegnerà a pianificare meglio le scadenze per le attività future, cercando di stimare più precisamente i tempi necessari a completarle. 
+===== Cosa fare per migliorare
+Il gruppo si impegnerà a pianificare meglio le scadenze per le attività future, cercando di stimare più precisamente i tempi necessari a completarle, tenendo conto del tempo necessario ad eventuali _feedback_ da parte dell'azienda proponente. 
 
 ===== Rischi riscontrati
 Nel corso del sesto _sprint_ si sono riscontrati i seguenti rishi:
 - #link(<RO-4>)[RO-4]: pianificato, siccome nelle ultime settimane si sono svolti gli ultimi esami. Il problema è stato comunque mitigato concentrando maggior parte del lavoro nella parte finale dello _sprint_.
 - #link(<RO-2>)[RO-2]: pianificato, sono stati stabiliti tempi più "larghi" del solito per i motivi sopra citati relativi agli esami. Il gruppo ha comunque mitigato il problema utilizzando del tempo per approfondire le architetture _software_ da utilizzare nelle prossime settimane.
-- #link(<RO-3>)[RO-3]: non pianificato, l'attività di correzione dell'Analisi dei Requisiti si è rivelata più onerosa del previsto, portando ad essere continuata nel prossimo _sprint_
+- #link(<RO-3>)[RO-3]: non pianificato, l'attività di correzione dell'Analisi dei Requisiti si è rivelata più onerosa del previsto ed è stata iniziata troppo tardi, portando ad essere continuata nel prossimo _sprint_
 
 ===== Attività future
 Nel prossimo periodo, siccome sono state apportate le modifiche dovute ai documenti in seguito al colloquio RTB, il gruppo inizierà la stesura dei documenti Manuale Utente e Specifica Tecnica.
