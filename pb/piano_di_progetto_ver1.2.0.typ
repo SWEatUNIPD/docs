@@ -704,7 +704,7 @@ Ricevendo continuamente riscontri positivi da parte della proponente rispetto al
   [- *Inizio:*], [10/02/2025],
   [- *Fine:*], [24/02/2025],
   [- *Rischi attesi:*], [ #link(<RO-1>)[RO-1], #link(<RO-2>)[RO-2], #link(<RO-4>)[RO-4]],
-) 
+)
 
 ==== Attività dello sprint
 In seguito alla valutazione del RTB, il _team_ si è prefissato di apportare le modifiche dovute alla documentazione, in base ai _feedback_ ricevuti, entro il termine del sesto _sprint_. In particolare, le attività da portare a termine sono le seguenti:
@@ -765,33 +765,23 @@ In seguito alla valutazione del RTB, il _team_ si è prefissato di apportare le 
   chartCaption: [Grafico percentuale dell'allocazione delle ore per ruolo nel sesto _sprint_],
 )
 
-=== Consultivo orario e di spesa complessivo
-#consuntivoOre(
-  preventivo: (
-    (8, 8, 12, 19, 23, 20),
-    (8, 8, 12, 19, 23, 20),
-    (8, 8, 12, 19, 23, 20),
-    (8, 8, 12, 19, 23, 20),
-    (8, 8, 12, 19, 23, 20),
-    (8, 8, 12, 19, 23, 20),
-    (8, 8, 12, 19, 23, 20),
-  ),
-  consuntivo: (
-    (4, 4, 11, 0, 0, 6),
-    (6, 5, 12, 0, 5.5, 4),
-    (2, 5, 12, 0, 0, 11),
-    (3, 5.5, 10, 0, 0, 10),
-    (5, 8, 10.5, 0, 0, 6),
-    (3, 5.5, 12, 0, 8, 10),
-    (3, 8, 0, 12, 0, 4.5),
-  ),
-  tabCaption: [Consuntivo delle ore complessive per membro per ruolo],
-  costTabCaption: [Costi sostenuti complessivamente],
-  chartCaption: [Grafico percentuale dell'allocazione delle ore complessive],
+=== Risorse rimanenti e preventivo a finire
+#align(
+  center,
+  [
+    #table(
+      columns: (auto, auto, auto, auto),
+      align: center,
+      table.header([*Ruolo*], [*Costo*], [*Ore rimanenti*], [*Budget rimanente*]),
+      [Responsabile], [], [], [],
+      [Amministratore], [], [], [],
+      [Analista], [], [], [],
+      [Progettista], [], [], [],
+      [Programmatore], [], [], [],
+      [Verificatore], [], [], [],
+    )
+  ],
 )
-
-
-#v(10pt)
 ==== Retrospettiva
 Durante il sesto _sprint_ il gruppo ha lavorato per apportare le modifiche necessarie alla documentazione in seguito ai _feedback_ ricevuti durante il RTB. Le attività sono state quasi tutte completate nei tempi previsti, eccezzione fatta per le correzioni da apportare all'Analisi dei Requisiti, che proseguiranno durante il prossimo _sprint_.
 
