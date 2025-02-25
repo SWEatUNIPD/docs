@@ -1097,6 +1097,14 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   + L'amministratore visualizza i dati sul grafico.
 
+#v(20pt)
+#figure(
+  image("../assets/use_cases/UC59-60-61-62-63-64.png", width: 90%),
+  caption: [Diagramma dei casi d'uso UC59, UC60, UC61, UC62, UC63 e UC64 (inclusioni UC60)],
+)
+
+#pagebreak()
+
 === UC65 - Visualizzazione grafico del numero di annunci generati nelle ultime 24 ore <uc65>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
@@ -1140,16 +1148,9 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 #v(20pt)
 #figure(
   image("../assets/use_cases/UC59-60-65-66-67-68.png"),
-  caption: [Diagramma dei casi d'uso UC59, UC60, UC65, UC66, UC67, UC68],
+  caption: [Diagramma dei casi d'uso UC59, UC60, UC65, UC66, UC67, UC68 (generalizzazioni UC60)],
 )
-
 #v(20pt)
-#figure(
-  image("../assets/use_cases/UC60-61-62-63-64.png", width: 90%),
-  caption: [Diagramma dei casi d'uso UC60, UC61, UC62, UC63 e UC64 (continuazione di Figura 23)],
-)
-
-#pagebreak()
 
 === UC69 - Selezione di un punto di interesse nella sezione grafici <uc69>
 - *Attore principale*: Amministratore.
@@ -1590,8 +1591,8 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
   align: (left, left, left, left, left),
   columns: (1.3fr, 1fr, 1fr, 1fr, 1fr),
   table.header([*Tipologia*], [*Obbligatori*], [*Desiderabili*], [*Opzionali*], [*Totale*]),
-  [Funzionali], [34], [19], [12], [65],
+  [Funzionali], [34], [19], [11], [64],
   [Qualità], [5], [0], [0], [5],
   [Vincolo], [1], [0], [0], [1],
-  [*Totale*], [40], [19], [12], [*71*],
+  [*Totale*], [40], [19], [11], [*70*],
 )
