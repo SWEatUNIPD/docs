@@ -4,7 +4,14 @@
   data: "26 gennaio 2025",
   destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "Sync Lab S.r.l.", "Gruppo SWE@"),
   responsabile: "Davide Marin",
-  redattori: ("Andrea Precoma", "Davide Marin", "Davide Martinelli", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
+  redattori: (
+    "Andrea Precoma",
+    "Davide Marin",
+    "Davide Martinelli",
+    "Davide Picello",
+    "Klaudio Merja",
+    "Riccardo Milan",
+  ),
   verificatori: (
     "Andrea Perozzo",
     "Andrea Precoma",
@@ -103,7 +110,8 @@
       - Struttura iniziale e introduzione del documento
       - Stesura dell'analisi dei rischi
       - Stesura del modello di sviluppo
-      - Stesura della pianificazione e del primo _sprint_],
+      - Stesura della pianificazione e del primo _sprint_
+    ],
   ),
   content: content,
 )
@@ -252,11 +260,18 @@ Il gruppo si pone come _milestone_ del progetto le due consegne previste dai com
 
 Gli _sprint_ vengono quindi divisi nelle due _milestone_ precedentemente elencate per garantire una separazione netta degli stessi e delle attività che ne comportano.
 
+#pagebreak()
+
 == RTB
 === Sprint 1
-- *Inizio*: 13/11/2024
-- *Fine*: 27/11/2024
-- *Rischi attesi*: #link(<RO-2>)[RO-2], #link(<RO-3>)[RO-3], #link(<RT-1>)[RT-1]
+#grid(
+  columns: 2,
+  column-gutter: 1em,
+  row-gutter: 0.5em,
+  [- *Inizio:*], [13/11/2024],
+  [- *Fine:*], [27/11/2024],
+  [- *Rischi attesi:*], [#link(<RO-2>)[RO-2], #link(<RO-3>)[RO-3], #link(<RT-1>)[RT-1]],
+)
 ==== Attività dello sprint
 Le attività che il gruppo si prefissa di concludere durante queste due settimane sono:
 - Inizio stesura delle Norme di Progetto, in particolare:
@@ -327,10 +342,14 @@ I verificatori suggeriscono infine di incaricare più di una persona alla verifi
 #pagebreak()
 
 === Sprint 2
-- *Inizio*: 28/11/2024
-- *Fine*: 13/12/2024
-- *Rischi attesi*: #link(<RO-2>)[RO-2], #link(<RO-3>)[RO-3], #link(<RT-1>)[RT-1]
-
+#grid(
+  columns: 2,
+  column-gutter: 1em,
+  row-gutter: 0.5em,
+  [- *Inizio:*], [28/11/2024],
+  [- *Fine:*], [13/12/2024],
+  [- *Rischi attesi:*], [#link(<RO-2>)[RO-2], #link(<RO-3>)[RO-3], #link(<RT-1>)[RT-1]],
+)
 ==== Attività dello sprint
 Le attività che il _team_ si è prefissato di portare a termine durante il secondo _sprint_ sono le seguenti:
 - Redazione verbale esterno ed interno del 27/11/2024.
@@ -420,9 +439,14 @@ Molte delle soluzioni vagliate, alcune delle quali anche a pagamento, presentava
 #pagebreak()
 
 === Sprint 3
-- *Inizio*: 14/12/2024
-- *Fine*: 23/12/2024
-- *Rischi attesi*: #link(<RO-1>)[RO-1], #link(<RO-3>)[RO-3], #link(<RT-1>)[RT-1]
+#grid(
+  columns: 2,
+  column-gutter: 1em,
+  row-gutter: 0.5em,
+  [- *Inizio:*], [14/12/2024],
+  [- *Fine:*], [23/12/2024],
+  [- *Rischi attesi:*], [#link(<RO-1>)[RO-1], #link(<RO-3>)[RO-3], #link(<RT-1>)[RT-1]],
+)
 
 ==== Attività dello sprint
 Le attività che il _team_ si è prefissato di portare a termine durante il terzo _sprint_ sono le seguenti:
@@ -501,9 +525,14 @@ Per quanto riguarda l'Analisi dei Requisiti l'attività di stesura è proseguita
 #pagebreak()
 
 === Sprint 4
-- *Inizio*: 24/12/2024
-- *Fine*: 08/01/2024
-- *Rischi attesi*: #link(<RO-1>)[RO-1], #link(<RO-3>)[RO-3], #link(<RO-4>)[RO-4], #link(<RT-1>)[RT-1]
+#grid(
+  columns: 2,
+  column-gutter: 1em,
+  row-gutter: 0.5em,
+  [- *Inizio:*], [24/12/2024],
+  [- *Fine:*], [08/01/2025],
+  [- *Rischi attesi:*], [#link(<RO-1>)[RO-1], #link(<RO-3>)[RO-3], #link(<RO-4>)[RO-4], #link(<RT-1>)[RT-1]],
+)
 
 ==== Attività dello sprint
 Le attività che il _team_ si è prefissato di portare a termine durante il quarto _sprint_ sono le seguenti:
@@ -584,10 +613,14 @@ In ultima i miglioramenti alla dashboard Grafana non sono stati fatti in quanto,
 #pagebreak()
 
 === Sprint 5
-- *Inizio*: 09/01/2025
-- *Fine*: 26/01/2025
-- *Rischi attesi*: #link(<RO-1>)[RO-1], #link(<RO-3>)[RO-3], #link(<RO-4>)[RO-4]
-
+#grid(
+  columns: 2,
+  column-gutter: 1em,
+  row-gutter: 0.5em,
+  [- *Inizio:*], [09/01/2025],
+  [- *Fine:*], [26/01/2025],
+  [- *Rischi attesi:*], [#link(<RO-1>)[RO-1], #link(<RO-3>)[RO-3], #link(<RO-4>)[RO-4]],
+)
 ==== Attività dello sprint
 In vista della scadenza della _milestone_, e quindi della consegna prevista per lunedì 27 gennaio, le attività che il _team_ si è prefissato di portare a termine durante il quinto _sprint_ sono le seguenti:
 - Redazione dei verbali per le rispettive riunioni interne ed esterne.
@@ -662,10 +695,16 @@ Ricevendo continuamente riscontri positivi da parte della proponente rispetto al
 
 #pagebreak()
 
+== PB
 === Sprint 6
-- *Inizio*: 10/02/2025
-- *Fine*: 24/02/2025
-- *Rischi attesi*: #link(<RO-1>)[RO-1], #link(<RO-2>)[RO-2], #link(<RO-4>)[RO-4]
+#grid(
+  columns: 2,
+  column-gutter: 1em,
+  row-gutter: 0.5em,
+  [- *Inizio:*], [10/02/2025],
+  [- *Fine:*], [24/02/2025],
+  [- *Rischi attesi:*], [ #link(<RO-1>)[RO-1], #link(<RO-2>)[RO-2], #link(<RO-4>)[RO-4]],
+) 
 
 ==== Attività dello sprint
 In seguito alla valutazione del RTB, il _team_ si è prefissato di apportare le modifiche dovute alla documentazione, in base ai _feedback_ ricevuti, entro il termine del sesto _sprint_. In particolare, le attività da portare a termine sono le seguenti:
@@ -765,5 +804,3 @@ Il preventivo a finire rimane positivo seppur leggermente più alto rispetto all
 
 Nel prossimo periodo, siccome sono state apportate le modifiche dovute ai documenti in seguito al colloquio RTB, il gruppo inizierà la stesura dei documenti Manuale Utente e Specifica Tecnica.
 Inoltre si inizierà a lavorare sullo sviluppo del MVP con relativa progettazione, applicando dapprima le decisioni sull'architettura discusse anche con la proponente.
-
-#pagebreak()
