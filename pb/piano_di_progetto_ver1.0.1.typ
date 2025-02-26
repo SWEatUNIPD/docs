@@ -666,7 +666,7 @@ Ricevendo continuamente riscontri positivi da parte della proponente rispetto al
 - *Rischi attesi*: #link(<RO-1>)[RO-1], #link(<RO-2>)[RO-2], #link(<RO-3>)[RO-3], #link(<RT-1>)[RT-1]
 
 ==== Attività dello sprint
-In seguito alla riunione di inizio settimo _sprint_, il _team_ si è prefissato di iniziare il cilco di vita dei documenti relativi alla _milestone_ PB e iniziare la progettazione del _software_. In particolare, le attività da portare a termine sono le seguenti:
+In seguito alla riunione di inizio settimo _sprint_, il _team_ si è prefissato di iniziare il ciclo di vita dei documenti relativi alla _milestone_ PB e iniziare la progettazione del _software_. In particolare, le attività da portare a termine sono le seguenti:
 - Redazione dei verbali per le rispettive riunioni interne ed esterne.
 - Compilazione del Piano di Progetto con la sezione relativa al sesto _sprint_.
 - Inizio stesura Manuale Utente.
