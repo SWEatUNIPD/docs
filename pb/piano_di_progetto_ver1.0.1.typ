@@ -668,7 +668,7 @@ Ricevendo continuamente riscontri positivi da parte della proponente rispetto al
 ==== Attività dello sprint
 In seguito alla riunione di inizio settimo _sprint_, il _team_ si è prefissato di iniziare il ciclo di vita dei documenti relativi alla _milestone_ PB e iniziare la progettazione del _software_. In particolare, le attività da portare a termine sono le seguenti:
 - Redazione dei verbali per le rispettive riunioni interne ed esterne.
-- Compilazione del Piano di Progetto con la sezione relativa al sesto _sprint_.
+- Compilazione del Piano di Progetto con la sezione relativa al settimo _sprint_.
 - Inizio stesura Manuale Utente.
 - Modifiche al test del glossario.
 - Inizio stesura Specifica Tecnica.
