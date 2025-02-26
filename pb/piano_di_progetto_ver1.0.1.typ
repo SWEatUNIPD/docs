@@ -672,7 +672,7 @@ In seguito alla riunione di inizio settimo _sprint_, il _team_ si è prefissato 
 - Inizio stesura Manuale Utente.
 - Modifiche al test del glossario.
 - Inizio stesura Specifica Tecnica.
-- Ultimazione correzini e miglioramenti Analisi dei Requisiti.
+- Ultimazione correzioni e miglioramenti Analisi dei Requisiti.
 #v(10pt)
 #figure(
   image("../assets/img/PdP/gantt_s7.png"),
