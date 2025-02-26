@@ -136,13 +136,13 @@ sottolineato e seguito dalla lettera g posta ad apice (e.g. #rifGlossario("termi
 == Riferimenti
 === Riferimenti normativi
 - Norme di Progetto (v1.0.1)\ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/norme_di_progetto_ver1.0.1.pdf")
-- Regolamento del progetto didattico\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")
-- Capitolato C4 (Sync Lab)\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
+- Regolamento del progetto didattico\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")\ (ultimo accesso in data 24/01/2025)
+- Capitolato C4 (Sync Lab)\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")\ (ultimo accesso in data 24/01/2025)
 
 === Riferimenti informativi
 - Glossario (v1.0.0)\ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/glossario_ver1.0.0.pdf")
-- T5 - Analisi dei Requisiti\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf")
-- P2 - I Diagrammi dei Casi d'Uso\ #formatLink(url: "https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi%20Use%20Case.pdf")
+- T5 - Analisi dei Requisiti\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf")\ (ultimo accesso in data 24/01/2025)
+- P2 - I Diagrammi dei Casi d'Uso\ #formatLink(url: "https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi%20Use%20Case.pdf")\ (ultimo accesso in data 24/01/2025)
 #pagebreak()
 
 = Descrizione del prodotto
@@ -1053,7 +1053,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   - Visualizzazione grafico del numero di annunci generati nelle ultime 24 ore (#link(<uc65>)[UC65]).
   - Visualizzazione grafico del numero medio di noleggi per mese (#link(<uc66>)[UC66]).
   - Visualizzazione grafico del rapporto tra numero di annunci generati e numero di annunci non generati per un certo punto di interesse nell'ultima settimana (#link(<uc67>)[UC67]).
-  - Visualizzazione grafico sulla frequenza dei motivi di mancata generazione annuncio per un certo punto d'interesse (#link(<uc68>)[UC68]).
 
 === UC61 - Visualizzazione titolo del grafico <uc61>
 - *Attore principale*: Amministratore.
@@ -1134,25 +1133,14 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   - Il sistema espone il grafico con il numero di annunci generati e non generati per ciascun punto di interesse nell'ultima settimana.
 - *Scenario principale*: 
   + L'amministratore visualizza il grafico che mette a confronto il numero di annunci generati con il numero di annunci non generati per un certo punto di interesse nell'arco dell'ultima settimana.
-
-=== UC68 - Visualizzazione grafico sulla frequenza dei motivi di mancata generazione annuncio per un certo punto d'interesse <uc68>
-- *Attore principale*: Amministratore.
-- *Precondizioni*:
-  - Il sistema tiene traccia dei dati relativi alla mancata generazione di un annuncio.
-  - L'amministratore sta visualizzando la sezione dedicata ai grafici.
-- *Postcondizioni*:
-  - Il sistema espone il grafico che mette a confronto, per un certo punto d'interesse, il numero di annunci non generati per mancato interesse con il numero di annunci non generati perché l'utente è già stato raggiunto di recente.
-- *Scenario principale*:
-  + L'amministratore visualizza il grafico che mette a confronto la frequenza delle due motivazioni per cui il sistema non ha generato un annuncio per un certo punto d'interesse.
-
-#v(20pt)
+ 
 #figure(
-  image("../assets/use_cases/UC59-60-65-66-67-68.png"),
-  caption: [Diagramma dei casi d'uso UC59, UC60, UC65, UC66, UC67, UC68 (generalizzazioni UC60)],
+  image("../assets/use_cases/UC59-60-65-66-67.png"),
+  caption: [Diagramma dei casi d'uso UC59, UC60, UC65, UC66, UC67 (generalizzazioni UC60)],
 )
 #v(20pt)
 
-=== UC69 - Selezione di un punto di interesse nella sezione grafici <uc69>
+=== UC68 - Selezione di un punto di interesse nella sezione grafici <uc68>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema tiene traccia degli annunci generati e non generati per ciascun punto di interesse.
@@ -1165,8 +1153,8 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC69.png"),
-  caption: [Diagramma del caso d'uso UC69],
+  image("../assets/use_cases/UC68.png"),
+  caption: [Diagramma del caso d'uso UC68],
 )
 
 #pagebreak()
@@ -1470,34 +1458,30 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
   [#link(<uc66>)[UC66]\ Riunioni esterne],
 
   [RFF-4],
-  [L'amministratore, dalla sezione dedicata ai grafici, deve poter selezionare uno specifico punto di interesse per poi visualizzare i grafici delle statistiche ad esso correlate.],
-  [#link(<uc69>)[UC69]\ Riunioni esterne],
+  [L'amministratore, dalla sezione dedicata ai grafici, deve poter selezionare uno specifico punto di interesse per poter poi visualizzare i grafici delle statistiche ad esso correlate.],
+  [#link(<uc68>)[UC68]\ Riunioni esterne],
 
   [RFF-5],
   [L'amministratore deve poter visualizzare un grafico che mette a confronto il numero di annunci generati con il numero di annunci non generati per un certo punto di interesse nell'ultima settimana.],
   [#link(<uc67>)[UC67]\ Riunioni esterne],
 
   [RFF-6],
-  [L'amministratore deve poter visualizzare, per un certo punto d'interesse, un grafico che mette a confronto il numero di annunci non generati per mancato interesse con il numero di annunci non generati perché l'utente è già stato raggiunto di recente da un annuncio relativo allo stesso punto di interesse.],
-  [#link(<uc68>)[UC68]\ Riunioni esterne],
-
-  [RFF-7],
   [L'amministratore deve poter visualizzare un singolo grafico relativo ad una particolare analisi dati.],
   [#link(<uc60>)[UC60]\ Riunioni esterne],
 
-  [RFF-8],
+  [RFF-7],
   [L'amministratore deve poter visualizzare il titolo di uno specifico grafico a seconda dell'analisi dati che viene rappresentata.],
   [#link(<uc61>)[UC61]\ Riunioni esterne],
 
-  [RFF-9],
+  [RFF-8],
   [L'amministratore deve poter visualizzare in uno specifico grafico un'etichetta relativa alla tipologia di misura rappresentata sulle assi delle ascisse e delle ordinate e, infine, i relativi valori.],
   [#link(<uc62>)[UC62]\ #link(<uc63>)[UC63]\ Riunioni esterne],
 
-  [RFF-10],
+  [RFF-9],
   [L'amministratore deve poter visualizzare, all'interno di ciascun grafico, la rappresentazione dello specifico _set_ di dati previsti per quel grafico.],
   [#link(<uc64>)[UC64]\ Riunioni esterne],
 
-  [RFF-11],
+  [RFF-10],
   [Viene richiesta la creazione di uno strumento di visualizzazione degli annunci in tempo reale per l'utente utilizzatore del servizio.],
   [Capitolato],
 )
@@ -1568,19 +1552,18 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
     [UC57], [ROF-31],
     [UC58], [ROF-32],
     [UC59], [RFF-1],
-    [UC60], [RFF-7],
-    [UC61], [RFF-8],
-    [UC62], [RFF-9],
-    [UC63], [RFF-9],
-    [UC64], [RFF-10],
+    [UC60], [RFF-6],
+    [UC61], [RFF-7],
+    [UC62], [RFF-8],
+    [UC63], [RFF-8],
+    [UC64], [RFF-9],
     [UC65], [RFF-2],
-    [UC67], [RFF-5],
-    [UC68], [RFF-6],
     [UC66], [RFF-3],
-    [UC69], [RFF-4],
-    [Riunioni esterne], [ROF-2, ROF-9, ROF-10, ROF-11, ROF-12, ROF-13, ROF-14, ROF-15, ROF-16, ROF-17, ROF-18, ROF-19, ROF-20, ROF-21, ROF-22, ROF-23, ROF-24, RDF-1, RDF-2, RDF-3, RDF-4, RDF-5, RDF-6, RDF-7, RDF-8, RDF-9, RDF-10, RDF-11, RDF-12, RDF-13, RDF-14, RDF-15, RDF-16, RDF-17, RDF-18, RDF-19, RFF-1, RFF-2, RFF-3, RFF-4, RFF-5, RFF-6, RFF-7, RFF-8, RFF-9, RFF-10],
+    [UC67], [RFF-5],
+    [UC68], [RFF-4],
+    [Riunioni esterne], [ROF-2, ROF-9, ROF-10, ROF-11, ROF-12, ROF-13, ROF-14, ROF-15, ROF-16, ROF-17, ROF-18, ROF-19, ROF-20, ROF-21, ROF-22, ROF-23, ROF-24, RDF-1, RDF-2, RDF-3, RDF-4, RDF-5, RDF-6, RDF-7, RDF-8, RDF-9, RDF-10, RDF-11, RDF-12, RDF-13, RDF-14, RDF-15, RDF-16, RDF-17, RDF-18, RDF-19, RFF-1, RFF-2, RFF-3, RFF-4, RFF-5, RFF-6, RFF-7, RFF-8, RFF-9],
     [Riunioni interne], [ROF-3, ROF-4, ROF-5, ROF-13, ROF-14, ROF-16, ROF-17, ROF-18, ROF-20, ROF-22, ROF-23, ROF-24, ROF-25, ROF-26, ROF-27, ROF-28, ROF-29, ROF-30, ROF-31, ROF-32, ROQ-2, ROQ-3, ROV-1],
-    [Capitolato], [ROF-1, ROF-6, ROF-7, ROF-8, ROF-9, ROF-10, ROF-11, ROF-12, ROF-15, ROF-33, ROF-34, ROQ-1, ROQ-4, ROQ-5, RFF-11],
+    [Capitolato], [ROF-1, ROF-6, ROF-7, ROF-8, ROF-9, ROF-10, ROF-11, ROF-12, ROF-15, ROF-33, ROF-34, ROQ-1, ROQ-4, ROQ-5, RFF-10],
     [Norme di Progetto], [ROQ-2],
     [Piano di Qualifica], [ROQ-3],
   )
@@ -1591,8 +1574,8 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
   align: (left, left, left, left, left),
   columns: (1.3fr, 1fr, 1fr, 1fr, 1fr),
   table.header([*Tipologia*], [*Obbligatori*], [*Desiderabili*], [*Opzionali*], [*Totale*]),
-  [Funzionali], [34], [19], [11], [64],
+  [Funzionali], [34], [19], [10], [63],
   [Qualità], [5], [0], [0], [5],
   [Vincolo], [1], [0], [0], [1],
-  [*Totale*], [40], [19], [11], [*70*],
+  [*Totale*], [40], [19], [10], [*69*],
 )
