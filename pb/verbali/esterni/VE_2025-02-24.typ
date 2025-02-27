@@ -47,7 +47,7 @@ Aggiungere un indicatore quando il soggetto si trova in prossimità di un _POI_ 
 Si è proposto di garantire che il sistema consenta la rilevazione della permanenza più lunga in alcuni punti rispetto ad altri. Inoltre, è stato suggerito di valutare soluzioni alternative per rendere il processo più efficiente e semplice da implementare.
 
 == Scelta dell'architettura
-Si è discusso sulla scelta tra un'architettura #rifGlossario("event-driven") e _message-driven_, con particolare attenzione alla modalità sincrona o _real-time_ dei messaggi.
+Si è discusso sulla scelta tra un'architettura #rifGlossario("event-driven") e #rifGlossario("message-driven"), con particolare attenzione alla modalità sincrona o _real-time_ dei messaggi.
 
 Riguardo alla logica di _deployment_, il gruppo ha esaminato le differenze tra microservizi e monolite. L'azienda ha suggerito che, sebbene l'architettura a microservizi sia spesso raccomandata, per un progetto di dimensioni ridotte potrebbe essere più conveniente adottare un'architettura modulare basata su #rifGlossario("Docker").
 
