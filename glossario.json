@@ -63,6 +63,9 @@
     "MVP": "Acronimo di _Minimum Viable Product_, rappresenta la versione iniziale di un prodotto con le funzionalità minime indispensabili per essere testato dagli utenti e validato sul mercato.",
     "Marker": "Punto di riferimento utilizzato per identificare una posizione specifica all'interno della mappa."
   },
+  "N": {
+    "Normal-driven Architecture": "È un _design pattern_ che si occupa dell'esecuzione sequenziale e sincrona di operazioni, basata su chiamate dirette e su un flusso di controllo centralizzato, permettendo di far comunicare o avviare servizi strettamente collegati tra loro."
+  },
   "P": {
     "PoC": "Acronimo di _Proof of Concept_, è un prototipo o un modello iniziale creato per dimostrare la fattibilità di un'idea o concetto, senza dover sviluppare un prodotto completo.",
     "PostGIS": "Estensione _open source_ di PostgreSQL per la gestione di dati spaziali.",
