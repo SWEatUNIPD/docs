@@ -13,8 +13,7 @@
     "27/02/2025",
     "Andrea Perozzo",
     "Davide Marin",
-    [ - Creato paragrafo per i termini che iniziano con "N"
-      - Aggiunto il termine "Normal-driven Architecture"],
+    [ - Aggiunto il termine "Message-driven Architecture"],
     "1.0.1",
     "10/02/2025",
     "Klaudio Merja",
