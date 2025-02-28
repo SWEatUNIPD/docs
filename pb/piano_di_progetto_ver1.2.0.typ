@@ -774,15 +774,15 @@ In seguito alla valutazione del RTB, il _team_ si è prefissato di apportare le 
       align: center,
       table.header([*Ruolo*], [*Ore rimanenti*], [*_Budget_ rimanente*], [*Risorse consumate*]),
       [Responsabile], [30], [900€], [46,43%],
-      [Amministratore], [15], [300], [73,21%],
-      [Analista], [4.5], [112.5], [94,64%],
-      [Progettista], [133], [3325], [0%],
-      [Programmatore], [143.5], [2152.5], [10,87%],
-      [Verificatore], [88.5], [1327.5], [36,79%],
+      [Amministratore], [15], [300€], [73,21%],
+      [Analista], [4.5], [112.5€], [94,64%],
+      [Progettista], [133], [3325€], [0%],
+      [Programmatore], [143.5], [2152.5€], [10,87%],
+      [Verificatore], [88.5], [1327.5€], [36,79%],
     )
   ],
 )
-Il preventivo a finire rimane positivo seppur leggermente più alto rispetto allo _sprint_ precedente, si attesta infatti a 12,719.71€, a fronte di un preventivo iniziale di 12.740,00€.
+Il preventivo a finire rimane positivo seppur leggermente più alto rispetto allo _sprint_ precedente. Si attesta infatti a 12,719.71€, a fronte di un preventivo iniziale di 12.740,00€.
 
 ==== Retrospettiva
 Durante il sesto _sprint_ il gruppo ha lavorato per apportare le modifiche necessarie alla documentazione in seguito ai _feedback_ ricevuti durante il RTB. Le attività sono state quasi tutte completate nei tempi previsti, eccezzione fatta per le correzioni da apportare all'Analisi dei Requisiti, che proseguiranno durante il prossimo _sprint_.
