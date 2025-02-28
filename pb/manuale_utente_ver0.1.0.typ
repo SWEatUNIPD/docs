@@ -15,7 +15,7 @@
   uso: "Esterno",
   versioni: (
     "0.1.0",
-    "DD/02/2025",
+    "28/02/2025",
     "Andrea Precoma",
     "Klaudio Merja",
     [
@@ -44,12 +44,12 @@ La prima occorrenza di un termine definito all'interno del glossario presente al
 
 == Riferimenti
 === Riferimenti normativi
-- Norme di Progetto (v2.0.0)\ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/norme_di_progetto_ver2.0.0.pdf")
-- Regolamento del progetto didattico\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")
-- Capitolato C4 (Sync Lab S.r.l.)\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
+- Norme di Progetto (v2.0.0) \ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/norme_di_progetto_ver2.0.0.pdf")
+- Regolamento del progetto didattico - 21/03/2025 \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")
+- Capitolato C4 (Sync Lab S.r.l.) - 21/03/2025 \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
 === Riferimenti informativi
-- Glossario (v2.0.0)\ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/glossario_ver2.0.0.pdf")
-- Capitolato C4 (Sync Lab)\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
+- Glossario (v2.0.0) \ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/glossario_ver2.0.0.pdf")
+- Capitolato C4 (Sync Lab) - 21/03/2025 \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
 
 
 = Avvio del sistema
@@ -68,9 +68,9 @@ In alternativa, se si ha installato #rifGlossario("Git"), è possibile "clonare"
 === File docker-compose.yml
 _File_ di configurazione utilizzato per definire le proprietà dei servizi. Viene utilizzato per avviare e, nel caso si eseguisse per la prima volta, creare i _container_ contenenti i servizi descritti.
 - *kafka*: _#rifGlossario("data broker")_ con immagine `bitnami/kafka:latest`.
-- *postgis*: _plugin_ di PostgreSQL per gli incroci geospaziali con immagine `postgis/postgis:latest`.
-- *pgadmin*: _#rifGlossario("database")_ ??? con immagine `dpage/pgadmin4:latest`.
-- *spring-backend*: ?? con immagine _custom_ `spring-backend`.
+- *postgis*: _#rifGlossario("database")_ in #rifGlossario("PostgreSQL") con installato l'estensione PostGIS per gli incroci geospaziali con immagine `postgis/postgis:latest`.
+- *pgadmin*: interfaccia per monitorare lo stato del _database_ con immagine `dpage/pgadmin4:latest`.
+- *spring-backend*: TODO?? con immagine _custom_ `spring-backend`.
 - *grafana*: _front-end_ con immagine `grafana/grafana:latest`.
 - *simulator*: simulatore dei sensori con immagine _custom_ `simulator`.
 
@@ -106,7 +106,7 @@ Collegarsi all'indirizzo `localhost:3000` (oppure `127.0.0.1:3000`) e inserire l
 
 In seguito viene richiesto di cambiare la _password_ perché poco sicura ma si può saltare l'operazione.
 
-Nel _menu_ laterale bisogna selezionare la voce "_Dashboard_" e poi "NOME DASHBOARD" dall'elenco.
+Nel _menu_ laterale bisogna selezionare la voce "_#rifGlossario("Dashboard")_" e poi "NOME DASHBOARD" dall'elenco.
 
 #figure(
   image("../assets/img/Manuale/grafana-menu.png", width: 60%),
@@ -114,7 +114,7 @@ Nel _menu_ laterale bisogna selezionare la voce "_Dashboard_" e poi "NOME DASHBO
 )
 #v(5pt)
 
-== Database
+== Interfaccia per lo stato del database
 Collegarsi all'indirizzo `localhost:8888` (oppure `127.0.0.1:8888`) e inserire le credenziali "sweat.unipd\@gmail.com" per _username_ e "Admin12!" per _password_.
 
 #figure(
