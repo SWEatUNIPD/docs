@@ -55,7 +55,7 @@ La prima occorrenza di un termine definito all'interno del glossario presente al
 = Avvio del sistema
 == Requisiti tecnici per avviare il sistema <req>
 // TODO: VERSIONE DOCKER?
-Al fine di usufruire del prodotto _software_ è richiesta l'installazione di Docker e #rifGlossario("Docker Compose") per la gestione di applicazioni Docker multi-container*[G]*. Si mette a disposizione la #formatLink(label: "guida ufficiale", url: "https://docs.docker.com/engine/install/") per l'installazione.
+Al fine di usufruire del prodotto _software_ è richiesta l'installazione di Docker e #rifGlossario("Docker Compose") per la gestione dei _container_. Si mette a disposizione la #formatLink(label: "guida ufficiale", url: "https://docs.docker.com/engine/install/") per l'installazione.
 
 === Requisiti opzionali ??
 
