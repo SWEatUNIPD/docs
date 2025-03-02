@@ -4,7 +4,14 @@
   data: "26 gennaio 2025",
   destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "Sync Lab S.r.l.", "Gruppo SWE@"),
   responsabile: "Davide Marin",
-  redattori: ("Andrea Precoma", "Davide Marin", "Davide Martinelli", "Davide Picello", "Klaudio Merja", "Riccardo Milan"),
+  redattori: (
+    "Andrea Precoma",
+    "Davide Marin",
+    "Davide Martinelli",
+    "Davide Picello",
+    "Klaudio Merja",
+    "Riccardo Milan",
+  ),
   verificatori: (
     "Andrea Perozzo",
     "Andrea Precoma",
@@ -17,6 +24,13 @@
   titolo: "Piano di Progetto",
   uso: "Esterno",
   versioni: (
+    "1.2.0",
+    "24/02/2025",
+    "Davide Marin",
+    "Andrea Precoma\nKlaudio Merja",
+    [
+      - Stesura retrospettiva sesto _sprint_
+    ],
     "1.1.0",
     "15/02/2025",
     "Davide Marin",
@@ -96,7 +110,8 @@
       - Struttura iniziale e introduzione del documento
       - Stesura dell'analisi dei rischi
       - Stesura del modello di sviluppo
-      - Stesura della pianificazione e del primo _sprint_],
+      - Stesura della pianificazione e del primo _sprint_
+    ],
   ),
   content: content,
 )
@@ -245,11 +260,18 @@ Il gruppo si pone come _milestone_ del progetto le due consegne previste dai com
 
 Gli _sprint_ vengono quindi divisi nelle due _milestone_ precedentemente elencate per garantire una separazione netta degli stessi e delle attività che ne comportano.
 
+#pagebreak()
+
 == RTB
 === Sprint 1
-- *Inizio*: 13/11/2024
-- *Fine*: 27/11/2024
-- *Rischi attesi*: #link(<RO-2>)[RO-2], #link(<RO-3>)[RO-3], #link(<RT-1>)[RT-1]
+#grid(
+  columns: 2,
+  column-gutter: 1em,
+  row-gutter: 0.5em,
+  [- *Inizio:*], [13/11/2024],
+  [- *Fine:*], [27/11/2024],
+  [- *Rischi attesi:*], [#link(<RO-2>)[RO-2], #link(<RO-3>)[RO-3], #link(<RT-1>)[RT-1]],
+)
 ==== Attività dello sprint
 Le attività che il gruppo si prefissa di concludere durante queste due settimane sono:
 - Inizio stesura delle Norme di Progetto, in particolare:
@@ -320,10 +342,14 @@ I verificatori suggeriscono infine di incaricare più di una persona alla verifi
 #pagebreak()
 
 === Sprint 2
-- *Inizio*: 28/11/2024
-- *Fine*: 13/12/2024
-- *Rischi attesi*: #link(<RO-2>)[RO-2], #link(<RO-3>)[RO-3], #link(<RT-1>)[RT-1]
-
+#grid(
+  columns: 2,
+  column-gutter: 1em,
+  row-gutter: 0.5em,
+  [- *Inizio:*], [28/11/2024],
+  [- *Fine:*], [13/12/2024],
+  [- *Rischi attesi:*], [#link(<RO-2>)[RO-2], #link(<RO-3>)[RO-3], #link(<RT-1>)[RT-1]],
+)
 ==== Attività dello sprint
 Le attività che il _team_ si è prefissato di portare a termine durante il secondo _sprint_ sono le seguenti:
 - Redazione verbale esterno ed interno del 27/11/2024.
@@ -413,9 +439,14 @@ Molte delle soluzioni vagliate, alcune delle quali anche a pagamento, presentava
 #pagebreak()
 
 === Sprint 3
-- *Inizio*: 14/12/2024
-- *Fine*: 23/12/2024
-- *Rischi attesi*: #link(<RO-1>)[RO-1], #link(<RO-3>)[RO-3], #link(<RT-1>)[RT-1]
+#grid(
+  columns: 2,
+  column-gutter: 1em,
+  row-gutter: 0.5em,
+  [- *Inizio:*], [14/12/2024],
+  [- *Fine:*], [23/12/2024],
+  [- *Rischi attesi:*], [#link(<RO-1>)[RO-1], #link(<RO-3>)[RO-3], #link(<RT-1>)[RT-1]],
+)
 
 ==== Attività dello sprint
 Le attività che il _team_ si è prefissato di portare a termine durante il terzo _sprint_ sono le seguenti:
@@ -494,9 +525,14 @@ Per quanto riguarda l'Analisi dei Requisiti l'attività di stesura è proseguita
 #pagebreak()
 
 === Sprint 4
-- *Inizio*: 24/12/2024
-- *Fine*: 08/01/2024
-- *Rischi attesi*: #link(<RO-1>)[RO-1], #link(<RO-3>)[RO-3], #link(<RO-4>)[RO-4], #link(<RT-1>)[RT-1]
+#grid(
+  columns: 2,
+  column-gutter: 1em,
+  row-gutter: 0.5em,
+  [- *Inizio:*], [24/12/2024],
+  [- *Fine:*], [08/01/2025],
+  [- *Rischi attesi:*], [#link(<RO-1>)[RO-1], #link(<RO-3>)[RO-3], #link(<RO-4>)[RO-4], #link(<RT-1>)[RT-1]],
+)
 
 ==== Attività dello sprint
 Le attività che il _team_ si è prefissato di portare a termine durante il quarto _sprint_ sono le seguenti:
@@ -577,10 +613,14 @@ In ultima i miglioramenti alla dashboard Grafana non sono stati fatti in quanto,
 #pagebreak()
 
 === Sprint 5
-- *Inizio*: 09/01/2025
-- *Fine*: 26/01/2025
-- *Rischi attesi*: #link(<RO-1>)[RO-1], #link(<RO-3>)[RO-3], #link(<RO-4>)[RO-4]
-
+#grid(
+  columns: 2,
+  column-gutter: 1em,
+  row-gutter: 0.5em,
+  [- *Inizio:*], [09/01/2025],
+  [- *Fine:*], [26/01/2025],
+  [- *Rischi attesi:*], [#link(<RO-1>)[RO-1], #link(<RO-3>)[RO-3], #link(<RO-4>)[RO-4]],
+)
 ==== Attività dello sprint
 In vista della scadenza della _milestone_, e quindi della consegna prevista per lunedì 27 gennaio, le attività che il _team_ si è prefissato di portare a termine durante il quinto _sprint_ sono le seguenti:
 - Redazione dei verbali per le rispettive riunioni interne ed esterne.
@@ -655,10 +695,16 @@ Ricevendo continuamente riscontri positivi da parte della proponente rispetto al
 
 #pagebreak()
 
+== PB
 === Sprint 6
-- *Inizio*: 10/02/2025
-- *Fine*: 24/02/2025
-- *Rischi attesi*: #link(<RO-1>)[RO-1], #link(<RO-2>)[RO-2], #link(<RO-4>)[RO-4]
+#grid(
+  columns: 2,
+  column-gutter: 1em,
+  row-gutter: 0.5em,
+  [- *Inizio:*], [10/02/2025],
+  [- *Fine:*], [24/02/2025],
+  [- *Rischi attesi:*], [ #link(<RO-1>)[RO-1], #link(<RO-2>)[RO-2], #link(<RO-4>)[RO-4]],
+)
 
 ==== Attività dello sprint
 In seguito alla valutazione del RTB, il _team_ si è prefissato di apportare le modifiche dovute alla documentazione, in base ai _feedback_ ricevuti, entro il termine del sesto _sprint_. In particolare, le attività da portare a termine sono le seguenti:
@@ -668,8 +714,11 @@ In seguito alla valutazione del RTB, il _team_ si è prefissato di apportare le 
   - Modificare o eliminare le sezioni non più necessarie.
 - Modifiche ai template dei verbali e del glossario.
 - Correzioni all'Analisi dei Requisiti, in particolare:
-  - Arricchire la descrizione di alcuni casi d'uso.
-  - Modificare i requisiti in base ai _feedback_ ricevuti.
+  - Specificare quali dati sono inviati dal sensore (UC1).
+  - Quali spostamenti è possibile fare sulla mappa (UC28).
+  - Definire cosa è presente nel UC32 che lo contraddistingue dal UC33.
+  - Definire quali statistiche sono disponibili esattamente (UC58).
+  - Modificare i requisiti di vincolo perché al momento descrivono dei requisiti funzionali.
 - Modificare il sito vetrina in base ai _feedback_ ricevuti.
 #v(10pt)
 #figure(
@@ -690,3 +739,69 @@ In seguito alla valutazione del RTB, il _team_ si è prefissato di apportare le 
   ),
   caption: [Preventivo delle ore nel sesto _sprint_ per membro e per ruolo],
 )
+
+==== Consuntivo orario e di spesa dello _sprint_ corrente
+#consuntivoOre(
+  preventivo: (
+    (0, 0, 0, 0, 0, 1),
+    (0, 1, 0, 0, 0, 2),
+    (2, 0, 0, 0, 0, 0),
+    (0, 0, 3, 0, 0, 1),
+    (0, 0, 1, 0, 0, 1),
+    (0, 1, 0, 0, 0, 0),
+    (0, 1, 0, 0, 0, 2),
+  ),
+  consuntivo: (
+    (0, 0, 0, 0, 0, 1),
+    (0, 1, 0, 0, 0, 1),
+    (2, 0, 0, 0, 0, 0),
+    (0, 0, 3.5, 0, 0, 1),
+    (0, 0, 1.5, 0, 0, 0),
+    (0, 1, 0, 0, 1, 0),
+    (0.5, 1, 0, 0, 0, 1),
+  ),
+  tabCaption: [Consuntivo delle ore nel sesto _sprint_ per membro e per ruolo],
+  costTabCaption: [Costi sostenuti nel sesto _sprint_],
+  chartCaption: [Grafico percentuale dell'allocazione delle ore per ruolo nel sesto _sprint_],
+)
+
+==== Risorse rimanenti e preventivo a finire
+#align(
+  center,
+  [
+    #table(
+      columns: (auto, auto, auto, auto),
+      align: center,
+      table.header([*Ruolo*], [*Ore rimanenti*], [*_Budget_ rimanente*], [*Risorse consumate*]),
+      [Responsabile], [30], [900€], [46,43%],
+      [Amministratore], [15], [300€], [73,21%],
+      [Analista], [4.5], [112.5€], [94,64%],
+      [Progettista], [133], [3325€], [0%],
+      [Programmatore], [143.5], [2152.5€], [10,87%],
+      [Verificatore], [88.5], [1327.5€], [36,79%],
+    )
+  ],
+)
+Il preventivo a finire rimane positivo seppur leggermente più alto rispetto allo _sprint_ precedente. Si attesta infatti a 12,719.71€, a fronte di un preventivo iniziale di 12.740,00€.
+
+==== Retrospettiva
+Durante il sesto _sprint_ il gruppo ha lavorato per apportare le modifiche necessarie alla documentazione in seguito ai _feedback_ ricevuti durante il RTB. Le attività sono state quasi tutte completate nei tempi previsti, eccezzione fatta per le correzioni da apportare all'Analisi dei Requisiti, che proseguiranno durante il prossimo _sprint_.
+
+===== Cosa ha funzionato
+Il gruppo è riuscito, nonostante il periodo in concomitanza con gli ultimi esami, a completare la maggior parte delle attività previste nei tempi pianificati. Apprezzato anche il continuo aggiornamento reciproco tramite i canali informali di comunicazione. 
+
+===== Cosa non ha funzionato
+L'attività di correzione dell'Analisi dei Requisiti è stata cominciata tardi e la sua durata è stata sottostimata. Inoltre il gruppo voleva prima discutere alcune modifiche con la proponente e non è stato possibile farlo entro la fine di questo periodo.
+
+===== Cosa fare per migliorare
+Il gruppo si impegnerà a pianificare meglio le scadenze per le attività future, cercando di stimare più precisamente i tempi necessari a completarle, tenendo conto del tempo necessario ad eventuali _feedback_ da parte dell'azienda proponente. 
+
+===== Rischi riscontrati
+Nel corso del sesto _sprint_ si sono riscontrati i seguenti rishi:
+- #link(<RO-4>)[RO-4]: pianificato, siccome nelle ultime settimane si sono svolti gli ultimi esami. Il problema è stato comunque mitigato concentrando maggior parte del lavoro nella parte finale dello _sprint_.
+- #link(<RO-2>)[RO-2]: pianificato, sono stati stabiliti tempi più ampi del solito per i motivi sopra citati relativi agli esami. Il gruppo ha comunque mitigato il problema utilizzando del tempo per approfondire le architetture _software_ da utilizzare nelle prossime settimane.
+- #link(<RO-3>)[RO-3]: non pianificato, l'attività di correzione dell'Analisi dei Requisiti si è rivelata più onerosa del previsto ed è stata iniziata troppo tardi, portando ad essere continuata nel prossimo _sprint_
+
+===== Attività future
+Nel prossimo periodo, siccome sono state apportate le modifiche dovute ai documenti in seguito al colloquio RTB, il gruppo inizierà la stesura dei documenti Manuale Utente e Specifica Tecnica.
+Inoltre si inizierà a lavorare sullo sviluppo del MVP con relativa progettazione, applicando dapprima le decisioni sull'architettura discusse anche con la proponente.
