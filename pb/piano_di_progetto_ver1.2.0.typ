@@ -840,10 +840,10 @@ In seguito alla riunione di inizio settimo _sprint_, il _team_ si è prefissato 
     (0, 1, 0, 0, 0, 2),
     (0, 3, 0, 4, 0, 1),
     (0, 0, 0, 0, 0, 3),
-    (0, 0, 4, 0, 0, 1),
+    (0, 0, 2, 0, 0, 1),
     (0, 0, 0, 0, 0, 2),
     (0, 1, 0, 4, 0, 0),
-    (3, 1, 0, 0, 0, 2),
+    (3, 0, 0, 0, 0, 2),
   ),
   caption: [Preventivo delle ore nel settimo _sprint_ per membro e per ruolo],
 )
