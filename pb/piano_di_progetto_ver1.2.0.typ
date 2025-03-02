@@ -24,6 +24,13 @@
   titolo: "Piano di Progetto",
   uso: "Esterno",
   versioni: (
+    "1.3.0",
+    "24/02/2025",
+    "Riccardo Milan",
+    "Davide Martinelli",
+    [
+      - Stesura pianificazione settimo _sprint_
+    ],
     "1.2.0",
     "24/02/2025",
     "Davide Marin",
@@ -805,3 +812,38 @@ Nel corso del sesto _sprint_ si sono riscontrati i seguenti rishi:
 ===== Attività future
 Nel prossimo periodo, siccome sono state apportate le modifiche dovute ai documenti in seguito al colloquio RTB, il gruppo inizierà la stesura dei documenti Manuale Utente e Specifica Tecnica.
 Inoltre si inizierà a lavorare sullo sviluppo del MVP con relativa progettazione, applicando dapprima le decisioni sull'architettura discusse anche con la proponente.
+
+#pagebreak()
+
+=== Sprint 7
+- *Inizio*: 25/02/2025
+- *Fine*: 10/03/2025
+- *Rischi attesi*: #link(<RO-1>)[RO-1], #link(<RO-2>)[RO-2], #link(<RO-3>)[RO-3], #link(<RT-1>)[RT-1]
+
+==== Attività dello sprint
+In seguito alla riunione di inizio settimo _sprint_, il _team_ si è prefissato di iniziare il ciclo di vita dei documenti relativi alla _milestone_ PB e iniziare la progettazione del _software_. In particolare, le attività da portare a termine sono le seguenti:
+- Redazione dei verbali per le rispettive riunioni interne ed esterne.
+- Compilazione del Piano di Progetto con la sezione relativa al settimo _sprint_.
+- Inizio stesura Manuale Utente.
+- Modifiche al test del glossario.
+- Inizio stesura Specifica Tecnica.
+- Ultimazione correzioni e miglioramenti Analisi dei Requisiti.
+#v(10pt)
+#figure(
+  image("../assets/img/PdP/gantt_s7.png"),
+  caption: [Diagramma di Gantt dello _sprint_ 7],
+)
+
+==== Preventivo orario
+#rendicontazioneOre(
+  (
+    (0, 1, 0, 0, 0, 2),
+    (0, 3, 0, 4, 0, 1),
+    (0, 0, 0, 0, 0, 3),
+    (0, 0, 4, 0, 0, 1),
+    (0, 0, 0, 0, 0, 2),
+    (0, 1, 0, 4, 0, 0),
+    (3, 1, 0, 0, 0, 2),
+  ),
+  caption: [Preventivo delle ore nel settimo _sprint_ per membro e per ruolo],
+)
