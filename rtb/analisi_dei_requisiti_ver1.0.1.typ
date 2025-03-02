@@ -205,7 +205,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + Il sensore invia a intervalli di tempo regolari i dati di identificazione e localizzazione GPS del mezzo.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC1.png"),
+  image("../assets/use_cases/rtb/UC1.png"),
   caption: [Diagramma del caso d'uso UC1],
 )
 
@@ -263,7 +263,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore riceve un messaggio di errore il quale segnala che le credenziali inserite sono non valide.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC2-3-4-5.png"),
+  image("../assets/use_cases/rtb/UC2-3-4-5.png"),
   caption: [Diagramma dei casi d'uso UC2, UC3, UC4 e UC5],
 )
 
@@ -294,7 +294,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore visualizza un _marker_ in corrispondenza di ciascun punto di interesse.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC6-7.png"),
+  image("../assets/use_cases/rtb/UC6-7.png"),
   caption: [Diagramma dei casi d'uso UC6 e UC7],
 )
 
@@ -312,7 +312,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore visualizza il percorso del mezzo noleggiato.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC8.png"),
+  image("../assets/use_cases/rtb/UC8.png"),
   caption: [Diagramma del caso d'uso UC8],
 )
 #pagebreak()
@@ -370,7 +370,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore visualizza un _marker_ in corrispondenza delle posizioni nelle quali la LLM non ha generato un annuncio perché ha valutato l'utente come non interessato al punto di interesse in base alla sua profilazione.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC9-10-11-12.png"),
+  image("../assets/use_cases/rtb/UC9-10-11-12.png"),
   caption: [Diagramma dei caso d'uso UC9, UC10, UC11, UC12],
 )
 
@@ -413,7 +413,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore visualizza la categoria del punto di interesse.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC13-14-15.png"),
+  image("../assets/use_cases/rtb/UC13-14-15.png"),
   caption: [Diagramma dei caso d'uso UC13, UC14, UC15],
 )
 
@@ -489,7 +489,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore visualizza la categoria del punto di interesse collegato al relativo annuncio aperto dal _marker_.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC16-17-18-19-20-21.png"),
+  image("../assets/use_cases/rtb/UC16-17-18-19-20-21.png"),
   caption: [Diagramma dei caso d'uso UC16, UC17, UC18, UC19, UC20, UC21],
 )
 
@@ -544,7 +544,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC22-23-24-25.png"),
+  image("../assets/use_cases/rtb/UC22-23-24-25.png"),
   caption: [Diagramma dei caso d'uso UC22, UC23, UC24, UC25],
 )
 
@@ -563,7 +563,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore chiude la vista delle informazioni.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC26.png"),
+  image("../assets/use_cases/rtb/UC26.png"),
   caption: [Diagramma del caso d'uso UC26],
 )
 #pagebreak()
@@ -580,7 +580,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore chiude il messaggio.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC27.png"),
+  image("../assets/use_cases/rtb/UC27.png"),
   caption: [Diagramma del caso d'uso UC27],
 )
 
@@ -598,7 +598,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore interagisce con la mappa per spostare il centro della mappa, quindi anche l'intera visuale.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC28.png"),
+  image("../assets/use_cases/rtb/UC28.png"),
   caption: [Diagramma del caso d'uso UC28],
 )
 
@@ -644,7 +644,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore interagisce con la mappa per restringere la visuale.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC29-30-31.png"),
+  image("../assets/use_cases/rtb/UC29-30-31.png"),
   caption: [Diagramma dei casi d'uso UC29, UC30 e UC31],
 )
 
@@ -754,12 +754,12 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore visualizza il _flag_ nel caso in cui il noleggio relativo al singolo annuncio nello storico è ancora attivo.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC32-33-34-35-36.png"),
+  image("../assets/use_cases/rtb/UC32-33-34-35-36.png"),
   caption: [Diagramma dei casi d'uso UC32, UC33, UC34, UC35, UC36],
 )
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC36-37-38-39-40.png"),
+  image("../assets/use_cases/rtb/UC36-37-38-39-40.png"),
   caption: [Diagramma dei casi d'uso UC36, UC37, UC38, UC39, UC40 (continuazione di Figura 14)],
 )
 #pagebreak()
@@ -843,7 +843,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore visualizza la categoria del punto di interesse nei dettagli di un elemento aperto nello storico.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC41-42-43-44-45-46-47.png"),
+  image("../assets/use_cases/rtb/UC41-42-43-44-45-46-47.png"),
   caption: [Diagramma dei casi d'uso UC41, UC42, UC43, UC44, UC45, UC46 e UC47],
 )
 
@@ -860,7 +860,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore chiude la vista.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC48.png"),
+  image("../assets/use_cases/rtb/UC48.png"),
   caption: [Diagramma del caso d'uso UC48],
 )
 
@@ -879,7 +879,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + Vengono visualizzati solo gli annunci destinati all'utente selezionato.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC49.png"),
+  image("../assets/use_cases/rtb/UC49.png"),
   caption: [Diagramma del caso d'uso UC49],
 )
 
@@ -898,7 +898,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + Vengono visualizzati solo gli annunci collegati al punto di interesse selezionato.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC50.png"),
+  image("../assets/use_cases/rtb/UC50.png"),
   caption: [Diagramma del caso d'uso UC50],
 )
 
@@ -917,7 +917,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + Vengono visualizzati solo gli annunci emessi nell'intervallo di date selezionato.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC51.png"),
+  image("../assets/use_cases/rtb/UC51.png"),
   caption: [Diagramma del caso d'uso UC51],
 )
 
@@ -936,7 +936,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + Vengono visualizzati solo gli annunci emessi nella fascia oraria selezionata.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC52.png"),
+  image("../assets/use_cases/rtb/UC52.png"),
   caption: [Diagramma del caso d'uso UC52],
 )
 
@@ -983,7 +983,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore visualizza il messaggio di errore sulla _dashboard_.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC53-54-55-56.png"),
+  image("../assets/use_cases/rtb/UC53-54-55-56.png"),
   caption: [Diagramma dei casi d'uso UC53, UC54, UC55 e UC56],
 )
 
@@ -1073,12 +1073,12 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore visualizza i dati sul grafico.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC57-58-59.png"),
+  image("../assets/use_cases/rtb/UC57-58-59.png"),
   caption: [Diagramma dei casi d'uso UC57, UC58, UC59],
 )
 #v(20pt)
 #figure(
-  image("../assets/use_cases/UC59-60-61-62-63.png", width: 90%),
+  image("../assets/use_cases/rtb/UC59-60-61-62-63.png", width: 90%),
   caption: [Diagramma dei casi d'uso UC59, UC60, UC61, UC62 e UC63 (continuazione di Figura 23)],
 )
 
