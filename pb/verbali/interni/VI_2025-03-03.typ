@@ -5,7 +5,7 @@
   responsabile: "Davide Marin",
   redattori: ("Riccardo Milan",),
   titolo: "Decima riunione",
-  verificatori: ("Davide Martinelli",),
+  verificatori: ("Davide Picello",),
   destinatari: ("Gruppo SWE@",),
   content: content,
 )
