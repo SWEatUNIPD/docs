@@ -13,7 +13,7 @@
 #infoRiunione(
   luogo: "Chiamata Discord",
   data: "03/03/2025",
-  ora: "15:00",
+  ora: "14:00",
   durata: "2 ore",
   partecipantiEsterni: (),
 )
