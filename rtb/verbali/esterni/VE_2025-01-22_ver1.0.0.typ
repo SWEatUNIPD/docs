@@ -70,5 +70,5 @@ Chiarendo le ultime questioni riguardo il diagramma delle attività abbiamo conc
     "ORG",
     "Gruppo",
     [Richiesta colloquio con il prof. Cardin per la consegna RTB],
-  ),
+  )
 )
