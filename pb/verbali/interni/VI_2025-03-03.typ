@@ -4,7 +4,7 @@
   data: "10 febbraio 2025",
   responsabile: "Davide Marin",
   redattori: ("Riccardo Milan",),
-  titolo: "Decima riunione",
+  titolo: "Dodicesima riunione",
   verificatori: ("Davide Picello",),
   destinatari: ("Gruppo SWE@",),
   content: content,
