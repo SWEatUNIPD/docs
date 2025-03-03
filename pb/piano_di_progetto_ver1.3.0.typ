@@ -780,12 +780,12 @@ In seguito alla valutazione del RTB, il _team_ si è prefissato di apportare le 
       columns: (auto, auto, auto, auto),
       align: center,
       table.header([*Ruolo*], [*Ore rimanenti*], [*_Budget_ rimanente*], [*Risorse consumate*]),
-      [Responsabile], [30], [900€], [46,43%],
-      [Amministratore], [15], [300€], [73,21%],
-      [Analista], [4.5], [112.5€], [94,64%],
-      [Progettista], [133], [3325€], [0%],
-      [Programmatore], [143.5], [2152.5€], [10,87%],
-      [Verificatore], [88.5], [1327.5€], [36,79%],
+      [Responsabile], [30], [900 €], [46,43 %],
+      [Amministratore], [15], [300 €], [73,21 %],
+      [Analista], [4.5], [112.5 €], [94,64 %],
+      [Progettista], [133], [3325 €], [0 %],
+      [Programmatore], [143.5], [2152.5 €], [10,87 %],
+      [Verificatore], [88.5], [1327.5 €], [36,79 %],
     )
   ],
 )
@@ -807,7 +807,7 @@ Il gruppo si impegnerà a pianificare meglio le scadenze per le attività future
 Nel corso del sesto _sprint_ si sono riscontrati i seguenti rishi:
 - #link(<RO-4>)[RO-4]: pianificato, siccome nelle ultime settimane si sono svolti gli ultimi esami. Il problema è stato comunque mitigato concentrando maggior parte del lavoro nella parte finale dello _sprint_.
 - #link(<RO-2>)[RO-2]: pianificato, sono stati stabiliti tempi più ampi del solito per i motivi sopra citati relativi agli esami. Il gruppo ha comunque mitigato il problema utilizzando del tempo per approfondire le architetture _software_ da utilizzare nelle prossime settimane.
-- #link(<RO-3>)[RO-3]: non pianificato, l'attività di correzione dell'Analisi dei Requisiti si è rivelata più onerosa del previsto ed è stata iniziata troppo tardi, portando ad essere continuata nel prossimo _sprint_
+- #link(<RO-3>)[RO-3]: non pianificato, l'attività di correzione dell'Analisi dei Requisiti si è rivelata più onerosa del previsto ed è stata iniziata troppo tardi, portando ad essere continuata nel prossimo _sprint_.
 
 ===== Attività future
 Nel prossimo periodo, siccome sono state apportate le modifiche dovute ai documenti in seguito al colloquio RTB, il gruppo inizierà la stesura dei documenti Manuale Utente e Specifica Tecnica.
@@ -824,10 +824,10 @@ Inoltre si inizierà a lavorare sullo sviluppo del MVP con relativa progettazion
 In seguito alla riunione di inizio settimo _sprint_, il _team_ si è prefissato di iniziare il ciclo di vita dei documenti relativi alla _milestone_ PB e iniziare la progettazione del _software_. In particolare, le attività da portare a termine sono le seguenti:
 - Redazione dei verbali per le rispettive riunioni interne ed esterne.
 - Compilazione del Piano di Progetto con la sezione relativa al settimo _sprint_.
-- Inizio stesura Manuale Utente.
-- Modifiche al test del glossario.
-- Inizio stesura Specifica Tecnica.
-- Ultimazione correzioni e miglioramenti Analisi dei Requisiti.
+- Inizio stesura Manuale Utente con riferimenti normativi, struttura di cartelle del progetto, come avviarlo e come usare le principali funzionalità.
+- Modifiche al test del Glossario per irrobustire un test che causava un _bug_ nel testare i titoli dei documenti.
+- Inizio stesura Specifica Tecnica con l'introduzione comprensiva di riferimenti normativi e principali tecnologie utilizzate per realizzare il _software_.
+- Ultimazione correzioni e miglioramenti Analisi dei Requisiti, attività che era stata iniziata nello sprint precedente, ma che non era stata completata a causa di ritardi.
 #v(10pt)
 #figure(
   image("../assets/img/PdP/gantt_s7.png"),
