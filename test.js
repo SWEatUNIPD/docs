@@ -38,10 +38,9 @@ function checkOccurrence(filePath, word) {
   const commentPattern = /\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$/gm; //https://stackoverflow.com/questions/5989315/regex-for-match-replacing-javascript-comments-both-multiline-and-inline
   const importPattern = /#import ".*"\s*:\s*\*/g;
   const functionPattern = /#show:[\s\S]*?content\s*:\s*content[\s\S]*?\)/g;
-  const titlesPattern = /^=+\s.*/gm;
+  const titlesPattern = /^=+ .+/gm;
   const backlogFuncPattern = /#backlog\(.*\)[\s\n]*\)/gs;
-  const formatLinkPattern =
-    /formatLink\([\s\n]*(label:[\s\n]*"[^\s\n]*",[\s\n]*)?url:[\s\n]*"[^\s\n]*"(,[\s\n]*label:[\s\n]*"[^\s\n]*")?[\s\n]*\)/gm;
+  const formatLinkPattern = /formatLink\(.*\)/gm;
 
   const content = blob
     .toString()
@@ -56,6 +55,7 @@ function checkOccurrence(filePath, word) {
   const glossaryRefPattern = new RegExp(
     `\\b${word.toLowerCase()}\\b|\\*${word.toLowerCase()}\\*|_${word.toLowerCase()}_|#rifglossario\\("${word.toLowerCase()}"\\)`
   );
+
   const match = content.match(glossaryRefPattern);
   return match ? match[0].length == word.length + 17 : true;
 }
