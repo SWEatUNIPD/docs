@@ -825,9 +825,9 @@ In seguito alla riunione di inizio settimo _sprint_, il _team_ si è prefissato 
 - Redazione dei verbali per le rispettive riunioni interne ed esterne.
 - Compilazione del Piano di Progetto con la sezione relativa al settimo _sprint_.
 - Inizio stesura Manuale Utente con riferimenti normativi, struttura di cartelle del progetto, come avviarlo e come usare le principali funzionalità.
-- Modifiche al test del Glossario per irrobustire un test che causava un _bug_ nel testare i titoli dei documenti.
+- Modifiche al _test_ del Glossario riguardo le espressioni regolari che in alcune situazioni ritornano dei falsi positivi.
 - Inizio stesura Specifica Tecnica con l'introduzione comprensiva di riferimenti normativi e principali tecnologie utilizzate per realizzare il _software_.
-- Ultimazione correzioni e miglioramenti Analisi dei Requisiti, attività che era stata iniziata nello sprint precedente, ma che non era stata completata a causa di ritardi.
+- Ultimazione correzioni e miglioramenti Analisi dei Requisiti, attività che era stata iniziata nello _sprint_ precedente, ma che non era stata completata a causa di ritardi.
 #v(10pt)
 #figure(
   image("../assets/img/PdP/gantt_s7.png"),
