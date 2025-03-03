@@ -15,7 +15,7 @@
   uso: "Esterno",
   versioni: (
     "0.1.0",
-    "28/02/2025",
+    "03/03/2025",
     "Andrea Precoma",
     "Klaudio Merja",
     [
@@ -45,22 +45,22 @@ La prima occorrenza di un termine definito all'interno del glossario presente al
 == Riferimenti
 === Riferimenti normativi
 - Norme di Progetto (v2.0.0) \ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/norme_di_progetto_ver2.0.0.pdf")
-- Regolamento del progetto didattico - 21/03/2025 \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")
-- Capitolato C4 (Sync Lab S.r.l.) - 21/03/2025 \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
+- Regolamento del progetto didattico, _slide_ 23 (ultimo accesso 03/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")
+- Capitolato C4 - Sync Lab S.r.l. (ultimo accesso 03/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
 === Riferimenti informativi
 - Glossario (v2.0.0) \ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/glossario_ver2.0.0.pdf")
-- Capitolato C4 (Sync Lab) - 21/03/2025 \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
+- Capitolato C4 - Sync Lab S.r.l. (ultimo accesso 03/03/2025 \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
 
 
 = Avvio del sistema
 == Requisiti tecnici per avviare il sistema <req>
 // TODO: VERSIONE DOCKER?
-Al fine di usufruire del prodotto _software_ è richiesta l'installazione di Docker e #rifGlossario("Docker Compose") per la gestione dei _container_. Si mette a disposizione la #formatLink(label: "guida ufficiale", url: "https://docs.docker.com/engine/install/") per l'installazione.
+Al fine di usufruire del prodotto _software_ è richiesta l'installazione di Docker e #rifGlossario("Docker Compose") per la gestione dei _container_. Si mette a disposizione la #formatLink(label: "guida ufficiale", url: "https://docs.docker.com/engine/install/") (ultimo accesso 03/03/2025) per l'installazione.
 
 === Requisiti opzionali ??
 
 == Download della repository <download>
-Una volta configurato l'ambiente locale si può procedere al _download_ della _repository_ contenete il codice sorgente. Recandosi alla #formatLink(label: "pagina dedicata", url: "https://github.com/SWEatUNIPD/NearYou") si può scaricare il `.zip` e successivamente decomprimere.
+Una volta configurato l'ambiente locale si può procedere al _download_ della _repository_ contenete il codice sorgente. Recandosi alla #formatLink(label: "pagina dedicata", url: "https://github.com/SWEatUNIPD/NearYou") (ultimo accesso 03/03/2025) si può scaricare il `.zip` e successivamente decomprimere.
 
 In alternativa, se si ha installato #rifGlossario("Git"), è possibile "clonare" la _repository_ posizionandosi sulla destinazione desiderata ed eseguendo il comando \ `git clone https://github.com/SWEatUNIPD/NearYou.git`.
 
