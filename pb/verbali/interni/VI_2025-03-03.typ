@@ -14,7 +14,7 @@
   luogo: "Chiamata Discord",
   data: "03/03/2025",
   ora: "14:00",
-  durata: "2 ore",
+  durata: "1 ora e mezza",
   partecipantiEsterni: (),
 )
 
