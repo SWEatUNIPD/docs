@@ -19,7 +19,7 @@
 )
 
 = Ordine del giorno
-La riunione interna, svoltasi dopo il #rifGlossario("SAL") con l'azienda proponente per la metà del settimo _#rifGlossario("sprint")_, ha come principale obiettivo quello di discutere le scelte architetturali e mettere in piedi le attività necessarie alla scrittura della documentazione, quali scegliere i _test_ di sistema e di accettazione. Inoltre un obiettivo per il prossimo periodo sarà quello di continuare lo sviluppo della _#rifGlossario("dashboard")_ che costituirà l'interfaccia del _software_ e concretizzare le automazioni dei _test_ nella _#rifGlossario("pipeline")_. Infine sono state discusse alcune tematiche legate al _#rifGlossario("Way of Working")_. In particolare la modalità con cui stabilire l'ultimo accesso ai puntatori alle risorse esterne e la modalità di redazione della retrospettiva e della pianificazione di uno _sprint_ a Piano di Progetto.
+La riunione interna, svoltasi dopo il #rifGlossario("SAL") con l'azienda proponente per la metà del settimo _#rifGlossario("sprint")_, ha come principale obiettivo quello di discutere le scelte architetturali e mettere in piedi le attività necessarie alla scrittura della documentazione, quali scegliere i _test_ di sistema e di accettazione. Inoltre un obiettivo per il prossimo periodo sarà quello di continuare lo sviluppo della _#rifGlossario("dashboard")_ che costituirà l'interfaccia del _software_ e concretizzare le automazioni dei _test_ nella _#rifGlossario("pipeline")_. Infine sono state discusse alcune tematiche legate al _#rifGlossario("Way of Working")_. In particolare la modalità con cui stabilire l'ultimo accesso e le versioni ai puntatori alle risorse esterne e interne, la modalità di redazione della retrospettiva e della pianificazione (con le rispetive tabelle di preventivo e consuntivo) di uno _sprint_ a Piano di Progetto e il modo in cui registrare l'approvazione dei documenti.
 
 == Scelte architetturali
 Il gruppo ha pensato di adottare per il prodotto _software_ un'architettura orientata ai servizi utilizzando, per questi ultimi, architetture esagonali. La scelta, frutto di giorni di studio dei progettisti, è stata discussa e approvata dall'azienda proponente al SAL di metà _sprint_. Per ottenere una conferma rispetto alle nostre scelte anche dal committente, abbiamo concordato un incontro con il professor Cardin mercoledì 05/03 dalle 08:40 alle 09:00.
@@ -34,7 +34,7 @@ Per quanto riguarda gli avanzamenti lato _software_ in questa seconda parte di _
 Sempre lato _software_, un obiettivo è quello di predisporre delle automazioni pronte ad eseguire i primi _test_, in modo da essere allineati quando inizieremo a sviluppare il prodotto dopo la progettazione.
 
 == Allineamento Norme di Progetto
-Infine sono da riportare nero su bianco nelle Norme di Progetto le scelte fatte in merito alle questioni di _Way of working_ sopra citate nell'ordine del giorno.
+Infine sono da riportare nero su bianco nelle Norme di Progetto le scelte fatte in merito alle questioni di _Way of working_ sopra citate nell'ordine del giorno e da aggiungere alla docuemntazione fornita i nuovi documenti che saranno resi disopnibili per la milestone PB, ovvero la Specifica Tecnica e il Manuale Utente.
 
 = Conclusioni
 Per la fine di questo _sprint_ auspichiamo di avere un quadro completo di quella che sarà l'architettura del nostro _software_ e tutti i _test_ da predisporre per assicurare la qualità del prodotto.
