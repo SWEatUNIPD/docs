@@ -34,7 +34,7 @@ Per quanto riguarda gli avanzamenti lato _software_ in questa seconda parte di _
 Sempre lato _software_, un obiettivo è quello di predisporre delle automazioni pronte ad eseguire i primi _test_, in modo da essere allineati quando inizieremo a sviluppare il prodotto dopo la progettazione.
 
 == Allineamento Norme di Progetto
-Infine sono da riportare nero su bianco nelle Norme di Progetto le scelte fatte in merito alle questioni di _Way of working_ sopra citate nell'ordine del giorno e da aggiungere alla docuemntazione fornita i nuovi documenti che saranno resi disopnibili per la milestone PB, ovvero la Specifica Tecnica e il Manuale Utente.
+Infine sono da riportare nero su bianco nelle Norme di Progetto le scelte fatte in merito alle questioni di _Way of working_ sopra citate nell'ordine del giorno e da aggiungere alla documentazione fornita i nuovi documenti che saranno resi disponibili per la milestone PB, ovvero la Specifica Tecnica e il Manuale Utente.
 
 = Conclusioni
 Per la fine di questo _sprint_ auspichiamo di avere un quadro completo di quella che sarà l'architettura del nostro _software_ e tutti i _test_ da predisporre per assicurare la qualità del prodotto.
