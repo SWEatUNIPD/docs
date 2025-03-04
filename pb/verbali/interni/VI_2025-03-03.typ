@@ -28,7 +28,7 @@ Il gruppo ha pensato di adottare per il prodotto _software_ un'architettura orie
 Dopo qualche ora di ricerca sui _test_ necessari ad assicurarsi la qualità di sistema e di accettazione, per la fine dello _sprint_ il gruppo si pone l'obiettivo di concretizzare i _test_ e di redigere le sezioni del Piano di Qualifica inserendo gli appositi _test_. Tuttavia l'inserimento dei _test_ di accettazione potrebbe avvenire anche dopo la fine dello _sprint_, in quanto essi devono essere concordati con l'azienda proponente e verranno presentati loro al SAL di fine _sprint_
 
 == Dashboard grafana
-Per quanto riguarda gli avanzamenti nel _software_ in questa seconda parte di _sprint_ l'obiettivo è quello di migliorare possibilmente la _dashboard_ che mostra la mappa con i _#rifGlossario("marker")_ e creare una prima versione della _dashboard_ con lo storico degli annunci.
+Per quanto riguarda gli avanzamenti lato _software_ in questa seconda parte di _sprint_ l'obiettivo è quello di migliorare la _dashboard_, che mostra la mappa con i _#rifGlossario("marker")_, creandone una prima versione contenente lo storico degli annunci.
 
 == Test e automazioni
 Sempre lato _software_, un obiettivo è quello di predisporre delle automazioni pronte ad eseguire i primi _test_, in modo da essere allineati quando inizieremo a sviluppare il prodotto dopo la progettazione.
