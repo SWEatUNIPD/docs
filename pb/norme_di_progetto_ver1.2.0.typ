@@ -25,6 +25,17 @@
   titolo: "Norme di Progetto",
   uso: "Interno",
   versioni: (
+    "1.2.0",
+    "03/03/2025",
+    "Andrea Precoma",
+    "Davide Marin",
+    [
+      - Aggiornata sezione Piano di Progetto
+      - Aggiornata norma sui riferimenti esterni accompagnati dall'ultimo accesso
+      - Corretta fase di approvazione
+      - Aggiunti Manuale Utente e Specifica Tecnica nella documentazione fornita
+    ],
+
     "1.1.0",
     "11/02/2025",
     "Andrea Precoma",
@@ -140,13 +151,13 @@ La prima occorrenza di un termine definito all'interno del glossario presente al
 
 == Riferimenti
 === Riferimenti normativi
-- Regolamento del progetto didattico\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")
-- ISO/IEC 12207:1995\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf")
+- Regolamento del progetto didattico, _slide_ 7, 12, 13, 19 e 23 (ultimo accesso 03/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")
+- ISO/IEC 12207:1995, da pagina 9 a 47 (ultimo accesso 03/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf")
 === Riferimenti informativi
 - Glossario (v1.0.0)\ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/glossario_ver1.0.0.pdf")
-- Capitolato C4 (Sync Lab)\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
-- Lezione T07 - Qualità del software \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T07.pdf")
-- Lezione T08 - Qualità di processo \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T08.pdf")
+- Capitolato C4 - Sync Lab S.r.l. (ultimo accesso 03/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
+- Lezione T07 - Qualità del software, da _slide_ 7 a 17 (ultimo accesso 03/03/205) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T07.pdf")
+- Lezione T08 - Qualità di processo, da _slide_ 2 a 7 (ultimo accesso 03/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T08.pdf")
 
 #pagebreak()
 = Processi primari
@@ -169,7 +180,7 @@ Le attività che compongono questo processo sono:
 === Comunicazioni con il proponente
 L'azienda si è resa raggiungibile, per via testuale, tramite _e-mail_ per le comunicazioni ufficiali e tramite la piattaforma di messaggistica istantanea Discord, invece, per le comunicazioni più veloci. È stato deciso inoltre di utilizzare l'applicazione di teleconferenza Google Meet per le riunioni in cui è prevista la presenza di tutto il gruppo. L'azienda si è resa disponibile anche ad accogliere il gruppo nei loro uffici.
 
-Per ogni incontro, verrà redatto un verbale riguardante le discussioni e decisioni avvenute nello stesso. Questi verbali, dopo essere stati approvati e firmati dall'azienda, saranno disponibili presso il sito _web_ del gruppo #formatLink(label: "https://sweatunipd.github.io", url: "https://sweatunipd.github.io").
+Per ogni incontro, verrà redatto un verbale riguardante le discussioni e decisioni avvenute nello stesso. Questi verbali, dopo essere stati approvati e firmati dall'azienda, saranno disponibili presso il sito _web_ del gruppo #formatLink(label: "https://sweatunipd.github.io", url: "https://sweatunipd.github.io") (ultimo accesso 03/03/2025).
 
 ==== SAL
 È stato inoltre concordato un incontro settimanale di circa 20-30 minuti, tendenzialmente il mercoledì pomeriggio, riguardo allo Stato di Avanzamento dei Lavori (#rifGlossario("SAL")). In questi incontri il gruppo è tenuto a esporre i progressi e i dubbi dell'ultima settimana di lavoro, confrontandosi con il proponente e delineando le attività da svolgere nella settimana a venire.
@@ -180,7 +191,7 @@ Queste verranno fissate quando necessarie.
 
 
 === Documentazione fornita
-Di seguito viene riportato l'elenco dei documenti che il gruppo consegnerà all'azienda proponente Sync Lab S.r.l. e ai committenti, nonché i Prof. Tullio Vardanega e Prof. Riccardo Cardin.
+Di seguito viene riportato l'elenco dei documenti che il gruppo consegnerà all'azienda proponente Sync Lab S.r.l. e ai committenti, nonché i prof. Tullio Vardanega e prof. Riccardo Cardin.
 
 ==== Analisi dei Requisiti
 L'Analisi dei Requisiti è un documento redatto dagli analisti che definisce le funzionalità necessarie per soddisfare le richieste del proponente.
@@ -248,10 +259,16 @@ Il documento conterrà le seguenti informazioni:
 - *Modello di sviluppo*: Descrive quale modello di sviluppo è stato scelto ed adottato dal gruppo per lo svolgimento del progetto.
 - *Pianificazione*: Contiene ed espone in quale modo il gruppo ha deciso di pianificare le attività da svolgere e la loro suddivisione in periodi. Per ogni periodo inoltre saranno indicati:
   - *Introduzione del periodo*: Breve introduzione con informazioni chiave come data di inizio e fine periodo e i rischi attesi all'interno dello stesso.
-  - *Attività*: Descrive le attività pianificate che dovranno essere svolte entro il termine del periodo.
+  - *Attività*: Descrive le attività pianificate che dovranno essere svolte entro il termine del periodo. Devono essere accompagnate da una descrizione esaustiva in funzione di guida per chi dovrà svolgerle.
   - *Preventivo*: Contiene il ruolo e il preventivo orario per ciascun membro del gruppo.
   - *Consuntivo*: Viene redatto alla fine di ogni periodo, contiene il numero di ore effettivamente impiegato da ogni membro del gruppo, utile per avere un riscontro del lavoro svolto ed effettuare analisi sull'efficienza.
-  - *Retrospettiva*: Sezione redatta a fine periodo, contiene una descrizione testuale delle difficoltà riscontrate e consigli utili da adottare per il lavoro futuro.
+  - *Risorse rimanenti e preventivo a finire*: Indica quante ore (e i relativi costi) sono rimaste a disposizione per la conclusione del progetto. Sono accompagnate da una colonna che indica la percentuale di risorse consumate rispetto al totale pianificato per ogni ruolo, così da inquadrare meglio la distribuzione delle ore.
+  - *Retrospettiva*: Sezione redatta a fine periodo, contiene una descrizione testuale delle difficoltà riscontrate e consigli utili da adottare per il lavoro futuro. Si struttura nei seguenti paragrafi:
+    - *Cosa ha funzionato*: Aspetti positivi del periodo concluso.
+    - *Cosa non ha funzionato*: Difficoltà che hanno rallentato il lavoro.
+    - *Cosa fare per migliorare*: Considerazioni migliorative per gli _sprint_ successivi.
+    - *Rischi riscontrati*: Ricapitolazione dei rischi pianificati, analizzando se ve ne sono verificati di nuovi, e come sono stati affrontati.
+    - *Attività future*: Lavori da cominciare nel periodo successivo che derivano da quello appena concluso, utile per guidare la pianificazione successiva.
 
 ==== Piano di Qualifica
 Il Piano di Qualifica è un documento formale che definisce le strategie, le attività e gli approcci necessari per garantire la qualità del prodotto _software_ durante tutto il corso del progetto. Descrive le modalità di verifica e validazione, gli _standard_ adottati e le procedure di qualità da seguire.
@@ -266,6 +283,15 @@ Al suo interno, sono presenti le seguenti informazioni:
 - *Specifiche dei test*: Descrive le attività di _testing_ che saranno effettuate per garantire il rispetto dei vincoli definiti nei requisiti del progetto.
 - *Cruscotto di monitoraggio della qualità*: Contiene una descrizione più dettagliata di ogni metrica, il suo scopo e come ricavarla.
 
+==== Manuale Utente
+Il Manuale Utente descrive nel dettaglio come utilizzare il prodotto _software_. Vengono elencati i prerequisiti, le operazioni da svolgere per installare, avviare e terminare l'applicativo, le istruzioni per accedere e usufruire dei servizi forniti. Ogni passaggio è accompagnato da immagini, comandi o _link_ a documentazione esterna.
+
+==== Specifica Tecnica
+Il documento descrive accuratamente gli aspetti progettuali. Deve quindi trattare le seguenti scelte:
+- *Architettura logica* per componenti, ruoli, connessioni e interazioni.
+- *Architettura di _deployment_* per l'allocazione delle parti nel sistema in esecuzione.
+- *_Design pattern_ architetturali* adottati per risolvere alcuni problemi e agevolare la struttura del codice.
+Il documento deve essere accompagnato anche dai diagrammi delle classi e, se necessario, da porzioni di codice.
 
 ==== Glossario
 Il Glossario è un documento di supporto che raccoglie i termini tecnici e specifici utilizzati all'interno del progetto, fornendone definizioni chiare e univoche. È destinato a tutti gli _stakeholder_, i membri del _team_, i committenti e l'azienda proponente, con l'obiettivo di prevenire ambiguità e incomprensioni. Questo strumento è fondamentale per migliorare la coerenza e la qualità della documentazione prodotta.
@@ -403,7 +429,7 @@ Il ciclo di vita di un documento è composto da 6 fasi:
 + *Pianificazione dei paragrafi*: Oltre ai paragrafi dettati dal tipo di documento come specificato dalle norme, si devono aggiungere dei paragrafi che raggruppino gli argomenti trattati.
 + *Stesura del documento*: Il redattore deve stilare il documento seguendo le norme concordate dal gruppo. In caso fosse indeciso su alcuni punti è libero di contattare altri membri del gruppo in modo da scrivere un contenuto il più corretto possibile.
 + *Revisione*: Una volta caricato correttamente il documento viene notificato automaticamente il verificatore il quale deve assicurarsi che non vi siano errori.
-+ *Approvazione*: Il documento è approvato dal verificatore e viene contattato il responsabile che deve confermare la pubblicazione nel _branch_ principale.
++ *Approvazione*: Il documento è approvato dal verificatore e viene contattato il responsabile che deve confermare la pubblicazione nel _branch_ principale. Se l'approvazione comporta dei cambiamenti deve essere tracciato nel "Registro delle modifiche", altrimenti viene aumentato il numero della versione delle modifiche più recenti.
 + *Modifiche*: Conseguentemente all'approvazione è possibile dover apportare alcuni accorgimenti. In questo caso si ripetono le operazioni incrementando la versione in conformità con il versionamento adottato.
 
 === Struttura dei documenti
@@ -533,7 +559,7 @@ Nei documenti vengono applicate le seguenti regole di stile testuali:
 Per riferirsi ad una sezione del documento per una spiegazione più dettagliata si adotta la dicitura "sez. [I]" dove I indica l'indice della sezione (ad esempio "(sez. 3.2)"). Per un corretto collegamento si veda il paragrafo apposito (#link(<stile_testo>)[sez. 3.1.8]). \ Nel caso si tratti di un riferimento alla descrizione di una metrica (e quindi solo in questo documento) è sufficiente lasciare come dicitura il codice della metrica stessa (ad esempio "MPC-IG").
 
 ==== Ipertestuali
-Per esporre un _link_ ad una pagina esterna al documento si utilizza la funzione `#formatLink` (#link(<stile_testo>)[sez. 3.1.8]) esplicitando l'interezza dell'_url_ anche nella _label_. Unica eccezione di stile per i riferimenti alle _issue_ nella tabella delle decisioni (#link(<stile_testo>)[sez. 3.1.8]).
+Per esporre un _link_ ad una pagina esterna al documento si utilizza la funzione `#formatLink` (#link(<stile_testo>)[sez. 3.1.8]) esplicitando l'interezza dell'_url_ anche nella _label_. Unica eccezione di stile per i riferimenti alle _issue_ nella tabella delle decisioni (#link(<stile_testo>)[sez. 3.1.8]). Ogni riferimento a documenti o pagine esterne va accompagnato dalla data di ultimo accesso o dalla versione.
 
 === Elenchi puntati
 Una lista è preferibile a un elenco narrativo, da valutare se renderlo numerato o meno a seconda della circostanza. I punti della descrizione nel registro delle modifiche vengono sempre rappresentati in un elenco, eccezione fatta per l'approvazione dei documenti generali. Se le voci dell'elenco sono costituite da delle frasi vengono chiuse da ".", se invece possiedono solo poche parole, che ad esempio indicano il nome di una tecnologia, non viene messo nessun segno di punteggiatura al termine. Le voci dell'elenco della descrizione nel registro delle modifiche non vengono chiuse da punteggiatura.
@@ -557,22 +583,22 @@ Le metriche adottate per la documentazione sono le seguenti:
   table(
     columns: 2,
     table.header[*ID Metrica*][*Nome*],
-    [#link(<MPC-IG>)[MPC-IG]], [Indice Gulpease],
+    [#link(<MPC-IG>)[MPC-IG]], [Indice #rifGlossario("Gulpease")],
     [#link(<MPC-CO>)[MPC-CO]], [Correttezza Ortografica],
   ),
   caption: [Metriche per la documentazione],
 )
 
 == Gestione della configurazione
-Per gestire la documentazione è stato creata una _repository_ contenente tutti i _file_ Typst aggiornati e verificati. Gli stessi documenti in formato `.pdf` sono consultabili al sito \ #formatLink(label: "https://sweatunipd.github.io", url: "https://sweatunipd.github.io").
+Per gestire la documentazione è stato creata una _repository_ contenente tutti i _file_ Typst aggiornati e verificati. Gli stessi documenti in formato `.pdf` sono consultabili al sito \ #formatLink(label: "https://sweatunipd.github.io", url: "https://sweatunipd.github.io") (ultimo accesso 03/03/2025).
 
-L'operazione di _directory listing_ di GitHub offre una visione degli artefatti strutturata in cartelle, seguente quindi la composizione della _repository_, all'indirizzo #formatLink(label: "https://sweatunipd.github.io/docs", url: "https://sweatunipd.github.io/docs").
+L'operazione di _directory listing_ di GitHub offre una visione degli artefatti strutturata in cartelle, seguente quindi la composizione della _repository_, all'indirizzo #formatLink(label: "https://sweatunipd.github.io/docs", url: "https://sweatunipd.github.io/docs") (ultimo accesso 03/03/2025).
 
 === Repository
 Il gruppo utilizza tre _repository_ all'interno della propria organizzazione GitHub:
-- *docs* (#formatLink(label: "https://github.com/SWEatUNIPD/docs", url: "https://github.com/SWEatUNIPD/docs")) contenente tutta la documentazione del progetto.
-- *sweatunipd.github.io* (#formatLink(label: "https://github.com/SWEatUNIPD/sweatunipd.github.io", url: "https://github.com/SWEatUNIPD/sweatunipd.github.io")) contenente i _file_ necessari alla struttura e presentazione del sito _web_.
-- *NearYou* (#formatLink(label: "https://github.com/SWEatUNIPD/NearYou", url: "https://github.com/SWEatUNIPD/NearYou")) contenente il codice sorgente dell'applicativo.
+- *docs* (#formatLink(label: "https://github.com/SWEatUNIPD/docs", url: "https://github.com/SWEatUNIPD/docs"), ultimo accesso 03/03/2025) contenente tutta la documentazione del progetto.
+- *sweatunipd.github.io* (#formatLink(label: "https://github.com/SWEatUNIPD/sweatunipd.github.io", url: "https://github.com/SWEatUNIPD/sweatunipd.github.io"), ultimo accesso 03/03/2025) contenente i _file_ necessari alla struttura e presentazione del sito _web_.
+- *NearYou* (#formatLink(label: "https://github.com/SWEatUNIPD/NearYou", url: "https://github.com/SWEatUNIPD/NearYou"), ultimo accesso 03/03/2025) contenente il codice sorgente dell'applicativo.
 
 ==== Struttura della repository docs
 La _repository_ è strutturata da un unico _branch_ adibito al mantenimento di tutti i documenti Typst verificati. All'occorrenza di svolgere azioni dettate dal _backlog_ si crea un _branch_ temporaneo che, successivamente alla verifica, viene unito nel ramo principale. La _repository_ è presentata dal `README.md`, contiene il _file_ `.gitignore` usato da Git per escludere alcuni _file_ dai _commit_ in _repository_ e il _file_ `script.js` usato per pubblicare la documentazione nel sito _web_. `test.js` è utilizzato per controllare la presenza dei termini del Glossario all'interno dei documenti, mentre `glossario.json` è una struttura dati che contiene i termini e la loro definizione, usato per la stesura del documento dal _file_ `glossario_verX.Y.Z.typ`; è presente inoltre il file `gulpease.js` usato per misurare l'Indice di Gulpease richiesto dalla metrica #link(<MPC-IG>)[MPC-IG]. Le cartelle sono strutturate nel seguente modo: \
@@ -1130,7 +1156,7 @@ La manutenibilità è la capacità del prodotto di essere modificato, includendo
 === Processi di supporto
 ==== Documentazione
 - *MPC-IG*: <MPC-IG>
-  - *Nome*: Indice #rifGlossario("Gulpease")
+  - *Nome*: Indice "Gulpease"
   - *Descrizione*: Indica il livello di leggibilità di un testo:
     - Inferiore a 80: difficile da leggere per chi ha la licenza elementare.
     - Inferiore a 60: difficile da leggere per chi ha la licenza media.
