@@ -9,6 +9,11 @@
   titolo: "Glossario",
   verificatori: ("Andrea Perozzo", "Andrea Precoma", "Davide Marin", "Davide Picello", "Riccardo Milan"),
   versioni: (
+    "1.1.0",
+    "27/02/2025",
+    "Andrea Perozzo",
+    "Davide Marin",
+    [ - Aggiunto il termine "Message-driven Architecture"],
     "1.0.1",
     "10/02/2025",
     "Klaudio Merja",

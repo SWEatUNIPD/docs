@@ -59,6 +59,7 @@
     "LLM": "_Large Language Model_, modello di intelligenza artificiale addestrato su grandi quantità di testo per comprendere, generare e rispondere al linguaggio naturale, utilizzato in _chatbot_, traduttori e assistenti virtuali."
   },
   "M": {
+    "Message-driven Architecture": "È un _design pattern_ che si occupa della produzione, dell'invio e della gestione di messaggi, permettendo di comunicare oppure avviare servizi disaccoppiati tra di loro.",
     "Mockup": "Modello o replica di un prodotto o di un sistema (come l'interfaccia utente) utilizzato a scopo di _test_ o presentazione.",
     "MVP": "Acronimo di _Minimum Viable Product_, rappresenta la versione iniziale di un prodotto con le funzionalità minime indispensabili per essere testato dagli utenti e validato sul mercato.",
     "Marker": "Punto di riferimento utilizzato per identificare una posizione specifica all'interno della mappa."
