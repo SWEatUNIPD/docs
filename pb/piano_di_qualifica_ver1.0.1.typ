@@ -371,19 +371,58 @@ Questa sezione descrive le attività di _testing_ effettuate per garantire che i
 //== Nomenclatura
 // Aggiungere parte relativa alla nomenclatura
 
-== _Test_ di unità
+== Test di unità
 Mirano a verificare il funzionamento corretto dei componenti _software_ più piccoli e indipendenti, sviluppati principalmente nella fase di progettazione.
 // Da completare con tutti i test
 
-== _Test_ di integrazione
+== Test di integrazione
 Successivi ai _test_ di unità, hanno lo scopo di verificare l'interazione tra diverse unità _software_ per garantire che lavorino in sinergia per compiti specifici.
 // Da completare con tutti i test
 
-== _Test_ di sistema
+== Test di sistema
 Si concentrano sul sistema completo, assicurando che tutte le specifiche funzionali, prestazionali e di qualità concordate siano rispettate.
-// Da completare con tutti i test
 
-== _Test_ di accettazione
+#table(
+  columns: 4,
+  align: (center, left, center, center),
+  fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
+  table.header[*Codice test*][*Descrizione*][*Requisito*][*Stato*],
+    [TS-1], [Verificare che il sensore invii in modo corretto la proprio identificativo e la propria posizione GPS], [ROF-1], [Non eseguito],
+    [TS-2], [Verificare che il sistema sia accessibile solo previa autenticazione da parte dell'amministratore], [ROF-2], [Non eseguito],
+    [TS-5], [Verificare che, se l'amministratore inserisce almeno una credenziale errata, l'autenticazione fallisca e venga visualizzato un messaggio di errore], [ROF-5], [Non eseguito],
+    [TS-6], [Verificare che l'amministratore possa visualizzare sulla _dashboard_ principale una mappa geografica], [ROF-6], [Non eseguito],
+    [TS-7], [Verificare che l'amministratore possa visualizzare, tramite dei _marker_ sulla mappa geografica, la posizione di tutti i punti di interesse], [ROF-7], [Non eseguito],
+    [TS-8], [Verificare che l'amministratore possa visualizzare sulla mappa il percorso eseguito da ciascun noleggio attivo in quel momento], [ROF-8], [Non eseguito],
+    [TS-9], [Verificare che l'amministratore possa visualizzare, lungo il percorso di ciascun noleggio attivo, un _marker_ specifico se quella posizione ricevuta dal sensore non ha provocato una richiesta di generazione annuncio], [ROF-9], [Non eseguito],
+    [TS-10], [Verificare che l'amministratore possa visualizzare, lungo il percorso di ciascun noleggio attivo, un _marker_ specifico se quella posizione ricevuta dal sensore ha provocato una richiesta di generazione annuncio e questa ha avuto successo, ovvero l'utente è stato ritenuto interessato e quindi ha ricevuto l'annuncio], [ROF-10], [Non eseguito],
+    [TS-11], [Verificare che l'amministratore possa visualizzare, lungo il percorso di ciascun noleggio attivo, un _marker_ specifico se quella posizione ricevuta dal sensore ha provocato una richiesta di generazione annuncio e questa non ha avuto successo, ovvero l'utente non è stato ritenuto interessato e quindi non ha ricevuto l'annuncio], [ROF-11], [Non eseguito],
+    [TS-12], [Verificare che l'amministratore possa visualizzare le informazioni relative ad un punto di interesse interagendo con il _marker_ che lo rappresenta all'interno della mappa], [ROF-12], [Non eseguito],
+    [TS-13], [Verificare che l'amministratore possa visualizzare, dalle informazioni esposte interagendo con il _marker_ di un punto di interesse, il nome dello stesso], [ROF-13], [Non eseguito],
+    [TS-14], [Verificare che l'amministratore possa visualizzare, dalle informazioni esposte interagendo con il _marker_ di un punto di interesse, la categoria di esercizio commerciale a cui appartiene], [ROF-14], [Non eseguito],
+    [TS-15], [Verificare che l'amministratore, interagendo con un _marker_ che segnala l'avvenuta generazione di un annuncio, possa visualizzare le informazioni relative all'annuncio generato], [ROF-15], [Non eseguito],
+    [TS-16], [Verificare che l'amministratore possa visualizzare, dalle informazioni esposte interagendo con il _marker_ di un annuncio generato, il nome del punto di interesse associato a quell'annuncio], [ROF-16], [Non eseguito],
+    [TS-17], [Verificare che l'amministratore possa visualizzare, dalle informazioni esposte interagendo con il _marker_ di un annuncio generato, l'_e-mail_ dell'utente destinatario dell'annuncio], [ROF-17], [Non eseguito],
+    [TS-18], [Verificare che l'amministratore possa visualizzare, dalle informazioni esposte interagendo con il _marker_ di un annuncio generato, la data e l'ora di generazione di dell'annuncio], [ROF-18], [Non eseguito],
+    [TS-19], [Verificare che l'amministratore possa visualizzare, dalle informazioni esposte interagendo con il _marker_ di un annuncio generato, il testo dell'annuncio stesso], [ROF-19], [Non eseguito],
+    [TS-20], [Verificare che l'amministratore possa visualizzare, dalle informazioni esposte interagendo con il _marker_ di un annuncio generato, la categoria del punto di interesse associato a quell'annuncio], [ROF-20], [Non eseguito],
+    [TS-21], [Verificare che l'amministratore, interagendo con un _marker_ che segnala la mancata generazione di un annuncio per incompatibilità con gli interessi dell'utente, possa visualizzare le informazioni relative all'annuncio non generato], [ROF-21], [Non eseguito],
+    [TS-22], [Verificare che l'amministratore possa visualizzare, dalle informazioni esposte interagendo con il _marker_ di un annuncio non generato, il nome del punto di interesse associato], [ROF-22], [Non eseguito],
+    [TS-23], [Verificare che l'amministratore possa visualizzare, dalle informazioni esposte interagendo con il _marker_ di un annuncio non generato, l'_e-mail_ dell'utente a cui era destinato l'annuncio non generato], [ROF-23], [Non eseguito],
+    [TS-24], [Verificare che l'amministratore possa visualizzare, dalle informazioni esposte interagendo con il _marker_ di un annuncio non generato, la data e l'ora di tentata generazione dell'annuncio], [ROF-24], [Non eseguito],
+    [TS-25], [Verificare che l'amministratore, interagendo nuovamente con il _marker_ di un annuncio generato, possa chiudere la vista che espone le informazioni sull'annuncio], [ROF-25], [Non eseguito],
+    [TS-26], [Verificare che l'amministratore, interagendo nuovamente con il _marker_ di un annuncio non generato, possa chiudere il messaggio contenente le informazioni relative alla mancata generazione di quell'annuncio], [ROF-26], [Non eseguito],
+    [TS-27], [Verificare che l'amministratore possa spostare la visuale della mappa geografica visualizzata interagendo con la stessa], [ROF-27], [Non eseguito],
+    [TS-28], [Verificare che l'amministratore, interagendo con la mappa geografica visualizzata, possa fare _zoom in_ e _zoom out_ sulla visuale], [ROF-28], [Non eseguito],
+    [TS-29], [Verificare che l'amministratore riceva un messaggio di errore del tipo "il _server_ non risponde" se il sistema non risponde alle richieste], [ROF-29], [Non eseguito],
+    [TS-30], [Verificare che l'amministratore riceva un messaggio di errore del tipo "connessione persa" se la connessione al sistema viene persa o è scarsa], [ROF-30], [Non eseguito],
+    [TS-31], [Verificare che l'amministratore riceva un messaggio di errore del tipo "sensore malfunzionante" se il sensore non invia dati GPS in modo corretto o non invia dati per un certo periodo di tempo prolungato], [ROF-31], [Non eseguito],
+    [TS-32], [Verificare che l'amministratore riceva un messaggio di errore del tipo "generazione impossibile dell'annuncio" se il sistema non è in grado di connettersi o comunicare con il servizio di LLM], [ROF-32], [Non eseguito],
+    [TS-33], [Verificare che esista almeno un generatore di dati GPS che simuli il comportamento di un sensore che interagisce col sistema], [ROF-33], [Non eseguito],
+    [TS-34], [Verificare che il generatore di dati GPS generi dei percorsi realistici, ovvero che seguono vie o strade percorribili], [ROF-34], [Non eseguito],
+
+)
+
+== Test di accettazione
 Condotti insieme al committente, servono a garantire che il prodotto finale sia conforme alle aspettative e ai requisiti contrattuali, permettendone il rilascio definitivo.
 // Da completare con tutti i test
 
