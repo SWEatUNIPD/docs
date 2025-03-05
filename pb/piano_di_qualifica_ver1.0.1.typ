@@ -419,7 +419,25 @@ Si concentrano sul sistema completo, assicurando che tutte le specifiche funzion
     [TS-32], [Verificare che l'amministratore riceva un messaggio di errore del tipo "generazione impossibile dell'annuncio" se il sistema non è in grado di connettersi o comunicare con il servizio di LLM], [ROF-32], [Non eseguito],
     [TS-33], [Verificare che esista almeno un generatore di dati GPS che simuli il comportamento di un sensore che interagisce col sistema], [ROF-33], [Non eseguito],
     [TS-34], [Verificare che il generatore di dati GPS generi dei percorsi realistici, ovvero che seguono vie o strade percorribili], [ROF-34], [Non eseguito],
-
+    [TS-35], [Verificare che l'amministratore possa accedere dalla _dashboard_ alla sezione dedicata allo storico degli annunci], [RDF-1], [Non eseguito],
+    [TS-36], [Verificare che l'amministratore possa visualizzare, nella sezione dedicata allo storico degli annunci, l'elenco degli annunci generati dal sistema, sotto forma di lista o di griglia a discrezione dell'utilizzatore], [RDF-2], [Non eseguito],
+    [TS-37], [Verificare che l'amministratore possa visualizzare, per ogni singolo elemento nello storico, le principali informazioni relative all'annuncio], [RDF-3], [Non eseguito],
+    [TS-38], [Verificare che l'amministratore possa visualizzare, per ogni singolo elemento nello storico, il nome del punto di interesse associato all'annuncio], [RDF-4], [Non eseguito],
+    [TS-39], [Verificare che l'amministratore possa visualizzare, per ogni singolo elemento nello storico, l'_e-mail_ dell'utente destinatario dell'annuncio], [RDF-5], [Non eseguito],
+    [TS-40], [Verificare che l'amministratore possa visualizzare, per ogni singolo elemento nello storico, la data e l'ora in cui il sistema ha tentato la generazione dell'annuncio], [RDF-6], [Non eseguito],
+    [TS-41], [Verificare che l'amministratore possa visualizzare, per ogni singolo elemento nello storico, una _flag_ che indichi se il noleggio durante il quale è stato generato l'annuncio è ancora attivo oppure no], [RDF-7], [Non eseguito],
+    [TS-42], [Verificare che, per ogni singolo elemento nello storico, l'amministratore possa visualizzarne i dettagli completi interagendo con l'elemento stesso], [RDF-8], [Non eseguito],
+    [TS-43], [Verificare che l'amministratore possa visualizzare, attraverso i dettagli completi di un annuncio, il nome del punto di interesse associato a quell'annuncio], [RDF-9], [Non eseguito],
+    [TS-44], [Verificare che l'amministratore possa visualizzare, attraverso i dettagli completi di un annuncio, l'_e-mail_ dell'utente destinatario di quell'annuncio], [RDF-10], [Non eseguito],
+    [TS-45], [Verificare che l'amministratore possa visualizzare, attraverso i dettagli completi di un annuncio, la data e l'ora in cui il sistema ha tentato la generazione dell'annuncio], [RDF-11], [Non eseguito],
+    [TS-46], [Verificare che l'amministratore possa visualizzare, attraverso i dettagli completi di un annuncio, una _flag_ che indichi se il noleggio durante il quale è stato generato l'annuncio è ancora attivo oppure no], [RDF-12], [Non eseguito],
+    [TS-47], [Verificare che l'amministratore possa visualizzare, attraverso i dettagli completi di un annuncio, il testo dell'annuncio stesso], [RDF-13], [Non eseguito],
+    [TS-48], [Verificare che l'amministratore possa visualizzare, attraverso i dettagli completi di un annuncio, la categoria del punto di interesse associato a quell'annuncio], [RDF-14], [Non eseguito],
+    [TS-49], [Verificare che l'amministratore possa chiudere la vista che espone i dettagli completi di un singolo annuncio], [RDF-15], [Non eseguito],
+    [TS-50], [Verificare che l'amministratore possa filtrare gli annunci visualizzati nello storico in base all'_e-mail_ dell'utente destinatario], [RDF-16], [Non eseguito],
+    [TS-51], [Verificare che l'amministratore possa filtrare gli annunci visualizzati nello storico in base al nome del punto di interesse associato all'annuncio], [RDF-17], [Non eseguito],
+    [TS-52], [Verificare che l'amministratore possa filtrare gli annunci visualizzati nello storico in base alla data in cui sono stati generati, selezionando un certo intervallo di date], [RDF-18], [Non eseguito],
+    [TS-53], [Verificare che l'amministratore possa filtrare gli annunci visualizzati nello storico in base all'orario in cui sono stati generati, selezionando una determinata fascia oraria], [RDF-19], [Non eseguito],
 )
 
 == Test di accettazione
