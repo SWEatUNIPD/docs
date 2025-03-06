@@ -387,9 +387,11 @@ Si concentrano sul sistema completo, assicurando che tutte le specifiche funzion
   align: (center, left, center, center),
   fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
   table.header[*Codice test*][*Descrizione*][*Requisito*][*Stato*],
-    [TS-1], [Verificare che il sensore invii in modo corretto la proprio identificativo e la propria posizione GPS], [ROF-1], [Non eseguito],
-    [TS-2], [Verificare che il sistema sia accessibile solo previa autenticazione da parte dell'amministratore], [ROF-2], [Non eseguito],
-    [TS-5], [Verificare che, se l'amministratore inserisce almeno una credenziale errata, l'autenticazione fallisca e venga visualizzato un messaggio di errore], [ROF-5], [Non eseguito],
+    [TS-1], [Verificare che ciascun sensore invii in modo corretto i propri dati di identificazione e di localizzazione geospaziale, a intervalli di tempo regolari], [ROF-1], [Non eseguito],
+    [TS-2], [Verificare che la _dashboard_ sia accessibile solo previa autenticazione da parte dell'amministratore con le proprie credenziali], [ROF-2], [Non eseguito],
+    [TS-3], [Verificare che l'amministratore abbia fornito un indirizzo _e-mail_ per procedere con l'autenticazione], [ROF-3], [Non eseguito],
+    [TS-4], [Verificare che l'amministratore abbia fornito una password per procedere con l'autenticazione], [ROF-4], [Non eseguito],
+    [TS-5], [Verificare che, se l'amministratore inserisce almeno una credenziale errata, l'autenticazione fallisca e venga ritornato un messaggio di errore], [ROF-5], [Non eseguito],
     [TS-6], [Verificare che l'amministratore possa visualizzare sulla _dashboard_ principale una mappa geografica], [ROF-6], [Non eseguito],
     [TS-7], [Verificare che l'amministratore possa visualizzare, tramite dei _marker_ sulla mappa geografica, la posizione di tutti i punti di interesse], [ROF-7], [Non eseguito],
     [TS-8], [Verificare che l'amministratore possa visualizzare sulla mappa il percorso eseguito da ciascun noleggio attivo in quel momento], [ROF-8], [Non eseguito],
@@ -436,9 +438,19 @@ Si concentrano sul sistema completo, assicurando che tutte le specifiche funzion
     [TS-49], [Verificare che l'amministratore possa chiudere la vista che espone i dettagli completi di un singolo annuncio], [RDF-15], [Non eseguito],
     [TS-50], [Verificare che l'amministratore possa filtrare gli annunci visualizzati nello storico in base all'_e-mail_ dell'utente destinatario], [RDF-16], [Non eseguito],
     [TS-51], [Verificare che l'amministratore possa filtrare gli annunci visualizzati nello storico in base al nome del punto di interesse associato all'annuncio], [RDF-17], [Non eseguito],
-    [TS-52], [Verificare che l'amministratore possa filtrare gli annunci visualizzati nello storico in base alla data in cui sono stati generati, selezionando un certo intervallo di date], [RDF-18], [Non eseguito],
-    [TS-53], [Verificare che l'amministratore possa filtrare gli annunci visualizzati nello storico in base all'orario in cui sono stati generati, selezionando una determinata fascia oraria], [RDF-19], [Non eseguito],
-)
+    [TS-52], [Verificare che l'amministratore possa filtrare gli annunci visualizzati nello storico in base alla data in cui sono stati generati, selezionando un intervallo di date], [RDF-18], [Non eseguito],
+    [TS-53], [Verificare che l'amministratore possa filtrare gli annunci visualizzati nello storico in base all'orario in cui sono stati generati, selezionando una fascia oraria], [RDF-19], [Non eseguito],
+    [TS-54], [Verificare che l'amministratore possa accedere dalla _dashboard_ alla sezione dedicata ai grafici statistici], [RFF-1], [Non eseguito],
+    [TS-55], [Verificare che l'amministratore possa visualizzare nella sezione dedicata ai grafici statistici almeno un grafico], [RFF-6], [Non eseguito],
+    [TS-56], [Verificare che l'amministratore possa visualizzare, nella sezione dedicata ai grafici statistici, un grafico che mostri il numero di annunci generati dal sistema nelle ultime 24 ore, con granularità oraria], [RFF-2], [Non eseguito],
+    [TS-57], [Verificare che l'amministratore possa visualizzare, nella sezione dedicata ai grafici statistici, un grafico che riporti il numero medio di noleggi che vengono effettuati in ciascun mese dell'anno], [RFF-3], [Non eseguito],
+    [TS-58], [Verificare che l'amministratore, dalla sezione dedicata ai grafici statistici, possa selezionare un punto di interesse e contestualmente visualizzarne i relativi grafici], [RFF-4], [Non eseguito],
+    [TS-59], [Verificare che l'amministratore possa visualizzare il grafico che, per un certo punto di interesse, mette a confronto il numero di annunci generati con il numero di annunci non generati nell'ultima settimana], [RFF-5], [Non eseguito],
+    [TS-60], [Verificare che ciascun grafico visualizzato abbia un titolo che ne descriva efficacemente il contenuto], [RFF-7], [Non eseguito],
+    [TS-61], [Verificare che in ciascun grafico visualizzato l'asse delle ascisse e l'asse delle ordinate siano correttamente etichettati e completi di tutti i valori], [RFF-8], [Non eseguito],
+    [TS-62], [Verificare che ciascun grafico visualizzato stia rappresentando lo specifico _set_ di dati previsto per quel grafico], [RFF-9], [Non eseguito],
+    [TS-63], [Verificare che l'interfaccia creata per la visualizzazione degli annunci in tempo reale lato utente fruitore del servizio di noleggio sia funzionante], [RFF-10], [Non implementato],
+  )
 
 == Test di accettazione
 Condotti insieme al committente, servono a garantire che il prodotto finale sia conforme alle aspettative e ai requisiti contrattuali, permettendone il rilascio definitivo.
