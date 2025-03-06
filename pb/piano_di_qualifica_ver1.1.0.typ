@@ -390,6 +390,7 @@ Successivi ai _test_ di unità, hanno lo scopo di verificare l'interazione tra d
 Si concentrano sul sistema completo, assicurando che tutte le specifiche funzionali, prestazionali e di qualità concordate siano rispettate.
 // Da completare con tutti i test
 
+#pagebreak()
 == _Test_ di accettazione
 Condotti insieme al committente, servono a garantire che il prodotto finale sia conforme alle aspettative e ai requisiti contrattuali, permettendone il rilascio definitivo.
 
