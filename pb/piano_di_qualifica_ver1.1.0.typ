@@ -4,11 +4,18 @@
   data: "27 gennaio 2025",
   destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "Sync Lab S.r.l.", "Gruppo SWE@"),
   responsabile: "Riccardo Milan",
-  redattori: ("Davide Martinelli", "Davide Picello", "Klaudio Merja"),
+  redattori: ("Davide Marin", "Davide Martinelli", "Davide Picello", "Klaudio Merja"),
   verificatori: ("Andrea Precoma", "Davide Martinelli", "Davide Marin", "Riccardo Milan"),
   titolo: "Piano di Qualifica",
   uso: "Esterno",
   versioni: (
+    "1.1.0",
+    "06/03/2025",
+    "Davide Marin",
+    "Andrea Precoma",
+    [
+      - Aggiunta dei test di accettazione
+    ], 
     "1.0.1",
     "05/02/2025",
     "Klaudio Merja",
@@ -385,7 +392,31 @@ Si concentrano sul sistema completo, assicurando che tutte le specifiche funzion
 
 == _Test_ di accettazione
 Condotti insieme al committente, servono a garantire che il prodotto finale sia conforme alle aspettative e ai requisiti contrattuali, permettendone il rilascio definitivo.
-// Da completare con tutti i test
+
+#figure(
+  kind: table,
+  caption: [Descrizione e stato di ogni test di accettazione],
+  table(
+    align: center,
+    columns: 3,
+    fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
+    table.header[*_Test_*][*Descrizione*][*Stato*],
+    [TA-01], [Verificare che il prodotto supporti la visualizzazione dei _#rifGlossario("marker")_ corrispondendti ai noleggi attivi all'interno della mappa], [NV],
+    [TA-02], [Verificare che il prodotto supporti la visualizzazione dei _marker_ corrispondendti ai punti di interesse all'interno della mappa], [NV],
+    [TA-03], [Verificare che il prodotto supporti la visualizzazione dei dati dei noleggi attivi tramite i rispettivi _marker_ sulla mappa], [NV],
+    [TA-04], [Verificare che il prodotto suppporti la visualizzazione dei dati dei punti di interesse tramite i rispettivi _marker_ sulla mappa], [NV],
+    [TA-05], [Verificare che il prodotto supporti la visualizzazione dei _marker_ corrispondendti agli annunci generati all'interno della mappa], [NV],
+    [TA-06], [Verificare che il prodotto supporti la visualizzazione dei _marker_ corrispondendti alle tentate generazioni di annunci all'interno della mappa], [NV],
+    [TA-07], [Verificare che il prodotto supporti la visualizzazione dei dati degli annunci generati per ogni rispettivo _marker_ sulla mappa], [NV],
+    [TA-08], [Verificare che il prodotto supporti la visualizzazione dei dati delle tentate generazioni di annunci per ogni rispettivo _marker_ sulla mappa], [NV],
+    [TA-09], [Verificare che il prodotto permetta la fruizione delle sue funzionalità solo agli utenti registrati], [NV],
+    [TA-10], [Verificare che il prodotto supporti la modifica di posizione e dimensione della mappa a piacere dell'utente], [NV],
+    [TA-11], [Verificare che il prodotto supporti una generazione realistica dei percorsi dei noleggi], [NV],
+    [TA-12], [Verificare che il prodotto sia eseguibile in un sistema container, come #rifGlossario("Docker")], [NV],
+    [TA-13], [Verificare che il prodotto sia fruibile con le ultime versioni dei _brawser web_ principali, come Google Chrome, Mozilla Firefox, Microsoft Edge e
+Safari], [NV],
+  ),
+)
 
 #pagebreak()
 = Cruscotto di monitoraggio della qualità <cruscotto>
