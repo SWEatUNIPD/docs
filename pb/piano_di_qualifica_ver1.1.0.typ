@@ -9,6 +9,14 @@
   titolo: "Piano di Qualifica",
   uso: "Esterno",
   versioni: (
+    "1.1.0",
+    "6/03/2025",
+    "Davide Martinelli",
+    "Davide Marin",
+    [
+      - Stesura sezione sui _test_ di sistema.
+      - Piccoli fix in accordo con le Norme di Progetto.
+    ],
     "1.0.1",
     "05/02/2025",
     "Klaudio Merja",
