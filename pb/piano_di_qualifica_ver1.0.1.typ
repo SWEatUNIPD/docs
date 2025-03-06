@@ -58,7 +58,7 @@ Nel documento i termini che, alla loro prima occorrenza, vengono contrassegnati 
 
 === Riferimenti normativi
 - Norme di Progetto (v1.0.1)\ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/norme_di_progetto_ver1.0.1.pdf")
-- ISO/IEC 12207:1995\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf")\ (ultimo accesso in data 27/01/2025)
+- ISO/IEC 12207:1995 (#sym.section#sym.section 6.3-6.7)\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf")\ (ultimo accesso in data 6/03/2025)
 
 === Riferimenti informativi
 - Glossario (v1.0.0)\ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/glossario_ver1.0.0.pdf")
@@ -380,7 +380,7 @@ Successivi ai _test_ di unità, hanno lo scopo di verificare l'interazione tra d
 // Da completare con tutti i test
 
 == Test di sistema
-Si concentrano sul sistema completo, assicurando che tutte le specifiche funzionali, prestazionali e di qualità concordate siano rispettate.
+Precedono i _test_ di accettazione e si concentrano sul sistema nel suo complesso, assicurando che vengano soddisfatti tutti i requisiti _software_ stabiliti e tracciati dal documento di Analisi dei Requisiti.
 
 #table(
   columns: 4,
