@@ -17,6 +17,7 @@
   "C": {
     "ClickHouse": "ClickHouse è un database di analisi _open source_ orientato alle colonne per casi di utilizzo in ambito _big data_.",
     "ClickUp": "Piattaforma di gestione del lavoro che combina strumenti per pianificazione, organizzazione e collaborazione su progetti.",
+    "Codebase": "Termine che si riferisce all'insieme di tutto il codice sorgente del prodotto _software_ in sviluppo.",
     "Code Coverage": "Metrica che misura la percentuale di codice sorgente coperto da _test_, utile per valutare l'efficacia dei _test_ e l'affidabilità del _software_."
   },
   "D": {
