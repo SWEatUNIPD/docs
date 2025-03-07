@@ -12,7 +12,7 @@
     "1.1.0",
     "06/03/2025",
     "Davide Marin",
-    "Andrea Precoma",
+    "Riccardo Milan",
     [
       - Aggiunta dei test di accettazione
     ], 
@@ -392,7 +392,7 @@ Si concentrano sul sistema completo, assicurando che tutte le specifiche funzion
 
 #pagebreak()
 == _Test_ di accettazione
-Condotti insieme al committente, servono a garantire che il prodotto finale sia conforme alle aspettative e ai requisiti contrattuali, permettendone il rilascio definitivo.
+Condotti insieme all'azienda proponente, servono a garantire che il prodotto finale sia conforme alle aspettative e ai requisiti contrattuali, permettendone il rilascio definitivo.
 
 #figure(
   kind: table,
@@ -402,7 +402,7 @@ Condotti insieme al committente, servono a garantire che il prodotto finale sia 
     columns: 3,
     fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
     table.header[*Codice _test_*][*Descrizione*][*Stato*],
-    [TA-01], [Verificare che il prodotto supporti la visualizzazione dei _#rifGlossario("marker")_ corrispondendti ai noleggi attivi all'interno della mappa], [Non eseguito],
+    [TA-01], [Verificare che il prodotto supporti la visualizzazione dei _#rifGlossario("marker")_ corrispondendti ai mezzi con noleggio attivi all'interno della mappa], [Non eseguito],
     [TA-02], [Verificare che il prodotto supporti la visualizzazione dei _marker_ corrispondendti ai punti di interesse all'interno della mappa], [Non eseguito],
     [TA-03], [Verificare che il prodotto supporti la visualizzazione dei dati dei noleggi attivi tramite i rispettivi _marker_ sulla mappa], [Non eseguito],
     [TA-04], [Verificare che il prodotto suppporti la visualizzazione dei dati dei punti di interesse tramite i rispettivi _marker_ sulla mappa], [Non eseguito],
