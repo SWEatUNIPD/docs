@@ -13,7 +13,7 @@
     "07/03/2025",
     "Klaudio Merja",
     "Davide Picello",
-    [- Aggiunto i termini "Codebase" e "Micro batching"],
+    [- Aggiunti i termini "Codebase" e "Micro batching"],
     "1.1.0",
     "27/02/2025",
     "Andrea Perozzo",
