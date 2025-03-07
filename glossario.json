@@ -61,7 +61,7 @@
   },
   "M": {
     "Message-driven Architecture": "È un _design pattern_ che si occupa della produzione, dell'invio e della gestione di messaggi, permettendo di comunicare oppure avviare servizi disaccoppiati tra di loro.",
-    "Micro batching": "Tecnica di elaborazione dei dati che si pone a metà tra il _batch processing_ e lo _stream processing_, dove i dati vengono elaborati in _batch_ di piccole dimensioni a intervalli regolari.",
+    "Micro batching": "Tecnica di elaborazione di elevate quantità di dati a latenza ridotta. I dati vengono elaborati in _batch_ (lotti) di piccole dimensioni a intervalli regolari.",
     "Mockup": "Modello o replica di un prodotto o di un sistema (come l'interfaccia utente) utilizzato a scopo di _test_ o presentazione.",
     "MVP": "Acronimo di _Minimum Viable Product_, rappresenta la versione iniziale di un prodotto con le funzionalità minime indispensabili per essere testato dagli utenti e validato sul mercato.",
     "Marker": "Punto di riferimento utilizzato per identificare una posizione specifica all'interno della mappa."
