@@ -2,7 +2,7 @@
 
 #show: content => verbale(
   data: "3 Marzo 2025",
-  responsabile: "Riccardo Milan",
+  responsabile: "Andrea Precoma",
   destinatari: (
     "Prof. Tullio Vardanega",
     "Prof. Riccardo Cardin",
