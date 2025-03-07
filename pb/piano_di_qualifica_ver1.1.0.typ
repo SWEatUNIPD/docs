@@ -378,15 +378,15 @@ Questa sezione descrive le attività di _testing_ effettuate per garantire che i
 //== Nomenclatura
 // Aggiungere parte relativa alla nomenclatura
 
-== _Test_ di unità
+== Test di unità
 Mirano a verificare il funzionamento corretto dei componenti _software_ più piccoli e indipendenti, sviluppati principalmente nella fase di progettazione.
 // Da completare con tutti i test
 
-== _Test_ di integrazione
+== Test di integrazione
 Successivi ai _test_ di unità, hanno lo scopo di verificare l'interazione tra diverse unità _software_ per garantire che lavorino in sinergia per compiti specifici.
 // Da completare con tutti i test
 
-== _Test_ di sistema
+== Test di sistema
 Si concentrano sul sistema completo, assicurando che tutte le specifiche funzionali, prestazionali e di qualità concordate siano rispettate.
 // Da completare con tutti i test
 
