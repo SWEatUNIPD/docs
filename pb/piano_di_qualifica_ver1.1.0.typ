@@ -391,7 +391,7 @@ Si concentrano sul sistema completo, assicurando che tutte le specifiche funzion
 // Da completare con tutti i test
 
 #pagebreak()
-== _Test_ di accettazione
+== Test di accettazione
 Condotti insieme all'azienda proponente, servono a garantire che il prodotto finale sia conforme alle aspettative e ai requisiti contrattuali, permettendone il rilascio definitivo.
 
 #figure(
@@ -402,19 +402,19 @@ Condotti insieme all'azienda proponente, servono a garantire che il prodotto fin
     columns: 3,
     fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
     table.header[*Codice _test_*][*Descrizione*][*Stato*],
-    [TA-01], [Verificare che il prodotto supporti la visualizzazione dei _#rifGlossario("marker")_ corrispondendti ai mezzi con noleggio attivi all'interno della mappa], [Non eseguito],
-    [TA-02], [Verificare che il prodotto supporti la visualizzazione dei _marker_ corrispondendti ai punti di interesse all'interno della mappa], [Non eseguito],
+    [TA-01], [Verificare che il prodotto supporti la visualizzazione dei _#rifGlossario("marker")_ corrispondenti ai mezzi con noleggio attivi all'interno della mappa], [Non eseguito],
+    [TA-02], [Verificare che il prodotto supporti la visualizzazione dei _marker_ corrispondenti ai punti di interesse all'interno della mappa], [Non eseguito],
     [TA-03], [Verificare che il prodotto supporti la visualizzazione dei dati dei noleggi attivi tramite i rispettivi _marker_ sulla mappa], [Non eseguito],
-    [TA-04], [Verificare che il prodotto suppporti la visualizzazione dei dati dei punti di interesse tramite i rispettivi _marker_ sulla mappa], [Non eseguito],
-    [TA-05], [Verificare che il prodotto supporti la visualizzazione dei _marker_ corrispondendti agli annunci generati all'interno della mappa], [Non eseguito],
-    [TA-06], [Verificare che il prodotto supporti la visualizzazione dei _marker_ corrispondendti alle tentate generazioni di annunci all'interno della mappa], [Non eseguito],
+    [TA-04], [Verificare che il prodotto supporti la visualizzazione dei dati dei punti di interesse tramite i rispettivi _marker_ sulla mappa], [Non eseguito],
+    [TA-05], [Verificare che il prodotto supporti la visualizzazione dei _marker_ corrispondenti agli annunci generati all'interno della mappa], [Non eseguito],
+    [TA-06], [Verificare che il prodotto supporti la visualizzazione dei _marker_ corrispondenti alle tentate generazioni di annunci all'interno della mappa], [Non eseguito],
     [TA-07], [Verificare che il prodotto supporti la visualizzazione dei dati degli annunci generati per ogni rispettivo _marker_ sulla mappa], [Non eseguito],
-    [TA-08], [Verificare che il prodotto supporti la visualizzazione dei dati delle tentate generazioni di annunci per ogni rispettivo _marker_ sulla mappa], [Non eseguito],
+    [TA-08], [Verificare che il prodotto supporti la visualizzazione dei dati delle mancate generazioni di annunci per ogni rispettivo _marker_ sulla mappa], [Non eseguito],
     [TA-09], [Verificare che il prodotto permetta la fruizione delle sue funzionalità solo agli utenti registrati], [Non eseguito],
     [TA-10], [Verificare che il prodotto supporti la modifica di posizione e dimensione della mappa a piacere dell'utente], [Non eseguito],
     [TA-11], [Verificare che il prodotto supporti una generazione realistica dei percorsi dei noleggi], [Non eseguito],
-    [TA-12], [Verificare che il prodotto sia eseguibile in un sistema container, come #rifGlossario("Docker")], [Non eseguito],
-    [TA-13], [Verificare che il prodotto sia fruibile con le ultime versioni dei _brawser web_ principali, come Google Chrome, Mozilla Firefox, Microsoft Edge e
+    [TA-12], [Verificare che il prodotto sia eseguibile in un sistema _container_, come #rifGlossario("Docker")], [Non eseguito],
+    [TA-13], [Verificare che il prodotto sia fruibile con le ultime versioni dei _browser web_ principali, come Google Chrome, Mozilla Firefox, Microsoft Edge e
 Safari], [Non eseguito],
   ),
 )
