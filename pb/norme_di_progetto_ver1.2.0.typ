@@ -287,7 +287,8 @@ Al suo interno, sono presenti le seguenti informazioni:
 Il Manuale Utente descrive nel dettaglio come utilizzare il prodotto _software_. Vengono elencati i prerequisiti, le operazioni da svolgere per installare, avviare e terminare l'applicativo, le istruzioni per accedere e usufruire dei servizi forniti. Ogni passaggio è accompagnato da immagini, comandi o _link_ a documentazione esterna.
 
 ==== Specifica Tecnica
-Il documento descrive accuratamente gli aspetti progettuali. Deve quindi trattare le seguenti scelte:
+Il documento descrive accuratamente gli aspetti progettuali e le scelte tecnologiche. Deve quindi trattare le seguenti scelte:
+- *Tecnologie adottate* motivate da ragionamenti e descrizioni nei casi d'uso del prodotto.
 - *Architettura logica* per componenti, ruoli, connessioni e interazioni.
 - *Architettura di _deployment_* per l'allocazione delle parti nel sistema in esecuzione.
 - *_Design pattern_ architetturali* adottati per risolvere alcuni problemi e agevolare la struttura del codice.
