@@ -10,6 +10,14 @@
   content: content,
 )
 
+#infoRiunione(
+  luogo: "Chiamata Discord",
+  data: "10/02/2025",
+  ora: "15:00",
+  durata: "2 ore",
+  partecipantiEsterni: (),
+)
+
 = Ordine del giorno
 La riunione interna, svoltasi dopo il #rifGlossario("SAL") con l'azienda proponente per l'inizio del sesto _#rifGlossario("sprint")_, ha come principale obiettivo quello di fissare le attività necessarie ad aggiornare le norme di lavoro e correggere la documentazione in accordo con le indicazioni date dai professori dopo i colloqui della RTB.
 
@@ -65,11 +73,3 @@ Per questo _sprint_ contiamo di rimetterci in regola rispetto alle mancanze e gl
   [Klaudio Merja],
   [Modifiche al template verbali e al glossario]
 ))
-
-#infoRiunione(
-  luogo: "Chiamata Discord",
-  data: "10/02/2025",
-  ora: "15:00",
-  durata: "2 ore",
-  partecipantiEsterni: (),
-)
