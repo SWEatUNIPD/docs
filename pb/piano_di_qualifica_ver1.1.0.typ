@@ -9,13 +9,21 @@
   titolo: "Piano di Qualifica",
   uso: "Esterno",
   versioni: (
-    "1.1.0",
+    "1.2.0",
     "06/03/2025",
     "Davide Marin",
     "Riccardo Milan",
     [
-      - Aggiunta dei test di accettazione
-    ], 
+      - Aggiunta dei _test_ di accettazione
+    ],
+    "1.1.0",
+    "6/03/2025",
+    "Davide Martinelli",
+    "Davide Marin",
+    [
+      - Stesura sezione sui _test_ di sistema.
+      - Piccoli fix in accordo con le Norme di Progetto.
+    ],
     "1.0.1",
     "05/02/2025",
     "Klaudio Merja",
@@ -65,13 +73,13 @@ Nel documento i termini che, alla loro prima occorrenza, vengono contrassegnati 
 
 === Riferimenti normativi
 - Norme di Progetto (v1.0.1)\ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/norme_di_progetto_ver1.0.1.pdf")
-- ISO/IEC 12207:1995\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf")
+- ISO/IEC 12207:1995 (#sym.section#sym.section 6.3-6.7)\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf")\ (ultimo accesso in data 6/03/2025)
 
 === Riferimenti informativi
 - Glossario (v1.0.0)\ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/glossario_ver1.0.0.pdf")
-- Capitolato d'appalto C4: _NearYou - Smart custom advertising platform_\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
-- Lezione T07 - Qualità di prodotto\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T07.pdf")
-- Lezione T08 - Qualità di processo\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T08.pdf")
+- Capitolato d'appalto C4: _NearYou - Smart custom advertising platform_\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")\ (ultimo accesso in data 27/01/2025)
+- Lezione T07 - Qualità di prodotto\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T07.pdf")\ (ultimo accesso in data 27/01/2025)
+- Lezione T08 - Qualità di processo\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T08.pdf")\ (ultimo accesso in data 27/01/2025)
 
 /*
 - ISO/IEC 9126:2001\ #formatLink(url: "https://en.wikipedia.org/wiki/ISO/IEC_9126")
@@ -387,8 +395,77 @@ Successivi ai _test_ di unità, hanno lo scopo di verificare l'interazione tra d
 // Da completare con tutti i test
 
 == Test di sistema
-Si concentrano sul sistema completo, assicurando che tutte le specifiche funzionali, prestazionali e di qualità concordate siano rispettate.
-// Da completare con tutti i test
+Precedono i _test_ di accettazione e si concentrano sul sistema nel suo complesso, assicurando che vengano soddisfatti tutti i requisiti _software_ stabiliti e tracciati dal documento di Analisi dei Requisiti.
+
+#table(
+  columns: 4,
+  align: (center, left, center, center),
+  fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
+  table.header[*Codice test*][*Descrizione*][*Requisito*][*Stato*],
+    [TS-1], [Verificare che ciascun sensore invii in modo corretto i propri dati di identificazione e di localizzazione geospaziale, a intervalli di tempo regolari], [ROF-1], [Non eseguito],
+    [TS-2], [Verificare che la _dashboard_ sia accessibile solo previa autenticazione da parte dell'amministratore con le proprie credenziali], [ROF-2], [Non eseguito],
+    [TS-3], [Verificare che l'amministratore abbia fornito un indirizzo _e-mail_ per procedere con l'autenticazione], [ROF-3], [Non eseguito],
+    [TS-4], [Verificare che l'amministratore abbia fornito una password per procedere con l'autenticazione], [ROF-4], [Non eseguito],
+    [TS-5], [Verificare che, se l'amministratore inserisce almeno una credenziale errata, l'autenticazione fallisca e venga ritornato un messaggio di errore], [ROF-5], [Non eseguito],
+    [TS-6], [Verificare che l'amministratore possa visualizzare sulla _dashboard_ principale una mappa geografica], [ROF-6], [Non eseguito],
+    [TS-7], [Verificare che l'amministratore possa visualizzare, tramite dei _marker_ sulla mappa geografica, la posizione di tutti i punti di interesse], [ROF-7], [Non eseguito],
+    [TS-8], [Verificare che l'amministratore possa visualizzare sulla mappa il percorso eseguito da ciascun noleggio attivo in quel momento], [ROF-8], [Non eseguito],
+    [TS-9], [Verificare che l'amministratore possa visualizzare, lungo il percorso di ciascun noleggio attivo, un _marker_ specifico se quella posizione ricevuta dal sensore non ha provocato una richiesta di generazione annuncio], [ROF-9], [Non eseguito],
+    [TS-10], [Verificare che l'amministratore possa visualizzare, lungo il percorso di ciascun noleggio attivo, un _marker_ specifico se quella posizione ricevuta dal sensore ha provocato una richiesta di generazione annuncio e questa ha avuto successo, ovvero l'utente è stato ritenuto interessato e quindi ha ricevuto l'annuncio], [ROF-10], [Non eseguito],
+    [TS-11], [Verificare che l'amministratore possa visualizzare, lungo il percorso di ciascun noleggio attivo, un _marker_ specifico se quella posizione ricevuta dal sensore ha provocato una richiesta di generazione annuncio e questa non ha avuto successo, ovvero l'utente non è stato ritenuto interessato e quindi non ha ricevuto l'annuncio], [ROF-11], [Non eseguito],
+    [TS-12], [Verificare che l'amministratore possa visualizzare le informazioni relative ad un punto di interesse interagendo con il _marker_ che lo rappresenta all'interno della mappa], [ROF-12], [Non eseguito],
+    [TS-13], [Verificare che l'amministratore possa visualizzare, dalle informazioni esposte interagendo con il _marker_ di un punto di interesse, il nome dello stesso], [ROF-13], [Non eseguito],
+    [TS-14], [Verificare che l'amministratore possa visualizzare, dalle informazioni esposte interagendo con il _marker_ di un punto di interesse, la categoria di esercizio commerciale a cui appartiene], [ROF-14], [Non eseguito],
+    [TS-15], [Verificare che l'amministratore, interagendo con un _marker_ che segnala l'avvenuta generazione di un annuncio, possa visualizzare le informazioni relative all'annuncio generato], [ROF-15], [Non eseguito],
+    [TS-16], [Verificare che l'amministratore possa visualizzare, dalle informazioni esposte interagendo con il _marker_ di un annuncio generato, il nome del punto di interesse associato a quell'annuncio], [ROF-16], [Non eseguito],
+    [TS-17], [Verificare che l'amministratore possa visualizzare, dalle informazioni esposte interagendo con il _marker_ di un annuncio generato, l'_e-mail_ dell'utente destinatario dell'annuncio], [ROF-17], [Non eseguito],
+    [TS-18], [Verificare che l'amministratore possa visualizzare, dalle informazioni esposte interagendo con il _marker_ di un annuncio generato, la data e l'ora di generazione dell'annuncio], [ROF-18], [Non eseguito],
+    [TS-19], [Verificare che l'amministratore possa visualizzare, dalle informazioni esposte interagendo con il _marker_ di un annuncio generato, il testo dell'annuncio stesso], [ROF-19], [Non eseguito],
+    [TS-20], [Verificare che l'amministratore possa visualizzare, dalle informazioni esposte interagendo con il _marker_ di un annuncio generato, la categoria del punto di interesse associato a quell'annuncio], [ROF-20], [Non eseguito],
+    [TS-21], [Verificare che l'amministratore, interagendo con un _marker_ che segnala la mancata generazione di un annuncio per incompatibilità con gli interessi dell'utente, possa visualizzare le informazioni relative all'annuncio non generato], [ROF-21], [Non eseguito],
+    [TS-22], [Verificare che l'amministratore possa visualizzare, dalle informazioni esposte interagendo con il _marker_ di un annuncio non generato, il nome del punto di interesse associato], [ROF-22], [Non eseguito],
+    [TS-23], [Verificare che l'amministratore possa visualizzare, dalle informazioni esposte interagendo con il _marker_ di un annuncio non generato, l'_e-mail_ dell'utente a cui era destinato l'annuncio non generato], [ROF-23], [Non eseguito],
+    [TS-24], [Verificare che l'amministratore possa visualizzare, dalle informazioni esposte interagendo con il _marker_ di un annuncio non generato, la data e l'ora di tentata generazione dell'annuncio], [ROF-24], [Non eseguito],
+    [TS-25], [Verificare che l'amministratore, interagendo nuovamente con il _marker_ di un annuncio generato, possa chiudere la vista che espone le informazioni sull'annuncio], [ROF-25], [Non eseguito],
+    [TS-26], [Verificare che l'amministratore, interagendo nuovamente con il _marker_ di un annuncio non generato, possa chiudere il messaggio contenente le informazioni relative alla mancata generazione di quell'annuncio], [ROF-26], [Non eseguito],
+    [TS-27], [Verificare che l'amministratore possa spostare la visuale della mappa geografica visualizzata interagendo con la stessa], [ROF-27], [Non eseguito],
+    [TS-28], [Verificare che l'amministratore, interagendo con la mappa geografica visualizzata, possa fare _zoom in_ e _zoom out_ sulla visuale], [ROF-28], [Non eseguito],
+    [TS-29], [Verificare che l'amministratore riceva un messaggio di errore del tipo "il _server_ non risponde" se il sistema non risponde alle richieste], [ROF-29], [Non eseguito],
+    [TS-30], [Verificare che l'amministratore riceva un messaggio di errore del tipo "connessione persa" se la connessione al sistema viene persa o è scarsa], [ROF-30], [Non eseguito],
+    [TS-31], [Verificare che l'amministratore riceva un messaggio di errore del tipo "sensore malfunzionante" se il sensore non invia dati GPS in modo corretto o non invia dati per un certo periodo di tempo prolungato], [ROF-31], [Non eseguito],
+    [TS-32], [Verificare che l'amministratore riceva un messaggio di errore del tipo "generazione impossibile dell'annuncio" se il sistema non è in grado di connettersi o comunicare con il servizio di LLM], [ROF-32], [Non eseguito],
+    [TS-33], [Verificare che esista almeno un generatore di dati GPS che simuli il comportamento di un sensore che interagisce col sistema], [ROF-33], [Non eseguito],
+    [TS-34], [Verificare che il generatore di dati GPS generi dei percorsi realistici, ovvero che seguono vie o strade percorribili], [ROF-34], [Non eseguito],
+    [TS-35], [Verificare che l'amministratore possa accedere dalla _dashboard_ alla sezione dedicata allo storico degli annunci], [RDF-1], [Non eseguito],
+    [TS-36], [Verificare che l'amministratore possa visualizzare, nella sezione dedicata allo storico degli annunci, l'elenco degli annunci generati dal sistema, sotto forma di lista o di griglia a discrezione dell'utilizzatore], [RDF-2], [Non eseguito],
+    [TS-37], [Verificare che l'amministratore possa visualizzare, per ogni singolo elemento nello storico, le principali informazioni relative all'annuncio], [RDF-3], [Non eseguito],
+    [TS-38], [Verificare che l'amministratore possa visualizzare, per ogni singolo elemento nello storico, il nome del punto di interesse associato all'annuncio], [RDF-4], [Non eseguito],
+    [TS-39], [Verificare che l'amministratore possa visualizzare, per ogni singolo elemento nello storico, l'_e-mail_ dell'utente destinatario dell'annuncio], [RDF-5], [Non eseguito],
+    [TS-40], [Verificare che l'amministratore possa visualizzare, per ogni singolo elemento nello storico, la data e l'ora in cui il sistema ha tentato la generazione dell'annuncio], [RDF-6], [Non eseguito],
+    [TS-41], [Verificare che l'amministratore possa visualizzare, per ogni singolo elemento nello storico, una _flag_ che indichi se il noleggio durante il quale è stato generato l'annuncio è ancora attivo oppure no], [RDF-7], [Non eseguito],
+    [TS-42], [Verificare che, per ogni singolo elemento nello storico, l'amministratore possa visualizzarne i dettagli completi interagendo con l'elemento stesso], [RDF-8], [Non eseguito],
+    [TS-43], [Verificare che l'amministratore possa visualizzare, attraverso i dettagli completi di un annuncio, il nome del punto di interesse associato a quell'annuncio], [RDF-9], [Non eseguito],
+    [TS-44], [Verificare che l'amministratore possa visualizzare, attraverso i dettagli completi di un annuncio, l'_e-mail_ dell'utente destinatario di quell'annuncio], [RDF-10], [Non eseguito],
+    [TS-45], [Verificare che l'amministratore possa visualizzare, attraverso i dettagli completi di un annuncio, la data e l'ora in cui il sistema ha tentato la generazione dell'annuncio], [RDF-11], [Non eseguito],
+    [TS-46], [Verificare che l'amministratore possa visualizzare, attraverso i dettagli completi di un annuncio, una _flag_ che indichi se il noleggio durante il quale è stato generato l'annuncio è ancora attivo oppure no], [RDF-12], [Non eseguito],
+    [TS-47], [Verificare che l'amministratore possa visualizzare, attraverso i dettagli completi di un annuncio, il testo dell'annuncio stesso], [RDF-13], [Non eseguito],
+    [TS-48], [Verificare che l'amministratore possa visualizzare, attraverso i dettagli completi di un annuncio, la categoria del punto di interesse associato a quell'annuncio], [RDF-14], [Non eseguito],
+    [TS-49], [Verificare che l'amministratore possa chiudere la vista che espone i dettagli completi di un singolo annuncio], [RDF-15], [Non eseguito],
+    [TS-50], [Verificare che l'amministratore possa filtrare gli annunci visualizzati nello storico in base all'_e-mail_ dell'utente destinatario], [RDF-16], [Non eseguito],
+    [TS-51], [Verificare che l'amministratore possa filtrare gli annunci visualizzati nello storico in base al nome del punto di interesse associato all'annuncio], [RDF-17], [Non eseguito],
+    [TS-52], [Verificare che l'amministratore possa filtrare gli annunci visualizzati nello storico in base alla data in cui sono stati generati, selezionando un intervallo di date], [RDF-18], [Non eseguito],
+    [TS-53], [Verificare che l'amministratore possa filtrare gli annunci visualizzati nello storico in base all'orario in cui sono stati generati, selezionando una fascia oraria], [RDF-19], [Non eseguito],
+    [TS-54], [Verificare che l'amministratore possa accedere dalla _dashboard_ alla sezione dedicata ai grafici statistici], [RFF-1], [Non eseguito],
+    [TS-55], [Verificare che l'amministratore possa visualizzare, nella sezione dedicata ai grafici statistici, un grafico per ciascuna analisi dati], [RFF-2], [Non eseguito],
+    [TS-56], [Verificare che ciascun grafico visualizzato abbia un titolo che ne descriva efficacemente il contenuto], [RFF-3], [Non eseguito],
+    [TS-57], [Verificare che in ciascun grafico visualizzato l'asse delle ascisse e l'asse delle ordinate siano correttamente etichettati e completi di tutti i valori], [RFF-4], [Non eseguito],
+    [TS-58], [Verificare che ciascun grafico visualizzato stia rappresentando lo specifico _set_ di dati previsto per quel grafico], [RFF-5], [Non eseguito],
+    [TS-59], [Verificare che l'amministratore possa visualizzare, nella sezione dedicata ai grafici statistici, un grafico che mostri il numero di annunci generati dal sistema nelle ultime 24 ore, con granularità oraria], [RFF-6], [Non eseguito],
+    [TS-60], [Verificare che l'amministratore possa visualizzare, nella sezione dedicata ai grafici statistici, un grafico che riporti il numero medio di noleggi che vengono effettuati in ciascun mese dell'anno], [RFF-7], [Non eseguito],
+    [TS-61], [Verificare che l'amministratore, dalla sezione dedicata ai grafici statistici, possa selezionare un punto di interesse e contestualmente visualizzarne i relativi grafici], [RFF-8], [Non eseguito],
+    [TS-62], [Verificare che l'amministratore possa visualizzare il grafico che, per un certo punto di interesse, mette a confronto il numero di annunci generati con il numero di annunci non generati nell'ultima settimana], [RFF-9], [Non eseguito],
+    [TS-63], [Verificare che l'interfaccia creata per la visualizzazione degli annunci in tempo reale lato utente fruitore del servizio di noleggio sia funzionante], [RFF-10], [Non implementato],
+  )
 
 #pagebreak()
 == Test di accettazione
