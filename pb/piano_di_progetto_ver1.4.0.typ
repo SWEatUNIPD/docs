@@ -24,6 +24,13 @@
   titolo: "Piano di Progetto",
   uso: "Esterno",
   versioni: (
+    "1.4.0",
+    "11/02/2025",
+    "Riccardo Milan",
+    "Andrea Precoma",
+    [
+      - Stesura retrospettiva settimo _sprint_
+    ],
     "1.3.0",
     "24/02/2025",
     "Riccardo Milan",
@@ -811,7 +818,7 @@ Nel corso del sesto _sprint_ si sono riscontrati i seguenti rishi:
 
 ===== Attività future
 Nel prossimo periodo, siccome sono state apportate le modifiche dovute ai documenti in seguito al colloquio RTB, il gruppo inizierà la stesura dei documenti Manuale Utente e Specifica Tecnica.
-Inoltre si inizierà a lavorare sullo sviluppo del MVP con relativa progettazione, applicando dapprima le decisioni sull'architettura discusse anche con la proponente.
+Inoltre si inizierà a lavorare sullo sviluppo del #rifGlossario("MVP") con relativa progettazione, applicando dapprima le decisioni sull'architettura discusse anche con la proponente.
 
 #pagebreak()
 
@@ -837,13 +844,80 @@ In seguito alla riunione di inizio settimo _sprint_, il _team_ si è prefissato 
 ==== Preventivo orario
 #rendicontazioneOre(
   (
-    (0, 1, 0, 0, 0, 2),
-    (0, 3, 0, 4, 0, 1),
-    (0, 0, 0, 0, 0, 3),
-    (0, 0, 2, 0, 0, 1),
-    (0, 0, 0, 0, 0, 2),
-    (0, 1, 0, 4, 0, 0),
-    (3, 0, 0, 0, 0, 2),
+    (2, 0, 0, 8, 10, 0),
+    (0, 0, 0, 12, 11, 1),
+    (0, 0, 0, 7, 5, 3),
+    (0, 3, 2, 3, 0, 2),
+    (0, 0, 0, 8, 4, 4),
+    (0, 1, 0, 10, 7, 2),
+    (6, 0, 0, 4, 4, 4),
   ),
   caption: [Preventivo delle ore nel settimo _sprint_ per membro e per ruolo],
 )
+
+==== Consuntivo orario e di spesa dello _sprint_ corrente
+#consuntivoOre(
+  preventivo: (
+    (2, 0, 0, 8, 10, 0),
+    (0, 0, 0, 12, 11, 1),
+    (0, 0, 0, 7, 5, 3),
+    (0, 3, 2, 3, 0, 2),
+    (0, 0, 0, 8, 4, 4),
+    (0, 1, 0, 10, 7, 2),
+    (6, 0, 0, 4, 4, 4),
+  ),
+  consuntivo: (
+    (3, 0, 0, 8, 10, 0),
+    (0, 0, 0, 12, 14, 1),
+    (0, 0, 0, 6, 5, 2),
+    (0, 2, 2, 3, 0, 1),
+    (0, 0, 0, 6, 6, 4),
+    (0, 1, 0, 12, 6, 2),
+    (5, 0, 0, 3, 5, 4),
+  ),
+  tabCaption: [Consuntivo delle ore nel settimo _sprint_ per membro e per ruolo],
+  costTabCaption: [Costi sostenuti nel settimo _sprint_],
+  chartCaption: [Grafico percentuale dell'allocazione delle ore per ruolo nel settimo _sprint_],
+)
+
+#pagebreak()
+
+==== Risorse rimanenti e preventivo a finire
+#align(
+  center,
+  [
+    #table(
+      columns: (auto, auto, auto, auto),
+      align: center,
+      table.header([*Ruolo*], [*Ore rimanenti*], [*_Budget_ rimanente*], [*Risorse consumate*]),
+      [Responsabile], [22], [660 €], [60,71 %],
+      [Amministratore], [12], [240 €], [78,57 %],
+      [Analista], [2.5], [62.5 €], [97,02 %],
+      [Progettista], [83], [2075 €], [37,59 %],
+      [Programmatore], [97.5], [1462.5 €], [39,44 %],
+      [Verificatore], [74.5], [1117.5 €], [46,79 %],
+    )
+  ],
+)
+Il prevntivo a finire si è alzato a 12,751.12€, a fronte di un preventivo iniziale di 12.740,00€, ma prevediamo si assesti un quanto in questo _sprint_ c'è stato un notevole aumento di carico di lavoro, data la fine degli impegni scolastici dei membri del gruppo.
+
+==== Retrospettiva
+Durante il settimo _sprint_ il gruppo ha lavorato per avanzare nella redazione della documentazione necessaria al rilascio dell'MVP del _software_ e soprattutto nell'analisi del _software_ e nelle prime implmentazioni. Le attività sono state completate tutte tranné le redazione della Specifica Tecnica, a causa di un cambio di tecnologia che ha costretto il _team_ a concentrare le risorse sul _software_.
+
+===== Cosa ha funzionato
+In questo _sprint_ ha funzionato il lavoro di progettazione e il coinvolgimento del committente, professor Cardin, nelle scelte progettuali che ci ha permesso di accorgerci tempestivamente degli errori e del cambio di direzione nella tecnologia da utilizzare. Da questo punto di vista ha funzionato anche l'adattamento del gruppo che ha convogliato le risorse per applicare subito i suggerimenti del committente.
+
+===== Cosa non ha funzionato
+La redazione della prima parte della Specifica Tecnica non è stata completata secondo i tempi previsti, a causa del cambio di tecnologia imprevisto che ha richiesto più risorse per mettere in atto la nuova tecnologia, attività ritenuta più urgente dal gruppo. 
+
+// ===== Cosa fare per migliorare
+// non mi viene in mente nulla, penso si possa anche omettere la sezione a questo punto. Se vengono idee scrivo
+
+===== Rischi riscontrati
+Nel corso del settimo _sprint_ si sono riscontrati i seguenti rishi:
+- #link(<RT-1>)[RT-1]: come spiegato sopra, si è rivelato a un certo punto necessario un cambio di tecnologia, e quindi il gruppo ha dovuto formarsi su essa spendendo del tempo non previsto.
+
+===== Attività future
+Nel prossimo periodo sarà necessario redigere la Specifica Tecnica e finire il Manuale Utente. Inoltre con le tecnologie del tutto definite, ci saranno da compiere le ultime scelte architetturali e poi dedicarsi completamente alla scrittura del codice per il _software_ e i relativi _test_
+
+#pagebreak()
