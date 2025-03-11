@@ -239,7 +239,7 @@ Per il processo di gestione dei rischi il gruppo adotta il modello fornito da Ia
 === Imprevisti tecnologici <RT-2>
 #tabellaRischio(
   ID: [RT-2],
-  descrizione: [A causa dell'importanza che certe tecnologie hanno all'interno del progetto, può essere che a un certo punto ci sia un cambio radicale che porta a un _refactor_ del prodotto in sè, e data la priorità che assume questo adattamento, potrebbe essere necessario allocarvi risorse, togliendole da altre attività pianificate.],
+  descrizione: [A causa dell'importanza che certe tecnologie hanno all'interno del progettose si presenta un cambiamento importante è fondamentale risolverlo repentinamente. Data la priorità che assume questo adattamento, potrebbe essere necessario allocarvi risorse prima destinate ad altre attività.],
   probabilità: [Media],
   impatto: [Alto],
   piano: [Il rischio può essere mitigato analizzando e studiando molto accuratamente tutte le possibili tecnologie utilizzabili prima di scegliere quella che verrà effettivamente utilizzata per sviluppare.],
