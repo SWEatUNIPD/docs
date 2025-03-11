@@ -908,16 +908,16 @@ In seguito alla riunione di inizio settimo _sprint_, il _team_ si è prefissato 
     )
   ],
 )
-Il prevntivo a finire si è alzato a 12,751.12€, a fronte di un preventivo iniziale di 12.740,00€, ma prevediamo si assesti un quanto in questo _sprint_ c'è stato un notevole aumento di carico di lavoro, data la fine degli impegni scolastici dei membri del gruppo.
+Il preventivo a finire si è alzato a 12,751.12€, a fronte di quello iniziale di 12.740,00€. L'andamento era comunque atteso poiché, terminati gli impegni universitari dei membri del gruppo, si è verificato un notevole aumento del carico di lavoro.
 
 ==== Retrospettiva
-Durante il settimo _sprint_ il gruppo ha lavorato per avanzare nella redazione della documentazione necessaria al rilascio dell'MVP del _software_ e soprattutto nell'analisi del _software_ e nelle prime implmentazioni. Le attività sono state completate tutte tranné le redazione della Specifica Tecnica, a causa di un cambio di tecnologia che ha costretto il _team_ a concentrare le risorse sul _software_.
+Durante il settimo _sprint_ il gruppo ha lavorato per avanzare nella redazione della documentazione, nell'analisi delle architetture di _deployment_ e logica, nelle prime implementazioni. Le attività sono state completate tutte tranne la stesura della Specifica Tecnica, a causa di un cambio di tecnologia che ha costretto il _team_ a concentrare le risorse sul _software_.
 
 ===== Cosa ha funzionato
-In questo _sprint_ ha funzionato il lavoro di progettazione e il coinvolgimento del committente, professor Cardin, nelle scelte progettuali che ci ha permesso di accorgerci tempestivamente degli errori e del cambio di direzione nella tecnologia da utilizzare. Da questo punto di vista ha funzionato anche l'adattamento del gruppo che ha convogliato le risorse per applicare subito i suggerimenti del committente.
+Il gruppo ha analizzato in modo piuttosto approfondito le architetture da adottare presentandole sia all'azienda proponente che al prof. Cardin. Il colloquio con il docente-committente ha fatto emergere alcune problematiche relative allo _stream processor_ poiché è stato considerato un numero potenziale di utenti molto inferiore rispetto a quello atteso dal professore. Il _team_ ha saputo tempestivamente colmare il deficit tecnologico e in pochi giorni è riuscito a modellare il simulatore e il nuovo _stream processor_ con Apache Flink. È stata portata avanti anche l'interfaccia con Grafana.
 
 ===== Cosa non ha funzionato
-La redazione della prima parte della Specifica Tecnica non è stata completata secondo i tempi previsti, a causa del cambio di tecnologia imprevisto che ha richiesto più risorse per mettere in atto la nuova tecnologia, attività ritenuta più urgente dal gruppo. 
+La redazione della prima parte della Specifica Tecnica non è stata completata secondo i tempi previsti a causa del cambio di tecnologia imprevisto che ha richiesto molte risorse per risolvere il problema rapidamente. Poiché lo _stream processor_ è parte centrale del prodotto è stato ritenuto fondamentale definirlo interamente prima di cominciare la stesura della Specifica Tecnica. 
 
 // ===== Cosa fare per migliorare
 // non mi viene in mente nulla, penso si possa anche omettere la sezione a questo punto. Se vengono idee scrivo
