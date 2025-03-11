@@ -854,13 +854,13 @@ In seguito alla riunione di inizio settimo _sprint_, il _team_ si è prefissato 
 ==== Preventivo orario
 #rendicontazioneOre(
   (
-    (2, 0, 0, 8, 10, 0),
-    (0, 0, 0, 12, 11, 1),
-    (0, 0, 0, 7, 5, 3),
-    (0, 3, 2, 3, 0, 2),
-    (0, 0, 0, 8, 4, 4),
-    (0, 1, 0, 10, 7, 2),
-    (6, 0, 0, 4, 4, 4),
+    (3, 0, 0, 8, 10, 0),
+    (0, 0, 0, 12, 13, 1),
+    (0, 0, 0, 6, 5, 2),
+    (0, 2, 2, 3, 0, 1),
+    (0, 0, 0, 6, 6, 4),
+    (0, 1, 0, 11, 6, 2),
+    (6, 0, 0, 3, 5, 4),
   ),
   caption: [Preventivo delle ore nel settimo _sprint_ per membro e per ruolo],
 )
@@ -868,13 +868,13 @@ In seguito alla riunione di inizio settimo _sprint_, il _team_ si è prefissato 
 ==== Consuntivo orario e di spesa dello _sprint_ corrente
 #consuntivoOre(
   preventivo: (
-    (2, 0, 0, 8, 10, 0),
-    (0, 0, 0, 12, 11, 1),
-    (0, 0, 0, 7, 5, 3),
-    (0, 3, 2, 3, 0, 2),
-    (0, 0, 0, 8, 4, 4),
-    (0, 1, 0, 10, 7, 2),
-    (6, 0, 0, 4, 4, 4),
+    (3, 0, 0, 8, 10, 0),
+    (0, 0, 0, 12, 13, 1),
+    (0, 0, 0, 6, 5, 2),
+    (0, 2, 2, 3, 0, 1),
+    (0, 0, 0, 6, 6, 4),
+    (0, 1, 0, 11, 6, 2),
+    (6, 0, 0, 3, 5, 4),
   ),
   consuntivo: (
     (3, 0, 0, 8, 10, 0),
