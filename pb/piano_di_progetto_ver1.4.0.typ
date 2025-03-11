@@ -24,6 +24,14 @@
   titolo: "Piano di Progetto",
   uso: "Esterno",
   versioni: (
+    "1.4.0",
+    "11/02/2025",
+    "Riccardo Milan",
+    "Andrea Precoma",
+    [
+      - Stesura retrospettiva settimo _sprint_
+      - Introdotto RT-2
+    ],
     "1.3.0",
     "24/02/2025",
     "Riccardo Milan",
@@ -227,6 +235,15 @@ Per il processo di gestione dei rischi il gruppo adotta il modello fornito da Ia
   impatto: [Alto],
   piano: [Il rischio non può essere evitato, ma può essere limitato tramite il confronto con i membri più esperti del gruppo oppure tramite delle sessioni di _#rifGlossario("deep dive")_ tecnologico che l'azienda proponente fornisce al gruppo.],
   caption: [RT-1 - Inesperienza],
+)
+=== Imprevisti tecnologici <RT-2>
+#tabellaRischio(
+  ID: [RT-2],
+  descrizione: [A causa dell'importanza che certe tecnologie hanno all'interno del progettose si presenta un cambiamento importante è fondamentale risolverlo repentinamente. Data la priorità che assume questo adattamento, potrebbe essere necessario allocarvi risorse prima destinate ad altre attività.],
+  probabilità: [Media],
+  impatto: [Alto],
+  piano: [Il rischio può essere mitigato analizzando e studiando molto accuratamente tutte le possibili tecnologie utilizzabili prima di scegliere quella che verrà effettivamente utilizzata per sviluppare.],
+  caption: [RT-2 - Imprevisti tecnologici],
 )
 
 #pagebreak()
@@ -811,7 +828,7 @@ Nel corso del sesto _sprint_ si sono riscontrati i seguenti rishi:
 
 ===== Attività future
 Nel prossimo periodo, siccome sono state apportate le modifiche dovute ai documenti in seguito al colloquio RTB, il gruppo inizierà la stesura dei documenti Manuale Utente e Specifica Tecnica.
-Inoltre si inizierà a lavorare sullo sviluppo del MVP con relativa progettazione, applicando dapprima le decisioni sull'architettura discusse anche con la proponente.
+Inoltre si inizierà a lavorare sullo sviluppo del #rifGlossario("MVP") con relativa progettazione, applicando dapprima le decisioni sull'architettura discusse anche con la proponente.
 
 #pagebreak()
 
@@ -837,13 +854,81 @@ In seguito alla riunione di inizio settimo _sprint_, il _team_ si è prefissato 
 ==== Preventivo orario
 #rendicontazioneOre(
   (
-    (0, 1, 0, 0, 0, 2),
-    (0, 3, 0, 4, 0, 1),
-    (0, 0, 0, 0, 0, 3),
-    (0, 0, 2, 0, 0, 1),
-    (0, 0, 0, 0, 0, 2),
-    (0, 1, 0, 4, 0, 0),
-    (3, 0, 0, 0, 0, 2),
+    (3, 0, 0, 8, 10, 0),
+    (0, 0, 0, 12, 13, 1),
+    (0, 0, 0, 6, 5, 2),
+    (0, 2, 2, 3, 0, 1),
+    (0, 0, 0, 6, 6, 4),
+    (0, 1, 0, 11, 6, 2),
+    (6, 0, 0, 3, 5, 4),
   ),
   caption: [Preventivo delle ore nel settimo _sprint_ per membro e per ruolo],
 )
+
+==== Consuntivo orario e di spesa dello _sprint_ corrente
+#consuntivoOre(
+  preventivo: (
+    (3, 0, 0, 8, 10, 0),
+    (0, 0, 0, 12, 13, 1),
+    (0, 0, 0, 6, 5, 2),
+    (0, 2, 2, 3, 0, 1),
+    (0, 0, 0, 6, 6, 4),
+    (0, 1, 0, 11, 6, 2),
+    (6, 0, 0, 3, 5, 4),
+  ),
+  consuntivo: (
+    (3, 0, 0, 8, 10, 0),
+    (0, 0, 0, 12, 14, 1),
+    (0, 0, 0, 6, 5, 2),
+    (0, 2, 2, 3, 0, 1),
+    (0, 0, 0, 6, 6, 4),
+    (0, 1, 0, 12, 6, 2),
+    (5, 0, 0, 3, 5, 4),
+  ),
+  tabCaption: [Consuntivo delle ore nel settimo _sprint_ per membro e per ruolo],
+  costTabCaption: [Costi sostenuti nel settimo _sprint_],
+  chartCaption: [Grafico percentuale dell'allocazione delle ore per ruolo nel settimo _sprint_],
+)
+
+#pagebreak()
+
+==== Risorse rimanenti e preventivo a finire
+#align(
+  center,
+  [
+    #table(
+      columns: (auto, auto, auto, auto),
+      align: center,
+      table.header([*Ruolo*], [*Ore rimanenti*], [*_Budget_ rimanente*], [*Risorse consumate*]),
+      [Responsabile], [22], [660 €], [60,71 %],
+      [Amministratore], [12], [240 €], [78,57 %],
+      [Analista], [2.5], [62.5 €], [97,02 %],
+      [Progettista], [83], [2075 €], [37,59 %],
+      [Programmatore], [97.5], [1462.5 €], [39,44 %],
+      [Verificatore], [74.5], [1117.5 €], [46,79 %],
+    )
+  ],
+)
+Il preventivo a finire si è alzato a 12,751.12€, a fronte di quello iniziale di 12.740,00€. L'andamento era comunque atteso poiché, terminati gli impegni universitari dei membri del gruppo, si è verificato un notevole aumento del carico di lavoro.
+
+==== Retrospettiva
+Durante il settimo _sprint_ il gruppo ha lavorato per avanzare nella redazione della documentazione, nell'analisi delle architetture di _deployment_ e logica, nelle prime implementazioni. Le attività sono state completate tutte tranne la stesura della Specifica Tecnica, a causa di un cambio di tecnologia che ha costretto il _team_ a concentrare le risorse sul _software_.
+
+===== Cosa ha funzionato
+Il gruppo ha analizzato in modo piuttosto approfondito le architetture da adottare presentandole sia all'azienda proponente che al prof. Cardin. Il colloquio con il docente-committente ha fatto emergere alcune problematiche relative allo _stream processor_ poiché è stato considerato un numero potenziale di utenti molto inferiore rispetto a quello atteso dal professore. Il _team_ ha saputo tempestivamente colmare il deficit tecnologico e in pochi giorni è riuscito a modellare il simulatore e il nuovo _stream processor_ con Apache Flink. È stata portata avanti anche l'interfaccia con Grafana.
+
+===== Cosa non ha funzionato
+La redazione della prima parte della Specifica Tecnica non è stata completata secondo i tempi previsti a causa del cambio di tecnologia imprevisto che ha richiesto molte risorse per risolvere il problema rapidamente. Poiché lo _stream processor_ è parte centrale del prodotto è stato ritenuto fondamentale definirlo interamente prima di cominciare la stesura della Specifica Tecnica. 
+
+===== Cosa fare per migliorare
+In questo _sprint_ non ci sono particolari spunti di miglioramento. L'unico problema emerso è stato il cambio improvviso di tecnologia che però non era prevedibile, in quanto la tecnologia scelta era stata approvata per un _target_ più piccolo di dati. In seguito all'incontro con il professor Cardin, appurato che il nostro _software_ dovesse far fronte a una maggior quantità di dati, è stato deciso di cambiare tecnologia verso una soluzione più consona.
+
+===== Rischi riscontrati
+Nel corso del settimo _sprint_ si sono riscontrati i seguenti rishi:
+- #link(<RT-2>)[RT-2]: come spiegato sopra, si è rivelato a un certo punto necessario un cambio di tecnologia, che ha reso necessario un rifacimento di gran parte del prodtto.
+- #link(<RT-1>)[RT-1]: a causa di RT-2, il gruppo ha dovuto formarsi sulla nuova tecnologia utilizzata.
+
+===== Attività future
+Nel prossimo periodo sarà necessario redigere la Specifica Tecnica e finire il Manuale Utente. Inoltre con le tecnologie del tutto definite, ci saranno da compiere le ultime scelte architetturali e poi dedicarsi completamente alla scrittura del codice per il _software_ e i relativi _test_.
+
+#pagebreak()
