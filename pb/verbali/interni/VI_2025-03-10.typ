@@ -78,6 +78,10 @@ La riunione ci ha permesso di consolidare gli obiettivi per questo  _#rifGlossar
   [Davide Marin],
   [_Upload_ delle metriche dal cruscotto al PdQ],
 
+  link("https://github.com/SWEatUNIPD/sweatunipd.github.io/issues/4")[S0004],
+  [Klaudio Merja],
+  [Ultime migliorie del sito],
+
   link("https://github.com/SWEatUNIPD/NearYou/issues/12")[N0012],
   [Andrea Precoma],
   [_Refactoring_ del simulatore con architettura],
