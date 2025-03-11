@@ -22,7 +22,7 @@
 == Riepilogo incontro esterno.
 Inizialmente abbiamo fatto il punto di quanto emerso nella riunione esterna con l'azienda:
 
-- È stato richiesto di esplicitare con maggior precisione i requisiti per i test di accettazione, in particolare riguardo al flusso di generazione degli annunci tramite #rifGlossario("LLM") e alla verifica di come vengono mostrati sulla _#rifGlossario("dashboard")_.
+- È stato richiesto di esplicitare con maggior precisione i requisiti per i _test_ di accettazione, in particolare riguardo al flusso di generazione degli annunci tramite #rifGlossario("LLM") e alla verifica di come vengono mostrati sulla _#rifGlossario("dashboard")_.
 
 == Strategia per i _test_ di accettazione e di sistema.
 - Abbiamo concordato di inserire i _test_ di accettazione a fine _milestone_, dopo averli condivisi con l'azienda, così da assicurarci che rispecchino i bisogni reali del proponente.
@@ -30,11 +30,11 @@ Inizialmente abbiamo fatto il punto di quanto emerso nella riunione esterna con 
 
 == Architettura e gestione microservizi.
 - La tendenza, ribadita anche dall'azienda e dal prof. Cardin, è quella di progettare in modo modulare ogni microservizio con la propria logica interna, pur non esagerando con la complessità “_over-engineered_”.
-- È stato fissato un incontro con il prof. Cardin per mercoledì in cui verranno confermate le scelte architetturali e il livello di dettaglio richiesto.
+- Fisseremo con il prof. Cardin per mercoledì in cui verranno confermate le scelte architetturali e il livello di dettaglio richiesto.
 
 == Stato del simulatore e generazione dati
 - Abbiamo fatto il punto sullo sviluppo del simulatore: la componente principale funziona, ma va rifinita l'_injection_ delle dipendenze e la struttura delle cartelle (per _test_ e codice sorgente).
-- Ci siamo prefissati di terminare entro la settimana la configurazione definitiva per consentire l'integrazione con la _#rifGlossario("pipeline")_ di test automatici.
+- Ci siamo prefissati di terminare entro la settimana la configurazione definitiva per consentire l'integrazione con la _#rifGlossario("pipeline")_ di _test_ automatici.
 
 == Aggiornamento su Grafana e integrazione con la base dati
 - L'obiettivo è realizzare una _dashboard_ su #rifGlossario("Grafana") che mostri in tempo reale i dati dei mezzi, i percorsi simulati e gli annunci generati.
@@ -42,7 +42,7 @@ Inizialmente abbiamo fatto il punto di quanto emerso nella riunione esterna con 
 - Verranno poi impostate le _query_ necessarie a Grafana per visualizzare lo storico dei dati e la mappa in modo chiaro e funzionale.
 
 = Conclusioni
-La riunione ci ha permesso di consolidare gli obiettivi per la seconda parte dello _#rifGlossario("sprint")_ e definire i prossimi passi, specialmente in merito alla stesura dei _test_ di accettazione e di sistema e alla verifica finale con il prof. Cardin sulle scelte architetturali. Il simulatore sarà rifinito in tempi brevi per consentire l'integrazione con la _pipeline_ di _test_, mentre su Grafana inizierà a prendere forma la _dashboard_ dedicata allo storico degli annunci e al tracciamento GPS.
+La riunione ci ha permesso di consolidare gli obiettivi per questo  _#rifGlossario("sprint")_ e definire i prossimi passi, specialmente in merito alla stesura dei _test_ di accettazione, dei _test_ di sistema e alla verifica finale con il prof. Cardin sulle scelte architetturali. Il simulatore sarà rifinito in tempi brevi per consentire l'integrazione con la _pipeline_ di _test_, mentre su Grafana inizierà a prendere forma la _dashboard_ dedicata allo storico degli annunci e al tracciamento GPS.
 
 = Tabella delle decisioni
 #backlog(content: (
