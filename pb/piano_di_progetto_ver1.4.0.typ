@@ -921,7 +921,7 @@ Il gruppo ha analizzato in modo piuttosto approfondito le architetture da adotta
 La redazione della prima parte della Specifica Tecnica non è stata completata secondo i tempi previsti a causa del cambio di tecnologia imprevisto che ha richiesto molte risorse per risolvere il problema rapidamente. Poiché lo _stream processor_ è parte centrale del prodotto è stato ritenuto fondamentale definirlo interamente prima di cominciare la stesura della Specifica Tecnica. 
 
 ===== Cosa fare per migliorare
-In questo _sprint_ non ci sono particolari spunti di miglioramento. L'unico problema emerso è stato il cambio improvviso di tecnologia che però non era prevedibile, in quanto la tecnologia scelta era stata approvata per un _target_ più piccolo di dati, ma dopo l'incontro con il professor Cardin, appurato che il nostro _software_ dovesse far fronte a una mole più grande di dati, è stato deciso di cambiare verso una soluzione più consona.
+In questo _sprint_ non ci sono particolari spunti di miglioramento. L'unico problema emerso è stato il cambio improvviso di tecnologia che però non era prevedibile, in quanto la tecnologia scelta era stata approvata per un _target_ più piccolo di dati. In seguito all'incontro con il professor Cardin, appurato che il nostro _software_ dovesse far fronte a una maggior quantità di dati, è stato deciso di cambiare tecnologia verso una soluzione più consona.
 
 ===== Rischi riscontrati
 Nel corso del settimo _sprint_ si sono riscontrati i seguenti rishi:
