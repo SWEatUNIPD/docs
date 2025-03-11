@@ -908,7 +908,7 @@ Durante il settimo _sprint_ il gruppo ha lavorato per avanzare nella redazione d
 Il gruppo ha analizzato in modo piuttosto approfondito le architetture da adottare presentandole sia all'azienda proponente che al prof. Cardin. Il colloquio con il docente-committente ha fatto emergere alcune problematiche relative allo _stream processor_ poiché è stato considerato un numero potenziale di utenti molto inferiore rispetto a quello atteso dal professore. Il _team_ ha saputo tempestivamente colmare il deficit tecnologico e in pochi giorni è riuscito a modellare il simulatore e il nuovo _stream processor_ con Apache Flink. È stata portata avanti anche l'interfaccia con Grafana.
 
 ===== Cosa non ha funzionato
-La redazione della prima parte della Specifica Tecnica non è stata completata secondo i tempi previsti, a causa del cambio di tecnologia imprevisto che ha richiesto più risorse per mettere in atto la nuova tecnologia, attività ritenuta più urgente dal gruppo. 
+La redazione della prima parte della Specifica Tecnica non è stata completata secondo i tempi previsti a causa del cambio di tecnologia imprevisto che ha richiesto molte risorse per risolvere il problema rapidamente. Poiché lo _stream processor_ è parte centrale del prodotto è stato ritenuto fondamentale definirlo interamente prima di cominciare la stesura della Specifica Tecnica. 
 
 // ===== Cosa fare per migliorare
 // non mi viene in mente nulla, penso si possa anche omettere la sezione a questo punto. Se vengono idee scrivo
