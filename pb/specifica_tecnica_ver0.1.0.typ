@@ -19,7 +19,6 @@
     "11/03/2025",
     "Riccardo Milan",
     "Klaudio Merja",
-    "Andrea Perozzo",
     [
       - Costruita struttura del documento
       - Redazione introduzione del documento
@@ -53,6 +52,12 @@ In questa sezione vengono elencate le tecnologie scelte e le loro funzionalità 
 // INFRASTRUCTURE AND TESTING //
 == Infrastruttura e test
 === Docker
+// libreria per automatizzare i test sul simulatore 
+=== Vitest 
+// analisi statica del codice
+=== ESLint
+// Libreria per scrivere i test sul simulatore
+=== Inversify
 // TODO: aggiungere le tecnologie usate per automatizzare i test
 
 // DATABASE TECNOLOGIES //
