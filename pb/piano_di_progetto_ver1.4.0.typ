@@ -30,6 +30,7 @@
     "Andrea Precoma",
     [
       - Stesura retrospettiva settimo _sprint_
+      - Introdotto RT-2
     ],
     "1.3.0",
     "24/02/2025",
