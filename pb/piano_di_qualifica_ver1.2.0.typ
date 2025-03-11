@@ -10,7 +10,7 @@
   uso: "Esterno",
   versioni: (
     "1.2.0",
-    "06/03/2025",
+    "10/03/2025",
     "Davide Marin",
     "Riccardo Milan",
     [
