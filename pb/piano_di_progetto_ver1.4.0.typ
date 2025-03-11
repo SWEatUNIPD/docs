@@ -899,7 +899,7 @@ In seguito alla riunione di inizio settimo _sprint_, il _team_ si è prefissato 
     )
   ],
 )
-Il prevntivo a finire si è alzato a 12,751.12€, a fronte di un preventivo iniziale di 12.740,00€, ma prevediamo si assesti un quanto in questo _sprint_ c'è stato un notevole aumento di carico di lavoro, data la fine degli impegni scolastici dei membri del gruppo.
+Il preventivo a finire si è alzato a 12,751.12€, a fronte di quello iniziale di 12.740,00€. L'andamento era comunque atteso poiché, terminati gli impegni universitari dei membri del gruppo, si è verificato un notevole aumento del carico di lavoro.
 
 ==== Retrospettiva
 Durante il settimo _sprint_ il gruppo ha lavorato per avanzare nella redazione della documentazione necessaria al rilascio dell'MVP del _software_ e soprattutto nell'analisi del _software_ e nelle prime implmentazioni. Le attività sono state completate tutte tranné le redazione della Specifica Tecnica, a causa di un cambio di tecnologia che ha costretto il _team_ a concentrare le risorse sul _software_.
