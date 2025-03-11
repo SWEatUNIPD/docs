@@ -235,6 +235,15 @@ Per il processo di gestione dei rischi il gruppo adotta il modello fornito da Ia
   piano: [Il rischio non può essere evitato, ma può essere limitato tramite il confronto con i membri più esperti del gruppo oppure tramite delle sessioni di _#rifGlossario("deep dive")_ tecnologico che l'azienda proponente fornisce al gruppo.],
   caption: [RT-1 - Inesperienza],
 )
+=== Imprevisti tecnologici <RT-2>
+#tabellaRischio(
+  ID: [RT-2],
+  descrizione: [A causa dell'importanza che certe tecnologie hanno all'interno del progetto, può essere che a un certo punto ci sia un cambio radicale che porta a un _refactor_ del prodotto in sè, e data la priorità che assume questo adattamento, potrebbe essere necessario allocarvi risorse, togliendole da altre attività pianificate.],
+  probabilità: [Media],
+  impatto: [Alto],
+  piano: [Il rischio può essere mitigato analizzando e studiando molto accuratamente tutte le possibili tecnologie utilizzabili prima di scegliere quella che verrà effettivamente utilizzata per sviluppare.],
+  caption: [RT-2 - Imprevisti tecnologici],
+)
 
 #pagebreak()
 = Modello di sviluppo
@@ -915,7 +924,8 @@ La redazione della prima parte della Specifica Tecnica non è stata completata s
 
 ===== Rischi riscontrati
 Nel corso del settimo _sprint_ si sono riscontrati i seguenti rishi:
-- #link(<RT-1>)[RT-1]: come spiegato sopra, si è rivelato a un certo punto necessario un cambio di tecnologia, e quindi il gruppo ha dovuto formarsi su essa spendendo del tempo non previsto.
+- #link(<RT-2>)[RT-2]: come spiegato sopra, si è rivelato a un certo punto necessario un cambio di tecnologia, che ha reso necessario un rifacimento di gran parte del prodtto.
+- #link(<RT-1>)[RT-1]: a causa di RT-2, il gruppo ha dovuto formarsi sulla nuova tecnologia utilizzata.
 
 ===== Attività future
 Nel prossimo periodo sarà necessario redigere la Specifica Tecnica e finire il Manuale Utente. Inoltre con le tecnologie del tutto definite, ci saranno da compiere le ultime scelte architetturali e poi dedicarsi completamente alla scrittura del codice per il _software_ e i relativi _test_
