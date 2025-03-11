@@ -928,6 +928,6 @@ Nel corso del settimo _sprint_ si sono riscontrati i seguenti rishi:
 - #link(<RT-1>)[RT-1]: a causa di RT-2, il gruppo ha dovuto formarsi sulla nuova tecnologia utilizzata.
 
 ===== Attività future
-Nel prossimo periodo sarà necessario redigere la Specifica Tecnica e finire il Manuale Utente. Inoltre con le tecnologie del tutto definite, ci saranno da compiere le ultime scelte architetturali e poi dedicarsi completamente alla scrittura del codice per il _software_ e i relativi _test_
+Nel prossimo periodo sarà necessario redigere la Specifica Tecnica e finire il Manuale Utente. Inoltre con le tecnologie del tutto definite, ci saranno da compiere le ultime scelte architetturali e poi dedicarsi completamente alla scrittura del codice per il _software_ e i relativi _test_.
 
 #pagebreak()
