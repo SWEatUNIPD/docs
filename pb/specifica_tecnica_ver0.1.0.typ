@@ -33,6 +33,7 @@
     [
       - Completate tecnologie del simulatore
       - Redatta sezione relativa al simulatore
+      - Redatta sezione relativa ai _design \ pattern_
     ],
     "0.1.0",
     "11/03/2025",
@@ -112,7 +113,7 @@ Per assicurarsi che esista un solo _manager_ di Kafka che gestisce i _broker_ è
 = Architettura
 == Architettura logica
 == Architettura di deploy
-== Design patterns
+== Design pattern
 === Dependency injection
 Quando un progetto è costituito da un numero considerevole di componenti risulta fondamentale minimizzare le dipendenze. Più si riesce ad evitare debito tecnico e più semplice risulta aggiungere funzionalità perché le parti del sistema non sono fortemente accopiate. L'obiettivo di questo _design pattern_ è quindi quello togliere a un componente la responsabilità della risoluzione delle proprie dipendenze.
 
@@ -246,8 +247,9 @@ container
 
 container
   .bind<Tracker>(TYPES.Tracker)
-  .toDynamicValue(() => {
-    const kafkaManager: KafkaManager = context.get<KafkaManager>(TYPES.KafkaManager);
+  .toDynamicValue((context: ResolutionContext) => {
+    const kafkaManager: KafkaManager = 
+      context.get<KafkaManager>(TYPES.KafkaManager);
     const tracker: Tracker = new Tracker(uuidv4(), kafkaManager);
     return tracker;
   });
