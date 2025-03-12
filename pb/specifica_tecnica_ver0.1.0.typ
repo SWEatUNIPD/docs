@@ -76,10 +76,10 @@ In questa sezione vengono elencate le tecnologie scelte e le loro funzionalità 
 // analisi statica del codice
 === ESLint
 // Libreria per scrivere i test sul simulatore
-=== Inversify
-_Tool_ utilizzato per gestire la _Dipendency Injection_ in applicativi sviluppati in JavaScript e TypeScript. Viene sfruttato nel servizio del simulatore per risolvere le dipendenze esplicitate nei costruttori. In particolare nel _file_ `client/src/config/Inversify.config.ts` vengono risolte le seguenti dipendenze:
-- *Simulator* possiede una lista di noleggi. Il numero iniziale di noleggi è stabilito dalla variabile d'ambiente `INIT_RENT_COUNT`.
-- *Rent* possiede un sensore.
+// === Inversify
+// _Tool_ utilizzato per gestire la _Dipendency Injection_ in applicativi sviluppati in JavaScript e TypeScript. Viene sfruttato nel servizio del simulatore per risolvere le dipendenze esplicitate nei costruttori. In particolare nel _file_ `client/src/config/Inversify.config.ts` vengono risolte le seguenti dipendenze:
+// - *Simulator* possiede una lista di noleggi. Il numero iniziale di noleggi è stabilito dalla variabile d'ambiente `INIT_RENT_COUNT`.
+// - *Rent* possiede un sensore.
 
 // DATABASE TECNOLOGIES //
 == Database
@@ -142,7 +142,7 @@ class Rent {
 ```ts
 const container = new Container();
 container.bind<Tracker>('Tracker').to(Tracker);
-container.bind<Rent>('Rent').toSelf(); // Rent come serviceId??? a cosa serve TYPES.Simulator?
+container.bind(Rent).toSelf();
 
 export { container }
 ```
@@ -159,15 +159,14 @@ const rent = container.get(Rent);
 === Integrazione del design pattern nel progetto
 Nel servizio del simulatore sono state risolte le dipendenze tra il simulatore e la lista di noleggi, il singolo noleggio e il sensore. Nel _file_ di configurazione è stato personalizzato il _binding_ poiché nel caso del simulatore si necessita di una lista di oggetti, negli altri è richiesto l'id che non è possibile "iniettare" automaticamente [VEDI API KLA].
 
-Le classi e di conseguenza la _dependency injection_ sono state configurate nel seguente modo. Per evitare incongruenze tra i _serviceId_ delle classi "iniettabili" è stata crata una lista univoca.
+Le classi e di conseguenza la _dependency injection_ sono state configurate nel seguente modo. Per evitare incongruenze tra i _serviceId_ delle classi "iniettabili" è stata crata una mappa univoca.
 
 #codly(header: [*config/InversifyTypes.ts*])
 ```ts
 const TYPES {
   Tracker: Symbol.for('Tracker'),
   Rent: Symbol.for('Rent'),
-  RentList: Symbol.for('RentList'),
-  Simulator: Symbol.for('Simulator')
+  RentList: Symbol.for('RentList')
 }
 
 export { TYPES }
@@ -203,7 +202,6 @@ export class Rent extends RentSubject implements RentObserver {
 
 #codly(header: [*Simulator.ts*])
 ```ts
-@Injectable()
 export class Simulator implements SimulatorObserver {
   constructor(
     @Inject(TYPES.RentList)
@@ -213,16 +211,45 @@ export class Simulator implements SimulatorObserver {
 }
 ```
 
+Poiché i _bind_ di `Tracker`, `Rent` e `RentList` non sono immediatamente risolvibili è stato necessario definirli più nel dettaglio con `toDynamicValue()`. // TODO: gli id presi da API
 Il _bind_ del simulatore è stato contrassegnato dalla funzione `inSingletonScope()` per assicurare che ne esita una sola istanza.
 
 #codly(header: [*config/Inversify.config.ts*])
 ```ts
 const container = new Container();
 
-// cose
+container
+    .bind<Tracker>(TYPES.Tracker)
+    .toDynamicValue(() => {
+        const tracker: Tracker = new Tracker(uuidv4());
+        return tracker;
+    });
+
+container
+    .bind<Rent>(TYPES.Rent)
+    .toDynamicValue((context: ResolutionContext) => {
+        const tracker: Tracker = context.get<Tracker>(TYPES.Tracker);
+        const rent: Rent = new Rent(uuidv4(), tracker);
+        return rent;
+    });
+
+container
+    .bind<Rent[]>(TYPES.RentList)
+    .toDynamicValue((context: ResolutionContext) => {
+        let rentList: Rent[] = [];
+        for (let i = 0; i < Number(env.INIT_RENT_COUNT); i++) {
+            const rent: Rent = context.get<Rent>(TYPES.Rent);
+            rentList.push(rent);
+        }
+        return rentList;
+    });
+
+container.bind(Simulator).toSelf().inSingletonScope();
 
 export { container }
 ```
+
+Nel _file_ principale è sufficiente quindi richiedere l'istanza di `Simulator` tramite la funzione `get()` del _container_.
 
 #codly(header: [*App.ts*])
 ```ts
