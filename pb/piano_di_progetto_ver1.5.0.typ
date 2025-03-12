@@ -955,6 +955,9 @@ In seguito alla riunione avvenuta per l'inizio dell'ottavo _sprint_ il _team_ pr
 - Stesura delle sezioni mancanti nella Specifica Tecnica, in particolare:
   - Sezione del simulatore.
   - Sezione di architettura e _design pattern_.
+  - Sezione relativa al _database_.
+  - Sezione relativa a Grafana.
+  - Sezione relativa a Flink.
 - Stesura dei _test_ di unità nel PdQ, nello specifico:
   - _Test_ del simulatore GPS.
   - _Test_ del _job_ di Flink.
