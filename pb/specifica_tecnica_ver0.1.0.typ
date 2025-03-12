@@ -116,10 +116,10 @@ Per assicurarsi che esista un solo _manager_ di Kafka che gestisce i _broker_ è
 === Dependency injection
 Quando un progetto è costituito da un numero considerevole di componenti risulta fondamentale minimizzare le dipendenze. Più si riesce ad evitare debito tecnico e più semplice risulta aggiungere funzionalità perché le parti del sistema non sono fortemente accopiate. L'obiettivo di questo _design pattern_ è quindi quello togliere a un componente la responsabilità della risoluzione delle proprie dipendenze.
 
-==== Implementazione della dependency injection
+==== Implementazione della dependency injection <inversify-1>
 Il gruppo ha deciso di utilizzare la libreria Inversify per gestire la _dependency injection_ nel servizio del simulatore. Possedendo delle annotazioni specifiche lo strumento di *IoC* (_Inversion of Control_) ha agevolato l'implementazione del _design pattern_. È stato infatti sufficiente contrassegnare le dipendenze con delle annotazioni (`@Injectable` e `@Inject`) e definire la risoluzione nel _file_ `client/src/config/Inversify.config.ts`.
 
-==== Concetti principali di Inversify ed esempio di utilizzo
+==== Concetti principali di Inversify ed esempio di utilizzo <inversify-2>
 Adottando il _dependency injection design pattern_ le dipendenze sono dichiarate come parametri nel costruttore annotate da `@Inject('serviceId')` e le relative classi devono essere contrassegnate da `@Injectable()`. In un _file_ di configurazione poi deve essere dichiarato il _container_ e i _binding_ tra i serviceId e le classi "iniettabili".
 
 #codly(header: [*Tracker.ts*])
@@ -156,7 +156,7 @@ Al momento della creazione dell'oggetto di tipo `Rent` è sufficiente la funzion
 const rent = container.get(Rent);
 ```
 
-==== Integrazione del design pattern nel progetto
+==== Integrazione del design pattern nel progetto <inversify-3>
 Nel servizio del simulatore sono state risolte le dipendenze tra il simulatore e la lista di noleggi, il singolo noleggio e il sensore. Nel _file_ di configurazione è stato personalizzato il _binding_ poiché nel caso del simulatore si necessita di una lista di oggetti, negli altri è richiesto l'id che non è possibile "iniettare" automaticamente [VEDI API KLA].
 
 Le classi e di conseguenza la _dependency injection_ sono state configurate nel seguente modo. Per evitare incongruenze tra i _serviceId_ delle classi "iniettabili" è stata crata una mappa univoca.
@@ -164,6 +164,7 @@ Le classi e di conseguenza la _dependency injection_ sono state configurate nel 
 #codly(header: [*config/InversifyTypes.ts*])
 ```ts
 const TYPES {
+  KafkaManager: Symbol.for('KafkaManager'),
   Tracker: Symbol.for('Tracker'),
   Rent: Symbol.for('Rent'),
   RentList: Symbol.for('RentList')
@@ -172,12 +173,25 @@ const TYPES {
 export { TYPES }
 ```
 
+#codly(header: [*KafkaManager.ts*])
+```ts
+@Injectable()
+export class KafkaManager {
+  constructor(
+      private kafka: Kafka
+  ) { }
+  ...
+}
+```
+
 #codly(header: [*Tracker.ts*])
 ```ts
 @Injectable()
 export class Tracker extends TrackerSubject {
   constructor(
-    private id: string
+    private id: string,
+    @inject(TYPES.KafkaManager)
+    private kafkaManager: KafkaManager
   ) {
     super();
   }
@@ -212,16 +226,29 @@ export class Simulator implements SimulatorObserver {
 ```
 
 Poiché i _bind_ di `Tracker`, `Rent` e `RentList` non sono immediatamente risolvibili è stato necessario definirli più nel dettaglio con `toDynamicValue()`. // TODO: gli id presi da API
-Il _bind_ del simulatore è stato contrassegnato dalla funzione `inSingletonScope()` per assicurare che ne esita una sola istanza.
+Il _bind_ di `KafkaManager` e `Simulator` è stato contrassegnato dalla funzione `inSingletonScope()` per assicurare che esista una sola istanza per tipo.
 
 #codly(header: [*config/Inversify.config.ts*])
 ```ts
 const container = new Container();
 
 container
+  .bind<KafkaManager>(TYPES.KafkaManager)
+  .toDynamicValue(() => {
+    const kafkaConfig: KafkaConfig = {
+      clientId: env.CLIENT_ID,
+      brokers: [process.env.BROKER ?? String(env.LOCAL_BROKER)]
+    };
+    const kafka: Kafka = new Kafka(kafkaConfig);
+    return new KafkaManager(kafka);
+  })
+  .inSingletonScope();
+
+container
   .bind<Tracker>(TYPES.Tracker)
   .toDynamicValue(() => {
-    const tracker: Tracker = new Tracker(uuidv4());
+    const kafkaManager: KafkaManager = context.get<KafkaManager>(TYPES.KafkaManager);
+    const tracker: Tracker = new Tracker(uuidv4(), kafkaManager);
     return tracker;
   });
 
@@ -258,6 +285,42 @@ simulator.startSimulation();
 ```
 
 === Singleton
+Può essere che alcune componenti debbano mantenere un'integrità per tutta l'esecuzione del prodotto, non possono quindi esistere diverse istanze con diversi valori. Il _design pattern Singleton_ assicura che ovunque si acceda al componente venga restituita sempre la stessa istanza.
+
+==== Implementazione del singleton
+Il gruppo è consapevole della potenziale fallacità di questo _design pattern_ in quanto due processi potrebbero concorrere alla stessa risorsa e, in particolari situazioni, far generare due istanze. Per minimizzare gli errori è stato scelto di demandare il lavoro alla libreria Inversify (spiegata nel dettaglio nelle #link(<inversify-1>)[sez. SISTEMARE] e #link(<inversify-2>)[sez. SISTEMARE]).
+
+==== Integrazione del design pattern nel progetto
+Come anticipato nella #link(<inversify-3>)[sez. SISTEMARE] è stata dichiarata la risoluzione della dipendenza nel _file_ `config/Inversify.config.ts` e le componenti interessate, quindi `KafkaManager` e `Simulator` sono state contrassegnate dalla funzione `inSingletonScope()`.
+
+#codly(
+  header: [*config/Inversify.config.ts*],
+  highlights: (
+    (line: 13, start: 3, end: none, fill: blue),
+    (line: 17, start: 35, end: none, fill: blue),
+  ),
+  )
+```ts
+const container = new Container();
+
+container
+  .bind<KafkaManager>(TYPES.KafkaManager)
+  .toDynamicValue(() => {
+    const kafkaConfig: KafkaConfig = {
+      clientId: env.CLIENT_ID,
+      brokers: [process.env.BROKER ?? String(env.LOCAL_BROKER)]
+    };
+    const kafka: Kafka = new Kafka(kafkaConfig);
+    return new KafkaManager(kafka);
+  })
+  .inSingletonScope();
+
+...
+
+container.bind(Simulator).toSelf().inSingletonScope();
+
+export { container }
+```
 
 === Observer
 Il _design pattern Observer_ risolve un problema legato alla reattività in seguito alla notifica di alcuni cambi di stato. Il cambiamento in una componente provoca una notifica a tutti i suoi osservatori, cioè chi è in ascolto. Ricevuto il segnale questi osservatori si aggiornano in base al nuovo stato dell'emittente. Per evitare una dipendenza circolare nella classe astratta ereditata dall'emittente viene aggiunto un "_setter_" con il quale gli ascoltatori possono iscriversi alla lista.
