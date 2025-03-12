@@ -932,7 +932,7 @@ In questo _sprint_ non ci sono particolari spunti di miglioramento. L'unico prob
 
 ===== Rischi riscontrati
 Nel corso del settimo _sprint_ si sono riscontrati i seguenti rishi:
-- #link(<RT-2>)[RT-2]: come spiegato sopra, si è rivelato a un certo punto necessario un cambio di tecnologia, che ha reso necessario un rifacimento di gran parte del prodtto.
+- #link(<RT-2>)[RT-2]: come spiegato sopra, si è rivelato a un certo punto necessario un cambio di tecnologia, che ha reso necessario un rifacimento di gran parte del prodotto.
 - #link(<RT-1>)[RT-1]: a causa di RT-2, il gruppo ha dovuto formarsi sulla nuova tecnologia utilizzata.
 
 ===== Attività future
