@@ -213,6 +213,8 @@ export class Simulator implements SimulatorObserver {
 }
 ```
 
+Il _bind_ del simulatore è stato contrassegnato dalla funzione `inSingletonScope()` per assicurare che ne esita una sola istanza.
+
 #codly(header: [*config/Inversify.config.ts*])
 ```ts
 const container = new Container();
@@ -221,6 +223,15 @@ const container = new Container();
 
 export { container }
 ```
+
+#codly(header: [*App.ts*])
+```ts
+const simulator = container.get(Simulator);
+simulator.startSimulation();
+```
+
+=== Observer
+
 
 // FUNCTIONAL REQUIRIMETS //
 = Stato dei requisiti funzionali
