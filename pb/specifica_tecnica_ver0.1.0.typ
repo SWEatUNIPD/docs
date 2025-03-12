@@ -43,7 +43,7 @@ La prima occorrenza di un termine definito all'interno del glossario presente al
 === Riferimenti informativi
 - Glossario (v2.0.0) \ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/glossario_ver2.0.0.pdf")
 - Capitolato C4 - Sync Lab S.r.l. (ultimo accesso 11/03/2025 \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
-- Guida ufficiale per l'installazione di Docker (ultimo accesso 11/03/2025) \ #formatLink(url: "https://docs.docker.com/engine/install")
+- Guida ufficiale per l'installazione di #rifGlossario("Docker") (ultimo accesso 11/03/2025) \ #formatLink(url: "https://docs.docker.com/engine/install")
 
 
 = Tecnologie
@@ -63,7 +63,26 @@ In questa sezione vengono elencate le tecnologie scelte e le loro funzionalità 
 // DATABASE TECNOLOGIES //
 == Database
 === PostgreSQL
-=== PostGIS
+Per la gestione dei dati relazionali è stato scelto #rifGlossario("PostgreSQL"), un #rifGlossario("DBMS") che offre affidabilità, prestazioni e una certa flessibilità per l'estensione tramite _plugin_ ed estensioni. Nel nostro contesto, PostgreSQL:
+
+- Viene eseguito all'interno di un container Docker (immagine #rifGlossario("postgis")/postgis, vedere sezione #link(<2.2.2>)[2.2.2]).
+- È configurato tramite #rifGlossario("docker-compose") (nel file compose.yml) con il _mapping_ della porta 5432:5432, utente e _password_ specificati nelle variabili d'ambiente.
+- All'avvio, esegue automaticamente uno _script_ SQL (create.sql) che crea lo schema del #rifGlossario("database") (tabelle, relazioni, ecc.) secondo le esigenze del progetto.
+
+Nello _file_ create.sql:
+
+- Tutte le relazioni fondamentali del sistema vengono definite (ad esempio _users_, _rents_, _positions_, _points_of_interest_, ecc.).
+- Vengono impostati i vincoli di integrità (_primary key_, _foreign key_, _on delete cascade_, e così via).
+- Ove opportuno, si creano tipi enumerati (ad esempio, per le categorie di un punto di interesse), oppure si definiscono relazioni 1:N/1:1/N:N necessarie al dominio applicativo.
+
+La scelta di PostgreSQL consente scalabilità e offre strumenti di gestione e monitoraggio dei dati.
+=== PostGIS <2.2.2>
+Per l'elaborazione e l'archiviazione di dati geografici, si fa uso dell'estensione PostGIS, la quale aggiunge a PostgreSQL il supporto per tipi, funzioni e indici spaziali.
+
+In particolare l'immagine Docker utilizzata (nel _file_ compose.yml) è postgis/postgis. Oltre a PostgreSQL, questa contiene già la libreria PostGIS e le relative dipendenze. Questo _setup_ permette di:
+
+- Gestire campi che rappresentano coordinate geografiche (latitudine e longitudine). Nel nostro caso, vengono memorizzate posizioni e coordinate di punti di interesse.
+- Sfruttare _query_ geospaziali (distanze, ricerca di punti in un certo raggio, funzioni GIS, ecc.)
 
 // SIMULATOR TECNOLOGIES //
 == Simulatore di sensori
