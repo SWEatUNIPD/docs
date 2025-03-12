@@ -24,8 +24,15 @@
   titolo: "Piano di Progetto",
   uso: "Esterno",
   versioni: (
+    "1.5.0",
+    "12/03/2025",
+    "Davide Marin",
+    "Davide Martinelli",
+    [
+      - Stesura pianificazione ottavo _sprint_
+    ],
     "1.4.0",
-    "11/02/2025",
+    "11/03/2025",
     "Riccardo Milan",
     "Andrea Precoma",
     [
@@ -932,3 +939,53 @@ Nel corso del settimo _sprint_ si sono riscontrati i seguenti rishi:
 Nel prossimo periodo sarà necessario redigere la Specifica Tecnica e finire il Manuale Utente. Inoltre con le tecnologie del tutto definite, ci saranno da compiere le ultime scelte architetturali e poi dedicarsi completamente alla scrittura del codice per il _software_ e i relativi _test_.
 
 #pagebreak()
+
+=== Sprint 7
+- *Inizio*: 11/03/2025
+- *Fine*: 21/03/2025
+- *Rischi attesi*: #link(<RO-1>)[RO-1], #link(<RO-2>)[RO-2], #link(<RO-3>)[RO-3], #link(<RT-1>)[RT-1]
+
+==== Attività dello sprint
+In seguito alla riunione avvenuta per l'inizio dell'ottavo _sprint_ il _team_ prevede di completare tutte le attività necessarie per la presentazione del PB. In particolare, le attività da portare a termine sono le seguenti:
+- Redazione dei verbali per le rispettive riunioni interne ed esterne.
+- Compilazione del Piano di Progetto con la sezione relativa all'ottavo _sprint_.
+- Ultimare il manuale utente, in particolare:
+  - Aggiungere la sezione "Guida all'utilizzo della _dashboard_".
+  - Rifinire i precedenti capitoli.
+- Stesura delle sezioni mancanti nella Specifica Tecnica, in particolare:
+  - Sezione del simulatore.
+  - Sezione di architettura e _design pattern_.
+- Stesura dei _test_ di unità nel PdQ, nello specifico:
+  - _Test_ del simulatore GPS.
+  - _Test_ del _job_ di Flink.
+- Scrittura del codice dei _test_ di unità, nello specifico:
+  - _Test_ del simulatore GPS.
+  - _Test_ del _job_ di Flink.
+- Ultimazione della _dashboard_ di Grafana, in particolare:
+- Implementare le ultime modifiche al sito di facciata del _team_, in particolare:
+  - Riordinare i verbali in modo che appaiano dal più recente al meno recente.
+  - Rinominare i documenti mettendo le prime lettere maiuscole.
+- Ultimazione del processo di Flink.
+- Ultimazione del _database_.
+- _Refactoring_ del simulatore in modo che rispetti l'architettura.
+- Creazione dello _stream processor_ in Flink.
+
+#v(10pt)
+#figure(
+  image("../assets/img/PdP/gantt_s8.png"),
+  caption: [Diagramma di Gantt dello _sprint_ 8],
+)
+
+==== Preventivo orario
+#rendicontazioneOre(
+  (
+    (1, 4, 1, 11, 13, 14),
+    (2, 3, 0, 7, 3.5, 15), 
+    (6, 3, 0, 13, 18, 7), 
+    (5, 0.5, 0, 16, 23, 9), 
+    (3, 0, 1.5, 13, 17, 10), 
+    (5, 1.5, 0, 7, 9, 8), 
+    (0, 0, 0, 16, 14, 11.5)
+  ),
+  caption: [Preventivo delle ore nell'ottavo _sprint_ per membro e per ruolo],
+)
