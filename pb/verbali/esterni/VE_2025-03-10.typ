@@ -2,7 +2,7 @@
 
 #show: content => verbale(
   data: "10 Marzo 2025",
-  responsabile: "-",
+  responsabile: "Davide Martinelli",
   destinatari: (
     "Prof. Tullio Vardanega",
     "Prof. Riccardo Cardin",
@@ -12,7 +12,7 @@
   redattori: ("Klaudio Merja",),
   titolo: "SAL fine settimo sprint",
   verificatori: (
-    "-",
+    "Andrea Precoma",
   ),
   content: content,
   firmaRichiesta: true,
