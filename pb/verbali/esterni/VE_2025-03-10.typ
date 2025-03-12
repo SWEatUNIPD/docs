@@ -47,6 +47,6 @@ Come citato in precedenza, nella settimana precedente si è svolto l'incontro pe
 Durante la riunione con la proponente si è discusso quindi quanto svolto nei giorni successivi al colloquio per rimediare al problema. In particolare si è discusso dei vari dubbi che i membri del gruppo hanno riscontrato durante la fase di sviluppo del _job_ di Apache Flink, trovando comunque una soluzione a tutti i problemi riscontrati e approvazione da parte della proponente.
 
 == Conclusioni
-Il gruppo ha concordato la logistica delle ultime due riunioni prima della consegna finale del prodotto, in corrispondenza della _milestone_ _Product Baseline_ (PB), prevista per il 21/03/2025.
+Il gruppo ha concordato la logistica delle ultime due riunioni prima della consegna finale del prodotto, in corrispondenza della del termine della _Product Baseline_ (PB), prevista per il 21/03/2025.
 
 Si è deciso inoltre di svolgere un incontro con il prof. Cardin per discutere le scelte definitive in merito all'architettura del prodotto e per chiarire eventuali dubbi prima della consegna finale.
