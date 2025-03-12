@@ -231,7 +231,9 @@ simulator.startSimulation();
 ```
 
 === Observer
+Il simulatore è un gestore di noleggi quindi deve rimanere in ascolto dei loro cambi di stato. Allo stesso modo i noleggi che controllano i sensori devono essere informati di quando questi terminano il tracciato. Viene quindi conveniente utilizzare il _design pattern Observer_ per risolvere questa esigenza.
 
+Ad ogni `Subject` è stato assegnato l'osservatore come attributo (non una lista di osservatori perché deve esistere un solo simulatore per tutti i noleggi e un solo sensore è installato sul mezzo col quale è fatto partire il noleggio), il metodo per registrare l'osservatore è quello per notificarlo. Gli `Observer` contengono il metodo per riceve la notifica che se necessario accetta nei parametri le informazioni per aggiornare l'osservatore. Non è stato necessario aggiungere un metodo `getState()` ai `Subject` perché nel caso dei noleggi non ci sono informazioni da recuperare, nel caso del simulatore sarebbe necessario sapere al momento della notifica l'identificativo del noleggio per richiamare il `getState()` dall'elemento nella lista dei noleggi; a questo punto tuttavia l'informazione dell'identificatore è già presente nel parametro del metodo `update()` quindi non ha più valenza recuperare lo stato del noleggio.
 
 // FUNCTIONAL REQUIRIMETS //
 = Stato dei requisiti funzionali
