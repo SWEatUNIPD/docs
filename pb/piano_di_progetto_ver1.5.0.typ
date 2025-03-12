@@ -771,7 +771,7 @@ In seguito alla valutazione del RTB, il _team_ si è prefissato di apportare le 
   caption: [Preventivo delle ore nel sesto _sprint_ per membro e per ruolo],
 )
 
-==== Consuntivo orario e di spesa dello _sprint_ corrente
+==== Consuntivo orario e di spesa dello sprint corrente
 #consuntivoOre(
   preventivo: (
     (0, 0, 0, 0, 0, 1),
@@ -872,7 +872,7 @@ In seguito alla riunione di inizio settimo _sprint_, il _team_ si è prefissato 
   caption: [Preventivo delle ore nel settimo _sprint_ per membro e per ruolo],
 )
 
-==== Consuntivo orario e di spesa dello _sprint_ corrente
+==== Consuntivo orario e di spesa dello sprint corrente
 #consuntivoOre(
   preventivo: (
     (3, 0, 0, 8, 10, 0),
@@ -940,7 +940,7 @@ Nel prossimo periodo sarà necessario redigere la Specifica Tecnica e finire il 
 
 #pagebreak()
 
-=== Sprint 7
+=== Sprint 8
 - *Inizio*: 11/03/2025
 - *Fine*: 21/03/2025
 - *Rischi attesi*: #link(<RO-1>)[RO-1], #link(<RO-2>)[RO-2], #link(<RO-3>)[RO-3], #link(<RT-1>)[RT-1]
@@ -961,11 +961,10 @@ In seguito alla riunione avvenuta per l'inizio dell'ottavo _sprint_ il _team_ pr
 - Scrittura del codice dei _test_ di unità, nello specifico:
   - _Test_ del simulatore GPS.
   - _Test_ del _job_ di Flink.
-- Ultimazione della _dashboard_ di Grafana, in particolare:
+- Ultimazione della _dashboard_ di Grafana.
 - Implementare le ultime modifiche al sito di facciata del _team_, in particolare:
   - Riordinare i verbali in modo che appaiano dal più recente al meno recente.
   - Rinominare i documenti mettendo le prime lettere maiuscole.
-- Ultimazione del processo di Flink.
 - Ultimazione del _database_.
 - _Refactoring_ del simulatore in modo che rispetti l'architettura.
 - Creazione dello _stream processor_ in Flink.
