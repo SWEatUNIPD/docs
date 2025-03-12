@@ -1,11 +1,22 @@
 #import "/templates/template.typ": *
-#import "@preview/treet:0.1.1": *
+#import "@preview/codly:1.2.0": *
+#import "@preview/codly-languages:0.1.1": *
+
+#show: codly-init.with()
+#codly(
+  languages: (
+    ts: (name: "TypeScript"),
+    java: (name: "Java")
+  ),
+  zebra-fill: none
+)
 
 #show: content => verbale(
-  data: "11 marzo 2025",
+  data: "- marzo 2025",
   destinatari: ("Gruppo SWE@", "Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "Sync Lab S.r.L."),
   responsabile: "-",
   redattori: (
+    "Andrea Precoma",
     "Riccardo Milan",
   ),
   verificatori: (
@@ -15,6 +26,14 @@
   titolo: "Specifica Tecnica",
   uso: "Esterno",
   versioni: (
+    "0.2.0",
+    "12/03/2025",
+    "Andrea Precoma",
+    "-",
+    [
+      - Completate tecnologie del simulatore
+      - Redatta sezione relativa al simulatore
+    ],
     "0.1.0",
     "11/03/2025",
     "Riccardo Milan",
@@ -58,7 +77,9 @@ In questa sezione vengono elencate le tecnologie scelte e le loro funzionalità 
 === ESLint
 // Libreria per scrivere i test sul simulatore
 === Inversify
-// TODO: aggiungere le tecnologie usate per automatizzare i test
+_Tool_ utilizzato per gestire la _Dipendency Injection_ in applicativi sviluppati in JavaScript e TypeScript. Viene sfruttato nel servizio del simulatore per risolvere le dipendenze esplicitate nei costruttori. In particolare nel _file_ `client/src/config/Inversify.config.ts` vengono risolte le seguenti dipendenze:
+- *Simulator* possiede una lista di noleggi. Il numero iniziale di noleggi è stabilito dalla variabile d'ambiente `INIT_RENT_COUNT`.
+- *Rent* possiede un sensore.
 
 // DATABASE TECNOLOGIES //
 == Database
@@ -67,7 +88,15 @@ In questa sezione vengono elencate le tecnologie scelte e le loro funzionalità 
 
 // SIMULATOR TECNOLOGIES //
 == Simulatore di sensori
-// TODO: aggiungere tecnologie 
+Questo servizio deve simulare l'attivazione di alcuni noleggi e lo spostamento degli utenti con i mezzi. All'avvio vengono istanziati dei noleggi (numero arbitrario definito nelle variabili d'ambiente nel _file_ `client/src/config/env-var.env`) e viene richiesta l'attivazione da parte del _server_ che li registra e restituisce loro l'identificativo. Ciascun sensore collegato a un noleggio esegue una chiamata API al servizio OpenStreetMap ottenendo così un percorso verosimile. Vengono infine inviate le posizioni al _server_ a intervalli regolari. Il sensore rimane inoltre in ascolto dei possibili annunci generati dal sistema, tuttavia non è stato richiesto di elaborarli in una interfaccia per l'utente quindi una volta ricevuti vengono persi. // TODO: vengono persi?
+
+Per gestire _producer_ e _consumer_ di Apache Kafka è stato creato un _manager_ in modo che fosse incentrato in un unico luogo la responsabilità di creare il _broker_ e le connessioni ai _topic_.
+
+[IMG E ALTRO]
+
+Dopo che `Simulator` istanzia un noleggio rimane in ascolto della sua terminazione. Allo stesso modo `Rent` rimane in attesa che il sensore termini di consumare tutti i punti del percorso. In questo modo una volta che `Tracker` ha inviato tutti i dati GPS al sistema notifica `Rent` di aver terminato, [SUCCEDONO COSE?] e questo informa a sua volta `Simulator` che può ora chiudere il noleggio.
+
+Per assicurarsi che esista un solo _manager_ di Kafka che gestisce i _broker_ è stato implementato il _design pattern Singleton_.
 
 // STREAM PROCESSOR TECNOLOGIES //
 == Stream Processor
@@ -84,6 +113,114 @@ In questa sezione vengono elencate le tecnologie scelte e le loro funzionalità 
 == Architettura logica
 == Architettura di deploy
 == Design patterns
+=== Dependency injection
+Quando un progetto è costituito da un numero considerevole di componenti risulta fondamentale minimizzare le dipendenze. Più si riesce ad evitare debito tecnico e più semplice risulta aggiungere funzionalità perché le parti del sistema non sono fortemente accopiate. L'obiettivo di questo _design pattern_ è quindi quello togliere a un componente la responsabilità della risoluzione delle proprie dipendenze.
+
+=== Implementazione della dependency injection
+Il gruppo ha deciso di utilizzare la libreria Inversify per gestire la _dependency injection_ nel servizio del simulatore. Possedendo delle annotazioni specifiche lo strumento di *IoC* (_Inversion of Control_) ha agevolato l'implementazione del _design pattern_. È stato infatti sufficiente contrassegnare le dipendenze con delle annotazioni (`@Injectable` e `@Inject`) e definire la risoluzione nel _file_ `client/src/config/Inversify.config.ts`.
+
+=== Concetti principali di Inversify ed esempio di utilizzo
+Adottando il _dependency injection design pattern_ le dipendenze sono dichiarate come parametri nel costruttore annotate da `@Inject('serviceId')` e le relative classi devono essere contrassegnate da `@Injectable()`. In un _file_ di configurazione poi deve essere dichiarato il _container_ e i _binding_ tra i serviceId e le classi "iniettabili".
+
+#codly(header: [*Tracker.ts*])
+```ts
+@Injectable()
+class Tracker { }
+```
+
+#codly(header: [*Rent.ts*])
+```ts
+class Rent {
+    constructor(
+      @Inject('Tracker')
+      private tracker: Tracker
+    ) { }
+}
+```
+
+#codly(header: [*Inversify.config.ts*])
+```ts
+const container = new Container();
+container.bind<Tracker>('Tracker').to(Tracker);
+container.bind<Rent>('Rent').toSelf(); // Rent come serviceId??? a cosa serve TYPES.Simulator?
+
+export { container }
+```
+
+// Il primo _bind_ a riga 2 indica che ad ogni `@Inject('Tracker')` verrà costruita una istanza della classe `Tracker`. Il secondo _bind_ a riga 3 CACCIO INDICA? non posso mettere self anche a tracker?
+
+Al momento della creazione dell'oggetto di tipo `Rent` è sufficiente la funzione `get()` del _container_ e questa risolverà le dipendenze come specificate.
+
+#codly(header: [*App.ts*])
+```ts
+const rent = container.get(Rent);
+```
+
+=== Integrazione del design pattern nel progetto
+Nel servizio del simulatore sono state risolte le dipendenze tra il simulatore e la lista di noleggi, il singolo noleggio e il sensore. Nel _file_ di configurazione è stato personalizzato il _binding_ poiché nel caso del simulatore si necessita di una lista di oggetti, negli altri è richiesto l'id che non è possibile "iniettare" automaticamente [VEDI API KLA].
+
+Le classi e di conseguenza la _dependency injection_ sono state configurate nel seguente modo. Per evitare incongruenze tra i _serviceId_ delle classi "iniettabili" è stata crata una lista univoca.
+
+#codly(header: [*config/InversifyTypes.ts*])
+```ts
+const TYPES {
+  Tracker: Symbol.for('Tracker'),
+  Rent: Symbol.for('Rent'),
+  RentList: Symbol.for('RentList'),
+  Simulator: Symbol.for('Simulator')
+}
+
+export { TYPES }
+```
+
+#codly(header: [*Tracker.ts*])
+```ts
+@Injectable()
+export class Tracker extends TrackerSubject {
+  constructor(
+    private id: string
+  ) {
+    super();
+  }
+  ...
+}
+```
+
+#codly(header: [*Rent.ts*])
+```ts
+@Injectable()
+export class Rent extends RentSubject implements RentObserver {
+  constructor(
+    private id: string,
+    @Inject(TYPES.Tracker)
+    private tracker: Tracker
+  ) {
+    super();
+  }
+  ...
+}
+```
+
+#codly(header: [*Simulator.ts*])
+```ts
+@Injectable()
+export class Simulator implements SimulatorObserver {
+  constructor(
+    @Inject(TYPES.RentList)
+    private rentList: Rent[]
+  ) { }
+  ...
+}
+```
+
+#codly(header: [*config/Inversify.config.ts*])
+```ts
+const container = new Container();
+
+// cose
+
+export { container }
+```
 
 // FUNCTIONAL REQUIRIMETS //
 = Stato dei requisiti funzionali
