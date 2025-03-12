@@ -84,7 +84,19 @@ La riunione ci ha permesso di consolidare gli obiettivi per questo  _#rifGlossar
 
   link("https://github.com/SWEatUNIPD/docs/issues/178")[D0178],
   [Andrea Precoma],
-  [Stesura sezione architetture e design pattern nella ST],
+  [Stesura sezione architetture e _design pattern_ nella ST],
+
+  link("https://github.com/SWEatUNIPD/docs/issues/181")[D0181],
+  [Andrea Perozzo],
+  [Stesura sezione del _database_ nella ST],
+
+  link("https://github.com/SWEatUNIPD/docs/issues/182")[D0182],
+  [Riccardo Milan],
+  [Stesura sezione Grafana nella ST],
+
+  link("https://github.com/SWEatUNIPD/docs/issues/183")[D0183],
+  [Klaudio Merja],
+  [Stesura sezione Flink nella ST],
 
   link("https://github.com/SWEatUNIPD/sweatunipd.github.io/issues/4")[S0004],
   [Klaudio Merja],
