@@ -6,9 +6,9 @@
 #codly(
   languages: (
     ts: (name: "TypeScript"),
-    java: (name: "Java")
+    java: (name: "Java"),
   ),
-  zebra-fill: none
+  zebra-fill: none,
 )
 
 #show: content => verbale(
@@ -21,7 +21,7 @@
   ),
   verificatori: (
     "Klaudio Merja",
-    "Andrea Perozzo"
+    "Andrea Perozzo",
   ),
   titolo: "Specifica Tecnica",
   uso: "Esterno",
@@ -48,7 +48,7 @@
 
 = Introduzione
 == Scopo del documento
-Lo scopo principale di questo documento è quello di esporre le tecnologie, le scelte architetturali e i _design patterns_ utilizzati dal gruppo per realizzare l'infrastruttura informatica che compone il prodotto _software_ NearYou. Quindi vengono esposte le motivazioni e le descrizioni delle scelte corredate ove possibile da diagrammi di classi per spiegare nella maniera più chiara possibile il _software_. 
+Lo scopo principale di questo documento è quello di esporre le tecnologie, le scelte architetturali e i _design patterns_ utilizzati dal gruppo per realizzare l'infrastruttura informatica che compone il prodotto _software_ NearYou. Quindi vengono esposte le motivazioni e le descrizioni delle scelte corredate ove possibile da diagrammi di classi per spiegare nella maniera più chiara possibile il _software_.
 
 == Glossario
 Per evitare eventuali ambiguità e incomprensioni sulla terminologia adottata nella documentazione redatta dal gruppo, viene fornito un glossario.
@@ -71,8 +71,8 @@ In questa sezione vengono elencate le tecnologie scelte e le loro funzionalità 
 // INFRASTRUCTURE AND TESTING //
 == Infrastruttura e test
 === Docker
-// libreria per automatizzare i test sul simulatore 
-=== Vitest 
+// libreria per automatizzare i test sul simulatore
+=== Vitest
 // analisi statica del codice
 === ESLint
 // Libreria per scrivere i test sul simulatore
@@ -116,10 +116,10 @@ Per assicurarsi che esista un solo _manager_ di Kafka che gestisce i _broker_ è
 === Dependency injection
 Quando un progetto è costituito da un numero considerevole di componenti risulta fondamentale minimizzare le dipendenze. Più si riesce ad evitare debito tecnico e più semplice risulta aggiungere funzionalità perché le parti del sistema non sono fortemente accopiate. L'obiettivo di questo _design pattern_ è quindi quello togliere a un componente la responsabilità della risoluzione delle proprie dipendenze.
 
-=== Implementazione della dependency injection
+==== Implementazione della dependency injection
 Il gruppo ha deciso di utilizzare la libreria Inversify per gestire la _dependency injection_ nel servizio del simulatore. Possedendo delle annotazioni specifiche lo strumento di *IoC* (_Inversion of Control_) ha agevolato l'implementazione del _design pattern_. È stato infatti sufficiente contrassegnare le dipendenze con delle annotazioni (`@Injectable` e `@Inject`) e definire la risoluzione nel _file_ `client/src/config/Inversify.config.ts`.
 
-=== Concetti principali di Inversify ed esempio di utilizzo
+==== Concetti principali di Inversify ed esempio di utilizzo
 Adottando il _dependency injection design pattern_ le dipendenze sono dichiarate come parametri nel costruttore annotate da `@Inject('serviceId')` e le relative classi devono essere contrassegnate da `@Injectable()`. In un _file_ di configurazione poi deve essere dichiarato il _container_ e i _binding_ tra i serviceId e le classi "iniettabili".
 
 #codly(header: [*Tracker.ts*])
@@ -156,7 +156,7 @@ Al momento della creazione dell'oggetto di tipo `Rent` è sufficiente la funzion
 const rent = container.get(Rent);
 ```
 
-=== Integrazione del design pattern nel progetto
+==== Integrazione del design pattern nel progetto
 Nel servizio del simulatore sono state risolte le dipendenze tra il simulatore e la lista di noleggi, il singolo noleggio e il sensore. Nel _file_ di configurazione è stato personalizzato il _binding_ poiché nel caso del simulatore si necessita di una lista di oggetti, negli altri è richiesto l'id che non è possibile "iniettare" automaticamente [VEDI API KLA].
 
 Le classi e di conseguenza la _dependency injection_ sono state configurate nel seguente modo. Per evitare incongruenze tra i _serviceId_ delle classi "iniettabili" è stata crata una mappa univoca.
@@ -219,30 +219,30 @@ Il _bind_ del simulatore è stato contrassegnato dalla funzione `inSingletonScop
 const container = new Container();
 
 container
-    .bind<Tracker>(TYPES.Tracker)
-    .toDynamicValue(() => {
-        const tracker: Tracker = new Tracker(uuidv4());
-        return tracker;
-    });
+  .bind<Tracker>(TYPES.Tracker)
+  .toDynamicValue(() => {
+    const tracker: Tracker = new Tracker(uuidv4());
+    return tracker;
+  });
 
 container
-    .bind<Rent>(TYPES.Rent)
-    .toDynamicValue((context: ResolutionContext) => {
-        const tracker: Tracker = context.get<Tracker>(TYPES.Tracker);
-        const rent: Rent = new Rent(uuidv4(), tracker);
-        return rent;
-    });
+  .bind<Rent>(TYPES.Rent)
+  .toDynamicValue((context: ResolutionContext) => {
+    const tracker: Tracker = context.get<Tracker>(TYPES.Tracker);
+    const rent: Rent = new Rent(uuidv4(), tracker);
+    return rent;
+  });
 
 container
-    .bind<Rent[]>(TYPES.RentList)
-    .toDynamicValue((context: ResolutionContext) => {
-        let rentList: Rent[] = [];
-        for (let i = 0; i < Number(env.INIT_RENT_COUNT); i++) {
-            const rent: Rent = context.get<Rent>(TYPES.Rent);
-            rentList.push(rent);
-        }
-        return rentList;
-    });
+  .bind<Rent[]>(TYPES.RentList)
+  .toDynamicValue((context: ResolutionContext) => {
+    let rentList: Rent[] = [];
+    for (let i = 0; i < Number(env.INIT_RENT_COUNT); i++) {
+      const rent: Rent = context.get<Rent>(TYPES.Rent);
+      rentList.push(rent);
+    }
+    return rentList;
+  });
 
 container.bind(Simulator).toSelf().inSingletonScope();
 
@@ -257,10 +257,158 @@ const simulator = container.get(Simulator);
 simulator.startSimulation();
 ```
 
-=== Observer
-Il simulatore è un gestore di noleggi quindi deve rimanere in ascolto dei loro cambi di stato. Allo stesso modo i noleggi che controllano i sensori devono essere informati di quando questi terminano il tracciato. Viene quindi conveniente utilizzare il _design pattern Observer_ per risolvere questa esigenza.
+=== Singleton
 
+=== Observer
+Il _design pattern Observer_ risolve un problema legato alla reattività in seguito alla notifica di alcuni cambi di stato. Il cambiamento in una componente provoca una notifica a tutti i suoi osservatori, cioè chi è in ascolto. Ricevuto il segnale questi osservatori si aggiornano in base al nuovo stato dell'emittente. Per evitare una dipendenza circolare nella classe astratta ereditata dall'emittente viene aggiunto un "_setter_" con il quale gli ascoltatori possono iscriversi alla lista.
+
+==== Implementazione dell'observer
+Il simulatore gestisce i noleggi attivi quindi deve rimanere in ascolto dei loro cambi di stato. Allo stesso modo i noleggi, che controllano i sensori, devono essere informati quando questi terminano il tracciato. Viene quindi conveniente utilizzare il _design pattern Observer_ per risolvere queste esigenze: al completamento del percorso `Tracker` notifica `Rent` il quale, DOPO AVER FATTO COSE?, notifica a sua volta `Simulator` che chiude il noleggio (lo rimuove dalla lista).
+
+==== Integrazione del design pattern nel progetto
 Ad ogni `Subject` è stato assegnato l'osservatore come attributo (non una lista di osservatori perché deve esistere un solo simulatore per tutti i noleggi e un solo sensore è installato sul mezzo col quale è fatto partire il noleggio), il metodo per registrare l'osservatore è quello per notificarlo. Gli `Observer` contengono il metodo per riceve la notifica che se necessario accetta nei parametri le informazioni per aggiornare l'osservatore. Non è stato necessario aggiungere un metodo `getState()` ai `Subject` perché nel caso dei noleggi non ci sono informazioni da recuperare, nel caso del simulatore sarebbe necessario sapere al momento della notifica l'identificativo del noleggio per richiamare il `getState()` dall'elemento nella lista dei noleggi; a questo punto tuttavia l'informazione dell'identificatore è già presente nel parametro del metodo `update()` quindi non ha più valenza recuperare lo stato del noleggio.
+
+#codly(header: [*RentObserver.ts*])
+```ts
+export interface RentObserver {
+  updateTrackEnded(): void;
+}
+```
+
+#codly(header: [*SimulatorObserver.ts*])
+```ts
+export interface SimulatorObserver {
+  updateRentEnded(id: string): void;
+}
+```
+
+#codly(header: [*TrackerSubject.ts*])
+```ts
+export abstract class TrackerSubject {
+  private rentObserver!: RentObserver;
+
+  register(rentObserver: RentObserver): void {
+    this.rentObserver = rentObserver;
+  }
+
+  protected notifyTrackEnded(): void {
+    if (this.rentObserver == null) {
+      throw new Error(
+        `Track ended notify error: rentObserver not initialized`
+      );
+    }
+
+    this.rentObserver.updateTrackEnded();
+  }
+}
+```
+
+#codly(header: [*RentSubject.ts*])
+```ts
+export abstract class RentSubject {
+  private simulatorObserver!: SimulatorObserver;
+
+  register(simulatorObserver: SimulatorObserver): void {
+    this.simulatorObserver = simulatorObserver;
+  }
+
+  protected notifyRentEnded(id: string): void {
+    if (this.simulatorObserver == null) {
+      throw new Error(
+        `Rent ended notify error: simulatorObserver not initialized`
+      );
+    }
+
+    this.simulatorObserver.updateRentEnded(id);
+  }
+}
+```
+
+Quando `Tracker` ha consumato tutti i punti del percorso notifica a `Rent` che ha terminato.
+
+#codly(
+  header: [*Tracker.ts*],
+  highlights: ((line: 14, start: 9, end: none, fill: blue),),
+)
+```ts
+export class Tracker extends TrackerSubject {
+  ...
+
+  async activate(): Promise<void> {
+      ...
+      await this.move(trackPoints);
+    }
+
+  private async move(trackPoints: GeoPoint[]): Promise<void> {
+    ...
+    const intervalId = setInterval(async () => {
+      if (currIndex == trackPoints.length) {
+        ...
+        this.notifyTrackEnded();
+      }
+      ...
+    }, sendingIntervalMilliseconds);
+  }
+}
+```
+
+`Rent` appena riceve al notifica da `Tracker` FA COSE? e segnala a `Simulator` di chiudere il noleggio.
+
+#codly(
+  header: [*Rent.ts*],
+  highlights: (
+    (line: 9, start: 3, end: 26, fill: blue),
+    (line: 10, start: 5, end: none, fill: green)
+  )
+)
+```ts
+export class Rent extends RentSubject implements RentObserver {
+  ...
+
+  activate(): void {
+    this.tracker.register(this);
+    ...
+  }
+
+  updateTrackEnded(): void {
+    this.notifyRentEnded(this.id);
+  }
+  ...
+}
+```
+
+`Simulator` quando riceve la notifica da `Rent` rimuove dalla lista dei noleggi attivi quello che corrisponde all'identificativo ricevuto.
+
+#codly(
+  header: [*Simulator.ts*],
+  highlights: ((line: 12, start: 3, end: 35, fill: green),)
+)
+```ts
+export class Simulator implements SimulatorObserver {
+  ...
+
+  startSimulation(): void {
+    this.rentList.forEach(rent => {
+      rent.register(this);
+      ...
+    });
+    ...
+  }
+
+  updateRentEnded(id: string): void {
+    const endedRentIndex = this.rentList.findIndex((trk) => trk.getId() == id);
+
+    if (endedRentIndex == -1) {
+      throw new Error(
+        `Rent with id '${id}' is ended but not found in list`
+      );
+    }
+
+    this.rentList.splice(endedRentIndex, 1);
+  }
+  ...
+}
+```
 
 // FUNCTIONAL REQUIRIMETS //
 = Stato dei requisiti funzionali
