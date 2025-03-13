@@ -20,8 +20,10 @@
     "Riccardo Milan",
   ),
   verificatori: (
-    "Klaudio Merja",
     "Andrea Perozzo",
+    "Klaudio Merja",
+    "Davide Picello",
+    "Riccardo Milan"
   ),
   titolo: "Specifica Tecnica",
   uso: "Esterno",
@@ -29,7 +31,7 @@
     "0.2.0",
     "12/03/2025",
     "Andrea Precoma",
-    "-",
+    "Riccardo Milan\nDavide Picello",
     [
       - Completate tecnologie del simulatore
       - Redatta sezione relativa al simulatore
@@ -77,10 +79,6 @@ In questa sezione vengono elencate le tecnologie scelte e le loro funzionalità 
 // analisi statica del codice
 === ESLint
 // Libreria per scrivere i test sul simulatore
-// === Inversify
-// _Tool_ utilizzato per gestire la _Dipendency Injection_ in applicativi sviluppati in JavaScript e TypeScript. Viene sfruttato nel servizio del simulatore per risolvere le dipendenze esplicitate nei costruttori. In particolare nel _file_ `client/src/config/Inversify.config.ts` vengono risolte le seguenti dipendenze:
-// - *Simulator* possiede una lista di noleggi. Il numero iniziale di noleggi è stabilito dalla variabile d'ambiente `INIT_RENT_COUNT`.
-// - *Rent* possiede un sensore.
 
 // DATABASE TECNOLOGIES //
 == Database
@@ -89,7 +87,7 @@ In questa sezione vengono elencate le tecnologie scelte e le loro funzionalità 
 
 // SIMULATOR TECNOLOGIES //
 == Simulatore di sensori
-Questo servizio deve simulare l'attivazione di alcuni noleggi e lo spostamento degli utenti con i mezzi. All'avvio vengono istanziati dei noleggi (numero arbitrario definito nelle variabili d'ambiente nel _file_ `client/src/config/env-var.env`) e viene richiesta l'attivazione da parte del _server_ che li registra e restituisce loro l'identificativo. Ciascun sensore collegato a un noleggio esegue una chiamata API al servizio OpenStreetMap ottenendo così un percorso verosimile. Vengono infine inviate le posizioni al _server_ a intervalli regolari. Il sensore rimane inoltre in ascolto dei possibili annunci generati dal sistema, tuttavia non è stato richiesto di elaborarli in una interfaccia per l'utente quindi una volta ricevuti vengono persi. // TODO: vengono persi?
+Questo servizio deve simulare l'attivazione di alcuni noleggi e lo spostamento degli utenti con i mezzi. All'avvio vengono istanziati dei noleggi (numero arbitrario definito nelle variabili d'ambiente nel _file_ `client/src/config/env-var.env`) e viene richiesta l'attivazione da parte del _server_ che li registra e restituisce loro l'identificativo. Ciascun sensore collegato a un noleggio esegue una chiamata API al servizio OpenStreetMap ottenendo così un percorso verosimile. Vengono infine inviate le posizioni al _server_ a intervalli regolari. Il sensore rimane inoltre in ascolto dei possibili annunci generati dal sistema, tuttavia non è stato richiesto di elaborarli in una interfaccia per l'utente. Questi infatti sono disponibili solo nella _dashboard_ dell'amministratore.
 
 Per gestire _producer_ e _consumer_ di Apache Kafka è stato creato un _manager_ in modo che fosse incentrato in un unico luogo la responsabilità di creare il _broker_ e le connessioni ai _topic_.
 
@@ -98,6 +96,11 @@ Per gestire _producer_ e _consumer_ di Apache Kafka è stato creato un _manager_
 Dopo che `Simulator` istanzia un noleggio rimane in ascolto della sua terminazione. Allo stesso modo `Rent` rimane in attesa che il sensore termini di consumare tutti i punti del percorso. In questo modo una volta che `Tracker` ha inviato tutti i dati GPS al sistema notifica `Rent` di aver terminato, [SUCCEDONO COSE?] e questo informa a sua volta `Simulator` che può ora chiudere il noleggio.
 
 Per assicurarsi che esista un solo _manager_ di Kafka che gestisce i _broker_ è stato implementato il _design pattern Singleton_.
+
+// === Inversify
+// _Tool_ utilizzato per gestire la _Dipendency Injection_ in applicativi sviluppati in JavaScript e TypeScript. Viene sfruttato nel servizio del simulatore per risolvere le dipendenze esplicitate nei costruttori. In particolare nel _file_ `client/src/config/Inversify.config.ts` vengono risolte le seguenti dipendenze:
+// - *Simulator* possiede una lista di noleggi. Il numero iniziale di noleggi è stabilito dalla variabile d'ambiente `INIT_RENT_COUNT`.
+// - *Rent* possiede un sensore.
 
 // STREAM PROCESSOR TECNOLOGIES //
 == Stream Processor
@@ -112,7 +115,7 @@ Per assicurarsi che esista un solo _manager_ di Kafka che gestisce i _broker_ è
 // ARCHITECTURE //
 = Architettura
 == Architettura logica
-== Architettura di deploy
+== Architettura di deployment
 == Design pattern
 === Dependency injection
 Quando un progetto è costituito da un numero considerevole di componenti risulta fondamentale minimizzare le dipendenze. Più si riesce ad evitare debito tecnico e più semplice risulta aggiungere funzionalità perché le parti del sistema non sono fortemente accopiate. L'obiettivo di questo _design pattern_ è quindi quello togliere a un componente la responsabilità della risoluzione delle proprie dipendenze.
@@ -158,7 +161,8 @@ const rent = container.get(Rent);
 ```
 
 ==== Integrazione del design pattern nel progetto <inversify-3>
-Nel servizio del simulatore sono state risolte le dipendenze tra il simulatore e la lista di noleggi, il singolo noleggio e il sensore. Nel _file_ di configurazione è stato personalizzato il _binding_ poiché nel caso del simulatore si necessita di una lista di oggetti, negli altri è richiesto l'id che non è possibile "iniettare" automaticamente [VEDI API KLA].
+Nel servizio del simulatore sono state risolte le dipendenze tra il simulatore e la lista di noleggi, il singolo noleggio e il sensore. Nel _file_ di configurazione è stato personalizzato il _binding_ poiché nel caso del simulatore si necessita di una lista di oggetti, negli altri è richiesto l'id che non è possibile "iniettare" automaticamente.
+// TODO: VEDI API KLA
 
 Le classi e di conseguenza la _dependency injection_ sono state configurate nel seguente modo. Per evitare incongruenze tra i _serviceId_ delle classi "iniettabili" è stata crata una mappa univoca.
 
@@ -226,7 +230,7 @@ export class Simulator implements SimulatorObserver {
 }
 ```
 
-Poiché i _bind_ di `Tracker`, `Rent` e `RentList` non sono immediatamente risolvibili è stato necessario definirli più nel dettaglio con `toDynamicValue()`. // TODO: gli id presi da API
+Poiché i _bind_ di `KafkaManager`, `Tracker`, `Rent` e `RentList` non sono immediatamente risolvibili è stato necessario definirli più nel dettaglio con `toDynamicValue()`. // TODO: gli id presi da API
 Il _bind_ di `KafkaManager` e `Simulator` è stato contrassegnato dalla funzione `inSingletonScope()` per assicurare che esista una sola istanza per tipo.
 
 #codly(header: [*config/Inversify.config.ts*])
@@ -293,7 +297,7 @@ Può essere che alcune componenti debbano mantenere un'integrità per tutta l'es
 Il gruppo è consapevole della potenziale fallacità di questo _design pattern_ in quanto due processi potrebbero concorrere alla stessa risorsa e, in particolari situazioni, far generare due istanze. Per minimizzare gli errori è stato scelto di demandare il lavoro alla libreria Inversify (spiegata nel dettaglio nelle #link(<inversify-1>)[sez. SISTEMARE] e #link(<inversify-2>)[sez. SISTEMARE]).
 
 ==== Integrazione del design pattern nel progetto
-Come anticipato nella #link(<inversify-3>)[sez. SISTEMARE] è stata dichiarata la risoluzione della dipendenza nel _file_ `config/Inversify.config.ts` e le componenti interessate, quindi `KafkaManager` e `Simulator` sono state contrassegnate dalla funzione `inSingletonScope()`.
+Come anticipato nella #link(<inversify-3>)[sez. SISTEMARE] è stata dichiarata la risoluzione della dipendenza nel _file_ `client/src/config/Inversify.config.ts` e le componenti interessate, quindi `KafkaManager` e `Simulator` sono state contrassegnate dalla funzione `inSingletonScope()`.
 
 #codly(
   header: [*config/Inversify.config.ts*],
@@ -328,7 +332,8 @@ export { container }
 Il _design pattern Observer_ risolve un problema legato alla reattività in seguito alla notifica di alcuni cambi di stato. Il cambiamento in una componente provoca una notifica a tutti i suoi osservatori, cioè chi è in ascolto. Ricevuto il segnale questi osservatori si aggiornano in base al nuovo stato dell'emittente. Per evitare una dipendenza circolare nella classe astratta ereditata dall'emittente viene aggiunto un "_setter_" con il quale gli ascoltatori possono iscriversi alla lista.
 
 ==== Implementazione dell'observer
-Il simulatore gestisce i noleggi attivi quindi deve rimanere in ascolto dei loro cambi di stato. Allo stesso modo i noleggi, che controllano i sensori, devono essere informati quando questi terminano il tracciato. Viene quindi conveniente utilizzare il _design pattern Observer_ per risolvere queste esigenze: al completamento del percorso `Tracker` notifica `Rent` il quale, DOPO AVER FATTO COSE?, notifica a sua volta `Simulator` che chiude il noleggio (lo rimuove dalla lista).
+Il simulatore gestisce i noleggi attivi quindi deve rimanere in ascolto dei loro cambi di stato. Allo stesso modo i noleggi, che controllano i sensori, devono essere informati quando questi terminano il tracciato. Viene quindi conveniente utilizzare il _design pattern Observer_ per risolvere queste esigenze: al completamento del percorso `Tracker` notifica `Rent` il quale notifica a sua volta `Simulator` che chiude il noleggio rimuovendolo dalla lista.
+// TODO: Rent è passacarte?
 
 ==== Integrazione del design pattern nel progetto
 Ad ogni `Subject` è stato assegnato l'osservatore come attributo (non una lista di osservatori perché deve esistere un solo simulatore per tutti i noleggi e un solo sensore è installato sul mezzo col quale è fatto partire il noleggio), il metodo per registrare l'osservatore è quello per notificarlo. Gli `Observer` contengono il metodo per riceve la notifica che se necessario accetta nei parametri le informazioni per aggiornare l'osservatore. Non è stato necessario aggiungere un metodo `getState()` ai `Subject` perché nel caso dei noleggi non ci sono informazioni da recuperare, nel caso del simulatore sarebbe necessario sapere al momento della notifica l'identificativo del noleggio per richiamare il `getState()` dall'elemento nella lista dei noleggi; a questo punto tuttavia l'informazione dell'identificatore è già presente nel parametro del metodo `update()` quindi non ha più valenza recuperare lo stato del noleggio.
@@ -474,6 +479,20 @@ export class Simulator implements SimulatorObserver {
   ...
 }
 ```
+
+== Diagrammi delle classi
+=== Simulatore
+#figure(
+  image("../assets/img/ST/simulator.svg"),
+  caption: [Diagramma delle classi del simulatore],
+)
+
+==== Componenti di utilità
+// TODO: componenti di utilità? tipo EnvManager ecc?
+Il frammento di diagramma soprastante contiene le componenti di utilità necessarie per il corretto funzionamento del servizio.
+- *App*: Rappresenta il punto di accesso al servizio e si occupa della creazione di una istanza del simulatore e del suo avvio.
+- *EnvManager*: ...
+...
 
 // FUNCTIONAL REQUIRIMETS //
 = Stato dei requisiti funzionali
