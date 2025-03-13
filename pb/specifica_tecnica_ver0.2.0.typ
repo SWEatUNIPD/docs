@@ -127,10 +127,10 @@ class Tracker { }
 #codly(header: [*Rent.ts*])
 ```ts
 class Rent {
-    constructor(
-      @Inject('Tracker')
-      private tracker: Tracker
-    ) { }
+  constructor(
+    @Inject('Tracker')
+    private tracker: Tracker
+  ) { }
 }
 ```
 
@@ -157,10 +157,10 @@ Le classi e di conseguenza la _dependency injection_ sono state configurate nel 
 #codly(header: [*config/InversifyTypes.ts*])
 ```ts
 export const TYPES = {
-    KafkaManager: Symbol.for('KafkaManager'),
-    Tracker: Symbol.for('Tracker'),
-    Rent: Symbol.for('Rent'),
-    RentList: Symbol.for('RentList')
+  KafkaManager: Symbol.for('KafkaManager'),
+  Tracker: Symbol.for('Tracker'),
+  Rent: Symbol.for('Rent'),
+  RentList: Symbol.for('RentList')
 };
 ```
 
@@ -478,7 +478,7 @@ const simulator = container.get(Simulator);
 simulator.startSimulation();
 ```
 
-- *EnvManager*: espone l'accesso per le variabili d'ambiente. Per utilizzarene una è sufficiente importare il modulo/*TODO: modulo?*/ e richiamare `env.VAR_NAME`.
+- *EnvManager*: espone l'accesso per le variabili d'ambiente. Per utilizzarene una è sufficiente importare il modulo e richiamare `env.VAR_NAME`.
 #codly(header: [*config/EnvManager.ts*])
 ```ts
 dotenv.config({ path: './src/config/env-var.env' });
