@@ -86,16 +86,8 @@ In questa sezione vengono elencate le tecnologie scelte e le loro funzionalità 
 === PostGIS
 
 // SIMULATOR TECNOLOGIES //
-== Simulatore di sensori
-Questo servizio deve simulare l'attivazione di alcuni noleggi e lo spostamento degli utenti con i mezzi. All'avvio vengono istanziati dei noleggi (numero arbitrario definito nelle variabili d'ambiente nel _file_ `client/src/config/env-var.env`) e viene richiesta l'attivazione da parte del _server_ che li registra e restituisce loro l'identificativo. Ciascun sensore collegato a un noleggio esegue una chiamata API al servizio OpenStreetMap ottenendo così un percorso verosimile. Vengono infine inviate le posizioni al _server_ a intervalli regolari. Il sensore rimane inoltre in ascolto dei possibili annunci generati dal sistema, tuttavia non è stato richiesto di elaborarli in una interfaccia per l'utente. Questi infatti sono disponibili solo nella _dashboard_ dell'amministratore.
-
-Per gestire _producer_ e _consumer_ di Apache Kafka è stato creato un _manager_ in modo che fosse incentrato in un unico luogo la responsabilità di creare il _broker_ e le connessioni ai _topic_.
-
-[IMG E ALTRO]
-
-Dopo che `Simulator` istanzia un noleggio rimane in ascolto della sua terminazione. Allo stesso modo `Rent` rimane in attesa che il sensore termini di consumare tutti i punti del percorso. In questo modo una volta che `Tracker` ha inviato tutti i dati GPS al sistema notifica `Rent` di aver terminato, [SUCCEDONO COSE?] e questo informa a sua volta `Simulator` che può ora chiudere il noleggio.
-
-Per assicurarsi che esista un solo _manager_ di Kafka che gestisce i _broker_ è stato implementato il _design pattern Singleton_.
+// == Simulatore di sensori
+// Questo servizio deve simulare l'attivazione di alcuni noleggi e lo spostamento degli utenti con i mezzi. All'avvio vengono istanziati dei noleggi (numero arbitrario definito nelle variabili d'ambiente nel _file_ `client/src/config/env-var.env`) e viene richiesta l'attivazione da parte del _server_ che li registra e restituisce loro l'identificativo. Ciascun sensore collegato a un noleggio esegue una chiamata API al servizio OpenStreetMap ottenendo così un percorso verosimile. Vengono infine inviate le posizioni al _server_ a intervalli regolari. Il sensore rimane inoltre in ascolto dei possibili annunci generati dal sistema, tuttavia non è stato richiesto di elaborarli in una interfaccia per l'utente. Questi infatti sono disponibili solo nella _dashboard_ dell'amministratore.
 
 // === Inversify
 // _Tool_ utilizzato per gestire la _Dipendency Injection_ in applicativi sviluppati in JavaScript e TypeScript. Viene sfruttato nel servizio del simulatore per risolvere le dipendenze esplicitate nei costruttori. In particolare nel _file_ `client/src/config/Inversify.config.ts` vengono risolte le seguenti dipendenze:
@@ -103,7 +95,7 @@ Per assicurarsi che esista un solo _manager_ di Kafka che gestisce i _broker_ è
 // - *Rent* possiede un sensore.
 
 // STREAM PROCESSOR TECNOLOGIES //
-== Stream Processor
+== Stream processor
 // TODO: aggiungere, immagino sicuramente flink ma forse c'è altro
 
 // LLM INTERACTION //
@@ -144,14 +136,10 @@ class Rent {
 
 #codly(header: [*Inversify.config.ts*])
 ```ts
-const container = new Container();
+export const container = new Container();
 container.bind<Tracker>('Tracker').to(Tracker);
 container.bind(Rent).toSelf();
-
-export { container }
 ```
-
-// Il primo _bind_ a riga 2 indica che ad ogni `@Inject('Tracker')` verrà costruita una istanza della classe `Tracker`. Il secondo _bind_ a riga 3 CACCIO INDICA? non posso mettere self anche a tracker?
 
 Al momento della creazione dell'oggetto di tipo `Rent` è sufficiente la funzione `get()` del _container_ e questa risolverà le dipendenze come specificate.
 
@@ -168,14 +156,12 @@ Le classi e di conseguenza la _dependency injection_ sono state configurate nel 
 
 #codly(header: [*config/InversifyTypes.ts*])
 ```ts
-const TYPES {
-  KafkaManager: Symbol.for('KafkaManager'),
-  Tracker: Symbol.for('Tracker'),
-  Rent: Symbol.for('Rent'),
-  RentList: Symbol.for('RentList')
-}
-
-export { TYPES }
+export const TYPES = {
+    KafkaManager: Symbol.for('KafkaManager'),
+    Tracker: Symbol.for('Tracker'),
+    Rent: Symbol.for('Rent'),
+    RentList: Symbol.for('RentList')
+};
 ```
 
 #codly(header: [*KafkaManager.ts*])
@@ -235,14 +221,14 @@ Il _bind_ di `KafkaManager` e `Simulator` è stato contrassegnato dalla funzione
 
 #codly(header: [*config/Inversify.config.ts*])
 ```ts
-const container = new Container();
+export const container = new Container();
 
 container
   .bind<KafkaManager>(TYPES.KafkaManager)
   .toDynamicValue(() => {
     const kafkaConfig: KafkaConfig = {
       clientId: env.CLIENT_ID,
-      brokers: [process.env.BROKER ?? String(env.LOCAL_BROKER)]
+      brokers: [env.BROKER ?? 'localhost:9094']
     };
     const kafka: Kafka = new Kafka(kafkaConfig);
     return new KafkaManager(kafka);
@@ -278,8 +264,6 @@ container
   });
 
 container.bind(Simulator).toSelf().inSingletonScope();
-
-export { container }
 ```
 
 Nel _file_ principale è sufficiente quindi richiedere l'istanza di `Simulator` tramite la funzione `get()` del _container_.
@@ -307,14 +291,14 @@ Come anticipato nella #link(<inversify-3>)[sez. SISTEMARE] è stata dichiarata l
   ),
   )
 ```ts
-const container = new Container();
+export const container = new Container();
 
 container
   .bind<KafkaManager>(TYPES.KafkaManager)
   .toDynamicValue(() => {
     const kafkaConfig: KafkaConfig = {
       clientId: env.CLIENT_ID,
-      brokers: [process.env.BROKER ?? String(env.LOCAL_BROKER)]
+      brokers: [env.BROKER ?? 'localhost:9094']
     };
     const kafka: Kafka = new Kafka(kafkaConfig);
     return new KafkaManager(kafka);
@@ -324,8 +308,6 @@ container
 ...
 
 container.bind(Simulator).toSelf().inSingletonScope();
-
-export { container }
 ```
 
 === Observer
@@ -483,16 +465,86 @@ export class Simulator implements SimulatorObserver {
 == Diagrammi delle classi
 === Simulatore
 #figure(
-  image("../assets/img/ST/simulator.svg"),
+  image("../assets/img/ST/simulator.svg", width: 110%),
   caption: [Diagramma delle classi del simulatore],
 )
 
 ==== Componenti di utilità
-// TODO: componenti di utilità? tipo EnvManager ecc?
-Il frammento di diagramma soprastante contiene le componenti di utilità necessarie per il corretto funzionamento del servizio.
-- *App*: Rappresenta il punto di accesso al servizio e si occupa della creazione di una istanza del simulatore e del suo avvio.
-- *EnvManager*: ...
-...
+Sfruttando l'aspetto procedurale del linguaggio TypeScript sono state create delle componenti di supporto. Queste non contengono classi o interfacce quindi diventa più efficace descriverle di seguito piuttosto che in un diagramma delle classi.
+- *App*: rappresenta il punto di accesso al servizio e si occupa della creazione di una istanza del simulatore e del suo avvio.
+#codly(header: [*App.ts*])
+```ts
+const simulator = container.get(Simulator);
+simulator.startSimulation();
+```
+
+- *EnvManager*: espone l'accesso per le variabili d'ambiente. Per utilizzarene una è sufficiente importare il modulo/*TODO: modulo?*/ e richiamare `env.VAR_NAME`.
+#codly(header: [*config/EnvManager.ts*])
+```ts
+dotenv.config({ path: './src/config/env-var.env' });
+export const env = process.env;
+```
+
+- *InversifyType*: espone una mappa delle componenti da "iniettare" con il _design pattern dependency injection_. In questo modo si evitano i problemi di _mistyping_ dei _serviceId_.
+#codly(header: [*config/InversifyType.ts*])
+```ts
+export const TYPES = {
+  KafkaManager: Symbol.for('KafkaManager'),
+  Tracker: Symbol.for('Tracker'),
+  Rent: Symbol.for('Rent'),
+  RentList: Symbol.for('RentList')
+};
+```
+
+- *Inversify.config*: definisce il _container_ e i _binding_ per risolvere le dipendenze con la libreria Inverisfy.
+#codly(header: [*config/InversifyType.ts*])
+```ts
+export const container = new Container();
+
+container
+  .bind<KafkaManager>(TYPES.KafkaManager)
+  .toDynamicValue(() => {
+    const kafkaConfig: KafkaConfig = {
+      clientId: env.CLIENT_ID,
+      brokers: [env.BROKER ?? 'localhost:9094']
+    };
+    const kafka: Kafka = new Kafka(kafkaConfig);
+    return new KafkaManager(kafka);
+  })
+  .inSingletonScope();
+
+container
+  .bind<Tracker>(TYPES.Tracker)
+  .toDynamicValue((context: ResolutionContext) => {
+    const kafkaManager: KafkaManager =
+      context.get<KafkaManager>(TYPES.KafkaManager);
+    const tracker: Tracker = new Tracker(uuidv4(), kafkaManager);
+    return tracker;
+  });
+
+container
+  .bind<Rent>(TYPES.Rent)
+  .toDynamicValue((context: ResolutionContext) => {
+    const tracker: Tracker = context.get<Tracker>(TYPES.Tracker);
+    const rent: Rent = new Rent(uuidv4(), tracker);
+    return rent;
+  });
+
+container
+  .bind<Rent[]>(TYPES.RentList)
+  .toDynamicValue((context: ResolutionContext) => {
+    let rentList: Rent[] = [];
+    for (let i = 0; i < Number(env.INIT_RENT_COUNT); i++) {
+      const rent: Rent = context.get<Rent>(TYPES.Rent);
+      rentList.push(rent);
+    }
+    return rentList;
+  });
+
+container.bind(Simulator).toSelf().inSingletonScope();
+```
+
+=== Stream processor
 
 // FUNCTIONAL REQUIRIMETS //
 = Stato dei requisiti funzionali
