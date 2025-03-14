@@ -9,6 +9,11 @@
   titolo: "Glossario",
   verificatori: ("Andrea Perozzo", "Andrea Precoma", "Davide Marin", "Davide Picello", "Riccardo Milan"),
   versioni: (
+    "1.3.0",
+    "12/03/2025",
+    "Andrea Perozzo",
+    "Andrea Precoma\nKlaudio Merja",
+    [- Aggiunto il termine "DBMS"],
     "1.2.0",
     "07/03/2025",
     "Klaudio Merja",

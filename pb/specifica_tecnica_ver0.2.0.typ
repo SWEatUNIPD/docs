@@ -15,6 +15,13 @@
   titolo: "Specifica Tecnica",
   uso: "Esterno",
   versioni: (
+    "0.2.0",
+    "13/03/2025",
+    "Andrea Perozzo",
+    "Andrea Precoma\nKlaudio Merja",
+    [
+      - Redatta sezione Database
+    ],
     "0.1.0",
     "11/03/2025",
     "Riccardo Milan",
@@ -63,7 +70,35 @@ In questa sezione vengono elencate le tecnologie scelte e le loro funzionalità 
 // DATABASE TECNOLOGIES //
 == Database
 === PostgreSQL
-=== PostGIS
+Per la gestione dei dati relazionali è stato scelto #rifGlossario("PostgreSQL"), un #rifGlossario("DBMS") che offre affidabilità, prestazioni e una certa flessibilità per l'estensione tramite _plugin_ ed estensioni. Nel nostro contesto, PostgreSQL:
+
+- Viene eseguito all'interno di un container Docker (immagine #rifGlossario("postgis")/postgis, vedere sezione #link(<2.2.2>)[2.2.2]).
+- È configurato tramite #rifGlossario("docker-compose") (nel file `compose.yml`) con il _mapping_ della porta 5432:5432, utente e _password_ specificati nelle variabili d'ambiente.
+- All'avvio esegue automaticamente lo _script_ `create.sql` che crea lo schema del #rifGlossario("database") (tabelle, relazioni, ecc.) secondo le esigenze del progetto.
+
+Nel _file_ `create.sql`:
+
+- Vengono definite tutte le relazioni fondamentali del sistema (ad esempio _users_, _rents_, _positions_, _points_of_interest_, ecc.).
+- Vengono impostati i vincoli di integrità referenziale (_primary key_, _foreign key_, _on delete cascade_, ecc.).
+- Ove opportuno, si creano tipi enumerati (ad esempio per le categorie di un punto di interesse), oppure si definiscono relazioni 1:N, 1:1 e N:N necessarie al dominio applicativo.
+
+=== PostGIS <2.2.2>
+Per l'elaborazione e l'archiviazione di dati geografici si fa uso dell'estensione PostGIS, la quale aggiunge a PostgreSQL il supporto per tipi, funzioni e indici spaziali.
+
+In particolare l'immagine Docker utilizzata è postgis/postgis. Oltre a #box[PostgreSQL] questa contiene già la libreria PostGIS e le relative dipendenze. Questo _setup_ permette di:
+
+- Gestire campi che rappresentano coordinate geografiche (latitudine e longitudine). Nel nostro caso, vengono memorizzate le posizioni dei punti di interesse e dei mezzi noleggiati.
+- Sfruttare _query_ geospaziali (calcolo delle distanze, ricerca di punti in un certo raggio, ecc.)
+
+=== Struttura del Database
+
+Di seguito viene descritta la struttura del _database_:
+
+#v(20pt)
+#figure(
+  image("../assets/diagrams/ER-diagram.svg"),
+  caption: [Diagramma ER],
+)
 
 // SIMULATOR TECNOLOGIES //
 == Simulatore di sensori
