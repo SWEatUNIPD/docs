@@ -381,14 +381,89 @@ Misura la percentuale del sistema che è stato affetto dalle modifiche apportate
 )
 
 = Specifiche dei test
-Questa sezione descrive le attività di _testing_ effettuate per garantire che i vincoli definiti nei requisiti siano pienamente soddisfatti. In linea con quanto specificato nel documento Norme di Progetto, il piano di _test_ adotta un approccio strutturato e si articola nelle seguenti categorie.
+Questa sezione descrive le attività di _testing_ effettuate per garantire che i vincoli definiti nei requisiti siano pienamente soddisfatti. In linea con quanto specificato nel documento Norme di Progetto, il piano di _test_ adotta un approccio strutturato e si articola nelle seguenti categorie: _test_ di unità, _test_ di integrazione, _test_ di sistema e _test_ di accettazione.
 
-//== Nomenclatura
-// Aggiungere parte relativa alla nomenclatura
+== Nomenclatura
+Per identificare in modo univoco ciascun _test_ viene adottata una nomenclatura che segue il seguente schema:
+
+#align(center)[
+  *T[tipologia]-[numero]*
+]
+Dove tipologia può essere:
+- *U*: _test_ di unità
+- *I*: _test_ di integrazione
+- *S*: _test_ di sistema
+- *A*: _test_ di accettazione
+
+E dove numero è un numero progressivo che identifica il _test_ all'interno della tipologia.
+
+Inoltre ogni test ha uno stato che ne indica l'esito:
+- *Verificato*: il _test_ è stato eseguito e ha dato esito positivo
+- *Non verificato*: il _test_ non è stato eseguito
+- *Non implementato*: il _test_ non è stato implementato // Se alla fine sono stati tutti implementati si può anche togliere ? TODO
 
 == Test di unità
 Mirano a verificare il funzionamento corretto dei componenti _software_ più piccoli e indipendenti, sviluppati principalmente nella fase di progettazione.
-// Da completare con tutti i test
+
+// TODO parlare un po' di mock ?
+
+=== Test di unità del simulatore
+I test di unità del simulatore sono finalizzati a verificare il corretto funzionamento delle classi e dei metodi che compongono il simulatore, garantendo che ciascuna funzionalità sia implementata in modo corretto e che il simulatore sia in grado di simulare il comportamento dei sensori.
+
+// TODO capire cosa fare con i test per far fallire il sistema ma che non hanno eccezioni attive al momento
+
+#table(
+  columns: 3,
+  align: (center, left, center),
+  fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
+  table.header[*Codice test*][*Descrizione*][*Stato*],
+    // `GeoPoint`
+    [TU-1], [Verifica che il costruttore della classe `GeoPoint` inizializza correttamente gli attributi `latitude` e `longitude`], [Verificare],
+    [TU-2], [Verifica che i metodi `getLatitude` e `getLongitude` restituiscano correttamente i valori di latitudine e longitudine dell'oggetto `GeoPoint`], [Verificare],
+    [TU-3], [Verifica che il metodo `radiusKmToGeoPoint` converta correttamente un raggio in chilometri in un oggetto `GeoPoint`], [Verificare],
+    [TU-4], [Verifica che il metodo `radiusKmToGeoPoint` restituisca la relativa eccezione se il raggio usato è maggiore di 1000], [Verificare],
+    [TU-5], [Verifica che il metodo `radiusKmToGeoPoint` restituisca la relativa eccezione se il raggio usato è maggiore di 300], [Verificare],
+    [TU-6], [Verifica che il metodo `generateRandomPoint` generi correttamente un punto casuale all'interno di un raggio specificato da un oggetto `GeoPoint`], [Verificare],
+
+    // Rent
+    [TU-], [Verifica che il costruttore della classe `Rent` inizializzi correttamente gli attributi `id` e `tracker`], [Verificare],
+    [TU-], [Verifica che il metodo `activate` registri correttamente l'oggetto `Rent` come osservatore nel `tracker` e attivi il `tracker`], [Verificare],
+    [TU-], [Verifica che il metodo `updateTrackEnded` notifichi correttamente la fine del noleggio], [Verificare],
+    [TU-], [Verifica che il metodo getId restituisca correttamente l'`id` del noleggio], [Verificare],
+    
+    // `RentSubject`
+    [TU-], [Verifica che il metodo `register` della classe `RentSubject` registri correttamente un osservatore], [Verificare],
+    [TU-], [Verifica che il metodo `notifyRentEnded` della classe `RentSubject` generi un errore se non è stato registrato alcun osservatore], [Verificare],
+    [TU-], [Verifica che il metodo `notifyRentEnded` della classe `RentSubject` chiami correttamente il metodo `updateRentEnded` sull'osservatore registrato], [Verificare],
+
+    // `Simulator`
+    [TU-], [Verifica che il costruttore della classe `Simulator` inizializzi correttamente la lista `rentList`], [Verificare],
+    [TU-], [Verifica che il metodo `startSimulation` attivi correttamente tutti i `Rent` presenti nella lista], [Verificare],
+    [TU-], [Verifica che il metodo `startSimulation` registri correttamente il simulatore come osservatore per ogni `Rent`], [Verificare],
+    [TU-], [Verifica che il metodo `updateRentEnded` rimuova correttamente un `Rent` dalla lista quando questo termina], [Verificare],
+    [TU-], [Verifica che il metodo `updateRentEnded` generi un errore se si tenta di terminare un `Rent` che non è presente nella lista], [Verificare],
+    [TU-], [Verifica che il metodo `startRentsInRuntime` gestisca correttamente l'avvio dei `Rent` in base a un intervallo di tempo], [Verificare],
+
+    // `tracker`
+    [TU-], [Verifica che il metodo `activate` ottenga correttamente i punti della traccia e avvii il processo di connessione a Kafka], [Verificare],
+    [TU-], [Verifica che il metodo `listenToAdv` gestisca correttamente i messaggi ricevuti dal consumer Kafka], [Verificare],
+    [TU-], [Verifica che il metodo `move` gestisca correttamente lo spostamento del `tracker` lungo i punti della traccia in base a un intervallo di tempo], [Verificare],
+    
+    // `TrackerSubject`
+    [TU-], [Verifica che il metodo `register` della classe `TrackerSubject` registri correttamente un osservatore], [Verificare],
+    [TU-], [Verifica che il metodo notifyTrackEnded della classe `TrackerSubject` generi un errore se non è stato registrato alcun osservatore], [Verificare],
+    [TU-], [Verifica che il metodo notifyTrackEnded della classe `TrackerSubject` chiami correttamente il metodo `updateTrackEnded` sull'osservatore registrato], [Verificare],
+
+    // TrackerFetcher
+    [TU-], [Verifica che il metodo `fetchTrack` restituisca correttamente un array di oggetti `GeoPoint`], [Verificare],
+    [TU-], [Verifica che il metodo `fetchTrack` gestisca correttamente gli errori di richiesta HTTP], [Verificare],
+    [TU-], [Verifica che il metodo `fetchTrack` decodifichi correttamente una polilinea e la converta in un array di `GeoPoint`], [Verificare],
+    [TU-], [Verifica che il metodo `fetchTrack` campioni correttamente i punti della traccia quando il numero di punti supera il limite massimo], [Verificare],
+    [TU-], [Verifica che il metodo privato `request` restituisca correttamente una risposta HTTP valida], [Verificare],
+    
+    //[TU-], [], [Verificare],
+)
+
 
 == Test di integrazione
 Successivi ai _test_ di unità, hanno lo scopo di verificare l'interazione tra diverse unità _software_ per garantire che lavorino in sinergia per compiti specifici.
