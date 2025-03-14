@@ -90,6 +90,16 @@ In particolare l'immagine Docker utilizzata è postgis/postgis. Oltre a #box[Pos
 - Gestire campi che rappresentano coordinate geografiche (latitudine e longitudine). Nel nostro caso, vengono memorizzate le posizioni dei punti di interesse e dei mezzi noleggiati.
 - Sfruttare _query_ geospaziali (calcolo delle distanze, ricerca di punti in un certo raggio, ecc.)
 
+=== Struttura del Database
+
+Di seguito viene descritta la struttura del _database_:
+
+#v(20pt)
+#figure(
+  image("../assets/diagrams/ER-diagram.svg"),
+  caption: [Diagramma ER],
+)
+
 // SIMULATOR TECNOLOGIES //
 == Simulatore di sensori
 // TODO: aggiungere tecnologie 
