@@ -2,10 +2,11 @@
 #import "@preview/treet:0.1.1": *
 
 #show: content => verbale(
-  data: "11 marzo 2025",
+  data: "- marzo 2025",
   destinatari: ("Gruppo SWE@", "Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "Sync Lab S.r.L."),
   responsabile: "-",
   redattori: (
+    "Andrea Precoma",
     "Riccardo Milan",
   ),
   verificatori: (
@@ -15,6 +16,13 @@
   titolo: "Specifica Tecnica",
   uso: "Esterno",
   versioni: (
+    "0.2.0",
+    "14/03/2025",
+    "Andrea Precoma",
+    "Klaudio Merja",
+    [
+      - Redazione K-_architecture_
+    ],
     "0.1.0",
     "11/03/2025",
     "Riccardo Milan",
@@ -26,6 +34,8 @@
   ),
   content: content,
 )
+
+// TODO: FARE TEST GLOSSARIO PRIMA DI APPROVARE
 
 = Introduzione
 == Scopo del documento
@@ -82,7 +92,38 @@ In questa sezione vengono elencate le tecnologie scelte e le loro funzionalità 
 // ARCHITECTURE //
 = Architettura
 == Architettura logica
-== Architettura di deploy
+== Architettura di deployment
+// TODO: breve introduzione, cos'è e a cosa serve
+
+=== K-architecture
+La K-_architecture_ è un modello architetturale per l'elaborazione di dati in _streaming_. Derivante dalla #box[λ-_architecture_] la sua particolarità è l'eliminazione del _batching_ mantenendo un flusso costante di dati in _real time_.
+
+// TODO: pro/cons
+
+#figure(
+  image("../assets/img/ST/Kappa-architecture-data-flow.png", width: 80%),
+  caption: [Diagramma della K-_architecture_],
+)
+
+- *_Data source_*: la sorgente di dati è costituita dal simulatore che imita l'attivazione dei noleggi e lo spostamento degli utenti sui mezzi. I sensori inviano quindi a intervalli regolari la posizione GPS.
+
+- *_Streaming layer_*: questo livello gestisce la trasmissione in tempo reale dei dati che vengono inoltrati al _processing layer_. Lo _streaming layer_ è costituito da:
+  
+  - *Apache Kafka*: sistema di messaggistica distribuito che permette di pubblicare, sottoscrivere e archiviare messaggi in tempo reale. Riceve i dati dal simulatore e li inserisce nei _topic_ in attesa che lo _stream processor_ nello _streaming layer_ li consumi.
+
+- *_Processing layer_*: i dati ricevuti dallo _streaming layer_ vengono processati in tempo reale prima di essere memorizzati in _database_. Il _processing layer_ è costituito da:
+
+  - *Apache Flink*: KLA AIUTAMI TU
+
+- *_Storage layer_*: la persistenza è gestita da un _database_ relazionale che archivia i dati in arrivo dal _processing layer_. Lo _storage layer_ è costituito da *PostgreSQL* affiancato da *PostGIS*, una estensione che facilita l'elaborazione di dati geospaziali.
+
+- *_Data visualization layer_*: i dati archiviati nello _storage layer_ vengono resi disponibile tramite una interfaccia grafica. Costituito da *Grafana* questo _layer_ recupera le informazioni dal _database_ a intervalli regolari ravvicinati in modo da aggiornare rapidamente l'interfaccia ai nuovi cambiamenti.
+
+=== Flusso dati
+Il diagramma sottostante descrive il precorso dei dati tra i _layer_ del sistema e le relative elaborazioni.
+
+[IMG KLA CHE SI FA LA CERETTA]
+
 == Design patterns
 
 // FUNCTIONAL REQUIRIMETS //
