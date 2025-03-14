@@ -80,6 +80,9 @@ In questa sezione vengono elencate le tecnologie scelte e le loro funzionalità 
 === ESLint
 // Libreria per scrivere i test sul simulatore
 
+// == Simulatore
+// === Inversify per la versione?
+
 // DATABASE TECNOLOGIES //
 == Database
 === PostgreSQL
@@ -481,7 +484,7 @@ simulator.startSimulation();
 - *EnvManager*: espone l'accesso per le variabili d'ambiente. Per utilizzarene una è sufficiente importare il modulo e richiamare `env.VAR_NAME`.
 #codly(header: [*config/EnvManager.ts*])
 ```ts
-dotenv.config({ path: './src/config/env-var.env' });
+dotenv.config({ path: './src/config/.env' });
 export const env = process.env;
 ```
 
