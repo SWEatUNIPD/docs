@@ -50,7 +50,7 @@ La prima occorrenza di un termine definito all'interno del glossario presente al
 === Riferimenti informativi
 - Glossario (v2.0.0) \ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/glossario_ver2.0.0.pdf")
 - Capitolato C4 - Sync Lab S.r.l. (ultimo accesso 11/03/2025 \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
-- Guida ufficiale per l'installazione di #rifGlossario("Docker") (ultimo accesso 11/03/2025) \ #formatLink(url: "https://docs.docker.com/engine/install")
+- Guida ufficiale per l'installazione di Docker (ultimo accesso 11/03/2025) \ #formatLink(url: "https://docs.docker.com/engine/install")
 
 
 = Tecnologie
