@@ -119,7 +119,7 @@ Quando un progetto è costituito da un numero considerevole di componenti risult
 Il gruppo ha deciso di utilizzare la libreria Inversify per gestire la _dependency injection_ nel servizio del simulatore. Possedendo delle annotazioni specifiche lo strumento di *IoC* (_Inversion of Control_) ha agevolato l'implementazione del _design pattern_. È stato infatti sufficiente contrassegnare le dipendenze con delle annotazioni (`@Injectable` e `@Inject`) e definire la risoluzione nel _file_ #box[`client/src/config/Inversify.config.ts`].
 
 ==== Concetti principali di Inversify ed esempio di utilizzo <inversify-2>
-Adottando il _dependency injection design pattern_ le dipendenze sono dichiarate come parametri nel costruttore annotate da `@Inject('serviceId')` e le relative classi devono essere contrassegnate da `@Injectable()`. In un _file_ di configurazione poi deve essere dichiarato il _container_ e i _binding_ tra i serviceId e le classi "iniettabili".
+Adottando il _design pattern dependency injection_ le dipendenze sono dichiarate come parametri nel costruttore annotate da `@Inject('serviceId')` e le relative classi devono essere contrassegnate da `@Injectable()`. In un _file_ di configurazione poi deve essere dichiarato il _container_ e i _binding_ tra i serviceId e le classi "iniettabili".
 
 #codly(header: [*Tracker.ts*])
 ```ts
@@ -152,8 +152,7 @@ const rent = container.get(Rent);
 ```
 
 ==== Integrazione del design pattern nel progetto <inversify-3>
-Nel servizio del simulatore sono state risolte le dipendenze tra il simulatore e la lista di noleggi, il singolo noleggio e il sensore. Nel _file_ di configurazione è stato personalizzato il _binding_ poiché nel caso del simulatore si necessita di una lista di oggetti, negli altri è richiesto l'id che non è possibile "iniettare" automaticamente.
-// TODO: VEDI API KLA
+Nel servizio del simulatore sono state risolte le dipendenze tra i sensori e il _manager_ di Apache Kafka, tra il simulatore e la lista di sensori. Nel _file_ di configurazione è stato personalizzato il _binding_ poiché entrambi richiedono delle precedenti impostazioni che non sono possibili da "iniettare" automaticamente.
 
 Le classi e di conseguenza la _dependency injection_ sono state configurate nel seguente modo. Per evitare incongruenze tra i _serviceId_ delle classi "iniettabili" è stata crata una mappa univoca.
 
@@ -161,9 +160,7 @@ Le classi e di conseguenza la _dependency injection_ sono state configurate nel 
 ```ts
 export const TYPES = {
   KafkaManager: Symbol.for('KafkaManager'),
-  Tracker: Symbol.for('Tracker'),
-  Rent: Symbol.for('Rent'),
-  RentList: Symbol.for('RentList')
+  TrackerMap: Symbol.for('TrackerMap')
 };
 ```
 
@@ -174,6 +171,7 @@ export class KafkaManager {
   constructor(
       private kafka: Kafka
   ) { }
+
   ...
 }
 ```
@@ -182,6 +180,8 @@ export class KafkaManager {
 ```ts
 @Injectable()
 export class Tracker extends TrackerSubject {
+  ...
+
   constructor(
     private id: string,
     @inject(TYPES.KafkaManager)
@@ -189,21 +189,7 @@ export class Tracker extends TrackerSubject {
   ) {
     super();
   }
-  ...
-}
-```
 
-#codly(header: [*Rent.ts*])
-```ts
-@Injectable()
-export class Rent extends RentSubject implements RentObserver {
-  constructor(
-    private id: string,
-    @Inject(TYPES.Tracker)
-    private tracker: Tracker
-  ) {
-    super();
-  }
   ...
 }
 ```
@@ -211,15 +197,21 @@ export class Rent extends RentSubject implements RentObserver {
 #codly(header: [*Simulator.ts*])
 ```ts
 export class Simulator implements SimulatorObserver {
+  ...
+
   constructor(
-    @Inject(TYPES.RentList)
-    private rentList: Rent[]
-  ) { }
+    @inject(TYPES.TrackerMap)
+    private trackerMap: Map<string, Tracker>
+  ) {
+    ...
+  }
+
   ...
 }
 ```
 
-Poiché i _bind_ di `KafkaManager`, `Tracker`, `Rent` e `RentList` non sono immediatamente risolvibili è stato necessario definirli più nel dettaglio con `toDynamicValue()`. // TODO: gli id presi da API
+Poiché i _bind_ di `KafkaManager` e `Tracker` non sono immediatamente risolvibili è stato necessario definirli con `toDynamicValue()`. Per inizializzare i sensori è stato assegnato loro un identificativo incrementale coincidente con quelli in _database_.
+
 Il _bind_ di `KafkaManager` e `Simulator` è stato contrassegnato dalla funzione `inSingletonScope()` per assicurare che esista una sola istanza per tipo.
 
 #codly(header: [*config/Inversify.config.ts*])
@@ -239,31 +231,17 @@ container
   .inSingletonScope();
 
 container
-  .bind<Tracker>(TYPES.Tracker)
-  .toDynamicValue((context: ResolutionContext) => {
-    const kafkaManager: KafkaManager = 
+  .bind<Map<string, Tracker>>(TYPES.TrackerMap)
+  .toDynamicValue((context: ResolutionContext): Map<string, Tracker> => {
+    const kafkaManager: KafkaManager =
       context.get<KafkaManager>(TYPES.KafkaManager);
-    const tracker: Tracker = new Tracker(uuidv4(), kafkaManager);
-    return tracker;
-  });
-
-container
-  .bind<Rent>(TYPES.Rent)
-  .toDynamicValue((context: ResolutionContext) => {
-    const tracker: Tracker = context.get<Tracker>(TYPES.Tracker);
-    const rent: Rent = new Rent(uuidv4(), tracker);
-    return rent;
-  });
-
-container
-  .bind<Rent[]>(TYPES.RentList)
-  .toDynamicValue((context: ResolutionContext) => {
-    let rentList: Rent[] = [];
-    for (let i = 0; i < Number(env.INIT_RENT_COUNT); i++) {
-      const rent: Rent = context.get<Rent>(TYPES.Rent);
-      rentList.push(rent);
+    let trackerMap: Map<string, Tracker> = new Map();
+    for (let i = 1; i <= Number(env.INIT_TRACKER_COUNT); i++) {
+      const id = i.toString();
+      const tracker: Tracker = new Tracker(id, kafkaManager);
+      trackerMap.set(id, tracker);
     }
-    return rentList;
+    return trackerMap;
   });
 
 container.bind(Simulator).toSelf().inSingletonScope();
@@ -281,10 +259,10 @@ simulator.startSimulation();
 Può essere che alcune componenti debbano mantenere un'integrità per tutta l'esecuzione del prodotto, non possono quindi esistere diverse istanze con diversi valori. Il _design pattern Singleton_ assicura che ovunque si acceda al componente venga restituita sempre la stessa istanza.
 
 ==== Implementazione del singleton
-Il gruppo è consapevole della potenziale fallacità di questo _design pattern_ in quanto due processi potrebbero concorrere alla stessa risorsa e, in particolari situazioni, far generare due istanze. Per minimizzare gli errori è stato scelto di demandare il lavoro alla libreria Inversify (spiegata nel dettaglio nelle #link(<inversify-1>)[sez. SISTEMARE] e #link(<inversify-2>)[sez. SISTEMARE]).
+Il gruppo è consapevole della potenziale fallacità di questo _design pattern_ in quanto due processi potrebbero concorrere alla stessa risorsa e, in particolari situazioni, far generare due istanze. Per minimizzare gli errori è stato scelto di demandare il lavoro alla libreria Inversify (spiegata nel dettaglio nelle #link(<inversify-1>)[sez. 3.3.1.1] e #link(<inversify-2>)[sez. 3.3.1.2]).
 
 ==== Integrazione del design pattern nel progetto
-Come anticipato nella #link(<inversify-3>)[sez. SISTEMARE] è stata dichiarata la risoluzione della dipendenza nel _file_ `client/src/config/Inversify.config.ts` e le componenti interessate, quindi `KafkaManager` e `Simulator` sono state contrassegnate dalla funzione `inSingletonScope()`.
+Come anticipato nella #link(<inversify-3>)[sez. 3.3.1.3] è stata dichiarata la risoluzione della dipendenza nel _file_ `client/src/config/Inversify.config.ts` e le componenti interessate, quindi `KafkaManager` e `Simulator` sono state contrassegnate dalla funzione `inSingletonScope()`.
 
 #codly(
   header: [*config/Inversify.config.ts*],
@@ -317,89 +295,61 @@ container.bind(Simulator).toSelf().inSingletonScope();
 Il _design pattern Observer_ risolve un problema legato alla reattività in seguito alla notifica di alcuni cambi di stato. Il cambiamento in una componente provoca una notifica a tutti i suoi osservatori, cioè chi è in ascolto. Ricevuto il segnale questi osservatori si aggiornano in base al nuovo stato dell'emittente. Per evitare una dipendenza circolare nella classe astratta ereditata dall'emittente viene aggiunto un "_setter_" con il quale gli ascoltatori possono iscriversi alla lista.
 
 ==== Implementazione dell'observer
-Il simulatore gestisce i noleggi attivi quindi deve rimanere in ascolto dei loro cambi di stato. Allo stesso modo i noleggi, che controllano i sensori, devono essere informati quando questi terminano il tracciato. Viene quindi conveniente utilizzare il _design pattern Observer_ per risolvere queste esigenze: al completamento del percorso `Tracker` notifica `Rent` il quale notifica a sua volta `Simulator` che chiude il noleggio rimuovendolo dalla lista.
-// TODO: Rent è passacarte?
+Il simulatore gestisce i noleggi e i relativi mezzi attivi quindi deve rimanere in ascolto dei loro cambi di stato. Viene quindi conveniente utilizzare il _design pattern Observer_ per risolvere questa esigenza: al completamento del percorso `Tracker` notifica a `Simulator` di chiudere il noleggio e rendere nuovamente disponibile il mezzo (quindi il sensore).
 
 ==== Integrazione del design pattern nel progetto
-Ad ogni `Subject` è stato assegnato l'osservatore come attributo (non una lista di osservatori perché deve esistere un solo simulatore per tutti i noleggi e un solo sensore è installato sul mezzo col quale è fatto partire il noleggio), il metodo per registrare l'osservatore e quello per notificarlo. Gli `Observer` contengono il metodo per riceve la notifica che se necessario accetta nei parametri le informazioni per aggiornare l'osservatore. Non è stato necessario aggiungere un metodo `getState()` ai `Subject` perché nel caso del simulatore sarebbe necessario sapere al momento della notifica l'identificativo del noleggio per richiamare il `getState()` dall'elemento nella lista dei noleggi; a questo punto tuttavia l'informazione dell'identificatore è già presente nel parametro del metodo `update()` quindi non ha più valenza recuperare lo stato del noleggio. Nel caso dei noleggi invece non ci sono proprio informazioni da recuperare.
+A `TrackerSubject` è stato assegnato l'osservatore come attributo (non una lista perché deve esistere un solo simulatore nel sistema), il metodo per registrare l'osservatore e quello per notificarlo. `SimulatorObserver` contiene il metodo per ricevere la notifica accettando come parametro l'identificativo del sensore. È stato omesso un metodo `getState()` a `TrackerSubject` perché per richiamarlo sarebbe necessario conoscere l'identificativo del sensore in modo da selezionarlo dalla mappa (`trackerMap`); a questo punto tuttavia l'informazione dell'identificativo è già presente nel parametro del metodo `update()` quindi non ha più valenza recuperare lo stato del sensore.
 
-#codly(header: [*RentObserver.ts*])
-```ts
-export interface RentObserver {
-  updateTrackEnded(): void;
-}
-```
+Il metodo `trackEndedUpdate()` è reso asincrono perché nell'implementazione deve effettuare una chiamata API al _back-end_.
 
 #codly(header: [*SimulatorObserver.ts*])
 ```ts
 export interface SimulatorObserver {
-  updateRentEnded(id: string): void;
+  trackEndedUpdate(id: string): Promise<void>;
 }
 ```
 
 #codly(header: [*TrackerSubject.ts*])
 ```ts
 export abstract class TrackerSubject {
-  private rentObserver!: RentObserver;
-
-  register(rentObserver: RentObserver): void {
-    this.rentObserver = rentObserver;
-  }
-
-  protected notifyTrackEnded(): void {
-    if (this.rentObserver == null) {
-      throw new Error(
-        `Track ended notify error: rentObserver not initialized`
-      );
-    }
-
-    this.rentObserver.updateTrackEnded();
-  }
-}
-```
-
-#codly(header: [*RentSubject.ts*])
-```ts
-export abstract class RentSubject {
   private simulatorObserver!: SimulatorObserver;
 
   register(simulatorObserver: SimulatorObserver): void {
     this.simulatorObserver = simulatorObserver;
   }
 
-  protected notifyRentEnded(id: string): void {
+  protected async notifyTrackEnded(id: string): Promise<void> {
     if (this.simulatorObserver == null) {
       throw new Error(
-        `Rent ended notify error: simulatorObserver not initialized`
+        `Track ended notify error: simulatorObserver not initialized`
       );
     }
 
-    this.simulatorObserver.updateRentEnded(id);
+    try {
+      await this.simulatorObserver.trackEndedUpdate(id);
+    } catch (err) {
+      console.error(`Error caught trying to update the tracker map.\n${err}`);
+    }
   }
 }
 ```
 
-Quando `Tracker` ha consumato tutti i punti del percorso notifica a `Rent` che ha terminato.
+Quando `Tracker` ha consumato tutti i punti del percorso notifica a `Simulator` che ha terminato.
 
 #codly(
   header: [*Tracker.ts*],
-  highlights: ((line: 14, start: 9, end: none, fill: blue),),
+  highlights: ((line: 9, start: 9, end: none, fill: blue),),
 )
 ```ts
 export class Tracker extends TrackerSubject {
   ...
-
-  async activate(): Promise<void> {
-      ...
-      await this.move(trackPoints);
-    }
 
   private async move(trackPoints: GeoPoint[]): Promise<void> {
     ...
     const intervalId = setInterval(async () => {
       if (currIndex == trackPoints.length) {
         ...
-        this.notifyTrackEnded();
+        this.notifyTrackEnded(this.id);
       }
       ...
     }, sendingIntervalMilliseconds);
@@ -407,60 +357,31 @@ export class Tracker extends TrackerSubject {
 }
 ```
 
-`Rent` appena riceve al notifica da `Tracker` FA COSE? e segnala a `Simulator` di chiudere il noleggio.
+`Simulator` quando riceve la notifica effettua una chiamata API al _back-end_ per informarlo di chiudere il noleggio, rimuove quest'ultimo dalla lista dei noleggi attivi e rende nuovamente disponibile il sensore (inteso come mezzo).
 
-#codly(
-  header: [*Rent.ts*],
-  highlights: (
-    (line: 9, start: 3, end: 26, fill: blue),
-    (line: 10, start: 5, end: none, fill: green)
-  )
-)
-```ts
-export class Rent extends RentSubject implements RentObserver {
-  ...
-
-  activate(): void {
-    this.tracker.register(this);
-    ...
-  }
-
-  updateTrackEnded(): void {
-    this.notifyRentEnded(this.id);
-  }
-  ...
-}
-```
-
-`Simulator` quando riceve la notifica da `Rent` rimuove dalla lista dei noleggi attivi quello che corrisponde all'identificativo ricevuto.
-
-#codly(
-  header: [*Simulator.ts*],
-  highlights: ((line: 12, start: 3, end: 35, fill: green),)
-)
+#codly(header: [*Simulator.ts*])
 ```ts
 export class Simulator implements SimulatorObserver {
   ...
 
-  startSimulation(): void {
-    this.rentList.forEach(rent => {
-      rent.register(this);
-      ...
-    });
-    ...
-  }
+  async trackEndedUpdate(id: string): Promise<void> {
+    try {
+      const requestUrl =
+        `http://localhost:9000/close-rent/${this.rentIdMap.get(id)}`;
+      const response = await fetch(requestUrl);
+      if (!response.ok) {
+        throw new Error(
+          `Close rent request error: ${response.status} - ${await response.text()}`
+        );
+      }
+      this.rentIdMap.delete(id);
 
-  updateRentEnded(id: string): void {
-    const endedRentIndex = this.rentList.findIndex((trk) => trk.getId() == id);
-
-    if (endedRentIndex == -1) {
-      throw new Error(
-        `Rent with id '${id}' is ended but not found in list`
-      );
+      this.trackerMap.get(id)?.setIsAvailable(true);
+    } catch (err) {
+      throw err;
     }
-
-    this.rentList.splice(endedRentIndex, 1);
   }
+  
   ...
 }
 ```
@@ -493,9 +414,7 @@ export const env = process.env;
 ```ts
 export const TYPES = {
   KafkaManager: Symbol.for('KafkaManager'),
-  Tracker: Symbol.for('Tracker'),
-  Rent: Symbol.for('Rent'),
-  RentList: Symbol.for('RentList')
+  TrackerMap: Symbol.for('TrackerMap')
 };
 ```
 
@@ -517,31 +436,16 @@ container
   .inSingletonScope();
 
 container
-  .bind<Tracker>(TYPES.Tracker)
-  .toDynamicValue((context: ResolutionContext) => {
-    const kafkaManager: KafkaManager =
-      context.get<KafkaManager>(TYPES.KafkaManager);
-    const tracker: Tracker = new Tracker(uuidv4(), kafkaManager);
-    return tracker;
-  });
-
-container
-  .bind<Rent>(TYPES.Rent)
-  .toDynamicValue((context: ResolutionContext) => {
-    const tracker: Tracker = context.get<Tracker>(TYPES.Tracker);
-    const rent: Rent = new Rent(uuidv4(), tracker);
-    return rent;
-  });
-
-container
-  .bind<Rent[]>(TYPES.RentList)
-  .toDynamicValue((context: ResolutionContext) => {
-    let rentList: Rent[] = [];
-    for (let i = 0; i < Number(env.INIT_RENT_COUNT); i++) {
-      const rent: Rent = context.get<Rent>(TYPES.Rent);
-      rentList.push(rent);
+  .bind<Map<string, Tracker>>(TYPES.TrackerMap)
+  .toDynamicValue((context: ResolutionContext): Map<string, Tracker> => {
+    const kafkaManager: KafkaManager = context.get<KafkaManager>(TYPES.KafkaManager);
+    let trackerMap: Map<string, Tracker> = new Map();
+    for (let i = 1; i <= Number(env.INIT_TRACKER_COUNT); i++) {
+      const id = i.toString();
+      const tracker: Tracker = new Tracker(id, kafkaManager);
+      trackerMap.set(id, tracker);
     }
-    return rentList;
+    return trackerMap;
   });
 
 container.bind(Simulator).toSelf().inSingletonScope();
