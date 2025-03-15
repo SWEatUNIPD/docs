@@ -408,7 +408,9 @@ Mirano a verificare il funzionamento corretto dei componenti _software_ più pic
 // TODO parlare un po' di mock ?
 
 === Test di unità del simulatore
-I test di unità del simulatore sono finalizzati a verificare il corretto funzionamento delle classi e dei metodi che compongono il simulatore, garantendo che ciascuna funzionalità sia implementata in modo corretto e che il simulatore sia in grado di simulare il comportamento dei sensori.
+I test di unità del simulatore sono finalizzati a verificare il corretto funzionamento delle classi e dei metodi che compongono il simulatore, garantendo che ciascuna funzionalità sia implementata in modo corretto.
+
+I test sono stati sviluppati utilizzando il framework `Vitest`, uno strumento moderno e performante per il testing in ambienti `TypeScript`. Questo framework offre funzionalità utili per la scrittura dei test come l'utilizzo e la gestione dei _mock_, fondamentali per isolare le singole unità di codice.
 
 // TODO capire cosa fare con i test per far fallire il sistema ma che non hanno eccezioni attive al momento
 
