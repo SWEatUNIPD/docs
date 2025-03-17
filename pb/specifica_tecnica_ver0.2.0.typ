@@ -92,14 +92,26 @@ In particolare l'immagine Docker utilizzata è postgis/postgis. Oltre a #box[Pos
 
 === Struttura del Database
 
-Di seguito viene descritta la struttura del _database_:
+Di seguito viene mostrata la struttura del _database_:
 
 #v(20pt)
 #figure(
   image("../assets/diagrams/ER-diagram.svg"),
   caption: [Diagramma ER],
 )
+#pagebreak()
+*Vincoli di integrità referenziale:*
 
+- *user_interests*.user_id → *users*.id
+- *rents*.bike_id → *bikes*.id
+- *rents*.user_id → *users*.id
+- *positions*.rent_id → *rents*.id
+- *points_of_interest*.merchant_vat → *merchants*.vat
+- *poi_hours*.poi_id → *points_of_interest*.id
+- *advertisements*.rent_id → *rents*.id
+- *advertisements*.poi_id → *points_of_interest*.id
+
+#pagebreak()
 // SIMULATOR TECNOLOGIES //
 == Simulatore di sensori
 // TODO: aggiungere tecnologie 
