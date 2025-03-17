@@ -99,17 +99,6 @@ Di seguito viene mostrata la struttura del _database_:
   image("../assets/diagrams/ER-diagram.svg"),
   caption: [Diagramma ER],
 )
-#pagebreak()
-*Vincoli di integrità referenziale:*
-
-- *user_interests*.user_id → *users*.id
-- *rents*.bike_id → *bikes*.id
-- *rents*.user_id → *users*.id
-- *positions*.rent_id → *rents*.id
-- *points_of_interest*.merchant_vat → *merchants*.vat
-- *poi_hours*.poi_id → *points_of_interest*.id
-- *advertisements*.rent_id → *rents*.id
-- *advertisements*.poi_id → *points_of_interest*.id
 
 #pagebreak()
 // SIMULATOR TECNOLOGIES //
