@@ -52,6 +52,9 @@
     "Hive MQ": "_Broker_ MQTT _open source_ ad alte prestazioni per l'IoT.",
     "Hosting": "Servizio che fornisce uno spazio _online_ per archiviare, gestire e condividere dei documenti. Nel contesto attuale viene riferito ad un _hosting_ di _repository_, un ambiente dove versionare codice sorgente e documentazione."
   },
+  "O":{
+    "Open source": "Con open source, si indica un software distribuito, in via gratuita, sotto i termini di una licenza che ne concede lo studio, l'utilizzo, la modifica e la redistribuzione."
+  },
   "K": {
     "Kubernetes": "Sistema _open source_ di orchestrazione di _container_."
   },

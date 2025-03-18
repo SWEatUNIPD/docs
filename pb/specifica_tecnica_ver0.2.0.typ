@@ -10,11 +10,21 @@
   ),
   verificatori: (
     "Klaudio Merja",
-    "Andrea Perozzo"
+    "Davide Marin",
+    "Davide Picello"
   ),
   titolo: "Specifica Tecnica",
   uso: "Esterno",
+  
   versioni: (
+    "0.2.0",
+    "18/03/2025",
+    "Riccardo Milan",
+    "Davide Marin, Davide Picello",
+    [
+      - Aggiunta sezione Grafana
+      - Aggiunta dell'espressione "open source" al glossario
+    ],
     "0.1.0",
     "11/03/2025",
     "Riccardo Milan",
@@ -60,16 +70,16 @@ In questa sezione vengono elencate le tecnologie scelte e le loro funzionalità 
 === Inversify
 // TODO: aggiungere le tecnologie usate per automatizzare i test
 
-// DATABASE TECNOLOGIES //
+// DATABASE TECHNOLOGIES //
 == Database
 === PostgreSQL
 === PostGIS
 
-// SIMULATOR TECNOLOGIES //
+// SIMULATOR TECHNOLOGIES //
 == Simulatore di sensori
 // TODO: aggiungere tecnologie 
 
-// STREAM PROCESSOR TECNOLOGIES //
+// STREAM PROCESSOR TECHNOLOGIES //
 == Stream Processor
 // TODO: aggiungere, immagino sicuramente flink ma forse c'è altro
 
@@ -78,6 +88,22 @@ In questa sezione vengono elencate le tecnologie scelte e le loro funzionalità 
 === LangChain
 // TODO: da capire se bisogna anche inserire la libreria usata per interfacciarsi con Langchain
 
+// USER INTERFACE TECHNOLOGIES//
+== Interfaccia amministratore
+L'interfaccia fornita dal _software_ deve permettere all'amministratore di visualizzare la mappa con i punti di interesse, i sensori che si muovono e gli eventuali annunci generati. Inoltre deve fornire una visualizzazione per lo storico degli annunci e una per entrare nel dettaglio di un singolo annuncio.
+Gran parte dei dati dunque devono essere analizzati e mostrati all'utente finale _in real time_. Tale necessità ha dirottato la scelta del gruppo riguardo la tecnologia da utilizzare verso #rifGlossario("Grafana").
+=== Grafana
+Grafana è una piattaforma _#rifGlossario("open source")_ per la visualizzazione e l'analisi dei dati, con cui è possibile creare _dashboard_ interattive e grafici da diverse fonti.
+==== Versione
+11.5.2
+==== Documentazione
+https://grafana.com/docs/ (ultimo accesso in data 18/03/2025)
+==== Utilizzo nel progetto
+Per l'avvio di grafana nel nostro _software_ è stata predisposta un'immagine nel file `compose.yml`, che viene avviata contestualmente al comando #rifGlossario("docker-compose"). 
+Le funzionalità principali di grafana nel nostro sistema sono:
+- Monitoraggio in tempo reale: grafana raccoglie in tempo reale i dati dei sensori registrati nel sistema, ovvero identificativo del sensore, noleggio associato ad esso, latitudine e longitudine.
+- Visualizzazione dei dati in tempo reale: i dati dei sensori raccolti in tempo reale vengono infatti mostrati in una dashboard di tipo _geomap_ interattiva, nella quale le posizioni dei sensori sono rappresentate da _layer_ di tipo _route_ e i punti di interesse e gli annunci con _layer_ di tipo _marker_.
+- Visualizzazione dei dati statici: viene messa a disposizione dell'amministratore una _dashboard_ che raccoglie lo storico degli annunci generati nel tempo; interagendo con i dati nel _database_, grafana ci permette di mostrare tutti i dati interessanti legati ad ogni annuncio.
 
 // ARCHITECTURE //
 = Architettura
