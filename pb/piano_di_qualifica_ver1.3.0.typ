@@ -526,7 +526,7 @@ Dal grafico si può notare che il valore dell'*EAC* si è avvicinato, per 4 iter
 Questi dati sottolineano il continuo automiglioramento che il team ha sempre cercato di perseguire.
 
 === PB
-
+Il grafico mostra come, dopo la quinta iterazione, il valore dell'*EAC* è rimasto molto vicino al valore ideale abbassandosi leggermente solo nell'ultimo periodo e risultando quindi inferiore al *BAC*, ma comunque al di sopra del valore minimo accettabile.
 
 #pagebreak()
 == Earned Value (MPC-EV) e Planned Value (MPC-PV)
@@ -549,6 +549,7 @@ Questi dati sottolineano il continuo automiglioramento che il team ha sempre cer
 Dal grafico si può notare che il valore dell'*EV* è cresciuto pari pari al valore del *PV*, indicando che il lavoro svolto è stato effettivamente eseguito secondo la pianificazione.
 
 === PB
+Il grafico mostra come il valore dell'*EV* abbia continuato a crescere in modo proporzionale al valore del *PV*, dimostrando che il lavoro svolto ha sempre seguito correttamente la pianificazione.
 
 #pagebreak()
 == Actual Cost (MPC-AC) e Estimate to Completion (MPC-ETC)
@@ -569,6 +570,7 @@ Dal grafico si può notare che il valore dell'*EV* è cresciuto pari pari al val
 Dal grafico si nota che il valore dell'*AC* è cresciuto in modo proporzionale alla decrescita dell'*ETC*, ed entrambi sono rimasti per tutto il tempo al di sotto del valore desiderato, cioè quello dell'*EAC*.
 
 === PB
+Dal grafico si può notare come il valore dell'*AC* abbia continuato a crescere proporzionalmente alla decrescita dell'*ETC*. Si nota inoltre come nelle ultime iterazioni la crescita dell'*AC* sia stata maggiore rispetto al primo periodo, questo dimostra che il _team_ ha avuto la possibilità di lavorare di più una volta terminati gli esami, portando ad un aumento repentino del costo reale che rimane comunque inferiore all'ideale dettato dall'*EAC*.  
 
 #pagebreak()
 == Budget Variance (MPC-BV) e Schedule Variance (MPC-SV)
@@ -593,6 +595,7 @@ Dal grafico si nota che il valore dell'*AC* è cresciuto in modo proporzionale a
 Dal grafico si può notare che le variazioni sono sempre state contenute: rientrano sempre ampiamente nei limiti accettabili e non si discostano molto dal valore ottimo. Il *BV* indica che abbiamo sempre speso leggermente oltre il _budget_ pianificato, tuttavia abbiamo una prospettiva positiva come indica il *SV*.
 
 === PB
+Il grafico mostra come fino alla settima iterazione il valore di *BV* sia sempre stato pressapoco invariato, nell'ultimo _sprint_ invece, grazie al lavoro del _team_, si è avvicinato di molto al valore del *SV*, portando quindi il _team_ ad aver speso leggermente meno rispetto al _budget_ pianificato.
 
 #pagebreak()
 == Indice di Stabilità dei Requisiti (MPC-ISR)
