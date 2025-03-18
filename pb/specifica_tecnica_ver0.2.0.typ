@@ -71,7 +71,35 @@ La prima occorrenza di un termine definito all'interno del glossario presente al
 = Tecnologie
 In questa sezione vengono elencate le tecnologie scelte e le loro funzionalità all'interno del sistema. Per chiarezza vengono divise in sezioni, dove ogni sezione è una parte del nostro _software_.
 
-// INFRASTRUCTURE AND TESTING //
+== Infrastruttura
+=== Docker
+Per lo sviluppo, il _testing_ e il rilascio del prodotto sono stati utilizzati _container_ Docker in modo tale da garantire ambienti consistenti e riproducibili. I servizi sono poi gestiti da Docker compose in una _network_ apposita.
+
+==== Docker services
+- *kafka*
+  - *Immagine*: apache/kafka:X.X.X
+  - *Riferimento*: #formatLink(url: "TODO") (ultimo accesso 18/03/2025)
+
+- *kafka-ui*
+  - *Immagine*: provectuslabs/kafka-ui:X.X.X
+  - *Riferimento*: #formatLink(url: "TODO") (ultimo accesso 18/03/2025)
+
+- *jobmanager*
+  - *Immagine*: flink:1.20.1-scala_2.12-java17
+  - *Riferimento*: #formatLink(url: "TODO") (ultimo accesso 18/03/2025)
+
+- *taskmanager*:
+  - *Immagine*: flink:1.20.1-scala_2.12-java17
+  - *Riferimento*: #formatLink(url: "TODO") (ultimo accesso 18/03/2025)
+
+- *postgis*
+  - *Immagine*: postgis/postgis:X.X.X
+  - *Riferimento*: #formatLink(url: "TODO") (ultimo accesso 18/03/2025)
+
+- *grafana*
+  - *Immagine*: rmilan/grafana-rm
+  - *Riferimento*: #formatLink(url: "TODO") (ultimo accesso 18/03/2025)
+
 == Linguaggi
 === TypeScript
 TypeScript è un _superset_ di JavaScript che supporta sia la programmazione orientata agli oggetti con classi, interfacce ed ereditarietà, sia la programmazione procedurale basata su funzioni e blocchi di istruzioni.
@@ -113,26 +141,19 @@ Creazione delle simulazioni dei noleggi e dello spostamento dei relativi mezzi.
 ==== Utilizzo nel progetto
 ==== Librerie e framework
 
-== Infrastruttura
-=== Docker
+== Data broker
+=== Apache Kafka
 
+== Stream processor
+=== Apache Flink
 
-// DATABASE TECNOLOGIES //
+== Generazione annunci
+=== LangChain
+
 == Database
 === PostgreSQL
 === PostGIS
 
-// STREAM PROCESSOR TECNOLOGIES //
-== Stream processor
-// TODO: aggiungere, immagino sicuramente flink ma forse c'è altro
-
-// LLM INTERACTION //
-== Generazione annunci
-=== LangChain
-// TODO: da capire se bisogna anche inserire la libreria usata per interfacciarsi con Langchain
-
-
-// ARCHITECTURE //
 = Architettura
 == Architettura logica
 == Architettura di deployment
