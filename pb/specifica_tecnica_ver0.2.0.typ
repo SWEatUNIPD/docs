@@ -17,6 +17,7 @@
   responsabile: "-",
   redattori: (
     "Andrea Precoma",
+    "Andrea Perozzo",
     "Riccardo Milan",
   ),
   verificatori: (
