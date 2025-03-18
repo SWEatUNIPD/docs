@@ -98,11 +98,11 @@ Grafana è una piattaforma _#rifGlossario("open source")_ per la visualizzazione
 ==== Documentazione
 https://grafana.com/docs/ (ultimo accesso in data 18/03/2025)
 ==== Utilizzo nel progetto
-Per l'avvio di grafana nel nostro _software_ è stata predisposta un'immagine nel file `compose.yml`, che viene avviata contestualmente al comando #rifGlossario("docker-compose"). 
-Le funzionalità principali di grafana nel nostro sistema sono:
-- Monitoraggio in tempo reale: grafana raccoglie in tempo reale i dati dei sensori registrati nel sistema, ovvero identificativo del sensore, noleggio associato ad esso, latitudine e longitudine.
+Per l'avvio di Grafana nel nostro _software_ è stata predisposta un'immagine nel file `compose.yml`, che viene avviata contestualmente al comando #rifGlossario("docker-compose"). 
+Le funzionalità principali di Grafana nel nostro sistema sono:
+- Monitoraggio in tempo reale: Grafana raccoglie in tempo reale i dati dei sensori registrati nel sistema, ovvero identificativo del sensore, noleggio associato ad esso, latitudine e longitudine.
 - Visualizzazione dei dati in tempo reale: i dati dei sensori raccolti in tempo reale vengono infatti mostrati in una _dashboard_ di tipo _geomap_ interattiva, nella quale le posizioni dei sensori sono rappresentate da _#rifGlossario("layer")_ di tipo _#rifGlossario("route")_ e i punti di interesse e gli annunci con _layer_ di tipo _#rifGlossario("marker")_.
-- Visualizzazione dei dati statici: viene messa a disposizione dell'amministratore una _dashboard_ che raccoglie lo storico degli annunci generati nel tempo; interagendo con i dati nel _database_, grafana ci permette di mostrare tutti i dati interessanti legati ad ogni annuncio.
+- Visualizzazione dei dati statici: viene messa a disposizione dell'amministratore una _dashboard_ che raccoglie lo storico degli annunci generati nel tempo; interagendo con i dati nel _database_, Grafana ci permette di mostrare tutti i dati interessanti legati ad ogni annuncio.
 
 // ARCHITECTURE //
 = Architettura
