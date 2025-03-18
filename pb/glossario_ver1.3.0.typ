@@ -13,7 +13,7 @@
     "18/03/2025",
     "Riccardo Milan",
     "Davide Picello",
-    [- Aggiunta l'espressione "Open source"],
+    [- Aggiunti i termini "Open source", "Route" e "Layer"],
     "1.2.0",
     "07/03/2025",
     "Klaudio Merja",

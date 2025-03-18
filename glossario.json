@@ -60,6 +60,7 @@
   },
   "L": {
     "LangChain": "_Framework open source_ per la creazione di applicazioni basate su LLM, che consente di collegare questi modelli a diverse fonti di dati e API.",
+    "Layer": "Nel contesto di grafana, un layer è un uno strato di visualizzazione che mostra uno specifico dato in un pannello della dashboard.",
     "LLM": "_Large Language Model_, modello di intelligenza artificiale addestrato su grandi quantità di testo per comprendere, generare e rispondere al linguaggio naturale, utilizzato in _chatbot_, traduttori e assistenti virtuali."
   },
   "M": {
@@ -79,7 +80,8 @@
   },
   "R": {
     "Rabbit MQ": "_Broker_ di messaggi _open source_ AMQP utilizzato per creare sistemi di messaggistica asincrona.",
-    "ROI": "Acronimo di \"_Return On Investment_:\", è un indice economico che misura la redditività di un investimento, calcolato dal rapporto tra i risultati economici ottenuti e il capitale investito."
+    "ROI": "Acronimo di \"_Return On Investment_:\", è un indice economico che misura la redditività di un investimento, calcolato dal rapporto tra i risultati economici ottenuti e il capitale investito.",
+    "Route": "Visualizzazione grafica del percorso che un sensore compie nella dashboard con la mappa."
   },
   "S": {
     "SAL": "Stato Avanzamento Lavori per misurare il progresso delle attività rispetto alla pianificazione.",
