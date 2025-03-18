@@ -9,6 +9,13 @@
   titolo: "Piano di Qualifica",
   uso: "Esterno",
   versioni: (
+    "1.3.0",
+    "18/03/2025",
+    "Davide Marin",
+    "Davide Martinelli\nDavide Picello",
+    [
+      - Aggiornamento del cruscotto di monitoraggio della qualità.
+    ],
     "1.2.0",
     "10/03/2025",
     "Davide Marin",
@@ -503,13 +510,13 @@ L'*EAC* rappresenta una stima aggiornata del costo totale previsto per completar
 
 #plotGrafico4(
   "Tabella EAC",
-  ((0, 13620.42), (1, 13402.94), (2, 13292.46), (3, 13374.76), (4, 12648.46)),
+  ((0, 13620.42), (1, 13402.94), (2, 13292.46), (3, 13374.76), (4, 12648.46), (5, 12719.71), (6, 12751.12), (7, 12466.44)), 
   "EAC",
-  ((0, 12740), (1, 12740), (2, 12740), (3, 12740), (4, 12740)),
+  ((0, 12740), (1, 12740), (2, 12740), (3, 12740), (4, 12740), (5, 12740), (6, 12740), (7, 12740)),
   "BAC (valore ideale)",
-  ((0, 13377), (1, 13377), (2, 13377), (3, 13377), (4, 13377)),
+  ((0, 13377), (1, 13377), (2, 13377), (3, 13377), (4, 13377), (5, 13377), (6, 13377), (7, 13377)),
   "Valore massimo accettabile",
-  ((0, 12103), (1, 12103), (2, 12103), (3, 12103), (4, 12103)),
+  ((0, 12103), (1, 12103), (2, 12103), (3, 12103), (4, 12103), (5, 12103), (6, 12103), (7, 12103)),
   "Valore minimo accettabile",
 )
 
@@ -517,6 +524,8 @@ L'*EAC* rappresenta una stima aggiornata del costo totale previsto per completar
 Dal grafico si può notare che il valore dell'*EAC* si è avvicinato, per 4 iterazioni su 5, al valore ideale del *BAC*, rimanendo sempre al di sopra del valore minimo accettabile e, per la maggior parte del tempo, al di sotto del valore massimo accettabile per arrivare, all'ultima iterazione, molto vicino al valore ideale.
 
 Questi dati sottolineano il continuo automiglioramento che il team ha sempre cercato di perseguire.
+
+=== PB
 
 
 #pagebreak()
@@ -526,18 +535,20 @@ Questi dati sottolineano il continuo automiglioramento che il team ha sempre cer
 
 #plotGrafico4(
   "Tabella EV e PV",
-  ((0, 707.78), (1, 1516.67), (2, 2184.00), (3, 3013.11), (4, 3791.67)),
-  "EV",
-  ((0, 717.89), (1, 1547.00), (2, 2345.78), (3, 3124.33), (4, 3943.33)),
+  ((0, 707.78), (1, 1516.67), (2, 2184.00), (3, 3013.11), (4, 3791.67), (5, 4105.11), (6, 6592.44), (7, 12487.22)),
   "PV",
-  ((0, 13620.42), (1, 13402.94), (2, 13292.46), (3, 13374.76), (4, 12648.46)),
+  ((0, 717.89), (1, 1547.00), (2, 2345.78), (3, 3124.33), (4, 3943.33), (5, 4256.78), (6, 6744.11), (7, 12638.89)),
+  "EV",
+  ((0, 13620.42), (1, 13402.94), (2, 13292.46), (3, 13374.76), (4, 12648.46), (5, 12719.71), (6, 12751.12), (7, 12466.44)),
   "EAC",
-  ((0, 12740), (1, 12740), (2, 12740), (3, 12740), (4, 12740)),
+  ((0, 12740), (1, 12740), (2, 12740), (3, 12740), (4, 12740), (5, 12740), (6, 12740), (7, 12740)),
   "BAC",
 )
 
 === RTB
 Dal grafico si può notare che il valore dell'*EV* è cresciuto pari pari al valore del *PV*, indicando che il lavoro svolto è stato effettivamente eseguito secondo la pianificazione.
+
+=== PB
 
 #pagebreak()
 == Actual Cost (MPC-AC) e Estimate to Completion (MPC-ETC)
@@ -546,16 +557,18 @@ Dal grafico si può notare che il valore dell'*EV* è cresciuto pari pari al val
 
 #plotGrafico3(
   "Tabella AC e ETC",
-  ((0, 767.50), (1, 1627.50), (2, 2447.50), (3, 3280.00), (4, 3915.00)),
+  ((0, 767.50), (1, 1627.50), (2, 2447.50), (3, 3280.00), (4, 3915.00), (5, 4250.00), (6, 6750.00), (7, 12367.50)),
   "AC",
-  ((0, 12852.92), (1, 11775.44), (2, 10844.96), (3, 10094.76), (4, 8733.46)),
+  ((0, 12852.92), (1, 11775.44), (2, 10844.96), (3, 10094.76), (4, 8733.46), (5, 8469.71), (6, 6001.12), (7, 98.94)),
   "ETC",
-  ((0, 13620.42), (1, 13402.94), (2, 13292.46), (3, 13374.76), (4, 12648.46)),
+  ((0, 13620.42), (1, 13402.94), (2, 13292.46), (3, 13374.76), (4, 12648.46), (5, 12719.71), (6, 12751.12), (7, 12466.44)),
   "EAC",
 )
 
 === RTB
 Dal grafico si nota che il valore dell'*AC* è cresciuto in modo proporzionale alla decrescita dell'*ETC*, ed entrambi sono rimasti per tutto il tempo al di sotto del valore desiderato, cioè quello dell'*EAC*.
+
+=== PB
 
 #pagebreak()
 == Budget Variance (MPC-BV) e Schedule Variance (MPC-SV)
@@ -564,21 +577,22 @@ Dal grafico si nota che il valore dell'*AC* è cresciuto in modo proporzionale a
 
 #plotGrafico5(
   "Tabella BV e SV",
-  ((0, -59.72), (1, -110.83), (2, -263.50), (3, -266.89), (4, -123.33)),
+  ((0, -59.72), (1, -110.83), (2, -263.50), (3, -266.89), (4, -123.33), (5, -144.89), (6, -157.56), (7, 119.72)),
   "BV",
-  ((0, 10.11), (1, 30.33), (2, 161.78), (3, 111.22), (4, 151.67)),
+  ((0, 10.11), (1, 30.33), (2, 161.78), (3, 111.22), (4, 151.67), (5, 151.67), (6, 151.67), (7, 151.67)),
   "SV",
-  ((0, 637), (1, 637), (2, 637), (3, 637), (4, 637)),
+  ((0, 637), (1, 637), (2, 637), (3, 637), (4, 637), (5, 637), (6, 637), (7, 637)),
   "Limite massimo accettabile",
-  ((0, -637), (1, -637), (2, -637), (3, -637), (4, -637)),
+  ((0, -637), (1, -637), (2, -637), (3, -637), (4, -637), (5, -637), (6, -637), (7, -637)),
   "Limite minimo accettabile",
-  ((0, 0), (1, 0), (2, 0), (3, 0), (4, 0)),
+  ((0, 0), (1, 0), (2, 0), (3, 0), (4, 0), (5, 0), (6, 0), (7, 0)),
   "Valore ottimo",
 )
 
 === RTB
 Dal grafico si può notare che le variazioni sono sempre state contenute: rientrano sempre ampiamente nei limiti accettabili e non si discostano molto dal valore ottimo. Il *BV* indica che abbiamo sempre speso leggermente oltre il _budget_ pianificato, tuttavia abbiamo una prospettiva positiva come indica il *SV*.
 
+=== PB
 
 #pagebreak()
 == Indice di Stabilità dei Requisiti (MPC-ISR)
@@ -586,11 +600,11 @@ L'*ISR* misura la stabilità dei requisiti del progetto nel tempo, valutando qua
 
 #plotGrafico3(
   "Tabella RSI",
-  ((0, 0), (1, 0), (2, 70), (3, 39), (4, 85)),
+  ((0, 0), (1, 0), (2, 70), (3, 39), (4, 85), (5, 78), (6, 100), (7, 100)),
   "RSI",
-  ((0, 75), (1, 75), (2, 75), (3, 75), (4, 75)),
+  ((0, 75), (1, 75), (2, 75), (3, 75), (4, 75), (5, 75), (6, 75), (7, 75)),
   "Valore accettabile",
-  ((0, 100), (1, 100), (2, 100), (3, 100), (4, 100)),
+  ((0, 100), (1, 100), (2, 100), (3, 100), (4, 100), (5, 100), (6, 100), (7, 100)),
   "Valore ottimo",
 )
 
@@ -605,20 +619,25 @@ Indice che valuta la leggibilità dei documenti scritti in italiano.
 
 #plotGrafico7(
   "Tabella indice Gulpease",
-  ((0, 40), (1, 40), (2, 40), (3, 40), (4, 40)),
+  ((0, 40), (1, 40), (2, 40), (3, 40), (4, 40), (5, 40), (6, 40), (7, 40)),
   "Valore accettabile",
-  ((0, 80), (1, 80), (2, 80), (3, 80), (4, 80)),
+  ((0, 80), (1, 80), (2, 80), (3, 80), (4, 80), (5, 80), (6, 80), (7, 80)),
   "Valore ottimo",
-  ((0, 0), (1, 56), (2, 54), (3, 54), (4, 53)),
+  ((0, 0), (1, 56), (2, 54), (3, 54), (4, 53), (5, 53), (6, 53), (7, 53)),
   "Analisi dei Requisiti",
-  ((0, 53), (1, 54), (2, 53), (3, 53), (4, 52)),
+  ((0, 53), (1, 54), (2, 53), (3, 53), (4, 52), (5, 52), (6, 52), (7, 52)),
   "Norme di Progetto",
-  ((0, 42), (1, 45), (2, 44), (3, 44), (4, 45)),
+  ((0, 42), (1, 45), (2, 44), (3, 44), (4, 45), (5, 49), (6, 49), (7, 49)),
   "Piano di Progetto",
-  ((0, 0), (1, 50), (2, 50), (3, 50), (4, 56)),
+  ((0, 0), (1, 50), (2, 50), (3, 50), (4, 56), (5, 48), (6, 48), (7, 48)),
   "Piano di Qualifica",
-  ((0, 45), (1, 45), (2, 45), (3, 45), (4, 45)),
+  ((0, 45), (1, 45), (2, 45), (3, 45), (4, 45), (5, 45), (6, 45), (7, 45)),
   "Glossario",
+  ((5, 64), (6, 64), (7, 64)),
+  "Manuale Utente",
+  ((5, 62), (6, 62), (7, 62)),
+  "Specifica Tecnica",
+  
 )
 
 === RTB
@@ -633,20 +652,24 @@ Metriche che misurano la presenza di errori ortografici nei documenti, valutando
 
 #plotGrafico7(
   "Tabella correttezza ortografica",
-  ((0, 0), (1, 0), (2, 0), (3, 0), (4, 0)),
+  ((0, 0), (1, 0), (2, 0), (3, 0), (4, 0), (5, 0), (6, 0), (7, 0)),
   "Valore accettabile",
-  ((0, 0), (1, 0), (2, 0), (3, 0), (4, 0)),
+  ((0, 0), (1, 0), (2, 0), (3, 0), (4, 0), (5, 0), (6, 0), (7, 0)),
   "Valore ottimo",
-  ((0, 1), (1, 3), (2, 3), (3, 0), (4, 0)),
+  ((0, 1), (1, 3), (2, 3), (3, 0), (4, 0), (5, 0), (6, 0), (7, 0)),
   "Analisi dei Requisiti",
-  ((0, 2), (1, 2), (2, 4), (3, 0), (4, 0)),
+  ((0, 2), (1, 2), (2, 4), (3, 0), (4, 0), (5, 0), (6, 0), (7, 0)),
   "Norme di Progetto",
-  ((0, 1), (1, 2), (2, 2), (3, 0), (4, 0)),
+  ((0, 1), (1, 2), (2, 2), (3, 0), (4, 0), (5, 0), (6, 0), (7, 0)),
   "Piano di Progetto",
-  ((0, 2), (1, 1), (2, 1), (3, 0), (4, 0)),
+  ((0, 2), (1, 1), (2, 1), (3, 0), (4, 0), (5, 0), (6, 0), (7, 0)),
   "Piano di Qualifica",
-  ((0, 1), (1, 1), (2, 1), (3, 0), (4, 0)),
+  ((0, 1), (1, 1), (2, 1), (3, 0), (4, 0), (5, 0), (6, 0), (7, 0)),
   "Glossario",
+  ((5, 0), (6, 0), (7, 0)),
+  "Manuale Utente",
+  ((5, 0), (6, 0), (7, 0)),
+  "Specifica Tecnica",
 )
 
 === RTB
@@ -659,16 +682,16 @@ Percentuale di metriche di qualità definite per il progetto che sono state sodd
 
 #plotGrafico3(
   "Tabella PMS",
-  ((0, 70), (1, 70), (2, 80), (3, 90), (4, 100)),
+  ((0, 70), (1, 70), (2, 80), (3, 90), (4, 100), (5, 100), (6, 100), (7, 100)),
   "PMS",
-  ((0, 80), (1, 80), (2, 80), (3, 80), (4, 80)),
+  ((0, 80), (1, 80), (2, 80), (3, 80), (4, 80), (5, 80), (6, 80), (7, 80)),
   "Valore accettabile",
-  ((0, 100), (1, 100), (2, 100), (3, 100), (4, 100)),
+  ((0, 100), (1, 100), (2, 100), (3, 100), (4, 100), (5, 100), (6, 100), (7, 100)),
   "Valore ottimo",
 )
 
 === RTB
-Possiamo notare come la percentuale di metriche soddisfatte sia quasi sempre cresciuta, ma comunque mai diminuita, raggiungendo addirittura il valore ottimo nell'ultimo _sprint_. Questo simboleggia una grande attenzione da parte del team nel perseguire la qualità del progetto, tramite autovalutaizone ed automiglioramento.
+Possiamo notare come la percentuale di metriche soddisfatte sia quasi sempre cresciuta, ma comunque mai diminuita, raggiungendo addirittura il valore ottimo nell'ultimo _sprint_. Questo simboleggia una grande attenzione da parte del team nel perseguire la qualità del progetto, tramite autovalutazione ed automiglioramento.
 
 
 #pagebreak()
