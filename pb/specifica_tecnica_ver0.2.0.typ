@@ -1,16 +1,29 @@
 #import "/templates/template.typ": *
-#import "@preview/treet:0.1.1": *
+#import "@preview/codly:1.2.0": *
+#import "@preview/codly-languages:0.1.1": *
+
+#show: codly-init.with()
+#codly(
+  languages: (
+    ts: (name: "TypeScript"),
+    java: (name: "Java"),
+  ),
+  zebra-fill: none,
+)
 
 #show: content => verbale(
-  data: "11 marzo 2025",
+  data: "- marzo 2025",
   destinatari: ("Gruppo SWE@", "Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "Sync Lab S.r.L."),
   responsabile: "-",
   redattori: (
+    "Andrea Precoma",
     "Riccardo Milan",
   ),
   verificatori: (
+    "Andrea Perozzo",
     "Klaudio Merja",
-    "Andrea Perozzo"
+    "Davide Picello",
+    "Riccardo Milan"
   ),
   titolo: "Specifica Tecnica",
   uso: "Esterno",
@@ -36,7 +49,7 @@
 
 = Introduzione
 == Scopo del documento
-Lo scopo principale di questo documento è quello di esporre le tecnologie, le scelte architetturali e i _design patterns_ utilizzati dal gruppo per realizzare l'infrastruttura informatica che compone il prodotto _software_ NearYou. Quindi vengono esposte le motivazioni e le descrizioni delle scelte corredate ove possibile da diagrammi di classi per spiegare nella maniera più chiara possibile il _software_. 
+Lo scopo principale di questo documento è quello di esporre le tecnologie, le scelte architetturali e i _design patterns_ utilizzati dal gruppo per realizzare l'infrastruttura informatica che compone il prodotto _software_ NearYou. Quindi vengono esposte le motivazioni e le descrizioni delle scelte corredate ove possibile da diagrammi di classi per spiegare nella maniera più chiara possibile il _software_.
 
 == Glossario
 Per evitare eventuali ambiguità e incomprensioni sulla terminologia adottata nella documentazione redatta dal gruppo, viene fornito un glossario.
@@ -45,36 +58,48 @@ La prima occorrenza di un termine definito all'interno del glossario presente al
 == Riferimenti
 === Riferimenti normativi
 - Norme di Progetto (v2.0.0) \ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/norme_di_progetto_ver2.0.0.pdf")
-- Regolamento del progetto didattico, _slide_ 23 (ultimo accesso 11/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")
-- Capitolato C4 - Sync Lab S.r.l. (ultimo accesso 11/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
+- Regolamento del progetto didattico, _slide_ 23 (ultimo accesso 18/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")
+- Capitolato C4 - Sync Lab S.r.l. (ultimo accesso 18/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
 === Riferimenti informativi
 - Glossario (v2.0.0) \ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/glossario_ver2.0.0.pdf")
-- Capitolato C4 - Sync Lab S.r.l. (ultimo accesso 11/03/2025 \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
-- Guida ufficiale per l'installazione di Docker (ultimo accesso 11/03/2025) \ #formatLink(url: "https://docs.docker.com/engine/install")
+- Capitolato C4 - Sync Lab S.r.l. (ultimo accesso 18/03/2025 \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
+- Guida ufficiale per l'installazione di Docker (ultimo accesso 18/03/2025) \ #formatLink(url: "https://docs.docker.com/engine/install")
 
 
 = Tecnologie
 In questa sezione vengono elencate le tecnologie scelte e le loro funzionalità all'interno del sistema. Per chiarezza vengono divise in sezioni, dove ogni sezione è una parte del nostro _software_.
 
-// INFRASTRUCTURE AND TESTING //
-== Infrastruttura e test
+== Infrastruttura
 === Docker
-// libreria per automatizzare i test sul simulatore 
-=== Vitest 
-// analisi statica del codice
-=== ESLint
-// Libreria per scrivere i test sul simulatore
-=== Inversify
-// TODO: aggiungere le tecnologie usate per automatizzare i test
+==== Docker services
 
-// DATABASE TECNOLOGIES //
+== Linguaggi
+=== TypeScript
+==== Versione
+==== Utilizzo nel progetto
+==== Librerie e framework
+
+=== Java
+==== Versione
+==== Utilizzo nel progetto
+==== Librerie e framework
+
+== Data broker
+=== Apache Kafka
+
+== Stream processor
+=== Apache Flink
+
+== Generazione annunci
+=== LangChain
+
 == Database
 === PostgreSQL
-Per la gestione dei dati relazionali è stato scelto #rifGlossario("PostgreSQL"), un #rifGlossario("DBMS") che offre affidabilità, prestazioni e una certa flessibilità per l'estensione tramite _plugin_ ed estensioni. Nel nostro contesto, PostgreSQL:
+Per la gestione dei dati relazionali è stato scelto PostgreSQL, un DBMS che offre affidabilità, prestazioni e una certa flessibilità per l'estensione tramite _plugin_ ed estensioni. Nel nostro contesto, PostgreSQL:
 
-- Viene eseguito all'interno di un container Docker (immagine #rifGlossario("postgis")/postgis, vedere sezione #link(<2.2.2>)[2.2.2]).
-- È configurato tramite #rifGlossario("docker-compose") (nel file `compose.yml`) con il _mapping_ della porta 5432:5432, utente e _password_ specificati nelle variabili d'ambiente.
-- All'avvio esegue automaticamente lo _script_ `create.sql` che crea lo schema del #rifGlossario("database") (tabelle, relazioni, ecc.) secondo le esigenze del progetto.
+- Viene eseguito all'interno di un container Docker (immagine postgis/postgis, vedere sezione #link(<2.2.2>)[2.2.2]).
+- È configurato tramite docker-compose (nel file `compose.yml`) con il _mapping_ della porta 5432:5432, utente e _password_ specificati nelle variabili d'ambiente.
+- All'avvio esegue automaticamente lo _script_ `create.sql` che crea lo schema del _database_ (tabelle, relazioni, ecc.) secondo le esigenze del progetto.
 
 Nel _file_ `create.sql`:
 
@@ -89,7 +114,7 @@ In particolare l'immagine Docker utilizzata è postgis/postgis. Oltre a #box[Pos
 
 - Gestire campi che rappresentano coordinate geografiche (latitudine e longitudine). Nel nostro caso, vengono memorizzate le posizioni dei punti di interesse e dei mezzi noleggiati.
 - Sfruttare _query_ geospaziali (calcolo delle distanze, ricerca di punti in un certo raggio, ecc.)
-
+2
 === Struttura del Database
 
 Di seguito viene mostrata la struttura del _database_:
@@ -101,25 +126,37 @@ Di seguito viene mostrata la struttura del _database_:
 )
 
 #pagebreak()
-// SIMULATOR TECNOLOGIES //
-== Simulatore di sensori
-// TODO: aggiungere tecnologie 
 
-// STREAM PROCESSOR TECNOLOGIES //
-== Stream Processor
-// TODO: aggiungere, immagino sicuramente flink ma forse c'è altro
-
-// LLM INTERACTION //
-== Generazione annunci
-=== LangChain
-// TODO: da capire se bisogna anche inserire la libreria usata per interfacciarsi con Langchain
-
-
-// ARCHITECTURE //
 = Architettura
 == Architettura logica
-== Architettura di deploy
-== Design patterns
+== Architettura di deployment
+== Design pattern
+=== Dependency injection
+
+==== Implementazione della dependency injection <inversify-1>
+
+==== Concetti principali di Inversify ed esempio di utilizzo <inversify-2>
+
+==== Integrazione del design pattern nel progetto <inversify-3>
+
+=== Singleton
+
+==== Implementazione del singleton
+
+==== Integrazione del design pattern nel progetto
+
+=== Observer
+
+==== Implementazione dell'observer
+
+==== Integrazione del design pattern nel progetto
+
+== Diagrammi delle classi
+=== Simulatore
+
+==== Componenti di utilità
+
+=== Stream processor
 
 // FUNCTIONAL REQUIRIMETS //
 = Stato dei requisiti funzionali
