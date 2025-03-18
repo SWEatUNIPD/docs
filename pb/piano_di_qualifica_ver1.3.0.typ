@@ -410,12 +410,12 @@ Precedono i _test_ di accettazione e si concentrano sul sistema nel suo compless
   fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
   table.header[*Codice test*][*Descrizione*][*Requisito*][*Stato*],
     [TS-1], [Verificare che ciascun sensore invii in modo corretto i propri dati di identificazione e di localizzazione geospaziale, a intervalli di tempo regolari], [ROF-1], [Non eseguito],
-    [TS-2], [Verificare che la _dashboard_ sia accessibile solo previa autenticazione da parte dell'amministratore con le proprie credenziali], [ROF-2], [Non eseguito],
+    [TS-2], [Verificare che la _#rifGlossario("dashboard")_ sia accessibile solo previa autenticazione da parte dell'amministratore con le proprie credenziali], [ROF-2], [Non eseguito],
     [TS-3], [Verificare che l'amministratore abbia fornito un indirizzo _e-mail_ per procedere con l'autenticazione], [ROF-3], [Non eseguito],
     [TS-4], [Verificare che l'amministratore abbia fornito una password per procedere con l'autenticazione], [ROF-4], [Non eseguito],
     [TS-5], [Verificare che, se l'amministratore inserisce almeno una credenziale errata, l'autenticazione fallisca e venga ritornato un messaggio di errore], [ROF-5], [Non eseguito],
     [TS-6], [Verificare che l'amministratore possa visualizzare sulla _dashboard_ principale una mappa geografica], [ROF-6], [Non eseguito],
-    [TS-7], [Verificare che l'amministratore possa visualizzare, tramite dei _marker_ sulla mappa geografica, la posizione di tutti i punti di interesse], [ROF-7], [Non eseguito],
+    [TS-7], [Verificare che l'amministratore possa visualizzare, tramite dei _#rifGlossario("marker")_ sulla mappa geografica, la posizione di tutti i punti di interesse], [ROF-7], [Non eseguito],
     [TS-8], [Verificare che l'amministratore possa visualizzare sulla mappa il percorso eseguito da ciascun noleggio attivo in quel momento], [ROF-8], [Non eseguito],
     [TS-9], [Verificare che l'amministratore possa visualizzare, lungo il percorso di ciascun noleggio attivo, un _marker_ specifico se quella posizione ricevuta dal sensore non ha provocato una richiesta di generazione annuncio], [ROF-9], [Non eseguito],
     [TS-10], [Verificare che l'amministratore possa visualizzare, lungo il percorso di ciascun noleggio attivo, un _marker_ specifico se quella posizione ricevuta dal sensore ha provocato una richiesta di generazione annuncio e questa ha avuto successo, ovvero l'utente è stato ritenuto interessato e quindi ha ricevuto l'annuncio], [ROF-10], [Non eseguito],
@@ -439,8 +439,8 @@ Precedono i _test_ di accettazione e si concentrano sul sistema nel suo compless
     [TS-28], [Verificare che l'amministratore, interagendo con la mappa geografica visualizzata, possa fare _zoom in_ e _zoom out_ sulla visuale], [ROF-28], [Non eseguito],
     [TS-29], [Verificare che l'amministratore riceva un messaggio di errore del tipo "il _server_ non risponde" se il sistema non risponde alle richieste], [ROF-29], [Non eseguito],
     [TS-30], [Verificare che l'amministratore riceva un messaggio di errore del tipo "connessione persa" se la connessione al sistema viene persa o è scarsa], [ROF-30], [Non eseguito],
-    [TS-31], [Verificare che l'amministratore riceva un messaggio di errore del tipo "sensore malfunzionante" se il sensore non invia dati GPS in modo corretto o non invia dati per un certo periodo di tempo prolungato], [ROF-31], [Non eseguito],
-    [TS-32], [Verificare che l'amministratore riceva un messaggio di errore del tipo "generazione impossibile dell'annuncio" se il sistema non è in grado di connettersi o comunicare con il servizio di LLM], [ROF-32], [Non eseguito],
+    [TS-31], [Verificare che l'amministratore riceva un messaggio di errore del tipo "sensore malfunzionante" se il sensore non invia dati #rifGlossario("GPS") in modo corretto o non invia dati per un certo periodo di tempo prolungato], [ROF-31], [Non eseguito],
+    [TS-32], [Verificare che l'amministratore riceva un messaggio di errore del tipo "generazione impossibile dell'annuncio" se il sistema non è in grado di connettersi o comunicare con il servizio di #rifGlossario("LLM")], [ROF-32], [Non eseguito],
     [TS-33], [Verificare che esista almeno un generatore di dati GPS che simuli il comportamento di un sensore che interagisce col sistema], [ROF-33], [Non eseguito],
     [TS-34], [Verificare che il generatore di dati GPS generi dei percorsi realistici, ovvero che seguono vie o strade percorribili], [ROF-34], [Non eseguito],
     [TS-35], [Verificare che l'amministratore possa accedere dalla _dashboard_ alla sezione dedicata allo storico degli annunci], [RDF-1], [Non eseguito],
@@ -488,7 +488,7 @@ Condotti insieme all'azienda proponente, servono a garantire che il prodotto fin
     table.header[*Codice _test_*][*Descrizione*][*Stato*],
     [TA-01], [Verificare che all'apertura il prodotto mostri una mappa che visualizza in tempo reale i percorsi compiuti dai mezzi con noleggio attivo], [Non eseguito],
     [TA-02], [Verificare che il prodotto supporti la generazione tramite LLM di annunci personalizzati per ogni utente in base ai suoi dati di profilazione], [Non eseguito],
-    [TA-03], [Verificare che il prodotto supporti la visualizzazione dei _#rifGlossario("marker")_ corrispondenti ai mezzi con noleggio attivi all'interno della mappa], [Non eseguito],
+    [TA-03], [Verificare che il prodotto supporti la visualizzazione dei _marker_ corrispondenti ai mezzi con noleggio attivi all'interno della mappa], [Non eseguito],
     [TA-04], [Verificare che il prodotto supporti la visualizzazione dei _marker_ corrispondenti ai punti di interesse all'interno della mappa], [Non eseguito],
     [TA-05], [Verificare che il prodotto supporti la visualizzazione dei _marker_ corrispondenti agli annunci generati all'interno della mappa], [Non eseguito],
     [TA-06], [Verificare che il prodotto supporti la visualizzazione dei _marker_ corrispondenti alle tentate generazioni di annunci all'interno della mappa], [Non eseguito],
@@ -496,7 +496,7 @@ Condotti insieme all'azienda proponente, servono a garantire che il prodotto fin
     [TA-08], [Verificare che il prodotto supporti la visualizzazione dei dati degli annunci generati per ogni rispettivo _marker_ sulla mappa], [Non eseguito],
     [TA-09], [Verificare che il prodotto supporti la visualizzazione dei dati delle mancate generazioni di annunci per ogni rispettivo _marker_ sulla mappa], [Non eseguito],
     [TA-10], [Verificare che il prodotto supporti una generazione realistica dei percorsi dei noleggi], [Non eseguito],
-    [TA-11], [Verificare che il prodotto/sistema storicizzi in un _database_ i dati simulati e quelli generati dalla LLM], [Non eseguito],
+    [TA-11], [Verificare che il prodotto/sistema storicizzi in un _#rifGlossario("database")_ i dati simulati e quelli generati dalla LLM], [Non eseguito],
     [TA-12], [Verificare che il prodotto sia fruibile con le ultime versioni dei _browser web_ principali, nello specifico: Google Chrome, Mozilla Firefox, Microsoft Edge e Safari], [Non eseguito],
   ),
 )
@@ -595,7 +595,7 @@ Dal grafico si può notare come il valore dell'*AC* abbia continuato a crescere 
 Dal grafico si può notare che le variazioni sono sempre state contenute: rientrano sempre ampiamente nei limiti accettabili e non si discostano molto dal valore ottimo. Il *BV* indica che abbiamo sempre speso leggermente oltre il _budget_ pianificato, tuttavia abbiamo una prospettiva positiva come indica il *SV*.
 
 === PB
-Il grafico mostra come fino alla settima iterazione il valore di *BV* sia sempre stato pressapoco invariato, nell'ultimo _sprint_ invece, grazie al lavoro del _team_, si è avvicinato di molto al valore del *SV*, portando quindi il _team_ ad aver speso leggermente meno rispetto al _budget_ pianificato.
+Il grafico mostra come fino alla settima iterazione il valore di *BV* sia sempre stato pressapoco invariato, nell'ultimo _#rifGlossario("sprint")_ invece, grazie al lavoro del _team_, si è avvicinato di molto al valore del *SV*, portando quindi il gruppo ad aver speso leggermente meno rispetto al _budget_ pianificato.
 
 #pagebreak()
 == Indice di Stabilità dei Requisiti (MPC-ISR)
@@ -615,6 +615,9 @@ L'*ISR* misura la stabilità dei requisiti del progetto nel tempo, valutando qua
 Il grafico è per la maggior parte ascendente tranne nella quarta iterazione, dove i requisiti hanno subito una forte modifica dovuta al colloquio con il professor Cardin, al quale sono seguite numerose correzioni.
 
 Nell'ultimo periodo, quindi quello relativo alla consegna RTB, si è finalmente raggiunto il valore accettabile dell'ISR.
+
+=== PB
+Il grafico mostra come il valore dell'*ISR* sia sempre rimasto, dopo il quinto _sprint_, al di sopra del valore accettabile, con una piccola ricaduta nella sesta iterazione dovuta ad alcune modifiche che il gruppo ha dovuto sostenere, ma che una volta eseguite hanno portato l'indice *IRS* ad essere stabile nel valore ottimo.
 
 #pagebreak()
 == Indice Gulpease (MPC-IG)
@@ -648,6 +651,8 @@ Si nota che i valori sono sempre sopra al valore accettabile, anche se ancora be
 
 Il valore nullo di alcuni documenti alla prima iterazione è dovuto alla stesura tardiva degli stessi. Lo sviluppo della documentazione si è infatti svolta parallelamente alle lezioni di teoria del corso.
 
+=== PB
+Il grafico mostra come i valori di tutti i documenti siano sempre stati al di sopra del valore accettabile e con poche variazioni presenti, anche se la maggior parte rimane abbastanza distante dal valore ottimo. Da notare come i valori dei nuovi documenti, quali Manuale Utente e Specifica Tecnica, siano più alti rispetto ai documenti precedenti, questo dimostra la maggiore esperienza acquisita dal gruppo nella stesura della documentazione.
 
 #pagebreak()
 == Correttezza Ortografica (MPC-CO)
@@ -678,6 +683,8 @@ Metriche che misurano la presenza di errori ortografici nei documenti, valutando
 === RTB
 Da questo grafico si nota che tutti i documenti hanno avuto alcuni difetti ortografici, quasi sempre di battitura. Tuttavia nel quarto _#rifGlossario("sprint")_, con l'introduzione di uno strumento di _spell checking_, siamo riusciti a raggiungere il valore ottimo di zero errori per tutti i documenti.
 
+=== PB
+Dal grafico si può notare come tutti i documenti, compresi quelli nuovi, siano rimasti con il numero ottimo di zero errori per il resto del periodo di lavoro, questo dimostra che lo strumento di _spell checking_ scelto dal gruppo ha funzionato come desiderato e che il _team_ è stato costante nel suo utilizzo.
 
 #pagebreak()
 == Percentuale di Metriche Soddisfatte (MPC-PMS)
@@ -696,6 +703,8 @@ Percentuale di metriche di qualità definite per il progetto che sono state sodd
 === RTB
 Possiamo notare come la percentuale di metriche soddisfatte sia quasi sempre cresciuta, ma comunque mai diminuita, raggiungendo addirittura il valore ottimo nell'ultimo _sprint_. Questo simboleggia una grande attenzione da parte del team nel perseguire la qualità del progetto, tramite autovalutazione ed automiglioramento.
 
+=== PB
+Il grafico mostra come la percentuale delle metriche soddisfatte sia sempre rimasta pari al valore ottimo dal quinto _sprint_ in poi, dimostrando che il _team_ è sempre riuscito a lavorare mantenendo una buona qualità del progetto.
 
 #pagebreak()
 == Efficienza Temporale (MPC-ET)
@@ -705,3 +714,6 @@ Misura l'efficacia nell'utilizzo del tempo per completare le attività, confront
 La metriche in esame è stata confermata solo al termine del quarto _sprint_. Risulta quindi impossibile recuperare i valori passati e crearne un grafico, anche se siamo confidenti nel dire che il valore è progressivamente diminuito. Il _team_ ha imparato sempre più a lavorare asincronamente massimizzando il tempo produttivo. Il gruppo confida sarà una metrica utile in fase di PB.
 
 L'unico valore che possiamo dare di questa metrica è quindi quello dell'ultima iterazione, pari ad un rapporto di 1.8, che è ampiamente al di sotto del valore accettabile di 3 ma ancora al di sopra del valore desiderabile di 1.
+
+
+=== PB
