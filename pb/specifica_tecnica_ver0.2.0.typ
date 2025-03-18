@@ -93,7 +93,7 @@ In questa sezione vengono elencate le tecnologie scelte e le loro funzionalità 
 L'interfaccia fornita dal _software_ deve permettere all'amministratore di visualizzare la mappa con i punti di interesse, i sensori che si muovono e gli eventuali annunci generati. Inoltre deve fornire una visualizzazione per lo storico degli annunci e una per entrare nel dettaglio di un singolo annuncio.
 Gran parte dei dati dunque deve essere analizzata e mostrata all'utente finale in _real time_. Tale necessità ha dirottato la scelta del gruppo riguardo la tecnologia da utilizzare verso #rifGlossario("Grafana").
 === Grafana
-Grafana è una piattaforma _#rifGlossario("open source")_ per la visualizzazione e l'analisi dei dati, con cui è possibile creare _dashboard_ interattive e grafici da diverse fonti.
+Grafana è una piattaforma _#rifGlossario("open source")_ per la visualizzazione e l'analisi dei dati, con cui è possibile creare _#rifGlossario("dashboard")_ interattive e grafici da diverse fonti.
 ==== Versione
 11.5.2
 ==== Documentazione
