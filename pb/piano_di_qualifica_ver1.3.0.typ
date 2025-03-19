@@ -710,10 +710,21 @@ Il grafico mostra come la percentuale delle metriche soddisfatte sia sempre rima
 == Efficienza Temporale (MPC-ET)
 Misura l'efficacia nell'utilizzo del tempo per completare le attività, confrontando il tempo effettivamente impiegato con quello previsto.
 
+#plotGrafico3(
+  "Tabella ET",
+  ((4, 1.8), (5, 1.9), (6, 1.6), (7, 1.3)),
+  "ET",
+  ((4, 3), (5, 3), (6, 3), (7, 3)),
+  "Valore accettabile",
+  ((4, 1), (5, 1), (6, 1), (7, 1)),
+  "Valore ottimo",
+)
+
 === RTB
 La metriche in esame è stata confermata solo al termine del quarto _sprint_. Risulta quindi impossibile recuperare i valori passati e crearne un grafico, anche se siamo confidenti nel dire che il valore è progressivamente diminuito. Il _team_ ha imparato sempre più a lavorare asincronamente massimizzando il tempo produttivo. Il gruppo confida sarà una metrica utile in fase di PB.
 
 L'unico valore che possiamo dare di questa metrica è quindi quello dell'ultima iterazione, pari ad un rapporto di 1.8, che è ampiamente al di sotto del valore accettabile di 3 ma ancora al di sopra del valore desiderabile di 1.
 
-
 === PB
+Il grafico dimostra come negli ultimi periodo, una volta raggiunta una certa conoscenza delle tecnologie da utilizzare, il _team_ sia riuscito a lavorare in modo più efficiente, mantenendo il valore dell'efficienza temporale al di sotto del valore accettabile di 3 e molto vicino al valore ottimo di 1, arrivando a 1.3 nell'ultima iterazione. Il valore si era leggermente alzato durante il quinto _sprint_ a causa di cambiamenti nelle tecnologie adottate dopo il colloquio RTB, ma il _team_ è riuscito a recuperare velocemente.
+
