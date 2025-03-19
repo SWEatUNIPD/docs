@@ -12,7 +12,7 @@
   redattori: ("Picello Davide",),
   titolo: "SAL intermedio ottavo sprint",
   verificatori: (
-    "TODO",
+    "Andrea Precoma",
   ),
   content: content,
   firmaRichiesta: true,
