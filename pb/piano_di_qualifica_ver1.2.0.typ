@@ -9,6 +9,13 @@
   titolo: "Piano di Qualifica",
   uso: "Esterno",
   versioni: (
+    "1.3.0",
+    "19/03/2025",
+    "Davide Picello",
+    "",
+    [
+      - Aggiunta dei _test_ di unità del simulatore
+    ],
     "1.2.0",
     "10/03/2025",
     "Davide Marin",
@@ -395,7 +402,7 @@ Dove tipologia può essere:
 - *S*: _test_ di sistema
 - *A*: _test_ di accettazione
 
-E dove numero è un numero progressivo che identifica il _test_ all'interno della tipologia.
+E dove "numero" è un *numero progressivo* che identifica il _test_ all'interno della tipologia.
 
 Inoltre ogni test ha uno stato che ne indica l'esito:
 - *Verificato*: il _test_ è stato eseguito e ha dato esito positivo
@@ -410,7 +417,7 @@ Mirano a verificare il funzionamento corretto dei componenti _software_ più pic
 === Test di unità del simulatore
 I test di unità del simulatore sono finalizzati a verificare il corretto funzionamento delle classi e dei metodi che compongono il simulatore, garantendo che ciascuna funzionalità sia implementata in modo corretto.
 
-I test sono stati sviluppati utilizzando il framework `Vitest`, uno strumento moderno e performante per il testing in ambienti `TypeScript`. Questo framework offre funzionalità utili per la scrittura dei test come l'utilizzo e la gestione dei _mock_, fondamentali per isolare le singole unità di codice.
+I test sono stati sviluppati utilizzando il framework `Vitest`, uno strumento moderno e performante per il testing in ambiente `TypeScript`. Questo framework offre funzionalità utili per la scrittura dei test come l'utilizzo e la gestione dei _mock_, fondamentali per isolare le singole unità di codice.
 
 // TODO capire cosa fare con i test per far fallire il sistema ma che non hanno eccezioni attive al momento
 
@@ -420,48 +427,41 @@ I test sono stati sviluppati utilizzando il framework `Vitest`, uno strumento mo
   fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
   table.header[*Codice test*][*Descrizione*][*Stato*],
     // `GeoPoint`
-    [TU-1], [Verifica che il costruttore della classe `GeoPoint` inizializza correttamente gli attributi `latitude` e `longitude`], [Verificare],
-    [TU-2], [Verifica che i metodi `getLatitude` e `getLongitude` restituiscano correttamente i valori di latitudine e longitudine dell'oggetto `GeoPoint`], [Verificare],
-    [TU-3], [Verifica che il metodo `radiusKmToGeoPoint` converta correttamente un raggio in chilometri in un oggetto `GeoPoint`], [Verificare],
-    [TU-4], [Verifica che il metodo `radiusKmToGeoPoint` restituisca la relativa eccezione se il raggio usato è maggiore di 1000], [Verificare],
-    [TU-5], [Verifica che il metodo `radiusKmToGeoPoint` restituisca la relativa eccezione se il raggio usato è maggiore di 300], [Verificare],
-    [TU-6], [Verifica che il metodo `generateRandomPoint` generi correttamente un punto casuale all'interno di un raggio specificato da un oggetto `GeoPoint`], [Verificare],
-
-    // Rent
-    [TU-], [Verifica che il costruttore della classe `Rent` inizializzi correttamente gli attributi `id` e `tracker`], [Verificare],
-    [TU-], [Verifica che il metodo `activate` registri correttamente l'oggetto `Rent` come osservatore nel `tracker` e attivi il `tracker`], [Verificare],
-    [TU-], [Verifica che il metodo `updateTrackEnded` notifichi correttamente la fine del noleggio], [Verificare],
-    [TU-], [Verifica che il metodo getId restituisca correttamente l'`id` del noleggio], [Verificare],
-    
-    // `RentSubject`
-    [TU-], [Verifica che il metodo `register` della classe `RentSubject` registri correttamente un osservatore], [Verificare],
-    [TU-], [Verifica che il metodo `notifyRentEnded` della classe `RentSubject` generi un errore se non è stato registrato alcun osservatore], [Verificare],
-    [TU-], [Verifica che il metodo `notifyRentEnded` della classe `RentSubject` chiami correttamente il metodo `updateRentEnded` sull'osservatore registrato], [Verificare],
+    // Questi due a momento sono in un unico test. Da separare ?
+    [TU-1], [Verifica che il costruttore della classe `GeoPoint` inizializza correttamente un oggetto `GeoPoint` ed i suoi attributi `latitude` e `longitude`], [Verificato],
+    [TU-], [Verifica che i metodi `getLatitude` e `getLongitude` restituiscano correttamente i valori di latitudine e longitudine dell'oggetto `GeoPoint`], [Verificato],
+    [TU-], [Verifica che il metodo `radiusKmToGeoPoint` converta correttamente un raggio in chilometri in un oggetto `GeoPoint`], [Verificato],
+    [TU-], [Verifica che il metodo `radiusKmToGeoPoint` restituisca la relativa eccezione se il raggio usato è maggiore di 1000], [Verificato],
+    [TU-], [Verifica che il metodo `radiusKmToGeoPoint` restituisca la relativa eccezione se il raggio usato è maggiore di 300], [Verificato],
+    [TU-], [Verifica che il metodo `generateRandomPoint` generi correttamente un punto casuale all'interno di un raggio specificato da un oggetto `GeoPoint`], [Verificato],
 
     // `Simulator`
-    [TU-], [Verifica che il costruttore della classe `Simulator` inizializzi correttamente la lista `rentList`], [Verificare],
-    [TU-], [Verifica che il metodo `startSimulation` attivi correttamente tutti i `Rent` presenti nella lista], [Verificare],
-    [TU-], [Verifica che il metodo `startSimulation` registri correttamente il simulatore come osservatore per ogni `Rent`], [Verificare],
-    [TU-], [Verifica che il metodo `updateRentEnded` rimuova correttamente un `Rent` dalla lista quando questo termina], [Verificare],
-    [TU-], [Verifica che il metodo `updateRentEnded` generi un errore se si tenta di terminare un `Rent` che non è presente nella lista], [Verificare],
-    [TU-], [Verifica che il metodo `startRentsInRuntime` gestisca correttamente l'avvio dei `Rent` in base a un intervallo di tempo], [Verificare],
+    [TU-], [Verifica che il metodo `startSimulation` avvii correttamente la simulazione con il numero iniziale di _rent_ specificato], [Verificato],
+    [TU-], [Verifica che il metodo `startRent` avvii correttamente un _rent_ utilizzando un tracker disponibile], [Verificato],
+    [TU-], [Verifica che il metodo `startRent` lanci un'eccezione se non ci sono tracker disponibili], [Verificato],
+    [TU-], [Verifica che il metodo `startRentsInRuntime` avvii correttamente i _rent_ a _runtime_ con intervalli casuali], [Verificato],
+    [TU-], [Verifica che il metodo `trackEndedUpdate` gestisca correttamente l'aggiornamento della fine di un percorso], [Verificato],
+    [TU-], [Verifica che il metodo `trackEndedUpdate` gestisca correttamente un errore durante l'aggiornamento della fine di un percorso], [Verificato],
 
     // `tracker`
-    [TU-], [Verifica che il metodo `activate` ottenga correttamente i punti della traccia e avvii il processo di connessione a Kafka], [Verificare],
-    [TU-], [Verifica che il metodo `listenToAdv` gestisca correttamente i messaggi ricevuti dal consumer Kafka], [Verificare],
-    [TU-], [Verifica che il metodo `move` gestisca correttamente lo spostamento del `tracker` lungo i punti della traccia in base a un intervallo di tempo], [Verificare],
+    [TU-], [Verifica che il metodo `activate` chiami correttamente i metodi `fetchTrack` e `move`], [Verificato],
+    [TU-], [Verifica che il metodo `activate` gestisca correttamente un errore quando `fetchTrack` genera un'eccezione], [Verificato],
+    [TU-], [Verifica che il metodo `listenToAdv` inizializzi e connetta correttamente il consumer], [Verificato],
+    [TU-], [Verifica che il metodo `listenToAdv` gestisca correttamente un errore quando `initAndConnectConsumer` genera un'eccezione], [Verificato],
+    [TU-], [Verifica che il metodo `getIsAvailable` restituisca correttamente lo stato di disponibilità del tracker], [Verificato],
     
     // `TrackerSubject`
-    [TU-], [Verifica che il metodo `register` della classe `TrackerSubject` registri correttamente un osservatore], [Verificare],
-    [TU-], [Verifica che il metodo notifyTrackEnded della classe `TrackerSubject` generi un errore se non è stato registrato alcun osservatore], [Verificare],
-    [TU-], [Verifica che il metodo notifyTrackEnded della classe `TrackerSubject` chiami correttamente il metodo `updateTrackEnded` sull'osservatore registrato], [Verificare],
+    [TU-], [Verifica che il metodo `register` registri correttamente un osservatore], [Verificato],
+    [TU-], [Verifica che il metodo `notifyTrackEnded` generi un errore se chiamato senza un osservatore registrato], [Verificato],
+    [TU-], [Verifica che il metodo `notifyTrackEnded` notifichi correttamente l'osservatore quando una traccia termina], [Verificato],
+    [TU-], [Verifica che il metodo `notifyTrackEnded` gestisca correttamente gli errori durante la notifica all'osservatore], [Verificato],
 
     // TrackerFetcher
-    [TU-], [Verifica che il metodo `fetchTrack` restituisca correttamente un array di oggetti `GeoPoint`], [Verificare],
-    [TU-], [Verifica che il metodo `fetchTrack` gestisca correttamente gli errori di richiesta HTTP], [Verificare],
+    //[TU-], [Verifica che il metodo `fetchTrack` restituisca correttamente un array di oggetti `GeoPoint`], [Verificare],
+    [TU-], [Verifica che il metodo `fetchTrack` gestisca correttamente gli errori di richiesta HTTP], [Verificato],
     [TU-], [Verifica che il metodo `fetchTrack` decodifichi correttamente una polilinea e la converta in un array di `GeoPoint`], [Verificare],
-    [TU-], [Verifica che il metodo `fetchTrack` campioni correttamente i punti della traccia quando il numero di punti supera il limite massimo], [Verificare],
-    [TU-], [Verifica che il metodo privato `request` restituisca correttamente una risposta HTTP valida], [Verificare],
+    [TU-], [Verifica che il metodo `fetchTrack` campioni correttamente i punti della traccia quando il numero di punti supera il limite massimo], [Verificato],
+    [TU-], [Verifica che il metodo privato `request` restituisca correttamente una risposta HTTP valida], [Verificato],
     
     //[TU-], [], [Verificare],
 )
