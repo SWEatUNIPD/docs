@@ -52,10 +52,3 @@ Questo incontro è stato fissato mercoledì 19 marzo alle 16:30 presso la sede d
 
 == Conclusioni
 L'azienda si è mostrata molto soddisfatta del lavoro svolto, rinnovando l'invito all'incontro finale in programma questa settimana.
-
-= Tabella delle decisioni
-#backlog(content: (
-  link("https://github.com/SWEatUNIPD/docs/issues/191")[D191],
-  "Davide Picello",
-  "Redazione VE_2025-03-18",
-))
