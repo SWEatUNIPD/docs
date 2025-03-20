@@ -116,15 +116,31 @@ In particolare l'immagine Docker utilizzata è postgis/postgis. Oltre a #box[Pos
 - Gestire campi che rappresentano coordinate geografiche (latitudine e longitudine). Nel nostro caso, vengono memorizzate le posizioni dei punti di interesse e dei mezzi noleggiati.
 - Sfruttare _query_ geospaziali (calcolo delle distanze, ricerca di punti in un certo raggio, ecc.)
 
-=== Struttura del Database
+=== Struttura del database
+
+==== Diagramma ER
 
 Di seguito viene mostrata la struttura del _database_:
 
 #v(20pt)
 #figure(
-  image("../assets/diagrams/ER-diagram.svg"),
+  image("../assets/diagrams/ER-diagram.png"),
   caption: [Diagramma ER],
 )
+
+==== Scelte progettuali
+
+Alcune scelte progettuali, apparentemente ridondanti, sono state adottate per soddisfare specifiche esigenze, in particolare per strumenti come Grafana.
+
+- *Chiavi primarie composte e ridondanza di identificatori:* La tabella `positions` utilizza una chiave primaria composta da `time_stamp` e `rent_id`. Questo garantisce l'univocità di ogni posizione registrata per un noleggio e permette una gestione temporale più efficiente delle informazioni. Nella tabella `advertisements`, `position_time_stamp` e `position_rent_id` fungono da chiavi esterne per collegare un annuncio alla posizione di un noleggio. Sebbene possa sembrare ridondante, questa scelta è necessaria per correlare annunci pubblicitari con la cronologia di utilizzo delle biciclette.
+
+- *Scelta delle chiavi primarie:* La tabella `points_of_interest` utilizza `latitude` e `longitude` come chiavi primarie per garantire che ogni punto di interesse sia univocamente identificabile in base alla sua posizione. Questo evita la creazione di ID artificiali e semplifica l'integrazione con strumenti GIS e di analisi spaziale. Tuttavia, in altre tabelle come `rents` o `advertisements`, è stato mantenuto un ID univoco separato per facilitare le relazioni con altre entità e garantire _query_ più efficienti su database di grandi dimensioni.
+
+- *Ripetizione di attributi per performance e analisi dati:* Alcuni ID e coordinate geografiche sono replicati in più tabelle (es. `latitude_poi` e `longitude_poi` in `advertisements` e `poi_hours`) per facilitare le _query_ su strumenti di analisi. Questa ridondanza riduce la necessità di complesse _join_ su tabelle di grandi dimensioni, migliorando le prestazioni. L'uso di indici spaziali (come `idx_points_of_interest_location`) è pensato per ottimizzare la ricerca di punti di interesse sulla base della loro posizione geografica.
+
+- *Gestione dei punti di interesse e orari di apertura:* La tabella `points_of_interest` utilizza `latitude` e `longitude` come chiavi primarie per garantire l'unicità spaziale dei punti di interesse, evitando duplicazioni indesiderate. La tabella `poi_hours` include `day_of_week` come parte della chiave primaria per gestire gli orari di apertura dei punti di interesse in modo strutturato ed efficiente.
+
+In conclusione, alcune scelte apparentemente ridondanti sono state adottate con lo scopo di migliorare la scalabilità, la velocità di interrogazione dei dati e la compatibilità con strumenti di analisi esterni.
 
 #pagebreak()
 
