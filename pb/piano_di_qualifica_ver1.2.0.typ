@@ -429,45 +429,50 @@ I test sono stati sviluppati utilizzando il framework `Vitest`, uno strumento mo
     // `GeoPoint`
     // Questi due a momento sono in un unico test. Da separare ?
     [TU-1], [Verifica che il costruttore della classe `GeoPoint` inizializza correttamente un oggetto `GeoPoint` ed i suoi attributi `latitude` e `longitude`], [Verificato],
-    [TU-], [Verifica che i metodi `getLatitude` e `getLongitude` restituiscano correttamente i valori di latitudine e longitudine dell'oggetto `GeoPoint`], [Verificato],
-    [TU-], [Verifica che il metodo `radiusKmToGeoPoint` converta correttamente un raggio in chilometri in un oggetto `GeoPoint`], [Verificato],
-    [TU-], [Verifica che il metodo `radiusKmToGeoPoint` restituisca la relativa eccezione se il raggio usato è maggiore di 1000], [Verificato],
-    [TU-], [Verifica che il metodo `radiusKmToGeoPoint` restituisca la relativa eccezione se il raggio usato è maggiore di 300], [Verificato],
-    [TU-], [Verifica che il metodo `generateRandomPoint` generi correttamente un punto casuale all'interno di un raggio specificato da un oggetto `GeoPoint`], [Verificato],
+    [TU-2], [Verifica che i metodi `getLatitude` e `getLongitude` restituiscano correttamente i valori di latitudine e longitudine dell'oggetto `GeoPoint`], [Verificato],
+    [TU-3], [Verifica che il metodo `radiusKmToGeoPoint` converta correttamente un raggio in chilometri in un oggetto `GeoPoint`], [Verificato],
+    [TU-4], [Verifica che il metodo `radiusKmToGeoPoint` restituisca la relativa eccezione se il raggio usato è maggiore di 1000], [Verificato],
+    [TU-5], [Verifica che il metodo `radiusKmToGeoPoint` restituisca la relativa eccezione se il raggio usato è maggiore di 300], [Verificato],
+    [TU-6], [Verifica che il metodo `generateRandomPoint` generi correttamente un punto casuale all'interno di un raggio specificato da un oggetto `GeoPoint`], [Verificato],
 
     // `Simulator`
-    [TU-], [Verifica che il metodo `startSimulation` avvii correttamente la simulazione con il numero iniziale di _rent_ specificato], [Verificato],
-    [TU-], [Verifica che il metodo `startRent` avvii correttamente un _rent_ utilizzando un tracker disponibile], [Verificato],
-    [TU-], [Verifica che il metodo `startRent` lanci un'eccezione se non ci sono tracker disponibili], [Verificato],
-    [TU-], [Verifica che il metodo `startRentsInRuntime` avvii correttamente i _rent_ a _runtime_ con intervalli casuali], [Verificato],
-    [TU-], [Verifica che il metodo `trackEndedUpdate` gestisca correttamente l'aggiornamento della fine di un percorso], [Verificato],
-    [TU-], [Verifica che il metodo `trackEndedUpdate` gestisca correttamente un errore durante l'aggiornamento della fine di un percorso], [Verificato],
+    [TU-7], [Verifica che il metodo `startSimulation` avvii correttamente la simulazione con il numero iniziale di _rent_ specificato], [Verificato],
+    [TU-8], [Verifica che il metodo `startRent` avvii correttamente un _rent_ utilizzando un tracker disponibile], [Verificato],
+    [TU-9], [Verifica che il metodo `startRent` lanci un'eccezione se non ci sono tracker disponibili], [Verificato],
+    [TU-10], [Verifica che il metodo `startRentsInRuntime` avvii correttamente i _rent_ a _runtime_ con intervalli casuali], [Verificato],
 
-    [TU-], [Verifica che il metodo `startSimulation` lanci un eccezione se si verifica un errore durante l'avvio di un nuovo noleggio], [Non implementato],
-    [TU-], [Verifica che il metodo `startRentsInRuntime` lanci un eccezione se si verifica un errore durante l'avvio di un nuovo noleggio], [Non implementato],
-    [TU-], [Verifica che il metodo `trackEndedUpdate` lanci un eccezione se si verifica un generico errore all'interno del metodo], [Non implementato],
+    [TU-11], [Verifica che il metodo `startSimulation` lanci un eccezione se si verifica un errore durante l'avvio di un nuovo noleggio], [Non implementato],
+    [TU-12], [Verifica che il metodo `startRentsInRuntime` lanci un eccezione se si verifica un errore durante l'avvio di un nuovo noleggio], [Non implementato],
 
 
     // `tracker`
-    [TU-], [Verifica che il metodo `activate` chiami correttamente i metodi `fetchTrack` e `move`], [Verificato],
-    [TU-], [Verifica che il metodo `activate` gestisca correttamente un errore quando `fetchTrack` genera un'eccezione], [Verificato],
-    [TU-], [Verifica che il metodo `listenToAdv` inizializzi e connetta correttamente il consumer], [Verificato],
-    [TU-], [Verifica che il metodo `listenToAdv` gestisca correttamente un errore quando `initAndConnectConsumer` genera un'eccezione], [Verificato],
-    [TU-], [Verifica che il metodo `getIsAvailable` restituisca correttamente lo stato di disponibilità del tracker], [Verificato],
-    [TU-], [Verifica che quando il `tracker` raggiunge l'ultimo punto della traccia il metodo `move` disconnetta correttamente il `producer` ed il `consumer` `Kafka`], [Non implementato],
-    [TU-], [Verifica che il metodo `move` lanci un eccezione se si verifica un generico errore all'interno del metodo], [Non implementato],
+    [TU-13], [Verifica che il metodo `activate` chiami correttamente i metodi `fetchTrack` e `move`], [Verificato],
+    [TU-14], [Verifica che il metodo `activate` gestisca correttamente un errore quando `fetchTrack` genera un'eccezione], [Verificato],
+    [TU-15], [Verifica che il metodo `listenToAdv` inizializzi e connetta correttamente il consumer], [Verificato],
+    [TU-16], [Verifica che il metodo `listenToAdv` gestisca correttamente un errore quando `initAndConnectConsumer` genera un'eccezione], [Verificato],
+    [TU-17], [Verifica che il metodo `getIsAvailable` restituisca correttamente lo stato di disponibilità del tracker], [Verificato],
+    [TU-18], [Verifica che il messaggio venga correttamente formato e inviato tramite il `KafkaManager`], [Verificato],
 
-    // `TrackerSubject`
-    [TU-], [Verifica che il metodo `register` registri correttamente un osservatore], [Verificato],
-    [TU-], [Verifica che il metodo `notifyTrackEnded` generi un errore se chiamato senza un osservatore registrato], [Verificato],
-    [TU-], [Verifica che il metodo `notifyTrackEnded` notifichi correttamente l'osservatore quando una traccia termina], [Verificato],
-    [TU-], [Verifica che il metodo `notifyTrackEnded` gestisca correttamente gli errori durante la notifica all'osservatore], [Verificato],
+    [TU-19], [Verifica che quando il `tracker` raggiunge l'ultimo punto della traccia il metodo `move` disconnetta correttamente il `producer` ed il `consumer` `Kafka`], [Non implementato],
+    [TU-20], [Verifica che il metodo `move` lanci un eccezione se si verifica un generico errore all'interno del metodo], [Non implementato],
 
     // TrackerFetcher
-    [TU-], [Verifica che il metodo `fetchTrack` gestisca correttamente gli errori di richiesta HTTP], [Verificato],
-    [TU-], [Verifica che il metodo `fetchTrack` decodifichi correttamente una polilinea e la converta in un array di `GeoPoint`], [Verificare],
-    [TU-], [Verifica che il metodo `fetchTrack` campioni correttamente i punti della traccia quando il numero di punti supera il limite massimo], [Verificato],
-    [TU-], [Verifica che il metodo privato `request` restituisca correttamente una risposta HTTP valida], [Verificato],
+    [TU-21], [Verifica che il metodo `fetchTrack` gestisca correttamente gli errori di richiesta HTTP], [Verificato],
+    [TU-22], [Verifica che il metodo `fetchTrack` decodifichi correttamente una polilinea e la converta in un array di `GeoPoint`], [Verificare],
+    [TU-23], [Verifica che il metodo `fetchTrack` campioni correttamente i punti della traccia quando il numero di punti supera il limite massimo], [Verificato],
+    [TU-24], [Verifica che il metodo privato `request` restituisca correttamente una risposta HTTP valida], [Verificato],
+
+    // Kafkamanager
+    [TU-25], [Verifica che il metodo `initAndConnectProducer` sia in grado di inizializzare e connettere correttamente un produttore `Kafka`, controllando che il metodo `connect` del produttore sia stato chiamato.], [Verificato],
+    [TU-26], [Verifica che il metodo `initAndConnectProducer` gestisca correttamente gli errori di connessione, lanciando un errore quando la connessione fallisce.], [Verificato],
+    [TU-27], [Verifica che il metodo `disconnectProducer` disconnetta correttamente un produttore `Kafka`, controllando che il metodo `disconnect` del produttore sia stato chiamato.], [Verificato],
+    [TU-28], [Verifica che il metodo `disconnectProducer` gestisca correttamente gli errori di disconnessione, lanciando un errore quando la disconnessione fallisce.], [Verificato],
+    [TU-29], [Verifica che il metodo `sendMessage` invii correttamente un messaggio tramite un produttore `Kafka`, controllando che il metodo send del produttore sia stato chiamato con i parametri corretti.], [Verificato],
+    [TU-30], [Verifica che il metodo `sendMessage` gestisca correttamente gli errori durante l'invio di un messaggio, lanciando un errore quando l'invio fallisce.], [Verificato],
+    [TU-31], [Verifica che il metodo `initAndConnectConsumer` sia in grado di inizializzare e connettere correttamente un consumatore `Kafka`, controllando che i metodi `connect`, `subscribe` e `run` siano stati chiamati correttamente.], [Verificato],
+    [TU-32], [Verifica che il metodo `initAndConnectConsumer` gestisca correttamente gli errori di connessione, lanciando un errore quando la connessione fallisce.], [Verificato],
+    [TU-33], [Verifica che il metodo `disconnectConsumer` disconnetta correttamente un consumatore `Kafka`, controllando che il metodo `disconnect` del consumatore sia stato chiamato.], [Verificato],
+    [TU-34], [Verifica che il metodo `disconnectConsumer` gestisca correttamente gli errori di disconnessione, lanciando un errore quando la disconnessione fallisce.], [Verificato],
     
     //[TU-], [], [Verificare],
 )
