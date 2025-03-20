@@ -443,13 +443,20 @@ I test sono stati sviluppati utilizzando il framework `Vitest`, uno strumento mo
     [TU-], [Verifica che il metodo `trackEndedUpdate` gestisca correttamente l'aggiornamento della fine di un percorso], [Verificato],
     [TU-], [Verifica che il metodo `trackEndedUpdate` gestisca correttamente un errore durante l'aggiornamento della fine di un percorso], [Verificato],
 
+    [TU-], [Verifica che il metodo `startSimulation` lanci un eccezione se si verifica un errore durante l'avvio di un nuovo noleggio], [Non implementato],
+    [TU-], [Verifica che il metodo `startRentsInRuntime` lanci un eccezione se si verifica un errore durante l'avvio di un nuovo noleggio], [Non implementato],
+    [TU-], [Verifica che il metodo `trackEndedUpdate` lanci un eccezione se si verifica un generico errore all'interno del metodo], [Non implementato],
+
+
     // `tracker`
     [TU-], [Verifica che il metodo `activate` chiami correttamente i metodi `fetchTrack` e `move`], [Verificato],
     [TU-], [Verifica che il metodo `activate` gestisca correttamente un errore quando `fetchTrack` genera un'eccezione], [Verificato],
     [TU-], [Verifica che il metodo `listenToAdv` inizializzi e connetta correttamente il consumer], [Verificato],
     [TU-], [Verifica che il metodo `listenToAdv` gestisca correttamente un errore quando `initAndConnectConsumer` genera un'eccezione], [Verificato],
     [TU-], [Verifica che il metodo `getIsAvailable` restituisca correttamente lo stato di disponibilità del tracker], [Verificato],
-    
+    [TU-], [Verifica che quando il `tracker` raggiunge l'ultimo punto della traccia il metodo `move` disconnetta correttamente il `producer` ed il `consumer` `Kafka`], [Non implementato],
+    [TU-], [Verifica che il metodo `move` lanci un eccezione se si verifica un generico errore all'interno del metodo], [Non implementato],
+
     // `TrackerSubject`
     [TU-], [Verifica che il metodo `register` registri correttamente un osservatore], [Verificato],
     [TU-], [Verifica che il metodo `notifyTrackEnded` generi un errore se chiamato senza un osservatore registrato], [Verificato],
@@ -457,7 +464,6 @@ I test sono stati sviluppati utilizzando il framework `Vitest`, uno strumento mo
     [TU-], [Verifica che il metodo `notifyTrackEnded` gestisca correttamente gli errori durante la notifica all'osservatore], [Verificato],
 
     // TrackerFetcher
-    //[TU-], [Verifica che il metodo `fetchTrack` restituisca correttamente un array di oggetti `GeoPoint`], [Verificare],
     [TU-], [Verifica che il metodo `fetchTrack` gestisca correttamente gli errori di richiesta HTTP], [Verificato],
     [TU-], [Verifica che il metodo `fetchTrack` decodifichi correttamente una polilinea e la converta in un array di `GeoPoint`], [Verificare],
     [TU-], [Verifica che il metodo `fetchTrack` campioni correttamente i punti della traccia quando il numero di punti supera il limite massimo], [Verificato],
