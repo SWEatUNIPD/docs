@@ -743,7 +743,12 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   - Visualizzazione _e-mail_ dell'utente dall'elemento nello storico (#link(<uc40>)[UC40]).
   - Visualizzazione data e ora di tentativo di generazione annuncio dall'elemento nello storico (#link(<uc41>)[UC41]).
   - Visualizzazione _flag_ sull'elemento nello storico legato all'annuncio emesso verso un noleggio attivo (#link(<uc42>)[UC42]).
-
+#v(20pt)
+#figure(
+  image("../assets/use_cases/pb/UC34-35-36-37-38.png"),
+  caption: [Diagramma dei casi d'uso UC34, UC35, UC36, UC37, UC38],
+)
+#pagebreak()
 === UC39 - Visualizzazione nome del punto di interesse dall'elemento nello storico <uc39>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
@@ -774,28 +779,14 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   + L'amministratore visualizza la data e l'ora di tentativo di generazione dell'annuncio nell'elemento dello storico.
 
-=== UC42 - Visualizzazione flag sull'elemento nello storico legato all'annuncio emesso verso un noleggio attivo <uc42>
-- *Attore principale*: Amministratore.
-- *Precondizioni*:
-  - Il sistema tiene traccia dello stato del noleggio al quale è legato l'annuncio, se è cioè ancora attivo o meno.
-  - L'amministratore sta visualizzando un elemento nello storico.
-- *Postcondizioni*:
-  - Il sistema espone un _flag_ nel caso il noleggio al quale è legato il singolo annuncio nello storico è ancora attivo.
-- *Scenario principale*:
-  + L'amministratore visualizza il _flag_ nel caso in cui il noleggio relativo al singolo annuncio nello storico è ancora attivo.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/pb/UC34-35-36-37-38.png"),
-  caption: [Diagramma dei casi d'uso UC34, UC35, UC36, UC37, UC38],
-)
-#v(20pt)
-#figure(
-  image("../assets/use_cases/pb/UC38-39-40-41-42.png"),
-  caption: [Diagramma dei casi d'uso UC38, UC39, UC40, UC41, UC42 (continuazione di Figura 14)],
+  image("../assets/use_cases/pb/UC38-39-40-41.png"),
+  caption: [Diagramma dei casi d'uso UC38, UC39, UC40, UC41 (continuazione di Figura 14)],
 )
 #pagebreak()
 
-=== UC43 - Visualizzazione dettagli di un singolo annuncio dopo aver interagito con un elemento nello storico <uc43>
+=== UC42 - Visualizzazione dettagli di un singolo annuncio dopo aver interagito con un elemento nello storico <uc42>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema tiene traccia di tutte le informazioni degli annunci generati per gli utenti dell'amministratore.
@@ -806,14 +797,14 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore seleziona l'opzione per visualizzare i dettagli dell'annuncio desiderato.
   + Viene esposto l'annuncio insieme alle relative informazioni.
 - *Inclusioni*:
-  - Visualizzazione nome del punto di interesse dai dettagli aperti dall'elemento nello storico (#link(<uc44>)[UC44]).
-  - Visualizzazione _e-mail_ dell'utente dai dettagli aperti dall'elemento nello storico (#link(<uc45>)[UC45]).
-  - Visualizzazione data e ora di tentativo di generazione annuncio dai dettagli aperti dall'elemento nello storico (#link(<uc46>)[UC46]).
+  - Visualizzazione nome del punto di interesse dai dettagli aperti dall'elemento nello storico (#link(<uc43>)[UC43]).
+  - Visualizzazione _e-mail_ dell'utente dai dettagli aperti dall'elemento nello storico (#link(<uc44>)[UC44]).
+  - Visualizzazione data e ora di tentativo di generazione annuncio dai dettagli aperti dall'elemento nello storico (#link(<uc45>)[UC45]).
   - Visualizzazione _flag_ sugli annunci nello storico legati a noleggi attivi dai dettagli aperti dall'elemento nello storico (#link(<uc47>)[UC47]).
-  - Visualizzazione dell'annuncio dai dettagli aperti dall'elemento nello storico (#link(<uc48>)[UC48]).
-  - Visualizzazione categoria del punto di interesse collegato all'annuncio dai dettagli aperti dall'elemento nello storico (#link(<uc49>)[UC49]).
+  - Visualizzazione dell'annuncio dai dettagli aperti dall'elemento nello storico (#link(<uc46>)[UC46]).
+  - Visualizzazione categoria del punto di interesse collegato all'annuncio dai dettagli aperti dall'elemento nello storico (#link(<uc47>)[UC47]).
 
-=== UC44 - Visualizzazione nome del punto di interesse dai dettagli aperti dall'elemento nello storico <uc44>
+=== UC43 - Visualizzazione nome del punto di interesse dai dettagli aperti dall'elemento nello storico <uc43>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema tiene traccia del nome di ciascun punto di interesse.
@@ -823,7 +814,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   + L'amministratore visualizza il nome del punto di interesse nei dettagli di un elemento aperto nello storico.
 
-=== UC45 - Visualizzazione e-mail dell'utente dai dettagli aperti dall'elemento nello storico <uc45>
+=== UC44 - Visualizzazione e-mail dell'utente dai dettagli aperti dall'elemento nello storico <uc44>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema tiene traccia dell'_e-mail_ di ciascun utente.
@@ -833,7 +824,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   + L'amministratore visualizza l'_e-mail_ dell'utente nei dettagli di un elemento aperto nello storico.
 
-=== UC46 - Visualizzazione data e ora di tentativo di generazione annuncio dai dettagli aperti dall'elemento nello storico <uc46>
+=== UC45 - Visualizzazione data e ora di tentativo di generazione annuncio dai dettagli aperti dall'elemento nello storico <uc45>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema tiene traccia della data e dell'ora nelle quali il sistema ha richiesto di generare un annuncio.
@@ -843,17 +834,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   + L'amministratore visualizza la data e l'ora di tentativo di generazione annuncio nei dettagli di un elemento aperto nello storico.
 
-=== UC47 - Visualizzazione flag sugli annunci nello storico legati a noleggi attivi dai dettagli aperti dall'elemento nello storico <uc47>
-- *Attore principale*: Amministratore.
-- *Precondizioni*:
-  - Il sistema tiene traccia dello stato del noleggio al quale è legato l'annuncio, se è cioè ancora attivo o meno.
-  - L'amministratore sta visualizzando il dettaglio di un singolo elemento aperto nello storico.
-- *Postcondizioni*:
-  - Il sistema espone un _flag_ nel caso in cui il noleggio al quale è legato l'annuncio, aperto dall'elemento nello storico, sia ancora attivo.
-- *Scenario principale*:
-  + L'amministratore visualizza il _flag_ nel caso in cui il noleggio relativo all'annuncio, aperto dall'elemento nello storico, sia ancora attivo.
-
-=== UC48 - Visualizzazione dell'annuncio dai dettagli aperti dall'elemento nello storico <uc48>
+=== UC46 - Visualizzazione dell'annuncio dai dettagli aperti dall'elemento nello storico <uc46>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema tiene traccia degli annunci generati.
@@ -863,7 +844,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   + L'amministratore visualizza interamente l'annuncio generato aperto dall'elemento nello storico.
 
-=== UC49 - Visualizzazione categoria del punto di interesse collegato all'annuncio dai dettagli aperti dall'elemento nello storico <uc49>
+=== UC47 - Visualizzazione categoria del punto di interesse collegato all'annuncio dai dettagli aperti dall'elemento nello storico <uc47>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema tiene traccia della categoria del punto di interesse collegato al relativo annuncio aperto dallo storico.
@@ -874,13 +855,13 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore visualizza la categoria del punto di interesse nei dettagli di un elemento aperto nello storico.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/pb/UC43-44-45-46-47-48-49.png"),
-  caption: [Diagramma dei casi d'uso UC43, UC44, UC45, UC46, UC47, UC48 e UC49],
+  image("../assets/use_cases/pb/UC42-43-44-45-46-47.png"),
+  caption: [Diagramma dei casi d'uso UC42, UC42, UC43, UC44, UC45, UC47],
 )
 
 #pagebreak()
 
-=== UC50 - Chiusura della vista di visualizzazione dettagli di un singolo elemento nello storico <uc50>
+=== UC48 - Chiusura della vista di visualizzazione dettagli di un singolo elemento nello storico <uc48>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema espone una vista per i dettagli di un annuncio aperto dallo storico con la quale l'amministratore può interagire.
@@ -891,13 +872,13 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore chiude la vista.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/pb/UC50.png"),
-  caption: [Diagramma del caso d'uso UC50],
+  image("../assets/use_cases/pb/UC48.png"),
+  caption: [Diagramma del caso d'uso UC48],
 )
 
 #pagebreak()
 
-=== UC51 - Ricerca degli annunci nello storico per e-mail utente <uc51>
+=== UC49 - Ricerca degli annunci nello storico per e-mail utente <uc49>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema tiene traccia di tutti gli annunci generati per l'utente selezionato.
@@ -910,13 +891,13 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + Vengono visualizzati solo gli annunci destinati all'utente selezionato.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/pb/UC51.png"),
-  caption: [Diagramma del caso d'uso UC51],
+  image("../assets/use_cases/pb/UC49.png"),
+  caption: [Diagramma del caso d'uso UC49],
 )
 
 #pagebreak()
 
-=== UC52 - Ricerca degli annunci nello storico per nome del punto di interesse <uc52>
+=== UC50 - Ricerca degli annunci nello storico per nome del punto di interesse <uc50>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema tiene traccia di tutti gli annunci generati collegati al punto di interesse selezionato.
@@ -929,13 +910,13 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + Vengono visualizzati solo gli annunci collegati al punto di interesse selezionato.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/pb/UC52.png"),
-  caption: [Diagramma del caso d'uso UC52],
+  image("../assets/use_cases/pb/UC50.png"),
+  caption: [Diagramma del caso d'uso UC50],
 )
 
 #pagebreak()
 
-=== UC53 - Ricerca degli annunci nello storico per intervallo di date di emissione <uc53>
+=== UC51 - Ricerca degli annunci nello storico per intervallo di date di emissione <uc51>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema tiene traccia di tutti gli annunci emessi nell'intervallo di date selezionato.
@@ -948,13 +929,13 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + Vengono visualizzati solo gli annunci emessi nell'intervallo di date selezionato.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/pb/UC53.png"),
-  caption: [Diagramma del caso d'uso UC53],
+  image("../assets/use_cases/pb/UC51.png"),
+  caption: [Diagramma del caso d'uso UC51],
 )
 
 #pagebreak()
 
-=== UC54 - Ricerca degli annunci nello storico per fascia oraria di emissione <uc54>
+=== UC52 - Ricerca degli annunci nello storico per fascia oraria di emissione <uc52>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema tiene traccia di tutti gli annunci emessi nella fascia oraria selezionata.
@@ -967,13 +948,13 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + Vengono visualizzati solo gli annunci emessi nella fascia oraria selezionata.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/pb/UC54.png"),
-  caption: [Diagramma del caso d'uso UC54],
+  image("../assets/use_cases/pb/UC52.png"),
+  caption: [Diagramma del caso d'uso UC52],
 )
 
 #pagebreak()
 
-=== UC55 - Visualizzazione errore "Il server non risponde" <uc55>
+=== UC53 - Visualizzazione errore "Il server non risponde" <uc53>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema di visualizzazione dell'amministratore tenta comunicare con il _server_ per ricevere o inviare informazioni, ma si verifica un errore.
@@ -983,7 +964,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + Il _server_ restituisce un errore durante la comunicazione.
   + L'amministratore visualizza il messaggio di errore sulla _dashboard_.
 
-=== UC56 - Visualizzazione errore "Connessione persa" <uc56>
+=== UC54 - Visualizzazione errore "Connessione persa" <uc54>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema monitora lo stato della connessione di rete e non rileva connessione.
@@ -993,7 +974,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + Il sistema rileva che la connessione di rete è persa o scarsa.
   + L'amministratore visualizza il messaggio di errore sulla _dashboard_.
 
-=== UC57 - Visualizzazione errore "Sensore malfunzionante" <uc57>
+=== UC55 - Visualizzazione errore "Sensore malfunzionante" <uc55>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema monitora le risposte dei sensori attivi, cioè installati su mezzi con noleggio attivo e rileva un errore.
@@ -1003,7 +984,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + Il sensore non comunica correttamente i dati al sistema.
   + L'amministratore visualizza il messaggio di errore sulla _dashboard_.
 
-=== UC58 - Visualizzazione errore "Generazione impossibile dell'annuncio" <uc58>
+=== UC56 - Visualizzazione errore "Generazione impossibile dell'annuncio" <uc56>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema comunica con la LLM per far generare gli annunci, ma si verifica un errore.
@@ -1014,8 +995,8 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore visualizza il messaggio di errore sulla _dashboard_.
 #v(20pt)
 #figure(
-  image("../assets/use_cases/pb/UC55-56-57-58.png"),
-  caption: [Diagramma dei casi d'uso UC55, UC56, UC57 e UC58],
+  image("../assets/use_cases/pb/UC53-54-55-56.png"),
+  caption: [Diagramma dei casi d'uso UC53, UC54, UC55 e UC56],
 )
 
 #pagebreak()
@@ -1023,7 +1004,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 // OPZIONALI
 
-=== UC59 - Visualizzazione sezione grafici <uc59>
+=== UC57 - Visualizzazione sezione grafici <uc57>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema mantiene delle informazioni utili per un'analisi statistica.
@@ -1032,9 +1013,9 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   + L'amministratore entra nella _dashboard_ con i grafici per le analisi sui dati.
 - *Inclusioni*:
-  - Visualizzazione singolo grafico (#link(<uc60>)[UC60]).
+  - Visualizzazione singolo grafico (#link(<uc58>)[UC58]).
 
-=== UC60 - Visualizzazione singolo grafico <uc60>
+=== UC58 - Visualizzazione singolo grafico <uc58>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema mantiene delle informazioni utili per una analisi statistica.
@@ -1045,16 +1026,16 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   + L'amministratore visualizza il grafico con le relative informazioni.
 - *Inclusioni*:
-  - Visualizzazione titolo del grafico (#link(<uc61>)[UC61]).
-  - Visualizzazione etichetta asse delle ascisse e relativi valori (#link(<uc62>)[UC62]).
-  - Visualizzazione etichetta asse delle ordinate e relativi valori (#link(<uc63>)[UC63]).
-  - Visualizzazione dati sul grafico (#link(<uc64>)[UC64]).
+  - Visualizzazione titolo del grafico (#link(<uc59>)[UC59]).
+  - Visualizzazione etichetta asse delle ascisse e relativi valori (#link(<uc60>)[UC60]).
+  - Visualizzazione etichetta asse delle ordinate e relativi valori (#link(<uc61>)[UC61]).
+  - Visualizzazione dati sul grafico (#link(<uc62>)[UC62]).
 - *Generalizzazioni*:
-  - Visualizzazione grafico del numero di annunci generati nelle ultime 24 ore (#link(<uc65>)[UC65]).
-  - Visualizzazione grafico del numero medio di noleggi per mese (#link(<uc66>)[UC66]).
-  - Visualizzazione grafico del rapporto tra numero di annunci generati e numero di annunci non generati per un certo punto di interesse nell'ultima settimana (#link(<uc67>)[UC67]).
+  - Visualizzazione grafico del numero di annunci generati nelle ultime 24 ore (#link(<uc63>)[UC63]).
+  - Visualizzazione grafico del numero medio di noleggi per mese (#link(<uc64>)[UC64]).
+  - Visualizzazione grafico del rapporto tra numero di annunci generati e numero di annunci non generati per un certo punto di interesse nell'ultima settimana (#link(<uc65>)[UC65]).
 
-=== UC61 - Visualizzazione titolo del grafico <uc61>
+=== UC59 - Visualizzazione titolo del grafico <uc59>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema tiene traccia del titolo del grafico.
@@ -1064,7 +1045,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   + L'amministratore visualizza il titolo del grafico.
 
-=== UC62 - Visualizzazione etichetta asse delle ascisse e relativi valori <uc62>
+=== UC60 - Visualizzazione etichetta asse delle ascisse e relativi valori <uc60>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema tiene traccia delle etichette dell'asse delle ascisse e dei relativi valori di ciascun grafico.
@@ -1075,7 +1056,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore visualizza l'etichetta dell'asse delle ascisse del relativo grafico.
   + L'amministratore visualizza le etichette dei valori segnati sull'asse delle ascisse del relativo grafico.
 
-=== UC63 - Visualizzazione etichetta asse delle ordinate e relativi valori <uc63>
+=== UC61 - Visualizzazione etichetta asse delle ordinate e relativi valori <uc61>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema tiene traccia delle etichette dell'asse delle ordinate e dei relativi valori di ciascun grafico.
@@ -1086,7 +1067,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + l'amministratore visualizza l'etichetta dell'asse delle ordinate del relativo grafico.
   + l'amministratore visualizza le etichette dei valori segnati sull'asse delle ordinate del relativo grafico.
 
-=== UC64 - Visualizzazione dati sul grafico <uc64>
+=== UC62 - Visualizzazione dati sul grafico <uc62>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema tiene traccia dei dati di ciascun grafico.
@@ -1098,13 +1079,13 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #v(20pt)
 #figure(
-  image("../assets/use_cases/pb/UC59-60-61-62-63-64.png", width: 90%),
-  caption: [Diagramma dei casi d'uso UC59, UC60, UC61, UC62, UC63 e UC64 (inclusioni UC60)],
+  image("../assets/use_cases/pb/UC57-58-59-60-61-62.png", width: 90%),
+  caption: [Diagramma dei casi d'uso UC57, UC58, UC59, UC60, UC61 e UC62 (inclusioni UC58)],
 )
 
 #pagebreak()
 
-=== UC65 - Visualizzazione grafico del numero di annunci generati nelle ultime 24 ore <uc65>
+=== UC63 - Visualizzazione grafico del numero di annunci generati nelle ultime 24 ore <uc63>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema tiene traccia degli annunci generati.
@@ -1114,7 +1095,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*:
   + L'amministratore visualizza il grafico con il numero di annunci generati per ciascuna ora nelle ultime 24 ore.
 
-=== UC66 - Visualizzazione grafico del numero medio di noleggi per mese <uc66>
+=== UC64 - Visualizzazione grafico del numero medio di noleggi per mese <uc64>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema tiene traccia dei noleggi effettuati.
@@ -1124,7 +1105,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 - *Scenario principale*: 
   + L'amministratore visualizza il grafico che mostra il numero medio di noleggi che vengono effettuati in ciascun mese dell'anno solare.
 
-=== UC67 - Visualizzazione grafico del rapporto tra numero di annunci generati e numero di annunci non generati per un certo punto di interesse nell'ultima settimana <uc67>
+=== UC65 - Visualizzazione grafico del rapporto tra numero di annunci generati e numero di annunci non generati per un certo punto di interesse nell'ultima settimana <uc65>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema tiene traccia degli annunci generati e non generati per ciascun punto di interesse.
@@ -1135,12 +1116,12 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   + L'amministratore visualizza il grafico che mette a confronto il numero di annunci generati con il numero di annunci non generati per un certo punto di interesse nell'arco dell'ultima settimana.
  
 #figure(
-  image("../assets/use_cases/pb/UC59-60-65-66-67.png"),
-  caption: [Diagramma dei casi d'uso UC59, UC60, UC65, UC66, UC67 (generalizzazioni UC60)],
+  image("../assets/use_cases/pb/UC57-58-63-64-65.png"),
+  caption: [Diagramma dei casi d'uso UC57, UC58, UC63, UC64, UC65 (generalizzazioni UC58)],
 )
 #v(20pt)
 
-=== UC68 - Selezione di un punto di interesse nella sezione grafici <uc68>
+=== UC66 - Selezione di un punto di interesse nella sezione grafici <uc66>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
   - Il sistema tiene traccia degli annunci generati e non generati per ciascun punto di interesse.
@@ -1153,8 +1134,8 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 
 #v(20pt)
 #figure(
-  image("../assets/use_cases/pb/UC68.png"),
-  caption: [Diagramma del caso d'uso UC68],
+  image("../assets/use_cases/pb/UC66.png"),
+  caption: [Diagramma del caso d'uso UC66],
 )
 
 #pagebreak()
@@ -1298,19 +1279,19 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
 
   [ROF-29],
   [L'amministratore deve poter ricevere il messaggio di errore "Il _server_ non risponde" nel caso in cui il sistema non risponda o smetta di funzionare.],
-  [#link(<uc55>)[UC55]\ Riunioni interne],
+  [#link(<uc53>)[UC53]\ Riunioni interne],
 
   [ROF-30],
   [L'amministratore deve poter ricevere il messaggio di errore "Connessione persa" nel caso in cui la connessione con il sistema venga persa o sia scarsa.],
-  [#link(<uc56>)[UC56]\ Riunioni interne],
+  [#link(<uc54>)[UC54]\ Riunioni interne],
 
   [ROF-31],
   [L'amministratore deve poter ricevere il messaggio di errore "Sensore malfunzionante" nel caso in cui il sensore non sia in grado di trasmettere i dati di localizzazione in maniera corretta o non trasmetta dopo un determinato intervallo di tempo.],
-  [#link(<uc57>)[UC57]\ Riunioni interne],
+  [#link(<uc55>)[UC55]\ Riunioni interne],
 
   [ROF-32],
   [L'amministratore deve poter visualizzare il messaggio di errore "Generazione impossibile dell'annuncio" nel caso in cui il sistema non sia in grado di stabilire una connessione e comunicare con il servizio di LLM, non permettendo così la trasmissione e la ricezione di dati da parte di quest'ultimo.],
-  [#link(<uc58>)[UC58]\ Riunioni interne],
+  [#link(<uc56>)[UC56]\ Riunioni interne],
 
   [ROF-33],
   [Creazione di un generatore di dati GPS per simulare il funzionamento di un sensore che interagisce col sistema.],
@@ -1393,51 +1374,51 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
 
   [RDF-8],
   [L'amministratore deve essere in grado di poter visualizzare i dettagli di un singolo elemento all'interno dello storico.],
-  [#link(<uc43>)[UC43]\ Riunioni esterne],
+  [#link(<uc42>)[UC42]\ Riunioni esterne],
 
   [RDF-9],
   [L'amministratore deve essere in grado di visualizzare il nome del punto di interesse relativo ad un annuncio tramite la visualizzazione dei dettagli dell'elemento nello storico.],
-  [#link(<uc43>)[UC43]\ #link(<uc44>)[UC44]\ Riunioni esterne],
+  [#link(<uc42>)[UC42]\ #link(<uc43>)[UC43]\ Riunioni esterne],
 
   [RDF-10],
   [L'amministratore deve essere in grado di visualizzare l'_e-mail_ dell'utente destinatario di un annuncio tramite la visualizzazione dei dettagli dell'elemento nello storico.],
-  [#link(<uc43>)[UC43]\ #link(<uc45>)[UC45]\ Riunioni esterne],
+  [#link(<uc42>)[UC42]\ #link(<uc44>)[UC44]\ Riunioni esterne],
 
   [RDF-11],
   [L'amministratore deve essere in grado di visualizzare data e ora del tentativo di generazione di un annuncio tramite la visualizzazione dei dettagli dell'elemento nello storico.],
-  [#link(<uc43>)[UC43]\ #link(<uc46>)[UC46]\ Riunioni esterne],
+  [#link(<uc42>)[UC42]\ #link(<uc45>)[UC45]\ Riunioni esterne],
 
   [RDF-12],
   [L'amministratore deve essere in grado di visualizzare una _flag_ che segnala lo stato di attività del noleggio a cui è destinato un annuncio tramite la visualizzazione dei dettagli dell'elemento nello storico.],
-  [#link(<uc43>)[UC43]\ #link(<uc47>)[UC47]\ Riunioni esterne],
+  [#link(<uc42>)[UC42]\ #link(<uc47>)[UC47]\ Riunioni esterne],
 
   [RDF-13],
   [L'amministratore deve essere in grado di visualizzare il corpo dell'annuncio tramite la visualizzazione dei dettagli dell'elemento nello storico.],
-  [#link(<uc43>)[UC43]\ #link(<uc48>)[UC48]\ Riunioni esterne],
+  [#link(<uc42>)[UC42]\ #link(<uc46>)[UC46]\ Riunioni esterne],
 
   [RDF-14],
   [L'amministratore deve essere in grado di visualizzare la categoria del punto di interesse collegato all'annuncio tramite la visualizzazione dei dettagli dell'elemento nello storico.],
-  [#link(<uc43>)[UC43]\ #link(<uc49>)[UC49]\ Riunioni esterne],
+  [#link(<uc42>)[UC42]\ #link(<uc47>)[UC47]\ Riunioni esterne],
 
   [RDF-15],
   [L'amministratore deve essere in grado di chiudere la vista di visualizzazione dei dettagli di un singolo annuncio.],
-  [#link(<uc50>)[UC50]\ Riunioni esterne],
+  [#link(<uc48>)[UC48]\ Riunioni esterne],
 
   [RDF-16],
   [L'amministratore deve essere in grado, tramite un sistema di filtraggio, di visualizzare gli annunci dello storico per _e-mail_ dell'utente destinatario dell'annuncio.],
-  [#link(<uc51>)[UC51]\ Riunioni esterne],
+  [#link(<uc49>)[UC49]\ Riunioni esterne],
 
   [RDF-17],
   [L'amministratore deve essere in grado, tramite un sistema di filtraggio, di visualizzare gli annunci dello storico per nome del punto di interesse.],
-  [#link(<uc52>)[UC52]\ Riunioni esterne],
+  [#link(<uc50>)[UC50]\ Riunioni esterne],
 
   [RDF-18],
   [L'amministratore deve essere in grado, tramite un sistema di filtraggio, di visualizzare gli annunci dello storico generati in un certo intervallo di date.],
-  [#link(<uc53>)[UC53]\ Riunioni esterne],
+  [#link(<uc51>)[UC51]\ Riunioni esterne],
 
   [RDF-19],
   [L'amministratore deve essere in grado, tramite un sistema di filtraggio, di visualizzare gli annunci dello storico generati in una determinata fascia oraria.],
-  [#link(<uc54>)[UC54]\ Riunioni esterne],
+  [#link(<uc52>)[UC52]\ Riunioni esterne],
 )
 == Requisiti facoltativi
 === Requisiti funzionali
@@ -1447,39 +1428,39 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
   table.header([*Codice*], [*Descrizione*], [*Fonti*]),
   [RFF-1],
   [L'amministratore deve poter visualizzare la sezione dedicata ai grafici all'interno della _dashboard_ del sistema.],
-  [#link(<uc59>)[UC59]\ Riunioni esterne],
+  [#link(<uc57>)[UC57]\ Riunioni esterne],
 
   [RFF-2],
   [L'amministratore deve poter visualizzare un singolo grafico relativo ad una particolare analisi dati.],
-  [#link(<uc60>)[UC60]\ Riunioni esterne],
+  [#link(<uc58>)[UC58]\ Riunioni esterne],
 
   [RFF-3],
   [L'amministratore deve poter visualizzare il titolo di uno specifico grafico a seconda dell'analisi dati che viene rappresentata.],
-  [#link(<uc61>)[UC61]\ Riunioni esterne],
+  [#link(<uc59>)[UC59]\ Riunioni esterne],
 
   [RFF-4],
   [L'amministratore deve poter visualizzare in uno specifico grafico un'etichetta relativa alla tipologia di misura rappresentata sulle assi delle ascisse e delle ordinate e, infine, i relativi valori.],
-  [#link(<uc62>)[UC62]\ #link(<uc63>)[UC63]\ Riunioni esterne],
+  [#link(<uc60>)[UC60]\ #link(<uc61>)[UC61]\ Riunioni esterne],
 
   [RFF-5],
   [L'amministratore deve poter visualizzare, all'interno di ciascun grafico, la rappresentazione dello specifico _set_ di dati previsti per quel grafico.],
-  [#link(<uc64>)[UC64]\ Riunioni esterne],
+  [#link(<uc62>)[UC62]\ Riunioni esterne],
 
   [RFF-6],
   [L'amministratore deve poter visualizzare un grafico che mostri il numero di annunci generati dal sistema nelle ultime 24 ore, con granularità oraria.],
-  [#link(<uc65>)[UC65]\ Riunioni esterne],
+  [#link(<uc63>)[UC63]\ Riunioni esterne],
 
   [RFF-7],
   [L'amministratore deve poter visualizzare un grafico raffigurante il numero medio di noleggi che vengono effettuati in ciascun mese dell'anno, risultato della media di noleggi effettuati in quel mese nel corso degli anni.],
-  [#link(<uc66>)[UC66]\ Riunioni esterne],
+  [#link(<uc64>)[UC64]\ Riunioni esterne],
 
   [RFF-8],
   [L'amministratore, dalla sezione dedicata ai grafici, deve poter selezionare uno specifico punto di interesse per poter poi visualizzare i grafici delle statistiche ad esso correlate.],
-  [#link(<uc68>)[UC68]\ Riunioni esterne],
+  [#link(<uc66>)[UC66]\ Riunioni esterne],
 
   [RFF-9],
   [L'amministratore deve poter visualizzare un grafico che mette a confronto il numero di annunci generati con il numero di annunci non generati per un certo punto di interesse nell'ultima settimana.],
-  [#link(<uc67>)[UC67]\ Riunioni esterne],
+  [#link(<uc65>)[UC65]\ Riunioni esterne],
 
   [RFF-10],
   [Viene richiesta la creazione di uno strumento di visualizzazione degli annunci in tempo reale per l'utente utilizzatore del servizio.],
@@ -1535,32 +1516,32 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
     [UC40], [RDF-5],
     [UC41], [RDF-6],
     [UC42], [RDF-7],
-    [UC43], [RDF-8, RDF-9, RDF-10, RDF-11, RDF-12, RDF-13, RDF-14],
-    [UC44], [RDF-9],
-    [UC45], [RDF-10],
-    [UC46], [RDF-11],
+    [UC42], [RDF-8, RDF-9, RDF-10, RDF-11, RDF-12, RDF-13, RDF-14],
+    [UC43], [RDF-9],
+    [UC44], [RDF-10],
+    [UC45], [RDF-11],
     [UC47], [RDF-12],
-    [UC48], [RDF-13],
-    [UC49], [RDF-14],
-    [UC50], [RDF-15],
-    [UC51], [RDF-16],
-    [UC52], [RDF-17],
-    [UC53], [RDF-18],
-    [UC54], [RDF-19],
-    [UC55], [ROF-29],
-    [UC56], [ROF-30],
-    [UC57], [ROF-31],
-    [UC58], [ROF-32],
-    [UC59], [RFF-1],
-    [UC60], [RFF-2],
-    [UC61], [RFF-3],
-    [UC62], [RFF-4],
-    [UC63], [RFF-4],
-    [UC64], [RFF-5],
-    [UC65], [RFF-6],
-    [UC66], [RFF-7],
-    [UC67], [RFF-9],
-    [UC68], [RFF-8],
+    [UC46], [RDF-13],
+    [UC47], [RDF-14],
+    [UC48], [RDF-15],
+    [UC49], [RDF-16],
+    [UC50], [RDF-17],
+    [UC51], [RDF-18],
+    [UC52], [RDF-19],
+    [UC53], [ROF-29],
+    [UC54], [ROF-30],
+    [UC55], [ROF-31],
+    [UC56], [ROF-32],
+    [UC57], [RFF-1],
+    [UC58], [RFF-2],
+    [UC59], [RFF-3],
+    [UC60], [RFF-4],
+    [UC61], [RFF-4],
+    [UC62], [RFF-5],
+    [UC63], [RFF-6],
+    [UC64], [RFF-7],
+    [UC65], [RFF-9],
+    [UC66], [RFF-8],
     [Riunioni esterne], [ROF-2, ROF-9, ROF-10, ROF-11, ROF-12, ROF-13, ROF-14, ROF-15, ROF-16, ROF-17, ROF-18, ROF-19, ROF-20, ROF-21, ROF-22, ROF-23, ROF-24, RDF-1, RDF-2, RDF-3, RDF-4, RDF-5, RDF-6, RDF-7, RDF-8, RDF-9, RDF-10, RDF-11, RDF-12, RDF-13, RDF-14, RDF-15, RDF-16, RDF-17, RDF-18, RDF-19, RFF-1, RFF-2, RFF-3, RFF-4, RFF-5, RFF-6, RFF-7, RFF-8, RFF-9],
     [Riunioni interne], [ROF-3, ROF-4, ROF-5, ROF-13, ROF-14, ROF-16, ROF-17, ROF-18, ROF-20, ROF-22, ROF-23, ROF-24, ROF-25, ROF-26, ROF-27, ROF-28, ROF-29, ROF-30, ROF-31, ROF-32, ROQ-2, ROQ-3, ROV-1],
     [Capitolato], [ROF-1, ROF-6, ROF-7, ROF-8, ROF-9, ROF-10, ROF-11, ROF-12, ROF-15, ROF-33, ROF-34, ROQ-1, ROQ-4, ROQ-5, RFF-10],
