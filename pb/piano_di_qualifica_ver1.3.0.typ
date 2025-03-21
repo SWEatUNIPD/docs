@@ -773,8 +773,18 @@ Misura la percentuale di requisiti opzionali soddisfatti dal prodotto.
 
 === PB
 
-
+#pagebreak()
 == Complessità ciclomatica per metodo (MPD-CCM)
 Valuta la complessità per metodo del codice sorgente attraverso la misurazione del numero di cammini indipendenti attraverso il grafo di controllo del flusso.
+
+#plotGrafico3(
+  "Tabella ROS",
+  ((5, 5), (6, 5), (7, 4)),
+  "ET",
+  ((4, 5), (5, 5), (6, 5), (7, 5)),
+  "Valore accettabile",
+  ((4, 3), (5, 3), (6, 3), (7, 3)),
+  "Valore ottimo",
+)
 
 Il gruppo, durante lo sviluppo del MVP, ha deciso di appoggiarsi a uno strumento di analisi statica per il calcolo della complessità ciclomatica, tramite il quale è riuscito a garantire un valore per il *CCM* inferiore a cinque, il che lo fa rientrare nel valore accettabile per questa metrica.
