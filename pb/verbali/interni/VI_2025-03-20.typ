@@ -42,6 +42,6 @@ Il gruppo concluderà in settimana le ultime attività rimaste e si preparerà p
 = Tabella delle decisioni
 #backlog(content: (
   link("https://github.com/SWEatUNIPD/docs/issues/193")[D0193],
-  [Andrea Perozzo, Davide Picello],
+  [Andrea Perozzo, \ Davide Picello],
   [Modifiche Analisi dei Requisiti],
 ))
