@@ -9,6 +9,11 @@
   titolo: "Glossario",
   verificatori: ("Andrea Perozzo", "Andrea Precoma", "Davide Marin", "Davide Picello", "Riccardo Milan"),
   versioni: (
+    "1.3.0",
+    "18/03/2025",
+    "Riccardo Milan",
+    "Davide Picello",
+    [- Aggiunti i termini "Open source", "Route" e "Layer"],
     "1.2.0",
     "07/03/2025",
     "Klaudio Merja",
