@@ -27,9 +27,9 @@
 La quattordicesima riunione è stata svolta il giorno dopo l'incontro conclusivo con l'azienda Sync Lab e nella stessa mattinata del colloquio con il professor Cardin. Questo momento ha avuto come obiettivo quello di delineare le ultime modifiche per preparare definitivamente il prodotto per il colloquio PB.
 
 = Incontro con l'azienda
-Come richiesto dall'azienda, e felicemente accolto dal gruppo, l'ultimo incontro con l'azienda Sync Lab è avvenuto nel loro ufficio di Padova il pomeriggio del 19 Marzo 2025. L'azienda ha voluto fare con noi una prova di esposizione del prodotto in vista dei colloqui PB. Tale incontro è stato molto utile per il gruppo in quanto l'azienda ospita da anni gruppi per il progetto di ingegneria del software e quindi vanta una certa esperienza nella valutazione dei progetti.
+Come richiesto dall'azienda, e felicemente accolto dal gruppo, l'ultimo incontro con l'azienda Sync Lab è avvenuto nel loro ufficio di Padova il pomeriggio del 19 Marzo 2025. L'azienda ha voluto fare una prova di esposizione del prodotto in vista dei colloqui PB. Tale incontro è stato molto utile per il gruppo in quanto l'azienda ospita da anni gruppi per il progetto di ingegneria del software e quindi vanta una certa esperienza nella valutazione dei progetti.
 
-L'azienda si è dimostrata felice e soddisfatta del percorso intrapreso dal gruppo, giudicandolo molto positivamente.
+L'azienda si è dimostrata contenta e soddisfatta del percorso del gruppo, giudicandolo positivamente.
 
 = Colloquio con il professor Cardin
 
