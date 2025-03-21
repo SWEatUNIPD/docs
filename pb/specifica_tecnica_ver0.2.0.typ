@@ -110,6 +110,71 @@ Versione utilizzata: 5.7.2
 ==== Utilizzo nel progetto
 Creazione delle simulazioni dei noleggi e dello spostamento dei relativi mezzi.
 
+Il seguente diagramma delle classi descrive la struttura del simulatore realizzato in TypeScript.
+
+#figure(
+  image("../assets/img/ST/simulator.svg", width: 110%),
+  caption: [Diagramma delle classi del simulatore],
+)
+
+==== Componenti di utilità
+Sfruttando l'aspetto procedurale del linguaggio TypeScript sono state create delle componenti di supporto. Queste non contengono classi o interfacce quindi diventa più efficace descriverle di seguito piuttosto che in un diagramma delle classi.
+- *App*: rappresenta il punto di accesso al servizio e si occupa della creazione di una istanza del simulatore e del suo avvio.
+#codly(header: [*App.ts*])
+```ts
+const simulator = container.get(Simulator);
+simulator.startSimulation();
+```
+
+- *EnvManager*: espone l'accesso per le variabili d'ambiente. Per utilizzarne una è sufficiente importare il modulo e richiamare `env.VAR_NAME`.
+#codly(header: [*config/EnvManager.ts*])
+```ts
+dotenv.config({ path: './src/config/.env' });
+export const env = process.env;
+```
+
+- *InversifyType*: espone una mappa delle componenti da "iniettare" con il _design pattern dependency injection_. In questo modo si evitano i problemi di _mistyping_ dei _serviceId_.
+#codly(header: [*config/InversifyType.ts*])
+```ts
+export const TYPES = {
+  KafkaManager: Symbol.for('KafkaManager'),
+  TrackerList: Symbol.for('TrackerList')
+};
+```
+
+- *Inversify.config*: definisce il _container_ e i _binding_ per risolvere le dipendenze con la libreria #box[Inverisfy].
+#codly(header: [*config/InversifyType.ts*])
+```ts
+export const container = new Container();
+
+container
+  .bind<KafkaManager>(TYPES.KafkaManager)
+  .toDynamicValue(() => {
+    const kafkaConfig: KafkaConfig = {
+      clientId: env.CLIENT_ID,
+      brokers: [env.BROKER ?? 'localhost:9094']
+    };
+    const kafka: Kafka = new Kafka(kafkaConfig);
+    return new KafkaManager(kafka);
+  })
+  .inSingletonScope();
+
+container
+  .bind<Tracker[]>(TYPES.TrackerList)
+  .toDynamicValue((context: ResolutionContext): Tracker[] => {
+    const kafkaManager: KafkaManager = context.get<KafkaManager>(TYPES.KafkaManager);
+    let trackerList: Tracker[] = [];
+    for (let i = 1; i <= Number(env.INIT_TRACKER_COUNT); i++) {
+      const id = i.toString();
+      const tracker: Tracker = new Tracker(id, kafkaManager);
+      trackerList.push(tracker);
+    }
+    return trackerList;
+  });
+
+container.bind(Simulator).toSelf().inSingletonScope();
+```
+
 ==== Librerie e framework
 - *\@mapbox/polyline*
   - *Documentazione*: #formatLink(url: "https://www.npmjs.com/package/@mapbox/polyline") (ultimo accesso 18/03/2025)
@@ -329,73 +394,6 @@ container
 
 container.bind(Simulator).toSelf().inSingletonScope();
 ```
-
-== Diagrammi delle classi
-=== Simulatore
-#figure(
-  image("../assets/img/ST/simulator.svg", width: 110%),
-  caption: [Diagramma delle classi del simulatore],
-)
-
-==== Componenti di utilità
-Sfruttando l'aspetto procedurale del linguaggio TypeScript sono state create delle componenti di supporto. Queste non contengono classi o interfacce quindi diventa più efficace descriverle di seguito piuttosto che in un diagramma delle classi.
-- *App*: rappresenta il punto di accesso al servizio e si occupa della creazione di una istanza del simulatore e del suo avvio.
-#codly(header: [*App.ts*])
-```ts
-const simulator = container.get(Simulator);
-simulator.startSimulation();
-```
-
-- *EnvManager*: espone l'accesso per le variabili d'ambiente. Per utilizzarne una è sufficiente importare il modulo e richiamare `env.VAR_NAME`.
-#codly(header: [*config/EnvManager.ts*])
-```ts
-dotenv.config({ path: './src/config/.env' });
-export const env = process.env;
-```
-
-- *InversifyType*: espone una mappa delle componenti da "iniettare" con il _design pattern dependency injection_. In questo modo si evitano i problemi di _mistyping_ dei _serviceId_.
-#codly(header: [*config/InversifyType.ts*])
-```ts
-export const TYPES = {
-  KafkaManager: Symbol.for('KafkaManager'),
-  TrackerList: Symbol.for('TrackerList')
-};
-```
-
-- *Inversify.config*: definisce il _container_ e i _binding_ per risolvere le dipendenze con la libreria #box[Inverisfy].
-#codly(header: [*config/InversifyType.ts*])
-```ts
-export const container = new Container();
-
-container
-  .bind<KafkaManager>(TYPES.KafkaManager)
-  .toDynamicValue(() => {
-    const kafkaConfig: KafkaConfig = {
-      clientId: env.CLIENT_ID,
-      brokers: [env.BROKER ?? 'localhost:9094']
-    };
-    const kafka: Kafka = new Kafka(kafkaConfig);
-    return new KafkaManager(kafka);
-  })
-  .inSingletonScope();
-
-container
-  .bind<Tracker[]>(TYPES.TrackerList)
-  .toDynamicValue((context: ResolutionContext): Tracker[] => {
-    const kafkaManager: KafkaManager = context.get<KafkaManager>(TYPES.KafkaManager);
-    let trackerList: Tracker[] = [];
-    for (let i = 1; i <= Number(env.INIT_TRACKER_COUNT); i++) {
-      const id = i.toString();
-      const tracker: Tracker = new Tracker(id, kafkaManager);
-      trackerList.push(tracker);
-    }
-    return trackerList;
-  });
-
-container.bind(Simulator).toSelf().inSingletonScope();
-```
-
-=== Stream processor
 
 // FUNCTIONAL REQUIRIMETS //
 = Stato dei requisiti funzionali
