@@ -9,6 +9,13 @@
   titolo: "Piano di Qualifica",
   uso: "Esterno",
   versioni: (
+    "1.3.0",
+    "18/03/2025",
+    "Davide Marin",
+    "Davide Martinelli\nDavide Picello",
+    [
+      - Aggiornamento del cruscotto di monitoraggio della qualità.
+    ],
     "1.2.0",
     "10/03/2025",
     "Davide Marin",
@@ -270,9 +277,6 @@ Misura la percentuale di codice eseguita durante i _test_. Valori più alti indi
 ==== Branch coverage (MDP-BC)
 Calcola la percentuale di rami decisionali (_#rifGlossario("branch")_) del codice eseguiti durante i _test_. Aiuta a identificare scenari non testati.
 
-==== Statement coverage (MDP-SC)
-Rappresenta la percentuale di istruzioni eseguite durante i _test_. Un valore alto garantisce un'analisi più approfondita del codice.
-
 ==== Passed test cases percentage (MDP-PTCP)
 Misura la percentuale di casi di _test_ superati rispetto al totale dei _test_ eseguiti. Un alto valore indica che il _software_ soddisfa i requisiti funzionali e non funzionali previsti.
 
@@ -292,7 +296,6 @@ Indica il numero di fallimenti correttamente riscontrati per unità di dimension
     table.header[*Metrica*][*Nome*][*Valore accettabile*][*Valore desiderabile*],
     [MDP-CC], [_#rifGlossario("Code coverage")_], [$≥ 80\%$], [$100\%$],
     [MDP-BC], [_Branch coverage_], [$≥ 60\%$], [$100\%$],
-    [MDP-SC], [_Statement coverage_], [$≥ 60\%$], [$100\%$],
     [MDP-PTCP], [_Passed test cases percentage_], [$≥ 80\%$], [$100\%$],
     [MDP-FD], [_Failure density_], [$100%$], [$100%$],
   ),
@@ -403,12 +406,12 @@ Precedono i _test_ di accettazione e si concentrano sul sistema nel suo compless
   fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
   table.header[*Codice test*][*Descrizione*][*Requisito*][*Stato*],
     [TS-1], [Verificare che ciascun sensore invii in modo corretto i propri dati di identificazione e di localizzazione geospaziale, a intervalli di tempo regolari], [ROF-1], [Non eseguito],
-    [TS-2], [Verificare che la _dashboard_ sia accessibile solo previa autenticazione da parte dell'amministratore con le proprie credenziali], [ROF-2], [Non eseguito],
+    [TS-2], [Verificare che la _#rifGlossario("dashboard")_ sia accessibile solo previa autenticazione da parte dell'amministratore con le proprie credenziali], [ROF-2], [Non eseguito],
     [TS-3], [Verificare che l'amministratore abbia fornito un indirizzo _e-mail_ per procedere con l'autenticazione], [ROF-3], [Non eseguito],
     [TS-4], [Verificare che l'amministratore abbia fornito una password per procedere con l'autenticazione], [ROF-4], [Non eseguito],
     [TS-5], [Verificare che, se l'amministratore inserisce almeno una credenziale errata, l'autenticazione fallisca e venga ritornato un messaggio di errore], [ROF-5], [Non eseguito],
     [TS-6], [Verificare che l'amministratore possa visualizzare sulla _dashboard_ principale una mappa geografica], [ROF-6], [Non eseguito],
-    [TS-7], [Verificare che l'amministratore possa visualizzare, tramite dei _marker_ sulla mappa geografica, la posizione di tutti i punti di interesse], [ROF-7], [Non eseguito],
+    [TS-7], [Verificare che l'amministratore possa visualizzare, tramite dei _#rifGlossario("marker")_ sulla mappa geografica, la posizione di tutti i punti di interesse], [ROF-7], [Non eseguito],
     [TS-8], [Verificare che l'amministratore possa visualizzare sulla mappa il percorso eseguito da ciascun noleggio attivo in quel momento], [ROF-8], [Non eseguito],
     [TS-9], [Verificare che l'amministratore possa visualizzare, lungo il percorso di ciascun noleggio attivo, un _marker_ specifico se quella posizione ricevuta dal sensore non ha provocato una richiesta di generazione annuncio], [ROF-9], [Non eseguito],
     [TS-10], [Verificare che l'amministratore possa visualizzare, lungo il percorso di ciascun noleggio attivo, un _marker_ specifico se quella posizione ricevuta dal sensore ha provocato una richiesta di generazione annuncio e questa ha avuto successo, ovvero l'utente è stato ritenuto interessato e quindi ha ricevuto l'annuncio], [ROF-10], [Non eseguito],
@@ -432,8 +435,8 @@ Precedono i _test_ di accettazione e si concentrano sul sistema nel suo compless
     [TS-28], [Verificare che l'amministratore, interagendo con la mappa geografica visualizzata, possa fare _zoom in_ e _zoom out_ sulla visuale], [ROF-28], [Non eseguito],
     [TS-29], [Verificare che l'amministratore riceva un messaggio di errore del tipo "il _server_ non risponde" se il sistema non risponde alle richieste], [ROF-29], [Non eseguito],
     [TS-30], [Verificare che l'amministratore riceva un messaggio di errore del tipo "connessione persa" se la connessione al sistema viene persa o è scarsa], [ROF-30], [Non eseguito],
-    [TS-31], [Verificare che l'amministratore riceva un messaggio di errore del tipo "sensore malfunzionante" se il sensore non invia dati GPS in modo corretto o non invia dati per un certo periodo di tempo prolungato], [ROF-31], [Non eseguito],
-    [TS-32], [Verificare che l'amministratore riceva un messaggio di errore del tipo "generazione impossibile dell'annuncio" se il sistema non è in grado di connettersi o comunicare con il servizio di LLM], [ROF-32], [Non eseguito],
+    [TS-31], [Verificare che l'amministratore riceva un messaggio di errore del tipo "sensore malfunzionante" se il sensore non invia dati #rifGlossario("GPS") in modo corretto o non invia dati per un certo periodo di tempo prolungato], [ROF-31], [Non eseguito],
+    [TS-32], [Verificare che l'amministratore riceva un messaggio di errore del tipo "generazione impossibile dell'annuncio" se il sistema non è in grado di connettersi o comunicare con il servizio di #rifGlossario("LLM")], [ROF-32], [Non eseguito],
     [TS-33], [Verificare che esista almeno un generatore di dati GPS che simuli il comportamento di un sensore che interagisce col sistema], [ROF-33], [Non eseguito],
     [TS-34], [Verificare che il generatore di dati GPS generi dei percorsi realistici, ovvero che seguono vie o strade percorribili], [ROF-34], [Non eseguito],
     [TS-35], [Verificare che l'amministratore possa accedere dalla _dashboard_ alla sezione dedicata allo storico degli annunci], [RDF-1], [Non eseguito],
@@ -481,7 +484,7 @@ Condotti insieme all'azienda proponente, servono a garantire che il prodotto fin
     table.header[*Codice _test_*][*Descrizione*][*Stato*],
     [TA-01], [Verificare che all'apertura il prodotto mostri una mappa che visualizza in tempo reale i percorsi compiuti dai mezzi con noleggio attivo], [Non eseguito],
     [TA-02], [Verificare che il prodotto supporti la generazione tramite LLM di annunci personalizzati per ogni utente in base ai suoi dati di profilazione], [Non eseguito],
-    [TA-03], [Verificare che il prodotto supporti la visualizzazione dei _#rifGlossario("marker")_ corrispondenti ai mezzi con noleggio attivi all'interno della mappa], [Non eseguito],
+    [TA-03], [Verificare che il prodotto supporti la visualizzazione dei _marker_ corrispondenti ai mezzi con noleggio attivi all'interno della mappa], [Non eseguito],
     [TA-04], [Verificare che il prodotto supporti la visualizzazione dei _marker_ corrispondenti ai punti di interesse all'interno della mappa], [Non eseguito],
     [TA-05], [Verificare che il prodotto supporti la visualizzazione dei _marker_ corrispondenti agli annunci generati all'interno della mappa], [Non eseguito],
     [TA-06], [Verificare che il prodotto supporti la visualizzazione dei _marker_ corrispondenti alle tentate generazioni di annunci all'interno della mappa], [Non eseguito],
@@ -489,27 +492,26 @@ Condotti insieme all'azienda proponente, servono a garantire che il prodotto fin
     [TA-08], [Verificare che il prodotto supporti la visualizzazione dei dati degli annunci generati per ogni rispettivo _marker_ sulla mappa], [Non eseguito],
     [TA-09], [Verificare che il prodotto supporti la visualizzazione dei dati delle mancate generazioni di annunci per ogni rispettivo _marker_ sulla mappa], [Non eseguito],
     [TA-10], [Verificare che il prodotto supporti una generazione realistica dei percorsi dei noleggi], [Non eseguito],
-    [TA-11], [Verificare che il prodotto/sistema storicizzi in un _database_ i dati simulati e quelli generati dalla LLM], [Non eseguito],
+    [TA-11], [Verificare che il prodotto/sistema storicizzi in un _#rifGlossario("database")_ i dati simulati e quelli generati dalla LLM], [Non eseguito],
     [TA-12], [Verificare che il prodotto sia fruibile con le ultime versioni dei _browser web_ principali, nello specifico: Google Chrome, Mozilla Firefox, Microsoft Edge e Safari], [Non eseguito],
   ),
 )
 
 #pagebreak()
 = Cruscotto di monitoraggio della qualità <cruscotto>
-//Rimane da fare resoconto a fine periodo RTB
 
 == Estimated at Completion (MPC-EAC)
 L'*EAC* rappresenta una stima aggiornata del costo totale previsto per completare un progetto, basata sui costi sostenuti e sulle previsioni future.
 
 #plotGrafico4(
   "Tabella EAC",
-  ((0, 13620.42), (1, 13402.94), (2, 13292.46), (3, 13374.76), (4, 12648.46)),
+  ((0, 13620.42), (1, 13402.94), (2, 13292.46), (3, 13374.76), (4, 12648.46), (5, 12719.71), (6, 12751.12), (7, 12466.44)), 
   "EAC",
-  ((0, 12740), (1, 12740), (2, 12740), (3, 12740), (4, 12740)),
+  ((0, 12740), (1, 12740), (2, 12740), (3, 12740), (4, 12740), (5, 12740), (6, 12740), (7, 12740)),
   "BAC (valore ideale)",
-  ((0, 13377), (1, 13377), (2, 13377), (3, 13377), (4, 13377)),
+  ((0, 13377), (1, 13377), (2, 13377), (3, 13377), (4, 13377), (5, 13377), (6, 13377), (7, 13377)),
   "Valore massimo accettabile",
-  ((0, 12103), (1, 12103), (2, 12103), (3, 12103), (4, 12103)),
+  ((0, 12103), (1, 12103), (2, 12103), (3, 12103), (4, 12103), (5, 12103), (6, 12103), (7, 12103)),
   "Valore minimo accettabile",
 )
 
@@ -518,6 +520,8 @@ Dal grafico si può notare che il valore dell'*EAC* si è avvicinato, per 4 iter
 
 Questi dati sottolineano il continuo automiglioramento che il team ha sempre cercato di perseguire.
 
+=== PB
+Il grafico mostra come, dopo la quinta iterazione, il valore dell'*EAC* è rimasto molto vicino al valore ideale abbassandosi leggermente solo nell'ultimo periodo e risultando quindi inferiore al *BAC*, ma comunque al di sopra del valore minimo accettabile. Il valore si era leggermente alzato successivamente al quinto _sprit_, ovvero successivamente al colloquio RTB, a causa di rallentamenti nella produzione dovuti ad alcune correzioni da effettuare, il gruppo è riuscito però a recuperare ed abbassare nuovamente l'*EAC* durante l'ottavo _#rifGlossario("sprint")_, portandolo al di sotto del *BAC*. 
 
 #pagebreak()
 == Earned Value (MPC-EV) e Planned Value (MPC-PV)
@@ -526,18 +530,21 @@ Questi dati sottolineano il continuo automiglioramento che il team ha sempre cer
 
 #plotGrafico4(
   "Tabella EV e PV",
-  ((0, 707.78), (1, 1516.67), (2, 2184.00), (3, 3013.11), (4, 3791.67)),
-  "EV",
-  ((0, 717.89), (1, 1547.00), (2, 2345.78), (3, 3124.33), (4, 3943.33)),
+  ((0, 707.78), (1, 1516.67), (2, 2184.00), (3, 3013.11), (4, 3791.67), (5, 4105.11), (6, 6592.44), (7, 12487.22)),
   "PV",
-  ((0, 13620.42), (1, 13402.94), (2, 13292.46), (3, 13374.76), (4, 12648.46)),
+  ((0, 717.89), (1, 1547.00), (2, 2345.78), (3, 3124.33), (4, 3943.33), (5, 4256.78), (6, 6744.11), (7, 12638.89)),
+  "EV",
+  ((0, 13620.42), (1, 13402.94), (2, 13292.46), (3, 13374.76), (4, 12648.46), (5, 12719.71), (6, 12751.12), (7, 12466.44)),
   "EAC",
-  ((0, 12740), (1, 12740), (2, 12740), (3, 12740), (4, 12740)),
+  ((0, 12740), (1, 12740), (2, 12740), (3, 12740), (4, 12740), (5, 12740), (6, 12740), (7, 12740)),
   "BAC",
 )
 
 === RTB
 Dal grafico si può notare che il valore dell'*EV* è cresciuto pari pari al valore del *PV*, indicando che il lavoro svolto è stato effettivamente eseguito secondo la pianificazione.
+
+=== PB
+Il grafico mostra come il valore dell'*EV* abbia continuato a crescere in modo proporzionale al valore del *PV*, dimostrando che il gruppo è riuscito a pianificare correttamente le attività per tutta la durata del progetto. I valori di *EV* e *PV* inoltre si sono avvicinati di molto a quelli di *EAC* e *BAC* durante l'ultima iterazione, ciò dimostra che il gruppo è riuscito ad essere coerente anche con il preventivo prodotto inizialmente.
 
 #pagebreak()
 == Actual Cost (MPC-AC) e Estimate to Completion (MPC-ETC)
@@ -546,16 +553,19 @@ Dal grafico si può notare che il valore dell'*EV* è cresciuto pari pari al val
 
 #plotGrafico3(
   "Tabella AC e ETC",
-  ((0, 767.50), (1, 1627.50), (2, 2447.50), (3, 3280.00), (4, 3915.00)),
+  ((0, 767.50), (1, 1627.50), (2, 2447.50), (3, 3280.00), (4, 3915.00), (5, 4250.00), (6, 6750.00), (7, 12367.50)),
   "AC",
-  ((0, 12852.92), (1, 11775.44), (2, 10844.96), (3, 10094.76), (4, 8733.46)),
+  ((0, 12852.92), (1, 11775.44), (2, 10844.96), (3, 10094.76), (4, 8733.46), (5, 8469.71), (6, 6001.12), (7, 98.94)),
   "ETC",
-  ((0, 13620.42), (1, 13402.94), (2, 13292.46), (3, 13374.76), (4, 12648.46)),
+  ((0, 13620.42), (1, 13402.94), (2, 13292.46), (3, 13374.76), (4, 12648.46), (5, 12719.71), (6, 12751.12), (7, 12466.44)),
   "EAC",
 )
 
 === RTB
 Dal grafico si nota che il valore dell'*AC* è cresciuto in modo proporzionale alla decrescita dell'*ETC*, ed entrambi sono rimasti per tutto il tempo al di sotto del valore desiderato, cioè quello dell'*EAC*.
+
+=== PB
+Dal grafico si può notare come il valore dell'*AC* abbia continuato a crescere proporzionalmente alla decrescita dell'*ETC*. Si nota inoltre come nelle ultime iterazioni la crescita dell'*AC* sia stata maggiore rispetto al primo periodo, questo dimostra che il _team_ ha avuto la possibilità di lavorare di più una volta terminati gli esami, portando ad un aumento repentino del costo reale che rimane comunque inferiore all'ideale dettato dall'*EAC*.  
 
 #pagebreak()
 == Budget Variance (MPC-BV) e Schedule Variance (MPC-SV)
@@ -564,21 +574,23 @@ Dal grafico si nota che il valore dell'*AC* è cresciuto in modo proporzionale a
 
 #plotGrafico5(
   "Tabella BV e SV",
-  ((0, -59.72), (1, -110.83), (2, -263.50), (3, -266.89), (4, -123.33)),
+  ((0, -59.72), (1, -110.83), (2, -263.50), (3, -266.89), (4, -123.33), (5, -144.89), (6, -157.56), (7, 119.72)),
   "BV",
-  ((0, 10.11), (1, 30.33), (2, 161.78), (3, 111.22), (4, 151.67)),
+  ((0, 10.11), (1, 30.33), (2, 161.78), (3, 111.22), (4, 151.67), (5, 151.67), (6, 151.67), (7, 151.67)),
   "SV",
-  ((0, 637), (1, 637), (2, 637), (3, 637), (4, 637)),
+  ((0, 637), (1, 637), (2, 637), (3, 637), (4, 637), (5, 637), (6, 637), (7, 637)),
   "Limite massimo accettabile",
-  ((0, -637), (1, -637), (2, -637), (3, -637), (4, -637)),
+  ((0, -637), (1, -637), (2, -637), (3, -637), (4, -637), (5, -637), (6, -637), (7, -637)),
   "Limite minimo accettabile",
-  ((0, 0), (1, 0), (2, 0), (3, 0), (4, 0)),
+  ((0, 0), (1, 0), (2, 0), (3, 0), (4, 0), (5, 0), (6, 0), (7, 0)),
   "Valore ottimo",
 )
 
 === RTB
 Dal grafico si può notare che le variazioni sono sempre state contenute: rientrano sempre ampiamente nei limiti accettabili e non si discostano molto dal valore ottimo. Il *BV* indica che abbiamo sempre speso leggermente oltre il _budget_ pianificato, tuttavia abbiamo una prospettiva positiva come indica il *SV*.
 
+=== PB
+Il grafico mostra come dalla quinta fino alla settima iterazione il valore di *BV* sia sempre stato pressapoco invariato e segnalando di essere leggermente in ritardo rispetto alla pianificazione, questo sempre dovuto alle modifiche che il gruppo ha dovuto affrontare successivamente al colloquio RTB, nell'ultimo _sprint_ invece, grazie al tempo a disposizione e al lavoro del _team_, il *BV* si è avvicinato di molto al valore del *SV*, portando quindi il gruppo ad aver speso leggermente meno rispetto al valore ottimo.
 
 #pagebreak()
 == Indice di Stabilità dei Requisiti (MPC-ISR)
@@ -586,11 +598,11 @@ L'*ISR* misura la stabilità dei requisiti del progetto nel tempo, valutando qua
 
 #plotGrafico3(
   "Tabella RSI",
-  ((0, 0), (1, 0), (2, 70), (3, 39), (4, 85)),
+  ((0, 0), (1, 0), (2, 70), (3, 39), (4, 85), (5, 78), (6, 100), (7, 100)),
   "RSI",
-  ((0, 75), (1, 75), (2, 75), (3, 75), (4, 75)),
+  ((0, 75), (1, 75), (2, 75), (3, 75), (4, 75), (5, 75), (6, 75), (7, 75)),
   "Valore accettabile",
-  ((0, 100), (1, 100), (2, 100), (3, 100), (4, 100)),
+  ((0, 100), (1, 100), (2, 100), (3, 100), (4, 100), (5, 100), (6, 100), (7, 100)),
   "Valore ottimo",
 )
 
@@ -599,26 +611,34 @@ Il grafico è per la maggior parte ascendente tranne nella quarta iterazione, do
 
 Nell'ultimo periodo, quindi quello relativo alla consegna RTB, si è finalmente raggiunto il valore accettabile dell'ISR.
 
+=== PB
+Il grafico mostra come il valore dell'*ISR* sia sempre rimasto, dopo il quinto _sprint_, al di sopra del valore accettabile, con una piccola ricaduta nella sesta iterazione dovuta ad alcune modifiche che il gruppo ha dovuto sostenere dopo la valutazione RTB, ma che una volta eseguite hanno portato l'indice *IRS* ad essere stabile nel valore ottimo.
+
 #pagebreak()
 == Indice Gulpease (MPC-IG)
 Indice che valuta la leggibilità dei documenti scritti in italiano.
 
 #plotGrafico7(
   "Tabella indice Gulpease",
-  ((0, 40), (1, 40), (2, 40), (3, 40), (4, 40)),
+  ((0, 40), (1, 40), (2, 40), (3, 40), (4, 40), (5, 40), (6, 40), (7, 40)),
   "Valore accettabile",
-  ((0, 80), (1, 80), (2, 80), (3, 80), (4, 80)),
+  ((0, 80), (1, 80), (2, 80), (3, 80), (4, 80), (5, 80), (6, 80), (7, 80)),
   "Valore ottimo",
-  ((0, 0), (1, 56), (2, 54), (3, 54), (4, 53)),
+  ((0, 0), (1, 56), (2, 54), (3, 54), (4, 53), (5, 53), (6, 53), (7, 53)),
   "Analisi dei Requisiti",
-  ((0, 53), (1, 54), (2, 53), (3, 53), (4, 52)),
+  ((0, 53), (1, 54), (2, 53), (3, 53), (4, 52), (5, 52), (6, 52), (7, 52)),
   "Norme di Progetto",
-  ((0, 42), (1, 45), (2, 44), (3, 44), (4, 45)),
+  ((0, 42), (1, 45), (2, 44), (3, 44), (4, 45), (5, 49), (6, 49), (7, 49)),
   "Piano di Progetto",
-  ((0, 0), (1, 50), (2, 50), (3, 50), (4, 56)),
+  ((0, 0), (1, 50), (2, 50), (3, 50), (4, 56), (5, 48), (6, 48), (7, 48)),
   "Piano di Qualifica",
-  ((0, 45), (1, 45), (2, 45), (3, 45), (4, 45)),
+  ((0, 45), (1, 45), (2, 45), (3, 45), (4, 45), (5, 45), (6, 45), (7, 45)),
   "Glossario",
+  ((5, 64), (6, 64), (7, 64)),
+  "Manuale Utente",
+  ((5, 62), (6, 62), (7, 62)),
+  "Specifica Tecnica",
+  
 )
 
 === RTB
@@ -626,6 +646,10 @@ Si nota che i valori sono sempre sopra al valore accettabile, anche se ancora be
 
 Il valore nullo di alcuni documenti alla prima iterazione è dovuto alla stesura tardiva degli stessi. Lo sviluppo della documentazione si è infatti svolta parallelamente alle lezioni di teoria del corso.
 
+=== PB
+Il grafico mostra come i valori di tutti i documenti siano sempre stati al di sopra del valore accettabile e con poche variazioni presenti, anche se la maggior parte rimane abbastanza distante dal valore ottimo. Il rimanere stabile dell'indice di Gulpease indica che il gruppo si è concentrato più sull'ampliamento e arricchimento dei documenti piuttosto che nel miglioramento della leggibilità, che rimane comunque al di sopra del valore accettabile per tutti essi.
+
+Da notare come i valori dei nuovi documenti, quali Manuale Utente e Specifica Tecnica, siano più alti rispetto ai documenti precedenti, questo dimostra comunque la maggiore esperienza acquisita dal gruppo nella stesura della documentazione.
 
 #pagebreak()
 == Correttezza Ortografica (MPC-CO)
@@ -633,25 +657,31 @@ Metriche che misurano la presenza di errori ortografici nei documenti, valutando
 
 #plotGrafico7(
   "Tabella correttezza ortografica",
-  ((0, 0), (1, 0), (2, 0), (3, 0), (4, 0)),
+  ((0, 0), (1, 0), (2, 0), (3, 0), (4, 0), (5, 0), (6, 0), (7, 0)),
   "Valore accettabile",
-  ((0, 0), (1, 0), (2, 0), (3, 0), (4, 0)),
+  ((0, 0), (1, 0), (2, 0), (3, 0), (4, 0), (5, 0), (6, 0), (7, 0)),
   "Valore ottimo",
-  ((0, 1), (1, 3), (2, 3), (3, 0), (4, 0)),
+  ((0, 1), (1, 3), (2, 3), (3, 0), (4, 0), (5, 0), (6, 0), (7, 0)),
   "Analisi dei Requisiti",
-  ((0, 2), (1, 2), (2, 4), (3, 0), (4, 0)),
+  ((0, 2), (1, 2), (2, 4), (3, 0), (4, 0), (5, 0), (6, 0), (7, 0)),
   "Norme di Progetto",
-  ((0, 1), (1, 2), (2, 2), (3, 0), (4, 0)),
+  ((0, 1), (1, 2), (2, 2), (3, 0), (4, 0), (5, 0), (6, 0), (7, 0)),
   "Piano di Progetto",
-  ((0, 2), (1, 1), (2, 1), (3, 0), (4, 0)),
+  ((0, 2), (1, 1), (2, 1), (3, 0), (4, 0), (5, 0), (6, 0), (7, 0)),
   "Piano di Qualifica",
-  ((0, 1), (1, 1), (2, 1), (3, 0), (4, 0)),
+  ((0, 1), (1, 1), (2, 1), (3, 0), (4, 0), (5, 0), (6, 0), (7, 0)),
   "Glossario",
+  ((5, 0), (6, 0), (7, 0)),
+  "Manuale Utente",
+  ((5, 0), (6, 0), (7, 0)),
+  "Specifica Tecnica",
 )
 
 === RTB
 Da questo grafico si nota che tutti i documenti hanno avuto alcuni difetti ortografici, quasi sempre di battitura. Tuttavia nel quarto _#rifGlossario("sprint")_, con l'introduzione di uno strumento di _spell checking_, siamo riusciti a raggiungere il valore ottimo di zero errori per tutti i documenti.
 
+=== PB
+Dal grafico si può notare come tutti i documenti, compresi quelli nuovi, siano rimasti con il numero ottimo di zero errori per il resto del periodo di lavoro, questo dimostra che lo strumento di _spell checking_ scelto dal gruppo ha funzionato come desiderato e che il _team_ è stato costante nel suo utilizzo.
 
 #pagebreak()
 == Percentuale di Metriche Soddisfatte (MPC-PMS)
@@ -659,23 +689,102 @@ Percentuale di metriche di qualità definite per il progetto che sono state sodd
 
 #plotGrafico3(
   "Tabella PMS",
-  ((0, 70), (1, 70), (2, 80), (3, 90), (4, 100)),
+  ((0, 70), (1, 70), (2, 80), (3, 90), (4, 100), (5, 100), (6, 100), (7, 100)),
   "PMS",
-  ((0, 80), (1, 80), (2, 80), (3, 80), (4, 80)),
+  ((0, 80), (1, 80), (2, 80), (3, 80), (4, 80), (5, 80), (6, 80), (7, 80)),
   "Valore accettabile",
-  ((0, 100), (1, 100), (2, 100), (3, 100), (4, 100)),
+  ((0, 100), (1, 100), (2, 100), (3, 100), (4, 100), (5, 100), (6, 100), (7, 100)),
   "Valore ottimo",
 )
 
 === RTB
-Possiamo notare come la percentuale di metriche soddisfatte sia quasi sempre cresciuta, ma comunque mai diminuita, raggiungendo addirittura il valore ottimo nell'ultimo _sprint_. Questo simboleggia una grande attenzione da parte del team nel perseguire la qualità del progetto, tramite autovalutaizone ed automiglioramento.
+Possiamo notare come la percentuale di metriche soddisfatte sia quasi sempre cresciuta, ma comunque mai diminuita, raggiungendo addirittura il valore ottimo nell'ultimo _sprint_. Questo simboleggia una grande attenzione da parte del team nel perseguire la qualità del progetto, tramite autovalutazione ed automiglioramento.
 
+=== PB
+Il grafico mostra come la percentuale delle metriche soddisfatte sia sempre rimasta pari al valore ottimo dal quinto _sprint_ in poi, dimostrando che il _team_ è sempre riuscito a lavorare mantenendo una buona qualità del progetto.
 
 #pagebreak()
 == Efficienza Temporale (MPC-ET)
 Misura l'efficacia nell'utilizzo del tempo per completare le attività, confrontando il tempo effettivamente impiegato con quello previsto.
 
+#plotGrafico3(
+  "Tabella ET",
+  ((4, 1.8), (5, 1.9), (6, 1.6), (7, 1.3)),
+  "ET",
+  ((4, 3), (5, 3), (6, 3), (7, 3)),
+  "Valore accettabile",
+  ((4, 1), (5, 1), (6, 1), (7, 1)),
+  "Valore ottimo",
+)
+
 === RTB
 La metriche in esame è stata confermata solo al termine del quarto _sprint_. Risulta quindi impossibile recuperare i valori passati e crearne un grafico, anche se siamo confidenti nel dire che il valore è progressivamente diminuito. Il _team_ ha imparato sempre più a lavorare asincronamente massimizzando il tempo produttivo. Il gruppo confida sarà una metrica utile in fase di PB.
 
 L'unico valore che possiamo dare di questa metrica è quindi quello dell'ultima iterazione, pari ad un rapporto di 1.8, che è ampiamente al di sotto del valore accettabile di 3 ma ancora al di sopra del valore desiderabile di 1.
+
+=== PB
+Il grafico dimostra come negli ultimi periodo, una volta raggiunta una certa conoscenza delle tecnologie da utilizzare, il _team_ sia riuscito a lavorare in modo più efficiente, mantenendo il valore dell'efficienza temporale al di sotto del valore accettabile di 3 e molto vicino al valore ottimo di 1, arrivando a 1.3 nell'ultima iterazione. Il valore si era leggermente alzato durante il quinto _sprint_ a causa di cambiamenti nelle tecnologie adottate dopo il colloquio RTB, ma il _team_ è riuscito a recuperare velocemente.
+
+#pagebreak()
+== Requisiti obbligatori soddisfatti (MPD-ROS)
+Misura la percentuale di requisiti obbligatori soddisfatti dal prodotto.
+#plotGrafico3(
+  "Tabella ROS",
+  ((4, 0), (5, 48), (6, 87), (7, 100)),
+  "ET",
+  ((4, 100), (5, 100), (6, 100), (7, 100)),
+  "Valore accettabile",
+  ((4, 100), (5, 100), (6, 100), (7, 100)),
+  "Valore ottimo",
+)
+
+=== PB
+Dal grafico si può vedere come il _team_ abbia cominciato a lavorare al MVP subito dopo la presentazione del RTB, andando a soddisfare la maggior parte dei requisiti obbligatori, ai quali era stata data maggiore priorità, entro la settima iterazione, per poi terminarli del tutto nell'ottavo _sprint_ andando a soddisfare anche i più onerosi.
+
+#pagebreak()
+== Requisiti desiderabili soddisfatti (MPD-RDS)
+Misura la percentuale di requisiti desiderabili soddisfatti dal prodotto.
+#plotGrafico3(
+  "Tabella ROS",
+  ((4, 0), (5, 22), (6, 40), (7, 74)),
+  "ET",
+  ((4, 0), (5, 0), (6, 0), (7, 0)),
+  "Valore accettabile",
+  ((4, 100), (5, 100), (6, 100), (7, 100)),
+  "Valore ottimo",
+)
+
+=== PB
+Come si può vedere dal grafico il _team_ ha comunque voluto fin da subito iniziare a lavorare sui requisiti desiderabili anche se in misura ridotta rispetto a quelli obbligatori, perché riteneva importante soddisfarne almeno una parte, per fornire un prodotto più completo. Facendo così, alla settima iterazione il gruppo aveva già soddisfatto il 40% dei requisiti desiderabili, per poi arrivare fino ale 74% nell'ottavo _sprint_, una volta terminati i requisiti obbligatori.
+
+
+#pagebreak()
+== Requisiti opzionali soddisfatti (MPD-ROPS)
+Misura la percentuale di requisiti opzionali soddisfatti dal prodotto.
+#plotGrafico3(
+  "Tabella ROS",
+  ((4, 0), (5, 0), (6, 0), (7, 0)),
+  "ET",
+  ((4, 0), (5, 0), (6, 0), (7, 0)),
+  "Valore accettabile",
+  ((4, 100), (5, 100), (6, 100), (7, 100)),
+  "Valore ottimo",
+)
+
+=== PB
+
+#pagebreak()
+== Complessità ciclomatica per metodo (MPD-CCM)
+Valuta la complessità per metodo del codice sorgente attraverso la misurazione del numero di cammini indipendenti attraverso il grafo di controllo del flusso.
+
+#plotGrafico3(
+  "Tabella ROS",
+  ((5, 5), (6, 5), (7, 4)),
+  "ET",
+  ((4, 5), (5, 5), (6, 5), (7, 5)),
+  "Valore accettabile",
+  ((4, 3), (5, 3), (6, 3), (7, 3)),
+  "Valore ottimo",
+)
+
+Il gruppo, durante lo sviluppo del MVP, ha deciso di appoggiarsi a uno strumento di analisi statica per il calcolo della complessità ciclomatica, tramite il quale è riuscito a garantire un valore per il *CCM* inferiore a cinque, il che lo fa rientrare nel valore accettabile per questa metrica.
