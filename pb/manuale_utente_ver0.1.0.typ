@@ -139,7 +139,7 @@ Una volta effettuato l'accesso a Grafana tramite opportuna pagina di accesso, si
 )
 #v(5pt)
 
-In questa schermata è possibile effettuare le classiche operazioni interattive con una mappa, come "zoom in" e "zoom out" tramite rotella del _mouse_ e anche spostare a proprio piacimento la porzione di mappa visualizzata tramite "_click_ and drag" cpn il tasto sinistro del __mouse__.
+In questa schermata è possibile effettuare le classiche operazioni interattive con una mappa, come "zoom in" e "zoom out" tramite rotella del _mouse_ e anche spostare a proprio piacimento la porzione di mappa visualizzata tramite "_click_ and drag" cpn il tasto sinistro del _mouse_.
 
 All'interno della mappa sono visualizzabili immediatamente tutti i POI presenti in DB per la zona geografica visualizzata, caratterizzati da un _marker_ rappresentante un negozio di colore nero.
 È possibile interagire con questi marker sia tramite un _hoover_, sia tramite un _click_ con il pulsante sinistro del _mouse_; interagendo con essi si apre una finestra in corrispondenza del marker premuto, nella quale sono presenti i dati relativi a quel POI. Per chiudere la finestra di dettaglio è possibile premere sul simbolo "X" in alto a destra della stessa, oppure cliccare in un punto qualsiasi al di fuori della finestra.
