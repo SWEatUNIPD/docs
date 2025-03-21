@@ -800,7 +800,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   - Visualizzazione nome del punto di interesse dai dettagli aperti dall'elemento nello storico (#link(<uc43>)[UC43]).
   - Visualizzazione _e-mail_ dell'utente dai dettagli aperti dall'elemento nello storico (#link(<uc44>)[UC44]).
   - Visualizzazione data e ora di tentativo di generazione annuncio dai dettagli aperti dall'elemento nello storico (#link(<uc45>)[UC45]).
-  - Visualizzazione _flag_ sugli annunci nello storico legati a noleggi attivi dai dettagli aperti dall'elemento nello storico (#link(<uc47>)[UC47]).
   - Visualizzazione dell'annuncio dai dettagli aperti dall'elemento nello storico (#link(<uc46>)[UC46]).
   - Visualizzazione categoria del punto di interesse collegato all'annuncio dai dettagli aperti dall'elemento nello storico (#link(<uc47>)[UC47]).
 
