@@ -206,7 +206,7 @@ Le classi e di conseguenza la _dependency injection_ sono state configurate nel 
 ```ts
 export const TYPES = {
   KafkaManager: Symbol.for('KafkaManager'),
-  TrackerMap: Symbol.for('TrackerMap')
+  TrackerList: Symbol.for('TrackerList')
 };
 ```
 
@@ -225,16 +225,14 @@ export class KafkaManager {
 #codly(header: [*Tracker.ts*])
 ```ts
 @Injectable()
-export class Tracker extends TrackerSubject {
+export class Tracker {
   ...
 
   constructor(
     private id: string,
     @inject(TYPES.KafkaManager)
     private kafkaManager: KafkaManager
-  ) {
-    super();
-  }
+  ) { }
 
   ...
 }
@@ -242,15 +240,11 @@ export class Tracker extends TrackerSubject {
 
 #codly(header: [*Simulator.ts*])
 ```ts
-export class Simulator implements SimulatorObserver {
-  ...
-
+export class Simulator {
   constructor(
-    @inject(TYPES.TrackerMap)
-    private trackerMap: Map<string, Tracker>
-  ) {
-    ...
-  }
+    @inject(TYPES.TrackerList)
+    private trackerMap: Tracker[]
+  ) { }
 
   ...
 }
@@ -277,17 +271,16 @@ container
   .inSingletonScope();
 
 container
-  .bind<Map<string, Tracker>>(TYPES.TrackerMap)
-  .toDynamicValue((context: ResolutionContext): Map<string, Tracker> => {
-    const kafkaManager: KafkaManager =
-      context.get<KafkaManager>(TYPES.KafkaManager);
-    let trackerMap: Map<string, Tracker> = new Map();
+  .bind<Tracker[]>(TYPES.TrackerList)
+  .toDynamicValue((context: ResolutionContext): Tracker[] => {
+    const kafkaManager: KafkaManager = context.get<KafkaManager>(TYPES.KafkaManager);
+    let trackerList: Tracker[] = [];
     for (let i = 1; i <= Number(env.INIT_TRACKER_COUNT); i++) {
       const id = i.toString();
       const tracker: Tracker = new Tracker(id, kafkaManager);
-      trackerMap.set(id, tracker);
+      trackerList.push(tracker);
     }
-    return trackerMap;
+    return trackerList;
   });
 
 container.bind(Simulator).toSelf().inSingletonScope();
@@ -337,101 +330,6 @@ container
 container.bind(Simulator).toSelf().inSingletonScope();
 ```
 
-=== Observer
-Il _design pattern Observer_ risolve un problema legato alla reattività in seguito alla notifica di alcuni cambi di stato. Il cambiamento in una componente provoca una notifica a tutti i suoi osservatori, cioè chi è in ascolto. Ricevuto il segnale questi osservatori si aggiornano in base al nuovo stato dell'emittente. Per evitare una dipendenza circolare nella classe astratta ereditata dall'emittente viene aggiunto un "_setter_" con il quale gli ascoltatori possono iscriversi alla lista.
-
-==== Implementazione dell'observer
-Il simulatore gestisce i noleggi e i relativi mezzi attivi quindi deve rimanere in ascolto dei loro cambi di stato. Viene quindi conveniente utilizzare il _design pattern Observer_ per risolvere questa esigenza: al completamento del percorso `Tracker` notifica a `Simulator` di chiudere il noleggio e rendere nuovamente disponibile il mezzo (quindi il sensore).
-
-==== Integrazione del design pattern nel progetto
-A `TrackerSubject` è stato assegnato l'osservatore come attributo (non una lista perché deve esistere un solo simulatore nel sistema), il metodo per registrare l'osservatore e quello per notificarlo. `SimulatorObserver` contiene il metodo per ricevere la notifica accettando come parametro l'identificativo del sensore. È stato omesso un metodo `getState()` a `TrackerSubject` perché per richiamarlo sarebbe necessario conoscere l'identificativo del sensore in modo da selezionarlo dalla mappa (`trackerMap`); a questo punto tuttavia l'informazione dell'identificativo è già presente nel parametro del metodo `update()` quindi non ha più valenza recuperare lo stato del sensore.
-
-Il metodo `trackEndedUpdate()` è reso asincrono perché nell'implementazione deve effettuare una chiamata API al _back-end_.
-
-#codly(header: [*SimulatorObserver.ts*])
-```ts
-export interface SimulatorObserver {
-  trackEndedUpdate(id: string): Promise<void>;
-}
-```
-
-#codly(header: [*TrackerSubject.ts*])
-```ts
-export abstract class TrackerSubject {
-  private simulatorObserver!: SimulatorObserver;
-
-  register(simulatorObserver: SimulatorObserver): void {
-    this.simulatorObserver = simulatorObserver;
-  }
-
-  protected async notifyTrackEnded(id: string): Promise<void> {
-    if (this.simulatorObserver == null) {
-      throw new Error(
-        `Track ended notify error: simulatorObserver not initialized`
-      );
-    }
-
-    try {
-      await this.simulatorObserver.trackEndedUpdate(id);
-    } catch (err) {
-      console.error(`Error caught trying to update the tracker map.\n${err}`);
-    }
-  }
-}
-```
-
-Quando `Tracker` ha consumato tutti i punti del percorso notifica a `Simulator` che ha terminato.
-
-#codly(
-  header: [*Tracker.ts*],
-  highlights: ((line: 9, start: 9, end: none, fill: blue),),
-)
-```ts
-export class Tracker extends TrackerSubject {
-  ...
-
-  private async move(trackPoints: GeoPoint[]): Promise<void> {
-    ...
-    const intervalId = setInterval(async () => {
-      if (currIndex == trackPoints.length) {
-        ...
-        this.notifyTrackEnded(this.id);
-      }
-      ...
-    }, sendingIntervalMilliseconds);
-  }
-}
-```
-
-`Simulator` quando riceve la notifica effettua una chiamata API al _back-end_ per informarlo di chiudere il noleggio, rimuove quest'ultimo dalla lista dei noleggi attivi e rende nuovamente disponibile il sensore (inteso come mezzo).
-
-#codly(header: [*Simulator.ts*])
-```ts
-export class Simulator implements SimulatorObserver {
-  ...
-
-  async trackEndedUpdate(id: string): Promise<void> {
-    try {
-      const requestUrl =
-        `http://localhost:9000/close-rent/${this.rentIdMap.get(id)}`;
-      const response = await fetch(requestUrl);
-      if (!response.ok) {
-        throw new Error(
-          `Close rent request error: ${response.status} - ${await response.text()}`
-        );
-      }
-      this.rentIdMap.delete(id);
-
-      this.trackerMap.get(id)?.setIsAvailable(true);
-    } catch (err) {
-      throw err;
-    }
-  }
-  
-  ...
-}
-```
-
 == Diagrammi delle classi
 === Simulatore
 #figure(
@@ -460,7 +358,7 @@ export const env = process.env;
 ```ts
 export const TYPES = {
   KafkaManager: Symbol.for('KafkaManager'),
-  TrackerMap: Symbol.for('TrackerMap')
+  TrackerList: Symbol.for('TrackerList')
 };
 ```
 
@@ -482,16 +380,16 @@ container
   .inSingletonScope();
 
 container
-  .bind<Map<string, Tracker>>(TYPES.TrackerMap)
-  .toDynamicValue((context: ResolutionContext): Map<string, Tracker> => {
+  .bind<Tracker[]>(TYPES.TrackerList)
+  .toDynamicValue((context: ResolutionContext): Tracker[] => {
     const kafkaManager: KafkaManager = context.get<KafkaManager>(TYPES.KafkaManager);
-    let trackerMap: Map<string, Tracker> = new Map();
+    let trackerList: Tracker[] = [];
     for (let i = 1; i <= Number(env.INIT_TRACKER_COUNT); i++) {
       const id = i.toString();
       const tracker: Tracker = new Tracker(id, kafkaManager);
-      trackerMap.set(id, tracker);
+      trackerList.push(tracker);
     }
-    return trackerMap;
+    return trackerList;
   });
 
 container.bind(Simulator).toSelf().inSingletonScope();
