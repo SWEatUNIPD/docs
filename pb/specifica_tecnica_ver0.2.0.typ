@@ -91,21 +91,17 @@ In questa sezione vengono elencate le tecnologie scelte e le loro funzionalità 
 
 // ARCHITECTURE //
 = Architettura
-== Architettura logica
 == Architettura di deployment
-// TODO: breve introduzione, cos'è e a cosa serve
+L'architettura di _deployment_ definisce come i componenti di un'applicazione vengono distribuiti ed eseguiti su diversi ambienti. Nel caso di un sistema in _real time_ si possono individuare separati servizi che comunicano reattivamente per inviare e processare i dati. Nel nostro progetto inoltre è presente un'interfaccia grafica che non agisce in seguito a una notifica, bensì a intervalli piccoli e regolari di tempo recupera i dati dal _database_. Abbiamo quindi optato per la K-_architecture_ in quanto soddisfa tutte le caratteristiche del prodotto.
 
 === K-architecture
 La K-_architecture_ è un modello architetturale per l'elaborazione di dati in _streaming_. Derivante dalla #box[λ-_architecture_] la sua particolarità è l'eliminazione del _batching_ mantenendo un flusso costante di dati in _real time_.
 
 // TODO: pro/cons
 
-#figure(
-  image("../assets/img/ST/Kappa-architecture-data-flow.png", width: 80%),
-  caption: [Diagramma della K-_architecture_],
-)
+[IMG ARCH COI LAYER]
 
-- *_Data source_*: la sorgente di dati è costituita dal simulatore che imita l'attivazione dei noleggi e lo spostamento degli utenti sui mezzi. I sensori inviano quindi a intervalli regolari la posizione GPS.
+- *_Data source_*: la sorgente di dati è costituita dal simulatore che imita l'attivazione dei noleggi e lo spostamento degli utenti sui mezzi. I sensori inviano quindi a intervalli regolari la posizione GPS e ricevono l'eventuale annuncio.
 
 - *_Streaming layer_*: questo livello gestisce la trasmissione in tempo reale dei dati che vengono inoltrati al _processing layer_. Lo _streaming layer_ è costituito da:
   
@@ -122,7 +118,31 @@ La K-_architecture_ è un modello architetturale per l'elaborazione di dati in _
 === Flusso dati
 Il diagramma sottostante descrive il precorso dei dati tra i _layer_ del sistema e le relative elaborazioni.
 
-[IMG KLA CHE SI FA LA CERETTA]
+#figure(
+  image("../assets/img/ST/Kappa-architecture-data-flow.png", width: 80%),
+  caption: [Flusso dei dati],
+)
+
++ *Generazione dei dati*: 
+
++ *Invio dei dati*:
+
++ *_Processing_ dei dati*:
+  + *Salvataggio in _database_*:
+  + *Recupero dei dati in _database_*:
+
++ *Richiesta alla LLM*:
+
++ *_Processing_ della risposta della LLM*:
+  + *Salvataggio in _database_*:
+  + *Eventuale invio dell'annuncio*:
+
++ *Ricezione dell'eventuale annuncio*:
+
++ *Visualizzazione grafica*:
+
+== Architettura logica
+=== Data streaming architecture
 
 == Design patterns
 
