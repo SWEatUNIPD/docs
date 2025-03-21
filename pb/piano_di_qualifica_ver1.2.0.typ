@@ -388,7 +388,38 @@ Questa sezione descrive le attività di _testing_ effettuate per garantire che i
 
 == Test di unità
 Mirano a verificare il funzionamento corretto dei componenti _software_ più piccoli e indipendenti, sviluppati principalmente nella fase di progettazione.
-// Da completare con tutti i test
+
+#table(
+  columns: 3,
+  align: (center, left, center),
+  fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
+  table.header[*Codice test*][*Descrizione*][*Stato*],
+    [TU-1], [Verificare che il metodo DataSourceSingleton.getConnection funzioni correttamente, restituendo un'istanza di tipo java.sql.Connection, o, in caso contrario, lanci un'eccezione di tipo SQLException], [Superato],
+    [TU-2], [Verificare che gli oggetti di tipo GPSData vengano istanziati correttamente, constatando in particolare che due oggetti creati a partire dagli stessi parametri devono anche essere stati generati nello stesso istante per poter essere uguali], [Superato],
+    [TU-3], [Verificare che gli oggetti di tipo PointOfInterest vengano istanziati correttamente], [Superato],
+    [TU-4], [Verificare che il metodo GPSData.hashCode() funzioni correttamente, restituendo quindi lo stesso valore solo per oggetti uguali], [Superato],
+    [TU-5], [Verificare che il metodo PointOfInterest.hashCode() funzioni correttamente, restituendo quindi lo stesso valore solo per oggetti uguali], [Superato],
+    [TU-6], [Verificare che il metodo AdvertisementGenerationRequest.open() funzioni correttamente, creando una connessione con il database ed effettuando esattamente una chiamata per ciascun metodo invocato nel suo scope], [Superato],
+    [TU-7], [Verificare che il metodo AdvertisementGenerationRequest.open() lanci un'eccezione di tipo SQLException se la connessione con il database non può essere stabilita], [Superato],
+    [TU-8], [Verificare che il metodo AdvertisementGenerationRequest.close() funzioni correttamente, chiudendo la connessione con il database senza riportare errori nel log], [Superato],
+    [TU-9], [Verificare che il metodo AdvertisementGenerationRequest.close() generi un _record_ nel log se la chiusura della connessione con il database genera un'eccezione], [Superato],
+    [TU-10], [Verificare che la richiesta di generazione dell'annuncio all'LLM tramite il metodo asincrono AdvertisementGenerationRequest.asyncInvoke() generi uno e un solo output (singleton)], [Superato],
+    [TU-11], [Verificare che nel caso in cui l'utente associato al noleggio che sta generando la richiesta di generazione dell'annuncio non sia presente nel _database_ la chiamata del metodo asyncInvoke() non porti alla generazione di alcun annuncio (l'output è un set vuoto)], [Superato],
+    [TU-12], [Verificare che se durante la preparazione della query nel metodo AdvertisementGenerationRequest.asyncInvoke() viene lanciata un'eccezione di tipo SQLException, questa venga correttamente gestita e riportata nel log], [Superato],
+    [TU-13], [Verificare che se durante l'esecuzione della query nel metodo AdvertisementGenerationRequest.asyncInvoke() viene lanciata un'eccezione di tipo SQLException, questa venga correttamente gestita e riportata nel log], [Superato],
+    [TU-14], [Verificare che il metodo NearestPOIRequest.open() funzioni correttamente, creando una connessione con il database ed effettuando esattamente una chiamata al metodo invocato nel suo scope], [Superato],
+    [TU-15], [Verificare che il metodo NearestPOIRequest.open() lanci un'eccezione di tipo SQLException se la connessione con il database non può essere stabilita], [Superato],
+    [TU-16], [Verificare che il metodo NearestPOIRequest.close() funzioni correttamente, chiudendo la connessione con il database senza riportare errori nel log ed effettuando esattamente una chiamata al metodo invocato nel suo scope], [Superato],
+    [TU-17], [Verificare che il metodo NearestPOIRequest.close() generi un _record_ nel log se la chiusura della connessione con il database genera un'eccezione], [Superato],
+    [TU-18], [Verificare che la richiesta di ricerca del punto di interesse più vicino all'utente tramite il metodo asincrono NearestPOIRequest.asyncInvoke() generi uno e un solo output (singleton)], [Superato],
+    [TU-19], [Verificare che nel caso in cui la distanza in linea d'aria tra l'utente e il punto di interesse più vicino superi un limite prestabilito (100 m) la richiesta di ricerca del punto di interesse più vicino effettuata tramite del metodo asyncInvoke() non dia in output alcun punto di interesse (l'output è una lista vuota)], [Superato],
+    [TU-20], [Verificare che se durante la preparazione della query nel metodo NearestPOIRequest.asyncInvoke() viene lanciata un'eccezione di tipo SQLException, questa venga correttamente gestita e riportata nel log], [Superato],
+    [TU-21], [Verificare che se durante l'esecuzione della query nel metodo NearestPOIRequest.asyncInvoke() viene lanciata un'eccezione di tipo SQLException, questa venga correttamente gestita e riportata nel log], [Superato],
+    [TU-22], [Verificare che il metodo serialize della classe AdvertisementSerializationSchema funzioni correttamente, controllando che i campi 'rent_id' e 'adv' dell'oggetto JSON restituito coincidano con il rentId dell'oggetto GPSData e la stringa contenente l'annuncio generato ricevuti in input dal metodo], [Superato],
+    [TU-23], [Verificare che il metodo serialize della classe AdvertisementDeserializationSchema generi un'eccezione di tipo NullPointerException se viene invocato da un oggetto con valore null], [Superato],
+    [TU-24], [Verificare che il metodo deserialize della classe GPSDataDeserializationSchema funzioni correttamente, controllando che ricevuta in input una stringa in formato JSON contenente i campi 'rent_id', 'latitude' e 'longitude' questo restituisca un oggetto GPSData contenente i valori dei campi corrispondenti], [Superato],
+    [TU-25], [Verificare che il metodo deserialize della classe GPSDataDeserializationSchema, quando riceve in input una stringa in formato JSON non valida, generi un'eccezione di tipo IOException, che viene correttamente gestita e riportata nel log], [Superato],
+  )
 
 == Test di integrazione
 Successivi ai _test_ di unità, hanno lo scopo di verificare l'interazione tra diverse unità _software_ per garantire che lavorino in sinergia per compiti specifici.
@@ -489,7 +520,7 @@ Condotti insieme all'azienda proponente, servono a garantire che il prodotto fin
     [TA-08], [Verificare che il prodotto supporti la visualizzazione dei dati degli annunci generati per ogni rispettivo _marker_ sulla mappa], [Non eseguito],
     [TA-09], [Verificare che il prodotto supporti la visualizzazione dei dati delle mancate generazioni di annunci per ogni rispettivo _marker_ sulla mappa], [Non eseguito],
     [TA-10], [Verificare che il prodotto supporti una generazione realistica dei percorsi dei noleggi], [Non eseguito],
-    [TA-11], [Verificare che il prodotto/sistema storicizzi in un _database_ i dati simulati e quelli generati dalla LLM], [Non eseguito],
+    [TA-11], [Verificare che il prodotto persista in un _database_ i dati simulati e quelli generati dalla LLM], [Non eseguito],
     [TA-12], [Verificare che il prodotto sia fruibile con le ultime versioni dei _browser web_ principali, nello specifico: Google Chrome, Mozilla Firefox, Microsoft Edge e Safari], [Non eseguito],
   ),
 )
