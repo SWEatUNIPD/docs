@@ -277,9 +277,6 @@ Misura la percentuale di codice eseguita durante i _test_. Valori più alti indi
 ==== Branch coverage (MDP-BC)
 Calcola la percentuale di rami decisionali (_#rifGlossario("branch")_) del codice eseguiti durante i _test_. Aiuta a identificare scenari non testati.
 
-==== Statement coverage (MDP-SC)
-Rappresenta la percentuale di istruzioni eseguite durante i _test_. Un valore alto garantisce un'analisi più approfondita del codice.
-
 ==== Passed test cases percentage (MDP-PTCP)
 Misura la percentuale di casi di _test_ superati rispetto al totale dei _test_ eseguiti. Un alto valore indica che il _software_ soddisfa i requisiti funzionali e non funzionali previsti.
 
@@ -299,7 +296,6 @@ Indica il numero di fallimenti correttamente riscontrati per unità di dimension
     table.header[*Metrica*][*Nome*][*Valore accettabile*][*Valore desiderabile*],
     [MDP-CC], [_#rifGlossario("Code coverage")_], [$≥ 80\%$], [$100\%$],
     [MDP-BC], [_Branch coverage_], [$≥ 60\%$], [$100\%$],
-    [MDP-SC], [_Statement coverage_], [$≥ 60\%$], [$100\%$],
     [MDP-PTCP], [_Passed test cases percentage_], [$≥ 80\%$], [$100\%$],
     [MDP-FD], [_Failure density_], [$100%$], [$100%$],
   ),
@@ -745,4 +741,40 @@ Misura la percentuale di requisiti obbligatori soddisfatti dal prodotto.
 === PB
 Dal grafico si può vedere come il _team_ abbia cominciato a lavorare al MVP subito dopo la presentazione del RTB, andando a soddisfare la maggior parte dei requisiti obbligatori, ai quali era stata data maggiore priorità, entro la settima iterazione, per poi terminarli del tutto nell'ottavo _sprint_ andando a soddisfare anche i più onerosi.
 
+#pagebreak()
+== Requisiti desiderabili soddisfatti (MPD-RDS)
+Misura la percentuale di requisiti desiderabili soddisfatti dal prodotto.
+#plotGrafico3(
+  "Tabella ROS",
+  ((4, 0), (5, 22), (6, 40), (7, 74)),
+  "ET",
+  ((4, 0), (5, 0), (6, 0), (7, 0)),
+  "Valore accettabile",
+  ((4, 100), (5, 100), (6, 100), (7, 100)),
+  "Valore ottimo",
+)
 
+=== PB
+Come si può vedere dal grafico il _team_ ha comunque voluto fin da subito iniziare a lavorare sui requisiti desiderabili anche se in misura ridotta rispetto a quelli obbligatori, perché riteneva importante soddisfarne almeno una parte, per fornire un prodotto più completo. Facendo così, alla settima iterazione il gruppo aveva già soddisfatto il 40% dei requisiti desiderabili, per poi arrivare fino ale 74% nell'ottavo _sprint_, una volta terminati i requisiti obbligatori.
+
+
+#pagebreak()
+== Requisiti opzionali soddisfatti (MPD-ROPS)
+Misura la percentuale di requisiti opzionali soddisfatti dal prodotto.
+#plotGrafico3(
+  "Tabella ROS",
+  ((4, 0), (5, 0), (6, 0), (7, 0)),
+  "ET",
+  ((4, 0), (5, 0), (6, 0), (7, 0)),
+  "Valore accettabile",
+  ((4, 100), (5, 100), (6, 100), (7, 100)),
+  "Valore ottimo",
+)
+
+=== PB
+
+
+== Complessità ciclomatica per metodo (MPD-CCM)
+Valuta la complessità per metodo del codice sorgente attraverso la misurazione del numero di cammini indipendenti attraverso il grafo di controllo del flusso.
+
+Il gruppo, durante lo sviluppo del MVP, ha deciso di appoggiarsi a uno strumento di analisi statica per il calcolo della complessità ciclomatica, tramite il quale è riuscito a garantire un valore per il *CCM* inferiore a cinque, il che lo fa rientrare nel valore accettabile per questa metrica.
