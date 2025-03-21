@@ -30,14 +30,14 @@
   uso: "Esterno",
   versioni: (
     "0.3.0",
-    "18/03/2025",
+    "21/03/2025",
     "Riccardo Milan",
-    "Davide Marin, Davide Picello",
+    "Davide Marin\nDavide Picello",
     [
       - Aggiunta sezione Grafana
     ],
     "0.2.0",
-    "12/03/2025",
+    "18/03/2025",
     "Andrea Precoma",
     "Riccardo Milan\nDavide Picello",
     [
@@ -231,9 +231,9 @@ container.bind(Simulator).toSelf().inSingletonScope();
 L'interfaccia fornita dal _software_ deve permettere all'amministratore di visualizzare la mappa con i punti di interesse, i sensori che si muovono e gli eventuali annunci generati. Inoltre deve fornire una visualizzazione per lo storico degli annunci e una per entrare nel dettaglio di un singolo annuncio.
 Gran parte dei dati dunque deve essere analizzata e mostrata all'utente finale in _real time_. Tale necessità ha dirottato la scelta del gruppo riguardo la tecnologia da utilizzare verso Grafana.
 === Grafana
-- Documentazione: #formatLink(url: "https://grafana.com/docs/") (ultimo accesso 21/03/2025)
-- Versione: 11.5.2
-- Descrizione: Grafana è una piattaforma _open source_ per la visualizzazione e l'analisi dei dati, con cui è possibile creare _dashboard_ interattive e grafici da diverse fonti.
+- *Documentazione*: #formatLink(url: "https://grafana.com/docs/") (ultimo accesso 21/03/2025)
+- *Versione*: 11.5.2
+- *Descrizione*: Grafana è una piattaforma _open source_ per la visualizzazione e l'analisi dei dati, con cui è possibile creare _dashboard_ interattive e grafici da diverse fonti.
 
 ==== Utilizzo nel progetto
 Per l'avvio di Grafana nel nostro _software_ è stata predisposta un'immagine nel file `compose.yml`, che viene avviata contestualmente al comando _docker-compose_. 
