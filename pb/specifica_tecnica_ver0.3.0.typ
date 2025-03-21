@@ -21,13 +21,21 @@
   ),
   verificatori: (
     "Andrea Perozzo",
-    "Klaudio Merja",
+    "Davide Marin",
     "Davide Picello",
+    "Klaudio Merja",  
     "Riccardo Milan"
   ),
   titolo: "Specifica Tecnica",
   uso: "Esterno",
   versioni: (
+    "0.3.0",
+    "18/03/2025",
+    "Riccardo Milan",
+    "Davide Marin, Davide Picello",
+    [
+      - Aggiunta sezione Grafana
+    ],
     "0.2.0",
     "12/03/2025",
     "Andrea Precoma",
@@ -218,6 +226,21 @@ container.bind(Simulator).toSelf().inSingletonScope();
 == Database
 === PostgreSQL
 === PostGIS
+
+== Interfaccia amministratore
+L'interfaccia fornita dal _software_ deve permettere all'amministratore di visualizzare la mappa con i punti di interesse, i sensori che si muovono e gli eventuali annunci generati. Inoltre deve fornire una visualizzazione per lo storico degli annunci e una per entrare nel dettaglio di un singolo annuncio.
+Gran parte dei dati dunque deve essere analizzata e mostrata all'utente finale in _real time_. Tale necessità ha dirottato la scelta del gruppo riguardo la tecnologia da utilizzare verso Grafana.
+=== Grafana
+- Documentazione: #formatLink(url: "https://grafana.com/docs/") (ultimo accesso 21/03/2025)
+- Versione: 11.5.2
+- Descrizione: Grafana è una piattaforma _open source_ per la visualizzazione e l'analisi dei dati, con cui è possibile creare _dashboard_ interattive e grafici da diverse fonti.
+
+==== Utilizzo nel progetto
+Per l'avvio di Grafana nel nostro _software_ è stata predisposta un'immagine nel file `compose.yml`, che viene avviata contestualmente al comando _docker-compose_. 
+Le funzionalità principali di Grafana nel nostro sistema sono:
+- Monitoraggio in tempo reale: Grafana raccoglie in tempo reale i dati dei sensori registrati nel sistema, ovvero identificativo del sensore, noleggio associato ad esso, latitudine e longitudine.
+- Visualizzazione dei dati in tempo reale: i dati dei sensori raccolti in tempo reale vengono infatti mostrati in una _dashboard_ di tipo _geomap_ interattiva, nella quale le posizioni dei sensori sono rappresentate da _layer_ di tipo _route_ e i punti di interesse e gli annunci con _layer_ di tipo _marker_.
+- Visualizzazione dei dati statici: viene messa a disposizione dell'amministratore una _dashboard_ che raccoglie lo storico degli annunci generati nel tempo; interagendo con i dati nel _database_, Grafana ci permette di mostrare tutti i dati interessanti legati ad ogni annuncio.
 
 = Architettura
 == Architettura logica
