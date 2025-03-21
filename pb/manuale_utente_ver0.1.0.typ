@@ -7,13 +7,23 @@
   responsabile: "-",
   redattori: (
     "Andrea Precoma",
+    "Davide Marin",
   ),
   verificatori: (
     "Klaudio Merja",
+    "Andrea Precoma",
   ),
   titolo: "Manuale Utente",
   uso: "Esterno",
   versioni: (
+    "0.2.0",
+    "21/03/2025",
+    "Davide Marin",
+    "Andrea Precoma",
+    [
+      - Modifiche vecchie sezioni
+      - Aggiunta sezione "Guida all'utilizzo della _dashboard_" 
+    ],
     "0.1.0",
     "04/03/2025",
     "Andrea Precoma",
@@ -107,20 +117,12 @@ Collegarsi all'indirizzo `localhost:3000` (oppure `127.0.0.1:3000`) e inserire l
 
 In seguito viene richiesto di cambiare la _password_ perché poco sicura ma si può saltare l'operazione.
 
-Nel _menu_ laterale bisogna selezionare la voce "_#rifGlossario("Dashboard")_" e poi "NOME DASHBOARD" dall'elenco.
-
-#figure(
-  image("../assets/img/Manuale/grafana-menu.png", width: 60%),
-  caption: [Selezione della _dashboard_],
-)
-#v(5pt)
-
 == Interfaccia per lo stato del database
 Collegarsi all'indirizzo `localhost:8888` (oppure `127.0.0.1:8888`) e inserire le credenziali "sweat.unipd\@gmail.com" per _username_ e "Admin12!" per _password_.
 
 #figure(
   image("../assets/img/Manuale/db-login.png", width: 50%),
-  caption: [Selezione della _dashboard_],
+  caption: [Inserimento credenziali per PgAdmin],
 )
 #v(5pt)
 
@@ -129,9 +131,37 @@ Collegarsi all'indirizzo `localhost:8888` (oppure `127.0.0.1:8888`) e inserire l
 = Guida all'utilizzo della dashboard
 
 == Mappa principale dei noleggi
+Una volta effettuato l'accesso a Grafana tramite opportuna pagina di accesso, si viene indirizzati in automatico alla visualizzazione della _dashboard_ della mappa geografica.
+
+#figure(
+  image("../assets/img/Manuale/grafana-geomap.png", width: 95%),
+  caption: [_Dashboard_ della mappa geografica di Grafana], 
+)
+#v(5pt)
+
+In questa schermata è possibile effettuare le classiche operazioni interattive con una mappa, come "zoom in" e "zoom out" tramite rotella del _mouse_ e anche spostare a proprio piacimento la porzione di mappa visualizzata tramite "_click_ and drag" cpn il tasto sinistro del __mouse__.
+
+All'interno della mappa sono visualizzabili immediatamente tutti i POI presenti in DB per la zona geografica visualizzata, caratterizzati da un _marker_ rappresentante un negozio di colore nero.
+È possibile interagire con questi marker sia tramite un _hoover_, sia tramite un _click_ con il pulsante sinistro del _mouse_; interagendo con essi si apre una finestra in corrispondenza del marker premuto, nella quale sono presenti i dati relativi a quel POI. Per chiudere la finestra di dettaglio è possibile premere sul simbolo "X" in alto a destra della stessa, oppure cliccare in un punto qualsiasi al di fuori della finestra.
+
+#figure(
+  image("../assets/img/Manuale/dettaglio-POI-click.png", width: 50%),
+  caption: [Dettaglio del POI selezionato], 
+)
+#v(5pt)
+
+Se ci sono dei noleggi attivi, essi appaiono all'interno della mappa e sono contraddistinti da una linea di colore blu che segue gli ultimi spostamenti di ogni noleggio.
+Nel caso un utente di un noleggio passi nelle prossimità di un POI, è possibile che si visualizzino altri tipi di marker relativi agli annunci:
+1. Annuncio generato: contraddistinto da un pallino di colore arancione
+2. Annuncio non generato: contraddistinto da una X di colore rosso.
+Con entrambi i tipi di _marker_, è possibile interagire, effettuando un _click_ col pulsante sinistro del _mouse_ sopra di essi si apre una finestra in corrispondenza del marker premuto, nella quale sono presenti i dati relativi al noleggio, al POI, e rispettivamente il testo dell'annuncio generato o il motivo per cui non è stato generato.
+Come per la finestra di dettaglio dei POI, è possibile chiudere la finestra di dettaglio degli annunci premendo sul simbolo "X", oppure cliccare in un punto qualsiasi al di fuori della finestra.
 
 == Storico degli annunci generati
+È possibile visualizzare anche sotto forma di lista tutti gli annunci generati dalla LLM.
+Per aprire questa pagina, premere la voce _"Dashboard"_ nel menu a sinistra dello schermo, questo apre una pagina con la lista di tutte le _dashboard_ disponibili. Selezionare la voce "Storico annunci". Aperta la _dashboard_ ci si trova davanti ad una lista contenente tutti i dati degli annunci generati.
 
-== Sezione delle statistiche e grafici
+Per ogni voce della lista, inoltre, è possibile premere "Vedi altro" per esaminare il dettaglio di ogni generazione, nonchè il testo dell'annuncio generato per intero.
+
 
 // TODO: test
