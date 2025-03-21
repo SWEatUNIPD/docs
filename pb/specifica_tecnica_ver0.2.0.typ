@@ -92,11 +92,10 @@ In questa sezione vengono elencate le tecnologie scelte e le loro funzionalità 
 L'interfaccia fornita dal _software_ deve permettere all'amministratore di visualizzare la mappa con i punti di interesse, i sensori che si muovono e gli eventuali annunci generati. Inoltre deve fornire una visualizzazione per lo storico degli annunci e una per entrare nel dettaglio di un singolo annuncio.
 Gran parte dei dati dunque deve essere analizzata e mostrata all'utente finale in _real time_. Tale necessità ha dirottato la scelta del gruppo riguardo la tecnologia da utilizzare verso #rifGlossario("Grafana").
 === Grafana
-Grafana è una piattaforma _#rifGlossario("open source")_ per la visualizzazione e l'analisi dei dati, con cui è possibile creare _#rifGlossario("dashboard")_ interattive e grafici da diverse fonti.
-==== Versione
-11.5.2
-==== Documentazione
-https://grafana.com/docs/ (ultimo accesso in data 18/03/2025)
+- Documentazione: #formatLink(url: "https://grafana.com/docs/") (ultimo accesso 21/03/2025)
+- Versione: 11.5.2
+- Descrizione: Grafana è una piattaforma _#rifGlossario("open source")_ per la visualizzazione e l'analisi dei dati, con cui è possibile creare _#rifGlossario("dashboard")_ interattive e grafici da diverse fonti.
+
 ==== Utilizzo nel progetto
 Per l'avvio di Grafana nel nostro _software_ è stata predisposta un'immagine nel file `compose.yml`, che viene avviata contestualmente al comando #rifGlossario("docker-compose"). 
 Le funzionalità principali di Grafana nel nostro sistema sono:
