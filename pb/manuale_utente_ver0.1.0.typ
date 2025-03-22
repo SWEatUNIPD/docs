@@ -139,9 +139,9 @@ Una volta effettuato l'accesso a Grafana tramite opportuna pagina di accesso, si
 )
 #v(5pt)
 
-In questa schermata è possibile effettuare le classiche operazioni interattive con una mappa, come "zoom in" e "zoom out" tramite rotella del _mouse_ e anche spostare a proprio piacimento la porzione di mappa visualizzata tramite "_click_ and drag" cpn il tasto sinistro del _mouse_.
+In questa schermata è possibile effettuare le classiche operazioni interattive con una mappa, come "zoom in" e "zoom out" tramite rotella del _mouse_ e anche spostare a proprio piacimento la porzione di mappa visualizzata tramite "_click_ and drag" con il tasto sinistro del _mouse_.
 
-All'interno della mappa sono visualizzabili immediatamente tutti i POI presenti in DB per la zona geografica visualizzata, caratterizzati da un _marker_ rappresentante un negozio di colore nero.
+All'interno della mappa sono visualizzabili immediatamente tutti i punti di interesse, in seguito riferiti dall'acronimo POI, presenti in _database_ per la zona geografica visualizzata, caratterizzati da un _marker_ rappresentante un negozio di colore nero.
 È possibile interagire con questi marker sia tramite un _hoover_, sia tramite un _click_ con il pulsante sinistro del _mouse_; interagendo con essi si apre una finestra in corrispondenza del marker premuto, nella quale sono presenti i dati relativi a quel POI. Per chiudere la finestra di dettaglio è possibile premere sul simbolo "X" in alto a destra della stessa, oppure cliccare in un punto qualsiasi al di fuori della finestra.
 
 #figure(
@@ -150,11 +150,11 @@ All'interno della mappa sono visualizzabili immediatamente tutti i POI presenti 
 )
 #v(5pt)
 
-Se ci sono dei noleggi attivi, essi appaiono all'interno della mappa e sono contraddistinti da una linea di colore blu che segue gli ultimi spostamenti di ogni noleggio.
+Se ci sono dei noleggi attivi, essi appaiono all'interno della mappa e sono contraddistinti da una linea di colore blu che segue gli ultimi spostamenti di ogni mezzo.
 Nel caso un utente di un noleggio passi nelle prossimità di un POI, è possibile che si visualizzino altri tipi di marker relativi agli annunci:
 1. Annuncio generato: contraddistinto da un pallino di colore arancione
 2. Annuncio non generato: contraddistinto da una X di colore rosso.
-Con entrambi i tipi di _marker_, è possibile interagire, effettuando un _click_ col pulsante sinistro del _mouse_ sopra di essi si apre una finestra in corrispondenza del marker premuto, nella quale sono presenti i dati relativi al noleggio, al POI, e rispettivamente il testo dell'annuncio generato o il motivo per cui non è stato generato.
+Con entrambi i tipi di _marker_ è possibile interagire effettuando un _click_ col pulsante sinistro del _mouse_. Sopra di essi si apre una finestra in corrispondenza del marker premuto, nella quale sono presenti i dati relativi al noleggio, al POI e il testo dell'annuncio se generato, altrimenti il motivo per cui non è stato prodotto.
 Come per la finestra di dettaglio dei POI, è possibile chiudere la finestra di dettaglio degli annunci premendo sul simbolo "X", oppure cliccare in un punto qualsiasi al di fuori della finestra.
 
 == Storico degli annunci generati
