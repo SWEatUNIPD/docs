@@ -34,7 +34,7 @@
     "22/03/2025",
     "Davide Picello",
     "Riccardo Milan",
-    "Completata sezione \"Stato dei requisiti funzionali\"",
+    [- Completata sezione "Stato dei requisiti funzionali"],
     
     
     "0.3.0",
