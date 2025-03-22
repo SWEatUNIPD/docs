@@ -10,9 +10,9 @@
   uso: "Esterno",
   versioni: (
     "1.3.0",
-    "19/03/2025",
+    "21/03/2025",
     "Davide Picello",
-    "",
+    "Andrea Precoma",
     [
       - Aggiunta dei _test_ di unità del simulatore
     ],
