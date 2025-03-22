@@ -24,8 +24,15 @@
   titolo: "Piano di Progetto",
   uso: "Esterno",
   versioni: (
+    "1.5.0",
+    "12/03/2025",
+    "Davide Marin",
+    "Davide Martinelli",
+    [
+      - Stesura pianificazione ottavo _sprint_
+    ],
     "1.4.0",
-    "11/02/2025",
+    "11/03/2025",
     "Riccardo Milan",
     "Andrea Precoma",
     [
@@ -239,7 +246,7 @@ Per il processo di gestione dei rischi il gruppo adotta il modello fornito da Ia
 === Imprevisti tecnologici <RT-2>
 #tabellaRischio(
   ID: [RT-2],
-  descrizione: [A causa dell'importanza che certe tecnologie hanno all'interno del progettose si presenta un cambiamento importante è fondamentale risolverlo repentinamente. Data la priorità che assume questo adattamento, potrebbe essere necessario allocarvi risorse prima destinate ad altre attività.],
+  descrizione: [A causa dell'importanza che certe tecnologie hanno all'interno del progetto, se si presenta un cambiamento importante è fondamentale risolverlo repentinamente. Data la priorità che assume questo adattamento, potrebbe essere necessario allocarvi risorse prima destinate ad altre attività.],
   probabilità: [Media],
   impatto: [Alto],
   piano: [Il rischio può essere mitigato analizzando e studiando molto accuratamente tutte le possibili tecnologie utilizzabili prima di scegliere quella che verrà effettivamente utilizzata per sviluppare.],
@@ -764,7 +771,7 @@ In seguito alla valutazione del RTB, il _team_ si è prefissato di apportare le 
   caption: [Preventivo delle ore nel sesto _sprint_ per membro e per ruolo],
 )
 
-==== Consuntivo orario e di spesa dello _sprint_ corrente
+==== Consuntivo orario e di spesa dello sprint corrente
 #consuntivoOre(
   preventivo: (
     (0, 0, 0, 0, 0, 1),
@@ -812,13 +819,13 @@ Il preventivo a finire rimane positivo seppur leggermente più alto rispetto all
 Durante il sesto _sprint_ il gruppo ha lavorato per apportare le modifiche necessarie alla documentazione in seguito ai _feedback_ ricevuti durante il RTB. Le attività sono state quasi tutte completate nei tempi previsti, eccezzione fatta per le correzioni da apportare all'Analisi dei Requisiti, che proseguiranno durante il prossimo _sprint_.
 
 ===== Cosa ha funzionato
-Il gruppo è riuscito, nonostante il periodo in concomitanza con gli ultimi esami, a completare la maggior parte delle attività previste nei tempi pianificati. Apprezzato anche il continuo aggiornamento reciproco tramite i canali informali di comunicazione. 
+Il gruppo è riuscito, nonostante il periodo in concomitanza con gli ultimi esami, a completare la maggior parte delle attività previste nei tempi pianificati. Apprezzato anche il continuo aggiornamento reciproco tramite i canali informali di comunicazione.
 
 ===== Cosa non ha funzionato
 L'attività di correzione dell'Analisi dei Requisiti è stata cominciata tardi e la sua durata è stata sottostimata. Inoltre il gruppo voleva prima discutere alcune modifiche con la proponente e non è stato possibile farlo entro la fine di questo periodo.
 
 ===== Cosa fare per migliorare
-Il gruppo si impegnerà a pianificare meglio le scadenze per le attività future, cercando di stimare più precisamente i tempi necessari a completarle, tenendo conto del tempo necessario ad eventuali _feedback_ da parte dell'azienda proponente. 
+Il gruppo si impegnerà a pianificare meglio le scadenze per le attività future, cercando di stimare più precisamente i tempi necessari a completarle, tenendo conto del tempo necessario ad eventuali _feedback_ da parte dell'azienda proponente.
 
 ===== Rischi riscontrati
 Nel corso del sesto _sprint_ si sono riscontrati i seguenti rishi:
@@ -833,10 +840,14 @@ Inoltre si inizierà a lavorare sullo sviluppo del #rifGlossario("MVP") con rela
 #pagebreak()
 
 === Sprint 7
-- *Inizio*: 25/02/2025
-- *Fine*: 10/03/2025
-- *Rischi attesi*: #link(<RO-1>)[RO-1], #link(<RO-2>)[RO-2], #link(<RO-3>)[RO-3], #link(<RT-1>)[RT-1]
-
+#grid(
+  columns: 2,
+  column-gutter: 1em,
+  row-gutter: 0.5em,
+  [- *Inizio:*], [25/02/2025],
+  [- *Fine:*], [10/03/2025],
+  [- *Rischi attesi:*], [#link(<RO-1>)[RO-1], #link(<RO-2>)[RO-2], #link(<RO-3>)[RO-3], #link(<RT-1>)[RT-1]],
+)
 ==== Attività dello sprint
 In seguito alla riunione di inizio settimo _sprint_, il _team_ si è prefissato di iniziare il ciclo di vita dei documenti relativi alla _milestone_ PB e iniziare la progettazione del _software_. In particolare, le attività da portare a termine sono le seguenti:
 - Redazione dei verbali per le rispettive riunioni interne ed esterne.
@@ -865,7 +876,7 @@ In seguito alla riunione di inizio settimo _sprint_, il _team_ si è prefissato 
   caption: [Preventivo delle ore nel settimo _sprint_ per membro e per ruolo],
 )
 
-==== Consuntivo orario e di spesa dello _sprint_ corrente
+==== Consuntivo orario e di spesa dello sprint corrente
 #consuntivoOre(
   preventivo: (
     (3, 0, 0, 8, 10, 0),
@@ -918,17 +929,74 @@ Durante il settimo _sprint_ il gruppo ha lavorato per avanzare nella redazione d
 Il gruppo ha analizzato in modo piuttosto approfondito le architetture da adottare presentandole sia all'azienda proponente che al prof. Cardin. Il colloquio con il docente-committente ha fatto emergere alcune problematiche relative allo _stream processor_ poiché è stato considerato un numero potenziale di utenti molto inferiore rispetto a quello atteso dal professore. Il _team_ ha saputo tempestivamente colmare il deficit tecnologico e in pochi giorni è riuscito a modellare il simulatore e il nuovo _stream processor_ con Apache Flink. È stata portata avanti anche l'interfaccia con Grafana.
 
 ===== Cosa non ha funzionato
-La redazione della prima parte della Specifica Tecnica non è stata completata secondo i tempi previsti a causa del cambio di tecnologia imprevisto che ha richiesto molte risorse per risolvere il problema rapidamente. Poiché lo _stream processor_ è parte centrale del prodotto è stato ritenuto fondamentale definirlo interamente prima di cominciare la stesura della Specifica Tecnica. 
+La redazione della prima parte della Specifica Tecnica non è stata completata secondo i tempi previsti a causa del cambio di tecnologia imprevisto che ha richiesto molte risorse per risolvere il problema rapidamente. Poiché lo _stream processor_ è parte centrale del prodotto è stato ritenuto fondamentale definirlo interamente prima di cominciare la stesura della Specifica Tecnica.
 
 ===== Cosa fare per migliorare
 In questo _sprint_ non ci sono particolari spunti di miglioramento. L'unico problema emerso è stato il cambio improvviso di tecnologia che però non era prevedibile, in quanto la tecnologia scelta era stata approvata per un _target_ più piccolo di dati. In seguito all'incontro con il professor Cardin, appurato che il nostro _software_ dovesse far fronte a una maggior quantità di dati, è stato deciso di cambiare tecnologia verso una soluzione più consona.
 
 ===== Rischi riscontrati
 Nel corso del settimo _sprint_ si sono riscontrati i seguenti rishi:
-- #link(<RT-2>)[RT-2]: come spiegato sopra, si è rivelato a un certo punto necessario un cambio di tecnologia, che ha reso necessario un rifacimento di gran parte del prodtto.
+- #link(<RT-2>)[RT-2]: come spiegato sopra, si è rivelato a un certo punto necessario un cambio di tecnologia, che ha reso necessario un rifacimento di gran parte del prodotto.
 - #link(<RT-1>)[RT-1]: a causa di RT-2, il gruppo ha dovuto formarsi sulla nuova tecnologia utilizzata.
 
 ===== Attività future
 Nel prossimo periodo sarà necessario redigere la Specifica Tecnica e finire il Manuale Utente. Inoltre con le tecnologie del tutto definite, ci saranno da compiere le ultime scelte architetturali e poi dedicarsi completamente alla scrittura del codice per il _software_ e i relativi _test_.
 
 #pagebreak()
+
+=== Sprint 8
+#grid(
+  columns: 2,
+  column-gutter: 1em,
+  row-gutter: 0.5em,
+  [- *Inizio:*], [11/03/2025],
+  [- *Fine:*], [21/03/2025],
+  [- *Rischi attesi:*], [#link(<RO-1>)[RO-1], #link(<RO-2>)[RO-2], #link(<RO-3>)[RO-3], #link(<RT-1>)[RT-1]],
+)
+
+==== Attività dello sprint
+In seguito alla riunione avvenuta per l'inizio dell'ottavo _sprint_ il _team_ prevede di completare tutte le attività necessarie per la presentazione del PB. In particolare, le attività da portare a termine sono le seguenti:
+- Redazione dei verbali per le rispettive riunioni interne ed esterne.
+- Compilazione del Piano di Progetto con la sezione relativa all'ottavo _sprint_.
+- Ultimare il manuale utente, in particolare:
+  - Aggiungere la sezione "Guida all'utilizzo della _dashboard_".
+  - Rifinire i precedenti capitoli.
+- Stesura delle sezioni mancanti nella Specifica Tecnica, in particolare:
+  - Sezione del simulatore.
+  - Sezione di architettura e _design pattern_.
+  - Sezione relativa al _database_.
+  - Sezione relativa a Grafana.
+  - Sezione relativa a Flink.
+- Stesura dei _test_ di unità nel PdQ, nello specifico:
+  - _Test_ del simulatore GPS.
+  - _Test_ del _job_ di Flink.
+- Scrittura del codice dei _test_ di unità, nello specifico:
+  - _Test_ del simulatore GPS.
+  - _Test_ del _job_ di Flink.
+- Ultimazione della _dashboard_ di Grafana.
+- Implementare le ultime modifiche al sito di facciata del _team_, in particolare:
+  - Riordinare i verbali in modo che appaiano dal più recente al meno recente.
+  - Rinominare i documenti mettendo le prime lettere maiuscole.
+- Ultimazione del _database_.
+- _Refactoring_ del simulatore in modo che rispetti l'architettura.
+- Creazione dello _stream processor_ in Flink.
+
+#v(10pt)
+#figure(
+  image("../assets/img/PdP/gantt_s8.png"),
+  caption: [Diagramma di Gantt dello _sprint_ 8],
+)
+
+==== Preventivo orario
+#rendicontazioneOre(
+  (
+    (1, 4, 1, 11, 13, 14),
+    (2, 3, 0, 7, 3.5, 15),
+    (6, 3, 0, 13, 18, 7),
+    (5, 0.5, 0, 16, 23, 9),
+    (3, 0, 1.5, 13, 17, 10),
+    (5, 1.5, 0, 7, 9, 8),
+    (0, 0, 0, 16, 14, 11.5),
+  ),
+  caption: [Preventivo delle ore nell'ottavo _sprint_ per membro e per ruolo],
+)

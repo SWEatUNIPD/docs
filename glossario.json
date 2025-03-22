@@ -53,11 +53,15 @@
     "Hive MQ": "_Broker_ MQTT _open source_ ad alte prestazioni per l'IoT.",
     "Hosting": "Servizio che fornisce uno spazio _online_ per archiviare, gestire e condividere dei documenti. Nel contesto attuale viene riferito ad un _hosting_ di _repository_, un ambiente dove versionare codice sorgente e documentazione."
   },
+  "O":{
+    "Open source": "Con open source, si indica un software distribuito, in via gratuita, sotto i termini di una licenza che ne concede lo studio, l'utilizzo, la modifica e la redistribuzione."
+  },
   "K": {
     "Kubernetes": "Sistema _open source_ di orchestrazione di _container_."
   },
   "L": {
     "LangChain": "_Framework open source_ per la creazione di applicazioni basate su LLM, che consente di collegare questi modelli a diverse fonti di dati e API.",
+    "Layer": "Nel contesto di grafana, un layer è un uno strato di visualizzazione che mostra uno specifico dato in un pannello della dashboard.",
     "LLM": "_Large Language Model_, modello di intelligenza artificiale addestrato su grandi quantità di testo per comprendere, generare e rispondere al linguaggio naturale, utilizzato in _chatbot_, traduttori e assistenti virtuali."
   },
   "M": {
@@ -77,7 +81,8 @@
   },
   "R": {
     "Rabbit MQ": "_Broker_ di messaggi _open source_ AMQP utilizzato per creare sistemi di messaggistica asincrona.",
-    "ROI": "Acronimo di \"_Return On Investment_:\", è un indice economico che misura la redditività di un investimento, calcolato dal rapporto tra i risultati economici ottenuti e il capitale investito."
+    "ROI": "Acronimo di \"_Return On Investment_:\", è un indice economico che misura la redditività di un investimento, calcolato dal rapporto tra i risultati economici ottenuti e il capitale investito.",
+    "Route": "Visualizzazione grafica del percorso che un sensore compie nella dashboard con la mappa."
   },
   "S": {
     "SAL": "Stato Avanzamento Lavori per misurare il progresso delle attività rispetto alla pianificazione.",
