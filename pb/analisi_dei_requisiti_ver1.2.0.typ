@@ -1538,7 +1538,7 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
     [UC64], [RFF-7],
     [UC65], [RFF-9],
     [UC66], [RFF-8],
-    [Riunioni esterne], [ROF-2, ROF-9, ROF-10, ROF-11, ROF-12, ROF-13, ROF-14, ROF-15, ROF-16, ROF-17, ROF-18, ROF-19, ROF-20, ROF-21, ROF-22, ROF-23, ROF-24, RDF-1, RDF-2, RDF-3, RDF-4, RDF-5, RDF-6, RDF-7, RDF-7, RDF-8, RDF-9, RDF-10, RDF-12, RDF-11, RDF-12, RDF-13, RDF-14, RDF-15, RDF-16, RDF-17, RFF-1, RFF-2, RFF-3, RFF-4, RFF-5, RFF-6, RFF-7, RFF-8, RFF-9],
+    [Riunioni esterne], [ROF-2, ROF-9, ROF-10, ROF-11, ROF-12, ROF-13, ROF-14, ROF-15, ROF-16, ROF-17, ROF-18, ROF-19, ROF-20, ROF-21, ROF-22, ROF-23, ROF-24, RDF-1, RDF-2, RDF-3, RDF-4, RDF-5, RDF-6, RDF-7, RDF-8, RDF-9, RDF-10, RDF-11, RDF-12, RDF-13, RDF-14, RDF-15, RDF-16, RDF-17, RFF-1, RFF-2, RFF-3, RFF-4, RFF-5, RFF-6, RFF-7, RFF-8, RFF-9],
     [Riunioni interne], [ROF-3, ROF-4, ROF-5, ROF-13, ROF-14, ROF-16, ROF-17, ROF-18, ROF-20, ROF-22, ROF-23, ROF-24, ROF-25, ROF-26, ROF-27, ROF-28, ROF-29, ROF-30, ROF-31, ROF-32, ROQ-2, ROQ-3, ROV-1],
     [Capitolato], [ROF-1, ROF-6, ROF-7, ROF-8, ROF-9, ROF-10, ROF-11, ROF-12, ROF-15, ROF-33, ROF-34, ROQ-1, ROQ-4, ROQ-5, RFF-10],
     [Norme di Progetto], [ROQ-2],
