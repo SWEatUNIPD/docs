@@ -17,7 +17,7 @@
   uso: "Esterno",
   versioni: (
     "0.2.0",
-    "14/03/2025",
+    "21/03/2025",
     "Andrea Precoma",
     "Klaudio Merja",
     [
@@ -123,23 +123,28 @@ Il diagramma sottostante descrive il precorso dei dati tra i _layer_ del sistema
   caption: [Flusso dei dati],
 )
 
-+ *Generazione dei dati*: 
++ *Generazione dei dati*: Il simulatore genera in tempo reale dei percorsi tramite una chiamata API al servizio OpenStreetMap.
 
-+ *Invio dei dati*:
++ *Invio dei dati*: Ogni sensore attivo del simulatore invia a intervalli regolari la posizione GPS in un Kafka _topic_.
 
-+ *_Processing_ dei dati*:
-  + *Salvataggio in _database_*:
-  + *Recupero dei dati in _database_*:
++ *_Processing_ dei dati*: Lo _stream processor_ è iscritto alla _topic_ delle posizioni GPS e riceve i messaggi dei sensori. Elabora quindi i dati ricevuti nel seguente modo:
+  + *Salvataggio in _database_*: Salva le posizioni nel _database_.
+  + *Controllo interesse*: Viene controllato se almeno una categoria dell'utente coincide con quella del punto di interesse. In caso affermativo è probabile che venga generato l'annuncio, in caso negativo è probabile il contrario quindi non si va nemmeno a effettuare la richiesta alla LLM.
+  + *Recupero dei dati in _database_*: Se le categorie combaciano vengono recuperati i dati di profilazione dell'utente e le informazioni del punto di interesse, ovvero:
+    - Il campo di testo libero dove l'utente ha descritto i suoi interessi.
+    - La descrizione del punto di interesse (cosa offre).
+    - La categoria del punto di interesse.
+    - Il nome del punto di interesse.
 
-+ *Richiesta alla LLM*:
++ *Richiesta alla LLM*: Se l'utente è stato considerato potenzialmente interessato viene effettuata la richiesta alla LLM di generare l'annuncio.
 
-+ *_Processing_ della risposta della LLM*:
-  + *Salvataggio in _database_*:
-  + *Eventuale invio dell'annuncio*:
++ *_Processing_ della risposta della LLM*: viene processata la risposta della LLM, in particolare:
+  + *Salvataggio in _database_*: Viene salvata la risposta in _database_, indipendentemente che sia l'annuncio o la risposta che l'utente non è interessato nonostante le categorie coincidano (quindi non è stato generato l'annuncio).
+  + *Eventuale invio dell'annuncio*: In caso l'annncio sia stato generato, questo viene inviato al sensore.
 
-+ *Ricezione dell'eventuale annuncio*:
++ *Ricezione dell'eventuale annuncio*: Il sensore riceve l'annuncio se questo è stato generato. In uno scenario reale l'annuncio verrebbe visualizzato dall'utente, ma il capitolato non prevedeva lo sviluppo dell'applicazione lato _client_.
 
-+ *Visualizzazione grafica*:
++ *Visualizzazione grafica*: Grafana recupera le informazioni dal _database_ a intervalli regolari ravvicinati per aggiornare costantemente la visuale dell'amministratore. Se questo richiede informazioni specifiche, ad esempio i dettagli di un annuncio, viene effettuata una _query_ per recuperare i dati.
 
 == Architettura logica
 === Data streaming architecture
