@@ -25,6 +25,14 @@
   titolo: "Analisi dei Requisiti",
   uso: "Esterno",
   versioni: (
+    "1.2.0",
+    [22/03/2025],
+    "Andrea Perozzo",
+    "Andrea Precoma\nDavide Martinelli",
+    [
+      - Rimozione dei caso d'uso relativi alla flag di noleggio attivo
+      - Rinumerati i casi d'uso
+    ],
     "1.1.0",
     [23/02/2025],
     "Davide Martinelli",
@@ -742,7 +750,6 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
   - Visualizzazione nome del punto di interesse dall'elemento nello storico (#link(<uc39>)[UC39]).
   - Visualizzazione _e-mail_ dell'utente dall'elemento nello storico (#link(<uc40>)[UC40]).
   - Visualizzazione data e ora di tentativo di generazione annuncio dall'elemento nello storico (#link(<uc41>)[UC41]).
-  - Visualizzazione _flag_ sull'elemento nello storico legato all'annuncio emesso verso un noleggio attivo (#link(<uc42>)[UC42]).
 #v(20pt)
 #figure(
   image("../assets/use_cases/pb/UC34-35-36-37-38.png"),
@@ -976,7 +983,7 @@ Gli attori coinvolti nei casi d'uso sono i seguenti:
 === UC55 - Visualizzazione errore "Sensore malfunzionante" <uc55>
 - *Attore principale*: Amministratore.
 - *Precondizioni*:
-  - Il sistema monitora le risposte dei sensori attivi, cioè installati su mezzi con noleggio attivo e rileva un errore.
+  - Il sistema monitora le risposte dei sensori e rileva un errore.
 - *Postcondizioni*:
   - Il sistema espone il messaggio di malfunzionamento di un sensore.
 - *Scenario principale*:
@@ -1368,54 +1375,46 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
   [#link(<uc41>)[UC41]\ Riunioni esterne],
 
   [RDF-7],
-  [L'amministratore deve essere in grado di visualizzare la _flag_ riguardo allo stato di attività del noleggio a cui è destinato l'annuncio per ogni singolo elemento all'interno dello storico.],
-  [#link(<uc42>)[UC42]\ Riunioni esterne],
-
-  [RDF-8],
   [L'amministratore deve essere in grado di poter visualizzare i dettagli di un singolo elemento all'interno dello storico.],
   [#link(<uc42>)[UC42]\ Riunioni esterne],
 
-  [RDF-9],
+  [RDF-8],
   [L'amministratore deve essere in grado di visualizzare il nome del punto di interesse relativo ad un annuncio tramite la visualizzazione dei dettagli dell'elemento nello storico.],
   [#link(<uc42>)[UC42]\ #link(<uc43>)[UC43]\ Riunioni esterne],
 
-  [RDF-10],
+  [RDF-9],
   [L'amministratore deve essere in grado di visualizzare l'_e-mail_ dell'utente destinatario di un annuncio tramite la visualizzazione dei dettagli dell'elemento nello storico.],
   [#link(<uc42>)[UC42]\ #link(<uc44>)[UC44]\ Riunioni esterne],
 
-  [RDF-11],
+  [RDF-10],
   [L'amministratore deve essere in grado di visualizzare data e ora del tentativo di generazione di un annuncio tramite la visualizzazione dei dettagli dell'elemento nello storico.],
   [#link(<uc42>)[UC42]\ #link(<uc45>)[UC45]\ Riunioni esterne],
 
-  [RDF-12],
-  [L'amministratore deve essere in grado di visualizzare una _flag_ che segnala lo stato di attività del noleggio a cui è destinato un annuncio tramite la visualizzazione dei dettagli dell'elemento nello storico.],
-  [#link(<uc42>)[UC42]\ #link(<uc47>)[UC47]\ Riunioni esterne],
-
-  [RDF-13],
+  [RDF-11],
   [L'amministratore deve essere in grado di visualizzare il corpo dell'annuncio tramite la visualizzazione dei dettagli dell'elemento nello storico.],
   [#link(<uc42>)[UC42]\ #link(<uc46>)[UC46]\ Riunioni esterne],
 
-  [RDF-14],
+  [RDF-12],
   [L'amministratore deve essere in grado di visualizzare la categoria del punto di interesse collegato all'annuncio tramite la visualizzazione dei dettagli dell'elemento nello storico.],
   [#link(<uc42>)[UC42]\ #link(<uc47>)[UC47]\ Riunioni esterne],
 
-  [RDF-15],
+  [RDF-13],
   [L'amministratore deve essere in grado di chiudere la vista di visualizzazione dei dettagli di un singolo annuncio.],
   [#link(<uc48>)[UC48]\ Riunioni esterne],
 
-  [RDF-16],
+  [RDF-14],
   [L'amministratore deve essere in grado, tramite un sistema di filtraggio, di visualizzare gli annunci dello storico per _e-mail_ dell'utente destinatario dell'annuncio.],
   [#link(<uc49>)[UC49]\ Riunioni esterne],
 
-  [RDF-17],
+  [RDF-15],
   [L'amministratore deve essere in grado, tramite un sistema di filtraggio, di visualizzare gli annunci dello storico per nome del punto di interesse.],
   [#link(<uc50>)[UC50]\ Riunioni esterne],
 
-  [RDF-18],
+  [RDF-16],
   [L'amministratore deve essere in grado, tramite un sistema di filtraggio, di visualizzare gli annunci dello storico generati in un certo intervallo di date.],
   [#link(<uc51>)[UC51]\ Riunioni esterne],
 
-  [RDF-19],
+  [RDF-17],
   [L'amministratore deve essere in grado, tramite un sistema di filtraggio, di visualizzare gli annunci dello storico generati in una determinata fascia oraria.],
   [#link(<uc52>)[UC52]\ Riunioni esterne],
 )
@@ -1514,19 +1513,17 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
     [UC39], [RDF-4],
     [UC40], [RDF-5],
     [UC41], [RDF-6],
-    [UC42], [RDF-7],
-    [UC42], [RDF-8, RDF-9, RDF-10, RDF-11, RDF-12, RDF-13, RDF-14],
-    [UC43], [RDF-9],
-    [UC44], [RDF-10],
-    [UC45], [RDF-11],
+    [UC42], [RDF-7, RDF-8, RDF-9, RDF-10, RDF-12, RDF-11, RDF-12],
+    [UC43], [RDF-8],
+    [UC44], [RDF-9],
+    [UC45], [RDF-10],
+    [UC46], [RDF-11],
     [UC47], [RDF-12],
-    [UC46], [RDF-13],
-    [UC47], [RDF-14],
-    [UC48], [RDF-15],
-    [UC49], [RDF-16],
-    [UC50], [RDF-17],
-    [UC51], [RDF-18],
-    [UC52], [RDF-19],
+    [UC48], [RDF-13],
+    [UC49], [RDF-14],
+    [UC50], [RDF-15],
+    [UC51], [RDF-16],
+    [UC52], [RDF-17],
     [UC53], [ROF-29],
     [UC54], [ROF-30],
     [UC55], [ROF-31],
@@ -1541,7 +1538,7 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
     [UC64], [RFF-7],
     [UC65], [RFF-9],
     [UC66], [RFF-8],
-    [Riunioni esterne], [ROF-2, ROF-9, ROF-10, ROF-11, ROF-12, ROF-13, ROF-14, ROF-15, ROF-16, ROF-17, ROF-18, ROF-19, ROF-20, ROF-21, ROF-22, ROF-23, ROF-24, RDF-1, RDF-2, RDF-3, RDF-4, RDF-5, RDF-6, RDF-7, RDF-8, RDF-9, RDF-10, RDF-11, RDF-12, RDF-13, RDF-14, RDF-15, RDF-16, RDF-17, RDF-18, RDF-19, RFF-1, RFF-2, RFF-3, RFF-4, RFF-5, RFF-6, RFF-7, RFF-8, RFF-9],
+    [Riunioni esterne], [ROF-2, ROF-9, ROF-10, ROF-11, ROF-12, ROF-13, ROF-14, ROF-15, ROF-16, ROF-17, ROF-18, ROF-19, ROF-20, ROF-21, ROF-22, ROF-23, ROF-24, RDF-1, RDF-2, RDF-3, RDF-4, RDF-5, RDF-6, RDF-7, RDF-7, RDF-8, RDF-9, RDF-10, RDF-12, RDF-11, RDF-12, RDF-13, RDF-14, RDF-15, RDF-16, RDF-17, RFF-1, RFF-2, RFF-3, RFF-4, RFF-5, RFF-6, RFF-7, RFF-8, RFF-9],
     [Riunioni interne], [ROF-3, ROF-4, ROF-5, ROF-13, ROF-14, ROF-16, ROF-17, ROF-18, ROF-20, ROF-22, ROF-23, ROF-24, ROF-25, ROF-26, ROF-27, ROF-28, ROF-29, ROF-30, ROF-31, ROF-32, ROQ-2, ROQ-3, ROV-1],
     [Capitolato], [ROF-1, ROF-6, ROF-7, ROF-8, ROF-9, ROF-10, ROF-11, ROF-12, ROF-15, ROF-33, ROF-34, ROQ-1, ROQ-4, ROQ-5, RFF-10],
     [Norme di Progetto], [ROQ-2],
