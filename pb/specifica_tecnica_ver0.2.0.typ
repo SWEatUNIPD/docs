@@ -96,7 +96,7 @@ In questa sezione vengono elencate le tecnologie scelte e le loro funzionalità 
 
 == Database
 === PostgreSQL
-Per la gestione dei dati relazionali è stato scelto PostgreSQL, un DBMS che offre affidabilità, prestazioni e una certa flessibilità per l'estensione tramite _plugin_ ed estensioni. Nel nostro contesto, PostgreSQL:
+Per la gestione dei dati relazionali è stato scelto PostgreSQL, un DBMS che offre affidabilità e una certa flessibilità per l'estensione tramite _plugin_ ed estensioni. Nel nostro contesto, PostgreSQL:
 
 - Viene eseguito all'interno di un container Docker (immagine postgis/postgis, vedere sezione #link(<2.2.2>)[2.2.2]).
 - È configurato tramite docker-compose (nel file `compose.yml`) con il _mapping_ della porta 5432:5432, utente e _password_ specificati nelle variabili d'ambiente.
@@ -111,10 +111,10 @@ Nel _file_ `create.sql`:
 === PostGIS <2.2.2>
 Per l'elaborazione e l'archiviazione di dati geografici si fa uso dell'estensione PostGIS, la quale aggiunge a PostgreSQL il supporto per tipi, funzioni e indici spaziali.
 
-In particolare l'immagine Docker utilizzata è postgis/postgis. Oltre a #box[PostgreSQL] questa contiene già la libreria PostGIS e le relative dipendenze. Questo _setup_ permette di:
+In particolare l'immagine Docker utilizzata è postgis/postgis. Oltre a #box[PostgreSQL] questa contiene già la libreria PostGIS e le relative dipendenze. Questo _setup_ permette, nel nostro caso, di:
 
-- Gestire campi che rappresentano coordinate geografiche (latitudine e longitudine). Nel nostro caso, vengono memorizzate le posizioni dei punti di interesse e dei mezzi noleggiati.
-- Sfruttare _query_ geospaziali (calcolo delle distanze, ricerca di punti in un certo raggio, ecc.)
+- Persistere/Memorizzare le coordinate geografiche (latitudine e longitudine) dei punti di interesse e delle posizioni trasmesse in tempo reale da ogni noleggio attivo.
+- Effettuare _query_ geospaziali all'interno del _database_ per individuare i potenziali punti di interesse rispetto ad una determinata posizione, entro un determinato _range_.
 
 === Struttura del database
 
@@ -132,11 +132,11 @@ Di seguito viene mostrata la struttura del _database_:
 
 Alcune scelte progettuali, apparentemente ridondanti, sono state adottate per soddisfare specifiche esigenze, in particolare per strumenti come Grafana.
 
-- *Chiavi primarie composte e ridondanza di identificatori:* La tabella `positions` utilizza una chiave primaria composta da `time_stamp` e `rent_id`. Questo garantisce l'univocità di ogni posizione registrata per un noleggio. Nella tabella `advertisements`, `position_time_stamp` e `position_rent_id` fungono da chiavi esterne per collegare un annuncio alla posizione di un noleggio. Sebbene possa sembrare ridondante, questa scelta è necessaria per correlare annunci pubblicitari con la cronologia di utilizzo delle biciclette.
+- *Chiavi primarie composte:* La tabella `positions` utilizza una chiave primaria composta da `time_stamp` e `rent_id`. Questo garantisce l'univocità di ogni posizione registrata per un noleggio. Nella tabella `advertisements`, `position_time_stamp` e `position_rent_id` fungono da chiavi esterne per collegare un annuncio alla posizione di un noleggio.
 
 - *Scelta delle chiavi primarie:* La tabella `points_of_interest` utilizza `latitude` e `longitude` come chiavi primarie per garantire che ogni punto di interesse sia univocamente identificabile in base alla sua posizione. Questo evita la creazione di ID artificiali e semplifica l'integrazione con strumenti GIS e di analisi spaziale. Tuttavia, in altre tabelle come `rents` o `advertisements`, è stato mantenuto un ID univoco separato per facilitare la visualizzazione e l'interazione con i dati nell'interfaccia di Grafana.
 
-- *Ripetizione di attributi per performance e analisi dati:* Alcuni ID e coordinate geografiche sono replicati in più tabelle (es. `latitude_poi` e `longitude_poi` in `advertisements` e `poi_hours`) per facilitare le _query_ su strumenti di analisi. Questa ridondanza riduce la necessità di complesse _join_ su tabelle di grandi dimensioni, migliorando le prestazioni. L'uso di indici spaziali (come `idx_points_of_interest_location`) è pensato per ottimizzare la ricerca di punti di interesse sulla base della loro posizione geografica.
+- *Ripetizione di attributi per _performance_ e analisi dati:* Alcuni attributi, come `latitude_poi` e `longitude_poi`, sono replicati in più tabelle (ad esempio, `advertisements` e `poi_hours`) poiché fanno parte della chiave primaria composta della tabella `points_of_interest`. Questa ridondanza è necessaria per mantenere l'integrità referenziale e la coerenza dei dati. Per ottimizzare le _query_ geospaziali, è stato implementato un indice spaziale (`idx_points_of_interest_location`) sulla posizione dei punti di interesse.
 
 In conclusione, alcune scelte apparentemente ridondanti sono state adottate con lo scopo di migliorare la scalabilità, la velocità di interrogazione dei dati e la compatibilità con strumenti di analisi esterni.
 
