@@ -16,12 +16,15 @@
   ora: "9:00",
   durata: "1 ora",
   partecipantiEsterni: (),
-  partecipanti: ( "Andrea Perozzo",
-                  "Andrea Precoma",
-                  "Davide Marin",
-                  "Davide Martinelli",
-                  "Davide Picello",
-                  "Klaudio Merja"))
+  partecipanti: (
+    "Andrea Perozzo",
+    "Andrea Precoma",
+    "Davide Marin",
+    "Davide Martinelli",
+    "Davide Picello",
+    "Klaudio Merja",
+  ),
+)
 
 = Ordine del giorno
 La quattordicesima riunione è stata svolta il giorno dopo l'incontro conclusivo con l'azienda Sync Lab e nella stessa mattinata del colloquio con il professor Cardin. Questo momento ha avuto come obiettivo quello di delineare le ultime modifiche per preparare definitivamente il prodotto per il colloquio PB.
@@ -40,8 +43,13 @@ Durante la prima parte del progetto il gruppo aveva definito un caso d'uso che t
 Il gruppo concluderà in settimana le ultime attività rimaste e si preparerà per i colloqui PB con il professor Cardin, fissato il 31 Marzo 2025 per indisponibilità del professore nella settimana precedente, e successivamente con il professor Vardanega.
 
 = Tabella delle decisioni
-#backlog(content: (
-  link("https://github.com/SWEatUNIPD/docs/issues/193")[D0193],
-  [Andrea Perozzo, \ Davide Picello],
-  [Modifiche Analisi dei Requisiti],
-))
+#backlog(
+  content: (
+    link("https://github.com/SWEatUNIPD/docs/issues/193")[D0193],
+    [Andrea Perozzo, \ Davide Picello],
+    [Modifiche Analisi dei Requisiti],
+    link("https://github.com/SWEatUNIPD/NearYou/issues/28")[N0028],
+    "Riccardo Milan",
+    [Creazione _dashboard_ dei grafici in Grafana (requisito opzionale)]
+  ),
+)
