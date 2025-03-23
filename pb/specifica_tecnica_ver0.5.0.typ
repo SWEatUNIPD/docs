@@ -16,12 +16,14 @@
   destinatari: ("Gruppo SWE@", "Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "Sync Lab S.r.L."),
   responsabile: "-",
   redattori: (
+    "Andrea Perozzo",
     "Andrea Precoma",
     "Davide Picello",
     "Riccardo Milan",
   ),
   verificatori: (
     "Andrea Perozzo",
+    "Andrea Precoma",
     "Davide Marin",
     "Davide Picello",
     "Klaudio Merja",  
@@ -30,20 +32,29 @@
   titolo: "Specifica Tecnica",
   uso: "Esterno",
   versioni: (
-    "0.4.0",
+    "0.5.0",
     "22/03/2025",
     "Davide Picello",
     "Riccardo Milan",
     [- Completata sezione "Stato dei requisiti funzionali"],
     
     
-    "0.3.0",
+    "0.4.0",
     "21/03/2025",
     "Riccardo Milan",
     "Davide Marin\nDavide Picello",
     [
       - Aggiunta sezione Grafana
     ],
+
+    "0.3.0",
+    "20/03/2025",
+    "Andrea Perozzo",
+    "Andrea Precoma\nKlaudio Merja",
+    [
+      - Redatta sezione Database
+    ],
+
     "0.2.0",
     "18/03/2025",
     "Andrea Precoma",
@@ -233,7 +244,6 @@ container.bind(Simulator).toSelf().inSingletonScope();
 
 == Database
 === PostgreSQL
-=== PostGIS
 Per la gestione dei dati relazionali è stato scelto PostgreSQL, un DBMS che offre affidabilità e una certa flessibilità per l'estensione tramite _plugin_ ed estensioni. Nel nostro contesto, PostgreSQL:
 
 - Viene eseguito all'interno di un container Docker (immagine postgis/postgis, vedere sezione #link(<2.2.2>)[2.2.2]).
