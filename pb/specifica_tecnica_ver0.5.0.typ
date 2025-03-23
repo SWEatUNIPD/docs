@@ -35,7 +35,7 @@
     "0.5.0",
     "22/03/2025",
     "Davide Picello",
-    "Riccardo Milan",
+    "Riccardo Milan\nAndrea Precoma",
     [- Completata sezione "Stato dei requisiti funzionali"],
     
     
@@ -479,7 +479,8 @@ container
 container.bind(Simulator).toSelf().inSingletonScope();
 ```
 
-// FUNCTIONAL REQUIRIMETS //
+#pagebreak()
+
 = Stato dei requisiti funzionali
 Nella seguente tabella verranno riportati i requisiti funzionali individuati durante l'Analisi dei Requisiti ed il loro stato.
 
