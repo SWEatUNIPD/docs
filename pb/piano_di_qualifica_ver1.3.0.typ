@@ -521,7 +521,7 @@ Dal grafico si può notare che il valore dell'*EAC* si è avvicinato, per 4 iter
 Questi dati sottolineano il continuo automiglioramento che il team ha sempre cercato di perseguire.
 
 === PB
-Il grafico mostra come, dopo la quinta iterazione, il valore dell'*EAC* è rimasto molto vicino al valore ideale abbassandosi leggermente solo nell'ultimo periodo e risultando quindi inferiore al *BAC*, ma comunque al di sopra del valore minimo accettabile. Il valore si era leggermente alzato successivamente al quinto _sprit_, ovvero successivamente al colloquio RTB, a causa di rallentamenti nella produzione dovuti ad alcune correzioni da effettuare, il gruppo è riuscito però a recuperare ed abbassare nuovamente l'*EAC* durante l'ottavo _#rifGlossario("sprint")_, portandolo al di sotto del *BAC*. 
+Il grafico mostra come, dopo la quinta iterazione, il valore dell'*EAC* è rimasto molto vicino al valore ideale abbassandosi leggermente solo nell'ultimo periodo, risultando quindi leggermente inferiore al *BAC*. Il valore si è leggermente alzato in seguito al colloquio RTB, in concomitanza del quinto _sprint_, a causa di rallentamenti nella produzione dovuti ad alcune correzioni da effettuare. Il gruppo è riuscito tuttavia a recuperare e abbassare nuovamente l'*EAC* durante l'ottavo _sprint_, portandolo al di sotto del *BAC*. 
 
 #pagebreak()
 == Earned Value (MPC-EV) e Planned Value (MPC-PV)
@@ -544,7 +544,7 @@ Il grafico mostra come, dopo la quinta iterazione, il valore dell'*EAC* è rimas
 Dal grafico si può notare che il valore dell'*EV* è cresciuto pari pari al valore del *PV*, indicando che il lavoro svolto è stato effettivamente eseguito secondo la pianificazione.
 
 === PB
-Il grafico mostra come il valore dell'*EV* abbia continuato a crescere in modo proporzionale al valore del *PV*, dimostrando che il gruppo è riuscito a pianificare correttamente le attività per tutta la durata del progetto. I valori di *EV* e *PV* inoltre si sono avvicinati di molto a quelli di *EAC* e *BAC* durante l'ultima iterazione, ciò dimostra che il gruppo è riuscito ad essere coerente anche con il preventivo prodotto inizialmente.
+Il grafico mostra come il valore dell'*EV* abbia continuato a crescere in modo proporzionale al valore del *PV*, dimostrando che il gruppo è riuscito a pianificare correttamente le attività per tutta la durata del progetto. I valori di *EV* e *PV* inoltre si sono avvicinati di molto a quelli di *EAC* e *BAC* durante l'ultima iterazione, dimostrando che il gruppo è riuscito ad essere coerente anche con il preventivo prodotto inizialmente.
 
 #pagebreak()
 == Actual Cost (MPC-AC) e Estimate to Completion (MPC-ETC)
@@ -565,7 +565,7 @@ Il grafico mostra come il valore dell'*EV* abbia continuato a crescere in modo p
 Dal grafico si nota che il valore dell'*AC* è cresciuto in modo proporzionale alla decrescita dell'*ETC*, ed entrambi sono rimasti per tutto il tempo al di sotto del valore desiderato, cioè quello dell'*EAC*.
 
 === PB
-Dal grafico si può notare come il valore dell'*AC* abbia continuato a crescere proporzionalmente alla decrescita dell'*ETC*. Si nota inoltre come nelle ultime iterazioni la crescita dell'*AC* sia stata maggiore rispetto al primo periodo, questo dimostra che il _team_ ha avuto la possibilità di lavorare di più una volta terminati gli esami, portando ad un aumento repentino del costo reale che rimane comunque inferiore all'ideale dettato dall'*EAC*.  
+Dal grafico si può notare come il valore dell'*AC* abbia continuato a crescere proporzionalmente alla decrescita dell'*ETC*. Si nota inoltre come nelle ultime iterazioni la crescita dell'*AC* sia stata maggiore rispetto al primo periodo; questo dimostra che il _team_ ha avuto la possibilità di dedicare più tempo al progetto una volta terminati gli esami, portando ad un aumento repentino del costo reale che rimane comunque inferiore all'ideale dettato dall'*EAC*.
 
 #pagebreak()
 == Budget Variance (MPC-BV) e Schedule Variance (MPC-SV)
@@ -590,7 +590,9 @@ Dal grafico si può notare come il valore dell'*AC* abbia continuato a crescere 
 Dal grafico si può notare che le variazioni sono sempre state contenute: rientrano sempre ampiamente nei limiti accettabili e non si discostano molto dal valore ottimo. Il *BV* indica che abbiamo sempre speso leggermente oltre il _budget_ pianificato, tuttavia abbiamo una prospettiva positiva come indica il *SV*.
 
 === PB
-Il grafico mostra come dalla quinta fino alla settima iterazione il valore di *BV* sia sempre stato pressapoco invariato e segnalando di essere leggermente in ritardo rispetto alla pianificazione, questo sempre dovuto alle modifiche che il gruppo ha dovuto affrontare successivamente al colloquio RTB, nell'ultimo _sprint_ invece, grazie al tempo a disposizione e al lavoro del _team_, il *BV* si è avvicinato di molto al valore del *SV*, portando quindi il gruppo ad aver speso leggermente meno rispetto al valore ottimo.
+Il grafico mostra come dalla quinta iterazione l'*SV* sia sempre stato pressapoco invariato, segnalando di essere leggermente in anticipo rispetto alla pianificazione. Anche il *BV* è rimasto stabile fino all'ultimo _sprint_ dove è cresciuto raggiungendo quasi l'*SV*. // TODO: da completare dopo aver avuto i dati alla mano (probabilmente BV sarà sepmre sotto perché abbiamo pianificato di spendere di meno, ma poi avendo avuto una settimana in più abbiamo sfruttato tutte le risorse, ad esempio facendo anche i RF, spendendo quindi di più)
+
+// Il grafico mostra come dalla quinta fino alla settima iterazione il valore di *BV* sia sempre stato pressapoco invariato, segnalando di essere leggermente in ritardo rispetto alla pianificazione. questo sempre dovuto alle modifiche che il gruppo ha dovuto affrontare successivamente al colloquio RTB, nell'ultimo _sprint_ invece, grazie al tempo a disposizione e al lavoro del _team_, il *BV* si è avvicinato di molto al valore del *SV*, portando quindi il gruppo ad aver speso leggermente meno rispetto al valore ottimo.
 
 #pagebreak()
 == Indice di Stabilità dei Requisiti (MPC-ISR)
@@ -598,7 +600,7 @@ L'*ISR* misura la stabilità dei requisiti del progetto nel tempo, valutando qua
 
 #plotGrafico3(
   "Tabella RSI",
-  ((0, 0), (1, 0), (2, 70), (3, 39), (4, 85), (5, 78), (6, 100), (7, 100)),
+  ((0, 0), (1, 0), (2, 70), (3, 39), (4, 85), (5, 78), (6, 100), (7, 98)),
   "RSI",
   ((0, 75), (1, 75), (2, 75), (3, 75), (4, 75), (5, 75), (6, 75), (7, 75)),
   "Valore accettabile",
@@ -612,7 +614,7 @@ Il grafico è per la maggior parte ascendente tranne nella quarta iterazione, do
 Nell'ultimo periodo, quindi quello relativo alla consegna RTB, si è finalmente raggiunto il valore accettabile dell'ISR.
 
 === PB
-Il grafico mostra come il valore dell'*ISR* sia sempre rimasto, dopo il quinto _sprint_, al di sopra del valore accettabile, con una piccola ricaduta nella sesta iterazione dovuta ad alcune modifiche che il gruppo ha dovuto sostenere dopo la valutazione RTB, ma che una volta eseguite hanno portato l'indice *IRS* ad essere stabile nel valore ottimo.
+Il grafico mostra come il valore dell'*ISR* sia sempre rimasto, dopo il quinto _sprint_, al di sopra del valore accettabile. I due andamenti discendenti del grafico, all'iterazione 6 e 8, coincidono con due colloqui con il prof. Cardin. Nel primo caso sono state apportate le correzioni in seguito alla revisione RTB, nel secondo caso è stato concordato di rimuovere due requisiti in quanto analizzati erroneamente nella prima fase del progetto.
 
 #pagebreak()
 == Indice Gulpease (MPC-IG)
@@ -647,9 +649,9 @@ Si nota che i valori sono sempre sopra al valore accettabile, anche se ancora be
 Il valore nullo di alcuni documenti alla prima iterazione è dovuto alla stesura tardiva degli stessi. Lo sviluppo della documentazione si è infatti svolta parallelamente alle lezioni di teoria del corso.
 
 === PB
-Il grafico mostra come i valori di tutti i documenti siano sempre stati al di sopra del valore accettabile e con poche variazioni presenti, anche se la maggior parte rimane abbastanza distante dal valore ottimo. Il rimanere stabile dell'indice di Gulpease indica che il gruppo si è concentrato più sull'ampliamento e arricchimento dei documenti piuttosto che nel miglioramento della leggibilità, che rimane comunque al di sopra del valore accettabile per tutti essi.
+Il grafico mostra come i valori di tutti i documenti siano sempre stati al di sopra del valore accettabile e con poche variazioni presenti, anche se la maggior parte rimane abbastanza distante dal valore ottimo. La stabilità dell'indice di Gulpease indica che il gruppo si è concentrato più sull'ampliamento e arricchimento dei documenti piuttosto che nel miglioramento della leggibilità, che rimane comunque al di sopra del valore accettabile per tutti gli elaborati.
 
-Da notare come i valori dei nuovi documenti, quali Manuale Utente e Specifica Tecnica, siano più alti rispetto ai documenti precedenti, questo dimostra comunque la maggiore esperienza acquisita dal gruppo nella stesura della documentazione.
+Da notare come i valori dei nuovi documenti, quali Manuale Utente e Specifica Tecnica, siano più alti rispetto ai documenti precedenti, dimostrando quindi la maggiore esperienza acquisita dal gruppo nella stesura della documentazione.
 
 #pagebreak()
 == Correttezza Ortografica (MPC-CO)
@@ -681,7 +683,7 @@ Metriche che misurano la presenza di errori ortografici nei documenti, valutando
 Da questo grafico si nota che tutti i documenti hanno avuto alcuni difetti ortografici, quasi sempre di battitura. Tuttavia nel quarto _#rifGlossario("sprint")_, con l'introduzione di uno strumento di _spell checking_, siamo riusciti a raggiungere il valore ottimo di zero errori per tutti i documenti.
 
 === PB
-Dal grafico si può notare come tutti i documenti, compresi quelli nuovi, siano rimasti con il numero ottimo di zero errori per il resto del periodo di lavoro, questo dimostra che lo strumento di _spell checking_ scelto dal gruppo ha funzionato come desiderato e che il _team_ è stato costante nel suo utilizzo.
+Dal grafico si può notare come tutti i documenti, compresi quelli nuovi, siano rimasti con il numero ottimo di zero errori per il resto del periodo di lavoro. Questo dimostra che lo strumento di _spell checking_ scelto dal gruppo ha funzionato come desiderato e che il _team_ è stato costante nel suo utilizzo.
 
 #pagebreak()
 == Percentuale di Metriche Soddisfatte (MPC-PMS)
@@ -723,15 +725,15 @@ La metriche in esame è stata confermata solo al termine del quarto _sprint_. Ri
 L'unico valore che possiamo dare di questa metrica è quindi quello dell'ultima iterazione, pari ad un rapporto di 1.8, che è ampiamente al di sotto del valore accettabile di 3 ma ancora al di sopra del valore desiderabile di 1.
 
 === PB
-Il grafico dimostra come negli ultimi periodo, una volta raggiunta una certa conoscenza delle tecnologie da utilizzare, il _team_ sia riuscito a lavorare in modo più efficiente, mantenendo il valore dell'efficienza temporale al di sotto del valore accettabile di 3 e molto vicino al valore ottimo di 1, arrivando a 1.3 nell'ultima iterazione. Il valore si era leggermente alzato durante il quinto _sprint_ a causa di cambiamenti nelle tecnologie adottate dopo il colloquio RTB, ma il _team_ è riuscito a recuperare velocemente.
+Il grafico dimostra come negli ultimi periodi, una volta raggiunta una certa conoscenza delle tecnologie da utilizzare, il _team_ sia riuscito a lavorare in modo più efficiente, mantenendo il valore dell'*ET* al di sotto del valore accettabile di 3 e molto vicino al valore ottimo di 1. Il valore si è leggermente alzato durante il quinto _sprint_ a causa di cambiamenti nelle tecnologie adottate dopo il colloquio RTB, ma il _team_ è riuscito a recuperare velocemente.
 
 #pagebreak()
 == Requisiti obbligatori soddisfatti (MPD-ROS)
 Misura la percentuale di requisiti obbligatori soddisfatti dal prodotto.
 #plotGrafico3(
   "Tabella ROS",
-  ((4, 0), (5, 48), (6, 87), (7, 100)),
-  "ET",
+  ((4, 40), (5, 48), (6, 87), (7, 100)),
+  "ROS",
   ((4, 100), (5, 100), (6, 100), (7, 100)),
   "Valore accettabile",
   ((4, 100), (5, 100), (6, 100), (7, 100)),
@@ -739,15 +741,16 @@ Misura la percentuale di requisiti obbligatori soddisfatti dal prodotto.
 )
 
 === PB
-Dal grafico si può vedere come il _team_ abbia cominciato a lavorare al MVP subito dopo la presentazione del RTB, andando a soddisfare la maggior parte dei requisiti obbligatori, ai quali era stata data maggiore priorità, entro la settima iterazione, per poi terminarli del tutto nell'ottavo _sprint_ andando a soddisfare anche i più onerosi.
+Dal grafico si può vedere come il _team_ abbia cominciato a lavorare al MVP subito dopo la presentazione del RTB. Partendo da una buona base del PoC il gruppo è andato a migliorare il prodotto andando a soddisfare la maggior parte dei requisiti obbligatori, ai quali era stata data maggiore priorità, entro la settima iterazione. Al termine dell'ottavo _sprint_ sono stati soddisfatti tutti i requisiti obbligatori, anche quelli più onerosi.
 
 #pagebreak()
 == Requisiti desiderabili soddisfatti (MPD-RDS)
 Misura la percentuale di requisiti desiderabili soddisfatti dal prodotto.
+// TODO: verificare il numero finale
 #plotGrafico3(
-  "Tabella ROS",
-  ((4, 0), (5, 22), (6, 40), (7, 74)),
-  "ET",
+  "Tabella RDS",
+  ((4, 34), (5, 38), (6, 78), (7, 89)),
+  "RDS",
   ((4, 0), (5, 0), (6, 0), (7, 0)),
   "Valore accettabile",
   ((4, 100), (5, 100), (6, 100), (7, 100)),
@@ -755,6 +758,7 @@ Misura la percentuale di requisiti desiderabili soddisfatti dal prodotto.
 )
 
 === PB
+// TODO: lo storico era soddisfatto anche nel PoC (come gli obbligatori), da verede quanti sono stati soddisfatti
 Come si può vedere dal grafico il _team_ ha comunque voluto fin da subito iniziare a lavorare sui requisiti desiderabili anche se in misura ridotta rispetto a quelli obbligatori, perché riteneva importante soddisfarne almeno una parte, per fornire un prodotto più completo. Facendo così, alla settima iterazione il gruppo aveva già soddisfatto il 40% dei requisiti desiderabili, per poi arrivare fino ale 74% nell'ottavo _sprint_, una volta terminati i requisiti obbligatori.
 
 
