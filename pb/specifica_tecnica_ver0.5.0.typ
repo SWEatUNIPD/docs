@@ -548,109 +548,88 @@ Per una spiegazione più approfondita si rimanda al documento `analisi_dei_requi
   [L'amministratore, per ogni noleggio attivo che viene erogato, deve poter visualizzare il tracciato percorso dal mezzo a noleggio attraverso la mappa geografica.],
   [Soddisfatto],
   
-  [ROF-9],
-  [L'amministratore deve poter visualizzare un _marker_ sulla mappa in corrispondenza di un dato GPS trasmesso dal sensore nel momento in cui:
-    - non è in prossimità di un punto di interesse
-    - è già stata richiesta in precedenza per l'utente del mezzo la generazione di un annuncio per lo stesso punto di interesse.],
-  [Soddisfatto],
   
-  [ROF-10],
+  [ROF-9],
   [L'amministratore deve poter visualizzare un _marker_ in corrispondenza di una posizione, in prossimità di un punto di interesse, che ha causato la generazione di un annuncio tramite LLM per l'utente del mezzo.],
   [Soddisfatto],
   
-  [ROF-11],
+  [ROF-10],
   [L'amministratore deve poter visualizzare un _marker_ in corrispondenza di una posizione, in prossimità di un punto di interesse, dove la LLM non ha generato un annuncio perché ha valutato l'utente come non interessato al punto di interesse in base alla sua profilazione.],
   [Soddisfatto],
   
-  [ROF-12],
+  [ROF-11],
   [L'amministratore deve poter visualizzare tramite un'interazione con il _marker_ (come un _hover_ o un _click_) le informazioni relative al punto di interesse.],
   [Soddisfatto],
   
-  [ROF-13],
+  [ROF-12],
   [L'amministratore deve poter visualizzare dalle informazioni fornite tramite l'interazione con il _marker_ del punto di interesse il nome dello stesso.],
   [Soddisfatto],
   
-  [ROF-14],
+  [ROF-13],
   [L'amministratore deve poter visualizzare, dalle informazioni fornite tramite interazione con il _marker_ del punto di interesse, la categoria di esercizio commerciale (e.g. alimentare, sportivo, etc.).],
   [Soddisfatto],
   
-  [ROF-15],
+  [ROF-14],
   [L'amministratore deve poter visualizzare le informazioni relative all'annuncio generato tramite l'interazione con un _marker_ di generazione annuncio.],
   [Soddisfatto],
   
-  [ROF-16],
+  [ROF-15],
   [L'amministratore deve poter visualizzare il nome del punto di interesse legato all'annuncio dalle informazioni visualizzate tramite l'interazione con un _marker_ di generazione annuncio.],
   [Soddisfatto],
   
-  [ROF-17],
+  [ROF-16],
   [L'amministratore deve poter visualizzare l'_e-mail_ dell'utente destinatario dalle informazioni visualizzate tramite l'interazione con un _marker_ di generazione annuncio.],
   [Soddisfatto],
   
-  [ROF-18],
+  [ROF-17],
   [L'amministratore deve poter visualizzare la data e l'ora di generazione dell'annuncio dalle informazioni visualizzate tramite l'interazione con un _marker_ di generazione annuncio.],
   [Soddisfatto],
   
-  [ROF-19],
+  [ROF-18],
   [L'amministratore deve poter visualizzare l'annuncio dalle informazioni visualizzate tramite l'interazione con un _marker_ di generazione annuncio.],
   [Soddisfatto],
   
-  [ROF-20],
+  [ROF-19],
   [L'amministratore deve poter visualizzare la categoria di esercizio commerciale del punto di interesse coinvolto nella generazione dell'annuncio visualizzato tramite un'interazione con un _marker_ di generazione annuncio.],
   [Soddisfatto],
   
-  [ROF-21],
+  [ROF-20],
   [L'amministratore deve poter visualizzare un messaggio con le informazioni di un annuncio non generato, tramite l'interazione con un _marker_ di mancata generazione.],
   [Soddisfatto],
   
-  [ROF-22],
+  [ROF-21],
   [L'amministratore deve poter visualizzare il nome del punto di interesse sul messaggio con le informazioni di un annuncio non generato, tramite l'interazione con un _marker_ di mancata generazione.],
   [Soddisfatto],
   
-  [ROF-23],
+  [ROF-22],
   [L'amministratore deve poter visualizzare l'_e-mail_ dell'utente destinatario sul messaggio con le informazioni di un annuncio non generato, tramite l'interazione con un _marker_ di mancata generazione.],
   [Soddisfatto],
   
-  [ROF-24],
+  [ROF-23],
   [L'amministratore deve poter visualizzare la data e ora di tentata generazione sul messaggio con le informazioni di un annuncio non generato, tramite l'interazione con un _marker_ di mancata generazione.],
   [Soddisfatto],
   
-  [ROF-25],
+  [ROF-24],
   [L'amministratore deve poter chiudere la vista con le informazioni sull'annuncio generato visualizzata sulla mappa tramite l'interazione con un _marker_ di generazione annuncio.],
   [Soddisfatto],
   
-  [ROF-26],
+  [ROF-25],
   [L'amministratore deve poter chiudere il messaggio di annuncio non generato visualizzato sulla mappa tramite l'interazione con un _marker_ di mancata generazione.],
   [Soddisfatto],
   
-  [ROF-27],
+  [ROF-26],
   [L'amministratore deve essere in grado di interagire con la mappa per spostare il centro della visuale.],
   [Soddisfatto],
   
-  [ROF-28],
+  [ROF-27],
   [L'amministratore deve essere in grado di modificare l'ampiezza della visuale sulla mappa. In particolare bisogna permettere l'ampliamento e il restringimento del campo visivo che l'amministratore ha sul territorio visualizzato all'interno della mappa.],
   [Soddisfatto],
   
-  [ROF-29],
-  [L'amministratore deve poter ricevere il messaggio di errore "Il _server_ non risponde" nel caso in cui il sistema non risponda o smetta di funzionare.],
-  [Soddisfatto],
-  
-  [ROF-30],
-  [L'amministratore deve poter ricevere il messaggio di errore "Connessione persa" nel caso in cui la connessione con il sistema venga persa o sia scarsa.],
-  [Soddisfatto],
-  
-  [ROF-31],
-  [L'amministratore deve poter ricevere il messaggio di errore "Sensore malfunzionante" nel caso in cui il sensore non sia in grado di trasmettere i dati di localizzazione in maniera corretta o non trasmetta dopo un determinato intervallo di tempo.],
-  [SOSPESO],
-  
-  [ROF-32],
-  [L'amministratore deve poter visualizzare il messaggio di errore "Generazione impossibile dell'annuncio" nel caso in cui il sistema non sia in grado di stabilire una connessione e comunicare con il servizio di LLM, non permettendo così la trasmissione e la ricezione di dati da parte di quest'ultimo.],
-  [SOSPESO],
-  
-  [ROF-33],
+  [ROF-28],
   [Creazione di un generatore di dati GPS per simulare il funzionamento di un sensore che interagisce col sistema.],
   [Soddisfatto],
   
-  [ROF-34],
+  [ROF-29],
   [Il generatore deve generare dei percorsi che siano realistici, ovvero che seguano le varie strade, vie e piste ciclabili che una bicicletta può percorrere.],
   [Soddisfatto],
 
