@@ -18,6 +18,7 @@
   redattori: (
     "Andrea Perozzo",
     "Andrea Precoma",
+    "Davide Picello",
     "Riccardo Milan",
   ),
   verificatori: (
@@ -31,6 +32,13 @@
   titolo: "Specifica Tecnica",
   uso: "Esterno",
   versioni: (
+    "0.5.0",
+    "22/03/2025",
+    "Davide Picello",
+    "Riccardo Milan\nAndrea Precoma",
+    [- Completata sezione "Stato dei requisiti funzionali"],
+    
+    
     "0.4.0",
     "21/03/2025",
     "Riccardo Milan",
@@ -38,6 +46,7 @@
     [
       - Aggiunta sezione Grafana
     ],
+
     "0.3.0",
     "20/03/2025",
     "Andrea Perozzo",
@@ -45,6 +54,7 @@
     [
       - Redatta sezione Database
     ],
+
     "0.2.0",
     "18/03/2025",
     "Andrea Precoma",
@@ -52,7 +62,7 @@
     [
       - Completate tecnologie del simulatore
       - Redatta sezione relativa al simulatore
-      - Redatta sezione relativa ai _design #box[pattern]_
+      - Redatta sezione relativa ai _design \ pattern_
     ],
     "0.1.0",
     "11/03/2025",
@@ -469,5 +479,271 @@ container
 container.bind(Simulator).toSelf().inSingletonScope();
 ```
 
-// FUNCTIONAL REQUIRIMETS //
+#pagebreak()
+
 = Stato dei requisiti funzionali
+Nella seguente tabella verranno riportati i requisiti funzionali individuati durante l'Analisi dei Requisiti ed il loro stato.
+
+In particolare per ogni requisito verrà riportato:
+
+- *Codice identificativo*
+  
+  Ogni requisito è identificato univocamente da un codice che presenta la seguente struttura:
+  #align(center)[*R[Importanza][Tipo]-[ID]*]
+  Dove  
+  - *Importanza*: indica il grado di importanza di ogni requisito, che si distingue in:
+    - *O*: requisito obbligatorio.
+    - *D*: requisito desiderabile.
+    - *F*: requisito facoltativo.
+  - *Tipo*: indica la tipologia di requisito, che si distingue in:
+    - *F*: requisito funzionale.
+    - *Q*: requisito di qualità.
+    - *V*: requisito di vincolo.
+  - *ID*: numero progressivo che identifica univocamente il requisito nella sua categoria.
+
+- *Descrizione*
+
+- *Stato*
+  - Soddisfatto
+  - Non soddisfatto
+
+Per una spiegazione più approfondita si rimanda al documento `analisi_dei_requisiti_ver2.0.0`.
+
+== Tabella
+#table(
+  align: (center, left, center),
+  columns: (0.6fr, 3fr, 1fr),
+  table.header([*Codice*], [*Descrizione*], [*Stato*]),
+
+  table.cell(colspan: 3)[Obbligatori],
+
+  [ROF-1],
+  [Il sensore deve trasmettere i suoi dati di identificazione e localizzazione al sistema a intervalli regolari.],
+  [Soddisfatto],
+
+  [ROF-2],
+  [La _dashboard_ dell'amministratore, per essere accessibile solamente da quest'ultimo, deve essere protetta da un sistema di autenticazione. Per poter visualizzare la _dashboard_ l'amministratore deve quindi autenticarsi con le proprie credenziali.],
+  [Soddisfatto],
+  
+  [ROF-3],
+  [L'amministratore, per poter accedere alla _dashboard_, deve fornire l'indirizzo _e-mail_ dell'_account_ con cui è registrato all'interno del sistema.],
+  [Soddisfatto],
+  
+  [ROF-4],
+  [L'amministratore, per poter accedere alla _dashboard_, deve fornire la _password_ dell'_account_ con cui è registrato all'interno del sistema.],
+  [Soddisfatto],
+  
+  [ROF-5],
+  [Se l'amministratore inserisce delle credenziali non valide, come una _e-mail_ o _password_ non valida, il sistema deve ritornare il messaggio di errore "Credenziali errate".],
+  [Soddisfatto],
+  
+  [ROF-6],
+  [L'amministratore, una volta autenticato, deve poter visualizzare la mappa geografica sulla _dashboard_ del sistema.],
+  [Soddisfatto],
+  
+  [ROF-7],
+  [L'amministratore deve poter visualizzare i punti di interesse presenti all'interno del sistema tramite dei _marker_ posizionati all'interno della mappa geografica.],
+  [Soddisfatto],
+  
+  [ROF-8],
+  [L'amministratore, per ogni noleggio attivo che viene erogato, deve poter visualizzare il tracciato percorso dal mezzo a noleggio attraverso la mappa geografica.],
+  [Soddisfatto],
+  
+  
+  [ROF-9],
+  [L'amministratore deve poter visualizzare un _marker_ in corrispondenza di una posizione, in prossimità di un punto di interesse, che ha causato la generazione di un annuncio tramite LLM per l'utente del mezzo.],
+  [Soddisfatto],
+  
+  [ROF-10],
+  [L'amministratore deve poter visualizzare un _marker_ in corrispondenza di una posizione, in prossimità di un punto di interesse, dove la LLM non ha generato un annuncio perché ha valutato l'utente come non interessato al punto di interesse in base alla sua profilazione.],
+  [Soddisfatto],
+  
+  [ROF-11],
+  [L'amministratore deve poter visualizzare tramite un'interazione con il _marker_ (come un _hover_ o un _click_) le informazioni relative al punto di interesse.],
+  [Soddisfatto],
+  
+  [ROF-12],
+  [L'amministratore deve poter visualizzare dalle informazioni fornite tramite l'interazione con il _marker_ del punto di interesse il nome dello stesso.],
+  [Soddisfatto],
+  
+  [ROF-13],
+  [L'amministratore deve poter visualizzare, dalle informazioni fornite tramite interazione con il _marker_ del punto di interesse, la categoria di esercizio commerciale (e.g. alimentare, sportivo, etc.).],
+  [Soddisfatto],
+  
+  [ROF-14],
+  [L'amministratore deve poter visualizzare le informazioni relative all'annuncio generato tramite l'interazione con un _marker_ di generazione annuncio.],
+  [Soddisfatto],
+  
+  [ROF-15],
+  [L'amministratore deve poter visualizzare il nome del punto di interesse legato all'annuncio dalle informazioni visualizzate tramite l'interazione con un _marker_ di generazione annuncio.],
+  [Soddisfatto],
+  
+  [ROF-16],
+  [L'amministratore deve poter visualizzare l'_e-mail_ dell'utente destinatario dalle informazioni visualizzate tramite l'interazione con un _marker_ di generazione annuncio.],
+  [Soddisfatto],
+  
+  [ROF-17],
+  [L'amministratore deve poter visualizzare la data e l'ora di generazione dell'annuncio dalle informazioni visualizzate tramite l'interazione con un _marker_ di generazione annuncio.],
+  [Soddisfatto],
+  
+  [ROF-18],
+  [L'amministratore deve poter visualizzare l'annuncio dalle informazioni visualizzate tramite l'interazione con un _marker_ di generazione annuncio.],
+  [Soddisfatto],
+  
+  [ROF-19],
+  [L'amministratore deve poter visualizzare la categoria di esercizio commerciale del punto di interesse coinvolto nella generazione dell'annuncio visualizzato tramite un'interazione con un _marker_ di generazione annuncio.],
+  [Soddisfatto],
+  
+  [ROF-20],
+  [L'amministratore deve poter visualizzare un messaggio con le informazioni di un annuncio non generato, tramite l'interazione con un _marker_ di mancata generazione.],
+  [Soddisfatto],
+  
+  [ROF-21],
+  [L'amministratore deve poter visualizzare il nome del punto di interesse sul messaggio con le informazioni di un annuncio non generato, tramite l'interazione con un _marker_ di mancata generazione.],
+  [Soddisfatto],
+  
+  [ROF-22],
+  [L'amministratore deve poter visualizzare l'_e-mail_ dell'utente destinatario sul messaggio con le informazioni di un annuncio non generato, tramite l'interazione con un _marker_ di mancata generazione.],
+  [Soddisfatto],
+  
+  [ROF-23],
+  [L'amministratore deve poter visualizzare la data e ora di tentata generazione sul messaggio con le informazioni di un annuncio non generato, tramite l'interazione con un _marker_ di mancata generazione.],
+  [Soddisfatto],
+  
+  [ROF-24],
+  [L'amministratore deve poter chiudere la vista con le informazioni sull'annuncio generato visualizzata sulla mappa tramite l'interazione con un _marker_ di generazione annuncio.],
+  [Soddisfatto],
+  
+  [ROF-25],
+  [L'amministratore deve poter chiudere il messaggio di annuncio non generato visualizzato sulla mappa tramite l'interazione con un _marker_ di mancata generazione.],
+  [Soddisfatto],
+  
+  [ROF-26],
+  [L'amministratore deve essere in grado di interagire con la mappa per spostare il centro della visuale.],
+  [Soddisfatto],
+  
+  [ROF-27],
+  [L'amministratore deve essere in grado di modificare l'ampiezza della visuale sulla mappa. In particolare bisogna permettere l'ampliamento e il restringimento del campo visivo che l'amministratore ha sul territorio visualizzato all'interno della mappa.],
+  [Soddisfatto],
+  
+  [ROF-28],
+  [Creazione di un generatore di dati GPS per simulare il funzionamento di un sensore che interagisce col sistema.],
+  [Soddisfatto],
+  
+  [ROF-29],
+  [Il generatore deve generare dei percorsi che siano realistici, ovvero che seguano le varie strade, vie e piste ciclabili che una bicicletta può percorrere.],
+  [Soddisfatto],
+
+  table.cell(colspan: 3)[Desiderabili],
+
+
+  [RDF-1],
+  [L'amministratore deve essere in grado di accedere alla sezione dedicata allo storico degli annunci generati all'interno della _dashboard_.],
+  [Soddisfatto],
+
+  [RDF-2],
+  [L'amministratore deve essere in grado di visualizzare lo storico degli annunci generati dal sistema sotto forma di lista oppure di griglia a seconda delle preferenze dell'amministratore stesso.],
+  [Soddisfatto],
+
+  [RDF-3],
+  [L'amministratore deve essere in grado di visualizzare un singolo elemento con le informazioni degli annunci all'interno dello storico.],
+  [Soddisfatto],
+
+  [RDF-4],
+  [L'amministratore deve essere in grado di visualizzare il nome del punto di interesse di ogni singolo elemento presente all'interno dello storico.],
+  [Soddisfatto],
+
+  [RDF-5],
+  [L'amministratore deve essere in grado di visualizzare l'_e-mail_ dell'utente destinatario di ogni singolo elemento all'interno dello storico.],
+  [Soddisfatto],
+
+  [RDF-6],
+  [L'amministratore deve essere in grado di visualizzare data e ora relativi al tentativo di generazione di ogni singolo elemento all'interno dello storico.],
+  [Soddisfatto],
+
+  [RDF-7],
+  [L'amministratore deve essere in grado di poter visualizzare i dettagli di un singolo elemento all'interno dello storico.],
+  [Soddisfatto],
+
+  [RDF-8],
+  [L'amministratore deve essere in grado di visualizzare il nome del punto di interesse relativo ad un annuncio tramite la visualizzazione dei dettagli dell'elemento nello storico.],
+  [Soddisfatto],
+
+  [RDF-9],
+  [L'amministratore deve essere in grado di visualizzare l'_e-mail_ dell'utente destinatario di un annuncio tramite la visualizzazione dei dettagli dell'elemento nello storico.],
+  [Soddisfatto],
+
+  [RDF-10],
+  [L'amministratore deve essere in grado di visualizzare data e ora del tentativo di generazione di un annuncio tramite la visualizzazione dei dettagli dell'elemento nello storico.],
+  [Soddisfatto],
+
+  [RDF-11],
+  [L'amministratore deve essere in grado di visualizzare il corpo dell'annuncio tramite la visualizzazione dei dettagli dell'elemento nello storico.],
+  [Soddisfatto],
+
+  [RDF-12],
+  [L'amministratore deve essere in grado di visualizzare la categoria del punto di interesse collegato all'annuncio tramite la visualizzazione dei dettagli dell'elemento nello storico.],
+  [Soddisfatto],
+
+  [RDF-13],
+  [L'amministratore deve essere in grado di chiudere la vista di visualizzazione dei dettagli di un singolo annuncio.],
+  [Soddisfatto],
+
+  [RDF-14],
+  [L'amministratore deve essere in grado, tramite un sistema di filtraggio, di visualizzare gli annunci dello storico per _e-mail_ dell'utente destinatario dell'annuncio.],
+  [Soddisfatto],
+
+  [RDF-15],
+  [L'amministratore deve essere in grado, tramite un sistema di filtraggio, di visualizzare gli annunci dello storico per nome del punto di interesse.],
+  [Soddisfatto],
+
+  [RDF-16],
+  [L'amministratore deve essere in grado, tramite un sistema di filtraggio, di visualizzare gli annunci dello storico generati in un certo intervallo di date.],
+  [Soddisfatto],
+
+  [RDF-17],
+  [L'amministratore deve essere in grado, tramite un sistema di filtraggio, di visualizzare gli annunci dello storico generati in una determinata fascia oraria.],
+  [Soddisfatto],
+
+  table.cell(colspan: 3)[Facoltativi],
+
+  [RFF-1],
+  [L'amministratore deve poter visualizzare la sezione dedicata ai grafici all'interno della _dashboard_ del sistema.],
+  [Non soddisfatto],
+
+  [RFF-2],
+  [L'amministratore deve poter visualizzare un singolo grafico relativo ad una particolare analisi dati.],
+  [Non soddisfatto],
+
+  [RFF-3],
+  [L'amministratore deve poter visualizzare il titolo di uno specifico grafico a seconda dell'analisi dati che viene rappresentata.],
+  [Non soddisfatto],
+
+  [RFF-4],
+  [L'amministratore deve poter visualizzare in uno specifico grafico un'etichetta relativa alla tipologia di misura rappresentata sulle assi delle ascisse e delle ordinate e, infine, i relativi valori.],
+  [Non soddisfatto],
+
+  [RFF-5],
+  [L'amministratore deve poter visualizzare, all'interno di ciascun grafico, la rappresentazione dello specifico _set_ di dati previsti per quel grafico.],
+  [Non soddisfatto],
+
+  [RFF-6],
+  [L'amministratore deve poter visualizzare un grafico che mostri il numero di annunci generati dal sistema nelle ultime 24 ore, con granularità oraria.],
+  [Non soddisfatto],
+
+  [RFF-7],
+  [L'amministratore deve poter visualizzare un grafico raffigurante il numero medio di noleggi che vengono effettuati in ciascun mese dell'anno, risultato della media di noleggi effettuati in quel mese nel corso degli anni.],
+  [Non soddisfatto],
+
+  [RFF-8],
+  [L'amministratore, dalla sezione dedicata ai grafici, deve poter selezionare uno specifico punto di interesse per poter poi visualizzare i grafici delle statistiche ad esso correlate.],
+  [Non soddisfatto],
+
+  [RFF-9],
+  [L'amministratore deve poter visualizzare un grafico che mette a confronto il numero di annunci generati con il numero di annunci non generati per un certo punto di interesse nell'ultima settimana.],
+  [Non soddisfatto],
+
+  [RFF-10],
+  [Viene richiesta la creazione di uno strumento di visualizzazione degli annunci in tempo reale per l'utente utilizzatore del servizio.],
+  [Non soddisfatto],
+)
