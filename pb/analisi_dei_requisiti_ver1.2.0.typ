@@ -30,7 +30,7 @@
     "Andrea Perozzo",
     "Andrea Precoma\nDavide Martinelli",
     [
-      - Rimozione dei caso d'uso relativi alla flag di noleggio attivo
+      - Rimozione dei caso d'uso relativi alla _flag_ di noleggio attivo
       - Rinumerati i casi d'uso
     ],
     "1.1.0",
