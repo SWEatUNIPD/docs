@@ -587,11 +587,11 @@ Per una spiegazione più approfondita si rimanda al documento `analisi_dei_requi
   
   [ROF-31],
   [L'amministratore deve poter ricevere il messaggio di errore "Sensore malfunzionante" nel caso in cui il sensore non sia in grado di trasmettere i dati di localizzazione in maniera corretta o non trasmetta dopo un determinato intervallo di tempo.],
-  [Soddisfatto],
+  [SOSPESO],
   
   [ROF-32],
   [L'amministratore deve poter visualizzare il messaggio di errore "Generazione impossibile dell'annuncio" nel caso in cui il sistema non sia in grado di stabilire una connessione e comunicare con il servizio di LLM, non permettendo così la trasmissione e la ricezione di dati da parte di quest'ultimo.],
-  [Soddisfatto],
+  [SOSPESO],
   
   [ROF-33],
   [Creazione di un generatore di dati GPS per simulare il funzionamento di un sensore che interagisce col sistema.],
@@ -658,19 +658,19 @@ Per una spiegazione più approfondita si rimanda al documento `analisi_dei_requi
 
   [RDF-14],
   [L'amministratore deve essere in grado, tramite un sistema di filtraggio, di visualizzare gli annunci dello storico per _e-mail_ dell'utente destinatario dell'annuncio.],
-  [VERIFICARE],
+  [Soddisfatto],
 
   [RDF-15],
   [L'amministratore deve essere in grado, tramite un sistema di filtraggio, di visualizzare gli annunci dello storico per nome del punto di interesse.],
-  [VERIFICARE],
+  [Soddisfatto],
 
   [RDF-16],
   [L'amministratore deve essere in grado, tramite un sistema di filtraggio, di visualizzare gli annunci dello storico generati in un certo intervallo di date.],
-  [VERIFICARE],
+  [Soddisfatto],
 
   [RDF-17],
   [L'amministratore deve essere in grado, tramite un sistema di filtraggio, di visualizzare gli annunci dello storico generati in una determinata fascia oraria.],
-  [VERIFICARE],
+  [Soddisfatto],
 
   table.cell(colspan: 3)[Facoltativi],
 
