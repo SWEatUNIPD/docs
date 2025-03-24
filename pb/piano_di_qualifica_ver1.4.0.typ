@@ -10,8 +10,8 @@
   uso: "Esterno",
   versioni: (
     "1.4.0",
-    "23/03/2025",
-    "Davide Marin",
+    "24/03/2025",
+    "Davide Marin\nAndrea Precoma",
     "Davide Martinelli\nDavide Picello",
     [
       - Aggiornamento del cruscotto di monitoraggio della qualità.
@@ -834,10 +834,9 @@ Dal grafico si può vedere come il _team_ abbia cominciato a lavorare al MVP sub
 #pagebreak()
 == Requisiti desiderabili soddisfatti (MPD-RDS)
 Misura la percentuale di requisiti desiderabili soddisfatti dal prodotto.
-// TODO: verificare il numero finale
 #plotGrafico3(
   "Tabella RDS",
-  ((4, 34), (5, 38), (6, 78), (7, 89)),
+  ((4, 34), (5, 38), (6, 73), (7, 100)),
   "RDS",
   ((4, 0), (5, 0), (6, 0), (7, 0)),
   "Valore accettabile",
@@ -846,17 +845,17 @@ Misura la percentuale di requisiti desiderabili soddisfatti dal prodotto.
 )
 
 === PB
-// TODO: lo storico era soddisfatto anche nel PoC (come gli obbligatori), da verede quanti sono stati soddisfatti
-Come si può vedere dal grafico il _team_ ha comunque voluto fin da subito iniziare a lavorare sui requisiti desiderabili anche se in misura ridotta rispetto a quelli obbligatori, perché riteneva importante soddisfarne almeno una parte, per fornire un prodotto più completo. Facendo così, alla settima iterazione il gruppo aveva già soddisfatto il 40% dei requisiti desiderabili, per poi arrivare fino ale 74% nell'ottavo _sprint_, una volta terminati i requisiti obbligatori.
+Come si può vedere dal grafico diversi requisiti desiderabili, in particolare quelli legati allo storico degli annunci, erano già soddisfatti nel PoC. In parallelo ai requisiti obbligatori il gruppo ha soddisfatto anche quelli desiderabili in quanto aggiungevano molto valore al prodotto. I due andamenti sono infatti simili in quanto i secondi, pur non essendo obbligatori, erano fortemente desiderati dalla proponente.
 
 
 #pagebreak()
+// TODO: cambiare in RFS (funzionali)
 == Requisiti opzionali soddisfatti (MPD-ROPS)
 Misura la percentuale di requisiti opzionali soddisfatti dal prodotto.
 #plotGrafico3(
-  "Tabella ROS",
-  ((4, 0), (5, 0), (6, 0), (7, 0)),
-  "ET",
+  "Tabella ROPS",
+  ((4, 0), (5, 0), (6, 0), (7, 90)),
+  "ROPS",
   ((4, 0), (5, 0), (6, 0), (7, 0)),
   "Valore accettabile",
   ((4, 100), (5, 100), (6, 100), (7, 100)),
@@ -864,19 +863,21 @@ Misura la percentuale di requisiti opzionali soddisfatti dal prodotto.
 )
 
 === PB
+Come si evince dal grafico i requisiti opzionali, avendo priorità più bassa degli altri, sono stati risolti nell'ultima iterazione. Avendo ricevuto riscontri positivi per quanto riguarda le funzionalità obbligatorie e desiderabili, il gruppo ha deciso di concentrare parte delle risorse ai requisiti opzionali in quanto possono dare abbastanza valore al prodotto in rapporto al lavoro per soddisfarli.
 
 #pagebreak()
 == Complessità ciclomatica per metodo (MPD-CCM)
 Valuta la complessità per metodo del codice sorgente attraverso la misurazione del numero di cammini indipendenti attraverso il grafo di controllo del flusso.
 
 #plotGrafico3(
-  "Tabella ROS",
+  "Tabella CCM",
   ((5, 5), (6, 5), (7, 4)),
-  "ET",
+  "CCM",
   ((4, 5), (5, 5), (6, 5), (7, 5)),
   "Valore accettabile",
   ((4, 3), (5, 3), (6, 3), (7, 3)),
   "Valore ottimo",
 )
 
-Il gruppo, durante lo sviluppo del MVP, ha deciso di appoggiarsi a uno strumento di analisi statica per il calcolo della complessità ciclomatica, tramite il quale è riuscito a garantire un valore per il *CCM* inferiore a cinque, il che lo fa rientrare nel valore accettabile per questa metrica.
+=== PB
+Il gruppo ha deciso di appoggiarsi a uno strumento di analisi statica per il calcolo della complessità ciclomatica. Grazie all'analisi in supporto allo sviluppo del codice il gruppo  è riuscito a garantire un valore per il *CCM* inferiore a cinque, il che lo fa rientrare nel valore accettabile per questa metrica.
