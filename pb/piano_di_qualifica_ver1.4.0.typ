@@ -290,8 +290,6 @@ Misura la percentuale di casi di _test_ superati rispetto al totale dei _test_ e
 ==== Failure density (MDP-FD)
 Indica il numero di fallimenti correttamente riscontrati per unità di dimensione del _software_, spesso misurata in linee di codice (LOC) o punti funzione. Valori più bassi denotano un _software_ di qualità superiore, con meno difetti rispetto alla sua complessità o dimensione.
 
-
-
 ==== Tabella metriche affidabilità
 #figure(
   kind: table,
@@ -302,7 +300,7 @@ Indica il numero di fallimenti correttamente riscontrati per unità di dimension
     fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
     table.header[*Metrica*][*Nome*][*Valore accettabile*][*Valore desiderabile*],
     [MDP-CC], [_#rifGlossario("Code coverage")_], [$≥ 80\%$], [$100\%$],
-    [MDP-BC], [_Branch coverage_], [$≥ 60\%$], [$100\%$],
+    [MDP-BC], [_Branch coverage_], [$≥ 80\%$], [$100\%$],
     [MDP-PTCP], [_Passed test cases percentage_], [$≥ 80\%$], [$100\%$],
     [MDP-FD], [_Failure density_], [$100%$], [$100%$],
   ),
@@ -864,6 +862,67 @@ Misura la percentuale di requisiti opzionali soddisfatti dal prodotto.
 
 === PB
 Come si evince dal grafico i requisiti opzionali, avendo priorità più bassa degli altri, sono stati risolti nell'ultima iterazione. Avendo ricevuto riscontri positivi per quanto riguarda le funzionalità obbligatorie e desiderabili, il gruppo ha deciso di concentrare parte delle risorse ai requisiti opzionali in quanto possono dare abbastanza valore al prodotto in rapporto al lavoro per soddisfarli.
+
+#pagebreak()
+== Code coverage (MDP-CC)
+Misura la percentuale di codice eseguita durante i _test_.
+#plotGrafico3(
+  "Tabella CC",
+  ((4, 0), (5, 47), (6, 34), (7, 92)),
+  "CC",
+  ((4, 80), (5, 80), (6, 80), (7, 80)),
+  "Valore accettabile",
+  ((4, 100), (5, 100), (6, 100), (7, 100)),
+  "Valore ottimo",
+)
+
+=== PB
+buona partenza, cambiato in flink quindi tutto da rifare, ottimo alla fine
+
+#pagebreak()
+== Branch coverage (MDP-BC)
+Calcola la percentuale di rami decisionali (_branch_) del codice eseguiti durante i _test_.
+#plotGrafico3(
+  "Tabella BC",
+  ((4, 0), (5, 47), (6, 34), (7, 92)),
+  "BC",
+  ((4, 80), (5, 80), (6, 80), (7, 80)),
+  "Valore accettabile",
+  ((4, 100), (5, 100), (6, 100), (7, 100)),
+  "Valore ottimo",
+)
+
+=== PB
+
+#pagebreak()
+== Passed test cases percentage (MDP-PTCP)
+Misura la percentuale di casi di _test_ superati rispetto al totale dei _test_ eseguiti.
+#plotGrafico3(
+  "Tabella PTCP",
+  ((4, 0), (5, 47), (6, 34), (7, 92)),
+  "PTCP",
+  ((4, 80), (5, 80), (6, 80), (7, 80)),
+  "Valore accettabile",
+  ((4, 100), (5, 100), (6, 100), (7, 100)),
+  "Valore ottimo",
+)
+
+=== PB
+
+#pagebreak()
+== Failure density (MDP-FD)
+Indica il numero di fallimenti correttamente riscontrati per unità di dimensione del _software_, spesso misurata in linee di codice (LOC) o punti funzione.
+#plotGrafico3(
+  "Tabella FD",
+  ((4, 0), (5, 47), (6, 34), (7, 92)),
+  "FD",
+  ((4, 80), (5, 80), (6, 80), (7, 80)),
+  "Valore accettabile",
+  ((4, 100), (5, 100), (6, 100), (7, 100)),
+  "Valore ottimo",
+)
+
+=== PB
 
 #pagebreak()
 == Complessità ciclomatica per metodo (MPD-CCM)
