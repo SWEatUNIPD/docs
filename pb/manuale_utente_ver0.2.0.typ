@@ -68,8 +68,6 @@ La prima occorrenza di un termine definito all'interno del glossario presente al
 // TODO: VERSIONE DOCKER?
 Al fine di usufruire del prodotto _software_ è richiesta l'installazione di Docker e #rifGlossario("Docker Compose") per la gestione dei _container_. Si mette a disposizione la #formatLink(label: "guida ufficiale", url: "https://docs.docker.com/engine/install/") per l'installazione.
 
-=== Requisiti opzionali ??
-
 == Download della repository <download>
 Una volta configurato l'ambiente locale si può procedere al _download_ della _repository_ contenete il codice sorgente. Recandosi alla #formatLink(label: "pagina dedicata", url: "https://github.com/SWEatUNIPD/NearYou") si può scaricare il `.zip` e successivamente decomprimere.
 
@@ -116,17 +114,6 @@ Collegarsi all'indirizzo `localhost:3000` (oppure `127.0.0.1:3000`) e inserire l
 #v(5pt)
 
 In seguito viene richiesto di cambiare la _password_ perché poco sicura ma si può saltare l'operazione.
-
-== Interfaccia per lo stato del database
-Collegarsi all'indirizzo `localhost:8888` (oppure `127.0.0.1:8888`) e inserire le credenziali "sweat.unipd\@gmail.com" per _username_ e "Admin12!" per _password_.
-
-#figure(
-  image("../assets/img/Manuale/db-login.png", width: 50%),
-  caption: [Inserimento credenziali per PgAdmin],
-)
-#v(5pt)
-
-// TODO: bisogna spiegare anche il simulatore?
 
 = Guida all'utilizzo della dashboard
 
