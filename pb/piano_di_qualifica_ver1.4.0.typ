@@ -618,7 +618,7 @@ Condotti insieme all'azienda proponente, servono a garantire che il prodotto fin
     align: (center, left, center),
     columns: 3,
     fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
-    table.header[*Codice _test_*][*Descrizione*][*Stato*],
+    table.header[*Codice test*][*Descrizione*][*Stato*],
     [TA-01], [Verificare che all'apertura il prodotto mostri una mappa che visualizza in tempo reale i percorsi compiuti dai mezzi in movimento.], [Verificato],
     [TA-02], [Verificare che il prodotto supporti la generazione tramite LLM di annunci personalizzati per ogni utente in base ai suoi dati di profilazione.], [Verificato],
     [TA-03], [Verificare che il prodotto supporti la visualizzazione dei _#rifGlossario("marker")_ corrispondenti ai mezzi con noleggio attivi all'interno della mappa.], [Verificato],
