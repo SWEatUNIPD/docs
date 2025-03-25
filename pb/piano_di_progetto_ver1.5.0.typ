@@ -24,6 +24,15 @@
   titolo: "Piano di Progetto",
   uso: "Esterno",
   versioni: (
+    "1.6.0",
+    "23/03/2025",
+    "Klaudio Merja",
+    "Andrea Precoma",
+    [
+      - Stesura retrospettiva ottavo _sprint_
+      - Introdotto RO-5
+    ],
+
     "1.5.0",
     "12/03/2025",
     "Davide Marin",
@@ -231,6 +240,16 @@ Per il processo di gestione dei rischi il gruppo adotta il modello fornito da Ia
   impatto: [Medio],
   piano: [Il rischio è risolvibile con un'attenta e lungimirante pianificazione e ripartizione dei compiti, confidando nella collaborazione di tutti i membri del gruppo nel comunicare apertamente le proprie indisponibilità. ],
   caption: [RO-4 - Impegni universitari e personali],
+)
+
+=== Indisponibilità dei professori per i colloqui <RO-5>
+#tabellaRischio(
+  ID: [RO-5],
+  descrizione: [La modalità di prenotazione a sportello porta con se vantaggi e svantaggi. Uno svantaggio è sicuramente la possibilità che i professori non siano disponibili per i colloqui in quanto impegnati in altri incontri o attività.],
+  probabilità: [Bassa],
+  impatto: [Medio],
+  piano: [Il gruppo può prenotare i colloqui con largo anticipo, o eventualmente sondarne la disponibilità, in modo da evitare eventuali sovrapposizioni con altri impegni dei professori.],
+  caption: [RO-5 - Indisponibilità dei professori per i colloqui],
 )
 
 == Rischi tecnologici
@@ -1000,3 +1019,78 @@ In seguito alla riunione avvenuta per l'inizio dell'ottavo _sprint_ il _team_ pr
   ),
   caption: [Preventivo delle ore nell'ottavo _sprint_ per membro e per ruolo],
 )
+
+
+==== Consuntivo orario e di spesa dello sprint corrente
+#consuntivoOre(
+  preventivo: (
+    (1, 4, 1, 11, 13, 14),
+    (2, 3, 0, 7, 3.5, 15),
+    (6, 3, 0, 13, 18, 7),
+    (5, 0.5, 0, 16, 23, 9),
+    (3, 0, 1.5, 13, 17, 10),
+    (5, 1.5, 0, 7, 9, 8),
+    (0, 0, 0, 16, 14, 11.5),
+  ),
+  consuntivo: (
+    (1, 3, 1, 10, 13, 14),
+    (2, 3, 0, 7, 3.5, 15),
+    (5, 3, 0, 13, 16, 7),
+    (4, 0, 0, 16, 23, 9),
+    (3, 0, 1.5, 13, 15, 10),
+    (5, 1.5, 0, 7, 9, 8),
+    (0, 0, 0, 16, 14, 11.5),
+  ),
+  tabCaption: [Consuntivo delle ore nell'ottavo _sprint_ per membro e per ruolo],
+  costTabCaption: [Costi sostenuti nell'ottavo _sprint_],
+  chartCaption: [Grafico percentuale dell'allocazione delle ore per ruolo nell'ottavo _sprint_],
+)
+
+#pagebreak()
+
+==== Risorse rimanenti e preventivo a finire
+#align(
+  center,
+  [
+    #table(
+      columns: (auto, auto, auto, auto),
+      align: center,
+      table.header([*Ruolo*], [*Ore rimanenti*], [*_Budget_ rimanente*], [*Risorse consumate*]),
+      [Responsabile], [2], [60 €], [96.43 %],
+      [Amministratore], [2], [40 €], [96.43 %],
+      [Analista], [0.5], [12.5 €], [99.40 %],
+      [Progettista], [1], [25 €], [99.25 %],
+      [Programmatore], [6], [90 €], [96.27 %],
+      [Verificatore], [0], [0 €], [100 %],
+    )
+  ],
+)
+Il preventivo a finire si attesta a fine progetto a 12.512,50€, a fronte del preventivo iniziale di 12.740,00€ rientrando quindi nel budget preventivato.
+
+==== Retrospettiva
+L'ottavo ed ultimo _sprint_ ha visto il gruppo completare tutte le attività previste e sostenere il colloquio finale con l'azienda. Il _team_, libero da impegni universitari, è riuscito a lavorare con grande efficienza e coordinazione, riuscendo a completare tutte le attività pianificate, rendendo il _software_ e la relativa documentazione pronti per la revisione PB.
+
+Un imprevisto non preventivato è stato l'indisponibilità del professor Cardin nel fissare il colloquio finale nel periodo inizialmente previsto dla gruppo, ovvero la settimana che va dal 24 al 30 Marzo. Il colloquio è stato fissato quindi a lunedì 31 Marzo. Una volta venuti a conoscenza di ciò, lunedì 17 Marzo, il gruppo ha deciso di rivedere la pianificazione delle attività mancanti, spalmandole su un periodo più lungo. 
+Durante questa ri-pianificazione, il gruppo si è reso conto che, disponendo di più tempo e non avendo ancora esaurito il monte ore, era possibile completare i requisiti desiderabili relativi ai grafici sulla _dashboard_ di Grafana.
+
+===== Cosa ha funzionato
+Il gruppo è riuscito a seguire il proprio _way of working_ fino alla fine del progetto, riuscendo a lavorare sempre in modo efficace e collaborativo.
+
+Il colloquio con l'azienda è andato bene, infatti il gruppo ha ricevuto dei complimenti per il percorso svolto.
+
+===== Cosa non ha funzionato
+Per la mancata disponibilità del professor Cardin, purtroppo, il gruppo ha dovuto posticipare di una settimana la consegna e di conseguenza rivedere la pianificazione dello _sprint_. 
+Essendo stato un fattore esterno il gruppo è stato comunque contento di essere riuscito ad adattarsi di conseguenza.
+
+
+===== Cosa fare per migliorare
+Il gruppo avrebbe potuto accertarsi prima della disponibilità del professor Cardin per il colloquio finale, in modo da evitare di dover rivedere la pianificazione in seguito. 
+Questo però avrebbe voluto dire richiedere il colloquio al professore all'inizio dello sprint, senza alcuna certezza sul completamento delle attività.
+
+===== Rischi riscontrati
+Nel corso dell' ottavo _sprint_ si sono riscontrati i seguenti rishi:
+- #link(<RO-5>)[RO-5]: l'indisponibilità del professor Cardin ha fatto slittare la consegna di una settimana, costringendo il gruppo a rivedere la pianificazione.
+- #link(<RT-1>)[RT-1]: tutti i membri del gruppo stanno iniziando a prendere confidenza con le tecnologie utilizzate ma con cui, giustamente, non hanno ancora raggiunto una padronanza completa.
+
+===== Attività future
+Il gruppo auspica di sostenere positivamente i colloqui PB, in modo da concludere il progetto ed iniziare le attività di _stage_ il prima possibile.
