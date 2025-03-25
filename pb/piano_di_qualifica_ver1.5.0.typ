@@ -9,12 +9,20 @@
   titolo: "Piano di Qualifica",
   uso: "Esterno",
   versioni: (
-    "1.4.0",
+    "1.5.0",
     "24/03/2025",
     "Davide Marin\nAndrea Precoma",
     "Davide Martinelli\nDavide Picello",
     [
       - Aggiornamento del cruscotto di monitoraggio della qualità.
+    ],
+    "1.4.0",
+    "23/03/2025",
+    "Davide Martinelli",
+    "Riccardo Milan\nAndrea Precoma",
+    [
+      - Aggiunta dei _test_ di unità del _backend_
+      - Aggiornamento stato dei _test_
     ],
     "1.3.0",
     "21/03/2025",
@@ -497,7 +505,7 @@ Precedono i _test_ di accettazione e si concentrano sul sistema nel suo compless
     [TS-4], [Verificare che l'amministratore abbia fornito una password per procedere con l'autenticazione.], [ROF-4], [Non eseguito],
     [TS-5], [Verificare che, se l'amministratore inserisce almeno una credenziale errata, l'autenticazione fallisca e venga ritornato un messaggio di errore.], [ROF-5], [Non eseguito],
     [TS-6], [Verificare che l'amministratore possa visualizzare sulla _dashboard_ principale una mappa geografica.], [ROF-6], [Non eseguito],
-    [TS-7], [Verificare che l'amministratore possa visualizzare, tramite dei _marker_ sulla mappa geografica, la posizione di tutti i punti di interesse.], [ROF-7], [Non eseguito],
+    [TS-7], [Verificare che l'amministratore possa visualizzare, tramite dei _#rifGlossario("marker")_ sulla mappa geografica, la posizione di tutti i punti di interesse.], [ROF-7], [Non eseguito],
     [TS-8], [Verificare che l'amministratore possa visualizzare sulla mappa il percorso eseguito da ciascun noleggio attivo in quel momento.], [ROF-8], [Non eseguito],
     [TS-9], [Verificare che l'amministratore possa visualizzare, lungo il percorso di ciascun noleggio attivo, un _marker_ specifico se quella posizione ricevuta dal sensore non ha provocato una richiesta di generazione annuncio.], [ROF-9], [Non eseguito],
     [TS-10], [Verificare che l'amministratore possa visualizzare, lungo il percorso di ciascun noleggio attivo, un _marker_ specifico se quella posizione ricevuta dal sensore ha provocato una richiesta di generazione annuncio e questa ha avuto successo, ovvero l'utente è stato ritenuto interessato e quindi ha ricevuto l'annuncio.], [ROF-10], [Non eseguito],
@@ -570,7 +578,7 @@ Condotti insieme all'azienda proponente, servono a garantire che il prodotto fin
     table.header[*Codice _test_*][*Descrizione*][*Stato*],
     [TA-01], [Verificare che all'apertura il prodotto mostri una mappa che visualizza in tempo reale i percorsi compiuti dai mezzi con noleggio attivo.], [Non eseguito],
     [TA-02], [Verificare che il prodotto supporti la generazione tramite LLM di annunci personalizzati per ogni utente in base ai suoi dati di profilazione.], [Non eseguito],
-    [TA-03], [Verificare che il prodotto supporti la visualizzazione dei _#rifGlossario("marker")_ corrispondenti ai mezzi con noleggio attivi all'interno della mappa.], [Non eseguito],
+    [TA-03], [Verificare che il prodotto supporti la visualizzazione dei _marker_ corrispondenti ai mezzi con noleggio attivi all'interno della mappa.], [Non eseguito],
     [TA-04], [Verificare che il prodotto supporti la visualizzazione dei _marker_ corrispondenti ai punti di interesse all'interno della mappa.], [Non eseguito],
     [TA-05], [Verificare che il prodotto supporti la visualizzazione dei _marker_ corrispondenti agli annunci generati all'interno della mappa.], [Non eseguito],
     [TA-06], [Verificare che il prodotto supporti la visualizzazione dei _marker_ corrispondenti alle tentate generazioni di annunci all'interno della mappa.], [Non eseguito],
@@ -578,7 +586,7 @@ Condotti insieme all'azienda proponente, servono a garantire che il prodotto fin
     [TA-08], [Verificare che il prodotto supporti la visualizzazione dei dati degli annunci generati per ogni rispettivo _marker_ sulla mappa.], [Non eseguito],
     [TA-09], [Verificare che il prodotto supporti la visualizzazione dei dati delle mancate generazioni di annunci per ogni rispettivo _marker_ sulla mappa.], [Non eseguito],
     [TA-10], [Verificare che il prodotto supporti una generazione realistica dei percorsi dei noleggi.], [Non eseguito],
-    [TA-11], [Verificare che il prodotto/sistema storicizzi in un _database_ i dati simulati e quelli generati dalla LLM.], [Non eseguito],
+    [TA-11], [Verificare che il prodotto/sistema storicizzi in un _#rifGlossario("database")_ i dati simulati e quelli generati dalla LLM.], [Non eseguito],
     [TA-12], [Verificare che il prodotto sia fruibile con le ultime versioni dei _browser web_ principali, nello specifico: Google Chrome, Mozilla Firefox, Microsoft Edge e Safari.], [Non eseguito],
   ),
 )
@@ -607,7 +615,7 @@ Dal grafico si può notare che il valore dell'*EAC* si è avvicinato, per 4 iter
 Questi dati sottolineano il continuo automiglioramento che il team ha sempre cercato di perseguire.
 
 === PB
-Il grafico mostra come, dopo la quinta iterazione, il valore dell'*EAC* è rimasto molto vicino al valore ideale abbassandosi leggermente solo nell'ultimo periodo, risultando quindi leggermente inferiore al *BAC*. Il valore si è leggermente alzato in seguito al colloquio RTB, in concomitanza del quinto _sprint_, a causa di rallentamenti nella produzione dovuti ad alcune correzioni da effettuare. Il gruppo è riuscito tuttavia a recuperare e abbassare nuovamente l'*EAC* durante l'ottavo _sprint_, portandolo al di sotto del *BAC*. 
+Il grafico mostra come, dopo la quinta iterazione, il valore dell'*EAC* è rimasto molto vicino al valore ideale abbassandosi leggermente solo nell'ultimo periodo, risultando quindi leggermente inferiore al *BAC*. Il valore si è leggermente alzato in seguito al colloquio RTB, in concomitanza del quinto _#rifGlossario("sprint")_, a causa di rallentamenti nella produzione dovuti ad alcune correzioni da effettuare. Il gruppo è riuscito tuttavia a recuperare e abbassare nuovamente l'*EAC* durante l'ottavo _sprint_, portandolo al di sotto del *BAC*. 
 
 #pagebreak()
 == Earned Value (MPC-EV) e Planned Value (MPC-PV)
@@ -766,7 +774,7 @@ Metriche che misurano la presenza di errori ortografici nei documenti, valutando
 )
 
 === RTB
-Da questo grafico si nota che tutti i documenti hanno avuto alcuni difetti ortografici, quasi sempre di battitura. Tuttavia nel quarto _#rifGlossario("sprint")_, con l'introduzione di uno strumento di _spell checking_, siamo riusciti a raggiungere il valore ottimo di zero errori per tutti i documenti.
+Da questo grafico si nota che tutti i documenti hanno avuto alcuni difetti ortografici, quasi sempre di battitura. Tuttavia nel quarto _sprint_, con l'introduzione di uno strumento di _spell checking_, siamo riusciti a raggiungere il valore ottimo di zero errori per tutti i documenti.
 
 === PB
 Dal grafico si può notare come tutti i documenti, compresi quelli nuovi, siano rimasti con il numero ottimo di zero errori per il resto del periodo di lavoro. Questo dimostra che lo strumento di _spell checking_ scelto dal gruppo ha funzionato come desiderato e che il _team_ è stato costante nel suo utilizzo.
@@ -865,10 +873,10 @@ Come si evince dal grafico i requisiti opzionali, avendo priorità più bassa de
 
 #pagebreak()
 == Code coverage (MDP-CC)
-Misura la percentuale di codice eseguita durante i _test_.
+Misura la percentuale di codice eseguita durante i _test_. Valori più alti indicano una migliore copertura del codice. Per questo progetto è richiesta una copertura pari o superiore all'$80%$.
 #plotGrafico3(
   "Tabella CC",
-  ((4, 0), (5, 47), (6, 34), (7, 92)),
+  ((4, 0), (5, 0), (6, 48), (7, 95)),
   "CC",
   ((4, 80), (5, 80), (6, 80), (7, 80)),
   "Valore accettabile",
@@ -877,22 +885,25 @@ Misura la percentuale di codice eseguita durante i _test_.
 )
 
 === PB
-buona partenza, cambiato in flink quindi tutto da rifare, ottimo alla fine
+Come si può vedere dal grafico, il gruppo iniziato a lavorare sulla copertura del codice nonappena è stata portata a termine la progettazione, ciò ha portato a soddisfare il valore accettabile del $80%$ solo durante l'ottava iterazione superandolo e avvicinandosi al valore ottimo con una copertura del $95%$.
 
 #pagebreak()
 == Branch coverage (MDP-BC)
-Calcola la percentuale di rami decisionali (_branch_) del codice eseguiti durante i _test_.
+Calcola la percentuale di rami decisionali (_branch_) del codice eseguiti durante i _test_. Aiuta a identificare scenari non testati.
 #plotGrafico3(
   "Tabella BC",
-  ((4, 0), (5, 47), (6, 34), (7, 92)),
+  ((4, 0), (5, 0), (6, 52), (7, 97)),
   "BC",
-  ((4, 80), (5, 80), (6, 80), (7, 80)),
+  ((4, 60), (5, 60), (6, 60), (7, 60)),
   "Valore accettabile",
   ((4, 100), (5, 100), (6, 100), (7, 100)),
   "Valore ottimo",
 )
 
 === PB
+Seguendo naturalmente la copertura del codice, il valore di _branch coverage_ ha iniziato a salire solo durante il settimo _sprint_, avvicinandosi di molto al valore accettabile già alla fine di esso, per poi salire fino al 97% nell'ultima iterazione.
+Questo dimostra come l'implementazione dei test prodotti dal _team_ sia stata efficace e dimostra l'affidabilità del codice.
+
 
 #pagebreak()
 == Passed test cases percentage (MDP-PTCP)
