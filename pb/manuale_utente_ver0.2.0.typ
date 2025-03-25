@@ -88,9 +88,8 @@ Prima di proseguire all'avvio del sistema ci si assicuri di aver rispettato i re
 
 Di seguito i passi per avviare correttamente il sistema. Le stesse istruzioni sono disponibili nel `README.md` della _#formatLink(label: "repository", url: "https://github.com/SWEatUNIPD/NearYou")_.
 + Aprire il terminale nella cartella scaricata dalla _repository_.
-+ "Buildare" l'immagine del _back-end_ in Spring eseguendo il comando \ `docker build -t spring-backend` \ Questa istruzione è necessaria solo la prima volta che si vuole avviare il sistema.
-+ "Buildare" l'immagine del simulatore eseguendo il comando \ `docker build -t simulator client/` \ Questa istruzione è necessaria solo la prima volta che si vuole avviare il sistema.
 + Avviare il sistema tramite Docker Compose eseguendo il comando \ `docker compose up -d` \ Dovrebbero comparire la _network_ seguita dalla scritta "Created" e la lista dei _container_ seguiti dalla scritta "Started".
++ Avviare il simulatore dei noleggi eseguendo il comando \ `npm run app`.
 
 Per maggiori informazioni riguardo ai _container_ e per visualizzare lo stato degli stessi è possibile eseguire il comando \ `docker ps -a`.
 
