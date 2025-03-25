@@ -631,6 +631,8 @@ Condotti insieme all'azienda proponente, servono a garantire che il prodotto fin
     [TA-10], [Verificare che il prodotto supporti una generazione realistica dei percorsi dei noleggi.], [Verificato],
     [TA-11], [Verificare che il prodotto persista in un _database_ i dati simulati e quelli generati dalla LLM.], [Verificato],
     [TA-12], [Verificare che il prodotto sia fruibile con le ultime versioni dei _browser web_ principali, nello specifico: Google Chrome v134.0.6998.88, Mozilla Firefox v136.0.2, Microsoft Edge v134.0.3124.72 e Safari v18.3.], [Verificato],
+    [TA-13], [Verificare che il prodotto consenta la visualizzazione dei dati relativi agli annunci generati e non generati, prodotti nel corso del tempo, all'interno di una sezione apposita detta "storico".], [Verificato],
+    [TA-14], [Verificare che il prodotto fornisca una sezione dedicata alla visualizzazione di grafici statistici relativi ai dati raccolti.], [Verificato],
   ),
 )
 
