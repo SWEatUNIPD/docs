@@ -222,25 +222,30 @@ container.bind(Simulator).toSelf().inSingletonScope();
   - *Versione*: 1.2.1
   - *Descrizione*: Implementa un formato dell'algoritmo di Google per comprimere i dati di coordinate geografiche di un percorso.
 
-- *Kafkajs*
-  - *Documentazionee*: #formatLink(url: "https://kafka.js.org/docs/introduction") (ultimo accesso 18/03/2025)
-  - *Versione*: 2.2.4
-  - *Descrizione*: Usata per agevolare le operazioni di produzione e consumo di messaggi attraverso Apache Kafka.
+- *Dotenv*
+  - *Documentazione*:
+  - *Versione*: 16.4.7
+  - *Descrizione*:
 
 - *Inversify*
   - *Documentazione*: #formatLink(url: "https://inversify.io") (utlimo accesso 18/03/2025)
   - *Versione*: 7.1.0
   - *Descrizione*: _Tool_ utilizzato per gestire la _Dipendency Injection_ in applicativi sviluppati in JavaScript e TypeScript.
 
-- *Vitest*
-  - *Documentazione*: #formatLink(url: "https://vitest.dev/guide/") (ultimo accesso 18/03/2025)
-  - *Versione*: 3.0.8
-  - *Descrizione*: _Framework_ utilizzato per i _test_ di unità in TypeScript. Aggiungendo alcune dipendenze è possibile generare anche un _report_ del _code coverage_.
+- *Kafkajs*
+  - *Documentazionee*: #formatLink(url: "https://kafka.js.org/docs/introduction") (ultimo accesso 18/03/2025)
+  - *Versione*: 2.2.4
+  - *Descrizione*: Usata per agevolare le operazioni di produzione e consumo di messaggi attraverso Apache Kafka.
 
-- *ESLint*
-  - *Documentazione*: #formatLink(url: "https://eslint.org/docs/latest/") (ultimo accesso 18/03/2025)
-  - *Versione*: 8.22.0
-  - *Descrizione*: _Tool_ utilizzato per i _test_ statici in TypeScript. Nel _file_ di configurazione è possibile specificare quali controlli fare, ad esempio stile del codice e complessità ciclomatica.
+// - *Vitest*
+//   - *Documentazione*: #formatLink(url: "https://vitest.dev/guide/") (ultimo accesso 18/03/2025)
+//   - *Versione*: 3.0.8
+//   - *Descrizione*: _Framework_ utilizzato per i _test_ di unità in TypeScript. Aggiungendo alcune dipendenze è possibile generare anche un _report_ del _code coverage_.
+
+// - *ESLint*
+//   - *Documentazione*: #formatLink(url: "https://eslint.org/docs/latest/") (ultimo accesso 18/03/2025)
+//   - *Versione*: 8.22.0
+//   - *Descrizione*: _Tool_ utilizzato per i _test_ statici in TypeScript. Nel _file_ di configurazione è possibile specificare quali controlli fare, ad esempio stile del codice e complessità ciclomatica.
 
 === Java
 ==== Versione
