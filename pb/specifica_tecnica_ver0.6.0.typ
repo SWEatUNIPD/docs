@@ -32,12 +32,19 @@
   titolo: "Specifica Tecnica",
   uso: "Esterno",
   versioni: (
+    "0.6.0",
+    "25/03/2025",
+    "Andrea Precoma",
+    "Klaudio Merja",
+    [
+      - Redazione architetture di _deployment_ e logica
+    ],
+
     "0.5.0",
     "22/03/2025",
     "Davide Picello",
     "Riccardo Milan\nAndrea Precoma",
     [- Completata sezione "Stato dei requisiti funzionali"],
-    
     
     "0.4.0",
     "21/03/2025",
@@ -62,7 +69,7 @@
     [
       - Completate tecnologie del simulatore
       - Redatta sezione relativa al simulatore
-      - Redatta sezione relativa ai _design \ pattern_
+      - Redatta sezione relativa ai _design #box[pattern]_
     ],
     "0.1.0",
     "11/03/2025",
@@ -76,6 +83,8 @@
   content: content,
 )
 
+// TODO: TEST GLOSSARIO PRIMA DI APPROVARE
+
 = Introduzione
 == Scopo del documento
 Lo scopo principale di questo documento è quello di esporre le tecnologie, le scelte architetturali e i _design patterns_ utilizzati dal gruppo per realizzare l'infrastruttura informatica che compone il prodotto _software_ NearYou. Quindi vengono esposte le motivazioni e le descrizioni delle scelte corredate ove possibile da diagrammi di classi per spiegare nella maniera più chiara possibile il _software_.
@@ -87,12 +96,12 @@ La prima occorrenza di un termine definito all'interno del glossario presente al
 == Riferimenti
 === Riferimenti normativi
 - Norme di Progetto (v2.0.0) \ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/norme_di_progetto_ver2.0.0.pdf")
-- Regolamento del progetto didattico, _slide_ 23 (ultimo accesso 18/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")
-- Capitolato C4 - Sync Lab S.r.l. (ultimo accesso 18/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
+- Regolamento del progetto didattico, _slide_ 23 \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf") \ (ultimo accesso in data 25/03/2025)
+- Capitolato C4 - Sync Lab S.r.l. \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf") \ (ultimo accesso in data 25/03/2025)
 === Riferimenti informativi
 - Glossario (v2.0.0) \ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/glossario_ver2.0.0.pdf")
-- Capitolato C4 - Sync Lab S.r.l. (ultimo accesso 18/03/2025 \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
-- Guida ufficiale per l'installazione di Docker (ultimo accesso 18/03/2025) \ #formatLink(url: "https://docs.docker.com/engine/install")
+- Capitolato C4 - Sync Lab S.r.l. \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf") \ (ultimo accesso in data 25/03/2025)
+- Guida ufficiale per l'installazione di Docker \ #formatLink(url: "https://docs.docker.com/engine/install") \ (ultimo accesso in data 25/03/2025)
 
 
 = Tecnologie
@@ -104,28 +113,33 @@ Per lo sviluppo, il _testing_ e il rilascio del prodotto sono stati utilizzati _
 
 ==== Docker services
 - *kafka*
-  - *Immagine*: apache/kafka:X.X.X
-  - *Riferimento*: #formatLink(url: "TODO") (ultimo accesso 18/03/2025)
+  - *Immagine*: apache/kafka:4.0.0
+  - *Riferimento*: #formatLink(url: "https://hub.docker.com/layers/apache/kafka/4.0.0/images/sha256-01b9a4030e54c6068e66eb3ba4cb82c0d89238629ef1c30d79b86036bf89b1b7", label: "dockerhub") (ultimo accesso in data 25/03/2025)
 
-- *kafka-ui*
-  - *Immagine*: provectuslabs/kafka-ui:X.X.X
-  - *Riferimento*: #formatLink(url: "TODO") (ultimo accesso 18/03/2025)
-
-- *jobmanager*
-  - *Immagine*: flink:1.20.1-scala_2.12-java17
-  - *Riferimento*: #formatLink(url: "TODO") (ultimo accesso 18/03/2025)
-
-- *taskmanager*:
-  - *Immagine*: flink:1.20.1-scala_2.12-java17
-  - *Riferimento*: #formatLink(url: "TODO") (ultimo accesso 18/03/2025)
+// - *kafka-ui*
+//   - *Immagine*: provectuslabs/kafka-ui:X.X.X
+//   - *Riferimento*: #formatLink(url: "TODO") (ultimo accesso in data 25/03/2025)
 
 - *postgis*
-  - *Immagine*: postgis/postgis:X.X.X
-  - *Riferimento*: #formatLink(url: "TODO") (ultimo accesso 18/03/2025)
+  - *Immagine*: postgis/postgis:17-3.5
+  - *Riferimento*: #formatLink(url: "https://hub.docker.com/layers/postgis/postgis/17-3.5/images/sha256-e4f23e0f3bca2c974032810eb7a5f1f5ceb7304e3e0ece38ebd9e3234beed177", label: "dockerhub") (ultimo accesso in data 25/03/2025)
 
 - *grafana*
   - *Immagine*: rmilan/grafana-rm
-  - *Riferimento*: #formatLink(url: "TODO") (ultimo accesso 18/03/2025)
+  - *Riferimento*: #formatLink(url: "https://hub.docker.com/r/rmilan/grafana-rm", label: "dockerhub") (ultimo accesso in data 25/03/2025)
+
+- *jobmanager*
+  - *Immagine*: flink:1.20.1-scala_2.12-java17
+  - *Riferimento*: #formatLink(url: "https://hub.docker.com/layers/library/flink/1.20.1-scala_2.12-java17/images/sha256-117955dab9e95fe5d28811feaaf6654f95bf2bda8154d8af33e90088bcb66b4d", label: "dockerhub") (ultimo accesso in data 25/03/2025)
+
+- *taskmanager*
+  - *Immagine*: flink:1.20.1-scala_2.12-java17
+  - *Riferimento*: #formatLink(url: "https://hub.docker.com/layers/library/flink/1.20.1-scala_2.12-java17/images/sha256-117955dab9e95fe5d28811feaaf6654f95bf2bda8154d8af33e90088bcb66b4d", label: "dockerhub") (ultimo accesso in data 25/03/2025)
+
+- *simulator*
+  - *_Build_*: `./client`
+  // TODO: mettere label "_repository_ NearYou del gruppo"
+  - *Riferimento*: #formatLink(url: "https://github.com/SWEatUNIPD/NearYou/tree/dev/client")
 
 == Linguaggi
 === TypeScript
@@ -304,8 +318,64 @@ Le funzionalità principali di Grafana nel nostro sistema sono:
 - Visualizzazione dei dati statici: viene messa a disposizione dell'amministratore una _dashboard_ che raccoglie lo storico degli annunci generati nel tempo; interagendo con i dati nel _database_, Grafana ci permette di mostrare tutti i dati interessanti legati ad ogni annuncio.
 
 = Architettura
-== Architettura logica
 == Architettura di deployment
+L'architettura di _deployment_ definisce come i componenti di un'applicazione vengono distribuiti ed eseguiti su diversi ambienti. Nel caso di un sistema in _real time_ si possono individuare separati servizi che comunicano reattivamente per inviare e processare i dati. Nel nostro progetto inoltre è presente un'interfaccia grafica che non agisce in seguito a una notifica, bensì a intervalli piccoli e regolari di tempo recupera i dati dal _database_. Abbiamo quindi optato per la K-_architecture_ in quanto soddisfa tutte le caratteristiche del prodotto.
+
+=== K-architecture
+La K-_architecture_ è un modello architetturale per l'elaborazione di dati in _streaming_. Derivante dalla #box[λ-_architecture_] la sua particolarità è l'eliminazione del _batching_ mantenendo un flusso costante di dati in _real time_.
+
+// TODO: pro/cons
+
+[IMG ARCH COI LAYER]
+
+- *_Data source_*: la sorgente di dati è costituita dal simulatore che imita l'attivazione dei noleggi e lo spostamento degli utenti sui mezzi. I sensori inviano quindi a intervalli regolari la posizione GPS e ricevono l'eventuale annuncio.
+
+- *_Streaming layer_*: questo livello gestisce la trasmissione in tempo reale dei dati che vengono inoltrati al _processing layer_. Lo _streaming layer_ è costituito da:
+  
+  - *Apache Kafka*: sistema di messaggistica distribuito che permette di pubblicare, sottoscrivere e archiviare messaggi in tempo reale. Riceve i dati dal simulatore e li inserisce nei _topic_ in attesa che lo _stream processor_ nello _streaming layer_ li consumi.
+
+- *_Processing layer_*: i dati ricevuti dallo _streaming layer_ vengono processati in tempo reale prima di essere memorizzati in _database_. Il _processing layer_ è costituito da:
+
+  - *Apache Flink*: KLA AIUTAMI TU
+
+- *_Storage layer_*: la persistenza è gestita da un _database_ relazionale che archivia i dati in arrivo dal _processing layer_. Lo _storage layer_ è costituito da *PostgreSQL* affiancato da *PostGIS*, una estensione che facilita l'elaborazione di dati geospaziali.
+
+- *_Data visualization layer_*: i dati archiviati nello _storage layer_ vengono resi disponibile tramite una interfaccia grafica. Costituito da *Grafana* questo _layer_ recupera le informazioni dal _database_ a intervalli regolari ravvicinati in modo da aggiornare rapidamente l'interfaccia ai nuovi cambiamenti.
+
+=== Flusso dati
+Il diagramma sottostante descrive il precorso dei dati tra i _layer_ del sistema e le relative elaborazioni.
+
+#figure(
+  image("../assets/img/ST/Kappa-architecture-data-flow.png", width: 80%),
+  caption: [Flusso dei dati],
+)
+
++ *Generazione dei dati*: Il simulatore genera in tempo reale dei percorsi tramite una chiamata API al servizio OpenStreetMap.
+
++ *Invio dei dati*: Ogni sensore attivo del simulatore invia a intervalli regolari la posizione GPS in un Kafka _topic_.
+
++ *_Processing_ dei dati*: Lo _stream processor_ è iscritto alla _topic_ delle posizioni GPS e riceve i messaggi dei sensori. Elabora quindi i dati ricevuti nel seguente modo:
+  + *Salvataggio in _database_*: Salva le posizioni nel _database_.
+  + *Controllo interesse*: Viene controllato se almeno una categoria dell'utente coincide con quella del punto di interesse. In caso affermativo è probabile che venga generato l'annuncio, in caso negativo è probabile il contrario quindi non si va nemmeno a effettuare la richiesta alla LLM.
+  + *Recupero dei dati in _database_*: Se le categorie combaciano vengono recuperati i dati di profilazione dell'utente e le informazioni del punto di interesse, ovvero:
+    - Il campo di testo libero dove l'utente ha descritto i suoi interessi.
+    - La descrizione del punto di interesse (cosa offre).
+    - La categoria del punto di interesse.
+    - Il nome del punto di interesse.
+
++ *Richiesta alla LLM*: Se l'utente è stato considerato potenzialmente interessato viene effettuata la richiesta alla LLM di generare l'annuncio.
+
++ *_Processing_ della risposta della LLM*: viene processata la risposta della LLM, in particolare:
+  + *Salvataggio in _database_*: Viene salvata la risposta in _database_, indipendentemente che sia l'annuncio o la risposta che l'utente non è interessato nonostante le categorie coincidano (quindi non è stato generato l'annuncio).
+  + *Eventuale invio dell'annuncio*: In caso l'annncio sia stato generato, questo viene inviato al sensore.
+
++ *Ricezione dell'eventuale annuncio*: Il sensore riceve l'annuncio se questo è stato generato. In uno scenario reale l'annuncio verrebbe visualizzato dall'utente, ma il capitolato non prevedeva lo sviluppo dell'applicazione lato _client_.
+
++ *Visualizzazione grafica*: Grafana recupera le informazioni dal _database_ a intervalli regolari ravvicinati per aggiornare costantemente la visuale dell'amministratore. Se questo richiede informazioni specifiche, ad esempio i dettagli di un annuncio, viene effettuata una _query_ per recuperare i dati.
+
+== Architettura logica
+=== Data streaming architecture
+
 == Design pattern
 === Dependency injection
 Quando un progetto è costituito da un numero considerevole di componenti risulta fondamentale minimizzare le dipendenze. Più si riesce ad evitare debito tecnico e più semplice risulta aggiungere funzionalità perché le parti del sistema non sono fortemente accopiate. L'obiettivo di questo _design pattern_ è quindi quello togliere a un componente la responsabilità della risoluzione delle proprie dipendenze.
