@@ -313,7 +313,7 @@ Piattaforma di messaggistica in tempo reale che consente _chat_ testuali, vocali
 Applicazione di messaggistica istantanea utilizzata per comunicazioni rapide e brevi all'interno del gruppo.
 
 ==== Fogli di Google
-Applicazione web per la creazione e la gestione di fogli di calcolo. Il gruppo utilizza tale strumento per tenere traccia delle ore produttive impiegate in ogni _#rifGlossario("sprint")_, che saranno successivamente riportate nel documento ufficiale Piano di Progetto.
+Applicazione _web_ per la creazione e la gestione di fogli di calcolo. Il gruppo utilizza tale strumento per tenere traccia delle ore produttive impiegate in ogni _#rifGlossario("sprint")_, che saranno successivamente riportate nel documento ufficiale Piano di Progetto.
 
 ==== GitHub
 Piattaforma per il versionamento del codice e la collaborazione su progetti _software_. Il gruppo utilizza questo strumento per gestire le _repository_ relative al prodotto software oggetto del capitolato e per la documentazione, monitorare le attività del progetto, assegnarle ai membri e seguirne lo stato di avanzamento.
