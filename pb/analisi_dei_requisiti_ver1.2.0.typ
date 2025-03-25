@@ -1339,9 +1339,8 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
   columns: (0.6fr, 3fr, 1fr),
   table.header([*Codice*], [*Descrizione*], [*Fonti*]),
 
-  // TODO: Aggiungere versioni dei browser
   [ROV-1],
-  [Il sistema, essendo accessibile puramente via web, deve garantire la compatibilità con l'ultima versione dei principali browser in commercio: Google Chrome, Mozilla Firefox, Microsoft Edge e Safari.],
+  [Il sistema, essendo accessibile puramente via _browser web_, deve garantire la compatibilità con l'ultima versione dei principali _browser_ in commercio, nello specifico Google Chrome v134.0.6998.88, Mozilla Firefox v136.0.2, Microsoft Edge v134.0.3124.72 e Safari v18.3.],
   [Riunioni interne],
 )
 == Requisiti desiderabili
@@ -1551,8 +1550,8 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
   align: (left, left, left, left, left),
   columns: (1.3fr, 1fr, 1fr, 1fr, 1fr),
   table.header([*Tipologia*], [*Obbligatori*], [*Desiderabili*], [*Opzionali*], [*Totale*]),
-  [Funzionali], [34], [19], [10], [63],
+  [Funzionali], [34], [17], [10], [61],
   [Qualità], [5], [0], [0], [5],
   [Vincolo], [1], [0], [0], [1],
-  [*Totale*], [40], [19], [10], [*69*],
+  [*Totale*], [40], [17], [10], [*67*],
 )
