@@ -1,9 +1,9 @@
 #import "/templates/template.typ": *
 
 #show: content => verbale(
-  data: "26 gennaio 2025",
+  data: "26 Marzo 2025",
   destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "Sync Lab S.r.l.", "Gruppo SWE@"),
-  responsabile: "Davide Marin",
+  responsabile: "Klaudio Merja",
   redattori: (
     "Andrea Precoma",
     "Davide Marin",
@@ -24,7 +24,7 @@
   titolo: "Piano di Progetto",
   uso: "Esterno",
   versioni: (
-    "1.6.0",
+    "2.0.0",
     "23/03/2025",
     "Klaudio Merja",
     "Andrea Precoma",
@@ -174,12 +174,12 @@ sottolineato e seguito dalla lettera g posta ad apice (e.g. #rifGlossario("termi
 
 == Riferimenti
 === Riferimenti normativi
-- Norme di Progetto (v1.0.1)\ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/norme_di_progetto_ver1.0.1.pdf")
-- Regolamento del progetto didattico\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")
+- Norme di Progetto (v2.0.0)\ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/norme_di_progetto_ver1.0.1.pdf")
+- Regolamento del progetto didattico (ultimo accesso 26/03/2025)\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")
 === Riferimenti informativi
-- Glossario (v1.0.0)\ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/glossario_ver1.0.0.pdf")
-- Lezione T03 - Il ciclo di vita del software\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T03.pdf")
-- Lezione T04 - Gestione di progetto\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T04.pdf")
+- Glossario (v2.0.0)\ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/glossario_ver1.0.0.pdf")
+- Lezione T03 - Il ciclo di vita del software (ultimo accesso 26/03/2025)\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T03.pdf")
+- Lezione T04 - Gestione di progetto (ultimo accesso 26/03/2025)\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T04.pdf")
 #pagebreak()
 
 = Analisi dei rischi
@@ -245,7 +245,7 @@ Per il processo di gestione dei rischi il gruppo adotta il modello fornito da Ia
 === Indisponibilità dei professori per i colloqui <RO-5>
 #tabellaRischio(
   ID: [RO-5],
-  descrizione: [La modalità di prenotazione a sportello porta con se vantaggi e svantaggi. Uno svantaggio è sicuramente la possibilità che i professori non siano disponibili per i colloqui in quanto impegnati in altri incontri o attività.],
+  descrizione: [La modalità di prenotazione a sportello porta con sé alcuni svantaggi, uno dei quali è sicuramente la possibilità che i professori non siano disponibili per i colloqui in quanto impegnati in altri incontri o attività.],
   probabilità: [Bassa],
   impatto: [Medio],
   piano: [Il gruppo può prenotare i colloqui con largo anticipo, o eventualmente sondarne la disponibilità, in modo da evitare eventuali sovrapposizioni con altri impegni dei professori.],
@@ -989,15 +989,22 @@ In seguito alla riunione avvenuta per l'inizio dell'ottavo _sprint_ il _team_ pr
 - Stesura dei _test_ di unità nel PdQ, nello specifico:
   - _Test_ del simulatore GPS.
   - _Test_ del _job_ di Flink.
-- Scrittura del codice dei _test_ di unità, nello specifico:
+- Scrittura dei _test_ di sistema nel PdQ.
+- Scrittura dei _test_ di integrazione nel PdQ.
+- Scrittura dei _test_ di accettazione nel PdQ.
+- Completare il cruscotto del PdQ.
+- Completamento del codice dei _test_ statici e dinamici.
+- Completamento del codice dei _test_ di unità, nello specifico:
   - _Test_ del simulatore GPS.
   - _Test_ del _job_ di Flink.
-- Ultimazione della _dashboard_ di Grafana.
+- Ultimazione della _dashboard_ di Grafana, nello specifico:
+  - Completare la sezione dello storico.
+  - Implementare la sezione relativa ai grafici.
 - Implementare le ultime modifiche al sito di facciata del _team_, in particolare:
   - Riordinare i verbali in modo che appaiano dal più recente al meno recente.
   - Rinominare i documenti mettendo le prime lettere maiuscole.
-- Ultimazione del _database_.
-- _Refactoring_ del simulatore in modo che rispetti l'architettura.
+- Ultimazione della struttura del _database_ e popolamento.
+- _Refactoring_ del simulatore in modo da creare una struttura solida, se necessario usando alcuni design pattern.
 - Creazione dello _stream processor_ in Flink.
 
 #v(10pt)
@@ -1070,27 +1077,26 @@ Il preventivo a finire si attesta a fine progetto a 12.512,50€, a fronte del p
 ==== Retrospettiva
 L'ottavo ed ultimo _sprint_ ha visto il gruppo completare tutte le attività previste e sostenere il colloquio finale con l'azienda. Il _team_, libero da impegni universitari, è riuscito a lavorare con grande efficienza e coordinazione, riuscendo a completare tutte le attività pianificate, rendendo il _software_ e la relativa documentazione pronti per la revisione PB.
 
-Un imprevisto non preventivato è stato l'indisponibilità del professor Cardin nel fissare il colloquio finale nel periodo inizialmente previsto dla gruppo, ovvero la settimana che va dal 24 al 30 Marzo. Il colloquio è stato fissato quindi a lunedì 31 Marzo. Una volta venuti a conoscenza di ciò, lunedì 17 Marzo, il gruppo ha deciso di rivedere la pianificazione delle attività mancanti, spalmandole su un periodo più lungo. 
-Durante questa ri-pianificazione, il gruppo si è reso conto che, disponendo di più tempo e non avendo ancora esaurito il monte ore, era possibile completare i requisiti desiderabili relativi ai grafici sulla _dashboard_ di Grafana.
+Un imprevisto che ha portato al ritardo della consegna è stata l'indisponibilità del professor Cardin nel fissare il colloquio nel periodo inizialmente previsto dal gruppo, ovvero nella settimana del 24 marzo. La revisione PB è stata quindi posticipata a lunedì 31. Con una settimana in più a disposizione il gruppo ha deciso di rivedere la logistica delle attività rimaste, allungando la durata dello _sprint_ rimanendo sempre nei limiti del _budget_. Avendo infatti pianificato il termine del progetto per venerdì 21 marzo erano avanzate alcune risorse che sono state sfruttate per completare con più calma e rigore i documenti e soddisfare la maggior parte dei requisiti facoltativi.
 
 ===== Cosa ha funzionato
-Il gruppo è riuscito a seguire il proprio _way of working_ fino alla fine del progetto, riuscendo a lavorare sempre in modo efficace e collaborativo.
+Il gruppo è riuscito a seguire il proprio _way of working_ fino alla fine del progetto, riuscendo a lavorare sempre in modo efficace ed efficiente. La quasi totalità delle attività è stata portata a termine in modo asincrono anche quando più persone lavoravano sugli stessi documenti.
 
-Il colloquio con l'azienda è andato bene, infatti il gruppo ha ricevuto dei complimenti per il percorso svolto.
+L'incontro con l'azienda è stato utile al gruppo per capire gli ultimi aggiustamenti da apportare, specie riguardo la presentazione del prodotto. La proponente si è mostrata soddisfatta del risultato del _software_ elogiando in particolar modo la reattività che il gruppo ha avuto in seguito ad alcuni imprevisti, primo fra tutti il cambio di tecnologia del _backend_. 
 
 ===== Cosa non ha funzionato
-Per la mancata disponibilità del professor Cardin, purtroppo, il gruppo ha dovuto posticipare di una settimana la consegna e di conseguenza rivedere la pianificazione dello _sprint_. 
-Essendo stato un fattore esterno il gruppo è stato comunque contento di essere riuscito ad adattarsi di conseguenza.
+Per la mancata disponibilità del professor Cardin il gruppo ha dovuto posticipare di una settimana la consegna e di conseguenza rivedere la pianificazione dello _sprint_. 
+Nonostante l'imprevisto il gruppo è riuscito a sfruttare l'opportunità di avere una settimana in più per portare a termine alcune attività in maniera più tranquilla e organizzata.
 
 
 ===== Cosa fare per migliorare
 Il gruppo avrebbe potuto accertarsi prima della disponibilità del professor Cardin per il colloquio finale, in modo da evitare di dover rivedere la pianificazione in seguito. 
-Questo però avrebbe voluto dire richiedere il colloquio al professore all'inizio dello sprint, senza alcuna certezza sul completamento delle attività.
+Questo però avrebbe voluto dire richiedere il colloquio al professore all'inizio dello sprint e non quando il gruppo si sarebbe sentito pronto.
 
 ===== Rischi riscontrati
 Nel corso dell' ottavo _sprint_ si sono riscontrati i seguenti rishi:
 - #link(<RO-5>)[RO-5]: l'indisponibilità del professor Cardin ha fatto slittare la consegna di una settimana, costringendo il gruppo a rivedere la pianificazione.
-- #link(<RT-1>)[RT-1]: tutti i membri del gruppo stanno iniziando a prendere confidenza con le tecnologie utilizzate ma con cui, giustamente, non hanno ancora raggiunto una padronanza completa.
+- #link(<RT-1>)[RT-1]: tutti i membri del gruppo stanno iniziando a prendere confidenza con le tecnologie utilizzate ma con le quali non hanno ancora raggiunto una padronanza completa.
 
 ===== Attività future
-Il gruppo auspica di sostenere positivamente i colloqui PB, in modo da concludere il progetto ed iniziare le attività di _stage_ il prima possibile.
+Il gruppo auspica di sostenere positivamente i colloqui PB in modo da concludere il progetto ed iniziare le attività di _stage_ il prima possibile.
