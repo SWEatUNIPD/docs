@@ -1009,6 +1009,16 @@ In seguito alla riunione avvenuta per l'inizio dell'ottavo _sprint_ il _team_ pr
 
 #v(10pt)
 #figure(
+  image("../assets/img/PdP/gantt_s8_1.png"),
+  caption: [Prima parte diagramma di Gantt dello _sprint_ 8],
+)
+
+#figure(
+  image("../assets/img/PdP/gantt_s8_2.png"),
+  caption: [Seconda parte diagramma di Gantt dello _sprint_ 8],
+)
+
+#figure(
   image("../assets/img/PdP/gantt_s8.png"),
   caption: [Diagramma di Gantt dello _sprint_ 8],
 )
