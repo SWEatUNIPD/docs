@@ -1265,7 +1265,7 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
   table.header([*Codice*], [*Descrizione*], [*Fonti*]),
 
   [ROV-1],
-  [Il sistema, essendo accessibile puramente via _browser web_, deve garantire la compatibilità con l'ultima versione dei principali _browser_ in commercio: Google Chrome v134.0.6998.88, Mozilla Firefox v136.0.2, Microsoft Edge v134.0.3124.72 e Safari v18.3.],
+  [Il sistema, essendo accessibile puramente via web, deve garantire la compatibilità con l'ultima versione dei principali browser in commercio: Google Chrome v134.0.6998.88, Mozilla Firefox v136.0.2, Microsoft Edge v134.0.3124.72 e Safari v18.3.],
   [Riunioni interne],
 )
 == Requisiti desiderabili
