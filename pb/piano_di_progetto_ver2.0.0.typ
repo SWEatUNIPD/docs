@@ -25,8 +25,8 @@
   uso: "Esterno",
   versioni: (
     "2.0.0",
-    "23/03/2025",
-    "Klaudio Merja",
+    "26/03/2025",
+    "Davide Picello",
     "Andrea Precoma",
     [
       - Stesura retrospettiva ottavo _sprint_
@@ -174,10 +174,10 @@ sottolineato e seguito dalla lettera g posta ad apice (e.g. #rifGlossario("termi
 
 == Riferimenti
 === Riferimenti normativi
-- Norme di Progetto (v2.0.0)\ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/norme_di_progetto_ver1.0.1.pdf")
+- Norme di Progetto (v2.0.0)\ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/norme_di_progetto_ver2.0.0.pdf")
 - Regolamento del progetto didattico (ultimo accesso 26/03/2025)\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")
 === Riferimenti informativi
-- Glossario (v2.0.0)\ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/glossario_ver1.0.0.pdf")
+- Glossario (v2.0.0)\ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/glossario_ver2.0.0.pdf")
 - Lezione T03 - Il ciclo di vita del software (ultimo accesso 26/03/2025)\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T03.pdf")
 - Lezione T04 - Gestione di progetto (ultimo accesso 26/03/2025)\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T04.pdf")
 #pagebreak()
@@ -1004,7 +1004,7 @@ In seguito alla riunione avvenuta per l'inizio dell'ottavo _sprint_ il _team_ pr
   - Riordinare i verbali in modo che appaiano dal più recente al meno recente.
   - Rinominare i documenti mettendo le prime lettere maiuscole.
 - Ultimazione della struttura del _database_ e popolamento.
-- _Refactoring_ del simulatore in modo da creare una struttura solida, se necessario usando alcuni design pattern.
+- _Refactoring_ del simulatore in modo da creare una struttura solida, se necessario usando alcuni _design pattern_.
 - Creazione dello _stream processor_ in Flink.
 
 #v(10pt)
@@ -1072,7 +1072,7 @@ In seguito alla riunione avvenuta per l'inizio dell'ottavo _sprint_ il _team_ pr
     )
   ],
 )
-Il preventivo a finire si attesta a fine progetto a 12.512,50€, a fronte del preventivo iniziale di 12.740,00€ rientrando quindi nel budget preventivato.
+Il preventivo a finire si attesta a fine progetto a 12.512,50€, a fronte del preventivo iniziale di 12.740,00€ rientrando quindi nel _budget_.
 
 ==== Retrospettiva
 L'ottavo ed ultimo _sprint_ ha visto il gruppo completare tutte le attività previste e sostenere il colloquio finale con l'azienda. Il _team_, libero da impegni universitari, è riuscito a lavorare con grande efficienza e coordinazione, riuscendo a completare tutte le attività pianificate, rendendo il _software_ e la relativa documentazione pronti per la revisione PB.
@@ -1091,7 +1091,7 @@ Nonostante l'imprevisto il gruppo è riuscito a sfruttare l'opportunità di aver
 
 ===== Cosa fare per migliorare
 Il gruppo avrebbe potuto accertarsi prima della disponibilità del professor Cardin per il colloquio finale, in modo da evitare di dover rivedere la pianificazione in seguito. 
-Questo però avrebbe voluto dire richiedere il colloquio al professore all'inizio dello sprint e non quando il gruppo si sarebbe sentito pronto.
+Questo però avrebbe voluto dire richiedere il colloquio al professore all'inizio dello _sprint_ e non quando il gruppo si sarebbe sentito pronto.
 
 ===== Rischi riscontrati
 Nel corso dell' ottavo _sprint_ si sono riscontrati i seguenti rishi:
