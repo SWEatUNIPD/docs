@@ -493,43 +493,40 @@ I _test_ di unità del _backend_ sono finalizzati a verificare il corretto funzi
   align: (center, left, center),
   fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
   table.header[*Codice test*][*Descrizione*][*Stato*],
-    // `DataSourceSingleton`
-    [TU-35], [Verificare che il metodo `getConnection` funzioni correttamente, restituendo un'istanza di tipo `java.sql.Connection`, o in caso contrario, lanci un'eccezione di tipo `SQLException`.], [Verificato],
-    // `GPSData` e `PointOfInterest`
-    [TU-36], [Verificare che gli oggetti di tipo `GPSData` vengano istanziati correttamente, constatando in particolare che due oggetti creati a partire dagli stessi parametri devono anche essere stati generati nello stesso istante per poter essere uguali.], [Verificato],
-    [TU-37], [Verificare che gli oggetti di tipo `PointOfInterest` vengano istanziati correttamente.], [Verificato],
-    [TU-38], [Verificare che il metodo `hashCode` della classe `GPSData` funzioni correttamente, restituendo quindi lo stesso valore solo per oggetti uguali.], [Verificato],
-    [TU-39], [Verificare che il metodo `hashCode` della classe `PointOfInterest` funzioni correttamente, restituendo quindi lo stesso valore solo per oggetti uguali.], [Verificato],
+    // `DatabaseConnectionSingleton`
+    [TU-35], [Verificare che il metodo `getConnection` funzioni correttamente alla sua prima chiamata, creando e restituendo un'istanza di tipo `ConnectionFactory`.], [Verificato],
+    [TU-36], [Verificare che il metodo `getConnection`, se chiamato più di una volta, restituisca sempre la stessa istanza di tipo `ConnectionFactory` (correttezza del _singleton_).], [Verificato],
+    // `GPSDataDto`
+    [TU-37], [Verificare che gli oggetti di tipo `GPSDataDto` vengano istanziati correttamente, constatando in particolare che l'_override_ del metodo `equals` si comporti come previsto.], [Verificato],
+    [TU-38], [Verificare che i metodi _getters_ e _setters_ della classe `GPSDataDto` funzionino correttamente, rispettivamente restituendo e modificando correttamente i valori degli attributi dell'oggetto.], [Verificato],
+    [TU-39], [Verificare che l'_override_ del metodo `hashCode` della classe `GPSDataDto` funzioni correttamente, restituendo quindi lo stesso valore per oggetti uguali.], [Verificato],
+    // `GPSData`
+    [TU-40], [Verificare che gli oggetti di tipo `GPSData` vengano istanziati correttamente, constatando in particolare che l'_override_ del metodo `equals` si comporti come previsto.], [Verificato],
+    [TU-41], [Verificare che i metodi _setters_ della classe `GPSData` funzionino correttamente, modificando correttamente i valori degli attributi dell'oggetto.], [Verificato],
+    [TU-42], [Verificare che l'_override_ del metodo `hashCode` della classe `GPSData` funzioni correttamente, restituendo quindi lo stesso valore solo per oggetti uguali.], [Verificato],
+    // `PointOfInterest`
+    [TU-43], [Verificare che gli oggetti di tipo `PointOfInterest` vengano istanziati correttamente, constatando in particolare che l'_override_ metodo `equals` si comporti come previsto.], [Verificato],
+    [TU-44], [Verificare che l'_override_ del metodo `hashCode` della classe `PointOfInterest` funzioni correttamente, restituendo quindi lo stesso valore solo per oggetti uguali.], [Verificato],
     // `AdvertisementGenerationRequest`
-    [TU-40], [Verificare che il metodo `open` della classe `AdvertisementGenerationRequest` funzioni correttamente, creando una connessione con il _database_ ed effettuando esattamente una chiamata per ciascun metodo invocato nel suo _scope_.], [Verificato],
-    [TU-41], [Verificare che il metodo `open` della classe `AdvertisementGenerationRequest`lanci un'eccezione di tipo `SQLException` se la connessione con il _database_ non può essere stabilita.], [Verificato],
-    [TU-42], [Verificare che il metodo `close` della classe `AdvertisementGenerationRequest` funzioni correttamente, chiudendo la connessione con il _database_ senza riportare errori nel _log_.], [Verificato],
-    [TU-43], [Verificare che il metodo `close` della classe `AdvertisementGenerationRequest` generi un _record_ nel _log_ se la chiusura della connessione con il _database_ genera un'eccezione.], [Verificato],
-    [TU-44], [Verificare che la richiesta di generazione dell'annuncio all'LLM tramite il metodo asincrono `asyncInvoke` generi uno e un solo _output_ (_singleton_).], [Verificato],
-    [TU-45], [Verificare che nel caso in cui l'utente associato al noleggio che sta generando la richiesta di generazione dell'annuncio non sia presente nel _database_ la chiamata del metodo `asyncInvoke` non porti alla generazione di alcun annuncio (l'_output_ è un _set_ vuoto).], [Verificato],
-    [TU-46], [Verificare che se durante la preparazione della _query_ nel metodo `asyncInvoke` viene lanciata un'eccezione di tipo `SQLException`, questa venga correttamente gestita e riportata nel _log_.], [Verificato],
-    [TU-47], [Verificare che se durante l'esecuzione della _query_ nel metodo `asyncInvoke` viene lanciata un'eccezione di tipo `SQLException`, questa venga correttamente gestita e riportata nel _log_.], [Verificato],
+    [TU-45], [Verificare che la richiesta di generazione di un annuncio tramite il metodo asincrono `asyncInvoke` funzioni correttamente, completando la tupla `resultFuture` con il testo generato dall'LLM.], [Verificato],
+    [TU-46], [Verificare che nel caso in cui la stringa contenente gli interessi dell'utente nel _database_ sia vuota, la richiesta di generazione dell'annuncio tramite il metodo `asyncInvoke` porti comunque alla generazione di un annuncio.], [Verificato],
+    [TU-47], [Verificare che se durante la preparazione della _query_ tramite la chiamata a `createStatement` nel metodo `asyncInvoke` della classe `AdvertisementGenerationRequest` viene generata un'eccezione di tipo `RuntimeException`, questa venga correttamente gestita e riportata nel _log_.], [Verificato],
     // `NearestPOIRequest`
-    [TU-48], [Verificare che il metodo `open` della classe `NearestPOIRequest` funzioni correttamente, creando una connessione con il _database_ ed effettuando esattamente una chiamata al metodo invocato nel suo _scope_.], [Verificato],
-    [TU-49], [Verificare che il metodo `open` della classe `NearestPOIRequest` lanci un'eccezione di tipo `SQLException` se la connessione con il _database_ non può essere stabilita.], [Verificato],
-    [TU-50], [Verificare che il metodo `close` della classe `NearestPOIRequest` funzioni correttamente, chiudendo la connessione con il _database_ senza riportare errori nel _log_ ed effettuando esattamente una chiamata al metodo invocato nel suo _scope_.], [Verificato],
-    [TU-51], [Verificare che il metodo `close` della classe `NearestPOIRequest` generi un _record_ nel _log_ se la chiusura della connessione con il _database_ genera un'eccezione.], [Verificato],
-    [TU-52], [Verificare che la richiesta di ricerca del punto di interesse più vicino all'utente tramite il metodo asincrono `asyncInvoke` generi uno e un solo _output_ (_singleton_).], [Verificato],
-    [TU-53], [Verificare che nel caso in cui la distanza in linea d'aria tra l'utente e il punto di interesse più vicino superi un limite prestabilito (100 m) la richiesta di ricerca del punto di interesse più vicino effettuata tramite il metodo `asyncInvoke` non dia in _output_ alcun punto di interesse (l'_output_ è una lista vuota).], [Verificato],
-    [TU-54], [Verificare che se durante la preparazione della _query_ nel metodo `asyncInvoke` della classe `NearestPOIRequest` viene lanciata un'eccezione di tipo `SQLException`, questa venga correttamente gestita e riportata nel _log_.], [Verificato],
-    [TU-55], [Verificare che se durante l'esecuzione della _query_ nel metodo `asyncInvoke` della classe `NearestPOIRequest` viene lanciata un'eccezione di tipo `SQLException`, questa venga correttamente gestita e riportata nel _log_.], [Verificato],
+    [TU-48], [Verificare che la richiesta di ricerca del punto di interesse più vicino all'utente tramite il metodo asincrono `asyncInvoke`, in caso di successo, completi la tupla `resultFuture` con un oggetto del tipo `PointOfInterest`.], [Verificato],
+    [TU-49], [Verificare che nel caso in cui il punto di interesse più vicino all'utente sia più lontano di 100 m in linea d'aria la richiesta di ricerca del punto di interesse più vicino tramite il metodo `asyncInvoke` completi la tupla `resultFuture` con un _set_ vuoto.], [Verificato],
+    [TU-50], [Verificare che se durante la preparazione della _query_ tramite la chiamata a `createStatement` nel metodo `asyncInvoke` della classe `NearestPOIRequest` viene generata un'eccezione di tipo `RuntimeException`, questa venga correttamente gestita e riportata nel _log_.], [Verificato],
     // `AdvertisementSerializationSchema`
-    [TU-56], [Verificare che il metodo `serialize` della classe `AdvertisementSerializationSchema` funzioni correttamente, controllando che i campi 'rent_id' e 'adv' dell'oggetto JSON restituito coincidano con il rentId dell'oggetto `GPSData` e la stringa contenente l'annuncio generato ricevuti in input dal metodo.], [Verificato],
-    [TU-57], [Verificare che il metodo `serialize` della classe `AdvertisementSerializationSchema` generi un'eccezione di tipo `NullPointerException` se viene invocato da un oggetto con valore `null`.], [Verificato],
+    [TU-51], [Verificare che il metodo `serialize` della classe `AdvertisementSerializationSchema` funzioni correttamente, controllando che i campi 'rent_id' e 'adv' dell'oggetto JSON restituito coincidano con il rentId dell'oggetto `GPSData` e la stringa contenente l'annuncio generato ricevuti in input dal metodo.], [Verificato],
+    [TU-52], [Verificare che il metodo `serialize` della classe `AdvertisementSerializationSchema` generi un'eccezione di tipo `NullPointerException` se viene invocato da un oggetto con valore `null`.], [Verificato],
     // `GPSDataDeserializationSchema`
-    [TU-58], [Verificare che il metodo `deserialize` della classe `GPSDataDeserializationSchema` funzioni correttamente, controllando che ricevuta in input una stringa in formato JSON contenente i campi 'rent_id', 'latitude' e 'longitude' questo restituisca un oggetto `GPSData` contenente i valori dei campi corrispondenti.], [Verificato],
-    [TU-59], [Verificare che il metodo `deserialize` della classe `GPSDataDeserializationSchema`, quando riceve in input una stringa in formato JSON non valida, generi un'eccezione di tipo `IOException`, che viene correttamente gestita e riportata nel _log_], [Verificato],
+    [TU-53], [Verificare che il metodo `deserialize` della classe `GPSDataDeserializationSchema` funzioni correttamente, controllando che ricevuta in input una stringa in formato JSON contenente i campi 'rent_id', 'latitude' e 'longitude' questo restituisca un oggetto `GPSData` contenente i valori dei campi corrispondenti.], [Verificato],
+    [TU-54], [Verificare che il metodo `deserialize` della classe `GPSDataDeserializationSchema`, quando riceve in input una stringa in formato JSON non valida, generi un'eccezione di tipo `IOException`, che viene correttamente gestita e riportata nel _log_], [Verificato],
     // `DataStreamJob`
-    [TU-60], [Verificare che il metodo `execute` della classe `DataStreamJob` funzioni correttamente.], [Verificato],
-    // `KafkaTopicTest`
-    [TU-61], [Verificare che il metodo `createTopic` della classe `KafkaTopicTest` funzioni correttamente.], [Verificato],
-    [TU-62], [Verificare che il metodo `createTopics` della classe `KafkaTopicTest` funzioni correttamente.], [Verificato],
-    [TU-63], [Verificare che il metodo `createTopic` della classe `KafkaTopicTest` gestisca correttamente il tentativo di creare un _topic_ con lo stesso nome di un _topic_ già esistente, riportando nel _log_ un avviso di _topic_ già esistente.], [Verificato],
+    [TU-55], [Verificare che il metodo `execute` della classe `DataStreamJob` funzioni correttamente.], [Verificato],
+    // `KafkaTopicService`
+    [TU-56], [Verificare che il metodo `createTopic` della classe `KafkaTopicTest` funzioni correttamente.], [Verificato],
+    [TU-57], [Verificare che il metodo `createTopics` della classe `KafkaTopicTest` funzioni correttamente.], [Verificato],
+    [TU-58], [Verificare che il metodo `createTopic` della classe `KafkaTopicTest` gestisca correttamente il tentativo di creare un _topic_ con lo stesso nome di un _topic_ già esistente, riportando nel _log_ un avviso di _topic_ già esistente.], [Verificato],
   )
 
 == Test di integrazione
