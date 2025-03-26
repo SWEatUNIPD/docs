@@ -152,13 +152,13 @@ sottolineato e seguito dalla lettera g posta ad apice (e.g. #rifGlossario("termi
 == Riferimenti
 === Riferimenti normativi
 - Norme di Progetto (v2.0.0)\ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/norme_di_progetto_ver2.0.0.pdf")
-- Regolamento del progetto didattico\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")\ (ultimo accesso in data 24/03/2025)
-- Capitolato C4 (Sync Lab)\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")\ (ultimo accesso in data 24/03/2025)
+- Regolamento del progetto didattico (ultimo accesso in data 24/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")
+- Capitolato C4 (Sync Lab) (ultimo accesso in data 24/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
 
 === Riferimenti informativi
 - Glossario (v2.0.0)\ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/glossario_ver2.0.0.pdf")
-- T5 - Analisi dei Requisiti\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf")\ (ultimo accesso in data 24/03/2025)
-- P2 - I Diagrammi dei Casi d'Uso\ #formatLink(url: "https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi%20Use%20Case.pdf")\ (ultimo accesso in data 24/03/2025)
+- T5 - Analisi dei Requisiti (ultimo accesso in data 24/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf")
+- P2 - I Diagrammi dei Casi d'Uso (ultimo accesso in data 24/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi%20Use%20Case.pdf")
 #pagebreak()
 
 = Descrizione del prodotto
