@@ -96,12 +96,12 @@ La prima occorrenza di un termine definito all'interno del glossario presente al
 == Riferimenti
 === Riferimenti normativi
 - Norme di Progetto (v2.0.0) \ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/norme_di_progetto_ver2.0.0.pdf")
-- Regolamento del progetto didattico, _slide_ 23 \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf") \ (ultimo accesso in data 25/03/2025)
-- Capitolato C4 - Sync Lab S.r.l. \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf") \ (ultimo accesso in data 25/03/2025)
+- Regolamento del progetto didattico, _slide_ 23 (ultimo accesso in data 25/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")
+- Capitolato C4 - Sync Lab S.r.l. (ultimo accesso in data 25/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
 === Riferimenti informativi
 - Glossario (v2.0.0) \ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/glossario_ver2.0.0.pdf")
-- Capitolato C4 - Sync Lab S.r.l. \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf") \ (ultimo accesso in data 25/03/2025)
-- Guida ufficiale per l'installazione di Docker \ #formatLink(url: "https://docs.docker.com/engine/install") \ (ultimo accesso in data 25/03/2025)
+- Capitolato C4 - Sync Lab S.r.l. (ultimo accesso in data 25/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
+- Guida ufficiale per l'installazione di Docker (ultimo accesso in data 25/03/2025) \ #formatLink(url: "https://docs.docker.com/engine/install")
 
 
 = Tecnologie
@@ -218,22 +218,22 @@ container.bind(Simulator).toSelf().inSingletonScope();
 
 ==== Librerie e framework
 - *\@mapbox/polyline*
-  - *Documentazione*: #formatLink(url: "https://www.npmjs.com/package/@mapbox/polyline") (ultimo accesso 18/03/2025)
+  - *Documentazione*: #formatLink(url: "https://www.npmjs.com/package/@mapbox/polyline") (ultimo accesso in data 26/03/2025)
   - *Versione*: 1.2.1
   - *Descrizione*: Implementa un formato dell'algoritmo di Google per comprimere i dati di coordinate geografiche di un percorso.
 
 - *Dotenv*
-  - *Documentazione*:
+  - *Documentazione*: #formatLink(url: "https://www.npmjs.com/package/dotenv") (ultimo accesso in data 26/03/2025)
   - *Versione*: 16.4.7
-  - *Descrizione*:
+  - *Descrizione*: Modulo che carica le variabili d'ambiente da un _file_ `.env` in `process.env`. In questo modo si possono configurare dei parametri del sistema in modo agile.
 
 - *Inversify*
-  - *Documentazione*: #formatLink(url: "https://inversify.io") (utlimo accesso 18/03/2025)
+  - *Documentazione*: #formatLink(url: "https://inversify.io") (ultimo accesso in data 26/03/2025)
   - *Versione*: 7.1.0
   - *Descrizione*: _Tool_ utilizzato per gestire la _Dipendency Injection_ in applicativi sviluppati in JavaScript e TypeScript.
 
 - *Kafkajs*
-  - *Documentazionee*: #formatLink(url: "https://kafka.js.org/docs/introduction") (ultimo accesso 18/03/2025)
+  - *Documentazionee*: #formatLink(url: "https://kafka.js.org/docs/introduction") (ultimo accesso in data 26/03/2025)
   - *Versione*: 2.2.4
   - *Descrizione*: Usata per agevolare le operazioni di produzione e consumo di messaggi attraverso Apache Kafka.
 
