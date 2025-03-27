@@ -591,7 +591,7 @@ L'*EAC* rappresenta una stima aggiornata del costo totale previsto per completar
 
 #plotGrafico4(
   "Tabella EAC",
-  ((0, 13620), (1, 13402), (2, 13292), (3, 13374), (4, 12648), (5, 12719), (6, 12751), (7, 12459)), 
+  ((0, 13620), (1, 13402), (2, 13292), (3, 13374), (4, 12648), (5, 12719), (6, 12751), (7, 12440)), 
   "EAC",
   ((0, 12740), (1, 12740), (2, 12740), (3, 12740), (4, 12740), (5, 12740), (6, 12740), (7, 12740)),
   "BAC (valore ideale)",
@@ -616,11 +616,11 @@ Il grafico mostra come, dopo la quinta iterazione, il valore dell'*EAC* è rimas
 
 #plotGrafico4(
   "Tabella EV e PV",
-  ((0, 707.78), (1, 1516.67), (2, 2184.00), (3, 3013.11), (4, 3791.67), (5, 4105.11), (6, 6592.44), (7, 12487.22)),
+  ((0, 707.78), (1, 1516.67), (2, 2184.00), (3, 3013.11), (4, 3791.67), (5, 4105.11), (6, 6592.44), (7, 12467)),
   "PV",
-  ((0, 717.89), (1, 1547.00), (2, 2345.78), (3, 3124.33), (4, 3943.33), (5, 4256.78), (6, 6744.11), (7, 12467)),
+  ((0, 717.89), (1, 1547.00), (2, 2345.78), (3, 3124.33), (4, 3943.33), (5, 4256.78), (6, 6744.11), (7, 12568.11)),
   "EV",
-  ((0, 13620.42), (1, 13402.94), (2, 13292.46), (3, 13374.76), (4, 12648.46), (5, 12719.71), (6, 12751.12), (7, 12459.49)),
+  ((0, 13620.42), (1, 13402.94), (2, 13292.46), (3, 13374.76), (4, 12648.46), (5, 12719.71), (6, 12751.12), (7, 12440)),
   "EAC",
   ((0, 12740), (1, 12740), (2, 12740), (3, 12740), (4, 12740), (5, 12740), (6, 12740), (7, 12740)),
   "BAC",
@@ -639,11 +639,11 @@ Il grafico mostra come il valore dell'*EV* abbia continuato a crescere in modo p
 
 #plotGrafico3(
   "Tabella AC e ETC",
-  ((0, 767.50), (1, 1627.50), (2, 2447.50), (3, 3280.00), (4, 3915.00), (5, 4250.00), (6, 6750.00), (7, 12192.50)),
+  ((0, 767.50), (1, 1627.50), (2, 2447.50), (3, 3280.00), (4, 3915.00), (5, 4250.00), (6, 6750.00), (7, 12272.50)),
   "AC",
-  ((0, 12852.92), (1, 11775.44), (2, 10844.96), (3, 10094.76), (4, 8733.46), (5, 8469.71), (6, 6001.12), (7, 266.99)),
+  ((0, 12852.92), (1, 11775.44), (2, 10844.96), (3, 10094.76), (4, 8733.46), (5, 8469.71), (6, 6001.12), (7, 167.85)),
   "ETC",
-  ((0, 13620.42), (1, 13402.94), (2, 13292.46), (3, 13374.76), (4, 12648.46), (5, 12719.71), (6, 12751.12), (7, 12459.49)),
+  ((0, 13620.42), (1, 13402.94), (2, 13292.46), (3, 13374.76), (4, 12648.46), (5, 12719.71), (6, 12751.12), (7, 12440.35)),
   "EAC",
 )
 
@@ -660,9 +660,9 @@ Dal grafico si può notare come il valore dell'*AC* abbia continuato a crescere 
 
 #plotGrafico5(
   "Tabella BV e SV",
-  ((0, -59.72), (1, -110.83), (2, -263.50), (3, -266.89), (4, -123.33), (5, -144.89), (6, -157.56), (7, 294.72)),
+  ((0, -59.72), (1, -110.83), (2, -263.50), (3, -266.89), (4, -123.33), (5, -144.89), (6, -157.56), (7, 194.50)),
   "BV",
-  ((0, 10.11), (1, 30.33), (2, 161.78), (3, 111.22), (4, 151.67), (5, 151.67), (6, 151.67), (7, -20.22)),
+  ((0, 10.11), (1, 30.33), (2, 161.78), (3, 111.22), (4, 151.67), (5, 151.67), (6, 151.67), (7, 101.11)),
   "SV",
   ((0, 637), (1, 637), (2, 637), (3, 637), (4, 637), (5, 637), (6, 637), (7, 637)),
   "Limite massimo accettabile",
@@ -672,14 +672,11 @@ Dal grafico si può notare come il valore dell'*AC* abbia continuato a crescere 
   "Valore ottimo",
 )
 
-// TODO: sicuri?
 === RTB
 Dal grafico si può notare che le variazioni sono sempre state contenute: rientrano sempre ampiamente nei limiti accettabili e non si discostano molto dal valore ottimo. Il *BV* indica che abbiamo sempre speso leggermente oltre il _budget_ pianificato, tuttavia abbiamo una prospettiva positiva come indica il *SV*.
 
 === PB
-Il grafico mostra come dalla quinta iterazione l'*SV* sia sempre stato pressapoco invariato, segnalando di essere leggermente in anticipo rispetto alla pianificazione. Anche il *BV* è rimasto stabile fino all'ultimo _sprint_ dove è cresciuto raggiungendo quasi l'*SV*. // TODO: da completare dopo aver avuto i dati alla mano (probabilmente BV sarà sepmre sotto perché abbiamo pianificato di spendere di meno, ma poi avendo avuto una settimana in più abbiamo sfruttato tutte le risorse, ad esempio facendo anche i RF, spendendo quindi di più)
-
-// Il grafico mostra come dalla quinta fino alla settima iterazione il valore di *BV* sia sempre stato pressapoco invariato, segnalando di essere leggermente in ritardo rispetto alla pianificazione. questo sempre dovuto alle modifiche che il gruppo ha dovuto affrontare successivamente al colloquio RTB, nell'ultimo _sprint_ invece, grazie al tempo a disposizione e al lavoro del _team_, il *BV* si è avvicinato di molto al valore del *SV*, portando quindi il gruppo ad aver speso leggermente meno rispetto al valore ottimo.
+Il grafico mostra come dalla quinta iterazione l'*SV* sia sempre stato pressapoco invariato, segnalando di essere leggermente in anticipo rispetto alla pianificazione. Anche il *BV* è rimasto stabile fino la penultimo _sprint_ dopo il quale ha raggiunto il semipiano positivo, indice che i costi sostenuti fino alla conclusione dell'ottavo periodo, e quindi del progetto, sono minori di quelli pianificati.
 
 #pagebreak()
 == Indice di Stabilità dei Requisiti (MPC-ISR)
