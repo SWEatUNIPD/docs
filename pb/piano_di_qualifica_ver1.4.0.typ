@@ -251,13 +251,13 @@ La qualità del prodotto si concentra sulla valutazione del _software_ sviluppat
 === Funzionalità
 La funzionalità misura la capacità del _software_ di soddisfare i requisiti obbligatori, desiderabili e opzionali.
 
-==== Requisiti obbligatori soddisfatti (MDP-ROS)
+==== Requisiti obbligatori soddisfatti (MPD-ROS)
 Indica la percentuale di requisiti obbligatori implementati nel prodotto. Deve essere sempre pari al 100% per garantire la conformità alle specifiche.
 
-==== Requisiti desiderabili soddisfatti (MDP-RDS)
+==== Requisiti desiderabili soddisfatti (MPD-RDS)
 Misura la percentuale di requisiti desiderabili implementati nel prodotto. Valori più elevati migliorano la soddisfazione del cliente.
 
-==== Requisiti opzionali soddisfatti (MDP-ROPS)
+==== Requisiti opzionali soddisfatti (MPD-RFS)
 Rappresenta la percentuale di requisiti opzionali implementati. Una copertura opzionale più alta può aggiungere valore al prodotto.
 
 ==== Tabella metriche funzionalità
@@ -271,23 +271,23 @@ Rappresenta la percentuale di requisiti opzionali implementati. Una copertura op
     table.header[*Metrica*][*Nome*][*Valore accettabile*][*Valore desiderabile*],
     [MDP-ROS], [Requisiti obbligatori soddisfatti], [$100\%$], [$100\%$],
     [MDP-RDS], [Requisiti desiderabili soddisfatti], [$≥ 0\%$], [$100\%$],
-    [MDP-ROPS], [Requisiti opzionali soddisfatti], [$≥ 0\%$], [$≥ 50\%$],
+    [MDP-RFS], [Requisiti opzionali soddisfatti], [$≥ 0\%$], [$≥ 50\%$],
   ),
 )
 
 === Affidabilità
 L'affidabilità valuta la capacità del _software_ di funzionare correttamente sotto condizioni specifiche.
 
-==== Code coverage (MDP-CC)
+==== Code coverage (MPD-CC)
 Misura la percentuale di codice eseguita durante i _test_. Valori più alti indicano una migliore copertura del codice. Per questo progetto è richiesta una copertura pari o superiore all'$80%$.
 
-==== Branch coverage (MDP-BC)
+==== Branch coverage (MPD-BC)
 Calcola la percentuale di rami decisionali (_#rifGlossario("branch")_) del codice eseguiti durante i _test_. Aiuta a identificare scenari non testati.
 
-==== Passed test cases percentage (MDP-PTCP)
+==== Passed test cases percentage (MPD-PTCP)
 Misura la percentuale di casi di _test_ superati rispetto al totale dei _test_ eseguiti. Un alto valore indica che il _software_ soddisfa i requisiti funzionali e non funzionali previsti.
 
-==== Failure density (MDP-FD)
+==== Failure density (MPD-FD)
 Indica il numero di fallimenti correttamente riscontrati per unità di dimensione del _software_, spesso misurata in linee di codice (LOC) o punti funzione. Valori più bassi denotano un _software_ di qualità superiore, con meno difetti rispetto alla sua complessità o dimensione.
 
 ==== Tabella metriche affidabilità
@@ -299,10 +299,10 @@ Indica il numero di fallimenti correttamente riscontrati per unità di dimension
     columns: 4,
     fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
     table.header[*Metrica*][*Nome*][*Valore accettabile*][*Valore desiderabile*],
-    [MDP-CC], [_#rifGlossario("Code coverage")_], [$≥ 80\%$], [$100\%$],
-    [MDP-BC], [_Branch coverage_], [$≥ 60\%$], [$100\%$],
-    [MDP-PTCP], [_Passed test cases percentage_], [$≥ 80\%$], [$100\%$],
-    [MDP-FD], [_Failure density_], [$100%$], [$100%$],
+    [MPD-CC], [_#rifGlossario("Code coverage")_], [$≥ 80\%$], [$100\%$],
+    [MPD-BC], [_Branch coverage_], [$≥ 60\%$], [$100\%$],
+    [MPD-PTCP], [_Passed test cases percentage_], [$≥ 80\%$], [$100\%$],
+    [MPD-FD], [_Failure density_], [$100%$], [$100%$],
   ),
 )
 
@@ -350,7 +350,7 @@ Valuta il tempo necessario a un utente per imparare a utilizzare il _software_. 
 
 === Manutenibilità
 
-==== Complessità ciclomatica per metodo (MDP-CCM)
+==== Complessità ciclomatica per metodo (MPD-CCM)
 La complessità ciclomatica valuta la complessità del codice sorgente attraverso la misurazione del numero di cammini indipendenti attraverso il grafo di controllo del flusso. Una complessità ciclomatica più alta indica che il codice è più difficile da comprendere e manutenere.
 
 
@@ -591,7 +591,7 @@ L'*EAC* rappresenta una stima aggiornata del costo totale previsto per completar
 
 #plotGrafico4(
   "Tabella EAC",
-  ((0, 13620.42), (1, 13402.94), (2, 13292.46), (3, 13374.76), (4, 12648.46), (5, 12719.71), (6, 12751.12), (7, 12466.44)), 
+  ((0, 13620), (1, 13402), (2, 13292), (3, 13374), (4, 12648), (5, 12719), (6, 12751), (7, 12459)), 
   "EAC",
   ((0, 12740), (1, 12740), (2, 12740), (3, 12740), (4, 12740), (5, 12740), (6, 12740), (7, 12740)),
   "BAC (valore ideale)",
@@ -618,9 +618,9 @@ Il grafico mostra come, dopo la quinta iterazione, il valore dell'*EAC* è rimas
   "Tabella EV e PV",
   ((0, 707.78), (1, 1516.67), (2, 2184.00), (3, 3013.11), (4, 3791.67), (5, 4105.11), (6, 6592.44), (7, 12487.22)),
   "PV",
-  ((0, 717.89), (1, 1547.00), (2, 2345.78), (3, 3124.33), (4, 3943.33), (5, 4256.78), (6, 6744.11), (7, 12638.89)),
+  ((0, 717.89), (1, 1547.00), (2, 2345.78), (3, 3124.33), (4, 3943.33), (5, 4256.78), (6, 6744.11), (7, 12467)),
   "EV",
-  ((0, 13620.42), (1, 13402.94), (2, 13292.46), (3, 13374.76), (4, 12648.46), (5, 12719.71), (6, 12751.12), (7, 12466.44)),
+  ((0, 13620.42), (1, 13402.94), (2, 13292.46), (3, 13374.76), (4, 12648.46), (5, 12719.71), (6, 12751.12), (7, 12459.49)),
   "EAC",
   ((0, 12740), (1, 12740), (2, 12740), (3, 12740), (4, 12740), (5, 12740), (6, 12740), (7, 12740)),
   "BAC",
@@ -630,7 +630,7 @@ Il grafico mostra come, dopo la quinta iterazione, il valore dell'*EAC* è rimas
 Dal grafico si può notare che il valore dell'*EV* è cresciuto pari pari al valore del *PV*, indicando che il lavoro svolto è stato effettivamente eseguito secondo la pianificazione.
 
 === PB
-Il grafico mostra come il valore dell'*EV* abbia continuato a crescere in modo proporzionale al valore del *PV*, dimostrando che il gruppo è riuscito a pianificare correttamente le attività per tutta la durata del progetto. I valori di *EV* e *PV* inoltre si sono avvicinati di molto a quelli di *EAC* e *BAC* durante l'ultima iterazione, dimostrando che il gruppo è riuscito ad essere coerente anche con il preventivo prodotto inizialmente.
+Il grafico mostra come il valore dell'*EV* abbia continuato a crescere in modo proporzionale al valore del *PV*, dimostrando che il gruppo è riuscito a pianificare correttamente le attività per tutta la durata del progetto. Dalla sovrapposizione delle due linee si evince inoltre che l'accuratezza della pianificazione è andata migliorandosi fino alla conclusione dell'ottavo _sprint_. I valori di *EV* e *PV* si sono avvicinati di molto a quelli di *EAC* e *BAC* durante l'ultima iterazione, dimostrando che il gruppo è riuscito anche ad essere coerente con il preventivo prodotto inizialmente.
 
 #pagebreak()
 == Actual Cost (MPC-AC) e Estimate to Completion (MPC-ETC)
@@ -639,11 +639,11 @@ Il grafico mostra come il valore dell'*EV* abbia continuato a crescere in modo p
 
 #plotGrafico3(
   "Tabella AC e ETC",
-  ((0, 767.50), (1, 1627.50), (2, 2447.50), (3, 3280.00), (4, 3915.00), (5, 4250.00), (6, 6750.00), (7, 12367.50)),
+  ((0, 767.50), (1, 1627.50), (2, 2447.50), (3, 3280.00), (4, 3915.00), (5, 4250.00), (6, 6750.00), (7, 12192.50)),
   "AC",
-  ((0, 12852.92), (1, 11775.44), (2, 10844.96), (3, 10094.76), (4, 8733.46), (5, 8469.71), (6, 6001.12), (7, 98.94)),
+  ((0, 12852.92), (1, 11775.44), (2, 10844.96), (3, 10094.76), (4, 8733.46), (5, 8469.71), (6, 6001.12), (7, 266.99)),
   "ETC",
-  ((0, 13620.42), (1, 13402.94), (2, 13292.46), (3, 13374.76), (4, 12648.46), (5, 12719.71), (6, 12751.12), (7, 12466.44)),
+  ((0, 13620.42), (1, 13402.94), (2, 13292.46), (3, 13374.76), (4, 12648.46), (5, 12719.71), (6, 12751.12), (7, 12459.49)),
   "EAC",
 )
 
@@ -651,7 +651,7 @@ Il grafico mostra come il valore dell'*EV* abbia continuato a crescere in modo p
 Dal grafico si nota che il valore dell'*AC* è cresciuto in modo proporzionale alla decrescita dell'*ETC*, ed entrambi sono rimasti per tutto il tempo al di sotto del valore desiderato, cioè quello dell'*EAC*.
 
 === PB
-Dal grafico si può notare come il valore dell'*AC* abbia continuato a crescere proporzionalmente alla decrescita dell'*ETC*. Si nota inoltre come nelle ultime iterazioni la crescita dell'*AC* sia stata maggiore rispetto al primo periodo; questo dimostra che il _team_ ha avuto la possibilità di dedicare più tempo al progetto una volta terminati gli esami, portando ad un aumento repentino del costo reale che rimane comunque inferiore all'ideale dettato dall'*EAC*.
+Dal grafico si può notare come il valore dell'*AC* abbia continuato a crescere proporzionalmente alla decrescita dell'*ETC*. Si nota inoltre come nelle ultime iterazioni la crescita dell'*AC* sia stata maggiore rispetto al primo periodo; questo dimostra che il _team_ ha avuto la possibilità di dedicare più tempo al progetto una volta terminati gli impegni universitari, portando ad un aumento repentino del costo reale che rimane comunque inferiore all'ideale dettato dall'*EAC*.
 
 #pagebreak()
 == Budget Variance (MPC-BV) e Schedule Variance (MPC-SV)
@@ -660,9 +660,9 @@ Dal grafico si può notare come il valore dell'*AC* abbia continuato a crescere 
 
 #plotGrafico5(
   "Tabella BV e SV",
-  ((0, -59.72), (1, -110.83), (2, -263.50), (3, -266.89), (4, -123.33), (5, -144.89), (6, -157.56), (7, 119.72)),
+  ((0, -59.72), (1, -110.83), (2, -263.50), (3, -266.89), (4, -123.33), (5, -144.89), (6, -157.56), (7, 294.72)),
   "BV",
-  ((0, 10.11), (1, 30.33), (2, 161.78), (3, 111.22), (4, 151.67), (5, 151.67), (6, 151.67), (7, 151.67)),
+  ((0, 10.11), (1, 30.33), (2, 161.78), (3, 111.22), (4, 151.67), (5, 151.67), (6, 151.67), (7, -20.22)),
   "SV",
   ((0, 637), (1, 637), (2, 637), (3, 637), (4, 637), (5, 637), (6, 637), (7, 637)),
   "Limite massimo accettabile",
@@ -672,6 +672,7 @@ Dal grafico si può notare come il valore dell'*AC* abbia continuato a crescere 
   "Valore ottimo",
 )
 
+// TODO: sicuri?
 === RTB
 Dal grafico si può notare che le variazioni sono sempre state contenute: rientrano sempre ampiamente nei limiti accettabili e non si discostano molto dal valore ottimo. Il *BV* indica che abbiamo sempre speso leggermente oltre il _budget_ pianificato, tuttavia abbiamo una prospettiva positiva come indica il *SV*.
 
@@ -685,9 +686,9 @@ Il grafico mostra come dalla quinta iterazione l'*SV* sia sempre stato pressapoc
 L'*ISR* misura la stabilità dei requisiti del progetto nel tempo, valutando quanto siano stati modificati o aggiornati durante il ciclo di vita.
 
 #plotGrafico3(
-  "Tabella RSI",
-  ((0, 0), (1, 0), (2, 70), (3, 39), (4, 85), (5, 78), (6, 100), (7, 98)),
-  "RSI",
+  "Tabella ISR",
+  ((0, 0), (1, 0), (2, 70), (3, 39), (4, 85), (5, 78), (6, 100), (7, 94)),
+  "ISR",
   ((0, 75), (1, 75), (2, 75), (3, 75), (4, 75), (5, 75), (6, 75), (7, 75)),
   "Valore accettabile",
   ((0, 100), (1, 100), (2, 100), (3, 100), (4, 100), (5, 100), (6, 100), (7, 100)),
@@ -700,7 +701,7 @@ Il grafico è per la maggior parte ascendente tranne nella quarta iterazione, do
 Nell'ultimo periodo, quindi quello relativo alla consegna RTB, si è finalmente raggiunto il valore accettabile dell'ISR.
 
 === PB
-Il grafico mostra come il valore dell'*ISR* sia sempre rimasto, dopo il quinto _sprint_, al di sopra del valore accettabile. I due andamenti discendenti del grafico, all'iterazione 6 e 8, coincidono con due colloqui con il prof. Cardin. Nel primo caso sono state apportate le correzioni in seguito alla revisione RTB, nel secondo caso è stato concordato di rimuovere due requisiti in quanto analizzati erroneamente nella prima fase del progetto.
+Il grafico mostra come il valore dell'*ISR* sia sempre rimasto, dopo il quinto _sprint_, al di sopra del valore accettabile. I due andamenti discendenti del grafico, all'iterazione 6 e 8, coincidono con due colloqui con il prof. Cardin: nel primo caso sono state apportate le correzioni in seguito alla revisione RTB, nel secondo caso è stato concordato di rimuovere alcuni requisiti in quanto analizzati erroneamente nella prima fase del progetto.
 
 #pagebreak()
 == Indice Gulpease (MPC-IG)
@@ -848,12 +849,12 @@ Come si può vedere dal grafico diversi requisiti desiderabili, in particolare q
 
 #pagebreak()
 // TODO: cambiare in RFS (funzionali)
-== Requisiti opzionali soddisfatti (MPD-ROPS)
+== Requisiti opzionali soddisfatti (MPD-RFS)
 Misura la percentuale di requisiti opzionali soddisfatti dal prodotto.
 #plotGrafico3(
-  "Tabella ROPS",
+  "Tabella RFS",
   ((4, 0), (5, 0), (6, 0), (7, 90)),
-  "ROPS",
+  "RFS",
   ((4, 0), (5, 0), (6, 0), (7, 0)),
   "Valore accettabile",
   ((4, 100), (5, 100), (6, 100), (7, 100)),
@@ -864,7 +865,7 @@ Misura la percentuale di requisiti opzionali soddisfatti dal prodotto.
 Come si evince dal grafico i requisiti opzionali, avendo priorità più bassa degli altri, sono stati risolti nell'ultima iterazione. Avendo ricevuto riscontri positivi per quanto riguarda le funzionalità obbligatorie e desiderabili, il gruppo ha deciso di concentrare parte delle risorse ai requisiti opzionali in quanto possono dare abbastanza valore al prodotto in rapporto al lavoro per soddisfarli.
 
 #pagebreak()
-== Code coverage (MDP-CC)
+== Code coverage (MPD-CC)
 Misura la percentuale di codice eseguita durante i _test_.
 #plotGrafico3(
   "Tabella CC",
@@ -880,7 +881,7 @@ Misura la percentuale di codice eseguita durante i _test_.
 Come si può vedere dal grafico, il gruppo iniziato a lavorare sulla copertura del codice nonappena è stata portata a termine la progettazione, parallelamente quindi alla stesura del codice. Ciò ha portato a soddisfare il valore accettabile del $80%$ solo durante l'ottava iterazione superandolo e avvicinandosi al valore ottimo con una copertura del $95%$.
 
 #pagebreak()
-== Branch coverage (MDP-BC)
+== Branch coverage (MPD-BC)
 Calcola la percentuale di rami decisionali (_branch_) del codice eseguiti durante i _test_.
 #plotGrafico3(
   "Tabella BC",
@@ -897,7 +898,7 @@ Seguendo naturalmente la copertura del codice, il valore di _branch coverage_ ha
 Questo dimostra come l'implementazione dei _test_ prodotti dal _team_ sia stata efficace e dimostra l'affidabilità del codice.
 
 #pagebreak()
-== Passed test cases percentage (MDP-PTCP)
+== Passed test cases percentage (MPD-PTCP)
 Misura la percentuale di casi di _test_ superati rispetto al totale dei _test_ eseguiti.
 #plotGrafico3(
   "Tabella PTCP",
@@ -912,7 +913,7 @@ Misura la percentuale di casi di _test_ superati rispetto al totale dei _test_ e
 === PB
 
 #pagebreak()
-== Failure density (MDP-FD)
+== Failure density (MPD-FD)
 Indica il numero di fallimenti correttamente riscontrati per unità di dimensione del _software_, spesso misurata in linee di codice (LOC) o punti funzione.
 #plotGrafico3(
   "Tabella FD",
