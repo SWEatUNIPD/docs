@@ -945,7 +945,7 @@ Il preventivo a finire si è alzato a 12,751.12€, a fronte di quello iniziale 
 Durante il settimo _sprint_ il gruppo ha lavorato per avanzare nella redazione della documentazione, nell'analisi delle architetture di _deployment_ e logica, nelle prime implementazioni. Le attività sono state completate tutte tranne la stesura della Specifica Tecnica, a causa di un cambio di tecnologia che ha costretto il _team_ a concentrare le risorse sul _software_.
 
 ===== Cosa ha funzionato
-Il gruppo ha analizzato in modo piuttosto approfondito le architetture da adottare presentandole sia all'azienda proponente che al prof. Cardin. Il colloquio con il docente-committente ha fatto emergere alcune problematiche relative allo _stream processor_ poiché è stato considerato un numero potenziale di utenti molto inferiore rispetto a quello atteso dal professore. Il _team_ ha saputo tempestivamente colmare il deficit tecnologico e in pochi giorni è riuscito a modellare il simulatore e il nuovo _stream processor_ con Apache Flink. È stata portata avanti anche l'interfaccia con Grafana.
+Il gruppo ha analizzato in modo piuttosto approfondito le architetture da adottare presentandole sia all'azienda proponente che al prof. Cardin. Il colloquio con il docente-committente ha fatto emergere alcune problematiche relative allo _stream processor_ poiché è stato considerato un numero potenziale di utenti molto inferiore rispetto a quello atteso dal professore. Il _team_ ha saputo tempestivamente colmare il deficit tecnologico e in pochi giorni è riuscito a modellare il simulatore e il nuovo _stream processor_ con #rifGlossario("Apache Flink"). È stata portata avanti anche l'interfaccia con Grafana.
 
 ===== Cosa non ha funzionato
 La redazione della prima parte della Specifica Tecnica non è stata completata secondo i tempi previsti a causa del cambio di tecnologia imprevisto che ha richiesto molte risorse per risolvere il problema rapidamente. Poiché lo _stream processor_ è parte centrale del prodotto è stato ritenuto fondamentale definirlo interamente prima di cominciare la stesura della Specifica Tecnica.
@@ -969,7 +969,7 @@ Nel prossimo periodo sarà necessario redigere la Specifica Tecnica e finire il 
   column-gutter: 1em,
   row-gutter: 0.5em,
   [- *Inizio:*], [11/03/2025],
-  [- *Fine:*], [21/03/2025],
+  [- *Fine:*], [27/03/2025],
   [- *Rischi attesi:*], [#link(<RO-1>)[RO-1], #link(<RO-2>)[RO-2], #link(<RO-3>)[RO-3], #link(<RT-1>)[RT-1]],
 )
 
@@ -1081,7 +1081,7 @@ L'ottavo ed ultimo _sprint_ ha visto il gruppo completare tutte le attività pre
 Un imprevisto che ha portato al ritardo della consegna è stata l'indisponibilità del professor Cardin nel fissare il colloquio nel periodo inizialmente previsto dal gruppo, ovvero nella settimana del 24 marzo. La revisione PB è stata quindi posticipata a lunedì 31. Con una settimana in più a disposizione il gruppo ha deciso di rivedere la logistica delle attività rimaste, allungando la durata dello _sprint_, rimanendo sempre nei limiti del _budget_. Avendo infatti pianificato il termine del progetto per venerdì 21 marzo erano avanzate alcune risorse che sono state sfruttate per completare con più calma e rigore i documenti e soddisfare la maggior parte dei requisiti facoltativi.
 
 ===== Cosa ha funzionato
-Il gruppo è riuscito a seguire il proprio _way of working_ fino alla fine del progetto, riuscendo a lavorare sempre in modo efficace ed efficiente. La quasi totalità delle attività è stata portata a termine in modo asincrono anche quando più persone lavoravano sugli stessi documenti.
+Il gruppo è riuscito a seguire il proprio _#rifGlossario("way of working")_ fino alla fine del progetto, riuscendo a lavorare sempre in modo efficace ed efficiente. La quasi totalità delle attività è stata portata a termine in modo asincrono anche quando più persone lavoravano sugli stessi documenti.
 
 L'incontro con l'azienda è stato utile al gruppo per capire gli ultimi aggiustamenti da apportare, specie riguardo la presentazione del prodotto. La proponente si è mostrata soddisfatta del risultato del _software_ elogiando in particolar modo la reattività che il gruppo ha avuto in seguito ad alcuni imprevisti, primo fra tutti il cambio di tecnologia del _backend_. 
 
