@@ -482,11 +482,12 @@ I _test_ sono stati sviluppati utilizzando il _framework_ Vitest, uno strumento 
     [TU-33], [Verifica che il metodo `disconnectConsumer` disconnetta correttamente un consumatore Kafka, controllando che il metodo `disconnect` del consumatore sia stato chiamato.], [Verificato],
     [TU-34], [Verifica che il metodo `disconnectConsumer` gestisca correttamente gli errori di disconnessione, lanciando un errore quando la disconnessione fallisce.], [Verificato],
     
-    //[TU-], [], [Verificare],
 )
 
 === Test di unità del backend
 I _test_ di unità del _backend_ sono finalizzati a verificare il corretto funzionamento delle classi e dei metodi che compongono il _backend_, garantendo che ciascuna funzionalità sia implementata in modo corretto.
+
+I _test_ sono stati sviluppati utilizzando il _framework_ JUnit 5, un efficace e consolidato strumento per il _testing_ in ambiente Java, coadiuvato da Mockito per la creazione di _mock_ e _stub_.
 
 #table(
   columns: 3,
@@ -497,7 +498,7 @@ I _test_ di unità del _backend_ sono finalizzati a verificare il corretto funzi
     [TU-35], [Verificare che il metodo `getConnection` funzioni correttamente alla sua prima chiamata, creando e restituendo un'istanza di tipo `ConnectionFactory`.], [Verificato],
     [TU-36], [Verificare che il metodo `getConnection`, se chiamato più di una volta, restituisca sempre la stessa istanza di tipo `ConnectionFactory` (correttezza del _singleton_).], [Verificato],
     // `GPSDataDto`
-    [TU-37], [Verificare che gli oggetti di tipo `GPSDataDto` vengano istanziati correttamente, constatando in particolare che l'_override_ del metodo `equals` si comporti come previsto.], [Verificato],
+    [TU-37], [Verificare che gli oggetti di tipo `GPSDataDto` vengano istanziati correttamente, constatando in particolare che l'_override_ dei metodi `equals` e `hashCode` si comportino come previsto.], [Verificato],
     [TU-38], [Verificare che i metodi _getters_ e _setters_ della classe `GPSDataDto` funzionino correttamente, rispettivamente restituendo e modificando correttamente i valori degli attributi dell'oggetto.], [Verificato],
     [TU-39], [Verificare che l'_override_ del metodo `hashCode` della classe `GPSDataDto` funzioni correttamente, restituendo quindi lo stesso valore per oggetti uguali.], [Verificato],
     // `GPSData`
@@ -508,13 +509,13 @@ I _test_ di unità del _backend_ sono finalizzati a verificare il corretto funzi
     [TU-43], [Verificare che gli oggetti di tipo `PointOfInterest` vengano istanziati correttamente, constatando in particolare che l'_override_ metodo `equals` si comporti come previsto.], [Verificato],
     [TU-44], [Verificare che l'_override_ del metodo `hashCode` della classe `PointOfInterest` funzioni correttamente, restituendo quindi lo stesso valore solo per oggetti uguali.], [Verificato],
     // `AdvertisementGenerationRequest`
-    [TU-45], [Verificare che la richiesta di generazione di un annuncio tramite il metodo asincrono `asyncInvoke` funzioni correttamente, completando la tupla `resultFuture` con il testo generato dalla #rifGlossario("LLM").], [Verificato],
+    [TU-45], [Verificare che la richiesta di generazione di un annuncio tramite il metodo asincrono `asyncInvoke` funzioni correttamente, completando l'oggetto `resultFuture` con la tupla contenente il testo generato dalla #rifGlossario("LLM").], [Verificato],
     [TU-46], [Verificare che nel caso in cui la stringa contenente gli interessi dell'utente nel _#rifGlossario("database")_ sia vuota, la richiesta di generazione dell'annuncio tramite il metodo `asyncInvoke` porti comunque alla generazione di un annuncio.], [Verificato],
-    [TU-47], [Verificare che se durante la preparazione della _query_ tramite la chiamata a `createStatement` nel metodo `asyncInvoke` della classe `AdvertisementGenerationRequest` viene generata un'eccezione di tipo `RuntimeException`, questa venga correttamente gestita e riportata nel _log_.], [Verificato],
+    [TU-47], [Verificare che se durante la preparazione della _query_ tramite la chiamata a `createStatement` nel metodo `asyncInvoke` della classe `AdvertisementGenerationRequest` viene generata un'eccezione, questa venga correttamente gestita e riportata nel _log_.], [Verificato],
     // `NearestPOIRequest`
-    [TU-48], [Verificare che la richiesta di ricerca del punto di interesse più vicino all'utente tramite il metodo asincrono `asyncInvoke`, in caso di successo, completi la tupla `resultFuture` con un oggetto del tipo `PointOfInterest`.], [Verificato],
+    [TU-48], [Verificare che la richiesta di ricerca del punto di interesse più vicino all'utente tramite il metodo asincrono `asyncInvoke`, in caso di successo, completi l'oggetto `resultFuture` con la tupla contenente un oggetto del tipo `PointOfInterest`.], [Verificato],
     [TU-49], [Verificare che nel caso in cui il punto di interesse più vicino all'utente sia più lontano di 100 m in linea d'aria la richiesta di ricerca del punto di interesse più vicino tramite il metodo `asyncInvoke` completi la tupla `resultFuture` con un _set_ vuoto.], [Verificato],
-    [TU-50], [Verificare che se durante la preparazione della _query_ tramite la chiamata a `createStatement` nel metodo `asyncInvoke` della classe `NearestPOIRequest` viene generata un'eccezione di tipo `RuntimeException`, questa venga correttamente gestita e riportata nel _log_.], [Verificato],
+    [TU-50], [Verificare che se durante la preparazione della _query_ tramite la chiamata a `createStatement` nel metodo `asyncInvoke` della classe `NearestPOIRequest` viene generata un'eccezione, questa venga correttamente gestita e riportata nel _log_.], [Verificato],
     // `AdvertisementSerializationSchema`
     [TU-51], [Verificare che il metodo `serialize` della classe `AdvertisementSerializationSchema` funzioni correttamente, controllando che i campi 'rent_id' e 'adv' dell'oggetto JSON restituito coincidano con il rentId dell'oggetto `GPSData` e la stringa contenente l'annuncio generato ricevuti in input dal metodo.], [Verificato],
     [TU-52], [Verificare che il metodo `serialize` della classe `AdvertisementSerializationSchema` generi un'eccezione di tipo `NullPointerException` se viene invocato da un oggetto con valore `null`.], [Verificato],
@@ -533,7 +534,7 @@ I _test_ di unità del _backend_ sono finalizzati a verificare il corretto funzi
 Successivi ai _test_ di unità, hanno lo scopo di verificare l'interazione tra diverse unità _software_ per garantire che lavorino in sinergia per compiti specifici.
 
 === Test di integrazione del backend
-I _test_ di integrazione del backend sono finalizzati a verificare il corretto funzionamento delle diverse componenti coinvolte nello _#rifGlossario("stream processing")_ dei dati provenienti dai sensori. 
+I _test_ di integrazione del _backend_ sono finalizzati a verificare il corretto funzionamento delle diverse componenti coinvolte nello _#rifGlossario("stream processing")_ dei dati provenienti dai sensori. 
 
 Per l'esecuzione dei _test_ di integrazione viene utilizzata la libreria Testcontainers per Java, che permette di semplificare la creazione dei _container_ #rifGlossario("Docker"). Questa libreria è stata scelta per la sua facilità d'uso e per la sua capacità di integrarsi con i _framework_ di _testing_ esistenti. Un altro ausilio che è stato utilizzato è la classe `MiniClusterWithClientResource` offerta da i _test utils_ di #rifGlossario("Flink"), che permette di creare un _cluster_ Flink locale solo per l'esecuzione dei _test_.
 
@@ -542,7 +543,7 @@ Per l'esecuzione dei _test_ di integrazione viene utilizzata la libreria Testcon
   align: (center, left, center),
   fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
   table.header[*Codice test*][*Descrizione*][*Stato*],
-    [TI-1], [Verificare che il _backend_ si interfacci correttamente con Postgres testando l'esecuzione di una _query_.], [Verificato],
+    [TI-1], [Verificare che il _backend_ si interfacci correttamente con il _database_ testando l'esecuzione di una _query_.], [Verificato],
     [TI-2], [Verificare che il _job_ di Flink funzioni correttamente testando il _flow_ di un dato del sensore, che comincia con la generazione da parte di un _producer_ Kafka e si conclude, alla fine del _processing_, con il salvataggio in _database_ del dato geospaziale e dell'annuncio di cui questo ha provocato la generazione.], [Verificato],
 )
 
