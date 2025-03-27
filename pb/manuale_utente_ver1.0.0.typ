@@ -209,25 +209,25 @@ Questo apre una nuova finestra contenente tutti i dettagli dell'annuncio generat
 È possibile visualizzare sotto forma di grafici le statistiche relative agli annunci per ogni POI.
 Per aprire questa pagina, similmente a come visto nella #link(<req>)[sez. 4.2], premere la voce _"Dashboards"_ nel menu a sinistra dello schermo (figura 6) e selezionare la voce "Grafici" nella lista delle _dashboard_ che appare (figura 7).
 
-Questo apre la visualizzazione dei grafici statistici per il POI selezionato.
-Per cambiare il POI di interesse, è sufficiente selezionare il POI desiderato dal menu a tendina in alto a sinistra.
+Questo apre la visualizzazione dei grafici statistici degli annunci.
+#figure(
+  image("../assets/img/Manuale/grafici.png", width: 95%),
+  caption: [Pagina dei grafici statistici], 
+)
+#v(5pt)
+
+All'interno della pagina sono presenti tre grafici:
+1. Grafico a torta che mostra la percentuale di annunci generati e quelli non generati dal LLM per il POI selezionato. Per cambiare il POI di interesse, è sufficiente selezionare il POI desiderato dal menu a tendina in alto a sinistra.
 
 #figure(
   image("../assets/img/Manuale/grafici_menu_tendina.png", width: 50%),
   caption: [Selezione POI da menu a tendina], 
 )
 #v(5pt)
+2. Grafico a linee che mostra il numero di annunci generati per ogni ora del giorno. I valori contenuti all'interno di questo grafico fanno riferimento al totale degli annunci generati.
+3. Grafico a barre che mostra la media dei noleggi attivi per ogni mese dell'anno.  I valori contenuti all'interno di questo grafico fanno riferimento al totale degli annunci generati.
 
-All'interno della pagina sono presenti tre grafici:
-1. Grafico a torta che mostra la percentuale di annunci generati e quelli non generati dal LLM per il POI selezionato.
-2. Grafico a linee che mostra il numero di annunci generati e non generati per ogni ora del giorno.
-3. Grafico a barre che mostra la media dei noleggi attivi per ogni mese dell'anno.
 
-#figure(
-  image("../assets/img/Manuale/grafici.png", width: 95%),
-  caption: [Pagina dei grafici statistici], 
-)
-#v(5pt)
 
 Per visualizzare le misure esatte di ogni punto dei grafici, è sufficiente effettuare un _hover_ del cursore del _mouse_ al di sopra del punto di interesse. Questo apre una piccola finestra contenente il valore preciso di tale punto. L'operazione è possibile su tutti i tipi di grafico. 
 
