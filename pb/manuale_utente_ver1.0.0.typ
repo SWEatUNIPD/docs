@@ -2,7 +2,7 @@
 #import "@preview/treet:0.1.1": *
 
 #show: content => verbale(
-  data: "26 marzo 2025",
+  data: "27 marzo 2025",
   destinatari: ("Gruppo SWE@", "Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "Sync Lab S.r.L."),
   responsabile: "-",
   redattori: (
@@ -17,7 +17,7 @@
   uso: "Esterno",
   versioni: (
     "1.0.0",
-    "26/03/2025",
+    "27/03/2025",
     "Davide Marin",
     "Andrea Precoma",
     [
@@ -63,11 +63,11 @@ La prima occorrenza di un termine definito all'interno del glossario presente al
 == Riferimenti
 === Riferimenti normativi
 - Norme di Progetto (v2.0.0) \ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/norme_di_progetto_ver2.0.0.pdf")
-- Regolamento del progetto didattico, _slide_ 23 (ultimo accesso 26/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")
-- Capitolato C4 - Sync Lab S.r.l. (ultimo accesso 26/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
+- Regolamento del progetto didattico, _slide_ 23 (ultimo accesso 27/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")
+- Capitolato C4 - Sync Lab S.r.l. (ultimo accesso 27/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
 === Riferimenti informativi
 - Glossario (v2.0.0) \ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/glossario_ver2.0.0.pdf")
-- Capitolato C4 - Sync Lab S.r.l. (ultimo accesso 26/03/2025 \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
+- Capitolato C4 - Sync Lab S.r.l. (ultimo accesso 27/03/2025 \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
 - Guida ufficiale per l'installazione di Docker (ultimo accesso 25/06/2025) \ #formatLink(url: "https://docs.docker.com/engine/install")
 
 
@@ -96,14 +96,14 @@ Prima di proseguire all'avvio del sistema ci si assicuri di aver rispettato i re
 
 Di seguito i passi per avviare correttamente il sistema. Le stesse istruzioni sono disponibili nel `README.md` della _#formatLink(label: "repository", url: "https://github.com/SWEatUNIPD/NearYou")_.
 + Aprire il terminale nella cartella scaricata dalla _repository_.
-+ Avviare il sistema tramite Docker Compose eseguendo il comando \ `docker compose up -d --build` \ Dovrebbero comparire la _network_ seguita dalla scritta "Created" e la lista dei _container_ seguiti dalla scritta "Started".
++ La prima volta avviare il sistema tramite Docker Compose eseguendo il comando \ `docker compose up -d --build` \ In seguito è sufficiente \ `docker compose up -d` \ Dovrebbero comparire la _network_ seguita dalla scritta "Created" e la lista dei _container_ seguiti dalla scritta "Started".
 
 Per maggiori informazioni riguardo ai _container_ e per visualizzare lo stato degli stessi è possibile eseguire il comando \ `docker ps -a`.
 
 == Istruzioni per lo spegnimento del sistema
 Si ricorda che per eseguire qualunque dei seguenti comandi è necessario posizionarsi col terminale nella cartella dove è presente il _file_ `docker-compose.yml`.
 
-Per interrompere l'esecuzione dell'ambiente avviato secondo le istruzioni descritte nella #link(<avvio>)[sez 2.4] è sufficiente eseguire il comando \ `docker compose down -v` \ Per riavviare il sistema è sufficiente eseguire il comando \ `docker compose up -d --build`
+Per interrompere l'esecuzione dell'ambiente avviato secondo le istruzioni descritte nella #link(<avvio>)[sez 2.4] è sufficiente eseguire il comando \ `docker compose down -v` \ Per riavviare il sistema è sufficiente eseguire il comando \ `docker compose up -d`
 
 Se si vuole solo mettere in pausa il sistema in modo da riprenderlo più rapidamente in un secondo momento si può eseguire il comando \ `docker compose stop` \ Per riattivare il sistema è sufficiente eseguire il comando \ `docker compose start`
 
@@ -154,7 +154,7 @@ Nel caso un utente di un noleggio passi nelle prossimità di un POI, è possibil
 )
 #v(5pt)
 
-Con entrambi i tipi di _marker_ è possibile interagire effettuando un _click_ col pulsante sinistro del _mouse_. Sopra di essi si apre una finestra in corrispondenza del marker premuto, nella quale sono presenti i dati relativi al noleggio, al POI e il testo dell'annuncio se generato, altrimenti il motivo per cui non è stato prodotto.
+Con entrambi i tipi di _marker_ è possibile interagire effettuando un _click_ col pulsante sinistro del _mouse_. Sopra di essi si apre una finestra in corrispondenza del _marker_ premuto, nella quale sono presenti i dati relativi al noleggio, al POI e il testo dell'annuncio se generato, altrimenti il motivo per cui non è stato prodotto.
 Come per la finestra di dettaglio dei POI, è possibile chiudere la finestra di dettaglio degli annunci premendo sul simbolo "X", oppure cliccare in un punto qualsiasi al di fuori della finestra.
 
 #figure(
@@ -208,7 +208,7 @@ Questo apre una nuova finestra contenente tutti i dettagli dell'annnuncio genera
 
 == Grafici statistici degli annunci
 È possibile visualizzare sotto forma di grafici le statistiche relative agli annunci per ogni POI.
-Per aprire questa pagina, similmente a come visto nella sezione 4.2, premere la voce _"Dashboards"_ nel menu a sinistra dello schermo (figura 6) e selezionare la voce Grafici nella lista delle _dashboards_ che appare (figura 7).
+Per aprire questa pagina, similmente a come visto nella sez. 4.2, premere la voce _"Dashboards"_ nel menu a sinistra dello schermo (figura 6) e selezionare la voce "Grafici" nella lista delle _dashboards_ che appare (figura 7).
 
 Questo apre la visualizzazione dei grafici statistici per il POI selezionato.
 Per cambiare il POI di interesse, è sufficiente selezionare il POI desiderato dal menu a tendina in alto a sinistra.
@@ -230,7 +230,7 @@ All'interno della pagina sono presenti tre grafici:
 )
 #v(5pt)
 
-Per visualizzare le misure esatte di ogni punto dei grafici, è sufficiente effettuare un _hoover_ del cursore del _mouse_ al di sopra del punto di interesse, questo apre una piccola finestra contenente il valore preciso di tale punto, questa operazione è possibile su tutti i tipi di grafico. 
+Per visualizzare le misure esatte di ogni punto dei grafici, è sufficiente effettuare un _hover_ del cursore del _mouse_ al di sopra del punto di interesse. Questo apre una piccola finestra contenente il valore preciso di tale punto. L'operazione è possibile su tutti i tipi di grafico. 
 
 #figure(
   image("../assets/img/Manuale/dettaglio_grafico.png", width: 55%),
