@@ -9,6 +9,13 @@
   titolo: "Piano di Qualifica",
   uso: "Esterno",
   versioni: (
+    "1.5.0",
+    "27/03/2025",
+    "Davide Martinelli\nKlaudio Merja",
+    "Andrea Precoma",
+    [
+      - Aggiunta dei _test_ di integrazione del _backend_
+    ],
     "1.4.0",
     "23/03/2025",
     "Davide Martinelli",
@@ -498,7 +505,7 @@ I _test_ sono stati sviluppati utilizzando il _framework_ JUnit 5, un efficace e
     [TU-35], [Verificare che il metodo `getConnection` funzioni correttamente alla sua prima chiamata, creando e restituendo un'istanza di tipo `ConnectionFactory`.], [Verificato],
     [TU-36], [Verificare che il metodo `getConnection`, se chiamato più di una volta, restituisca sempre la stessa istanza di tipo `ConnectionFactory` (correttezza del _singleton_).], [Verificato],
     // `GPSDataDto`
-    [TU-37], [Verificare che gli oggetti di tipo `GPSDataDto` vengano istanziati correttamente, constatando in particolare che l'_override_ dei metodi `equals` e `hashCode` si comportino come previsto.], [Verificato],
+    [TU-37], [Verificare che gli oggetti di tipo `GPSDataDto` vengano istanziati correttamente, constatando in particolare che l'_override_ del metodo `equals` si comporti come previsto.], [Verificato],
     [TU-38], [Verificare che i metodi _getters_ e _setters_ della classe `GPSDataDto` funzionino correttamente, rispettivamente restituendo e modificando correttamente i valori degli attributi dell'oggetto.], [Verificato],
     [TU-39], [Verificare che l'_override_ del metodo `hashCode` della classe `GPSDataDto` funzioni correttamente, restituendo quindi lo stesso valore per oggetti uguali.], [Verificato],
     // `GPSData`
