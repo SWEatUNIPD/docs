@@ -1021,7 +1021,7 @@ In seguito alla riunione avvenuta per l'inizio dell'ottavo _sprint_ il _team_ pr
     (2, 3, 0, 7, 3.5, 15),
     (6, 3, 0, 13, 18, 7),
     (5, 0.5, 0, 16, 23, 9),
-    (3, 0, 1.5, 13, 17, 10),
+    (3, 0, 1.5, 13, 16, 10),
     (5, 1.5, 0, 7, 9, 8),
     (0, 0, 0, 16, 14, 11.5),
   ),
@@ -1036,16 +1036,16 @@ In seguito alla riunione avvenuta per l'inizio dell'ottavo _sprint_ il _team_ pr
     (2, 3, 0, 7, 3.5, 15),
     (6, 3, 0, 13, 18, 7),
     (5, 0.5, 0, 16, 23, 9),
-    (3, 0, 1.5, 13, 17, 10),
+    (3, 0, 1.5, 13, 16, 10),
     (5, 1.5, 0, 7, 9, 8),
     (0, 0, 0, 16, 14, 11.5),
   ),
   consuntivo: (
-    (1, 3, 1, 10, 13, 14),
+    (1, 4, 1, 10, 13, 14),
     (2, 3, 0, 7, 3.5, 15),
-    (5, 3, 0, 13, 16, 7),
+    (5, 3, 0, 13, 19, 7),
     (4, 0, 0, 16, 23, 9),
-    (3, 0, 1.5, 13, 15, 10),
+    (3, 0, 1.5, 13, 16, 10),
     (5, 1.5, 0, 7, 9, 8),
     (0, 0, 0, 16, 14, 11.5),
   ),
@@ -1065,15 +1065,15 @@ In seguito alla riunione avvenuta per l'inizio dell'ottavo _sprint_ il _team_ pr
       align: center,
       table.header([*Ruolo*], [*Ore rimanenti*], [*_Budget_ rimanente*], [*Risorse consumate*]),
       [Responsabile], [2], [60 €], [96.43 %],
-      [Amministratore], [2], [40 €], [96.43 %],
+      [Amministratore], [0.5], [10 €], [99.11 %],
       [Analista], [0.5], [12.5 €], [99.40 %],
       [Progettista], [1], [25 €], [99.25 %],
-      [Programmatore], [6], [90 €], [96.27 %],
+      [Programmatore], [2], [30 €], [98.76 %],
       [Verificatore], [0], [0 €], [100 %],
     )
   ],
 )
-Il preventivo a finire si attesta a fine progetto a 12.512,50€, a fronte del preventivo iniziale di 12.740,00€ rientrando quindi nel _budget_.
+Il preventivo a finire si attesta a fine progetto a *12.602,50€*, a fronte del preventivo iniziale di 12.740,00€ rientrando quindi nel _budget_.
 
 ==== Retrospettiva
 L'ottavo ed ultimo _sprint_ ha visto il gruppo completare tutte le attività previste e sostenere il colloquio finale con l'azienda. Il _team_, libero da impegni universitari, è riuscito a lavorare con grande efficienza e coordinazione, riuscendo a completare tutte le attività pianificate, rendendo il _software_ e la relativa documentazione pronti per la revisione PB.
