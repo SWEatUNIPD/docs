@@ -45,10 +45,9 @@
 )
 
 = Introduzione
-// TODO: controllare che ci sia tutto
+
 == Scopo del documento
 Lo scopo del documento Manuale Utente è quello di spiegare ai committenti il funzionamento e l'utilizzo del prodotto _software_. Vengono quindi elencati i procedimenti per eseguire il sistema isolato con #rifGlossario("Docker"), le istruzioni per collegarsi ai servizi esposti e come utilizzarli.
-// TODO: test?
 
 == Scopo del prodotto
 Lo scopo del progetto _NearYou - Smart custom advertising platform_ proposto dall'azienda Sync Lab S.r.l. è quello di sviluppare un prodotto che sfrutti la #rifGlossario("GenAI") per la creazione di pubblicità mirate sui singoli utenti. Al fine di personalizzare gli annunci vengono inviati dei _#rifGlossario("prompt")_ con i dati necessari come la posizione in tempo reale, le informazioni personali e i dati di profilazione degli utenti stessi.
@@ -73,7 +72,7 @@ La prima occorrenza di un termine definito all'interno del glossario presente al
 
 = Avvio del sistema
 == Requisiti tecnici per avviare il sistema <req>
-// TODO: VERSIONE DOCKER?
+
 Al fine di usufruire del prodotto _software_ è richiesta l'installazione di Docker e #rifGlossario("Docker Compose") per la gestione dei _container_. Si mette a disposizione la #formatLink(label: "guida ufficiale", url: "https://docs.docker.com/engine/install/") per l'installazione.
 
 == Download della repository <download>
@@ -197,7 +196,7 @@ Per ogni voce della lista, inoltre, è possibile premere l'ID dell'annuncio inte
 )
 #v(5pt)
 
-Questo apre una nuova finestra contenente tutti i dettagli dell'annnuncio generato, compreso il testo dell'annuncio per intero.
+Questo apre una nuova finestra contenente tutti i dettagli dell'annuncio generato, compreso il testo dell'annuncio per intero.
 
 #figure(
   image("../assets/img/Manuale/dettaglio_annuncio.png", width: 95%),
@@ -208,7 +207,7 @@ Questo apre una nuova finestra contenente tutti i dettagli dell'annnuncio genera
 
 == Grafici statistici degli annunci
 È possibile visualizzare sotto forma di grafici le statistiche relative agli annunci per ogni POI.
-Per aprire questa pagina, similmente a come visto nella sez. 4.2, premere la voce _"Dashboards"_ nel menu a sinistra dello schermo (figura 6) e selezionare la voce "Grafici" nella lista delle _dashboards_ che appare (figura 7).
+Per aprire questa pagina, similmente a come visto nella #link(<req>)[sez. 4.2], premere la voce _"Dashboards"_ nel menu a sinistra dello schermo (figura 6) e selezionare la voce "Grafici" nella lista delle _dashboards_ che appare (figura 7).
 
 Questo apre la visualizzazione dei grafici statistici per il POI selezionato.
 Per cambiare il POI di interesse, è sufficiente selezionare il POI desiderato dal menu a tendina in alto a sinistra.
