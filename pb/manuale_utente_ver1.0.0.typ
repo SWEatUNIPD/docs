@@ -168,15 +168,15 @@ Per aprire questa pagina, premere la voce _"Dashboards"_ nel menu a sinistra del
 
 #figure(
   image("../assets/img/Manuale/sel_dashboards.png", width: 50%),
-  caption: [Selezione voce _Dashboards_ dal menu], 
+  caption: [Selezione voce "_Dashboards_" dal menu], 
 )
 #v(5pt)
 
-Questo apre una pagina con la lista di tutte le _dashboards_ disponibili. Selezionare la voce "Storico annunci". 
+Questo apre una pagina con la lista di tutte le _dashboard_ disponibili. Selezionare la voce "Storico annunci". 
 
 #figure(
   image("../assets/img/Manuale/lista_dashboards.png", width: 85%),
-  caption: [Selezione voce "Storico annunci" dalla lista delle _dashboards_], 
+  caption: [Selezione voce "Storico annunci" dalla lista delle _dashboard_], 
 )
 #v(5pt)
 
@@ -207,7 +207,7 @@ Questo apre una nuova finestra contenente tutti i dettagli dell'annuncio generat
 
 == Grafici statistici degli annunci
 È possibile visualizzare sotto forma di grafici le statistiche relative agli annunci per ogni POI.
-Per aprire questa pagina, similmente a come visto nella #link(<req>)[sez. 4.2], premere la voce _"Dashboards"_ nel menu a sinistra dello schermo (figura 6) e selezionare la voce "Grafici" nella lista delle _dashboards_ che appare (figura 7).
+Per aprire questa pagina, similmente a come visto nella #link(<req>)[sez. 4.2], premere la voce _"Dashboards"_ nel menu a sinistra dello schermo (figura 6) e selezionare la voce "Grafici" nella lista delle _dashboard_ che appare (figura 7).
 
 Questo apre la visualizzazione dei grafici statistici per il POI selezionato.
 Per cambiare il POI di interesse, è sufficiente selezionare il POI desiderato dal menu a tendina in alto a sinistra.
