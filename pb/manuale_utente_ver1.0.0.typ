@@ -2,7 +2,7 @@
 #import "@preview/treet:0.1.1": *
 
 #show: content => verbale(
-  data: "21 marzo 2025",
+  data: "25 marzo 2025",
   destinatari: ("Gruppo SWE@", "Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "Sync Lab S.r.L."),
   responsabile: "-",
   redattori: (
@@ -16,6 +16,13 @@
   titolo: "Manuale Utente",
   uso: "Esterno",
   versioni: (
+    "0.2.0",
+    "25/03/2025",
+    "Davide Marin",
+    "Andrea Precoma",
+    [
+      - Rimossa sezione del _database_
+    ],
     "0.2.0",
     "21/03/2025",
     "Davide Marin",
@@ -55,12 +62,12 @@ La prima occorrenza di un termine definito all'interno del glossario presente al
 == Riferimenti
 === Riferimenti normativi
 - Norme di Progetto (v2.0.0) \ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/norme_di_progetto_ver2.0.0.pdf")
-- Regolamento del progetto didattico, _slide_ 23 (ultimo accesso 04/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")
-- Capitolato C4 - Sync Lab S.r.l. (ultimo accesso 04/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
+- Regolamento del progetto didattico, _slide_ 23 (ultimo accesso 25/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")
+- Capitolato C4 - Sync Lab S.r.l. (ultimo accesso 25/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
 === Riferimenti informativi
 - Glossario (v2.0.0) \ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/glossario_ver2.0.0.pdf")
-- Capitolato C4 - Sync Lab S.r.l. (ultimo accesso 04/03/2025 \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
-- Guida ufficiale per l'installazione di Docker (ultimo accesso 04/03/2025) \ #formatLink(url: "https://docs.docker.com/engine/install")
+- Capitolato C4 - Sync Lab S.r.l. (ultimo accesso 25/03/2025 \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
+- Guida ufficiale per l'installazione di Docker (ultimo accesso 25/03/2025) \ #formatLink(url: "https://docs.docker.com/engine/install")
 
 
 = Avvio del sistema
@@ -76,27 +83,26 @@ In alternativa, se si ha installato #rifGlossario("Git"), è possibile "clonare"
 == Principali file
 === File docker-compose.yml
 _File_ di configurazione utilizzato per definire le proprietà dei servizi. Viene utilizzato per avviare e, nel caso si eseguisse per la prima volta, creare i _container_ contenenti i servizi descritti.
-- *kafka*: _#rifGlossario("data broker")_ con immagine `bitnami/kafka:latest`.
-- *postgis*: _#rifGlossario("database")_ in #rifGlossario("PostgreSQL") con installato l'estensione PostGIS per gli incroci geospaziali con immagine `postgis/postgis:latest`.
-- *pgadmin*: interfaccia per monitorare lo stato del _database_ con immagine `dpage/pgadmin4:latest`.
-- *spring-backend*: TODO?? con immagine _custom_ `spring-backend`.
-- *grafana*: _front-end_ con immagine `grafana/grafana:latest`.
+- *kafka*: _#rifGlossario("data broker")_ con immagine `apache/kafka:4.0.0`.
+- *postgis*: _#rifGlossario("database")_ in #rifGlossario("PostgreSQL") con installato l'estensione PostGIS per gli incroci geospaziali con immagine `postgis/postgis:17-3.5`.
+- *grafana*: _front-end_ con immagine `rmilan/grafana-rm`.
+- *flink*: _data #rifGlossario("stream processing")_ con immagine `flink:1.20.1-scala_2.12-java17`.
 - *simulator*: simulatore dei sensori con immagine _custom_ `simulator`.
+- *maven*: strumento di _build automation_ con immagine maven:3.8-openjdk-17.
 
 == Istruzioni per l'avvio del sistema <avvio>
 Prima di proseguire all'avvio del sistema ci si assicuri di aver rispettato i requisiti tecnici (#link(<req>)[sez. 2.1]) e di aver scaricato la _repository_ (#link(<download>)[sez 2.2]).
 
 Di seguito i passi per avviare correttamente il sistema. Le stesse istruzioni sono disponibili nel `README.md` della _#formatLink(label: "repository", url: "https://github.com/SWEatUNIPD/NearYou")_.
 + Aprire il terminale nella cartella scaricata dalla _repository_.
-+ Avviare il sistema tramite Docker Compose eseguendo il comando \ `docker compose up -d` \ Dovrebbero comparire la _network_ seguita dalla scritta "Created" e la lista dei _container_ seguiti dalla scritta "Started".
-+ Avviare il simulatore dei noleggi eseguendo il comando \ `npm run app`.
++ Avviare il sistema tramite Docker Compose eseguendo il comando \ `docker compose up -d --build` \ Dovrebbero comparire la _network_ seguita dalla scritta "Created" e la lista dei _container_ seguiti dalla scritta "Started".
 
 Per maggiori informazioni riguardo ai _container_ e per visualizzare lo stato degli stessi è possibile eseguire il comando \ `docker ps -a`.
 
 == Istruzioni per lo spegnimento del sistema
 Si ricorda che per eseguire qualunque dei seguenti comandi è necessario posizionarsi col terminale nella cartella dove è presente il _file_ `docker-compose.yml`.
 
-Per interrompere l'esecuzione dell'ambiente avviato secondo le istruzioni descritte nella #link(<avvio>)[sez 2.4] è sufficiente eseguire il comando \ `docker compose down` \ Per riavviare il sistema è sufficiente eseguire il comando \ `docker compose up -d`
+Per interrompere l'esecuzione dell'ambiente avviato secondo le istruzioni descritte nella #link(<avvio>)[sez 2.4] è sufficiente eseguire il comando \ `docker compose down -v` \ Per riavviare il sistema è sufficiente eseguire il comando \ `docker compose up -d --build`
 
 Se si vuole solo mettere in pausa il sistema in modo da riprenderlo più rapidamente in un secondo momento si può eseguire il comando \ `docker compose stop` \ Per riattivare il sistema è sufficiente eseguire il comando \ `docker compose start`
 
@@ -140,14 +146,65 @@ Se ci sono dei noleggi attivi, essi appaiono all'interno della mappa e sono cont
 Nel caso un utente di un noleggio passi nelle prossimità di un POI, è possibile che si visualizzino altri tipi di marker relativi agli annunci:
 1. Annuncio generato: contraddistinto da un pallino di colore arancione
 2. Annuncio non generato: contraddistinto da una X di colore rosso.
+
+#figure(
+  image("../assets/img/Manuale/marker_annuncio_multipli.png", width: 75%),
+  caption: [Mappa con noleggi attivi e _marker_ di annunci generati], 
+)
+#v(5pt)
+
 Con entrambi i tipi di _marker_ è possibile interagire effettuando un _click_ col pulsante sinistro del _mouse_. Sopra di essi si apre una finestra in corrispondenza del marker premuto, nella quale sono presenti i dati relativi al noleggio, al POI e il testo dell'annuncio se generato, altrimenti il motivo per cui non è stato prodotto.
 Come per la finestra di dettaglio dei POI, è possibile chiudere la finestra di dettaglio degli annunci premendo sul simbolo "X", oppure cliccare in un punto qualsiasi al di fuori della finestra.
 
+#figure(
+  image("../assets/img/Manuale/annuncio_marker_dettaglio.png", width: 85%),
+  caption: [Dettagli dell'annuncio relativo al _marker_ selezionato], 
+)
+#v(5pt)
+
 == Storico degli annunci generati
 È possibile visualizzare anche sotto forma di lista tutti gli annunci generati dalla LLM.
-Per aprire questa pagina, premere la voce _"Dashboard"_ nel menu a sinistra dello schermo, questo apre una pagina con la lista di tutte le _dashboard_ disponibili. Selezionare la voce "Storico annunci". Aperta la _dashboard_ ci si trova davanti ad una lista contenente tutti i dati degli annunci generati.
+Per aprire questa pagina, premere la voce _"Dashboards"_ nel menu a sinistra dello schermo.
 
-Per ogni voce della lista, inoltre, è possibile premere "Vedi altro" per esaminare il dettaglio di ogni generazione, nonchè il testo dell'annuncio generato per intero.
+#figure(
+  image("../assets/img/Manuale/sel_dashboards.png", width: 50%),
+  caption: [Selezione voce _Dashboards_ dal menu], 
+)
+#v(5pt)
+
+Questo apre una pagina con la lista di tutte le _dashboards_ disponibili. Selezionare la voce "Storico annunci". 
+
+#figure(
+  image("../assets/img/Manuale/lista_dashboards.png", width: 85%),
+  caption: [Selezione voce "Storico annunci" dalla lista delle _dashboards_], 
+)
+#v(5pt)
+
+Aperta la _dashboard_ ci si trova davanti ad una lista contenente tutti i dati degli annunci generati.
+
+#figure(
+  image("../assets/img/Manuale/storico_annunci.png", width: 95%),
+  caption: [Storico annunci], 
+)
+#v(5pt)
+
+Per ogni voce della lista, inoltre, è possibile premere l'ID dell'annuncio interessato per esaminare il suo dettaglio.
+
+#figure(
+  image("../assets/img/Manuale/annuncio_selezionato.png", width: 50%),
+  caption: [Selezione dettaglio tramite ID annuncio], 
+)
+#v(5pt)
+
+Questo apre una nuova finestra contenente tutti i dettagli dell'annnuncio generato, compreso il testo dell'annuncio per intero.
+
+#figure(
+  image("../assets/img/Manuale/dettaglio_annuncio.png", width: 95%),
+  caption: [Dettaglio annuncio selezionato dallo storico], 
+)
+#v(5pt)
+
+
 
 
 // TODO: test
