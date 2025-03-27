@@ -354,20 +354,20 @@ Valuta il tempo necessario a un utente per imparare a utilizzare il _software_. 
 La complessità ciclomatica valuta la complessità del codice sorgente attraverso la misurazione del numero di cammini indipendenti attraverso il grafo di controllo del flusso. Una complessità ciclomatica più alta indica che il codice è più difficile da comprendere e manutenere.
 
 
-==== Code smell (MDP-CS)
+==== Code smell (MPD-CS)
 Rileva potenziali problemi di progettazione o codice che potrebbero richiedere manutenzione. Segnala parti del codice che potrebbero non essere ottimali e che potrebbero causare difficoltà nel futuro, come un'architettura poco chiara o sezioni di codice ripetitive.
 
-==== Coefficient of Coupling (MDP-COC)
-Il Coefficient of Coupling misura il grado di dipendenza tra i moduli o le componenti di un sistema. Un alto COC implica che i moduli siano strettamente interconnessi, il che può rendere difficile apportare modifiche a un modulo senza influenzare altri.
+// ==== Coefficient of Coupling (MDP-COC)
+// Il Coefficient of Coupling misura il grado di dipendenza tra i moduli o le componenti di un sistema. Un alto COC implica che i moduli siano strettamente interconnessi, il che può rendere difficile apportare modifiche a un modulo senza influenzare altri.
 
-==== Structure fan in (MDP-SFI)
-Indica il numero di moduli o componenti che dipendono direttamente da un modulo o funzione specifica. Un alto valore di _fan-in_ suggerisce che molte parti del sistema dipendono da quel modulo, quindi modifiche a tale modulo potrebbero avere un ampio impatto.
+// ==== Structure fan in (MDP-SFI)
+// Indica il numero di moduli o componenti che dipendono direttamente da un modulo o funzione specifica. Un alto valore di _fan-in_ suggerisce che molte parti del sistema dipendono da quel modulo, quindi modifiche a tale modulo potrebbero avere un ampio impatto.
 
-==== Structure fan out (MDP-SFO)
-Misura il numero di dipendenze o connessioni che un modulo o componente ha con altri. Un elevato _fan-out_ può indicare che il modulo è fortemente interconnesso con altri, il che può comportare una maggiore complessità nelle modifiche o nella manutenzione del sistema.
+// ==== Structure fan out (MDP-SFO)
+// Misura il numero di dipendenze o connessioni che un modulo o componente ha con altri. Un elevato _fan-out_ può indicare che il modulo è fortemente interconnesso con altri, il che può comportare una maggiore complessità nelle modifiche o nella manutenzione del sistema.
 
-==== Ripercussione delle Modifiche (MDP-RM)
-Misura la percentuale del sistema che è stato affetto dalle modifiche apportate.
+// ==== Ripercussione delle Modifiche (MDP-RM)
+// Misura la percentuale del sistema che è stato affetto dalle modifiche apportate.
 
 ==== Tabella metriche manutenibilità
 
@@ -381,10 +381,10 @@ Misura la percentuale del sistema che è stato affetto dalle modifiche apportate
     table.header[*Metrica*][*Nome*][*Valore accettabile*][*Valore desiderabile*],
     [MPD-CCM], [Complessità ciclomatica per metodo], [$≤ 5$], [$≤ 3$],
     [MPD-CS], [_Code smell_], [$0$], [$0$],
-    [MPD-COC], [_Coefficient of coupling_], [$≤ 30\%$], [$≤ 10\%$],
-    [MPD-SFI], [Structure _fan in_], [da determinare], [da determinare],
-    [MPD-SFO], [Structure _fan out_], [da determinare], [da determinare],
-    [MPD-RM], [Ripercussione delle Modifiche], [da determinare], [da determinare],
+    // [MPD-COC], [_Coefficient of coupling_], [$≤ 30\%$], [$≤ 10\%$],
+    // [MPD-SFI], [Structure _fan in_], [da determinare], [da determinare],
+    // [MPD-SFO], [Structure _fan out_], [da determinare], [da determinare],
+    // [MPD-RM], [Ripercussione delle Modifiche], [da determinare], [da determinare],
   ),
 )
 
@@ -818,7 +818,7 @@ Misura la percentuale di requisiti obbligatori soddisfatti dal prodotto.
   "Tabella ROS",
   ((4, 40), (5, 48), (6, 87), (7, 100)),
   "ROS",
-  ((4, 100), (5, 100), (6, 100), (7, 100)),
+  ((4, 99.5), (5, 99.5), (6, 99.5), (7, 99.5)),
   "Valore accettabile",
   ((4, 100), (5, 100), (6, 100), (7, 100)),
   "Valore ottimo",
@@ -930,7 +930,7 @@ Valuta la complessità per metodo del codice sorgente attraverso la misurazione 
 
 #plotGrafico3(
   "Tabella CCM",
-  ((5, 5), (6, 5), (7, 4)),
+  ((5, 4.98), (6, 4.98), (7, 4)),
   "CCM",
   ((4, 5), (5, 5), (6, 5), (7, 5)),
   "Valore accettabile",
@@ -940,3 +940,21 @@ Valuta la complessità per metodo del codice sorgente attraverso la misurazione 
 
 === PB
 Il gruppo ha deciso di appoggiarsi a uno strumento di analisi statica per il calcolo della complessità ciclomatica. Grazie all'analisi in supporto allo sviluppo del codice il gruppo  è riuscito a garantire un valore per il *CCM* inferiore a cinque, il che lo fa rientrare nel valore accettabile per questa metrica.
+
+
+#pagebreak()
+== Code smell (MPD-CS)
+Rileva potenziali problemi di progettazione o codice che potrebbero richiedere manutenzione. Segnala parti del codice che potrebbero non essere ottimali e che potrebbero causare difficoltà nel futuro, come un'architettura poco chiara o sezioni di codice ripetitive.
+
+#plotGrafico3(
+  "Tabella CS",
+  ((4, 1), (5, 1), (6, 2), (7, 0)),
+  "CS",
+  ((4, 0.01), (5, 0.01), (6, 0.01), (7, 0.01)),
+  "Valore accettabile",
+  ((4, 0), (5, 0), (6, 0), (7, 0)),
+  "Valore ottimo",
+)
+
+=== PB
+Il prodotto _software_ finale è il risultato dell'incrementazione del PoC, migliorato dalla progettazione. Questo processo si è svolto in maniera graduale durante gli _sprint_ con alcune complicanze durante il penultimo a causa del cambiamento della tecnologia del _backend_. Al termine della _baseline_ tuttavia si è riusciti a portare il valore di *CS* allo zero, in particolare a seguito delle analisi statiche del codice.
