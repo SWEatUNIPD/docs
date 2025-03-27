@@ -2,7 +2,7 @@
 #import "@preview/treet:0.1.1": *
 
 #show: content => verbale(
-  data: "25 marzo 2025",
+  data: "26 marzo 2025",
   destinatari: ("Gruppo SWE@", "Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "Sync Lab S.r.L."),
   responsabile: "-",
   redattori: (
@@ -16,12 +16,13 @@
   titolo: "Manuale Utente",
   uso: "Esterno",
   versioni: (
-    "0.2.0",
-    "25/03/2025",
+    "1.0.0",
+    "26/03/2025",
     "Davide Marin",
     "Andrea Precoma",
     [
       - Rimossa sezione del _database_
+      - Aggiunta sezione "Grafici statistici degli annunci"
     ],
     "0.2.0",
     "21/03/2025",
@@ -62,12 +63,12 @@ La prima occorrenza di un termine definito all'interno del glossario presente al
 == Riferimenti
 === Riferimenti normativi
 - Norme di Progetto (v2.0.0) \ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/norme_di_progetto_ver2.0.0.pdf")
-- Regolamento del progetto didattico, _slide_ 23 (ultimo accesso 25/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")
-- Capitolato C4 - Sync Lab S.r.l. (ultimo accesso 25/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
+- Regolamento del progetto didattico, _slide_ 23 (ultimo accesso 26/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")
+- Capitolato C4 - Sync Lab S.r.l. (ultimo accesso 26/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
 === Riferimenti informativi
 - Glossario (v2.0.0) \ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/glossario_ver2.0.0.pdf")
-- Capitolato C4 - Sync Lab S.r.l. (ultimo accesso 25/03/2025 \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
-- Guida ufficiale per l'installazione di Docker (ultimo accesso 25/03/2025) \ #formatLink(url: "https://docs.docker.com/engine/install")
+- Capitolato C4 - Sync Lab S.r.l. (ultimo accesso 26/03/2025 \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
+- Guida ufficiale per l'installazione di Docker (ultimo accesso 25/06/2025) \ #formatLink(url: "https://docs.docker.com/engine/install")
 
 
 = Avvio del sistema
@@ -205,6 +206,34 @@ Questo apre una nuova finestra contenente tutti i dettagli dell'annnuncio genera
 #v(5pt)
 
 
+== Grafici statistici degli annunci
+È possibile visualizzare sotto forma di grafici le statistiche relative agli annunci per ogni POI.
+Per aprire questa pagina, similmente a come visto nella sezione 4.2, premere la voce _"Dashboards"_ nel menu a sinistra dello schermo (figura 6) e selezionare la voce Grafici nella lista delle _dashboards_ che appare (figura 7).
 
+Questo apre la visualizzazione dei grafici statistici per il POI selezionato.
+Per cambiare il POI di interesse, è sufficiente selezionare il POI desiderato dal menu a tendina in alto a sinistra.
 
-// TODO: test
+#figure(
+  image("../assets/img/Manuale/grafici_menu_tendina.png", width: 50%),
+  caption: [Selezione POI da menu a tendina], 
+)
+#v(5pt)
+
+All'interno della pagina sono presenti tre grafici:
+1. Grafico a torta che mostra la percentuale di annunci generati e quelli non generati dal LLM per il POI selezionato.
+2. Grafico a linee che mostra il numero di annunci generati e non generati per ogni ora del giorno.
+3. Grafico a barre che mostra la media dei noleggi attivi per ogni mese dell'anno.
+
+#figure(
+  image("../assets/img/Manuale/grafici.png", width: 95%),
+  caption: [Pagina dei grafici statistici], 
+)
+#v(5pt)
+
+Per visualizzare le misure esatte di ogni punto dei grafici, è sufficiente effettuare un _hoover_ del cursore del _mouse_ al di sopra del punto di interesse, questo apre una piccola finestra contenente il valore preciso di tale punto, questa operazione è possibile su tutti i tipi di grafico. 
+
+#figure(
+  image("../assets/img/Manuale/dettaglio_grafico.png", width: 55%),
+  caption: [Visualizzazione dettaglio del punto di un grafico], 
+)
+#v(5pt)
