@@ -4,14 +4,14 @@
 #show: content => verbale(
   data: "27 marzo 2025",
   destinatari: ("Gruppo SWE@", "Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "Sync Lab S.r.L."),
-  responsabile: "-",
+  responsabile: "Riccardo Milan",
   redattori: (
     "Andrea Precoma",
     "Davide Marin",
   ),
   verificatori: (
-    "Klaudio Merja",
     "Andrea Precoma",
+    "Klaudio Merja",
   ),
   titolo: "Manuale Utente",
   uso: "Esterno",
@@ -66,8 +66,8 @@ La prima occorrenza di un termine definito all'interno del glossario presente al
 - Capitolato C4 - Sync Lab S.r.l. (ultimo accesso 27/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
 === Riferimenti informativi
 - Glossario (v2.0.0) \ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/glossario_ver2.0.0.pdf")
-- Capitolato C4 - Sync Lab S.r.l. (ultimo accesso 27/03/2025 \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
-- Guida ufficiale per l'installazione di Docker (ultimo accesso 25/06/2025) \ #formatLink(url: "https://docs.docker.com/engine/install")
+- Capitolato C4 - Sync Lab S.r.l. (ultimo accesso 27/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
+- Guida ufficiale per l'installazione di Docker (ultimo accesso 27/06/2025) \ #formatLink(url: "https://docs.docker.com/engine/install")
 
 
 = Avvio del sistema
@@ -162,7 +162,7 @@ Come per la finestra di dettaglio dei POI, è possibile chiudere la finestra di 
 )
 #v(5pt)
 
-== Storico degli annunci generati
+== Storico degli annunci generati <lista_dashboard>
 È possibile visualizzare anche sotto forma di lista tutti gli annunci generati dal #rifGlossario("LLM").
 Per aprire questa pagina, premere la voce _"Dashboards"_ nel menu a sinistra dello schermo.
 
@@ -207,7 +207,7 @@ Questo apre una nuova finestra contenente tutti i dettagli dell'annuncio generat
 
 == Grafici statistici degli annunci
 È possibile visualizzare sotto forma di grafici le statistiche relative agli annunci per ogni POI.
-Per aprire questa pagina, similmente a come visto nella #link(<req>)[sez. 4.2], premere la voce _"Dashboards"_ nel menu a sinistra dello schermo (figura 6) e selezionare la voce "Grafici" nella lista delle _dashboard_ che appare (figura 7).
+Per aprire questa pagina, similmente a come visto nella #link(<lista_dashboard>)[sez. 4.2], premere la voce _"Dashboards"_ nel menu a sinistra dello schermo (figura 6) e selezionare la voce "Grafici" nella lista delle _dashboard_ che appare (figura 7).
 
 Questo apre la visualizzazione dei grafici statistici degli annunci.
 #figure(
@@ -217,7 +217,7 @@ Questo apre la visualizzazione dei grafici statistici degli annunci.
 #v(5pt)
 
 All'interno della pagina sono presenti tre grafici:
-1. Grafico a torta che mostra la percentuale di annunci generati e quelli non generati dal LLM per il POI selezionato. Per cambiare il POI di interesse, è sufficiente selezionare il POI desiderato dal menu a tendina in alto a sinistra.
+1. Grafico a torta che mostra la percentuale di annunci generati e quelli non generati dal LLM per il POI selezionato. Per cambiare il POI di interesse, è sufficiente selezionare quello desiderato dal menu a tendina in alto a sinistra.
 
 #figure(
   image("../assets/img/Manuale/grafici_menu_tendina.png", width: 50%),
