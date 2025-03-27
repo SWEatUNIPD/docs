@@ -1078,7 +1078,7 @@ Il preventivo a finire si attesta a fine progetto a 12.512,50€, a fronte del p
 ==== Retrospettiva
 L'ottavo ed ultimo _sprint_ ha visto il gruppo completare tutte le attività previste e sostenere il colloquio finale con l'azienda. Il _team_, libero da impegni universitari, è riuscito a lavorare con grande efficienza e coordinazione, riuscendo a completare tutte le attività pianificate, rendendo il _software_ e la relativa documentazione pronti per la revisione PB.
 
-Un imprevisto che ha portato al ritardo della consegna è stata l'indisponibilità del professor Cardin nel fissare il colloquio nel periodo inizialmente previsto dal gruppo, ovvero nella settimana del 24 marzo. La revisione PB è stata quindi posticipata a lunedì 31. Con una settimana in più a disposizione il gruppo ha deciso di rivedere la logistica delle attività rimaste, allungando la durata dello _sprint_ rimanendo sempre nei limiti del _budget_. Avendo infatti pianificato il termine del progetto per venerdì 21 marzo erano avanzate alcune risorse che sono state sfruttate per completare con più calma e rigore i documenti e soddisfare la maggior parte dei requisiti facoltativi.
+Un imprevisto che ha portato al ritardo della consegna è stata l'indisponibilità del professor Cardin nel fissare il colloquio nel periodo inizialmente previsto dal gruppo, ovvero nella settimana del 24 marzo. La revisione PB è stata quindi posticipata a lunedì 31. Con una settimana in più a disposizione il gruppo ha deciso di rivedere la logistica delle attività rimaste, allungando la durata dello _sprint_, rimanendo sempre nei limiti del _budget_. Avendo infatti pianificato il termine del progetto per venerdì 21 marzo erano avanzate alcune risorse che sono state sfruttate per completare con più calma e rigore i documenti e soddisfare la maggior parte dei requisiti facoltativi.
 
 ===== Cosa ha funzionato
 Il gruppo è riuscito a seguire il proprio _way of working_ fino alla fine del progetto, riuscendo a lavorare sempre in modo efficace ed efficiente. La quasi totalità delle attività è stata portata a termine in modo asincrono anche quando più persone lavoravano sugli stessi documenti.
@@ -1095,7 +1095,7 @@ Il gruppo avrebbe potuto accertarsi prima della disponibilità del professor Car
 Questo però avrebbe voluto dire richiedere il colloquio al professore all'inizio dello _sprint_ e non quando il gruppo si sarebbe sentito pronto.
 
 ===== Rischi riscontrati
-Nel corso dell' ottavo _sprint_ si sono riscontrati i seguenti rishi:
+Nel corso dell'ottavo _sprint_ si sono riscontrati i seguenti rishi:
 - #link(<RO-5>)[RO-5]: l'indisponibilità del professor Cardin ha fatto slittare la consegna di una settimana, costringendo il gruppo a rivedere la pianificazione.
 - #link(<RT-1>)[RT-1]: tutti i membri del gruppo stanno iniziando a prendere confidenza con le tecnologie utilizzate ma con le quali non hanno ancora raggiunto una padronanza completa.
 
