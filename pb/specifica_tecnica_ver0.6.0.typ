@@ -282,12 +282,12 @@ container.bind(Simulator).toSelf().inSingletonScope();
 Java è un linguaggio di programmazione orientato agli oggetti che nasce con lo scopo di creare applicazioni indipendenti dalla piattaforma, grazie alla sua capacità di compilare il codice in _bytecode_ ed eseguirlo su una JVM. //TODO: JVM a glossario da mettere
 
 ==== Utilizzo nel progetto
-Nel nostro specifico caso, viene adottato per la creazione del servizio di _stream processing_ (denominato anche _job_) per Apache Flink, che si occupa di elaborare i dati di localizzazione in tempo reale provenienti dai sensori, garantendone la persistenza all'interno del _database_, e di arricchire tali dati con le informazioni necessarie a creare il _prompt_ da inviare alla LLM per poter generare un annuncio il più personalizzato possibile.
+Nel nostro specifico caso, viene adottato per la creazione del servizio di _stream processing_ (denominato anche _job_) per Apache Flink. Questo si occupa di elaborare i dati di localizzazione in tempo reale provenienti dai sensori, garantendone la persistenza all'interno del _database_, e di arricchire tali dati con le informazioni necessarie a creare il _prompt_ da inviare alla LLM per poter generare un annuncio il più personalizzato possibile.
 
 ==== Versione
-Per soddisfare i requisiti di Apache Flink è stata adottato *Java 17 LTS*. //TODO: mettere a glossario LTS
+Per soddisfare i requisiti di Apache Flink è stata adottato Java 17 LTS. //TODO: mettere a glossario LTS
 
-La documentazione di Apache Flink riporta l'introduzione in maniera sperimentale di Java 17 dalla versione 1.18 di Flink; tuttavia, il prodotto è stato _testato_ e le funzionalità fondamentali che avessero un impatto dovuto a questa scelta, ovvero i _records_ in Java, funzionano correttamente.
+La documentazione di Apache Flink riporta l'introduzione in maniera sperimentale di Java 17 dalla versione 1.18 di Flink. Tuttavia, il prodotto è stato validato e le funzionalità fondamentali che hanno un impatto dovuto a questa scelta, ovvero i _records_ in Java, funzionano correttamente.
 
 ==== Librerie e framework
 Per la gestione del progetto e l'automazione delle operazioni di _build_ e _test_ è stato utilizzato Apache Maven. Per avere una visione nel dettaglio di tutte le librerie utilizzate all'interno del nostro sistema, è possibile visionare il _file_ `pom.xml` presente all'interno della cartella `job` del nostro progetto.
@@ -432,7 +432,7 @@ La K-_architecture_ è un modello architetturale per l'elaborazione di dati in _
 
 - *_Processing layer_*: i dati ricevuti dallo _streaming layer_ vengono processati in tempo reale prima di essere memorizzati in _database_. Il _processing layer_ è costituito da:
 
-  - *Apache Flink*: _framework_ ed _engine_ di _processing_ dati distribuito che permette di processare i dati in tempo reale tramite delle operazioni definite "_stateful_", ovvero che mantengono lo stato nel tempo. Il nostro _job_ realizzato per Apache Flink riceve i dati dal _topic_ `gps-data` di Apache Kafka, li elabora, trovando il punto di interesse più vicino all'utente e generando l'annuncio tramite la LLM, e infine li invia al _database_ nello _storage layer_ per persisterli. Il _job_ si occupa inoltre di inviare l'annuncio generato al simulatore.
+  - *Apache Flink*: _framework_ ed _engine_ di _processing_ dati distribuito che permette di processare i dati in tempo reale tramite delle operazioni definite "_stateful_", ovvero che mantengono lo stato nel tempo. Il nostro _job_ realizzato per Apache Flink riceve i dati dal _topic_ `gps-data` di Apache Kafka, li elabora trovando il punto di interesse più vicino all'utente e generando l'annuncio tramite la LLM. Infine li invia al _database_ nello _storage layer_ per persisterli. Il _job_ si occupa inoltre di inviare l'annuncio generato al simulatore.
 
 - *_Storage layer_*: la persistenza è gestita da un _database_ relazionale che archivia i dati in arrivo dal _processing layer_. Lo _storage layer_ è costituito da *PostgreSQL* affiancato da *PostGIS*, una estensione che facilita l'elaborazione di dati geospaziali.
 
@@ -452,8 +452,8 @@ Questo tipo di architettura è particolarmente adatto ad applicazioni/sistemi ch
 
 L'architettura _data streaming_ è composta dai seguenti _layer_:
 - *Sorgente dati*: questa componente rappresenta le fonti di dati in tempo reale, che nel nostro caso provengono dai dispositivi di localizzazione dei noleggi attivi.
-- *_Stream ingestion_*: _layer_ che si occupa di raccogliere i dati in tempo reale provenienti dai sensori, inoltrandoli al _processing layer_. A questo _layer_ viene inoltre demandato il compito di salvare i dati dello _stream_ in memoria per un periodo di tempo limitato per garantire la tolleranza agli errori. Questo compito viene a volte viene delineato da un altro _layer_ conosciuto anche come _stream storage_.
-- *_Stream processing_*: _layer_ che si occupa di progessare i dati in tempo reale, applicando loro delle trasformazioni, filtri oppure operazioni computazionali per estrarne informazioni utili. Nel nostro caso, questo _layer_ si occupa di arricchire i dati di localizzazione con le informazioni necessarie per generare l'annuncio, e di inviarli al _database_ per la persistenza.
+- *_Stream ingestion_*: _layer_ che si occupa di raccogliere i dati in tempo reale provenienti dai sensori, inoltrandoli al _processing layer_. A questo _layer_ viene inoltre demandato il compito di salvare i dati dello _stream_ in memoria per un periodo di tempo limitato per garantire la tolleranza agli errori. Questo compito viene a volte delineato da un altro _layer_ conosciuto anche come _stream storage_.
+- *_Stream processing_*: _layer_ che si occupa di processare i dati in tempo reale, applicando loro delle trasformazioni, filtri oppure operazioni computazionali per estrarne informazioni utili. Nel nostro caso, questo _layer_ si occupa di arricchire i dati di localizzazione con le informazioni necessarie per generare l'annuncio, e inviarli al _database_ per la persistenza.
 - *Data destination*: _layer_ a cui viene demandato il compito di inoltrare i dati verso una determinata destinazione, come può essere un _database_ per la persistenza dei dati, un servizio di notifica per l'invio di messaggi o altro ancora.
 - *Data visualization*: _layer_ che si occupa di visualizzare i dati in maniera comprensibile all'utente finale. Questo _layer_ può essere costituito da un'interfaccia grafica come una _dashboard_ .
 #pagebreak(weak: true)
