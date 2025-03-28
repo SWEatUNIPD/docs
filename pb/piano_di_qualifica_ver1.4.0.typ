@@ -10,11 +10,12 @@
   uso: "Esterno",
   versioni: (
     "1.4.0",
-    "26/03/2025",
+    "27/03/2025",
     "Davide Marin\nAndrea Precoma",
     "Davide Martinelli\nDavide Picello",
     [
       - Aggiornamento del cruscotto di monitoraggio della qualità
+      - Rimosse metriche MPD-SC, #box[MPD-FD], MPD-COC, MPD-SFI, MPD-SFO e MPD-RM
     ],
     "1.3.0",
     "21/03/2025",
@@ -86,20 +87,14 @@ Nel documento i termini che, alla loro prima occorrenza, vengono contrassegnati 
 == Riferimenti
 
 === Riferimenti normativi
-- Norme di Progetto (v1.0.1)\ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/norme_di_progetto_ver1.0.1.pdf")
-- ISO/IEC 12207:1995 (#sym.section#sym.section 6.3-6.7)\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf")\ (ultimo accesso in data 6/03/2025)
+- Norme di Progetto (v2.0.0)\ #formatLink(url: "https://sweatunipd.github.io/docs/pb/norme_di_progetto_ver2.0.0.pdf")
+- ISO/IEC 12207:1995 (#sym.section#sym.section 6.3-6.7) (ultimo accesso in data 27/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf")
 
 === Riferimenti informativi
-- Glossario (v1.0.0)\ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/glossario_ver1.0.0.pdf")
-- Capitolato d'appalto C4: _NearYou - Smart custom advertising platform_\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")\ (ultimo accesso in data 27/01/2025)
-- Lezione T07 - Qualità di prodotto\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T07.pdf")\ (ultimo accesso in data 27/01/2025)
-- Lezione T08 - Qualità di processo\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T08.pdf")\ (ultimo accesso in data 27/01/2025)
-
-/*
-- ISO/IEC 9126:2001\ #formatLink(url: "https://en.wikipedia.org/wiki/ISO/IEC_9126")
-
-- ISO/IEC 25010:2011\ #formatLink(url: "https://en.wikipedia.org/wiki/ISO/IEC_25010")
-*/
+- Glossario (v2.0.0)\ #formatLink(url: "https://sweatunipd.github.io/docs/pb/glossario_ver2.0.0.pdf")
+- Capitolato C4 (Sync Lab) (ultimo accesso in data 27/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
+- Lezione T07 - Qualità di prodotto (ultimo accesso in data 27/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T07.pdf")
+- Lezione T08 - Qualità di processo (ultimo accesso in data 27/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T08.pdf")
 
 #pagebreak()
 
@@ -301,7 +296,7 @@ Indica il numero di fallimenti correttamente riscontrati per unità di dimension
     table.header[*Metrica*][*Nome*][*Valore accettabile*][*Valore desiderabile*],
     [MPD-CC], [_#rifGlossario("Code coverage")_], [$≥ 80\%$], [$100\%$],
     [MPD-BC], [_Branch coverage_], [$≥ 60\%$], [$100\%$],
-    [MPD-PTCP], [_Passed test cases percentage_], [$≥ 80\%$], [$100\%$],
+    [MPD-PTCP], [_Passed test cases percentage_], [$100\%$], [$100\%$],
     [MPD-FD], [_Failure density_], [$100%$], [$100%$],
   ),
 )
@@ -899,30 +894,16 @@ Questo dimostra come l'implementazione dei _test_ prodotti dal _team_ sia stata 
 Misura la percentuale di casi di _test_ superati rispetto al totale dei _test_ eseguiti.
 #plotGrafico3(
   "Tabella PTCP",
-  ((4, 0), (5, 47), (6, 34), (7, 92)),
+  ((4, 0), (5, 0), (6, 99), (7, 99)),
   "PTCP",
-  ((4, 80), (5, 80), (6, 80), (7, 80)),
+  ((4, 99.5), (5, 99.5), (6, 99.5), (7, 99.5)),
   "Valore accettabile",
   ((4, 100), (5, 100), (6, 100), (7, 100)),
   "Valore ottimo",
 )
 
 === PB
-
-#pagebreak()
-== Failure density (MPD-FD)
-Indica il numero di fallimenti correttamente riscontrati per unità di dimensione del _software_, spesso misurata in linee di codice (LOC) o punti funzione.
-#plotGrafico3(
-  "Tabella FD",
-  ((4, 0), (5, 47), (6, 34), (7, 92)),
-  "FD",
-  ((4, 80), (5, 80), (6, 80), (7, 80)),
-  "Valore accettabile",
-  ((4, 100), (5, 100), (6, 100), (7, 100)),
-  "Valore ottimo",
-)
-
-=== PB
+Come si evince dal grafico tutti i _test_ sviluppati sono stati sempre superati. Si fa notare come questa condizione sia imperativa affinché si voglia distribuire un prodotto di qualità. Il valore accettabile e l'ottimo infatti coincidono al $100%$. Si ricorda tuttavia che per quanto ci si impegni a sviluppare dei _test_ esaustivi il fatto che questi vengano completamente superati non è garanzia di un _software_ privo di errori o lacune.
 
 #pagebreak()
 == Complessità ciclomatica per metodo (MPD-CCM)
