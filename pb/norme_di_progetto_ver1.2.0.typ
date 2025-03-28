@@ -266,7 +266,7 @@ Il documento conterrà le seguenti informazioni:
   - *Retrospettiva*: Sezione redatta a fine periodo, contiene una descrizione testuale delle difficoltà riscontrate e consigli utili da adottare per il lavoro futuro. Si struttura nei seguenti paragrafi:
     - *Cosa ha funzionato*: Aspetti positivi del periodo concluso.
     - *Cosa non ha funzionato*: Difficoltà che hanno rallentato il lavoro.
-    - *Cosa fare per migliorare*: Considerazioni migliorative per gli _sprint_ successivi.
+    - *Cosa fare per migliorare*: Considerazioni migliorative per gli _#rifGlossario("sprint")_ successivi.
     - *Rischi riscontrati*: Ricapitolazione dei rischi pianificati, analizzando se ve ne sono verificati di nuovi, e come sono stati affrontati.
     - *Attività future*: Lavori da cominciare nel periodo successivo che derivano da quello appena concluso, utile per guidare la pianificazione successiva.
 
@@ -313,7 +313,7 @@ Piattaforma di messaggistica in tempo reale che consente _chat_ testuali, vocali
 Applicazione di messaggistica istantanea utilizzata per comunicazioni rapide e brevi all'interno del gruppo.
 
 ==== Fogli di Google
-Applicazione web per la creazione e la gestione di fogli di calcolo. Il gruppo utilizza tale strumento per tenere traccia delle ore produttive impiegate in ogni _#rifGlossario("sprint")_, che saranno successivamente riportate nel documento ufficiale Piano di Progetto.
+Applicazione _web_ per la creazione e la gestione di fogli di calcolo. Il gruppo utilizza tale strumento per tenere traccia delle ore produttive impiegate in ogni _sprint_, che saranno successivamente riportate nel documento ufficiale Piano di Progetto.
 
 ==== GitHub
 Piattaforma per il versionamento del codice e la collaborazione su progetti _software_. Il gruppo utilizza questo strumento per gestire le _repository_ relative al prodotto software oggetto del capitolato e per la documentazione, monitorare le attività del progetto, assegnarle ai membri e seguirne lo stato di avanzamento.

@@ -151,12 +151,12 @@ sottolineato e seguito dalla lettera g posta ad apice (e.g. #rifGlossario("termi
 
 == Riferimenti
 === Riferimenti normativi
-- Norme di Progetto (v2.0.0)\ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/norme_di_progetto_ver2.0.0.pdf")
+- Norme di Progetto (v2.0.0)\ #formatLink(url: "https://sweatunipd.github.io/docs/pb/norme_di_progetto_ver2.0.0.pdf")
 - Regolamento del progetto didattico\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")\ (ultimo accesso in data 24/03/2025)
 - Capitolato C4 (Sync Lab)\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")\ (ultimo accesso in data 24/03/2025)
 
 === Riferimenti informativi
-- Glossario (v2.0.0)\ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/glossario_ver2.0.0.pdf")
+- Glossario (v2.0.0)\ #formatLink(url: "https://sweatunipd.github.io/docs/pb/glossario_ver2.0.0.pdf")
 - T5 - Analisi dei Requisiti\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf")\ (ultimo accesso in data 24/03/2025)
 - P2 - I Diagrammi dei Casi d'Uso\ #formatLink(url: "https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi%20Use%20Case.pdf")\ (ultimo accesso in data 24/03/2025)
 #pagebreak()
@@ -1265,7 +1265,7 @@ Viene riportato di seguito il significato e i possibili valori dei campi present
   table.header([*Codice*], [*Descrizione*], [*Fonti*]),
 
   [ROV-1],
-  [Il sistema, essendo accessibile puramente via web, deve garantire la compatibilità con l'ultima versione dei principali browser in commercio: Google Chrome v134.0.6998.88, Mozilla Firefox v136.0.2, Microsoft Edge v134.0.3124.72 e Safari v18.3.],
+  [Il sistema, essendo accessibile puramente via _browser web_, deve garantire la compatibilità con l'ultima versione dei principali _browser_ in commercio: Google Chrome v134.0.6998.88, Mozilla Firefox v136.0.2, Microsoft Edge v134.0.3124.72 e Safari v18.3.],
   [Riunioni interne],
 )
 == Requisiti desiderabili

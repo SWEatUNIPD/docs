@@ -9,6 +9,13 @@
   titolo: "Piano di Qualifica",
   uso: "Esterno",
   versioni: (
+    "1.5.0",
+    "27/03/2025",
+    "Davide Martinelli\nKlaudio Merja",
+    "Andrea Precoma",
+    [
+      - Aggiunta dei _test_ di integrazione del _backend_
+    ],
     "1.4.0",
     "23/03/2025",
     "Davide Martinelli",
@@ -461,7 +468,7 @@ I _test_ sono stati sviluppati utilizzando il _framework_ Vitest, uno strumento 
     [TU-17], [Verifica che il metodo `getIsAvailable` restituisca correttamente lo stato di disponibilità del tracker.], [Verificato],
     [TU-18], [Verifica che il messaggio venga correttamente formato e inviato tramite il `KafkaManager`.], [Verificato],
 
-    [TU-19], [Verifica che quando il `tracker` raggiunge l'ultimo punto del percorso il metodo `move` disconnetta correttamente il `producer` ed il `consumer` Kafka.], [Non implementato],
+    [TU-19], [Verifica che quando il `tracker` raggiunge l'ultimo punto del percorso il metodo `move` disconnetta correttamente il `producer` ed il `consumer` #rifGlossario("Kafka").], [Non implementato],
     [TU-20], [Verifica che il metodo `move` lanci un eccezione se si verifica un generico errore all'interno del metodo.], [Non implementato],
 
     // TrackerFetcher
@@ -482,63 +489,70 @@ I _test_ sono stati sviluppati utilizzando il _framework_ Vitest, uno strumento 
     [TU-33], [Verifica che il metodo `disconnectConsumer` disconnetta correttamente un consumatore Kafka, controllando che il metodo `disconnect` del consumatore sia stato chiamato.], [Verificato],
     [TU-34], [Verifica che il metodo `disconnectConsumer` gestisca correttamente gli errori di disconnessione, lanciando un errore quando la disconnessione fallisce.], [Verificato],
     
-    //[TU-], [], [Verificare],
 )
 
 === Test di unità del backend
 I _test_ di unità del _backend_ sono finalizzati a verificare il corretto funzionamento delle classi e dei metodi che compongono il _backend_, garantendo che ciascuna funzionalità sia implementata in modo corretto.
+
+I _test_ sono stati sviluppati utilizzando il _framework_ JUnit 5, un efficace e consolidato strumento per il _testing_ in ambiente Java, coadiuvato da Mockito per la creazione di _mock_ e _stub_.
 
 #table(
   columns: 3,
   align: (center, left, center),
   fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
   table.header[*Codice test*][*Descrizione*][*Stato*],
-    // `DataSourceSingleton`
-    [TU-35], [Verificare che il metodo `getConnection` funzioni correttamente, restituendo un'istanza di tipo `java.sql.Connection`, o in caso contrario, lanci un'eccezione di tipo `SQLException`.], [Verificato],
-    // `GPSData` e `PointOfInterest`
-    [TU-36], [Verificare che gli oggetti di tipo `GPSData` vengano istanziati correttamente, constatando in particolare che due oggetti creati a partire dagli stessi parametri devono anche essere stati generati nello stesso istante per poter essere uguali.], [Verificato],
-    [TU-37], [Verificare che gli oggetti di tipo `PointOfInterest` vengano istanziati correttamente.], [Verificato],
-    [TU-38], [Verificare che il metodo `hashCode` della classe `GPSData` funzioni correttamente, restituendo quindi lo stesso valore solo per oggetti uguali.], [Verificato],
-    [TU-39], [Verificare che il metodo `hashCode` della classe `PointOfInterest` funzioni correttamente, restituendo quindi lo stesso valore solo per oggetti uguali.], [Verificato],
+    // `DatabaseConnectionSingleton`
+    [TU-35], [Verificare che il metodo `getConnection` funzioni correttamente alla sua prima chiamata, creando e restituendo un'istanza di tipo `ConnectionFactory`.], [Verificato],
+    [TU-36], [Verificare che il metodo `getConnection`, se chiamato più di una volta, restituisca sempre la stessa istanza di tipo `ConnectionFactory` (correttezza del _singleton_).], [Verificato],
+    // `GPSDataDto`
+    [TU-37], [Verificare che gli oggetti di tipo `GPSDataDto` vengano istanziati correttamente, constatando in particolare che l'_override_ del metodo `equals` si comporti come previsto.], [Verificato],
+    [TU-38], [Verificare che i metodi _getters_ e _setters_ della classe `GPSDataDto` funzionino correttamente, rispettivamente restituendo e modificando correttamente i valori degli attributi dell'oggetto.], [Verificato],
+    [TU-39], [Verificare che l'_override_ del metodo `hashCode` della classe `GPSDataDto` funzioni correttamente, restituendo quindi lo stesso valore per oggetti uguali.], [Verificato],
+    // `GPSData`
+    [TU-40], [Verificare che gli oggetti di tipo `GPSData` vengano istanziati correttamente, constatando in particolare che l'_override_ del metodo `equals` si comporti come previsto.], [Verificato],
+    [TU-41], [Verificare che i metodi _setters_ della classe `GPSData` funzionino correttamente, modificando correttamente i valori degli attributi dell'oggetto.], [Verificato],
+    [TU-42], [Verificare che l'_override_ del metodo `hashCode` della classe `GPSData` funzioni correttamente, restituendo quindi lo stesso valore solo per oggetti uguali.], [Verificato],
+    // `PointOfInterest`
+    [TU-43], [Verificare che gli oggetti di tipo `PointOfInterest` vengano istanziati correttamente, constatando in particolare che l'_override_ metodo `equals` si comporti come previsto.], [Verificato],
+    [TU-44], [Verificare che l'_override_ del metodo `hashCode` della classe `PointOfInterest` funzioni correttamente, restituendo quindi lo stesso valore solo per oggetti uguali.], [Verificato],
     // `AdvertisementGenerationRequest`
-    [TU-40], [Verificare che il metodo `open` della classe `AdvertisementGenerationRequest` funzioni correttamente, creando una connessione con il _database_ ed effettuando esattamente una chiamata per ciascun metodo invocato nel suo _scope_.], [Verificato],
-    [TU-41], [Verificare che il metodo `open` della classe `AdvertisementGenerationRequest`lanci un'eccezione di tipo `SQLException` se la connessione con il _database_ non può essere stabilita.], [Verificato],
-    [TU-42], [Verificare che il metodo `close` della classe `AdvertisementGenerationRequest` funzioni correttamente, chiudendo la connessione con il _database_ senza riportare errori nel _log_.], [Verificato],
-    [TU-43], [Verificare che il metodo `close` della classe `AdvertisementGenerationRequest` generi un _record_ nel _log_ se la chiusura della connessione con il _database_ genera un'eccezione.], [Verificato],
-    [TU-44], [Verificare che la richiesta di generazione dell'annuncio all'LLM tramite il metodo asincrono `asyncInvoke` generi uno e un solo _output_ (_singleton_).], [Verificato],
-    [TU-45], [Verificare che nel caso in cui l'utente associato al noleggio che sta generando la richiesta di generazione dell'annuncio non sia presente nel _database_ la chiamata del metodo `asyncInvoke` non porti alla generazione di alcun annuncio (l'_output_ è un _set_ vuoto).], [Verificato],
-    [TU-46], [Verificare che se durante la preparazione della _query_ nel metodo `asyncInvoke` viene lanciata un'eccezione di tipo `SQLException`, questa venga correttamente gestita e riportata nel _log_.], [Verificato],
-    [TU-47], [Verificare che se durante l'esecuzione della _query_ nel metodo `asyncInvoke` viene lanciata un'eccezione di tipo `SQLException`, questa venga correttamente gestita e riportata nel _log_.], [Verificato],
+    [TU-45], [Verificare che la richiesta di generazione di un annuncio tramite il metodo asincrono `asyncInvoke` funzioni correttamente, completando l'oggetto `resultFuture` con la tupla contenente il testo generato dalla #rifGlossario("LLM").], [Verificato],
+    [TU-46], [Verificare che nel caso in cui la stringa contenente gli interessi dell'utente nel _#rifGlossario("database")_ sia vuota, la richiesta di generazione dell'annuncio tramite il metodo `asyncInvoke` porti comunque alla generazione di un annuncio.], [Verificato],
+    [TU-47], [Verificare che se durante la preparazione della _query_ tramite la chiamata a `createStatement` nel metodo `asyncInvoke` della classe `AdvertisementGenerationRequest` viene generata un'eccezione, questa venga correttamente gestita e riportata nel _log_.], [Verificato],
     // `NearestPOIRequest`
-    [TU-48], [Verificare che il metodo `open` della classe `NearestPOIRequest` funzioni correttamente, creando una connessione con il _database_ ed effettuando esattamente una chiamata al metodo invocato nel suo _scope_.], [Verificato],
-    [TU-49], [Verificare che il metodo `open` della classe `NearestPOIRequest` lanci un'eccezione di tipo `SQLException` se la connessione con il _database_ non può essere stabilita.], [Verificato],
-    [TU-50], [Verificare che il metodo `close` della classe `NearestPOIRequest` funzioni correttamente, chiudendo la connessione con il _database_ senza riportare errori nel _log_ ed effettuando esattamente una chiamata al metodo invocato nel suo _scope_.], [Verificato],
-    [TU-51], [Verificare che il metodo `close` della classe `NearestPOIRequest` generi un _record_ nel _log_ se la chiusura della connessione con il _database_ genera un'eccezione.], [Verificato],
-    [TU-52], [Verificare che la richiesta di ricerca del punto di interesse più vicino all'utente tramite il metodo asincrono `asyncInvoke` generi uno e un solo _output_ (_singleton_).], [Verificato],
-    [TU-53], [Verificare che nel caso in cui la distanza in linea d'aria tra l'utente e il punto di interesse più vicino superi un limite prestabilito (100 m) la richiesta di ricerca del punto di interesse più vicino effettuata tramite il metodo `asyncInvoke` non dia in _output_ alcun punto di interesse (l'_output_ è una lista vuota).], [Verificato],
-    [TU-54], [Verificare che se durante la preparazione della _query_ nel metodo `asyncInvoke` della classe `NearestPOIRequest` viene lanciata un'eccezione di tipo `SQLException`, questa venga correttamente gestita e riportata nel _log_.], [Verificato],
-    [TU-55], [Verificare che se durante l'esecuzione della _query_ nel metodo `asyncInvoke` della classe `NearestPOIRequest` viene lanciata un'eccezione di tipo `SQLException`, questa venga correttamente gestita e riportata nel _log_.], [Verificato],
+    [TU-48], [Verificare che la richiesta di ricerca del punto di interesse più vicino all'utente tramite il metodo asincrono `asyncInvoke`, in caso di successo, completi l'oggetto `resultFuture` con la tupla contenente un oggetto del tipo `PointOfInterest`.], [Verificato],
+    [TU-49], [Verificare che nel caso in cui il punto di interesse più vicino all'utente sia più lontano di 100 m in linea d'aria la richiesta di ricerca del punto di interesse più vicino tramite il metodo `asyncInvoke` completi la tupla `resultFuture` con un _set_ vuoto.], [Verificato],
+    [TU-50], [Verificare che se durante la preparazione della _query_ tramite la chiamata a `createStatement` nel metodo `asyncInvoke` della classe `NearestPOIRequest` viene generata un'eccezione, questa venga correttamente gestita e riportata nel _log_.], [Verificato],
     // `AdvertisementSerializationSchema`
-    [TU-56], [Verificare che il metodo `serialize` della classe `AdvertisementSerializationSchema` funzioni correttamente, controllando che i campi 'rent_id' e 'adv' dell'oggetto JSON restituito coincidano con il rentId dell'oggetto `GPSData` e la stringa contenente l'annuncio generato ricevuti in input dal metodo.], [Verificato],
-    [TU-57], [Verificare che il metodo `serialize` della classe `AdvertisementSerializationSchema` generi un'eccezione di tipo `NullPointerException` se viene invocato da un oggetto con valore `null`.], [Verificato],
+    [TU-51], [Verificare che il metodo `serialize` della classe `AdvertisementSerializationSchema` funzioni correttamente, controllando che i campi 'rent_id' e 'adv' dell'oggetto JSON restituito coincidano con il rentId dell'oggetto `GPSData` e la stringa contenente l'annuncio generato ricevuti in input dal metodo.], [Verificato],
+    [TU-52], [Verificare che il metodo `serialize` della classe `AdvertisementSerializationSchema` generi un'eccezione di tipo `NullPointerException` se viene invocato da un oggetto con valore `null`.], [Verificato],
     // `GPSDataDeserializationSchema`
-    [TU-58], [Verificare che il metodo `deserialize` della classe `GPSDataDeserializationSchema` funzioni correttamente, controllando che ricevuta in input una stringa in formato JSON contenente i campi 'rent_id', 'latitude' e 'longitude' questo restituisca un oggetto `GPSData` contenente i valori dei campi corrispondenti.], [Verificato],
-    [TU-59], [Verificare che il metodo `deserialize` della classe `GPSDataDeserializationSchema`, quando riceve in input una stringa in formato JSON non valida, generi un'eccezione di tipo `IOException`, che viene correttamente gestita e riportata nel _log_], [Verificato],
+    [TU-53], [Verificare che il metodo `deserialize` della classe `GPSDataDeserializationSchema` funzioni correttamente, controllando che ricevuta in input una stringa in formato JSON contenente i campi 'rent_id', 'latitude' e 'longitude' questo restituisca un oggetto `GPSData` contenente i valori dei campi corrispondenti.], [Verificato],
+    [TU-54], [Verificare che il metodo `deserialize` della classe `GPSDataDeserializationSchema`, quando riceve in input una stringa in formato JSON non valida, generi un'eccezione di tipo `IOException`, che viene correttamente gestita e riportata nel _log_], [Verificato],
     // `DataStreamJob`
-    [TU-60], [Verificare che il metodo `execute` della classe `DataStreamJob` funzioni correttamente.], [Verificato],
-    // `KafkaTopicTest`
-    [TU-61], [Verificare che il metodo `createTopic` della classe `KafkaTopicTest` funzioni correttamente.], [Verificato],
-    [TU-62], [Verificare che il metodo `createTopics` della classe `KafkaTopicTest` funzioni correttamente.], [Verificato],
-    [TU-63], [Verificare che il metodo `createTopic` della classe `KafkaTopicTest` gestisca correttamente il tentativo di creare un _topic_ con lo stesso nome di un _topic_ già esistente, riportando nel _log_ un avviso di _topic_ già esistente.], [Verificato],
+    [TU-55], [Verificare che il metodo `execute` della classe `DataStreamJob` funzioni correttamente.], [Verificato],
+    // `KafkaTopicService`
+    [TU-56], [Verificare che il metodo `createTopic` della classe `KafkaTopicTest` funzioni correttamente.], [Verificato],
+    [TU-57], [Verificare che il metodo `createTopics` della classe `KafkaTopicTest` funzioni correttamente.], [Verificato],
+    [TU-58], [Verificare che il metodo `createTopic` della classe `KafkaTopicTest` gestisca correttamente il tentativo di creare un _topic_ con lo stesso nome di un _topic_ già esistente, riportando nel _log_ un avviso di _topic_ già esistente.], [Verificato],
   )
 
 == Test di integrazione
 Successivi ai _test_ di unità, hanno lo scopo di verificare l'interazione tra diverse unità _software_ per garantire che lavorino in sinergia per compiti specifici.
 
 === Test di integrazione del backend
-I _test_ di integrazione del backend sono finalizzati a verificare il corretto funzionamento delle diverse componenti coinvolte nello _stream processing_ dei dati provenienti dai sensori. 
+I _test_ di integrazione del _backend_ sono finalizzati a verificare il corretto funzionamento delle diverse componenti coinvolte nello _#rifGlossario("stream processing")_ dei dati provenienti dai sensori. 
 
-Per l'esecuzione dei _test_ di integrazione viene utilizzata la libreria Testcontainers per Java, che permette di semplificare la creazione dei _container_ Docker. Questa libreria è stata scelta per la sua facilità d'uso e per la sua capacità di integrarsi con i _framework_ di _testing_ esistenti. Un altro ausilio che è stato utilizzato è la classe `MiniClusterWithClientResource` offerta da i _test utils_ di Flink, che permette di creare un _cluster_ Flink locale solo per l'esecuzione dei _test_.
+Per l'esecuzione dei _test_ di integrazione viene utilizzata la libreria Testcontainers per Java, che permette di semplificare la creazione dei _container_ #rifGlossario("Docker"). Questa libreria è stata scelta per la sua facilità d'uso e per la sua capacità di integrarsi con i _framework_ di _testing_ esistenti. Un altro ausilio che è stato utilizzato è la classe `MiniClusterWithClientResource` offerta da i _test utils_ di #rifGlossario("Flink"), che permette di creare un _cluster_ Flink locale solo per l'esecuzione dei _test_.
+
+#table(
+  columns: 3,
+  align: (center, left, center),
+  fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
+  table.header[*Codice test*][*Descrizione*][*Stato*],
+    [TI-1], [Verificare che il _backend_ si interfacci correttamente con il _database_ testando l'esecuzione di una _query_.], [Verificato],
+    [TI-2], [Verificare che il _job_ di Flink funzioni correttamente testando il _flow_ di un dato del sensore. Questo comincia con la generazione da parte di un _producer_ Kafka e si conclude, alla fine del _processing_, con il salvataggio in _database_ del dato geospaziale e dell'annuncio di cui questo ha provocato la generazione.], [Verificato],
+)
 
 == Test di sistema
 Precedono i _test_ di accettazione e si concentrano sul sistema nel suo complesso, assicurando che vengano soddisfatti tutti i requisiti _software_ stabiliti e tracciati dal documento di Analisi dei Requisiti.
@@ -549,12 +563,12 @@ Precedono i _test_ di accettazione e si concentrano sul sistema nel suo compless
   fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
   table.header[*Codice test*][*Descrizione*][*Requisito*][*Stato*],
     [TS-1], [Verificare che ciascun sensore invii in modo corretto i propri dati di identificazione e di localizzazione geospaziale, a intervalli di tempo regolari.], [ROF-1], [Verificato],
-    [TS-2], [Verificare che la _dashboard_ sia accessibile solo previa autenticazione da parte dell'amministratore con le proprie credenziali.], [ROF-2], [Verificato],
+    [TS-2], [Verificare che la _#rifGlossario("dashboard")_ sia accessibile solo previa autenticazione da parte dell'amministratore con le proprie credenziali.], [ROF-2], [Verificato],
     [TS-3], [Verificare che l'amministratore abbia fornito un indirizzo _e-mail_ per procedere con l'autenticazione.], [ROF-3], [Verificato],
     [TS-4], [Verificare che l'amministratore abbia fornito una password per procedere con l'autenticazione.], [ROF-4], [Verificato],
     [TS-5], [Verificare che, se l'amministratore inserisce almeno una credenziale errata, l'autenticazione fallisca e venga ritornato un messaggio di errore.], [ROF-5], [Verificato],
     [TS-6], [Verificare che l'amministratore possa visualizzare sulla _dashboard_ principale una mappa geografica.], [ROF-6], [Verificato], // dubbio su "dashboard principale"
-    [TS-7], [Verificare che l'amministratore possa visualizzare, tramite dei _marker_ sulla mappa geografica, la posizione di tutti i punti di interesse.], [ROF-7], [Verificato],
+    [TS-7], [Verificare che l'amministratore possa visualizzare, tramite dei _#rifGlossario("marker")_ sulla mappa geografica, la posizione di tutti i punti di interesse.], [ROF-7], [Verificato],
     [TS-8], [Verificare che l'amministratore possa visualizzare sulla mappa il percorso eseguito da ciascun noleggio attivo in quel momento.], [ROF-8], [Verificato],
     [TS-9], [Verificare che l'amministratore possa visualizzare, lungo il percorso di ciascun noleggio attivo, un _marker_ specifico se quella posizione ricevuta dal sensore ha provocato una richiesta di generazione annuncio e questa ha avuto successo, ovvero l'utente è stato ritenuto interessato e quindi ha ricevuto l'annuncio.], [ROF-9], [Verificato],
     [TS-10], [Verificare che l'amministratore possa visualizzare, lungo il percorso di ciascun noleggio attivo, un _marker_ specifico se quella posizione ricevuta dal sensore ha provocato una richiesta di generazione annuncio e questa non ha avuto successo, ovvero l'utente non è stato ritenuto interessato e quindi non ha ricevuto l'annuncio.], [ROF-10], [Verificato],
@@ -575,7 +589,7 @@ Precedono i _test_ di accettazione e si concentrano sul sistema nel suo compless
     [TS-25], [Verificare che l'amministratore, interagendo nuovamente con il _marker_ di un annuncio non generato, possa chiudere il messaggio contenente le informazioni relative alla mancata generazione di quell'annuncio.], [ROF-25], [Verificato],
     [TS-26], [Verificare che l'amministratore possa spostare la visuale della mappa geografica visualizzata interagendo con la stessa.], [ROF-26], [Verificato],
     [TS-27], [Verificare che l'amministratore, interagendo con la mappa geografica visualizzata, possa fare _zoom in_ e _zoom out_ sulla visuale.], [ROF-27], [Verificato],
-    [TS-28], [Verificare che esista almeno un generatore di dati GPS che simuli il comportamento di un sensore che interagisce col sistema.], [ROF-28], [Verificato],
+    [TS-28], [Verificare che esista almeno un generatore di dati #rifGlossario("GPS") che simuli il comportamento di un sensore che interagisce col sistema.], [ROF-28], [Verificato],
     [TS-29], [Verificare che il generatore di dati GPS generi dei percorsi realistici, ovvero che seguono vie o strade percorribili.], [ROF-29], [Verificato],
     [TS-30], [Verificare che l'amministratore possa accedere dalla _dashboard_ alla sezione dedicata allo storico degli annunci.], [RDF-1], [Verificato],
     [TS-31], [Verificare che l'amministratore possa visualizzare, nella sezione dedicata allo storico degli annunci, l'elenco degli annunci generati dal sistema.], [RDF-2], [Verificato],
@@ -595,15 +609,15 @@ Precedono i _test_ di accettazione e si concentrano sul sistema nel suo compless
     [TS-45], [Verificare che l'amministratore possa filtrare gli annunci visualizzati nello storico in base al nome del punto di interesse associato all'annuncio.], [RDF-15], [Verificato],
     [TS-46], [Verificare che l'amministratore possa filtrare gli annunci visualizzati nello storico in base alla data in cui sono stati generati, selezionando un intervallo di date.], [RDF-16], [Verificato],
     [TS-47], [Verificare che l'amministratore possa filtrare gli annunci visualizzati nello storico in base all'orario in cui sono stati generati, selezionando una fascia oraria.], [RDF-17], [Verificato],
-    [TS-48], [Verificare che l'amministratore possa accedere dalla _dashboard_ alla sezione dedicata ai grafici statistici.], [RFF-1], [Non implementato],
-    [TS-49], [Verificare che l'amministratore possa visualizzare, nella sezione dedicata ai grafici statistici, un grafico per ciascuna analisi dati.], [RFF-2], [Non implementato],
-    [TS-50], [Verificare che ciascun grafico visualizzato abbia un titolo che ne descriva efficacemente il contenuto.], [RFF-3], [Non implementato],
-    [TS-51], [Verificare che in ciascun grafico visualizzato l'asse delle ascisse e l'asse delle ordinate siano correttamente etichettati e completi di tutti i valori.], [RFF-4], [Non implementato],
-    [TS-52], [Verificare che ciascun grafico visualizzato stia rappresentando lo specifico _set_ di dati previsto per quel grafico.], [RFF-5], [Non implementato],
-    [TS-53], [Verificare che l'amministratore possa visualizzare, nella sezione dedicata ai grafici statistici, un grafico che mostri il numero di annunci generati dal sistema nelle ultime 24 ore, con granularità oraria.], [RFF-6], [Non implementato],
-    [TS-54], [Verificare che l'amministratore possa visualizzare, nella sezione dedicata ai grafici statistici, un grafico che riporti il numero medio di noleggi che vengono effettuati in ciascun mese dell'anno.], [RFF-7], [Non implementato],
-    [TS-55], [Verificare che l'amministratore, dalla sezione dedicata ai grafici statistici, possa selezionare un punto di interesse e contestualmente visualizzarne i relativi grafici.], [RFF-8], [Non implementato],
-    [TS-56], [Verificare che l'amministratore possa visualizzare il grafico che, per un certo punto di interesse, mette a confronto il numero di annunci generati con il numero di annunci non generati nell'ultima settimana.], [RFF-9], [Non implementato],
+    [TS-48], [Verificare che l'amministratore possa accedere dalla _dashboard_ alla sezione dedicata ai grafici statistici.], [RFF-1], [Verificato],
+    [TS-49], [Verificare che l'amministratore possa visualizzare, nella sezione dedicata ai grafici statistici, un grafico per ciascuna analisi dati.], [RFF-2], [Verificato],
+    [TS-50], [Verificare che ciascun grafico visualizzato abbia un titolo che ne descriva efficacemente il contenuto.], [RFF-3], [Verificato],
+    [TS-51], [Verificare che in ciascun grafico visualizzato l'asse delle ascisse e l'asse delle ordinate siano correttamente etichettati e completi di tutti i valori.], [RFF-4], [Verificato],
+    [TS-52], [Verificare che ciascun grafico visualizzato stia rappresentando lo specifico _set_ di dati previsto per quel grafico.], [RFF-5], [Verificato],
+    [TS-53], [Verificare che l'amministratore possa visualizzare, nella sezione dedicata ai grafici statistici, un grafico che mostri il numero di annunci generati dal sistema nelle ultime 24 ore, con granularità oraria.], [RFF-6], [Verificato],
+    [TS-54], [Verificare che l'amministratore possa visualizzare, nella sezione dedicata ai grafici statistici, un grafico che riporti il numero medio di noleggi che vengono effettuati in ciascun mese dell'anno.], [RFF-7], [Verificato],
+    [TS-55], [Verificare che l'amministratore, dalla sezione dedicata ai grafici statistici, possa selezionare un punto di interesse e contestualmente visualizzarne i relativi grafici.], [RFF-8], [Verificato],
+    [TS-56], [Verificare che l'amministratore possa visualizzare il grafico che, per un certo punto di interesse, mette a confronto il numero di annunci generati con il numero di annunci non generati nell'ultima settimana.], [RFF-9], [Verificato],
     [TS-57], [Verificare che l'interfaccia creata per la visualizzazione degli annunci in tempo reale lato utente fruitore del servizio di noleggio sia funzionante.], [RFF-10], [Non implementato],
   )
 
@@ -618,10 +632,10 @@ Condotti insieme all'azienda proponente, servono a garantire che il prodotto fin
     align: (center, left, center),
     columns: 3,
     fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
-    table.header[*Codice _test_*][*Descrizione*][*Stato*],
+    table.header[*Codice test*][*Descrizione*][*Stato*],
     [TA-01], [Verificare che all'apertura il prodotto mostri una mappa che visualizza in tempo reale i percorsi compiuti dai mezzi in movimento.], [Verificato],
     [TA-02], [Verificare che il prodotto supporti la generazione tramite LLM di annunci personalizzati per ogni utente in base ai suoi dati di profilazione.], [Verificato],
-    [TA-03], [Verificare che il prodotto supporti la visualizzazione dei _#rifGlossario("marker")_ corrispondenti ai mezzi con noleggio attivi all'interno della mappa.], [Verificato],
+    [TA-03], [Verificare che il prodotto supporti la visualizzazione dei _marker_ corrispondenti ai mezzi con noleggio attivi all'interno della mappa.], [Verificato],
     [TA-04], [Verificare che il prodotto supporti la visualizzazione dei _marker_ corrispondenti ai punti di interesse all'interno della mappa.], [Verificato],
     [TA-05], [Verificare che il prodotto supporti la visualizzazione dei _marker_ corrispondenti agli annunci generati all'interno della mappa.], [Verificato],
     [TA-06], [Verificare che il prodotto supporti la visualizzazione dei _marker_ corrispondenti alle mancate generazioni di annunci all'interno della mappa.], [Verificato],
@@ -631,6 +645,8 @@ Condotti insieme all'azienda proponente, servono a garantire che il prodotto fin
     [TA-10], [Verificare che il prodotto supporti una generazione realistica dei percorsi dei noleggi.], [Verificato],
     [TA-11], [Verificare che il prodotto persista in un _database_ i dati simulati e quelli generati dalla LLM.], [Verificato],
     [TA-12], [Verificare che il prodotto sia fruibile con le ultime versioni dei _browser web_ principali, nello specifico: Google Chrome v134.0.6998.88, Mozilla Firefox v136.0.2, Microsoft Edge v134.0.3124.72 e Safari v18.3.], [Verificato],
+    [TA-13], [Verificare che il prodotto consenta la visualizzazione dei dati relativi agli annunci generati e non generati, prodotti nel corso del tempo, all'interno di una sezione apposita detta "storico".], [Verificato],
+    [TA-14], [Verificare che il prodotto fornisca una sezione dedicata alla visualizzazione di grafici statistici relativi ai dati raccolti.], [Verificato],
   ),
 )
 
