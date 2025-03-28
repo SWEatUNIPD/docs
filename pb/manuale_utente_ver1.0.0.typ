@@ -2,7 +2,7 @@
 #import "@preview/treet:0.1.1": *
 
 #show: content => verbale(
-  data: "28 marzo 2025",
+  data: "27 marzo 2025",
   destinatari: ("Gruppo SWE@", "Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "Sync Lab S.r.L."),
   responsabile: "Riccardo Milan",
   redattori: (
@@ -17,7 +17,7 @@
   uso: "Esterno",
   versioni: (
     "1.0.0",
-    "28/03/2025",
+    "27/03/2025",
     "Davide Marin",
     "Andrea Precoma",
     [
@@ -62,12 +62,12 @@ La prima occorrenza di un termine definito all'interno del glossario presente al
 == Riferimenti
 === Riferimenti normativi
 - Norme di Progetto (v2.0.0) \ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/norme_di_progetto_ver2.0.0.pdf")
-- Regolamento del progetto didattico, _slide_ 23 (ultimo accesso 28/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")
-- Capitolato C4 - Sync Lab S.r.l. (ultimo accesso 28/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
+- Regolamento del progetto didattico, _slide_ 23 (ultimo accesso 27/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")
+- Capitolato C4 - Sync Lab S.r.l. (ultimo accesso 27/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
 === Riferimenti informativi
 - Glossario (v2.0.0) \ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/glossario_ver2.0.0.pdf")
-- Capitolato C4 - Sync Lab S.r.l. (ultimo accesso 28/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
-- Guida ufficiale per l'installazione di Docker (ultimo accesso 28/03/2025) \ #formatLink(url: "https://docs.docker.com/engine/install")
+- Capitolato C4 - Sync Lab S.r.l. (ultimo accesso 27/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
+- Guida ufficiale per l'installazione di Docker (ultimo accesso 27/03/2025) \ #formatLink(url: "https://docs.docker.com/engine/install")
 
 
 = Avvio del sistema
