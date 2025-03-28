@@ -1,7 +1,7 @@
 #import "/templates/template.typ": *
 
 #show: content => verbale(
-  data: "26 Marzo 2025",
+  data: "27 Marzo 2025",
   destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "Sync Lab S.r.l.", "Gruppo SWE@"),
   responsabile: "Klaudio Merja",
   redattori: (
@@ -25,7 +25,7 @@
   uso: "Esterno",
   versioni: (
     "2.0.0",
-    "26/03/2025",
+    "27/03/2025",
     "Davide Picello",
     "Andrea Precoma",
     [
@@ -170,16 +170,16 @@ Per evitare eventuali ambiguità e incomprensioni sulla terminologia adottata ne
 viene fornito un Glossario.
 
 La prima occorrenza di un termine definito all'interno del Glossario presente all'interno di un documento viene
-sottolineato e seguito dalla lettera g posta ad apice (e.g. #rifGlossario("termine")).
+sottolineato e seguito dalla lettera g posta ad apice (ad esempio #rifGlossario("termine")).
 
 == Riferimenti
 === Riferimenti normativi
 - Norme di Progetto (v2.0.0)\ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/norme_di_progetto_ver2.0.0.pdf")
-- Regolamento del progetto didattico (ultimo accesso 26/03/2025)\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")
+- Regolamento del progetto didattico (ultimo accesso 27/03/2025)\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")
 === Riferimenti informativi
 - Glossario (v2.0.0)\ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/glossario_ver2.0.0.pdf")
-- Lezione T03 - Il ciclo di vita del software (ultimo accesso 26/03/2025)\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T03.pdf")
-- Lezione T04 - Gestione di progetto (ultimo accesso 26/03/2025)\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T04.pdf")
+- Lezione T03 - Il ciclo di vita del software (ultimo accesso 27/03/2025)\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T03.pdf")
+- Lezione T04 - Gestione di progetto (ultimo accesso 27/03/2025)\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T04.pdf")
 #pagebreak()
 
 = Analisi dei rischi
@@ -1076,7 +1076,7 @@ In seguito alla riunione avvenuta per l'inizio dell'ottavo _sprint_ il _team_ pr
 Il preventivo a finire si attesta a fine progetto a *12.602,50€*, a fronte del preventivo iniziale di 12.740,00€ rientrando quindi nel _budget_.
 
 ==== Tabella finale ore rimanenti per membro
-Il gruppo è riuscito a rispettare l'impegno preso in fase di candidatura, visionabile nel documento #formatLink(label:"dichiarazione impegni e preventivo costi (v1.1.0)", url: "https://sweatunipd.github.io/docs/candidatura/dichiarazione_impegni_e_preventivo_costi_ver1.1.0.pdf"), di dedicare ognuno un totale di 90 ore produttive al progetto. È stata rispettata anche la ripartizione dei ruoli in parti uguali tra tutti i membri del gruppo.
+Il gruppo è riuscito a rispettare l'impegno preso in fase di candidatura, visionabile nel documento #formatLink(label:"dichiarazione impegni e preventivo costi (v1.1.0)", url: "https://sweatunipd.github.io/docs/candidatura/dichiarazione_impegni_e_preventivo_costi_ver1.1.0.pdf"), di dedicare ognuno un massimo di 90 ore produttive al progetto. È stata rispettata anche la ripartizione dei ruoli in parti uguali tra tutti i membri del gruppo.
 
 #rendicontazioneOre(
   (
