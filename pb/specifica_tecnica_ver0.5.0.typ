@@ -16,12 +16,14 @@
   destinatari: ("Gruppo SWE@", "Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "Sync Lab S.r.L."),
   responsabile: "-",
   redattori: (
+    "Andrea Perozzo",
     "Andrea Precoma",
     "Davide Picello",
     "Riccardo Milan",
   ),
   verificatori: (
     "Andrea Perozzo",
+    "Andrea Precoma",
     "Davide Marin",
     "Davide Picello",
     "Klaudio Merja",  
@@ -30,20 +32,29 @@
   titolo: "Specifica Tecnica",
   uso: "Esterno",
   versioni: (
-    "0.4.0",
+    "0.5.0",
     "22/03/2025",
     "Davide Picello",
-    "Riccardo Milan",
-    "Completata sezione \"Stato dei requisiti funzionali\"",
+    "Riccardo Milan\nAndrea Precoma",
+    [- Completata sezione "Stato dei requisiti funzionali"],
     
     
-    "0.3.0",
+    "0.4.0",
     "21/03/2025",
     "Riccardo Milan",
     "Davide Marin\nDavide Picello",
     [
       - Aggiunta sezione Grafana
     ],
+
+    "0.3.0",
+    "20/03/2025",
+    "Andrea Perozzo",
+    "Andrea Precoma\nKlaudio Merja",
+    [
+      - Redatta sezione Database
+    ],
+
     "0.2.0",
     "18/03/2025",
     "Andrea Precoma",
@@ -233,7 +244,49 @@ container.bind(Simulator).toSelf().inSingletonScope();
 
 == Database
 === PostgreSQL
-=== PostGIS
+Per la gestione dei dati relazionali è stato scelto PostgreSQL, un DBMS che offre affidabilità e una certa flessibilità per l'estensione tramite _plugin_ ed estensioni. Nel nostro contesto, PostgreSQL:
+
+- Viene eseguito all'interno di un container Docker (immagine postgis/postgis, vedere sezione #link(<2.2.2>)[2.2.2]).
+- È configurato tramite docker-compose (nel file `compose.yml`) con il _mapping_ della porta 5432:5432, utente e _password_ specificati nelle variabili d'ambiente.
+- All'avvio esegue automaticamente lo _script_ `create.sql` che crea lo schema del _database_ (tabelle, relazioni, ecc.) secondo le esigenze del progetto.
+
+Nel _file_ `create.sql`:
+
+- Vengono definite tutte le relazioni fondamentali del sistema (ad esempio _users_, _rents_, _positions_, _points_of_interest_, ecc.).
+- Vengono impostati i vincoli di integrità referenziale (_primary key_, _foreign key_, _on delete cascade_, ecc.).
+- Ove opportuno, si creano tipi enumerati (ad esempio per le categorie di un punto di interesse), oppure si definiscono relazioni 1:N, 1:1 e N:N necessarie al dominio applicativo.
+
+=== PostGIS <2.2.2>
+Per l'elaborazione e l'archiviazione di dati geografici si fa uso dell'estensione PostGIS, la quale aggiunge a PostgreSQL il supporto per tipi, funzioni e indici spaziali.
+
+In particolare l'immagine Docker utilizzata è postgis/postgis. Oltre a #box[PostgreSQL] questa contiene già la libreria PostGIS e le relative dipendenze. Questo _setup_ permette, nel nostro caso, di:
+
+- Persistere/Memorizzare le coordinate geografiche (latitudine e longitudine) dei punti di interesse e delle posizioni trasmesse in tempo reale da ogni noleggio attivo.
+- Effettuare _query_ geospaziali all'interno del _database_ per individuare i potenziali punti di interesse rispetto ad una determinata posizione, entro un determinato _range_.
+
+=== Struttura del database
+
+==== Diagramma ER
+
+Di seguito viene mostrata la struttura del _database_:
+
+#v(20pt)
+#figure(
+  image("../assets/diagrams/ER-diagram.png"),
+  caption: [Diagramma ER],
+)
+
+==== Scelte progettuali
+
+Alcune scelte progettuali, apparentemente ridondanti, sono state adottate per soddisfare specifiche esigenze, in particolare per strumenti come Grafana.
+
+- *Chiavi primarie composte:* La tabella `positions` utilizza una chiave primaria composta da `time_stamp` e `rent_id`. Questo garantisce l'univocità di ogni posizione registrata per un noleggio. Nella tabella `advertisements`, `position_time_stamp` e `position_rent_id` fungono da chiavi esterne per collegare un annuncio alla posizione di un noleggio.
+
+- *Scelta delle chiavi primarie:* La tabella `points_of_interest` utilizza `latitude` e `longitude` come chiavi primarie per garantire che ogni punto di interesse sia univocamente identificabile in base alla sua posizione. Questo evita la creazione di ID artificiali e semplifica l'integrazione con strumenti GIS e di analisi spaziale. Tuttavia, in altre tabelle come `rents` o `advertisements`, è stato mantenuto un ID univoco separato per facilitare la visualizzazione e l'interazione con i dati nell'interfaccia di Grafana.
+
+- *Ripetizione di attributi per _performance_ e analisi dati:* Alcuni attributi, come `latitude_poi` e `longitude_poi`, sono replicati in più tabelle (ad esempio, `advertisements` e `poi_hours`) poiché fanno parte della chiave primaria composta della tabella `points_of_interest`. Questa ridondanza è necessaria per mantenere l'integrità referenziale e la coerenza dei dati. Per ottimizzare le _query_ geospaziali, è stato implementato un indice spaziale (`idx_points_of_interest_location`) sulla posizione dei punti di interesse.
+
+In conclusione, alcune scelte apparentemente ridondanti sono state adottate con lo scopo di migliorare la scalabilità, la velocità di interrogazione dei dati e la compatibilità con strumenti di analisi esterni.
 
 == Interfaccia amministratore
 L'interfaccia fornita dal _software_ deve permettere all'amministratore di visualizzare la mappa con i punti di interesse, i sensori che si muovono e gli eventuali annunci generati. Inoltre deve fornire una visualizzazione per lo storico degli annunci e una per entrare nel dettaglio di un singolo annuncio.
@@ -426,9 +479,10 @@ container
 container.bind(Simulator).toSelf().inSingletonScope();
 ```
 
-// FUNCTIONAL REQUIRIMETS //
+#pagebreak()
+
 = Stato dei requisiti funzionali
-nella seguente tabella verranno riportati i requisiti funzionali individuati durante l'Analisi dei Requisiti ed il loro stato.
+Nella seguente tabella verranno riportati i requisiti funzionali individuati durante l'Analisi dei Requisiti ed il loro stato.
 
 In particolare per ogni requisito verrà riportato:
 
@@ -495,109 +549,88 @@ Per una spiegazione più approfondita si rimanda al documento `analisi_dei_requi
   [L'amministratore, per ogni noleggio attivo che viene erogato, deve poter visualizzare il tracciato percorso dal mezzo a noleggio attraverso la mappa geografica.],
   [Soddisfatto],
   
-  [ROF-9],
-  [L'amministratore deve poter visualizzare un _marker_ sulla mappa in corrispondenza di un dato GPS trasmesso dal sensore nel momento in cui:
-    - non è in prossimità di un punto di interesse
-    - è già stata richiesta in precedenza per l'utente del mezzo la generazione di un annuncio per lo stesso punto di interesse.],
-  [Soddisfatto],
   
-  [ROF-10],
+  [ROF-9],
   [L'amministratore deve poter visualizzare un _marker_ in corrispondenza di una posizione, in prossimità di un punto di interesse, che ha causato la generazione di un annuncio tramite LLM per l'utente del mezzo.],
   [Soddisfatto],
   
-  [ROF-11],
+  [ROF-10],
   [L'amministratore deve poter visualizzare un _marker_ in corrispondenza di una posizione, in prossimità di un punto di interesse, dove la LLM non ha generato un annuncio perché ha valutato l'utente come non interessato al punto di interesse in base alla sua profilazione.],
   [Soddisfatto],
   
-  [ROF-12],
+  [ROF-11],
   [L'amministratore deve poter visualizzare tramite un'interazione con il _marker_ (come un _hover_ o un _click_) le informazioni relative al punto di interesse.],
   [Soddisfatto],
   
-  [ROF-13],
+  [ROF-12],
   [L'amministratore deve poter visualizzare dalle informazioni fornite tramite l'interazione con il _marker_ del punto di interesse il nome dello stesso.],
   [Soddisfatto],
   
-  [ROF-14],
+  [ROF-13],
   [L'amministratore deve poter visualizzare, dalle informazioni fornite tramite interazione con il _marker_ del punto di interesse, la categoria di esercizio commerciale (e.g. alimentare, sportivo, etc.).],
   [Soddisfatto],
   
-  [ROF-15],
+  [ROF-14],
   [L'amministratore deve poter visualizzare le informazioni relative all'annuncio generato tramite l'interazione con un _marker_ di generazione annuncio.],
   [Soddisfatto],
   
-  [ROF-16],
+  [ROF-15],
   [L'amministratore deve poter visualizzare il nome del punto di interesse legato all'annuncio dalle informazioni visualizzate tramite l'interazione con un _marker_ di generazione annuncio.],
   [Soddisfatto],
   
-  [ROF-17],
+  [ROF-16],
   [L'amministratore deve poter visualizzare l'_e-mail_ dell'utente destinatario dalle informazioni visualizzate tramite l'interazione con un _marker_ di generazione annuncio.],
   [Soddisfatto],
   
-  [ROF-18],
+  [ROF-17],
   [L'amministratore deve poter visualizzare la data e l'ora di generazione dell'annuncio dalle informazioni visualizzate tramite l'interazione con un _marker_ di generazione annuncio.],
   [Soddisfatto],
   
-  [ROF-19],
+  [ROF-18],
   [L'amministratore deve poter visualizzare l'annuncio dalle informazioni visualizzate tramite l'interazione con un _marker_ di generazione annuncio.],
   [Soddisfatto],
   
-  [ROF-20],
+  [ROF-19],
   [L'amministratore deve poter visualizzare la categoria di esercizio commerciale del punto di interesse coinvolto nella generazione dell'annuncio visualizzato tramite un'interazione con un _marker_ di generazione annuncio.],
   [Soddisfatto],
   
-  [ROF-21],
+  [ROF-20],
   [L'amministratore deve poter visualizzare un messaggio con le informazioni di un annuncio non generato, tramite l'interazione con un _marker_ di mancata generazione.],
   [Soddisfatto],
   
-  [ROF-22],
+  [ROF-21],
   [L'amministratore deve poter visualizzare il nome del punto di interesse sul messaggio con le informazioni di un annuncio non generato, tramite l'interazione con un _marker_ di mancata generazione.],
   [Soddisfatto],
   
-  [ROF-23],
+  [ROF-22],
   [L'amministratore deve poter visualizzare l'_e-mail_ dell'utente destinatario sul messaggio con le informazioni di un annuncio non generato, tramite l'interazione con un _marker_ di mancata generazione.],
   [Soddisfatto],
   
-  [ROF-24],
+  [ROF-23],
   [L'amministratore deve poter visualizzare la data e ora di tentata generazione sul messaggio con le informazioni di un annuncio non generato, tramite l'interazione con un _marker_ di mancata generazione.],
   [Soddisfatto],
   
-  [ROF-25],
+  [ROF-24],
   [L'amministratore deve poter chiudere la vista con le informazioni sull'annuncio generato visualizzata sulla mappa tramite l'interazione con un _marker_ di generazione annuncio.],
   [Soddisfatto],
   
-  [ROF-26],
+  [ROF-25],
   [L'amministratore deve poter chiudere il messaggio di annuncio non generato visualizzato sulla mappa tramite l'interazione con un _marker_ di mancata generazione.],
   [Soddisfatto],
   
-  [ROF-27],
+  [ROF-26],
   [L'amministratore deve essere in grado di interagire con la mappa per spostare il centro della visuale.],
   [Soddisfatto],
   
-  [ROF-28],
+  [ROF-27],
   [L'amministratore deve essere in grado di modificare l'ampiezza della visuale sulla mappa. In particolare bisogna permettere l'ampliamento e il restringimento del campo visivo che l'amministratore ha sul territorio visualizzato all'interno della mappa.],
   [Soddisfatto],
   
-  [ROF-29],
-  [L'amministratore deve poter ricevere il messaggio di errore "Il _server_ non risponde" nel caso in cui il sistema non risponda o smetta di funzionare.],
-  [Soddisfatto],
-  
-  [ROF-30],
-  [L'amministratore deve poter ricevere il messaggio di errore "Connessione persa" nel caso in cui la connessione con il sistema venga persa o sia scarsa.],
-  [Soddisfatto],
-  
-  [ROF-31],
-  [L'amministratore deve poter ricevere il messaggio di errore "Sensore malfunzionante" nel caso in cui il sensore non sia in grado di trasmettere i dati di localizzazione in maniera corretta o non trasmetta dopo un determinato intervallo di tempo.],
-  [Soddisfatto],
-  
-  [ROF-32],
-  [L'amministratore deve poter visualizzare il messaggio di errore "Generazione impossibile dell'annuncio" nel caso in cui il sistema non sia in grado di stabilire una connessione e comunicare con il servizio di LLM, non permettendo così la trasmissione e la ricezione di dati da parte di quest'ultimo.],
-  [Soddisfatto],
-  
-  [ROF-33],
+  [ROF-28],
   [Creazione di un generatore di dati GPS per simulare il funzionamento di un sensore che interagisce col sistema.],
   [Soddisfatto],
   
-  [ROF-34],
+  [ROF-29],
   [Il generatore deve generare dei percorsi che siano realistici, ovvero che seguano le varie strade, vie e piste ciclabili che una bicicletta può percorrere.],
   [Soddisfatto],
 
@@ -658,19 +691,19 @@ Per una spiegazione più approfondita si rimanda al documento `analisi_dei_requi
 
   [RDF-14],
   [L'amministratore deve essere in grado, tramite un sistema di filtraggio, di visualizzare gli annunci dello storico per _e-mail_ dell'utente destinatario dell'annuncio.],
-  [VERIFICARE],
+  [Soddisfatto],
 
   [RDF-15],
   [L'amministratore deve essere in grado, tramite un sistema di filtraggio, di visualizzare gli annunci dello storico per nome del punto di interesse.],
-  [VERIFICARE],
+  [Soddisfatto],
 
   [RDF-16],
   [L'amministratore deve essere in grado, tramite un sistema di filtraggio, di visualizzare gli annunci dello storico generati in un certo intervallo di date.],
-  [VERIFICARE],
+  [Soddisfatto],
 
   [RDF-17],
   [L'amministratore deve essere in grado, tramite un sistema di filtraggio, di visualizzare gli annunci dello storico generati in una determinata fascia oraria.],
-  [VERIFICARE],
+  [Soddisfatto],
 
   table.cell(colspan: 3)[Facoltativi],
 
