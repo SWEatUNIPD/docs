@@ -2,7 +2,7 @@
 #import "@preview/treet:0.1.1": *
 
 #show: content => verbale(
-  data: "27 marzo 2025",
+  data: "28 marzo 2025",
   destinatari: ("Gruppo SWE@", "Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "Sync Lab S.r.L."),
   responsabile: "Riccardo Milan",
   redattori: (
@@ -17,7 +17,7 @@
   uso: "Esterno",
   versioni: (
     "1.0.0",
-    "27/03/2025",
+    "28/03/2025",
     "Davide Marin",
     "Andrea Precoma",
     [
@@ -62,12 +62,12 @@ La prima occorrenza di un termine definito all'interno del glossario presente al
 == Riferimenti
 === Riferimenti normativi
 - Norme di Progetto (v2.0.0) \ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/norme_di_progetto_ver2.0.0.pdf")
-- Regolamento del progetto didattico, _slide_ 23 (ultimo accesso 27/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")
-- Capitolato C4 - Sync Lab S.r.l. (ultimo accesso 27/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
+- Regolamento del progetto didattico, _slide_ 23 (ultimo accesso 28/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")
+- Capitolato C4 - Sync Lab S.r.l. (ultimo accesso 28/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
 === Riferimenti informativi
 - Glossario (v2.0.0) \ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/glossario_ver2.0.0.pdf")
-- Capitolato C4 - Sync Lab S.r.l. (ultimo accesso 27/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
-- Guida ufficiale per l'installazione di Docker (ultimo accesso 27/03/2025) \ #formatLink(url: "https://docs.docker.com/engine/install")
+- Capitolato C4 - Sync Lab S.r.l. (ultimo accesso 28/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
+- Guida ufficiale per l'installazione di Docker (ultimo accesso 28/03/2025) \ #formatLink(url: "https://docs.docker.com/engine/install")
 
 
 = Avvio del sistema
@@ -81,7 +81,7 @@ Una volta configurato l'ambiente locale si può procedere al _download_ della _r
 In alternativa, se si ha installato #rifGlossario("Git"), è possibile "clonare" la _repository_ posizionandosi sulla destinazione desiderata ed eseguendo il comando \ `git clone https://github.com/SWEatUNIPD/NearYou.git`.
 
 == Principali file
-=== File docker-compose.yml
+=== File compose.yml
 _File_ di configurazione utilizzato per definire le proprietà dei servizi. Viene utilizzato per avviare e, nel caso si eseguisse per la prima volta, creare i _container_ contenenti i servizi descritti.
 - *kafka*: _#rifGlossario("data broker")_ con immagine `apache/kafka:4.0.0`.
 - *postgis*: _#rifGlossario("database")_ in #rifGlossario("PostgreSQL") con installato l'estensione #rifGlossario("PostGIS") per gli incroci geospaziali con immagine `postgis/postgis:17-3.5`.
@@ -100,7 +100,7 @@ Di seguito i passi per avviare correttamente il sistema. Le stesse istruzioni so
 Per maggiori informazioni riguardo ai _container_ e per visualizzare lo stato degli stessi è possibile eseguire il comando \ `docker ps -a`.
 
 == Istruzioni per lo spegnimento del sistema
-Si ricorda che per eseguire qualunque dei seguenti comandi è necessario posizionarsi col terminale nella cartella dove è presente il _file_ `docker-compose.yml`.
+Si ricorda che per eseguire qualunque dei seguenti comandi è necessario posizionarsi col terminale nella cartella scaricata dalla _repository_.
 
 Per interrompere l'esecuzione dell'ambiente avviato secondo le istruzioni descritte nella #link(<avvio>)[sez 2.4] è sufficiente eseguire il comando \ `docker compose down -v` \ Per riavviare il sistema è sufficiente eseguire il comando \ `docker compose up -d`
 
@@ -110,7 +110,7 @@ Se si vuole solo mettere in pausa il sistema in modo da riprenderlo più rapidam
 Prima di collegarsi ai servizi è richiesto di aver soddisfatto i requisiti tecnici (#link(<req>)[sez. 2.1]), di aver scaricato la _repository_ (#link(<download>)[sez 2.2]) e di aver avviato correttamente il sistema (#link(<avvio>)[sez 2.4]).
 
 == Dashboard dell'amministratore
-Collegarsi all'indirizzo `localhost:3000` (oppure `127.0.0.1:3000`) e inserire le credenziali "admin" per _username_ e _password_.
+Collegarsi all'indirizzo `localhost:3000` (oppure `128.0.0.1:3000`) e inserire le credenziali "admin" per _username_ e _password_.
 
 #figure(
   image("../assets/img/Manuale/grafana-login.png", width: 50%),
@@ -134,7 +134,7 @@ Una volta effettuato l'accesso a Grafana tramite opportuna pagina di accesso, si
 In questa schermata è possibile effettuare le classiche operazioni interattive con una mappa, come "zoom in" e "zoom out" tramite rotella del _mouse_ e anche spostare a proprio piacimento la porzione di mappa visualizzata tramite "_click_ and drag" con il tasto sinistro del _mouse_.
 
 All'interno della mappa sono visualizzabili immediatamente tutti i punti di interesse, in seguito riferiti dall'acronimo POI, presenti in _database_ per la zona geografica visualizzata, caratterizzati da un _#rifGlossario("marker")_ rappresentante un negozio di colore nero.
-È possibile interagire con questi _marker_ sia tramite un _hoover_, sia tramite un _click_ con il pulsante sinistro del _mouse_; interagendo con essi si apre una finestra in corrispondenza del _marker_ premuto, nella quale sono presenti i dati relativi a quel POI. Per chiudere la finestra di dettaglio è possibile premere sul simbolo "X" in alto a destra della stessa, oppure cliccare in un punto qualsiasi al di fuori della finestra.
+È possibile interagire con questi _marker_ sia tramite un _hover_, sia tramite un _click_ con il pulsante sinistro del _mouse_; interagendo con essi si apre una #rifGlossario("popover") in corrispondenza del _marker_ premuto, nella quale sono presenti i dati relativi a quel POI. Per chiudere il _popover_ di dettaglio è possibile premere sul simbolo "X" in alto a destra della stessa, oppure cliccare in un punto qualsiasi al di fuori del _popover_.
 
 #figure(
   image("../assets/img/Manuale/dettaglio-POI-click.png", width: 50%),
@@ -153,14 +153,18 @@ Nel caso un utente di un noleggio passi nelle prossimità di un POI, è possibil
 )
 #v(5pt)
 
-Con entrambi i tipi di _marker_ è possibile interagire effettuando un _click_ col pulsante sinistro del _mouse_. Sopra di essi si apre una finestra in corrispondenza del _marker_ premuto, nella quale sono presenti i dati relativi al noleggio, al POI e il testo dell'annuncio se generato, altrimenti il motivo per cui non è stato prodotto.
-Come per la finestra di dettaglio dei POI, è possibile chiudere la finestra di dettaglio degli annunci premendo sul simbolo "X", oppure cliccare in un punto qualsiasi al di fuori della finestra.
+Con entrambi i tipi di _marker_ è possibile interagire effettuando un _click_ col pulsante sinistro del _mouse_. Sopra di essi si apre un _popover_ in corrispondenza del _marker_ premuto, nella quale sono presenti i dati relativi al noleggio, al POI e il testo dell'annuncio se generato, altrimenti il motivo per cui non è stato prodotto.
+Come per il _popover_ di dettaglio dei POI, è possibile chiudere il _popover_ di dettaglio degli annunci premendo sul simbolo "X", oppure cliccare in un punto qualsiasi al di fuori della _popover_.
+
 
 #figure(
   image("../assets/img/Manuale/annuncio_marker_dettaglio.png", width: 85%),
   caption: [Dettagli dell'annuncio relativo al _marker_ selezionato], 
 )
 #v(5pt)
+
+Nel caso di un annuncio generato, è possibile visualizzare i dettagli di quest'ultimo premendo sul _link_ "Dettagli annuncio" in fondo al _popover_. Questo apre una nuova finestra contenente tutti i dettagli dell'annuncio generato, similmente a come viene mostrato nella #link(<lista_dashboard>)[sez. 4.2] (figura 10).
+
 
 == Storico degli annunci generati <lista_dashboard>
 È possibile visualizzare anche sotto forma di lista tutti gli annunci generati dal #rifGlossario("LLM").
@@ -217,19 +221,19 @@ Questo apre la visualizzazione dei grafici statistici degli annunci.
 #v(5pt)
 
 All'interno della pagina sono presenti tre grafici:
-1. Grafico a torta che mostra la percentuale di annunci generati e quelli non generati dal LLM per il POI selezionato. Per cambiare il POI di interesse, è sufficiente selezionare quello desiderato dal menu a tendina in alto a sinistra.
+1. Grafico a torta che mostra il numero di annunci generati e quelli non generati dal LLM per il POI selezionato. Per cambiare il POI di interesse, è sufficiente selezionare quello desiderato dal menu a tendina in alto a sinistra.
 
 #figure(
   image("../assets/img/Manuale/grafici_menu_tendina.png", width: 50%),
   caption: [Selezione POI da menu a tendina], 
 )
 #v(5pt)
-2. Grafico a linee che mostra il numero di annunci generati per ogni ora del giorno. I valori contenuti all'interno di questo grafico fanno riferimento al totale degli annunci generati.
-3. Grafico a barre che mostra la media dei noleggi attivi per ogni mese dell'anno.  I valori contenuti all'interno di questo grafico fanno riferimento al totale degli annunci generati.
+2. Grafico a linee che mostra il numero di annunci generati dal sistema nelle ultime 24 ore, con granularità oraria. I valori contenuti all'interno di questo grafico fanno riferimento al totale degli annunci generati.
+3. Grafico a barre che mostra il numero medio di noleggi che vengono effettuati in ciascun mese dell’anno, risultato della media di noleggi effettuati in quel mese nel corso degli anni. I valori contenuti all'interno di questo grafico fanno riferimento al totale dei noleggi.
 
 
 
-Per visualizzare le misure esatte di ogni punto dei grafici, è sufficiente effettuare un _hover_ del cursore del _mouse_ al di sopra del punto di interesse. Questo apre una piccola finestra contenente il valore preciso di tale punto. L'operazione è possibile su tutti i tipi di grafico. 
+Per visualizzare le misure esatte di ogni punto dei grafici, è sufficiente effettuare un _hover_ del cursore del _mouse_ al di sopra del punto di interesse. Questo apre una _popover_ contenente il valore preciso di tale punto. L'operazione è possibile su tutti i tipi di grafico. 
 
 #figure(
   image("../assets/img/Manuale/dettaglio_grafico.png", width: 55%),
