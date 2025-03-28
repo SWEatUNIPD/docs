@@ -134,7 +134,7 @@ Una volta effettuato l'accesso a Grafana tramite opportuna pagina di accesso, si
 In questa schermata è possibile effettuare le classiche operazioni interattive con una mappa, come "zoom in" e "zoom out" tramite rotella del _mouse_ e anche spostare a proprio piacimento la porzione di mappa visualizzata tramite "_click_ and drag" con il tasto sinistro del _mouse_.
 
 All'interno della mappa sono visualizzabili immediatamente tutti i punti di interesse, in seguito riferiti dall'acronimo POI, presenti in _database_ per la zona geografica visualizzata, caratterizzati da un _#rifGlossario("marker")_ rappresentante un negozio di colore nero.
-È possibile interagire con questi _marker_ sia tramite un _hover_, sia tramite un _click_ con il pulsante sinistro del _mouse_; interagendo con essi si apre una #rifGlossario("popover") in corrispondenza del _marker_ premuto, nella quale sono presenti i dati relativi a quel POI. Per chiudere il _popover_ di dettaglio è possibile premere sul simbolo "X" in alto a destra della stessa, oppure cliccare in un punto qualsiasi al di fuori del _popover_.
+È possibile interagire con questi _marker_ sia tramite un _hover_, sia tramite un _click_ con il pulsante sinistro del _mouse_; interagendo con essi si apre un #rifGlossario("popover") in corrispondenza del _marker_ premuto, nella quale sono presenti i dati relativi a quel POI. Per chiudere il _popover_ di dettaglio è possibile premere sul simbolo "X" in alto a destra della stessa, oppure cliccare in un punto qualsiasi al di fuori del _popover_.
 
 #figure(
   image("../assets/img/Manuale/dettaglio-POI-click.png", width: 50%),
@@ -154,7 +154,7 @@ Nel caso un utente di un noleggio passi nelle prossimità di un POI, è possibil
 #v(5pt)
 
 Con entrambi i tipi di _marker_ è possibile interagire effettuando un _click_ col pulsante sinistro del _mouse_. Sopra di essi si apre un _popover_ in corrispondenza del _marker_ premuto, nella quale sono presenti i dati relativi al noleggio, al POI e il testo dell'annuncio se generato, altrimenti il motivo per cui non è stato prodotto.
-Come per il _popover_ di dettaglio dei POI, è possibile chiudere il _popover_ di dettaglio degli annunci premendo sul simbolo "X", oppure cliccare in un punto qualsiasi al di fuori della _popover_.
+Come per il _popover_ di dettaglio dei POI, è possibile chiudere il _popover_ di dettaglio degli annunci premendo sul simbolo "X", oppure cliccare in un punto qualsiasi al di fuori del _popover_.
 
 
 #figure(
@@ -233,7 +233,7 @@ All'interno della pagina sono presenti tre grafici:
 
 
 
-Per visualizzare le misure esatte di ogni punto dei grafici, è sufficiente effettuare un _hover_ del cursore del _mouse_ al di sopra del punto di interesse. Questo apre una _popover_ contenente il valore preciso di tale punto. L'operazione è possibile su tutti i tipi di grafico. 
+Per visualizzare le misure esatte di ogni punto dei grafici, è sufficiente effettuare un _hover_ del cursore del _mouse_ al di sopra del punto di interesse. Questo apre un _popover_ contenente il valore preciso di tale punto. L'operazione è possibile su tutti i tipi di grafico. 
 
 #figure(
   image("../assets/img/Manuale/dettaglio_grafico.png", width: 55%),
