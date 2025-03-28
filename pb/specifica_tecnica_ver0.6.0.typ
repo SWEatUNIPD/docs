@@ -12,7 +12,7 @@
 )
 
 #show: content => verbale(
-  data: "27 marzo 2025",
+  data: "26 marzo 2025",
   destinatari: ("Gruppo SWE@", "Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "Sync Lab S.r.L."),
   responsabile: "Andrea Perozzo",
   redattori: (
@@ -33,10 +33,10 @@
   titolo: "Specifica Tecnica",
   uso: "Esterno",
   versioni: (
-    "1.0.0",
+    "0.8.0",
     "27/03/2025",
     [Klaudio Merja],
-    [Andrea Precoma\ Riccardo Milan],
+    [Andrea Precoma],
     [- Redazione],
     "0.7.0",
     "25/03/2025",
@@ -125,6 +125,7 @@ La prima occorrenza di un termine definito all'interno del glossario presente al
 - Java _records_ (ultimo accesso in data 25/03/2025) \ #formatLink(url: "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Record.html")
 - Apache Flink - Documentazione relativa agli _async_ I/O per l'accesso ai dati esterni (ultimo accesso in data 25/03/2025) \ #formatLink(url: "https://nightlies.apache.org/flink/flink-docs-master/docs/dev/datastream/operators/asyncio/#async-io-api")
 - Apache Kafka (ultimo accesso in data 25/03/2025) \ #formatLink(url: "https://kafka.apache.org/")
+- Documentazione della classe `ConnectionFactory` - R2DBC (ultimo accesso in data 25/03/2025) \ #formatLink(url: "https://javadoc.io/doc/io.r2dbc/r2dbc-spi/latest/index.html")
 
 #pagebreak(weak: true)
 
@@ -184,69 +185,6 @@ Il seguente diagramma delle classi descrive la struttura del simulatore realizza
 ==== Versione
 La versione di TypeScript utilizzata per lo sviluppo del simulatore è la 5.7.2.
 
-#figure(
-  image("../assets/img/ST/simulator.svg", width: 110%),
-  caption: [Diagramma delle classi del simulatore],
-)
-
-==== Componenti di utilità
-Sfruttando l'aspetto procedurale del linguaggio TypeScript sono state create delle componenti di supporto. Queste non contengono classi o interfacce quindi diventa più efficace descriverle di seguito piuttosto che in un diagramma delle classi.
-- *App*: rappresenta il punto di accesso al servizio e si occupa della creazione di una istanza del simulatore e del suo avvio.
-#codly(header: [*App.ts*])
-```ts
-const simulator = container.get(Simulator);
-simulator.startSimulation();
-```
-
-- *EnvManager*: espone l'accesso per le variabili d'ambiente. Per utilizzarne una è sufficiente importare il modulo e richiamare `env.VAR_NAME`.
-#codly(header: [*config/EnvManager.ts*])
-```ts
-dotenv.config({ path: './src/config/.env' });
-export const env = process.env;
-```
-
-- *InversifyType*: espone una mappa delle componenti da "iniettare" con il _design pattern dependency injection_. In questo modo si evitano i problemi di _mistyping_ dei _serviceId_.
-#codly(header: [*config/InversifyType.ts*])
-```ts
-export const TYPES = {
-  KafkaManager: Symbol.for('KafkaManager'),
-  TrackerList: Symbol.for('TrackerList')
-};
-```
-
-- *Inversify.config*: definisce il _container_ e i _binding_ per risolvere le dipendenze con la libreria #box[Inverisfy].
-#codly(header: [*config/InversifyType.ts*])
-```ts
-export const container = new Container();
-
-container
-  .bind<KafkaManager>(TYPES.KafkaManager)
-  .toDynamicValue(() => {
-    const kafkaConfig: KafkaConfig = {
-      clientId: env.CLIENT_ID,
-      brokers: [env.BROKER ?? 'localhost:9094']
-    };
-    const kafka: Kafka = new Kafka(kafkaConfig);
-    return new KafkaManager(kafka);
-  })
-  .inSingletonScope();
-
-container
-  .bind<Tracker[]>(TYPES.TrackerList)
-  .toDynamicValue((context: ResolutionContext): Tracker[] => {
-    const kafkaManager: KafkaManager = context.get<KafkaManager>(TYPES.KafkaManager);
-    let trackerList: Tracker[] = [];
-    for (let i = 1; i <= Number(env.INIT_TRACKER_COUNT); i++) {
-      const id = i.toString();
-      const tracker: Tracker = new Tracker(id, kafkaManager);
-      trackerList.push(tracker);
-    }
-    return trackerList;
-  });
-
-container.bind(Simulator).toSelf().inSingletonScope();
-```
-
 ==== Librerie e framework
 - *\@mapbox/polyline*
   - *Documentazione*: #formatLink(url: "https://www.npmjs.com/package/@mapbox/polyline") (ultimo accesso in data 26/03/2025)
@@ -292,7 +230,7 @@ La documentazione di Apache Flink riporta l'introduzione in maniera sperimentale
 ==== Librerie e framework
 Per la gestione del progetto e l'automazione delle operazioni di _build_ e _test_ è stato utilizzato Apache Maven. Per avere una visione nel dettaglio di tutte le librerie utilizzate all'interno del nostro sistema, è possibile visionare il _file_ `pom.xml` presente all'interno della cartella `job` del nostro progetto.
 
-La seguente lista è da intendersi generica e non vuole essere un mero elenco di tutte le dipendenze e le librerie presenti all'interno del nostro progetto.//TODO: riportare maven a glossario
+La seguente lista rappresenta le dipendenze più rilevanti presenti all'interno del progetto e non vuole essere un mero elenco di tutte le dipendenze e le librerie presenti all'interno del nostro progetto.//TODO: riportare maven a glossario
 
 - *Apache Flink*
   - *Documentazione*: #formatLink(url: "https://nightlies.apache.org/flink/flink-docs-release-1.20/") (ultimo accesso in data 25/03/2025)
@@ -338,7 +276,7 @@ Il _data broker_ svolge un ruolo fondamentale all'interno del nostro sistema in 
 === Apache Kafka
 Apache Kafka è una piattaforma di _streaming_ di dati. Progettato per essere scalabile, _fault-tolerant_ e ad avere elevate prestazioni, viene utilizzato per la gestione dei dati in tempo reale. In particolare nel nostro caso, Kafka viene utilizzato per creare le _pipeline_ di dati tra il simulatore e il servizio di _stream processing_.
 
-Tuttavia non tutte le funzionalità che Apache Kafka fornisce ai programmatori sono state sfruttate all'interno del nostro progetto: fanno parte di queste funzionalità come la replicazione dei dati e il partizionamento dei _topic_. Per la natura dimostrativa del progetto, è stato scelto di utilizzare un singolo _broker_ Kafka, ma ciò non preclude l'utilizzo di queste funzionalità, che possono avere impatti notevoli all'aumentare del _data rate_ in entrata verso il sistema. //TODO: topic a glossario (?)
+Tuttavia non tutte le funzionalità che Apache Kafka fornisce ai programmatori sono state sfruttate all'interno del nostro progetto come la replicazione dei dati su più broker. Per la natura dimostrativa del progetto, è stato scelto di utilizzare un singolo _broker_ Kafka, ma ciò non preclude l'utilizzo di questa funzionalità, che può avere impatti positivi sulla tolleranza agli errori degli sistema. //TODO: topic a glossario (?)
 
 == Stream processor
 Lo _stream processor_ è il cuore pulsante dell'intero sistema sviluppato dal gruppo. Esso si occupa dell'ingestione dei dati, di arricchirli di informazioni necessarie successivamente alla creazione del _prompt_ da inviare all'LLM in maniera tale da generare l'annuncio e di inviare i dati di localizzazione elaborati e gli annunci al _database_ per la persistenza.
@@ -347,7 +285,7 @@ Apache Flink è un _framework_ ed _engine_ di _processing_ distribuito, che perm
 
 == Generazione annunci
 Per la creazione degli annunci, il capitolato prevede l'utilizzo di LLM per la generazione di questi ultimi, utilizzando come _prompt_ gli interessi dell'utente finale, la categoria commerciale e l'offerta (che consiste nel catalogo del punto o di qualsiasi altra informazione che possa essere utile alla generazione che viene fornita dall'esercente) del punto di interesse più vicino alla posizione del sensore.
-=== LangChain
+=== LangChain4j
 LangChain
 #pagebreak(weak: true)
 == Database
@@ -426,19 +364,13 @@ La K-_architecture_ è un modello architetturale per l'elaborazione di dati in _
 
 - *_Data source_*: la sorgente di dati è costituita dal simulatore che imita l'attivazione dei noleggi e lo spostamento degli utenti sui mezzi. I sensori inviano quindi a intervalli regolari la posizione GPS e ricevono l'eventuale annuncio.
 
-- *_Streaming layer_*: questo livello gestisce la trasmissione in tempo reale dei dati che vengono inoltrati al _processing layer_. Lo _streaming layer_ è costituito da:
+- *_Streaming layer_*: questo livello gestisce la trasmissione in tempo reale dei dati che vengono inoltrati al _processing layer_.
 
-  - *Apache Kafka*: sistema di messaggistica distribuito che permette di pubblicare, sottoscrivere e archiviare messaggi in tempo reale. Riceve i dati dal simulatore e li inserisce nei _topic_ in attesa che lo _stream processor_ nello _streaming layer_ li consumi.
-
-- *_Processing layer_*: i dati ricevuti dallo _streaming layer_ vengono processati in tempo reale prima di essere memorizzati in _database_. Il _processing layer_ è costituito da:
-
-  - *Apache Flink*: _framework_ ed _engine_ di _processing_ dati distribuito che permette di processare i dati in tempo reale tramite delle operazioni definite "_stateful_", ovvero che mantengono lo stato nel tempo. Il nostro _job_ realizzato per Apache Flink riceve i dati dal _topic_ `gps-data` di Apache Kafka, li elabora trovando il punto di interesse più vicino all'utente e generando l'annuncio tramite la LLM. Infine li invia al _database_ nello _storage layer_ per persisterli. Il _job_ si occupa inoltre di inviare l'annuncio generato al simulatore.
+- *_Processing layer_*: i dati ricevuti dallo _streaming layer_ vengono processati in tempo reale prima di essere memorizzati in _database_.
 
 - *_Storage layer_*: la persistenza è gestita da un _database_ relazionale che archivia i dati in arrivo dal _processing layer_. Lo _storage layer_ è costituito da *PostgreSQL* affiancato da *PostGIS*, una estensione che facilita l'elaborazione di dati geospaziali.
 
 - *_Data visualization layer_*: i dati archiviati nello _storage layer_ vengono resi disponibile tramite una interfaccia grafica. Costituito da *Grafana* questo _layer_ recupera le informazioni dal _database_ a intervalli regolari in modo da aggiornare rapidamente l'interfaccia ai nuovi cambiamenti.
-
-#pagebreak(weak: true)
 == Architettura logica
 L'architettura logica, a differenza di quella di _deployment_, si concentra sulle componenti da un punto di vista più astratto, descrivendo come funziona il _software_ dal punto di vista della _business logic_ e delle interazioni tra le varie parti ad alto livello.
 
@@ -456,9 +388,223 @@ L'architettura _data streaming_ è composta dai seguenti _layer_:
 - *_Stream processing_*: _layer_ che si occupa di processare i dati in tempo reale, applicando loro delle trasformazioni, filtri oppure operazioni computazionali per estrarne informazioni utili. Nel nostro caso, questo _layer_ si occupa di arricchire i dati di localizzazione con le informazioni necessarie per generare l'annuncio, e inviarli al _database_ per la persistenza.
 - *Data destination*: _layer_ a cui viene demandato il compito di inoltrare i dati verso una determinata destinazione, come può essere un _database_ per la persistenza dei dati, un servizio di notifica per l'invio di messaggi o altro ancora.
 - *Data visualization*: _layer_ che si occupa di visualizzare i dati in maniera comprensibile all'utente finale. Questo _layer_ può essere costituito da un'interfaccia grafica come una _dashboard_ .
-#pagebreak(weak: true)
+
+== Diagramma delle classi
+#figure(
+  image("../assets/img/ST/system.png", width: 110%),
+  caption: [Diagramma delle classi del sistema],
+)
+
+=== Struttura delle classi: attributi, costruttori e metodi
+Il diagramma delle classi del sistema descrive le classi implementate e le loro relazioni. Vengono riportare tutte le classi di libreria, di cui per la si omettono attributi e metodi per non appesantire il diagramma, fatta eccezione per le classi che ereditano da altre classi o implementano interfacce delle librerie utilizzate.
+==== GPSDataDto
+La classe `GPSDataDto` rappresenta il _data transfer object_ (DTO) per i dati di localizzazione. Essa viene utilizzata per trasferire i dati di localizzazione tra il simulatore e il servizio di _stream processing_. Il dato viene inviato in formato JSON serializzato dal simulatore, per poi essere deserializzato dallo _stream processor_ tramite la classe di utilità `GPSDataDeserializationSchema`, che estende la classe astratta `AbstractDeserializationSchema` di Flink.
+===== Attributi
+- ```java -rentId: int```: identificativo del noleggio associato al sensore.
+- ```java -latitude: float```: latitudine della posizione GPS.
+- ```java -longitude: float```: longitudine della posizione GPS.
+- ```java -timestamp: long```: timestamp della posizione GPS.
+
+===== Costruttore
+Il costruttore della classe `GPSDataDto` è un costruttore di _default_. Non viene utilizzato il costruttore di _default_ implicito fornito da Java in quanto la libreria di serializzazione/deserializzazione Jackson richiede un costruttore esplicito per la creazione di oggetti a partire da un _JSON_.
+
+===== Metodi
+- ```java +getRentId(): int```: restituisce l'identificativo del noleggio associato al sensore.
+- ```java +getLatitude(): float```: restituisce la latitudine della posizione GPS.
+- ```java +getLongitude(): float```: restituisce la longitudine della posizione GPS.
+- ```java +getTimestamp(): long```: restituisce il timestamp della posizione GPS.
+- ```java +setRentId(int rentId): void```: imposta l'identificativo del noleggio associato al sensore.
+- ```java +setLatitude(float latitude): void```: imposta la latitudine della posizione GPS.
+- ```java +setLongitude(float longitude): void```: imposta la longitudine della posizione GPS.
+- ```java +setTimestamp(long timestamp): void```: imposta il timestamp della posizione GPS.
+- ```java +equals(Object o): boolean```: _overriding_ del metodo della classe `Object` di Java, confronta l'uguaglianza tra l'oggetto `GPSDataDto` da cui viene invocato il metodo e l'oggetto posto a parametro e restituisce `true` se sono uguali, `false` altrimenti.
+- ```java +hashCode(): int```: _overriding_ del metodo della classe `Object` di Java, restituisce il codice _hash_ dell'oggetto `GPSDataDto` da cui viene invocato il metodo.
+
+Nel nostro caso, i _setters_ della classe `GPSDataDto` sono stati implementati per garantire la deserializzazione del _JSON_ che descrive il dato di localizzazione che viene spedito dal simulatore.
+
+=== GPSData
+La classe `GPSData` rappresenta il dato di localizzazione GPS, pressoché simile al DTO `GPSDataDto`, ma permettere di rappresentare l'attributo `timestamp` tramite l'oggetto `Timestamp` di Java (`java.sql.Timestamp`), facilitando così le operazioni da effettuare tramite il _database_.
+All'interno della _codebase_, l'entità GPSData non è rappresentato tramite una classe, ma tramite i _record_ in Java, che permettono di definire delle classi immutabili, ovvero non modificabili una volta create. Tuttavia, per mantenere la rappresentazione UML, il gruppo ha deciso di rappresentare la classe come un oggetto aventi attributi costanti e metodi _getter_.
+
+==== Attributi
+In quanto _record_, gli attributi della classe `GPSData` sotto elencati sono costanti data l'immutabilità della classe per definizione.
+- ```java -rentId: int```: identificativo del noleggio associato al sensore.
+- ```java -latitude: float```: latitudine della posizione GPS.
+- ```java -longitude: float```: longitudine della posizione GPS.
+- ```java -timestamp: Timestamp```: timestamp della posizione GPS.
+
+==== Costruttore
+- ```java +GPSData(rentId: int, latitude: float, longitude: float, timestamp: Timestamp)```: costruttore della classe `GPSData` che inizializza gli attributi `rentId`, `latitude`, `longitude` e `timestamp` con i valori passati come parametro.
+
+==== Metodi
+I metodi _getter_, nella reale implementazione della classe, vengono omessi in quanto creati dal _record_.
+- ```java +rentId(): int```: restituisce l'identificativo del noleggio associato al sensore.
+- ```java +latitude(): float```: restituisce la latitudine della posizione GPS.
+- ```java +longitude(): float```: restituisce la longitudine della posizione GPS.
+- ```java +timestamp(): Timestamp```: restituisce il timestamp della posizione GPS.
+- ```java +equals(o: Object): boolean```: _overriding_ del metodo della classe `Object` di Java, confronta l'uguaglianza tra l'oggetto `GPSData` da cui viene invocato il metodo e l'oggetto posto a parametro e restituisce `true` se sono uguali, `false` altrimenti.
+- ```java +hashCode(): int```: _overriding_ del metodo della classe `Object` di Java, restituisce il codice _hash_ dell'oggetto `GPSData` da cui viene invocato il metodo.
+
+=== PointOfInterest
+La classe `PointOfInterest` rappresenta un qualsiasi punto di interesse presente all'interno del _database_. Come per la classe `GPSData`, anche in questo caso è stato scelto di rappresentare l'entità tramite un _record_ in Java.
+
+==== Attributi
+In quanto _record_, gli attributi della classe `PointOfInterest` sotto elencati sono costanti.
+- ```java -latitude: float```: latitudine del punto di interesse.
+- ```java -longitude: float```: longitudine del punto di interesse.
+- ```java -vat: String```: partita IVA del punto di interesse.
+- ```java -name: String```: nome del punto di interesse.
+- ```java -category: String```: categoria del punto di interesse.
+- ```java -offer: String```: offerta del punto di interesse, ovvero ciò che il punto mette a disposizione per i clienti e che possa essere fondamentale per il contesto degli annunci pubblicitari.
+
+==== Costruttore
+- ```java +PointOfInterest(latitude: float, longitude: float, vat: String, name: String, category: String, offer: String)```: costruttore della classe `PointOfInterest` che inizializza gli attributi `latitude`, `longitude`, `vat`, `name`, `category` e `offer` con i valori passati come parametro.
+
+==== Metodi
+I metodi _getter_, nella reale implementazione della classe, vengono omessi in quanto creati dal _record_.
+- ```java +latitude(): float```: restituisce la latitudine del punto di interesse.
+- ```java +longitude(): float```: restituisce la longitudine del punto di interesse.
+- ```java +vat(): String```: restituisce la partita IVA del punto di interesse.
+- ```java +name(): String```: restituisce il nome del punto di interesse.
+- ```java +category(): String```: restituisce la categoria del punto di interesse.
+- ```java +offer(): String```: restituisce l'offerta del punto di interesse.
+- ```java +equals(o: Object): boolean```: _overriding_ del metodo della classe `Object` di Java, confronta l'uguaglianza tra l'oggetto `PointOfInterest` da cui viene invocato il metodo e l'oggetto posto a parametro e restituisce `true` se sono uguali, `false` altrimenti.
+- ```java +hashCode(): int```: _overriding_ del metodo della classe `Object` di Java, restituisce il codice _hash_ dell'oggetto `PointOfInterest` da cui viene invocato il metodo.
+
+=== NearestPOIRequest
+La classe `NearestPOIRequest` rappresenta la richiesta asincrona di ricerca del punto di interesse più vicino alla posizione del sensore. La classe estende la classe astratta parametrica `RichAsyncFunction<IN, OUT>` fornita dalla libreria di Flink con parametri `IN`:`GPSData` e `OUT`:`Tuple2<GPSData,PointOfInterest>`, che permette di eseguire operazioni asincrone all'interno di un _job_ in Flink. In questo caso, viene fatta una richiesta al _database_ per la ricerca del punto di interesse più vicino, sfruttando le _query_ geospaziali fornite dall'estensione PostGIS. Come menzionato in precedenza, in quanto Flink richiede un _client_ asincrono per le operazioni con il _database_, è stato scelto di utilizzare le libreria R2DBC e Project Reactor per effettuare richieste non bloccanti al _database_.
+
+==== Attributi
+- #underline[```java - STMT: String```]: _statement_ SQL da eseguire per la ricerca del punto di interesse più vicino alla posizione del sensore. L'attributo è statico (ovvero condiviso tra tutte le istanze della classe) e costante.
+
+==== Costruttore
+Viene mantenuto il costruttore implicito di _default_ fornito da Java, in quanto non sono necessari costruttori specifici per la classe `NearestPOIRequest`.
+
+==== Metodi
+In quanto classe che estende `RichAsyncFunction`, la classe `NearestPOIRequest` ridefinisce solamente il metodo `asyncInvoke`, mantenendo l'implementazione _default_ della classe estesa per i metodi `open()` e `close`.
+- ```java +asyncInvoke(gpsData: GPSData, resultFuture: ResultFuture<Tuple2<GPSData, PointOfInterest>>): void```: metodo che viene invocato in modo asincrono per eseguire la ricerca del punto di interesse più vicino alla posizione del sensore. Il risultato della ricerca viene restituito tramite il parametro `resultFuture`, che rappresenta il risultato della richiesta asincrona.
+
+=== AdvertisementGenerationRequest
+La classe `AdvertisementGenerationRequest` rappresenta la richiesta asincrona di generazione dell'annuncio da inviare alla LLM. Estende la classe astratta `RichAsyncFunction<IN, OUT>` fornita dalla libreria di Flink con parametri `IN`:`Tuple2<GPSData,PointOfInterest>` e `OUT`:`Tuple3<GPSData, PointOfInterest, String>`, che permette di eseguire operazioni asincrone all'interno di un _job_ in Flink. In questo caso viene fatta una richiesta alla LLM per la generazione dell'annuncio, sfruttando le API fornite dalla libreria LangChain4j.
+
+==== Attributi
+- ```java -model: ChatLanguageModel```: rappresenta il modello LLM utilizzato per effettuare le richieste di generazione degli annunci.
+
+==== Costruttori
+Viene mantenuto il costruttore implicito di _default_ fornito da Java, in quanto non sono necessari costruttori specifici per la classe `AdvertisementGenerationRequest`.
+
+==== Metodi
+In quanto classe che estende `RichAsyncFunction`, la classe `AdvertisementGenerationRequest` ridefinisce solamente il metodo `asyncInvoke`, mantenendo l'implementazione _default_ della classe estesa per i metodi `open()` e `close`.
+- ```java +asyncInvoke(Tuple2<GPSData, PointOfInterest> input, ResultFuture<Tuple3<GPSData, PointOfInterest, String>> resultFuture): void```: metodo che viene invocato in modo asincrono per eseguire la generazione dell'annuncio. Il risultato della generazione viene restituito tramite il parametro `resultFuture`, che rappresenta il risultato della richiesta asincrona.
+
+=== GPSDataDeserializationSchema
+La classe `GPSDataDeserializationSchema` estende la classe astratta parametrica `AbstractDeserializationSchema<T>` di Flink e ridefinisce i metodi `deserialize` e `open`, dove T rappresenta la classe in cui viene deserializzato il JSON. In questo caso, i dati in arrivo sono in formato JSON e vengono deserializzati in un oggetto `GPSDataDto`, nonché parametro della classe estesa.
+
+==== Attributi
+- ```java -objectMapper: ObjectMapper```: oggetto fornito dalla libreria Jackson (interno alla dipendenza di Flink) per la serializzazione e deserializzazione di oggetti in formato JSON.
+
+==== Costruttore
+Viene mantenuto il costruttore di _default_ fornito da Java.
+
+==== Metodi
+- ```java +open(context: InitializationContext): void```: metodo che viene invocato all'avvio del processo di deserializzazione. Viene invocato una tantum per effettuare il _setup_ della classe. In questo caso, viene inizializzato l'oggetto `objectMapper` per la deserializzazione del JSON.
+- ```java +deserialize(message: byte[]): GPSDataDto```: metodo che viene invocato per deserializzare il messaggio in arrivo. In questo caso, il messaggio viene deserializzato in un oggetto `GPSDataDto` tramite l'utilizzo dell'oggetto `objectMapper`.
+
+=== AdvertisementSerializationSchema
+La classe `AdvertisementSerializationSchema` implementa l'interfaccia parametrica `SerializationSchema<T>` di Flink e ridefinisce il metodo `serialize`, dove T rappresenta la classe oggetto della serializzazione. Nel nostro caso, T corrisponde a una classe `Tuple3<GPSData, PointOfInterest, String>`, che rappresenta l'annuncio generato dalla LLM, comprensivo dei dati del punto di interesse e di localizzazione. La classe `AdvertisementSerializationSchema` viene utilizzata per serializzare l'annuncio in un messaggio JSON da inviare al _topic_ `adv-data` di Kafka che simula la comunicazione del messaggio all'utente.
+
+==== Attributi
+- ```java -objectMapper: ObjectMapper```: oggetto fornito dalla libreria Jackson (interno alla dipendenza di Flink) per la serializzazione e deserializzazione di oggetti in formato JSON.
+
+==== Costruttore
+Viene mantenuto il costruttore di _default_ fornito da Java.
+
+==== Metodi
+- ```java +serialize(adv: Tuple3<GPSData, PointOfInterest, String>): byte[]```: metodo che viene invocato per serializzare l'annuncio.
+
+=== DatabaseConnectionSingleton
+La classe `DatabaseConnectionSingleton` rappresenta il _singleton_ della `ConnectionFactory` fornita dalla libreria R2DBC. Essa viene utilizzata per istanziare in maniera univoca durante tutto il processo una _factory_ di connessioni, creabili attraverso il metodo `create()`.
+
+==== Attributi
+- #underline[```java -instance: ConnectionFactory```]
+
+==== Costruttore
+Il costruttore viene reso inutilizzabile attraverso la ridefinizione del costruttore di _default_, ponendo l'accesso privato.
+
+==== Metodi
++ #underline[```java +getConnectionFactory(): ConnectionFactory```]: metodo statico che restituisce l'istanza della `ConnectionFactory`. Se l'istanza non è ancora stata creata, viene creata e restituita. Il metodo è _synchronized_ per garantire che venga creata una sola istanza della `ConnectionFactory` durante l'intero processo.
+
+=== KafkaTopicService
+La classe `KafkaTopicService` rappresenta il servizio di creazione dei _topic_ di Kafka. Viene impiegato dal _job_ per la creazione dei topic _gps-data_ e _adv-data_ se non già creati, utilizzati rispettivamente per la ricezione dei dati di localizzazione e l'invio degli annunci generati dalla LLM. 
+
+==== Attributi
+- ```java -admin: Admin```: oggetto fornito dalla libreria Kafka per la gestione dei _topic_. Nel nostro caso è costante per ogni istanza dell'oggetto.
+
+==== Costruttore
+- ```java +KafkaTopicService(admin: Admin)```: costruttore della classe `KafkaTopicService` che inizializza l'attributo `admin` con il valore passato come parametro.
+
+==== Metodi
+- ```java +createTopic(topicName: String, numPartitions: int, replicationFactor: short): void```: metodo che crea un _topic_ di Kafka con il nome e le caratteristiche specificate. Se il _topic_ esiste già, non viene creato nuovamente.
+- ```java +createTopics(topicNames: String*): void```: metodo che crea più _topic_ di Kafka con i nomi specificati all'interno dell'_array_ con numero di partizioni e di _replication factor_ pari a 1. Se i _topic_ esistono già, non vengono creati nuovamente.
+
+=== DataStreamJob
+La classe `DataStreamJob` è la _main class_ del _job_ di Flink. Essa avvia l'esecuzione dello _stream processor_, organizzando le varie componenti di quest'ultimo e gestendo il flusso dei dati tra i vari _layer_ del sistema.
+
+==== Attributi
+- ```java -env: StreamExecutionEnvironment```: oggetto fornito dalla libreria Flink per la gestione dell'ambiente di esecuzione del _job_. L'attributo è costante.
+- ```java -topicService: KafkaTopicService```: istanza della classe `KafkaTopicService` per la creazione dei _topic_ necessari al _job_. L'attributo è costante.
+- #underline[```java ```]
 
 == Design pattern adottati
+=== Singleton
+Il _design pattern Singleton_ è uno dei _pattern_ creazionali della GoF (_Gang of Four_) che garantisce che una classe abbia una sola istanza e fornisce un punto di accesso globale a tale istanza.
+
+Nel nostro caso questo _pattern_ è stato adottato per garantire la creazione di una singola istanza di `ConnectionFactory`, classe di utilità fornita dalla libreria R2DBC per la creazione di connessioni al _database_ PostgreSQL ottenute tramite la _connection pool_ gestita internamente dal _driver_ R2DBC utilizzando il metodo _create()_.
+
+=== Implementazione del Singleton pattern
+Il concetto di _Singleton_ prevede la presenza di un'istanza univoca per l'intero sistema. Si verifica quindi l'accesso ad una risorsa condivisa da più parti del sistema, ponendo quindi alla luce il problema dell'accesso concorrente alla risorsa.
+
+Per garantire la soluzione a questo problema è stata fornita un'implementazione _thread-safe_ del _pattern Singleton_, utilizzando il meccanismo di sincronizzazione di Java all'unico punto di accesso dell'istanza globale, ovvero il metodo _getConnectionFactory()_, per garantire l'accesso univoco e atomico alla risorsa.
+
+#codly(header: [*DatabaseConnectionSingleton.java*])
+```java
+package io.github.sweatunipd.database;
+
+public class DatabaseConnectionSingleton {
+
+  private static ConnectionFactory instance;
+
+  private DatabaseConnectionSingleton() {}
+
+  public static synchronized ConnectionFactory getConnectionFactory() {
+    if (instance == null) {
+      instance =
+          ConnectionFactories.get(
+              ConnectionFactoryOptions.builder()
+                  .option(ConnectionFactoryOptions.DRIVER, "pool")
+                  .option(ConnectionFactoryOptions.PROTOCOL, "postgresql")
+                  .option(
+                      ConnectionFactoryOptions.HOST,
+                      System.getProperty("postgres.hostname", "postgis"))
+                  .option(
+                      ConnectionFactoryOptions.PORT,
+                      Integer.parseInt(System.getProperty("postgres.port", "5432")))
+                  .option(
+                      ConnectionFactoryOptions.USER,
+                      System.getProperty("postgres.username", "admin"))
+                  .option(
+                      ConnectionFactoryOptions.PASSWORD,
+                      System.getProperty("postgres.password", "adminadminadmin"))
+                  .option(
+                      ConnectionFactoryOptions.DATABASE,
+                      System.getProperty("postgres.dbname", "admin"))
+                  .build());
+    }
+    return instance;
+  }
+}
+```
+
 
 #pagebreak(weak: true)
 
@@ -474,7 +620,7 @@ Il diagramma sottostante descrive il precorso dei dati tra i _layer_ del sistema
 
 + *Invio dei dati*: Ogni sensore attivo del simulatore invia a intervalli regolari la posizione GPS in un Kafka _topic_.
 
-+ *_Processing_ dei dati*: Lo _stream processor_ è iscritto alla _topic_ delle posizioni GPS e riceve i messaggi dei sensori. Elabora quindi i dati ricevuti nel seguente modo:
++ *_Processing_ dei dati*: Lo _stream processor_ è iscritto al _topic_ delle posizioni GPS e riceve i messaggi dei sensori. Elabora quindi i dati ricevuti nel seguente modo:
   + *Salvataggio in _database_*: Salva le posizioni nel _database_.
   + *Controllo interesse*: Viene controllato se almeno una categoria dell'utente coincide con quella del punto di interesse. In caso affermativo è probabile che venga generato l'annuncio, in caso negativo è probabile il contrario quindi non si va nemmeno a effettuare la richiesta alla LLM.
   + *Recupero dei dati in _database_*: Se le categorie combaciano vengono recuperati i dati di profilazione dell'utente e le informazioni del punto di interesse, ovvero:
@@ -487,13 +633,81 @@ Il diagramma sottostante descrive il precorso dei dati tra i _layer_ del sistema
 
 + *_Processing_ della risposta della LLM*: viene processata la risposta della LLM, in particolare:
   + *Salvataggio in _database_*: Viene salvata la risposta in _database_, indipendentemente che sia l'annuncio o la risposta che l'utente non è interessato nonostante le categorie coincidano (quindi non è stato generato l'annuncio).
-  + *Eventuale invio dell'annuncio*: In caso l'annncio sia stato generato, questo viene inviato al sensore.
+  + *Eventuale invio dell'annuncio*: In caso l'annuncio sia stato generato, questo viene inviato al sensore.
 
 + *Ricezione dell'eventuale annuncio*: Il sensore riceve l'annuncio se questo è stato generato. In uno scenario reale l'annuncio verrebbe visualizzato dall'utente, ma il capitolato non prevedeva lo sviluppo dell'applicazione lato _client_.
 
 + *Visualizzazione grafica*: Grafana recupera le informazioni dal _database_ a intervalli regolari ravvicinati per aggiornare costantemente la visuale dell'amministratore. Se questo richiede informazioni specifiche, ad esempio i dettagli di un annuncio, viene effettuata una _query_ per recuperare i dati.
 
 = Architettura del simulatore
+Nonostante il simulatore di posizioni GPS non sia un componente centrale del sistema, ma semplicemente un _mock_ per generare dati di test richiesto dall'azienda proponente nell'ambito del progetto didattico, il gruppo ha comunque intrapreso un approccio progettuale anche per questa componente.
+
+Di seguito verrà descritto nel dettaglio l'architettura del simulatore, presentando il diagramma delle classi, i ruoli di ogni componente all'interno del simulatore e le scelte progettuali adottate.
+
+== Diagramma delle classi
+#figure(
+  image("../assets/img/ST/simulator.svg", width: 110%),
+  caption: [Diagramma delle classi del simulatore],
+)
+
+=== Componenti di utilità
+Sfruttando l'aspetto procedurale del linguaggio TypeScript sono state create delle componenti di supporto. Queste non contengono classi o interfacce quindi diventa più efficace descriverle di seguito piuttosto che in un diagramma delle classi.
+- *App*: rappresenta il punto di accesso al servizio e si occupa della creazione di una istanza del simulatore e del suo avvio.
+#codly(header: [*App.ts*])
+```ts
+const simulator = container.get(Simulator);
+simulator.startSimulation();
+```
+
+- *EnvManager*: espone l'accesso per le variabili d'ambiente. Per utilizzarne una è sufficiente importare il modulo e richiamare `env.VAR_NAME`.
+#codly(header: [*config/EnvManager.ts*])
+```ts
+dotenv.config({ path: './src/config/.env' });
+export const env = process.env;
+```
+
+- *InversifyType*: espone una mappa delle componenti da "iniettare" con il _design pattern dependency injection_. In questo modo si evitano i problemi di _mistyping_ dei _serviceId_.
+#codly(header: [*config/InversifyType.ts*])
+```ts
+export const TYPES = {
+  KafkaManager: Symbol.for('KafkaManager'),
+  TrackerList: Symbol.for('TrackerList')
+};
+```
+
+- *Inversify.config*: definisce il _container_ e i _binding_ per risolvere le dipendenze con la libreria #box[Inverisfy].
+#codly(header: [*config/InversifyType.ts*])
+```ts
+export const container = new Container();
+
+container
+  .bind<KafkaManager>(TYPES.KafkaManager)
+  .toDynamicValue(() => {
+    const kafkaConfig: KafkaConfig = {
+      clientId: env.CLIENT_ID,
+      brokers: [env.BROKER ?? 'localhost:9094']
+    };
+    const kafka: Kafka = new Kafka(kafkaConfig);
+    return new KafkaManager(kafka);
+  })
+  .inSingletonScope();
+
+container
+  .bind<Tracker[]>(TYPES.TrackerList)
+  .toDynamicValue((context: ResolutionContext): Tracker[] => {
+    const kafkaManager: KafkaManager = context.get<KafkaManager>(TYPES.KafkaManager);
+    let trackerList: Tracker[] = [];
+    for (let i = 1; i <= Number(env.INIT_TRACKER_COUNT); i++) {
+      const id = i.toString();
+      const tracker: Tracker = new Tracker(id, kafkaManager);
+      trackerList.push(tracker);
+    }
+    return trackerList;
+  });
+
+container.bind(Simulator).toSelf().inSingletonScope();
+```
+
 == Design pattern adottati
 === Dependency injection
 Quando un progetto è costituito da un numero considerevole di componenti risulta fondamentale minimizzare le dipendenze. Più si riesce ad evitare debito tecnico e più semplice risulta aggiungere funzionalità perché le parti del sistema non sono fortemente accopiate. L'obiettivo di questo _design pattern_ è quindi quello togliere a un componente la responsabilità della risoluzione delle proprie dipendenze.
