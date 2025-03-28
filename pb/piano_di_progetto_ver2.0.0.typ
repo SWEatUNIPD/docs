@@ -1075,6 +1075,23 @@ In seguito alla riunione avvenuta per l'inizio dell'ottavo _sprint_ il _team_ pr
 )
 Il preventivo a finire si attesta a fine progetto a 12.512,50€, a fronte del preventivo iniziale di 12.740,00€ rientrando quindi nel _budget_.
 
+==== Tabella finale ore rimanenti per membro
+Il gruppo è riuscito a rispettare l'impegno preso in fase di candidatura, visionabile nel documento #formatLink(label:"dichiarazione impegni e preventivo costi (v1.1.0)", url: "https://sweatunipd.github.io/docs/candidatura/dichiarazione_impegni_e_preventivo_costi_ver1.1.0.pdf"), di dedicare ognuno un totale di 90 ore produttive al progetto. È stata rispettata anche la ripartizione dei ruoli in parti uguali tra tutti i membri del gruppo.
+
+#rendicontazioneOre(
+  (
+    (0, 0, 0, 1, 0, 0),
+    (0, 0, 0, 0, 0, 0),
+    (1, 0, 0, 0, 1, 0),
+    (1, 0.5, 0, 0, 0, 0),
+    (0, 0, 0.5, 0, 1, 0),
+    (0, 0, 0, 0, 0, 0),
+    (0, 0, 0, 0, 0, 0),
+  ),
+  caption: [Tabella finale ore rimanenti di ogni membro per ogni ruolo],
+)
+
+
 ==== Retrospettiva
 L'ottavo ed ultimo _sprint_ ha visto il gruppo completare tutte le attività previste e sostenere il colloquio finale con l'azienda. Il _team_, libero da impegni universitari, è riuscito a lavorare con grande efficienza e coordinazione, riuscendo a completare tutte le attività pianificate, rendendo il _software_ e la relativa documentazione pronti per la revisione PB.
 
