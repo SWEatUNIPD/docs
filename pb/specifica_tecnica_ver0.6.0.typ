@@ -603,37 +603,34 @@ Per garantire la soluzione a questo problema è stata fornita un'implementazione
 
 #codly(header: [*DatabaseConnectionSingleton.java*])
 ```java
-package io.github.sweatunipd.database;
-
 public class DatabaseConnectionSingleton {
-
   private static ConnectionFactory instance;
 
-  private DatabaseConnectionSingleton() {}
+  private DatabaseConnectionSingleton() { }
 
   public static synchronized ConnectionFactory getConnectionFactory() {
     if (instance == null) {
       instance =
-          ConnectionFactories.get(
-              ConnectionFactoryOptions.builder()
-                  .option(ConnectionFactoryOptions.DRIVER, "pool")
-                  .option(ConnectionFactoryOptions.PROTOCOL, "postgresql")
-                  .option(
-                      ConnectionFactoryOptions.HOST,
-                      System.getProperty("postgres.hostname", "postgis"))
-                  .option(
-                      ConnectionFactoryOptions.PORT,
-                      Integer.parseInt(System.getProperty("postgres.port", "5432")))
-                  .option(
-                      ConnectionFactoryOptions.USER,
-                      System.getProperty("postgres.username", "admin"))
-                  .option(
-                      ConnectionFactoryOptions.PASSWORD,
-                      System.getProperty("postgres.password", "adminadminadmin"))
-                  .option(
-                      ConnectionFactoryOptions.DATABASE,
-                      System.getProperty("postgres.dbname", "admin"))
-                  .build());
+        ConnectionFactories.get(
+          ConnectionFactoryOptions.builder()
+            .option(ConnectionFactoryOptions.DRIVER, "pool")
+            .option(ConnectionFactoryOptions.PROTOCOL, "postgresql")
+            .option(
+              ConnectionFactoryOptions.HOST,
+              System.getProperty("postgres.hostname", "postgis"))
+            .option(
+              ConnectionFactoryOptions.PORT,
+              Integer.parseInt(System.getProperty("postgres.port", "5432")))
+            .option(
+              ConnectionFactoryOptions.USER,
+              System.getProperty("postgres.username", "admin"))
+            .option(
+              ConnectionFactoryOptions.PASSWORD,
+              System.getProperty("postgres.password", "adminadminadmin"))
+            .option(
+              ConnectionFactoryOptions.DATABASE,
+              System.getProperty("postgres.dbname", "admin"))
+            .build());
     }
     return instance;
   }
@@ -651,6 +648,73 @@ Di seguito verrà descritto nel dettaglio l'architettura del simulatore, present
   image("../assets/img/ST/simulator.svg", width: 110%),
   caption: [Diagramma delle classi del simulatore],
 )
+
+=== Struttura delle classi: attributi, costruttori e metodi
+==== Simulator
+La classe `Simulator` rappresenta il simulatore vero e proprio. Questo riceve i mezzi disponibili dal servizio di noleggio e attiva i primi "x" (valore indicato dalla variabile d'ambiente `INIT_RENT_COUNT`).
+
+===== Attributi
+- ```ts -trackerList: Tracker*```: lista dei sensori disponibili, uno per ogni mezzo. Vengono istanziati con un identificatore incrementale partendo da 1.
+
+===== Costruttore
+- ```ts +Simulator(trackerList: Tracker*)```: costruttore della classe `Simulator` che inizializza la lista locale con i sensori passati per parametro.
+
+===== Metodi
+- ```ts +startSimulation(): void```: avvia la simulazione attivando i primi "x" sensori.
+- ```ts -startRent(): void```: prende il primo sensore in ordine di identificativo crescente e, se disponibile, lo attiva.
+
+==== Tracker
+
+===== Attributi
+- ```ts -id: string```:
+- ```ts -isAvailable: boolean = true```:
+- ```ts -kafkaManager: KafkaManager```:
+- ```ts -consumer!: Consumer```:
+
+===== Costruttore
+- ```ts +Tracker(id: string, kafkaManager: KafkaManager)```:
+
+===== Metodi
+- ```ts +activate(): void```:
+- ```ts -listenToAdv(): void```:
+- ```ts -move(trackerPoints: GeoPoint*): void```:
+- ```ts +getIsAvailable(): boolean```:
+
+==== KafkaManager
+
+===== Attributi
+- ```ts -kafka: Kafka```:
+
+===== Costruttore
+- ```ts +KafkaManager(kafka: Kafka)```:
+
+===== Metodi
+- ```ts +initAndConnectProducer(): Producer```:
+- ```ts +disconnectProducer(producer: Producer): void```:
+- ```ts +sendMessage(producer: Producer, topic: string, data: string): void```:
+- ```ts +initAndConnectConsumer(topic: string, groupId: string, eachMessageHandler: EachMessageHandler): Consumer```:
+- ```ts +disconnectConsumer(consumer: Consumer): void```:
+
+==== TrackFetcher
+
+===== Metodi
+- ```ts +fetchTrack(): GeoPoint*```:
+- ```ts -request(): response```
+
+==== GeoPoint
+
+===== Attributi
+- ```ts -latitude: double```:
+- ```ts -longitude: double```:
+
+===== Costruttore
+- ```ts +GeoPoint(latitude: double, longitude: double)```:
+
+===== Metodi
+- #underline([```ts +radiusKmToGeoPoint(radiusKm: double): GeoPoint```]):
+- ```ts +generateRandomPoint(radiusGeoPoint: GeoPoint): GeoPoint```:
+- ```ts +getLatitude(): double```:
+- ```ts +getLongitude(): double```:
 
 === Componenti di utilità
 Sfruttando l'aspetto procedurale del linguaggio TypeScript sono state create delle componenti di supporto. Queste non contengono classi o interfacce quindi diventa più efficace descriverle di seguito piuttosto che in un diagramma delle classi.
