@@ -551,7 +551,7 @@ Per l'esecuzione dei _test_ di integrazione viene utilizzata la libreria Testcon
   fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
   table.header[*Codice test*][*Descrizione*][*Stato*],
     [TI-1], [Verificare che il _backend_ si interfacci correttamente con il _database_ testando l'esecuzione di una _query_.], [Verificato],
-    [TI-2], [Verificare che il _job_ di Flink funzioni correttamente testando il _flow_ di un dato del sensore, che comincia con la generazione da parte di un _producer_ Kafka e si conclude, alla fine del _processing_, con il salvataggio in _database_ del dato geospaziale e dell'annuncio di cui questo ha provocato la generazione.], [Verificato],
+    [TI-2], [Verificare che il _job_ di Flink funzioni correttamente testando il _flow_ di un dato del sensore. Questo comincia con la generazione da parte di un _producer_ Kafka e si conclude, alla fine del _processing_, con il salvataggio in _database_ del dato geospaziale e dell'annuncio di cui questo ha provocato la generazione.], [Verificato],
 )
 
 == Test di sistema
