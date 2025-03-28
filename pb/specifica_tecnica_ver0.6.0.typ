@@ -12,7 +12,7 @@
 )
 
 #show: content => verbale(
-  data: "26 marzo 2025",
+  data: "27 marzo 2025",
   destinatari: ("Gruppo SWE@", "Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "Sync Lab S.r.L."),
   responsabile: "Andrea Perozzo",
   redattori: (
@@ -33,11 +33,13 @@
   titolo: "Specifica Tecnica",
   uso: "Esterno",
   versioni: (
-    "0.8.0",
+    "1.0.0",
     "27/03/2025",
     [Klaudio Merja],
     [Andrea Precoma],
-    [- Redazione],
+    [
+      - Redazione delle sezioni relative al _data broker_ e _stream processor_
+    ],
     "0.7.0",
     "25/03/2025",
     "Klaudio Merja",
@@ -113,19 +115,19 @@ La prima occorrenza di un termine definito all'interno del glossario presente al
 == Riferimenti
 
 === Riferimenti normativi
-- Norme di Progetto (v2.0.0) (ultimo accesso in data 25/03/2025) \ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/norme_di_progetto_ver2.0.0.pdf")
-- Regolamento del progetto didattico, _slide_ 23 (ultimo accesso in data 25/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")
-- Capitolato C4 - Sync Lab S.r.l. (ultimo accesso in data 25/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
+- Norme di Progetto (v2.0.0) (ultimo accesso in data 27/03/2025) \ #formatLink(url: "https://sweatunipd.github.io/docs/pb/norme_di_progetto_ver2.0.0.pdf")
+- Regolamento del progetto didattico, _slide_ 23 (ultimo accesso in data 27/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")
+- Capitolato C4 - Sync Lab S.r.l. (ultimo accesso in data 27/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
 
 === Riferimenti informativi
-- Glossario (v2.0.0) (ultimo accesso in data 25/03/2025) \ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/glossario_ver2.0.0.pdf")
-- Capitolato C4 - Sync Lab S.r.l. (ultimo accesso in data 25/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
-- Guida ufficiale per l'installazione di Docker (ultimo accesso in data 25/03/2025) \ #formatLink(url: "https://docs.docker.com/engine/install")
-- Apache Flink - Documentazione relativa al supporto di Flink a Java 17 (ultimo accesso in data 25/03/2025) \ #formatLink(url: "https://nightlies.apache.org/flink/flink-docs-release-1.20/docs/deployment/java_compatibility/#java-17") \ (ultimo accesso in data 25/03/2025)
-- Java _records_ (ultimo accesso in data 25/03/2025) \ #formatLink(url: "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Record.html")
-- Apache Flink - Documentazione relativa agli _async_ I/O per l'accesso ai dati esterni (ultimo accesso in data 25/03/2025) \ #formatLink(url: "https://nightlies.apache.org/flink/flink-docs-master/docs/dev/datastream/operators/asyncio/#async-io-api")
-- Apache Kafka (ultimo accesso in data 25/03/2025) \ #formatLink(url: "https://kafka.apache.org/")
-- Documentazione della classe `ConnectionFactory` - R2DBC (ultimo accesso in data 25/03/2025) \ #formatLink(url: "https://javadoc.io/doc/io.r2dbc/r2dbc-spi/latest/index.html")
+- Glossario (v2.0.0) (ultimo accesso in data 27/03/2025) \ #formatLink(url: "https://sweatunipd.github.io/docs/pb/glossario_ver2.0.0.pdf")
+- Capitolato C4 - Sync Lab S.r.l. (ultimo accesso in data 27/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
+- Guida ufficiale per l'installazione di Docker (ultimo accesso in data 27/03/2025) \ #formatLink(url: "https://docs.docker.com/engine/install")
+- Apache Flink - Documentazione relativa al supporto di Flink a Java 17 (ultimo accesso in data 27/03/2025) \ #formatLink(url: "https://nightlies.apache.org/flink/flink-docs-release-1.20/docs/deployment/java_compatibility/#java-17")
+- Apache Flink - Documentazione relativa agli _async_ I/O per l'accesso ai dati esterni (ultimo accesso in data 27/03/2025) \ #formatLink(url: "https://nightlies.apache.org/flink/flink-docs-master/docs/dev/datastream/operators/asyncio/#async-io-api")
+- Java _records_ (ultimo accesso in data 27/03/2025) \ #formatLink(url: "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Record.html")
+- Apache Kafka (ultimo accesso in data 27/03/2025) \ #formatLink(url: "https://kafka.apache.org/")
+- Documentazione della classe `ConnectionFactory` - R2DBC (ultimo accesso in data 27/03/2025) \ #formatLink(url: "https://javadoc.io/doc/io.r2dbc/r2dbc-spi/latest/index.html")
 
 #pagebreak(weak: true)
 
@@ -146,31 +148,30 @@ Di seguito vengono elencati tutti i servizi che compongono il sistema (le relati
 - *kafka*
   - *Immagine*: apache/kafka
   - *Versione dell'immagine*: 4.0.0
-  - *Riferimento*: #formatLink(url: "https://hub.docker.com/r/apache/kafka") (ultimo accesso in data 25/03/2025)
+  - *Riferimento*: #formatLink(url: "https://hub.docker.com/r/apache/kafka") (ultimo accesso in data 27/03/2025)
 
 - *postgis*
   - *Immagine*: postgis/postgis
   - *Versione dell'immagine*: 17-3.5
-  - *Riferimento*: #formatLink(url: "https://hub.docker.com/r/postgis/postgis") (ultimo accesso in data 25/03/2025)
+  - *Riferimento*: #formatLink(url: "https://hub.docker.com/r/postgis/postgis") (ultimo accesso in data 27/03/2025)
 
 - *grafana*
   - *Immagine*: rmilan/grafana-rm
-  - *Riferimento*: #formatLink(url: "https://hub.docker.com/r/rmilan/grafana-rm") (ultimo accesso in data 25/03/2025)
+  - *Riferimento*: #formatLink(url: "https://hub.docker.com/r/rmilan/grafana-rm") (ultimo accesso in data 27/03/2025)
 
 - *jobmanager*
   - *Immagine*: flink
   - *Versione dell'immagine*: 1.20.1-scala_2.12-java17
-  - *Riferimento*: #formatLink(url: "https://hub.docker.com/_/flink") (ultimo accesso in data 25/03/2025)
+  - *Riferimento*: #formatLink(url: "https://hub.docker.com/_/flink") (ultimo accesso in data 27/03/2025)
 
 - *taskmanager*
   - *Immagine*: flink
   - *Versione dell'immagine*: 1.20.1-scala_2.12-java17
-  - *Riferimento*: #formatLink(url: "https://hub.docker.com/_/flink") (ultimo accesso in data 25/03/2025)
+  - *Riferimento*: #formatLink(url: "https://hub.docker.com/_/flink") (ultimo accesso in data 27/03/2025)
 
 - *simulator*
   - *Immagine*: _Build_ in locale con Dockerfile
   - *_Path_ del Dockerfile*: `./client` (relativo alla _root_ del progetto)
-  // TODO: mettere label "_repository_ NearYou del gruppo"
   - *Riferimento*: #formatLink(url: "https://github.com/SWEatUNIPD/NearYou/tree/main/client")
 
 == Linguaggi di sviluppo
@@ -186,6 +187,8 @@ Il seguente diagramma delle classi descrive la struttura del simulatore realizza
 La versione di TypeScript utilizzata per lo sviluppo del simulatore è la 5.7.2.
 
 ==== Librerie e framework
+La seguente lista elenca le dipendenze utilizzate nel simulatore. Sono escluse quelle in ambiente di sviluppo come quelle di _test_.
+
 - *\@mapbox/polyline*
   - *Documentazione*: #formatLink(url: "https://www.npmjs.com/package/@mapbox/polyline") (ultimo accesso in data 26/03/2025)
   - *Versione*: 1.2.1
@@ -233,26 +236,26 @@ Per la gestione del progetto e l'automazione delle operazioni di _build_ e _test
 La seguente lista rappresenta le dipendenze più rilevanti presenti all'interno del progetto e non vuole essere un mero elenco di tutte le dipendenze e le librerie presenti all'interno del nostro progetto.//TODO: riportare maven a glossario
 
 - *Apache Flink*
-  - *Documentazione*: #formatLink(url: "https://nightlies.apache.org/flink/flink-docs-release-1.20/") (ultimo accesso in data 25/03/2025)
+  - *Documentazione*: #formatLink(url: "https://nightlies.apache.org/flink/flink-docs-release-1.20/") (ultimo accesso in data 27/03/2025)
   - *Versione*: 1.20.1
   - *Descrizione*: _Framework_ ed _engine_ per effettuare operazioni _stateful_ su un flusso di dati (nel nostro caso dati di localizzazione), elevato o meno che sia, in tempo reale in maniera reattiva, scalabile e affidabile. //TODO: stateful a glosario
 
 - *PostgreSQL JDBC Driver*
-  - *Documentazione*: #formatLink(url: "https://jdbc.postgresql.org/documentation/") (ultimo accesso in data 25/03/2025)
+  - *Documentazione*: #formatLink(url: "https://jdbc.postgresql.org/documentation/") (ultimo accesso in data 27/03/2025)
   - *Versione*: 42.7.5
   - *Descrizione*: _Driver_ per la connessione a un _database_ PostgreSQL. //TODO: mettere JDBC a glossario
 
 - *PostgreSQL R2DBC Driver*
-  - *Documentazione*: #formatLink(url: "https://github.com/pgjdbc/r2dbc-postgresql") (ultimo accesso in data 25/03/2025)
+  - *Documentazione*: #formatLink(url: "https://github.com/pgjdbc/r2dbc-postgresql") (ultimo accesso in data 27/03/2025)
   - *Versione*: 1.0.7.RELEASE
-  - *Descrizione*: _Driver_ per la connessione a un _database_ PostgreSQL, sfruttando l'API della programmazione reattiva (per maggiori informazioni: #formatLink(url: "https://www.reactivemanifesto.org/it", label: "Reactive Manifesto") - ultimo accesso in data 25/03/2025). Permette di effettuare richieste asincrone e non bloccanti al _database_, come richiesto dalla documentazione di Flink per le operazioni di I/O asincrone. //TODO: mettere R2DBC a glossario e programmazione reattiva
+  - *Descrizione*: _Driver_ per la connessione a un _database_ PostgreSQL, sfruttando l'API della programmazione reattiva (per maggiori informazioni: #formatLink(url: "https://www.reactivemanifesto.org/it", label: "Reactive Manifesto") - ultimo accesso in data 27/03/2025). Permette di effettuare richieste asincrone e non bloccanti al _database_, come richiesto dalla documentazione di Flink per le operazioni di I/O asincrone. //TODO: mettere R2DBC a glossario e programmazione reattiva
 - *R2DBC Pool*
-  - *Documentazione*: #formatLink(url: "https://github.com/r2dbc/r2dbc-pool") (ultimo accesso in data 25/03/2025)
+  - *Documentazione*: #formatLink(url: "https://github.com/r2dbc/r2dbc-pool") (ultimo accesso in data 27/03/2025)
   - *Versione*: 1.0.2
   - *Descrizione*: Implementazione del _connection pooling_ per R2DBC. //TODO: mettere connection pooling a glossario
 
 - *Project Reactor*
-  - *Documentazione*: #formatLink(url: "https://projectreactor.io/docs/core/release/reference/") (ultimo accesso in data 25/03/2025)
+  - *Documentazione*: #formatLink(url: "https://projectreactor.io/docs/core/release/reference/") (ultimo accesso in data 27/03/2025)
   - *Versione*: 3.7.4
   - *Descrizione*: Libreria di programmazione reattiva, completamente non bloccante. Viene utilizzato all'interno del nostro prodotto come _client_ per le operazioni asincrone di _data enrichment_, che nel nostro caso sono quella di richiesta del punto di interesse più vicino alla posizione del sensore che soddisfi gli interessi dell'utente e quella di generazione dell'annuncio tramite LLM sfruttando i dati di profilazione dell'utente e del punto di interesse registrati nel _database_.
 
@@ -287,7 +290,7 @@ Apache Flink è un _framework_ ed _engine_ di _processing_ distribuito, che perm
 Per la creazione degli annunci, il capitolato prevede l'utilizzo di LLM per la generazione di questi ultimi, utilizzando come _prompt_ gli interessi dell'utente finale, la categoria commerciale e l'offerta (che consiste nel catalogo del punto o di qualsiasi altra informazione che possa essere utile alla generazione che viene fornita dall'esercente) del punto di interesse più vicino alla posizione del sensore.
 === LangChain4j
 LangChain
-#pagebreak(weak: true)
+
 == Database
 === PostgreSQL
 Per la gestione dei dati relazionali è stato scelto PostgreSQL, un DBMS che offre affidabilità e una certa flessibilità per l'estensione tramite _plugin_ ed estensioni. Nel nostro contesto, PostgreSQL:
@@ -338,7 +341,7 @@ In conclusione, alcune scelte apparentemente ridondanti sono state adottate con 
 L'interfaccia fornita dal _software_ deve permettere all'amministratore di visualizzare la mappa con i punti di interesse, i sensori che si muovono e gli eventuali annunci generati. Inoltre deve fornire una visualizzazione per lo storico degli annunci e una per entrare nel dettaglio di un singolo annuncio.
 Gran parte dei dati dunque deve essere analizzata e mostrata all'utente finale in _real time_. Tale necessità ha dirottato la scelta del gruppo riguardo la tecnologia da utilizzare verso Grafana.
 === Grafana
-- *Documentazione*: #formatLink(url: "https://grafana.com/docs/") (ultimo accesso 21/03/2025)
+- *Documentazione*: #formatLink(url: "https://grafana.com/docs") (ultimo accesso in data 27/03/2025)
 - *Versione*: 11.5.2
 - *Descrizione*: Grafana è una piattaforma _open source_ per la visualizzazione e l'analisi dei dati, con cui è possibile creare _dashboard_ interattive e grafici da diverse fonti.
 
@@ -388,6 +391,38 @@ L'architettura _data streaming_ è composta dai seguenti _layer_:
 - *_Stream processing_*: _layer_ che si occupa di processare i dati in tempo reale, applicando loro delle trasformazioni, filtri oppure operazioni computazionali per estrarne informazioni utili. Nel nostro caso, questo _layer_ si occupa di arricchire i dati di localizzazione con le informazioni necessarie per generare l'annuncio, e inviarli al _database_ per la persistenza.
 - *Data destination*: _layer_ a cui viene demandato il compito di inoltrare i dati verso una determinata destinazione, come può essere un _database_ per la persistenza dei dati, un servizio di notifica per l'invio di messaggi o altro ancora.
 - *Data visualization*: _layer_ che si occupa di visualizzare i dati in maniera comprensibile all'utente finale. Questo _layer_ può essere costituito da un'interfaccia grafica come una _dashboard_ .
+
+== Flusso dei dati
+Il diagramma sottostante descrive il precorso dei dati tra i _layer_ del sistema e le relative elaborazioni.
+
+#figure(
+  image("../assets/img/ST/Kappa-architecture-data-flow.png", width: 80%),
+  caption: [Flusso dei dati],
+)
+
++ *Generazione dei dati*: Il simulatore genera in tempo reale dei percorsi tramite una chiamata API al servizio OpenStreetMap.
+
++ *Invio dei dati*: Ogni sensore attivo del simulatore invia a intervalli regolari la posizione GPS in un Kafka _topic_.
+
++ *_Processing_ dei dati*: Lo _stream processor_ è iscritto al _topic_ delle posizioni GPS e riceve i messaggi dei sensori. Elabora quindi i dati ricevuti nel seguente modo:
+  + *Salvataggio in _database_*: Salva le posizioni nel _database_.
+  + *Controllo interesse*: Viene controllato se almeno una categoria dell'utente coincide con quella del punto di interesse. In caso affermativo è probabile che venga generato l'annuncio, in caso negativo è probabile il contrario quindi non si va nemmeno a effettuare la richiesta alla LLM.
+  + *Recupero dei dati in _database_*: Se le categorie combaciano vengono recuperati i dati di profilazione dell'utente e le informazioni del punto di interesse, ovvero:
+    - Il campo di testo libero dove l'utente ha descritto i suoi interessi.
+    - La descrizione del punto di interesse (cosa offre).
+    - La categoria del punto di interesse.
+    - Il nome del punto di interesse.
+
++ *Richiesta alla LLM*: Se l'utente è stato considerato potenzialmente interessato viene effettuata la richiesta alla LLM di generare l'annuncio.
+
++ *_Processing_ della risposta della LLM*: viene processata la risposta della LLM, in particolare:
+  + *Salvataggio in _database_*: Viene salvata la risposta in _database_, indipendentemente che sia l'annuncio o la risposta che l'utente non è interessato nonostante le categorie coincidano (quindi non è stato generato l'annuncio).
+  + *Eventuale invio dell'annuncio*: In caso l'annuncio sia stato generato, questo viene inviato al sensore.
+
++ *Ricezione dell'eventuale annuncio*: Il sensore riceve l'annuncio se questo è stato generato. In uno scenario reale l'annuncio verrebbe visualizzato dall'utente, ma il capitolato non prevedeva lo sviluppo dell'applicazione lato _client_.
+
++ *Visualizzazione grafica*: Grafana recupera le informazioni dal _database_ a intervalli regolari ravvicinati per aggiornare costantemente la visuale dell'amministratore. Se questo richiede informazioni specifiche, ad esempio i dettagli di un annuncio, viene effettuata una _query_ per recuperare i dati.
+
 
 == Diagramma delle classi
 #figure(
@@ -532,7 +567,7 @@ La classe `DatabaseConnectionSingleton` rappresenta il _singleton_ della `Connec
 Il costruttore viene reso inutilizzabile attraverso la ridefinizione del costruttore di _default_, ponendo l'accesso privato.
 
 ==== Metodi
-+ #underline[```java +getConnectionFactory(): ConnectionFactory```]: metodo statico che restituisce l'istanza della `ConnectionFactory`. Se l'istanza non è ancora stata creata, viene creata e restituita. Il metodo è _synchronized_ per garantire che venga creata una sola istanza della `ConnectionFactory` durante l'intero processo.
+- #underline[```java +getConnectionFactory(): ConnectionFactory```]: metodo statico che restituisce l'istanza della `ConnectionFactory`. Se l'istanza non è ancora stata creata, viene creata e restituita. Il metodo è _synchronized_ per garantire che venga creata una sola istanza della `ConnectionFactory` durante l'intero processo.
 
 === KafkaTopicService
 La classe `KafkaTopicService` rappresenta il servizio di creazione dei _topic_ di Kafka. Viene impiegato dal _job_ per la creazione dei topic _gps-data_ e _adv-data_ se non già creati, utilizzati rispettivamente per la ricezione dei dati di localizzazione e l'invio degli annunci generati dalla LLM. 
@@ -605,41 +640,8 @@ public class DatabaseConnectionSingleton {
 }
 ```
 
-
-#pagebreak(weak: true)
-
-== Flusso dei dati
-Il diagramma sottostante descrive il precorso dei dati tra i _layer_ del sistema e le relative elaborazioni.
-
-#figure(
-  image("../assets/img/ST/Kappa-architecture-data-flow.png", width: 80%),
-  caption: [Flusso dei dati],
-)
-
-+ *Generazione dei dati*: Il simulatore genera in tempo reale dei percorsi tramite una chiamata API al servizio OpenStreetMap.
-
-+ *Invio dei dati*: Ogni sensore attivo del simulatore invia a intervalli regolari la posizione GPS in un Kafka _topic_.
-
-+ *_Processing_ dei dati*: Lo _stream processor_ è iscritto al _topic_ delle posizioni GPS e riceve i messaggi dei sensori. Elabora quindi i dati ricevuti nel seguente modo:
-  + *Salvataggio in _database_*: Salva le posizioni nel _database_.
-  + *Controllo interesse*: Viene controllato se almeno una categoria dell'utente coincide con quella del punto di interesse. In caso affermativo è probabile che venga generato l'annuncio, in caso negativo è probabile il contrario quindi non si va nemmeno a effettuare la richiesta alla LLM.
-  + *Recupero dei dati in _database_*: Se le categorie combaciano vengono recuperati i dati di profilazione dell'utente e le informazioni del punto di interesse, ovvero:
-    - Il campo di testo libero dove l'utente ha descritto i suoi interessi.
-    - La descrizione del punto di interesse (cosa offre).
-    - La categoria del punto di interesse.
-    - Il nome del punto di interesse.
-
-+ *Richiesta alla LLM*: Se l'utente è stato considerato potenzialmente interessato viene effettuata la richiesta alla LLM di generare l'annuncio.
-
-+ *_Processing_ della risposta della LLM*: viene processata la risposta della LLM, in particolare:
-  + *Salvataggio in _database_*: Viene salvata la risposta in _database_, indipendentemente che sia l'annuncio o la risposta che l'utente non è interessato nonostante le categorie coincidano (quindi non è stato generato l'annuncio).
-  + *Eventuale invio dell'annuncio*: In caso l'annuncio sia stato generato, questo viene inviato al sensore.
-
-+ *Ricezione dell'eventuale annuncio*: Il sensore riceve l'annuncio se questo è stato generato. In uno scenario reale l'annuncio verrebbe visualizzato dall'utente, ma il capitolato non prevedeva lo sviluppo dell'applicazione lato _client_.
-
-+ *Visualizzazione grafica*: Grafana recupera le informazioni dal _database_ a intervalli regolari ravvicinati per aggiornare costantemente la visuale dell'amministratore. Se questo richiede informazioni specifiche, ad esempio i dettagli di un annuncio, viene effettuata una _query_ per recuperare i dati.
-
-= Architettura del simulatore
+#pagebreak()
+= Struttura del simulatore
 Nonostante il simulatore di posizioni GPS non sia un componente centrale del sistema, ma semplicemente un _mock_ per generare dati di test richiesto dall'azienda proponente nell'ambito del progetto didattico, il gruppo ha comunque intrapreso un approccio progettuale anche per questa componente.
 
 Di seguito verrà descritto nel dettaglio l'architettura del simulatore, presentando il diagramma delle classi, i ruoli di ogni componente all'interno del simulatore e le scelte progettuali adottate.
