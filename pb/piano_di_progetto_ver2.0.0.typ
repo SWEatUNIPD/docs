@@ -1,9 +1,9 @@
 #import "/templates/template.typ": *
 
 #show: content => verbale(
-  data: "26 gennaio 2025",
+  data: "27 Marzo 2025",
   destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "Sync Lab S.r.l.", "Gruppo SWE@"),
-  responsabile: "Davide Marin",
+  responsabile: "Klaudio Merja",
   redattori: (
     "Andrea Precoma",
     "Davide Marin",
@@ -24,6 +24,15 @@
   titolo: "Piano di Progetto",
   uso: "Esterno",
   versioni: (
+    "2.0.0",
+    "27/03/2025",
+    "Davide Picello",
+    "Andrea Precoma",
+    [
+      - Stesura retrospettiva ottavo _sprint_
+      - Introdotto RO-5
+    ],
+
     "1.5.0",
     "12/03/2025",
     "Davide Marin",
@@ -161,16 +170,16 @@ Per evitare eventuali ambiguità e incomprensioni sulla terminologia adottata ne
 viene fornito un Glossario.
 
 La prima occorrenza di un termine definito all'interno del Glossario presente all'interno di un documento viene
-sottolineato e seguito dalla lettera g posta ad apice (e.g. #rifGlossario("termine")).
+sottolineato e seguito dalla lettera g posta ad apice (ad esempio #rifGlossario("termine")).
 
 == Riferimenti
 === Riferimenti normativi
-- Norme di Progetto (v1.0.1)\ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/norme_di_progetto_ver1.0.1.pdf")
-- Regolamento del progetto didattico\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")
+- Norme di Progetto (v2.0.0)\ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/norme_di_progetto_ver2.0.0.pdf")
+- Regolamento del progetto didattico (ultimo accesso 27/03/2025)\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")
 === Riferimenti informativi
-- Glossario (v1.0.0)\ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/glossario_ver1.0.0.pdf")
-- Lezione T03 - Il ciclo di vita del software\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T03.pdf")
-- Lezione T04 - Gestione di progetto\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T04.pdf")
+- Glossario (v2.0.0)\ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/glossario_ver2.0.0.pdf")
+- Lezione T03 - Il ciclo di vita del software (ultimo accesso 27/03/2025)\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T03.pdf")
+- Lezione T04 - Gestione di progetto (ultimo accesso 27/03/2025)\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T04.pdf")
 #pagebreak()
 
 = Analisi dei rischi
@@ -231,6 +240,16 @@ Per il processo di gestione dei rischi il gruppo adotta il modello fornito da Ia
   impatto: [Medio],
   piano: [Il rischio è risolvibile con un'attenta e lungimirante pianificazione e ripartizione dei compiti, confidando nella collaborazione di tutti i membri del gruppo nel comunicare apertamente le proprie indisponibilità. ],
   caption: [RO-4 - Impegni universitari e personali],
+)
+
+=== Indisponibilità dei professori per i colloqui <RO-5>
+#tabellaRischio(
+  ID: [RO-5],
+  descrizione: [La modalità di prenotazione a sportello porta con sé alcuni svantaggi, uno dei quali è sicuramente la possibilità che i professori non siano disponibili per i colloqui in quanto impegnati in altri incontri o attività.],
+  probabilità: [Bassa],
+  impatto: [Medio],
+  piano: [Il gruppo può prenotare i colloqui con largo anticipo, o eventualmente sondarne la disponibilità, in modo da evitare eventuali sovrapposizioni con altri impegni dei professori.],
+  caption: [RO-5 - Indisponibilità dei professori per i colloqui],
 )
 
 == Rischi tecnologici
@@ -926,7 +945,7 @@ Il preventivo a finire si è alzato a 12,751.12€, a fronte di quello iniziale 
 Durante il settimo _sprint_ il gruppo ha lavorato per avanzare nella redazione della documentazione, nell'analisi delle architetture di _deployment_ e logica, nelle prime implementazioni. Le attività sono state completate tutte tranne la stesura della Specifica Tecnica, a causa di un cambio di tecnologia che ha costretto il _team_ a concentrare le risorse sul _software_.
 
 ===== Cosa ha funzionato
-Il gruppo ha analizzato in modo piuttosto approfondito le architetture da adottare presentandole sia all'azienda proponente che al prof. Cardin. Il colloquio con il docente-committente ha fatto emergere alcune problematiche relative allo _stream processor_ poiché è stato considerato un numero potenziale di utenti molto inferiore rispetto a quello atteso dal professore. Il _team_ ha saputo tempestivamente colmare il deficit tecnologico e in pochi giorni è riuscito a modellare il simulatore e il nuovo _stream processor_ con Apache Flink. È stata portata avanti anche l'interfaccia con Grafana.
+Il gruppo ha analizzato in modo piuttosto approfondito le architetture da adottare presentandole sia all'azienda proponente che al prof. Cardin. Il colloquio con il docente-committente ha fatto emergere alcune problematiche relative allo _stream processor_ poiché è stato considerato un numero potenziale di utenti molto inferiore rispetto a quello atteso dal professore. Il _team_ ha saputo tempestivamente colmare il deficit tecnologico e in pochi giorni è riuscito a modellare il simulatore e il nuovo _stream processor_ con #rifGlossario("Apache Flink"). È stata portata avanti anche l'interfaccia con Grafana.
 
 ===== Cosa non ha funzionato
 La redazione della prima parte della Specifica Tecnica non è stata completata secondo i tempi previsti a causa del cambio di tecnologia imprevisto che ha richiesto molte risorse per risolvere il problema rapidamente. Poiché lo _stream processor_ è parte centrale del prodotto è stato ritenuto fondamentale definirlo interamente prima di cominciare la stesura della Specifica Tecnica.
@@ -950,7 +969,7 @@ Nel prossimo periodo sarà necessario redigere la Specifica Tecnica e finire il 
   column-gutter: 1em,
   row-gutter: 0.5em,
   [- *Inizio:*], [11/03/2025],
-  [- *Fine:*], [21/03/2025],
+  [- *Fine:*], [27/03/2025],
   [- *Rischi attesi:*], [#link(<RO-1>)[RO-1], #link(<RO-2>)[RO-2], #link(<RO-3>)[RO-3], #link(<RT-1>)[RT-1]],
 )
 
@@ -970,18 +989,26 @@ In seguito alla riunione avvenuta per l'inizio dell'ottavo _sprint_ il _team_ pr
 - Stesura dei _test_ di unità nel PdQ, nello specifico:
   - _Test_ del simulatore GPS.
   - _Test_ del _job_ di Flink.
-- Scrittura del codice dei _test_ di unità, nello specifico:
+- Scrittura dei _test_ di sistema nel PdQ.
+- Scrittura dei _test_ di integrazione nel PdQ.
+- Scrittura dei _test_ di accettazione nel PdQ.
+- Completare il cruscotto del PdQ.
+- Completamento del codice dei _test_ statici e dinamici.
+- Completamento del codice dei _test_ di unità, nello specifico:
   - _Test_ del simulatore GPS.
   - _Test_ del _job_ di Flink.
-- Ultimazione della _dashboard_ di Grafana.
+- Ultimazione della _dashboard_ di Grafana, nello specifico:
+  - Completare la sezione dello storico.
+  - Implementare la sezione relativa ai grafici.
 - Implementare le ultime modifiche al sito di facciata del _team_, in particolare:
   - Riordinare i verbali in modo che appaiano dal più recente al meno recente.
   - Rinominare i documenti mettendo le prime lettere maiuscole.
-- Ultimazione del _database_.
-- _Refactoring_ del simulatore in modo che rispetti l'architettura.
+- Ultimazione della struttura del _database_ e popolamento.
+- _Refactoring_ del simulatore in modo da creare una struttura solida, se necessario usando alcuni _design pattern_.
 - Creazione dello _stream processor_ in Flink.
 
 #v(10pt)
+
 #figure(
   image("../assets/img/PdP/gantt_s8.png"),
   caption: [Diagramma di Gantt dello _sprint_ 8],
@@ -994,9 +1021,100 @@ In seguito alla riunione avvenuta per l'inizio dell'ottavo _sprint_ il _team_ pr
     (2, 3, 0, 7, 3.5, 15),
     (6, 3, 0, 13, 18, 7),
     (5, 0.5, 0, 16, 23, 9),
-    (3, 0, 1.5, 13, 17, 10),
+    (3, 0, 1.5, 13, 16, 10),
     (5, 1.5, 0, 7, 9, 8),
     (0, 0, 0, 16, 14, 11.5),
   ),
   caption: [Preventivo delle ore nell'ottavo _sprint_ per membro e per ruolo],
 )
+
+
+==== Consuntivo orario e di spesa dello sprint corrente
+#consuntivoOre(
+  preventivo: (
+    (1, 4, 1, 11, 13, 14),
+    (2, 3, 0, 7, 3.5, 15),
+    (6, 3, 0, 13, 18, 7),
+    (5, 0.5, 0, 16, 23, 9),
+    (3, 0, 1.5, 13, 16, 10),
+    (5, 1.5, 0, 7, 9, 8),
+    (0, 0, 0, 16, 14, 11.5),
+  ),
+  consuntivo: (
+    (1, 4, 1, 10, 13, 14),
+    (2, 3, 0, 7, 3.5, 15),
+    (5, 3, 0, 13, 19, 7),
+    (4, 0, 0, 16, 23, 9),
+    (3, 0, 1.5, 13, 16, 10),
+    (5, 1.5, 0, 7, 9, 8),
+    (0, 0, 0, 16, 14, 11.5),
+  ),
+  tabCaption: [Consuntivo delle ore nell'ottavo _sprint_ per membro e per ruolo],
+  costTabCaption: [Costi sostenuti nell'ottavo _sprint_],
+  chartCaption: [Grafico percentuale dell'allocazione delle ore per ruolo nell'ottavo _sprint_],
+)
+
+#pagebreak()
+
+==== Risorse rimanenti e preventivo a finire
+#align(
+  center,
+  [
+    #table(
+      columns: (auto, auto, auto, auto),
+      align: center,
+      table.header([*Ruolo*], [*Ore rimanenti*], [*_Budget_ rimanente*], [*Risorse consumate*]),
+      [Responsabile], [2], [60 €], [96.43 %],
+      [Amministratore], [0.5], [10 €], [99.11 %],
+      [Analista], [0.5], [12.5 €], [99.40 %],
+      [Progettista], [1], [25 €], [99.25 %],
+      [Programmatore], [2], [30 €], [98.76 %],
+      [Verificatore], [0], [0 €], [100 %],
+    )
+  ],
+)
+Il preventivo a finire si attesta a fine progetto a *12.602,50€*, a fronte del preventivo iniziale di 12.740,00€ rientrando quindi nel _budget_.
+
+==== Tabella finale ore rimanenti per membro
+Il gruppo è riuscito a rispettare l'impegno preso in fase di candidatura, visionabile nel documento #formatLink(label:"dichiarazione impegni e preventivo costi (v1.1.0)", url: "https://sweatunipd.github.io/docs/candidatura/dichiarazione_impegni_e_preventivo_costi_ver1.1.0.pdf"), di dedicare ognuno un massimo di 90 ore produttive al progetto. È stata rispettata anche la ripartizione dei ruoli in parti uguali tra tutti i membri del gruppo.
+
+#rendicontazioneOre(
+  (
+    (0, 0, 0, 1, 0, 0),
+    (0, 0, 0, 0, 0, 0),
+    (1, 0, 0, 0, 1, 0),
+    (1, 0.5, 0, 0, 0, 0),
+    (0, 0, 0.5, 0, 1, 0),
+    (0, 0, 0, 0, 0, 0),
+    (0, 0, 0, 0, 0, 0),
+  ),
+  caption: [Tabella finale ore rimanenti di ogni membro per ogni ruolo],
+)
+
+
+==== Retrospettiva
+L'ottavo ed ultimo _sprint_ ha visto il gruppo completare tutte le attività previste e sostenere il colloquio finale con l'azienda. Il _team_, libero da impegni universitari, è riuscito a lavorare con grande efficienza e coordinazione, riuscendo a completare tutte le attività pianificate, rendendo il _software_ e la relativa documentazione pronti per la revisione PB.
+
+Un imprevisto che ha portato al ritardo della consegna è stata l'indisponibilità del professor Cardin nel fissare il colloquio nel periodo inizialmente previsto dal gruppo, ovvero nella settimana del 24 marzo. La revisione PB è stata quindi posticipata a lunedì 31. Con una settimana in più a disposizione il gruppo ha deciso di rivedere la logistica delle attività rimaste, allungando la durata dello _sprint_, rimanendo sempre nei limiti del _budget_. Avendo infatti pianificato il termine del progetto per venerdì 21 marzo erano avanzate alcune risorse che sono state sfruttate per completare con più calma e rigore i documenti e soddisfare la maggior parte dei requisiti facoltativi.
+
+===== Cosa ha funzionato
+Il gruppo è riuscito a seguire il proprio _#rifGlossario("way of working")_ fino alla fine del progetto, riuscendo a lavorare sempre in modo efficace ed efficiente. La quasi totalità delle attività è stata portata a termine in modo asincrono anche quando più persone lavoravano sugli stessi documenti.
+
+L'incontro con l'azienda è stato utile al gruppo per capire gli ultimi aggiustamenti da apportare, specie riguardo la presentazione del prodotto. La proponente si è mostrata soddisfatta del risultato del _software_ elogiando in particolar modo la reattività che il gruppo ha avuto in seguito ad alcuni imprevisti, primo fra tutti il cambio di tecnologia del _backend_. 
+
+===== Cosa non ha funzionato
+Per la mancata disponibilità del professor Cardin il gruppo ha dovuto posticipare di una settimana la consegna e di conseguenza rivedere la pianificazione dello _sprint_. 
+Nonostante l'imprevisto il gruppo è riuscito a sfruttare l'opportunità di avere una settimana in più per portare a termine alcune attività in maniera più tranquilla e organizzata.
+
+
+===== Cosa fare per migliorare
+Il gruppo avrebbe potuto accertarsi prima della disponibilità del professor Cardin per il colloquio finale, in modo da evitare di dover rivedere la pianificazione in seguito. 
+Questo però avrebbe voluto dire richiedere il colloquio al professore all'inizio dello _sprint_ e non quando il gruppo si sarebbe sentito pronto.
+
+===== Rischi riscontrati
+Nel corso dell'ottavo _sprint_ si sono riscontrati i seguenti rishi:
+- #link(<RO-5>)[RO-5]: l'indisponibilità del professor Cardin ha fatto slittare la consegna di una settimana, costringendo il gruppo a rivedere la pianificazione.
+- #link(<RT-1>)[RT-1]: tutti i membri del gruppo stanno iniziando a prendere confidenza con le tecnologie utilizzate ma con le quali non hanno ancora raggiunto una padronanza completa.
+
+===== Attività future
+Il gruppo auspica di sostenere positivamente i colloqui PB in modo da concludere il progetto ed iniziare le attività di _stage_ il prima possibile.
