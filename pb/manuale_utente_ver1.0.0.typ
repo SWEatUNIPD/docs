@@ -61,11 +61,11 @@ La prima occorrenza di un termine definito all'interno del glossario presente al
 
 == Riferimenti
 === Riferimenti normativi
-- Norme di Progetto (v2.0.0) \ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/norme_di_progetto_ver2.0.0.pdf")
+- Norme di Progetto (v2.0.0) \ #formatLink(url: "https://sweatunipd.github.io/docs/pb/norme_di_progetto_ver2.0.0.pdf")
 - Regolamento del progetto didattico, _slide_ 23 (ultimo accesso 27/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")
 - Capitolato C4 - Sync Lab S.r.l. (ultimo accesso 27/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
 === Riferimenti informativi
-- Glossario (v2.0.0) \ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/glossario_ver2.0.0.pdf")
+- Glossario (v2.0.0) \ #formatLink(url: "https://sweatunipd.github.io/docs/pb/glossario_ver2.0.0.pdf")
 - Capitolato C4 - Sync Lab S.r.l. (ultimo accesso 27/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
 - Guida ufficiale per l'installazione di Docker (ultimo accesso 27/03/2025) \ #formatLink(url: "https://docs.docker.com/engine/install")
 
