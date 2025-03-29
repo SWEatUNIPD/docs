@@ -405,7 +405,7 @@ La classe `GPSDataDto` rappresenta il _data transfer object_ (DTO) per i dati di
 - ```java -longitude: float```: longitudine della posizione GPS.
 - ```java -timestamp: long```: timestamp della posizione GPS.
 
-===== Costruttore
+===== Costruttori
 Il costruttore della classe `GPSDataDto` è un costruttore di _default_. Non viene utilizzato il costruttore di _default_ implicito fornito da Java in quanto la libreria di serializzazione/deserializzazione Jackson richiede un costruttore esplicito per la creazione di oggetti a partire da un _JSON_.
 
 ===== Metodi
@@ -433,7 +433,7 @@ In quanto _record_, gli attributi della classe `GPSData` sotto elencati sono cos
 - ```java -longitude: float```: longitudine della posizione GPS.
 - ```java -timestamp: Timestamp```: timestamp della posizione GPS.
 
-==== Costruttore
+==== Costruttori
 - ```java +GPSData(rentId: int, latitude: float, longitude: float, timestamp: Timestamp)```: costruttore della classe `GPSData` che inizializza gli attributi `rentId`, `latitude`, `longitude` e `timestamp` con i valori passati come parametro.
 
 ==== Metodi
@@ -457,7 +457,7 @@ In quanto _record_, gli attributi della classe `PointOfInterest` sotto elencati 
 - ```java -category: String```: categoria del punto di interesse.
 - ```java -offer: String```: offerta del punto di interesse, ovvero ciò che il punto mette a disposizione per i clienti e che possa essere fondamentale per il contesto degli annunci pubblicitari.
 
-==== Costruttore
+==== Costruttori
 - ```java +PointOfInterest(latitude: float, longitude: float, vat: String, name: String, category: String, offer: String)```: costruttore della classe `PointOfInterest` che inizializza gli attributi `latitude`, `longitude`, `vat`, `name`, `category` e `offer` con i valori passati come parametro.
 
 ==== Metodi
@@ -477,7 +477,7 @@ La classe `NearestPOIRequest` rappresenta la richiesta asincrona di ricerca del 
 ==== Attributi
 - #underline[```java - STMT: String```]: _statement_ SQL da eseguire per la ricerca del punto di interesse più vicino alla posizione del sensore. L'attributo è statico (ovvero condiviso tra tutte le istanze della classe) e costante.
 
-==== Costruttore
+==== Costruttori
 Viene mantenuto il costruttore implicito di _default_ fornito da Java, in quanto non sono necessari costruttori specifici per la classe `NearestPOIRequest`.
 
 ==== Metodi
@@ -503,7 +503,7 @@ La classe `GPSDataDeserializationSchema` estende la classe astratta parametrica 
 ==== Attributi
 - ```java -objectMapper: ObjectMapper```: oggetto fornito dalla libreria Jackson (interno alla dipendenza di Flink) per la serializzazione e deserializzazione di oggetti in formato JSON.
 
-==== Costruttore
+==== Costruttori
 Viene mantenuto il costruttore di _default_ fornito da Java.
 
 ==== Metodi
@@ -516,7 +516,7 @@ La classe `AdvertisementSerializationSchema` implementa l'interfaccia parametri
 ==== Attributi
 - ```java -objectMapper: ObjectMapper```: oggetto fornito dalla libreria Jackson (interno alla dipendenza di Flink) per la serializzazione e deserializzazione di oggetti in formato JSON.
 
-==== Costruttore
+==== Costruttori
 Viene mantenuto il costruttore di _default_ fornito da Java.
 
 ==== Metodi
@@ -528,7 +528,7 @@ La classe `DatabaseConnectionSingleton` rappresenta il _singleton_ della `Connec
 ==== Attributi
 - #underline[```java -instance: ConnectionFactory```]
 
-==== Costruttore
+==== Costruttori
 Il costruttore viene reso inutilizzabile attraverso la ridefinizione del costruttore di _default_, ponendo l'accesso privato.
 
 ==== Metodi
@@ -540,7 +540,7 @@ La classe `KafkaTopicService` rappresenta il servizio di creazione dei _topic_ d
 ==== Attributi
 - ```java -admin: Admin```: oggetto fornito dalla libreria Kafka per la gestione dei _topic_. Nel nostro caso è costante per ogni istanza dell'oggetto.
 
-==== Costruttore
+==== Costruttori
 - ```java +KafkaTopicService(admin: Admin)```: costruttore della classe `KafkaTopicService` che inizializza l'attributo `admin` con il valore passato come parametro.
 
 ==== Metodi
@@ -553,7 +553,13 @@ La classe `DataStreamJob` è la _main class_ del _job_ di Flink. Essa avvia l'es
 ==== Attributi
 - ```java -env: StreamExecutionEnvironment```: oggetto fornito dalla libreria Flink per la gestione dell'ambiente di esecuzione del _job_. L'attributo è costante.
 - ```java -topicService: KafkaTopicService```: istanza della classe `KafkaTopicService` per la creazione dei _topic_ necessari al _job_. L'attributo è costante.
-- #underline[```java ```]
+- #underline[```java -KAFKA_ADMIN_PROPS: Properties```]: oggetto che contiene tutte le configurazioni dell'_admin_ di Kafka. L'attributo è statico e costante.
+- #underline[```java -STREAM_EXECUTION_ENVIRONMENT_CONFIG: Configuration```]: oggetto che contiene tutte le configurazioni dell'_execution environment_ di Flink. L'attributo è statico e costante.
+
+==== Costruttori
+- ```java +DataStreamJob(env: StreamExecutionEnvironment, topicService: KafkaTopicService)```: costruttore della classe `DataStreamJob` che inizializza gli attributi `env` e `topicService` con i valori passati come parametro.
+
+====
 
 == Design pattern adottati
 === Singleton
