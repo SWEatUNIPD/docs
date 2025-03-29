@@ -1288,3 +1288,79 @@ Per una spiegazione più approfondita si rimanda al documento `analisi_dei_requi
 #pagebreak(weak: true)
 
 = Grafici riassuntivi
+== Requisiti funzionali obbligatori
+#align(center)[
+  #figure(
+    kind: image,
+    caption: "Grafico a torta riassunto dei requisiti funzionali obbligatori",
+    cetz.canvas({
+      let colors = gradient.linear(red, yellow, green, blue)
+
+      chart.piechart(
+        (("Non soddisfatti", 0), ("Soddisfatti", 29)),
+        value-key: 1,
+        label-key: 0,
+        radius: 3,
+        slice-style: colors,
+        gap: 0,
+        outer-label: (content: "%"),
+      )
+    }),
+  )]
+== Requisiti funzionali desiderabili
+#align(center)[
+  #figure(
+    kind: image,
+    caption: "Grafico a torta riassunto dei requisiti funzionali desiderabili",
+    cetz.canvas({
+      let colors = gradient.linear(red, yellow, green, blue)
+
+      chart.piechart(
+        (("Non soddisfatti", 0), ("Soddisfatti", 17)),
+        value-key: 1,
+        label-key: 0,
+        radius: 3,
+        slice-style: colors,
+        gap: 0,
+        outer-label: (content: "%"),
+      )
+    }),
+  )]
+== Requisiti funzionali facoltativi
+#align(center)[
+  #figure(
+    kind: image,
+    caption: "Grafico a torta riassunto dei requisiti funzionali facoltativi",
+    cetz.canvas({
+      let colors = gradient.linear(red, yellow, green, blue)
+
+      chart.piechart(
+        (("Non soddisfatti", 1), ("Soddisfatti", 9)),
+        value-key: 1,
+        label-key: 0,
+        radius: 3,
+        slice-style: colors,
+        gap: 0,
+        outer-label: (content: "%"),
+      )
+    }),
+  )]
+== Requisiti funzionali totali
+#align(center)[
+  #figure(
+    kind: image,
+    caption: "Grafico a torta riassunto dei requisiti funzionali totali",
+    cetz.canvas({
+      let colors = gradient.linear(red, yellow, green, blue)
+
+      chart.piechart(
+        (("Non soddisfatti", 1), ("Soddisfatti", 55)),
+        value-key: 1,
+        label-key: 0,
+        radius: 3,
+        slice-style: colors,
+        gap: 0,
+        outer-label: (content: "%"),
+      )
+    }),
+  )]
