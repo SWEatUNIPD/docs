@@ -570,7 +570,7 @@ Il costruttore viene reso inutilizzabile attraverso la ridefinizione del costrut
 - #underline[```java +getConnectionFactory(): ConnectionFactory```]: metodo statico che restituisce l'istanza della `ConnectionFactory`. Se l'istanza non è ancora stata creata, viene creata e restituita. Il metodo è _synchronized_ per garantire che venga creata una sola istanza della `ConnectionFactory` durante l'intero processo.
 
 === KafkaTopicService
-La classe `KafkaTopicService` rappresenta il servizio di creazione dei _topic_ di Kafka. Viene impiegato dal _job_ per la creazione dei topic _gps-data_ e _adv-data_ se non già creati, utilizzati rispettivamente per la ricezione dei dati di localizzazione e l'invio degli annunci generati dalla LLM. 
+La classe `KafkaTopicService` rappresenta il servizio di creazione dei _topic_ di Kafka. Viene impiegato dal _job_ per la creazione dei topic _gps-data_ e _adv-data_ se non già creati, utilizzati rispettivamente per la ricezione dei dati di localizzazione e l'invio degli annunci generati dalla LLM.
 
 ==== Attributi
 - ```java -admin: Admin```: oggetto fornito dalla libreria Kafka per la gestione dei _topic_. Nel nostro caso è costante per ogni istanza dell'oggetto.
