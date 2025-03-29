@@ -229,7 +229,7 @@ All'interno della pagina sono presenti tre grafici:
 )
 #v(5pt)
 2. Grafico a linee che mostra il numero di annunci generati dal sistema nelle ultime 24 ore, con granularità oraria. I valori contenuti all'interno di questo grafico fanno riferimento al totale degli annunci generati.
-3. Grafico a barre che mostra il numero medio di noleggi che vengono effettuati in ciascun mese dell’anno, risultato della media di noleggi effettuati in quel mese nel corso degli anni. I valori contenuti all'interno di questo grafico fanno riferimento al totale dei noleggi.
+3. Grafico a barre che mostra il numero medio di noleggi che vengono effettuati in ciascun mese dell'anno, risultato della media di noleggi effettuati in quel mese nel corso degli anni. I valori contenuti all'interno di questo grafico fanno riferimento al totale dei noleggi.
 
 
 

@@ -32,7 +32,6 @@
       - Stesura retrospettiva ottavo _sprint_
       - Introdotto RO-5
     ],
-
     "1.5.0",
     "12/03/2025",
     "Davide Marin",
@@ -174,10 +173,10 @@ sottolineato e seguito dalla lettera g posta ad apice (ad esempio #rifGlossario(
 
 == Riferimenti
 === Riferimenti normativi
-- Norme di Progetto (v2.0.0)\ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/norme_di_progetto_ver2.0.0.pdf")
+- Norme di Progetto (v2.0.0)\ #formatLink(url: "https://sweatunipd.github.io/docs/pb/norme_di_progetto_ver2.0.0.pdf")
 - Regolamento del progetto didattico (ultimo accesso 27/03/2025)\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")
 === Riferimenti informativi
-- Glossario (v2.0.0)\ #formatLink(url: "https://sweatunipd.github.io/docs/rtb/glossario_ver2.0.0.pdf")
+- Glossario (v2.0.0)\ #formatLink(url: "https://sweatunipd.github.io/docs/pb/glossario_ver2.0.0.pdf")
 - Lezione T03 - Il ciclo di vita del software (ultimo accesso 27/03/2025)\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T03.pdf")
 - Lezione T04 - Gestione di progetto (ultimo accesso 27/03/2025)\ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T04.pdf")
 #pagebreak()
@@ -1100,15 +1099,15 @@ Un imprevisto che ha portato al ritardo della consegna è stata l'indisponibilit
 ===== Cosa ha funzionato
 Il gruppo è riuscito a seguire il proprio _#rifGlossario("way of working")_ fino alla fine del progetto, riuscendo a lavorare sempre in modo efficace ed efficiente. La quasi totalità delle attività è stata portata a termine in modo asincrono anche quando più persone lavoravano sugli stessi documenti.
 
-L'incontro con l'azienda è stato utile al gruppo per capire gli ultimi aggiustamenti da apportare, specie riguardo la presentazione del prodotto. La proponente si è mostrata soddisfatta del risultato del _software_ elogiando in particolar modo la reattività che il gruppo ha avuto in seguito ad alcuni imprevisti, primo fra tutti il cambio di tecnologia del _backend_. 
+L'incontro con l'azienda è stato utile al gruppo per capire gli ultimi aggiustamenti da apportare, specie riguardo la presentazione del prodotto. La proponente si è mostrata soddisfatta del risultato del _software_ elogiando in particolar modo la reattività che il gruppo ha avuto in seguito ad alcuni imprevisti, primo fra tutti il cambio di tecnologia del _backend_.
 
 ===== Cosa non ha funzionato
-Per la mancata disponibilità del professor Cardin il gruppo ha dovuto posticipare di una settimana la consegna e di conseguenza rivedere la pianificazione dello _sprint_. 
+Per la mancata disponibilità del professor Cardin il gruppo ha dovuto posticipare di una settimana la consegna e di conseguenza rivedere la pianificazione dello _sprint_.
 Nonostante l'imprevisto il gruppo è riuscito a sfruttare l'opportunità di avere una settimana in più per portare a termine alcune attività in maniera più tranquilla e organizzata.
 
 
 ===== Cosa fare per migliorare
-Il gruppo avrebbe potuto accertarsi prima della disponibilità del professor Cardin per il colloquio finale, in modo da evitare di dover rivedere la pianificazione in seguito. 
+Il gruppo avrebbe potuto accertarsi prima della disponibilità del professor Cardin per il colloquio finale, in modo da evitare di dover rivedere la pianificazione in seguito.
 Questo però avrebbe voluto dire richiedere il colloquio al professore all'inizio dello _sprint_ e non quando il gruppo si sarebbe sentito pronto.
 
 ===== Rischi riscontrati
