@@ -1,21 +1,36 @@
 #import "/templates/template.typ": *
 
 #show: content => verbale(
-  data: "27 gennaio 2025",
+  data: "27 marzo 2025",
   destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "Sync Lab S.r.l.", "Gruppo SWE@"),
   responsabile: "Riccardo Milan",
-  redattori: ("Andrea Precoma, Davide Marin", "Davide Martinelli", "Davide Picello", "Klaudio Merja"),
+  redattori: ("Andrea Precoma", "Davide Marin", "Davide Martinelli", "Davide Picello", "Klaudio Merja"),
   verificatori: ("Andrea Precoma", "Davide Martinelli", "Davide Marin", "Davide Picello", "Riccardo Milan"),
   titolo: "Piano di Qualifica",
   uso: "Esterno",
   versioni: (
-    "1.4.0",
+    "2.0.0",
     "27/03/2025",
     "Davide Marin\nAndrea Precoma",
     "Davide Martinelli\nDavide Picello",
     [
       - Aggiornamento del cruscotto di monitoraggio della qualità
       - Rimosse metriche MPD-SC, #box[MPD-FD], MPD-COC, MPD-SFI, MPD-SFO e MPD-RM
+    ],
+    "1.5.0",
+    "27/03/2025",
+    "Davide Martinelli\nKlaudio Merja",
+    "Andrea Precoma",
+    [
+      - Aggiunta dei _test_ di integrazione del _backend_
+    ],
+    "1.4.0",
+    "23/03/2025",
+    "Davide Martinelli",
+    "Riccardo Milan\nAndrea Precoma",
+    [
+      - Aggiunta dei _test_ di unità del _backend_
+      - Aggiornamento stato dei _test_
     ],
     "1.3.0",
     "21/03/2025",
@@ -82,17 +97,17 @@ L'obiettivo principale del prodotto è quello di fornire un sistema che monitori
 
 == Glossario
 Per chiarire il significato di alcuni termini tecnici, abbreviazioni e acronimi utilizzati all'interno della documentazione viene fornito un glossario.
-Nel documento i termini che, alla loro prima occorrenza, vengono contrassegnati da una sottolineatura e una "g" posta ad apice (e.g. #rifGlossario("termine")) avranno una corrispettiva descrizione dettagliata all'interno del Glossario.
+Nel documento i termini che, alla loro prima occorrenza, vengono contrassegnati da una sottolineatura e una "g" posta ad apice (ad esempio #rifGlossario("termine")) avranno una corrispettiva descrizione dettagliata all'interno del Glossario.
 
 == Riferimenti
 
 === Riferimenti normativi
 - Norme di Progetto (v2.0.0)\ #formatLink(url: "https://sweatunipd.github.io/docs/pb/norme_di_progetto_ver2.0.0.pdf")
-- ISO/IEC 12207:1995 (#sym.section#sym.section 6.3-6.7) (ultimo accesso in data 27/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf")
+- ISO/IEC 12207:1995, #sym.section#sym.section 6.3-6.7 (ultimo accesso in data 27/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf")
 
 === Riferimenti informativi
 - Glossario (v2.0.0)\ #formatLink(url: "https://sweatunipd.github.io/docs/pb/glossario_ver2.0.0.pdf")
-- Capitolato C4 (Sync Lab) (ultimo accesso in data 27/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
+- Capitolato C4 - Sync Lab (ultimo accesso in data 27/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
 - Lezione T07 - Qualità di prodotto (ultimo accesso in data 27/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T07.pdf")
 - Lezione T08 - Qualità di processo (ultimo accesso in data 27/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T08.pdf")
 
@@ -352,18 +367,6 @@ La complessità ciclomatica valuta la complessità del codice sorgente attravers
 ==== Code smell (MPD-CS)
 Rileva potenziali problemi di progettazione o codice che potrebbero richiedere manutenzione. Segnala parti del codice che potrebbero non essere ottimali e che potrebbero causare difficoltà nel futuro, come un'architettura poco chiara o sezioni di codice ripetitive.
 
-// ==== Coefficient of Coupling (MDP-COC)
-// Il Coefficient of Coupling misura il grado di dipendenza tra i moduli o le componenti di un sistema. Un alto COC implica che i moduli siano strettamente interconnessi, il che può rendere difficile apportare modifiche a un modulo senza influenzare altri.
-
-// ==== Structure fan in (MDP-SFI)
-// Indica il numero di moduli o componenti che dipendono direttamente da un modulo o funzione specifica. Un alto valore di _fan-in_ suggerisce che molte parti del sistema dipendono da quel modulo, quindi modifiche a tale modulo potrebbero avere un ampio impatto.
-
-// ==== Structure fan out (MDP-SFO)
-// Misura il numero di dipendenze o connessioni che un modulo o componente ha con altri. Un elevato _fan-out_ può indicare che il modulo è fortemente interconnesso con altri, il che può comportare una maggiore complessità nelle modifiche o nella manutenzione del sistema.
-
-// ==== Ripercussione delle Modifiche (MDP-RM)
-// Misura la percentuale del sistema che è stato affetto dalle modifiche apportate.
-
 ==== Tabella metriche manutenibilità
 
 #figure(
@@ -376,10 +379,6 @@ Rileva potenziali problemi di progettazione o codice che potrebbero richiedere m
     table.header[*Metrica*][*Nome*][*Valore accettabile*][*Valore desiderabile*],
     [MPD-CCM], [Complessità ciclomatica per metodo], [$≤ 5$], [$≤ 3$],
     [MPD-CS], [_Code smell_], [$0$], [$0$],
-    // [MPD-COC], [_Coefficient of coupling_], [$≤ 30\%$], [$≤ 10\%$],
-    // [MPD-SFI], [Structure _fan in_], [da determinare], [da determinare],
-    // [MPD-SFO], [Structure _fan out_], [da determinare], [da determinare],
-    // [MPD-RM], [Ripercussione delle Modifiche], [da determinare], [da determinare],
   ),
 )
 
@@ -403,19 +402,15 @@ E dove "numero" è un *numero progressivo* che identifica il _test_ all'interno 
 Inoltre ogni test ha uno stato che ne indica l'esito:
 - *Verificato*: il _test_ è stato eseguito e ha dato esito positivo
 - *Non verificato*: il _test_ non è stato eseguito
-- *Non implementato*: il _test_ non è stato implementato // Se alla fine sono stati tutti implementati si può anche togliere ? TODO
+- *Non implementato*: il _test_ non è stato implementato
 
 == Test di unità
 Mirano a verificare il funzionamento corretto dei componenti _software_ più piccoli e indipendenti, sviluppati principalmente nella fase di progettazione.
 
-// TODO parlare un po' di mock ?
-
 === Test di unità del simulatore
 I _test_ di unità del simulatore sono finalizzati a verificare il corretto funzionamento delle classi e dei metodi che compongono il simulatore, garantendo che ciascuna funzionalità sia implementata in modo corretto.
 
-I _test_ sono stati sviluppati utilizzando il _framework_ `Vitest`, uno strumento moderno e performante per il _testing_ in ambiente TypeScript. Questo _framework_ offre funzionalità utili per la scrittura dei _test_ come l'utilizzo e la gestione dei _mock_, fondamentali per isolare le singole unità di codice.
-
-// TODO capire cosa fare con i test per far fallire il sistema ma che non hanno eccezioni attive al momento
+I _test_ sono stati sviluppati utilizzando il _framework_ Vitest, uno strumento moderno e performante per il _testing_ in ambiente TypeScript. Questo _framework_ offre funzionalità utili per la scrittura dei _test_ come l'utilizzo e la gestione dei _mock_, fondamentali per isolare le singole unità di codice.
 
 #table(
   columns: 3,
@@ -449,7 +444,7 @@ I _test_ sono stati sviluppati utilizzando il _framework_ `Vitest`, uno strument
     [TU-17], [Verifica che il metodo `getIsAvailable` restituisca correttamente lo stato di disponibilità del tracker.], [Verificato],
     [TU-18], [Verifica che il messaggio venga correttamente formato e inviato tramite il `KafkaManager`.], [Verificato],
 
-    [TU-19], [Verifica che quando il `tracker` raggiunge l'ultimo punto del percorso il metodo `move` disconnetta correttamente il `producer` ed il `consumer` Kafka.], [Non implementato],
+    [TU-19], [Verifica che quando il `tracker` raggiunge l'ultimo punto del percorso il metodo `move` disconnetta correttamente il `producer` ed il `consumer` #rifGlossario("Kafka").], [Non implementato],
     [TU-20], [Verifica che il metodo `move` lanci un eccezione se si verifica un generico errore all'interno del metodo.], [Non implementato],
 
     // TrackerFetcher
@@ -470,13 +465,70 @@ I _test_ sono stati sviluppati utilizzando il _framework_ `Vitest`, uno strument
     [TU-33], [Verifica che il metodo `disconnectConsumer` disconnetta correttamente un consumatore Kafka, controllando che il metodo `disconnect` del consumatore sia stato chiamato.], [Verificato],
     [TU-34], [Verifica che il metodo `disconnectConsumer` gestisca correttamente gli errori di disconnessione, lanciando un errore quando la disconnessione fallisce.], [Verificato],
     
-    //[TU-], [], [Verificare],
 )
 
+=== Test di unità del backend
+I _test_ di unità del _backend_ sono finalizzati a verificare il corretto funzionamento delle classi e dei metodi che compongono il _backend_, garantendo che ciascuna funzionalità sia implementata in modo corretto.
+
+I _test_ sono stati sviluppati utilizzando il _framework_ JUnit 5, un efficace e consolidato strumento per il _testing_ in ambiente Java, coadiuvato da Mockito per la creazione di _mock_ e _stub_.
+
+#table(
+  columns: 3,
+  align: (center, left, center),
+  fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
+  table.header[*Codice test*][*Descrizione*][*Stato*],
+    // `DatabaseConnectionSingleton`
+    [TU-35], [Verificare che il metodo `getConnection` funzioni correttamente alla sua prima chiamata, creando e restituendo un'istanza di tipo `ConnectionFactory`.], [Verificato],
+    [TU-36], [Verificare che il metodo `getConnection`, se chiamato più di una volta, restituisca sempre la stessa istanza di tipo `ConnectionFactory` (correttezza del _singleton_).], [Verificato],
+    // `GPSDataDto`
+    [TU-37], [Verificare che gli oggetti di tipo `GPSDataDto` vengano istanziati correttamente, constatando in particolare che l'_override_ del metodo `equals` si comporti come previsto.], [Verificato],
+    [TU-38], [Verificare che i metodi _getters_ e _setters_ della classe `GPSDataDto` funzionino correttamente, rispettivamente restituendo e modificando correttamente i valori degli attributi dell'oggetto.], [Verificato],
+    [TU-39], [Verificare che l'_override_ del metodo `hashCode` della classe `GPSDataDto` funzioni correttamente, restituendo quindi lo stesso valore per oggetti uguali.], [Verificato],
+    // `GPSData`
+    [TU-40], [Verificare che gli oggetti di tipo `GPSData` vengano istanziati correttamente, constatando in particolare che l'_override_ del metodo `equals` si comporti come previsto.], [Verificato],
+    [TU-41], [Verificare che i metodi _setters_ della classe `GPSData` funzionino correttamente, modificando correttamente i valori degli attributi dell'oggetto.], [Verificato],
+    [TU-42], [Verificare che l'_override_ del metodo `hashCode` della classe `GPSData` funzioni correttamente, restituendo quindi lo stesso valore solo per oggetti uguali.], [Verificato],
+    // `PointOfInterest`
+    [TU-43], [Verificare che gli oggetti di tipo `PointOfInterest` vengano istanziati correttamente, constatando in particolare che l'_override_ metodo `equals` si comporti come previsto.], [Verificato],
+    [TU-44], [Verificare che l'_override_ del metodo `hashCode` della classe `PointOfInterest` funzioni correttamente, restituendo quindi lo stesso valore solo per oggetti uguali.], [Verificato],
+    // `AdvertisementGenerationRequest`
+    [TU-45], [Verificare che la richiesta di generazione di un annuncio tramite il metodo asincrono `asyncInvoke` funzioni correttamente, completando l'oggetto `resultFuture` con la tupla contenente il testo generato dalla #rifGlossario("LLM").], [Verificato],
+    [TU-46], [Verificare che nel caso in cui la stringa contenente gli interessi dell'utente nel _#rifGlossario("database")_ sia vuota, la richiesta di generazione dell'annuncio tramite il metodo `asyncInvoke` porti comunque alla generazione di un annuncio.], [Verificato],
+    [TU-47], [Verificare che se durante la preparazione della _query_ tramite la chiamata a `createStatement` nel metodo `asyncInvoke` della classe `AdvertisementGenerationRequest` viene generata un'eccezione, questa venga correttamente gestita e riportata nel _log_.], [Verificato],
+    // `NearestPOIRequest`
+    [TU-48], [Verificare che la richiesta di ricerca del punto di interesse più vicino all'utente tramite il metodo asincrono `asyncInvoke`, in caso di successo, completi l'oggetto `resultFuture` con la tupla contenente un oggetto del tipo `PointOfInterest`.], [Verificato],
+    [TU-49], [Verificare che nel caso in cui il punto di interesse più vicino all'utente sia più lontano di 100 m in linea d'aria la richiesta di ricerca del punto di interesse più vicino tramite il metodo `asyncInvoke` completi la tupla `resultFuture` con un _set_ vuoto.], [Verificato],
+    [TU-50], [Verificare che se durante la preparazione della _query_ tramite la chiamata a `createStatement` nel metodo `asyncInvoke` della classe `NearestPOIRequest` viene generata un'eccezione, questa venga correttamente gestita e riportata nel _log_.], [Verificato],
+    // `AdvertisementSerializationSchema`
+    [TU-51], [Verificare che il metodo `serialize` della classe `AdvertisementSerializationSchema` funzioni correttamente, controllando che i campi 'rent_id' e 'adv' dell'oggetto JSON restituito coincidano con il rentId dell'oggetto `GPSData` e la stringa contenente l'annuncio generato ricevuti in input dal metodo.], [Verificato],
+    [TU-52], [Verificare che il metodo `serialize` della classe `AdvertisementSerializationSchema` generi un'eccezione di tipo `NullPointerException` se viene invocato da un oggetto con valore `null`.], [Verificato],
+    // `GPSDataDeserializationSchema`
+    [TU-53], [Verificare che il metodo `deserialize` della classe `GPSDataDeserializationSchema` funzioni correttamente, controllando che ricevuta in input una stringa in formato JSON contenente i campi 'rent_id', 'latitude' e 'longitude' questo restituisca un oggetto `GPSData` contenente i valori dei campi corrispondenti.], [Verificato],
+    [TU-54], [Verificare che il metodo `deserialize` della classe `GPSDataDeserializationSchema`, quando riceve in input una stringa in formato JSON non valida, generi un'eccezione di tipo `IOException`, che viene correttamente gestita e riportata nel _log_], [Verificato],
+    // `DataStreamJob`
+    [TU-55], [Verificare che il metodo `execute` della classe `DataStreamJob` funzioni correttamente.], [Verificato],
+    // `KafkaTopicService`
+    [TU-56], [Verificare che il metodo `createTopic` della classe `KafkaTopicTest` funzioni correttamente.], [Verificato],
+    [TU-57], [Verificare che il metodo `createTopics` della classe `KafkaTopicTest` funzioni correttamente.], [Verificato],
+    [TU-58], [Verificare che il metodo `createTopic` della classe `KafkaTopicTest` gestisca correttamente il tentativo di creare un _topic_ con lo stesso nome di un _topic_ già esistente, riportando nel _log_ un avviso di _topic_ già esistente.], [Verificato],
+  )
 
 == Test di integrazione
 Successivi ai _test_ di unità, hanno lo scopo di verificare l'interazione tra diverse unità _software_ per garantire che lavorino in sinergia per compiti specifici.
-// Da completare con tutti i test
+
+=== Test di integrazione del backend
+I _test_ di integrazione del _backend_ sono finalizzati a verificare il corretto funzionamento delle diverse componenti coinvolte nello _#rifGlossario("stream processing")_ dei dati provenienti dai sensori. 
+
+Per l'esecuzione dei _test_ di integrazione viene utilizzata la libreria Testcontainers per Java, che permette di semplificare la creazione dei _container_ #rifGlossario("Docker"). Questa libreria è stata scelta per la sua facilità d'uso e per la sua capacità di integrarsi con i _framework_ di _testing_ esistenti. Un altro ausilio che è stato utilizzato è la classe `MiniClusterWithClientResource` offerta da i _test utils_ di #rifGlossario("Flink"), che permette di creare un _cluster_ Flink locale solo per l'esecuzione dei _test_.
+
+#table(
+  columns: 3,
+  align: (center, left, center),
+  fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
+  table.header[*Codice test*][*Descrizione*][*Stato*],
+    [TI-1], [Verificare che il _backend_ si interfacci correttamente con il _database_ testando l'esecuzione di una _query_.], [Verificato],
+    [TI-2], [Verificare che il _job_ di Flink funzioni correttamente testando il _flow_ di un dato del sensore. Questo comincia con la generazione da parte di un _producer_ Kafka e si conclude, alla fine del _processing_, con il salvataggio in _database_ del dato geospaziale e dell'annuncio di cui questo ha provocato la generazione.], [Verificato],
+)
 
 == Test di sistema
 Precedono i _test_ di accettazione e si concentrano sul sistema nel suo complesso, assicurando che vengano soddisfatti tutti i requisiti _software_ stabiliti e tracciati dal documento di Analisi dei Requisiti.
@@ -486,69 +538,63 @@ Precedono i _test_ di accettazione e si concentrano sul sistema nel suo compless
   align: (center, left, center, center),
   fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
   table.header[*Codice test*][*Descrizione*][*Requisito*][*Stato*],
-    [TS-1], [Verificare che ciascun sensore invii in modo corretto i propri dati di identificazione e di localizzazione geospaziale, a intervalli di tempo regolari.], [ROF-1], [Non eseguito],
-    [TS-2], [Verificare che la _dashboard_ sia accessibile solo previa autenticazione da parte dell'amministratore con le proprie credenziali.], [ROF-2], [Non eseguito],
-    [TS-3], [Verificare che l'amministratore abbia fornito un indirizzo _e-mail_ per procedere con l'autenticazione.], [ROF-3], [Non eseguito],
-    [TS-4], [Verificare che l'amministratore abbia fornito una password per procedere con l'autenticazione.], [ROF-4], [Non eseguito],
-    [TS-5], [Verificare che, se l'amministratore inserisce almeno una credenziale errata, l'autenticazione fallisca e venga ritornato un messaggio di errore.], [ROF-5], [Non eseguito],
-    [TS-6], [Verificare che l'amministratore possa visualizzare sulla _dashboard_ principale una mappa geografica.], [ROF-6], [Non eseguito],
-    [TS-7], [Verificare che l'amministratore possa visualizzare, tramite dei _marker_ sulla mappa geografica, la posizione di tutti i punti di interesse.], [ROF-7], [Non eseguito],
-    [TS-8], [Verificare che l'amministratore possa visualizzare sulla mappa il percorso eseguito da ciascun noleggio attivo in quel momento.], [ROF-8], [Non eseguito],
-    [TS-9], [Verificare che l'amministratore possa visualizzare, lungo il percorso di ciascun noleggio attivo, un _marker_ specifico se quella posizione ricevuta dal sensore non ha provocato una richiesta di generazione annuncio.], [ROF-9], [Non eseguito],
-    [TS-10], [Verificare che l'amministratore possa visualizzare, lungo il percorso di ciascun noleggio attivo, un _marker_ specifico se quella posizione ricevuta dal sensore ha provocato una richiesta di generazione annuncio e questa ha avuto successo, ovvero l'utente è stato ritenuto interessato e quindi ha ricevuto l'annuncio.], [ROF-10], [Non eseguito],
-    [TS-11], [Verificare che l'amministratore possa visualizzare, lungo il percorso di ciascun noleggio attivo, un _marker_ specifico se quella posizione ricevuta dal sensore ha provocato una richiesta di generazione annuncio e questa non ha avuto successo, ovvero l'utente non è stato ritenuto interessato e quindi non ha ricevuto l'annuncio.], [ROF-11], [Non eseguito],
-    [TS-12], [Verificare che l'amministratore possa visualizzare le informazioni relative ad un punto di interesse interagendo con il _marker_ che lo rappresenta all'interno della mappa.], [ROF-12], [Non eseguito],
-    [TS-13], [Verificare che l'amministratore possa visualizzare, dalle informazioni esposte interagendo con il _marker_ di un punto di interesse, il nome dello stesso.], [ROF-13], [Non eseguito],
-    [TS-14], [Verificare che l'amministratore possa visualizzare, dalle informazioni esposte interagendo con il _marker_ di un punto di interesse, la categoria di esercizio commerciale a cui appartiene.], [ROF-14], [Non eseguito],
-    [TS-15], [Verificare che l'amministratore, interagendo con un _marker_ che segnala l'avvenuta generazione di un annuncio, possa visualizzare le informazioni relative all'annuncio generato.], [ROF-15], [Non eseguito],
-    [TS-16], [Verificare che l'amministratore possa visualizzare, dalle informazioni esposte interagendo con il _marker_ di un annuncio generato, il nome del punto di interesse associato a quell'annuncio.], [ROF-16], [Non eseguito],
-    [TS-17], [Verificare che l'amministratore possa visualizzare, dalle informazioni esposte interagendo con il _marker_ di un annuncio generato, l'_e-mail_ dell'utente destinatario dell'annuncio.], [ROF-17], [Non eseguito],
-    [TS-18], [Verificare che l'amministratore possa visualizzare, dalle informazioni esposte interagendo con il _marker_ di un annuncio generato, la data e l'ora di generazione dell'annuncio.], [ROF-18], [Non eseguito],
-    [TS-19], [Verificare che l'amministratore possa visualizzare, dalle informazioni esposte interagendo con il _marker_ di un annuncio generato, il testo dell'annuncio stesso.], [ROF-19], [Non eseguito],
-    [TS-20], [Verificare che l'amministratore possa visualizzare, dalle informazioni esposte interagendo con il _marker_ di un annuncio generato, la categoria del punto di interesse associato a quell'annuncio.], [ROF-20], [Non eseguito],
-    [TS-21], [Verificare che l'amministratore, interagendo con un _marker_ che segnala la mancata generazione di un annuncio per incompatibilità con gli interessi dell'utente, possa visualizzare le informazioni relative all'annuncio non generato.], [ROF-21], [Non eseguito],
-    [TS-22], [Verificare che l'amministratore possa visualizzare, dalle informazioni esposte interagendo con il _marker_ di un annuncio non generato, il nome del punto di interesse associato], [ROF-22], [Non eseguito.],
-    [TS-23], [Verificare che l'amministratore possa visualizzare, dalle informazioni esposte interagendo con il _marker_ di un annuncio non generato, l'_e-mail_ dell'utente a cui era destinato l'annuncio non generato.], [ROF-23], [Non eseguito],
-    [TS-24], [Verificare che l'amministratore possa visualizzare, dalle informazioni esposte interagendo con il _marker_ di un annuncio non generato, la data e l'ora di tentata generazione dell'annuncio.], [ROF-24], [Non eseguito],
-    [TS-25], [Verificare che l'amministratore, interagendo nuovamente con il _marker_ di un annuncio generato, possa chiudere la vista che espone le informazioni sull'annuncio.], [ROF-25], [Non eseguito],
-    [TS-26], [Verificare che l'amministratore, interagendo nuovamente con il _marker_ di un annuncio non generato, possa chiudere il messaggio contenente le informazioni relative alla mancata generazione di quell'annuncio.], [ROF-26], [Non eseguito],
-    [TS-27], [Verificare che l'amministratore possa spostare la visuale della mappa geografica visualizzata interagendo con la stessa.], [ROF-27], [Non eseguito],
-    [TS-28], [Verificare che l'amministratore, interagendo con la mappa geografica visualizzata, possa fare _zoom in_ e _zoom out_ sulla visuale.], [ROF-28], [Non eseguito],
-    [TS-29], [Verificare che l'amministratore riceva un messaggio di errore del tipo "il _server_ non risponde" se il sistema non risponde alle richieste.], [ROF-29], [Non eseguito],
-    [TS-30], [Verificare che l'amministratore riceva un messaggio di errore del tipo "connessione persa" se la connessione al sistema viene persa o è scarsa.], [ROF-30], [Non eseguito],
-    [TS-31], [Verificare che l'amministratore riceva un messaggio di errore del tipo "sensore malfunzionante" se il sensore non invia dati GPS in modo corretto o non invia dati per un certo periodo di tempo prolungato.], [ROF-31], [Non eseguito],
-    [TS-32], [Verificare che l'amministratore riceva un messaggio di errore del tipo "generazione impossibile dell'annuncio" se il sistema non è in grado di connettersi o comunicare con il servizio di LLM.], [ROF-32], [Non eseguito],
-    [TS-33], [Verificare che esista almeno un generatore di dati GPS che simuli il comportamento di un sensore che interagisce col sistema.], [ROF-33], [Non eseguito],
-    [TS-34], [Verificare che il generatore di dati GPS generi dei percorsi realistici, ovvero che seguono vie o strade percorribili.], [ROF-34], [Non eseguito],
-    [TS-35], [Verificare che l'amministratore possa accedere dalla _dashboard_ alla sezione dedicata allo storico degli annunci.], [RDF-1], [Non eseguito],
-    [TS-36], [Verificare che l'amministratore possa visualizzare, nella sezione dedicata allo storico degli annunci, l'elenco degli annunci generati dal sistema, sotto forma di lista o di griglia a discrezione dell'utilizzatore.], [RDF-2], [Non eseguito],
-    [TS-37], [Verificare che l'amministratore possa visualizzare, per ogni singolo elemento nello storico, le principali informazioni relative all'annuncio.], [RDF-3], [Non eseguito],
-    [TS-38], [Verificare che l'amministratore possa visualizzare, per ogni singolo elemento nello storico, il nome del punto di interesse associato all'annuncio.], [RDF-4], [Non eseguito],
-    [TS-39], [Verificare che l'amministratore possa visualizzare, per ogni singolo elemento nello storico, l'_e-mail_ dell'utente destinatario dell'annuncio.], [RDF-5], [Non eseguito],
-    [TS-40], [Verificare che l'amministratore possa visualizzare, per ogni singolo elemento nello storico, la data e l'ora in cui il sistema ha tentato la generazione dell'annuncio.], [RDF-6], [Non eseguito],
-    [TS-41], [Verificare che l'amministratore possa visualizzare, per ogni singolo elemento nello storico, una _flag_ che indichi se il noleggio durante il quale è stato generato l'annuncio è ancora attivo oppure no.], [RDF-7], [Non eseguito],
-    [TS-42], [Verificare che, per ogni singolo elemento nello storico, l'amministratore possa visualizzarne i dettagli completi interagendo con l'elemento stesso.], [RDF-8], [Non eseguito],
-    [TS-43], [Verificare che l'amministratore possa visualizzare, attraverso i dettagli completi di un annuncio, il nome del punto di interesse associato a quell'annuncio.], [RDF-9], [Non eseguito],
-    [TS-44], [Verificare che l'amministratore possa visualizzare, attraverso i dettagli completi di un annuncio, l'_e-mail_ dell'utente destinatario di quell'annuncio.], [RDF-10], [Non eseguito],
-    [TS-45], [Verificare che l'amministratore possa visualizzare, attraverso i dettagli completi di un annuncio, la data e l'ora in cui il sistema ha tentato la generazione dell'annuncio.], [RDF-11], [Non eseguito],
-    [TS-46], [Verificare che l'amministratore possa visualizzare, attraverso i dettagli completi di un annuncio, una _flag_ che indichi se il noleggio durante il quale è stato generato l'annuncio è ancora attivo oppure no.], [RDF-12], [Non eseguito],
-    [TS-47], [Verificare che l'amministratore possa visualizzare, attraverso i dettagli completi di un annuncio, il testo dell'annuncio stesso.], [RDF-13], [Non eseguito],
-    [TS-48], [Verificare che l'amministratore possa visualizzare, attraverso i dettagli completi di un annuncio, la categoria del punto di interesse associato a quell'annuncio.], [RDF-14], [Non eseguito],
-    [TS-49], [Verificare che l'amministratore possa chiudere la vista che espone i dettagli completi di un singolo annuncio.], [RDF-15], [Non eseguito],
-    [TS-50], [Verificare che l'amministratore possa filtrare gli annunci visualizzati nello storico in base all'_e-mail_ dell'utente destinatario.], [RDF-16], [Non eseguito],
-    [TS-51], [Verificare che l'amministratore possa filtrare gli annunci visualizzati nello storico in base al nome del punto di interesse associato all'annuncio.], [RDF-17], [Non eseguito],
-    [TS-52], [Verificare che l'amministratore possa filtrare gli annunci visualizzati nello storico in base alla data in cui sono stati generati, selezionando un intervallo di date.], [RDF-18], [Non eseguito],
-    [TS-53], [Verificare che l'amministratore possa filtrare gli annunci visualizzati nello storico in base all'orario in cui sono stati generati, selezionando una fascia oraria.], [RDF-19], [Non eseguito],
-    [TS-54], [Verificare che l'amministratore possa accedere dalla _dashboard_ alla sezione dedicata ai grafici statistici.], [RFF-1], [Non eseguito],
-    [TS-55], [Verificare che l'amministratore possa visualizzare, nella sezione dedicata ai grafici statistici, un grafico per ciascuna analisi dati.], [RFF-2], [Non eseguito],
-    [TS-56], [Verificare che ciascun grafico visualizzato abbia un titolo che ne descriva efficacemente il contenuto.], [RFF-3], [Non eseguito],
-    [TS-57], [Verificare che in ciascun grafico visualizzato l'asse delle ascisse e l'asse delle ordinate siano correttamente etichettati e completi di tutti i valori.], [RFF-4], [Non eseguito],
-    [TS-58], [Verificare che ciascun grafico visualizzato stia rappresentando lo specifico _set_ di dati previsto per quel grafico.], [RFF-5], [Non eseguito],
-    [TS-59], [Verificare che l'amministratore possa visualizzare, nella sezione dedicata ai grafici statistici, un grafico che mostri il numero di annunci generati dal sistema nelle ultime 24 ore, con granularità oraria.], [RFF-6], [Non eseguito],
-    [TS-60], [Verificare che l'amministratore possa visualizzare, nella sezione dedicata ai grafici statistici, un grafico che riporti il numero medio di noleggi che vengono effettuati in ciascun mese dell'anno.], [RFF-7], [Non eseguito],
-    [TS-61], [Verificare che l'amministratore, dalla sezione dedicata ai grafici statistici, possa selezionare un punto di interesse e contestualmente visualizzarne i relativi grafici], [RFF-8], [Non eseguito.],
-    [TS-62], [Verificare che l'amministratore possa visualizzare il grafico che, per un certo punto di interesse, mette a confronto il numero di annunci generati con il numero di annunci non generati nell'ultima settimana.], [RFF-9], [Non eseguito],
-    [TS-63], [Verificare che l'interfaccia creata per la visualizzazione degli annunci in tempo reale lato utente fruitore del servizio di noleggio sia funzionante.], [RFF-10], [Non implementato],
+    [TS-1], [Verificare che ciascun sensore invii in modo corretto i propri dati di identificazione e di localizzazione geospaziale, a intervalli di tempo regolari.], [ROF-1], [Verificato],
+    [TS-2], [Verificare che la _#rifGlossario("dashboard")_ sia accessibile solo previa autenticazione da parte dell'amministratore con le proprie credenziali.], [ROF-2], [Verificato],
+    [TS-3], [Verificare che l'amministratore abbia fornito un indirizzo _e-mail_ per procedere con l'autenticazione.], [ROF-3], [Verificato],
+    [TS-4], [Verificare che l'amministratore abbia fornito una password per procedere con l'autenticazione.], [ROF-4], [Verificato],
+    [TS-5], [Verificare che, se l'amministratore inserisce almeno una credenziale errata, l'autenticazione fallisca e venga ritornato un messaggio di errore.], [ROF-5], [Verificato],
+    [TS-6], [Verificare che l'amministratore possa visualizzare sulla _dashboard_ principale una mappa geografica.], [ROF-6], [Verificato], // dubbio su "dashboard principale"
+    [TS-7], [Verificare che l'amministratore possa visualizzare, tramite dei _#rifGlossario("marker")_ sulla mappa geografica, la posizione di tutti i punti di interesse.], [ROF-7], [Verificato],
+    [TS-8], [Verificare che l'amministratore possa visualizzare sulla mappa il percorso eseguito da ciascun noleggio attivo in quel momento.], [ROF-8], [Verificato],
+    [TS-9], [Verificare che l'amministratore possa visualizzare, lungo il percorso di ciascun noleggio attivo, un _marker_ specifico se quella posizione ricevuta dal sensore ha provocato una richiesta di generazione annuncio e questa ha avuto successo, ovvero l'utente è stato ritenuto interessato e quindi ha ricevuto l'annuncio.], [ROF-9], [Verificato],
+    [TS-10], [Verificare che l'amministratore possa visualizzare, lungo il percorso di ciascun noleggio attivo, un _marker_ specifico se quella posizione ricevuta dal sensore ha provocato una richiesta di generazione annuncio e questa non ha avuto successo, ovvero l'utente non è stato ritenuto interessato e quindi non ha ricevuto l'annuncio.], [ROF-10], [Verificato],
+    [TS-11], [Verificare che l'amministratore possa visualizzare le informazioni relative ad un punto di interesse interagendo con il _marker_ che lo rappresenta all'interno della mappa.], [ROF-11], [Verificato],
+    [TS-12], [Verificare che l'amministratore possa visualizzare, dalle informazioni esposte interagendo con il _marker_ di un punto di interesse, il nome dello stesso.], [ROF-12], [Verificato],
+    [TS-13], [Verificare che l'amministratore possa visualizzare, dalle informazioni esposte interagendo con il _marker_ di un punto di interesse, la categoria di esercizio commerciale a cui appartiene.], [ROF-13], [Verificato],
+    [TS-14], [Verificare che l'amministratore, interagendo con un _marker_ che segnala l'avvenuta generazione di un annuncio, possa visualizzare le informazioni relative all'annuncio generato.], [ROF-14], [Verificato],
+    [TS-15], [Verificare che l'amministratore possa visualizzare, dalle informazioni esposte interagendo con il _marker_ di un annuncio generato, il nome del punto di interesse associato a quell'annuncio.], [ROF-15], [Verificato],
+    [TS-16], [Verificare che l'amministratore possa visualizzare, dalle informazioni esposte interagendo con il _marker_ di un annuncio generato, l'_e-mail_ dell'utente destinatario dell'annuncio.], [ROF-16], [Verificato],
+    [TS-17], [Verificare che l'amministratore possa visualizzare, dalle informazioni esposte interagendo con il _marker_ di un annuncio generato, la data e l'ora di generazione dell'annuncio.], [ROF-17], [Verificato],
+    [TS-18], [Verificare che l'amministratore possa visualizzare, dalle informazioni esposte interagendo con il _marker_ di un annuncio generato, il testo dell'annuncio stesso.], [ROF-18], [Verificato],
+    [TS-19], [Verificare che l'amministratore possa visualizzare, dalle informazioni esposte interagendo con il _marker_ di un annuncio generato, la categoria del punto di interesse associato a quell'annuncio.], [ROF-19], [Verificato],
+    [TS-20], [Verificare che l'amministratore, interagendo con un _marker_ che segnala la mancata generazione di un annuncio per incompatibilità con gli interessi dell'utente, possa visualizzare le informazioni relative all'annuncio non generato.], [ROF-20], [Verificato],
+    [TS-21], [Verificare che l'amministratore possa visualizzare, dalle informazioni esposte interagendo con il _marker_ di un annuncio non generato, il nome del punto di interesse associato.], [ROF-21], [Verificato],
+    [TS-22], [Verificare che l'amministratore possa visualizzare, dalle informazioni esposte interagendo con il _marker_ di un annuncio non generato, l'_e-mail_ dell'utente a cui era destinato l'annuncio non generato.], [ROF-22], [Verificato],
+    [TS-23], [Verificare che l'amministratore possa visualizzare, dalle informazioni esposte interagendo con il _marker_ di un annuncio non generato, la data e l'ora di tentata generazione dell'annuncio.], [ROF-23], [Verificato],
+    [TS-24], [Verificare che l'amministratore, interagendo nuovamente con il _marker_ di un annuncio generato, possa chiudere la vista che espone le informazioni sull'annuncio.], [ROF-24], [Verificato],
+    [TS-25], [Verificare che l'amministratore, interagendo nuovamente con il _marker_ di un annuncio non generato, possa chiudere il messaggio contenente le informazioni relative alla mancata generazione di quell'annuncio.], [ROF-25], [Verificato],
+    [TS-26], [Verificare che l'amministratore possa spostare la visuale della mappa geografica visualizzata interagendo con la stessa.], [ROF-26], [Verificato],
+    [TS-27], [Verificare che l'amministratore, interagendo con la mappa geografica visualizzata, possa fare _zoom in_ e _zoom out_ sulla visuale.], [ROF-27], [Verificato],
+    [TS-28], [Verificare che esista almeno un generatore di dati #rifGlossario("GPS") che simuli il comportamento di un sensore che interagisce col sistema.], [ROF-28], [Verificato],
+    [TS-29], [Verificare che il generatore di dati GPS generi dei percorsi realistici, ovvero che seguono vie o strade percorribili.], [ROF-29], [Verificato],
+    [TS-30], [Verificare che l'amministratore possa accedere dalla _dashboard_ alla sezione dedicata allo storico degli annunci.], [RDF-1], [Verificato],
+    [TS-31], [Verificare che l'amministratore possa visualizzare, nella sezione dedicata allo storico degli annunci, l'elenco degli annunci generati dal sistema.], [RDF-2], [Verificato],
+    [TS-32], [Verificare che l'amministratore possa visualizzare l'elenco degli annunci nello storico sotto forma di lista o di griglia a discrezione dell'utilizzatore.], [RDF-2], [Non implementato],
+    [TS-33], [Verificare che l'amministratore possa visualizzare, per ogni singolo elemento nello storico, le principali informazioni relative all'annuncio.], [RDF-3], [Verificato],
+    [TS-34], [Verificare che l'amministratore possa visualizzare, per ogni singolo elemento nello storico, il nome del punto di interesse associato all'annuncio.], [RDF-4], [Verificato],
+    [TS-35], [Verificare che l'amministratore possa visualizzare, per ogni singolo elemento nello storico, l'_e-mail_ dell'utente destinatario dell'annuncio.], [RDF-5], [Verificato],
+    [TS-36], [Verificare che l'amministratore possa visualizzare, per ogni singolo elemento nello storico, la data e l'ora in cui il sistema ha tentato la generazione dell'annuncio.], [RDF-6], [Verificato],
+    [TS-37], [Verificare che, per ogni singolo elemento nello storico, l'amministratore possa visualizzarne i dettagli completi interagendo con l'elemento stesso.], [RDF-7], [Verificato],
+    [TS-38], [Verificare che l'amministratore possa visualizzare, attraverso i dettagli completi di un annuncio, il nome del punto di interesse associato a quell'annuncio.], [RDF-8], [Verificato],
+    [TS-39], [Verificare che l'amministratore possa visualizzare, attraverso i dettagli completi di un annuncio, l'_e-mail_ dell'utente destinatario di quell'annuncio.], [RDF-9], [Verificato],
+    [TS-40], [Verificare che l'amministratore possa visualizzare, attraverso i dettagli completi di un annuncio, la data e l'ora in cui il sistema ha tentato la generazione dell'annuncio.], [RDF-10], [Verificato],
+    [TS-41], [Verificare che l'amministratore possa visualizzare, attraverso i dettagli completi di un annuncio, il testo dell'annuncio stesso.], [RDF-11], [Verificato],
+    [TS-42], [Verificare che l'amministratore possa visualizzare, attraverso i dettagli completi di un annuncio, la categoria del punto di interesse associato a quell'annuncio.], [RDF-12], [Verificato],
+    [TS-43], [Verificare che l'amministratore possa chiudere la vista che espone i dettagli completi di un singolo annuncio.], [RDF-13], [Verificato],
+    [TS-44], [Verificare che l'amministratore possa filtrare gli annunci visualizzati nello storico in base all'_e-mail_ dell'utente destinatario.], [RDF-14], [Verificato],
+    [TS-45], [Verificare che l'amministratore possa filtrare gli annunci visualizzati nello storico in base al nome del punto di interesse associato all'annuncio.], [RDF-15], [Verificato],
+    [TS-46], [Verificare che l'amministratore possa filtrare gli annunci visualizzati nello storico in base alla data in cui sono stati generati, selezionando un intervallo di date.], [RDF-16], [Verificato],
+    [TS-47], [Verificare che l'amministratore possa filtrare gli annunci visualizzati nello storico in base all'orario in cui sono stati generati, selezionando una fascia oraria.], [RDF-17], [Verificato],
+    [TS-48], [Verificare che l'amministratore possa accedere dalla _dashboard_ alla sezione dedicata ai grafici statistici.], [RFF-1], [Verificato],
+    [TS-49], [Verificare che l'amministratore possa visualizzare, nella sezione dedicata ai grafici statistici, un grafico per ciascuna analisi dati.], [RFF-2], [Verificato],
+    [TS-50], [Verificare che ciascun grafico visualizzato abbia un titolo che ne descriva efficacemente il contenuto.], [RFF-3], [Verificato],
+    [TS-51], [Verificare che in ciascun grafico visualizzato l'asse delle ascisse e l'asse delle ordinate siano correttamente etichettati e completi di tutti i valori.], [RFF-4], [Verificato],
+    [TS-52], [Verificare che ciascun grafico visualizzato stia rappresentando lo specifico _set_ di dati previsto per quel grafico.], [RFF-5], [Verificato],
+    [TS-53], [Verificare che l'amministratore possa visualizzare, nella sezione dedicata ai grafici statistici, un grafico che mostri il numero di annunci generati dal sistema nelle ultime 24 ore, con granularità oraria.], [RFF-6], [Verificato],
+    [TS-54], [Verificare che l'amministratore possa visualizzare, nella sezione dedicata ai grafici statistici, un grafico che riporti il numero medio di noleggi che vengono effettuati in ciascun mese dell'anno.], [RFF-7], [Verificato],
+    [TS-55], [Verificare che l'amministratore, dalla sezione dedicata ai grafici statistici, possa selezionare un punto di interesse e contestualmente visualizzarne i relativi grafici.], [RFF-8], [Verificato],
+    [TS-56], [Verificare che l'amministratore possa visualizzare il grafico che, per un certo punto di interesse, mette a confronto il numero di annunci generati con il numero di annunci non generati nell'ultima settimana.], [RFF-9], [Verificato],
+    [TS-57], [Verificare che l'interfaccia creata per la visualizzazione degli annunci in tempo reale lato utente fruitore del servizio di noleggio sia funzionante.], [RFF-10], [Non implementato],
   )
 
 #pagebreak()
@@ -559,22 +605,24 @@ Condotti insieme all'azienda proponente, servono a garantire che il prodotto fin
   kind: table,
   caption: [Descrizione e stato di ogni test di accettazione],
   table(
-    align: (center, left, center, center),
+    align: (center, left, center),
     columns: 3,
     fill: (_, y) => if calc.odd(y) { gray.lighten(65%) },
-    table.header[*Codice _test_*][*Descrizione*][*Stato*],
-    [TA-01], [Verificare che all'apertura il prodotto mostri una mappa che visualizza in tempo reale i percorsi compiuti dai mezzi con noleggio attivo.], [Non eseguito],
-    [TA-02], [Verificare che il prodotto supporti la generazione tramite LLM di annunci personalizzati per ogni utente in base ai suoi dati di profilazione.], [Non eseguito],
-    [TA-03], [Verificare che il prodotto supporti la visualizzazione dei _#rifGlossario("marker")_ corrispondenti ai mezzi con noleggio attivi all'interno della mappa.], [Non eseguito],
-    [TA-04], [Verificare che il prodotto supporti la visualizzazione dei _marker_ corrispondenti ai punti di interesse all'interno della mappa.], [Non eseguito],
-    [TA-05], [Verificare che il prodotto supporti la visualizzazione dei _marker_ corrispondenti agli annunci generati all'interno della mappa.], [Non eseguito],
-    [TA-06], [Verificare che il prodotto supporti la visualizzazione dei _marker_ corrispondenti alle tentate generazioni di annunci all'interno della mappa.], [Non eseguito],
-    [TA-07], [Verificare che il prodotto supporti la visualizzazione dei dati dei punti di interesse tramite i rispettivi _marker_ sulla mappa.], [Non eseguito],
-    [TA-08], [Verificare che il prodotto supporti la visualizzazione dei dati degli annunci generati per ogni rispettivo _marker_ sulla mappa.], [Non eseguito],
-    [TA-09], [Verificare che il prodotto supporti la visualizzazione dei dati delle mancate generazioni di annunci per ogni rispettivo _marker_ sulla mappa.], [Non eseguito],
-    [TA-10], [Verificare che il prodotto supporti una generazione realistica dei percorsi dei noleggi.], [Non eseguito],
-    [TA-11], [Verificare che il prodotto/sistema storicizzi in un _database_ i dati simulati e quelli generati dalla LLM.], [Non eseguito],
-    [TA-12], [Verificare che il prodotto sia fruibile con le ultime versioni dei _browser web_ principali, nello specifico: Google Chrome, Mozilla Firefox, Microsoft Edge e Safari.], [Non eseguito],
+    table.header[*Codice test*][*Descrizione*][*Stato*],
+    [TA-01], [Verificare che all'apertura il prodotto mostri una mappa che visualizza in tempo reale i percorsi compiuti dai mezzi in movimento.], [Verificato],
+    [TA-02], [Verificare che il prodotto supporti la generazione tramite LLM di annunci personalizzati per ogni utente in base ai suoi dati di profilazione.], [Verificato],
+    [TA-03], [Verificare che il prodotto supporti la visualizzazione dei _marker_ corrispondenti ai mezzi con noleggio attivi all'interno della mappa.], [Verificato],
+    [TA-04], [Verificare che il prodotto supporti la visualizzazione dei _marker_ corrispondenti ai punti di interesse all'interno della mappa.], [Verificato],
+    [TA-05], [Verificare che il prodotto supporti la visualizzazione dei _marker_ corrispondenti agli annunci generati all'interno della mappa.], [Verificato],
+    [TA-06], [Verificare che il prodotto supporti la visualizzazione dei _marker_ corrispondenti alle mancate generazioni di annunci all'interno della mappa.], [Verificato],
+    [TA-07], [Verificare che il prodotto supporti la visualizzazione dei dati dei punti di interesse tramite i rispettivi _marker_ sulla mappa.], [Verificato],
+    [TA-08], [Verificare che il prodotto supporti la visualizzazione dei dati degli annunci generati per ogni rispettivo _marker_ sulla mappa.], [Verificato],
+    [TA-09], [Verificare che il prodotto supporti la visualizzazione dei dati delle mancate generazioni di annunci per ogni rispettivo _marker_ sulla mappa.], [Verificato],
+    [TA-10], [Verificare che il prodotto supporti una generazione realistica dei percorsi dei noleggi.], [Verificato],
+    [TA-11], [Verificare che il prodotto persista in un _database_ i dati simulati e quelli generati dalla LLM.], [Verificato],
+    [TA-12], [Verificare che il prodotto sia fruibile con le ultime versioni dei _browser web_ principali, nello specifico: Google Chrome v134.0.6998.88, Mozilla Firefox v136.0.2, Microsoft Edge v134.0.3124.72 e Safari v18.3.], [Verificato],
+    [TA-13], [Verificare che il prodotto consenta la visualizzazione dei dati relativi agli annunci generati e non generati, prodotti nel corso del tempo, all'interno di una sezione apposita detta "storico".], [Verificato],
+    [TA-14], [Verificare che il prodotto fornisca una sezione dedicata alla visualizzazione di grafici statistici relativi ai dati raccolti.], [Verificato],
   ),
 )
 
@@ -699,7 +747,7 @@ Il grafico mostra come il valore dell'*ISR* sia sempre rimasto, dopo il quinto _
 == Indice Gulpease (MPC-IG)
 Indice che valuta la leggibilità dei documenti scritti in italiano.
 
-#plotGrafico7(
+#plotGrafico9(
   "Tabella indice Gulpease",
   ((0, 40), (1, 40), (2, 40), (3, 40), (4, 40), (5, 40), (6, 40), (7, 40)),
   "Valore accettabile",
@@ -736,7 +784,7 @@ Da notare come i valori dei nuovi documenti, quali Manuale Utente e Specifica Te
 == Correttezza Ortografica (MPC-CO)
 Metriche che misurano la presenza di errori ortografici nei documenti, valutando la qualità formale del contenuto.
 
-#plotGrafico7(
+#plotGrafico9(
   "Tabella correttezza ortografica",
   ((0, 0), (1, 0), (2, 0), (3, 0), (4, 0), (5, 0), (6, 0), (7, 0)),
   "Valore accettabile",

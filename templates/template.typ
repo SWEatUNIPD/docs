@@ -657,7 +657,7 @@
   )
 }
 
-#let plotGrafico7(
+#let plotGrafico9(
   tabCaption,
   data1,
   nomeData1,
