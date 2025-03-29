@@ -657,7 +657,7 @@ Di seguito verrà descritto nel dettaglio l'architettura del simulatore, present
 
 === Struttura delle classi: attributi, costruttori e metodi
 ==== Simulator
-La classe `Simulator` rappresenta il simulatore vero e proprio. Questo riceve i mezzi disponibili dal servizio di noleggio e attiva i primi "x" (valore indicato dalla variabile d'ambiente `INIT_RENT_COUNT`).
+La classe `Simulator` rappresenta il simulatore vero e proprio. Questo riceve i mezzi disponibili dal servizio di noleggio e attiva i primi "x" (valore indicato dalla variabile d'ambiente `INIT_RENT_COUNT`). Poiché è fondamentale ne esista una sola istanza viene adottato il _design pattern singleton_. Non ne viene indicata l'implementazione perché questa viene gestita dalla libreria Inversify (#link(<singleton>)[sez. 4.2.2]).
 
 ===== Attributi
 - ```ts -trackerList: Tracker*```: lista dei sensori disponibili, uno per ogni mezzo. Vengono istanziati con un identificatore incrementale partendo da 1.
