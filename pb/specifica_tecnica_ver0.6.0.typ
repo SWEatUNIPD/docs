@@ -722,7 +722,7 @@ Di seguito verrà descritto nel dettaglio l'architettura del simulatore, present
 
 === Struttura delle classi: attributi, costruttori e metodi
 ==== Simulator
-La classe `Simulator` rappresenta il simulatore vero e proprio. Questo riceve i mezzi disponibili dal servizio di noleggio e attiva i primi "x" (valore indicato dalla variabile d'ambiente `INIT_RENT_COUNT`).
+La classe `Simulator` rappresenta il simulatore vero e proprio. Questo riceve i mezzi disponibili dal servizio di noleggio e attiva i primi "x" (valore indicato dalla variabile d'ambiente `INIT_RENT_COUNT`). Poiché è fondamentale ne esista una sola istanza viene adottato il _design pattern singleton_. Non ne viene indicata l'implementazione perché questa viene gestita dalla libreria Inversify (#link(<singleton>)[sez. 4.2.2]).
 
 ===== Attributi
 - ```ts -trackerList: Tracker*```: lista dei sensori disponibili, uno per ogni mezzo. Vengono istanziati con un identificatore incrementale partendo da 1.
@@ -735,57 +735,61 @@ La classe `Simulator` rappresenta il simulatore vero e proprio. Questo riceve i 
 - ```ts -startRent(): void```: prende il primo sensore in ordine di identificativo crescente e, se disponibile, lo attiva.
 
 ==== Tracker
+La classe `Tracker` rappresenta un sensore installato su un mezzo. Quando viene attivato richiede un percorso verosimile da seguire, manda le posizioni GPS al sistema e riceve gli eventuali annunci che vengono generati.
 
 ===== Attributi
-- ```ts -id: string```:
-- ```ts -isAvailable: boolean = true```:
-- ```ts -kafkaManager: KafkaManager```:
-- ```ts -consumer!: Consumer```:
+- ```ts -id: string```: l'identificativo univoco del sensore, e quindi anche del mezzo.
+- ```ts -isAvailable: boolean = true```: indica se il mezzo è disponibile e quindi può essere noleggiato. Per ogni istanza di `Tracker` viene sempre inizializzato a `true`.
+- ```ts -kafkaManager: KafkaManager```: riferimento al _manager_ dell'istanza di Kafka.
+- ```ts -consumer!: Consumer```: una istanza di un _consumer_ di Kafka che rimane in ascolto degli eventuali annunci. Viene inizializzata nel metodo `listenToAdv`, non nel costruttore.
 
 ===== Costruttore
-- ```ts +Tracker(id: string, kafkaManager: KafkaManager)```:
+- ```ts +Tracker(id: string, kafkaManager: KafkaManager)```: costruttore della classe `Tracker` che riceve l'identificativo del sensore e il _manager_ di Kafka.
 
 ===== Metodi
-- ```ts +activate(): void```:
-- ```ts -listenToAdv(): void```:
-- ```ts -move(trackerPoints: GeoPoint*): void```:
-- ```ts +getIsAvailable(): boolean```:
+- ```ts +activate(): void```: attiva il sensore, quindi lo rende indisponibile, richiama `listenToAdv` per rimanere in ascolto nel _topic_ degli annunci, richiede un tracciato da seguire e richiama `move`.
+- ```ts -listenToAdv(): void```: utilizza `kafkaManager` per creare un _consumer_ iscritto al _topic_ "adv-data". Il metodo richiamato alla ricezione di un messaggio è vuoto perché il progetto non prevede di far visualizzare l'annuncio all'utente.
+- ```ts -move(trackerPoints: GeoPoint*): void```: riceve il tracciato da seguire sotto forma di lista di `GeoPoint`, istanzia un _producer_ utilizzando `kafkaManager` e invia i dati GPS al _topic_ "gps-data" a intervalli regolari. Quando termina il percorso disconnette il _producer_ e il _consumer_ terminando il noleggio, reimpostando cioè `isAvailable` a `true`.
+- ```ts +getIsAvailable(): boolean```: restituisce il valore della variabile `isAvailable`.
 
 ==== KafkaManager
+La classe `KafkaManager` gestisce le operazioni fondamentali dei _producer_ e _consumer_ dell'oggetto di `Kafka` della libreria `kafkajs`. Poiché è fondamentale ne esista una sola istanza viene adottato il _design pattern singleton_. Non ne viene indicata l'implementazione perché questa viene gestita dalla libreria Inversify (#link(<singleton>)[sez. 4.2.2]).
 
 ===== Attributi
-- ```ts -kafka: Kafka```:
+- ```ts -kafka: Kafka```: istanza della classe `Kafka` della libreria `kafkajs`.
 
 ===== Costruttore
-- ```ts +KafkaManager(kafka: Kafka)```:
+- ```ts +KafkaManager(kafka: Kafka)```: costruttore della classe `KafkaManager` che assegna l'istanza di Kafka all'oggetto proprio.
 
 ===== Metodi
-- ```ts +initAndConnectProducer(): Producer```:
-- ```ts +disconnectProducer(producer: Producer): void```:
-- ```ts +sendMessage(producer: Producer, topic: string, data: string): void```:
-- ```ts +initAndConnectConsumer(topic: string, groupId: string, eachMessageHandler: EachMessageHandler): Consumer```:
-- ```ts +disconnectConsumer(consumer: Consumer): void```:
+- ```ts +initAndConnectProducer(): Producer```: crea un _producer_ di Kafka, lo connette e lo ritorna in modo che possa essere utilizzato.
+- ```ts +disconnectProducer(producer: Producer): void```: disconnette il _producer_ passato per parametro.
+- ```ts +sendMessage(producer: Producer, topic: string, data: string): void```: fa inviare al _producer_ passato per parametro il messaggio `data` nel _topic_ specificato.
+- ```ts +initAndConnectConsumer(topic: string, groupId: string, eachMessageHandler: EachMessageHandler): Consumer```: crea un _consumer_ di Kafka, lo connette al _topic_ indicato, lo assegna al "groupId" passato e lo ritorna in modo che possa essere utilizzato. Assegna inoltre la funzione `eachMessageHandler` come metodo da eseguire ogni volta che il _consumer_ riceve un messaggio.
+- ```ts +disconnectConsumer(consumer: Consumer): void```: disconnette il _consumer_ passato per parametro.
 
 ==== TrackFetcher
+La classe `TrackFetcher` si occupa di inoltrare una richiesta API al servizio OpenStreetMap per recuperare un tracciato verosmile da far percorrere ai sensori.
 
 ===== Metodi
-- ```ts +fetchTrack(): GeoPoint*```:
-- ```ts -request(): response```
+- ```ts +fetchTrack(): GeoPoint*```: richiama il metodo `request` che restituisce la risposta della chiamata API, estrae i punti del percorso sotto forma di `GeoPoint` e ritorna una loro lista rappresentante il tracciato.
+- ```ts -request(): response```: recupera dalle variabili d'ambiente il centro della mappa e il raggio di generazione. Con l'ausilio della classe `GeoPoint` genera i punti di inizio e fine tracciato, li passa come parametri alla _API request_ e ritorna la risposta.
 
 ==== GeoPoint
+La classe `GeoPoint` rappresenta un punto geospaziale costituito da latitudine e longitudie.
 
 ===== Attributi
-- ```ts -latitude: double```:
-- ```ts -longitude: double```:
+- ```ts -latitude: double```: il valore della latitudine del punto geospaziale.
+- ```ts -longitude: double```: il valore della longitudine del punto geospaziale.
 
 ===== Costruttore
-- ```ts +GeoPoint(latitude: double, longitude: double)```:
+- ```ts +GeoPoint(latitude: double, longitude: double)```: costruttore della classe `GeoPoint` che inizializza la latitudine e longitudine con i valori ricevuti.
 
 ===== Metodi
-- #underline([```ts +radiusKmToGeoPoint(radiusKm: double): GeoPoint```]):
-- ```ts +generateRandomPoint(radiusGeoPoint: GeoPoint): GeoPoint```:
-- ```ts +getLatitude(): double```:
-- ```ts +getLongitude(): double```:
+- #underline([```ts +radiusKmToGeoPoint(radiusKm: double): GeoPoint```]): metodo statico che converte il valore di un raggio in chilometri in un `GeoPoint` che dista `radiusKm` dall'equatore. All'aumentare del raggio si va a perdere precisione ma ai fini dimostrativi del progetto sono sufficienti pochi chilometri.
+- ```ts +generateRandomPoint(radiusGeoPoint: GeoPoint): GeoPoint```: genera un `GeoPoint` all'interno del raggio ricevuto e con centro l'oggetto di invocazione del metodo.
+- ```ts +getLatitude(): double```: restituisce il valore della variabile `latitude`.
+- ```ts +getLongitude(): double```: restituisce il valore della variabile `longitude`.
 
 === Componenti di utilità
 Sfruttando l'aspetto procedurale del linguaggio TypeScript sono state create delle componenti di supporto. Queste non contengono classi o interfacce quindi diventa più efficace descriverle di seguito piuttosto che in un diagramma delle classi.
@@ -982,7 +986,7 @@ const simulator = container.get(Simulator);
 simulator.startSimulation();
 ```
 
-=== Singleton
+=== Singleton <singleton>
 Può essere che alcune componenti debbano mantenere un'integrità per tutta l'esecuzione del prodotto, non possono quindi esistere diverse istanze con diversi valori. Il _design pattern Singleton_ assicura che ovunque si acceda al componente venga restituita sempre la stessa istanza.
 
 
