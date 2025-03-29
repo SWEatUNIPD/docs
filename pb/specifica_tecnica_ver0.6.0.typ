@@ -116,16 +116,23 @@ La prima occorrenza di un termine definito all'interno del glossario presente al
 
 === Riferimenti normativi
 - Norme di Progetto (v2.0.0) (ultimo accesso in data 27/03/2025) \ #formatLink(url: "https://sweatunipd.github.io/docs/pb/norme_di_progetto_ver2.0.0.pdf")
+
 - Regolamento del progetto didattico, _slide_ 23 (ultimo accesso in data 27/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")
+
 - Capitolato C4 - Sync Lab S.r.l. (ultimo accesso in data 27/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
 
 === Riferimenti informativi
 - Glossario (v2.0.0) (ultimo accesso in data 27/03/2025) \ #formatLink(url: "https://sweatunipd.github.io/docs/pb/glossario_ver2.0.0.pdf")
+
 - Capitolato C4 - Sync Lab S.r.l. (ultimo accesso in data 27/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
 - Guida ufficiale per l'installazione di Docker (ultimo accesso in data 27/03/2025) \ #formatLink(url: "https://docs.docker.com/engine/install")
+
 - Apache Flink - Documentazione relativa al supporto di Flink a Java 17 (ultimo accesso in data 27/03/2025) \ #formatLink(url: "https://nightlies.apache.org/flink/flink-docs-release-1.20/docs/deployment/java_compatibility/#java-17")
+
 - Apache Flink - Documentazione relativa agli _async_ I/O per l'accesso ai dati esterni (ultimo accesso in data 27/03/2025) \ #formatLink(url: "https://nightlies.apache.org/flink/flink-docs-master/docs/dev/datastream/operators/asyncio/#async-io-api")
+
 - Java _records_ (ultimo accesso in data 27/03/2025) \ #formatLink(url: "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Record.html")
+
 - Apache Kafka (ultimo accesso in data 27/03/2025) \ #formatLink(url: "https://kafka.apache.org/")
 - Documentazione della classe `ConnectionFactory` - R2DBC (ultimo accesso in data 27/03/2025) \ #formatLink(url: "https://javadoc.io/doc/io.r2dbc/r2dbc-spi/latest/index.html")
 
@@ -425,53 +432,134 @@ Il diagramma sottostante descrive il precorso dei dati tra i _layer_ del sistema
 
 
 == Diagramma delle classi
-#figure(
-  image("../assets/img/ST/system.png", width: 110%),
-  caption: [Diagramma delle classi del sistema],
-)
+Il diagramma delle classi del sistema descrive le classi implementate e le loro relazioni. Vengono riportare tutte le classi di libreria, di cui per la si omettono attributi e metodi per non appesantire il diagramma, fatta eccezione per le classi ereditate o interfacce implementate da altre classi del _job_ appartenenti alle librerie utilizzate.
+Onde evitare di presentare un diagramma eccessivamente complesso, il diagramma è stato diviso per sezioni a seconda del loro ruolo all'interno del sistema.
 
-=== Struttura delle classi: attributi, costruttori e metodi
-Il diagramma delle classi del sistema descrive le classi implementate e le loro relazioni. Vengono riportare tutte le classi di libreria, di cui per la si omettono attributi e metodi per non appesantire il diagramma, fatta eccezione per le classi che ereditano da altre classi o implementano interfacce delle librerie utilizzate.
-==== GPSDataDto
+=== Infrastruttura
+Questa sezione rappresenta le classi impiegate nella gestione dell'infrastruttura del sistema, ovvero quelle che si occupano della connessione al _database_, della serializzazione e deserializzazione dei dati e della creazione delle code di Kafka.
+==== Struttura delle classi: attributi, costruttori e metodi
+===== GPSDataDto
+#figure(
+  image("../assets/img/ST/SystemUML/GPSDataDto.png", width: 35%),
+  caption: [Diagramma della classe `GPSDataDto`],
+)
 La classe `GPSDataDto` rappresenta il _data transfer object_ (DTO) per i dati di localizzazione. Essa viene utilizzata per trasferire i dati di localizzazione tra il simulatore e il servizio di _stream processing_. Il dato viene inviato in formato JSON serializzato dal simulatore, per poi essere deserializzato dallo _stream processor_ tramite la classe di utilità `GPSDataDeserializationSchema`, che estende la classe astratta `AbstractDeserializationSchema` di Flink.
-===== Attributi
+====== Attributi
 - ```java -rentId: int```: identificativo del noleggio associato al sensore.
 - ```java -latitude: float```: latitudine della posizione GPS.
 - ```java -longitude: float```: longitudine della posizione GPS.
 - ```java -timestamp: long```: timestamp della posizione GPS.
 
-===== Costruttori
+====== Costruttori
 Il costruttore della classe `GPSDataDto` è un costruttore di _default_. Non viene utilizzato il costruttore di _default_ implicito fornito da Java in quanto la libreria di serializzazione/deserializzazione Jackson richiede un costruttore esplicito per la creazione di oggetti a partire da un _JSON_.
 
-===== Metodi
+====== Metodi
 - ```java +getRentId(): int```: restituisce l'identificativo del noleggio associato al sensore.
 - ```java +getLatitude(): float```: restituisce la latitudine della posizione GPS.
 - ```java +getLongitude(): float```: restituisce la longitudine della posizione GPS.
 - ```java +getTimestamp(): long```: restituisce il timestamp della posizione GPS.
-- ```java +setRentId(int rentId): void```: imposta l'identificativo del noleggio associato al sensore.
-- ```java +setLatitude(float latitude): void```: imposta la latitudine della posizione GPS.
-- ```java +setLongitude(float longitude): void```: imposta la longitudine della posizione GPS.
-- ```java +setTimestamp(long timestamp): void```: imposta il timestamp della posizione GPS.
-- ```java +equals(Object o): boolean```: _overriding_ del metodo della classe `Object` di Java, confronta l'uguaglianza tra l'oggetto `GPSDataDto` da cui viene invocato il metodo e l'oggetto posto a parametro e restituisce `true` se sono uguali, `false` altrimenti.
+- ```java +setRentId(rentId: int): void```: imposta l'identificativo del noleggio associato al sensore.
+- ```java +setLatitude(latitude: float): void```: imposta la latitudine della posizione GPS.
+- ```java +setLongitude(longitude: float): void```: imposta la longitudine della posizione GPS.
+- ```java +setTimestamp(timestamp: long): void```: imposta il timestamp della posizione GPS.
+- ```java +equals(o: Object): boolean```: _overriding_ del metodo della classe `Object` di Java, confronta l'uguaglianza tra l'oggetto `GPSDataDto` da cui viene invocato il metodo e l'oggetto posto a parametro e restituisce `true` se sono uguali, `false` altrimenti.
 - ```java +hashCode(): int```: _overriding_ del metodo della classe `Object` di Java, restituisce il codice _hash_ dell'oggetto `GPSDataDto` da cui viene invocato il metodo.
 
 Nel nostro caso, i _setters_ della classe `GPSDataDto` sono stati implementati per garantire la deserializzazione del _JSON_ che descrive il dato di localizzazione che viene spedito dal simulatore.
 
-=== GPSData
+===== KafkaTopicService
+#figure(
+  image("../assets/img/ST/SystemUML/KafkaTopicService.png", width: 55%),
+  caption: [Diagramma della classe `KafkaTopicService`],
+)
+La classe `KafkaTopicService` rappresenta il servizio di creazione dei _topic_ di Kafka. Viene impiegato dal _job_ per la creazione dei topic _gps-data_ e _adv-data_ se non già creati, utilizzati rispettivamente per la ricezione dei dati di localizzazione e l'invio degli annunci generati dalla LLM.
+
+====== Attributi
+- ```java -admin: Admin```: oggetto fornito dalla libreria Kafka per la gestione dei _topic_. Nel nostro caso è costante per ogni istanza dell'oggetto.
+
+====== Costruttori
+- ```java +KafkaTopicService(admin: Admin)```: costruttore della classe `KafkaTopicService` che inizializza l'attributo `admin` con il valore passato come parametro.
+
+====== Metodi
+- ```java +createTopic(topicName: String, numPartitions: int, replicationFactor: short): void```: metodo che crea un _topic_ di Kafka con il nome e le caratteristiche specificate. Se il _topic_ esiste già, non viene creato nuovamente.
+- ```java +createTopics(topicNames: String*): void```: metodo che crea più _topic_ di Kafka con i nomi specificati all'interno dell'_array_ con numero di partizioni e di _replication factor_ pari a 1. Se i _topic_ esistono già, non vengono creati nuovamente.
+
+===== GPSDataDeserializationSchema
+#figure(
+  image("../assets/img/ST/SystemUML/GPSDataDeserializationSchema.png", width: 40%),
+  caption: [Diagramma della classe `GPSDataDeserializationSchema`],
+)
+La classe `GPSDataDeserializationSchema` estende la classe astratta parametrica `AbstractDeserializationSchema<T>` di Flink e ridefinisce i metodi `deserialize` e `open`, dove T rappresenta la classe in cui viene deserializzato il JSON. In questo caso, i dati in arrivo sono in formato JSON e vengono deserializzati in un oggetto `GPSDataDto`, nonché parametro della classe estesa.
+
+====== Attributi
+- ```java -objectMapper: ObjectMapper```: oggetto fornito dalla libreria Jackson (interno alla dipendenza di Flink) per la serializzazione e deserializzazione di oggetti in formato JSON.
+
+====== Costruttori
+Viene mantenuto il costruttore di _default_ fornito da Java.
+
+====== Metodi
+- ```java +open(context: InitializationContext): void```: metodo che viene invocato all'avvio del processo di deserializzazione. Viene invocato una tantum per effettuare il _setup_ della classe. In questo caso, viene inizializzato l'oggetto `objectMapper` per la deserializzazione del JSON.
+- ```java +deserialize(message: byte[]): GPSDataDto```: metodo che viene invocato per deserializzare il messaggio in arrivo. In questo caso, il messaggio viene deserializzato in un oggetto `GPSDataDto` tramite l'utilizzo dell'oggetto `objectMapper`.
+
+===== AdvertisementSerializationSchema
+#figure(
+  image("../assets/img/ST/SystemUML/AdvertisementSerializationSchema.png", width: 45%),
+  caption: [Diagramma della classe `AdvertisementSerializationSchema`],
+)
+La classe `AdvertisementSerializationSchema` implementa l'interfaccia parametrica `SerializationSchema<T>` di Flink e ridefinisce il metodo `serialize`, dove T rappresenta la classe oggetto della serializzazione. Nel nostro caso, T corrisponde a una classe `Tuple3<GPSData, PointOfInterest, String>`, che rappresenta l'annuncio generato dalla LLM, comprensivo dei dati del punto di interesse e di localizzazione. La classe `AdvertisementSerializationSchema` viene utilizzata per serializzare l'annuncio in un messaggio JSON da inviare al _topic_ `adv-data` di Kafka che simula la comunicazione del messaggio all'utente.
+
+====== Attributi
+- ```java -objectMapper: ObjectMapper```: oggetto fornito dalla libreria Jackson (interno alla dipendenza di Flink) per la serializzazione e deserializzazione di oggetti in formato JSON.
+
+====== Costruttori
+Viene mantenuto il costruttore di _default_ fornito da Java.
+
+====== Metodi
+- ```java +serialize(adv: Tuple3<GPSData, PointOfInterest, String>): byte[]```: metodo che viene invocato per serializzare l'annuncio.
+
+===== DatabaseConnectionSingleton
+#figure(
+  image(
+    "../assets/img/ST/SystemUML/DatabaseConnectionSingleton.png",
+    width: 40%,
+  ), //FIXME: ci sarebbe anche il metodo create
+  caption: [Diagramma della classe `DatabaseConnectionSingleton`],
+)
+La classe `DatabaseConnectionSingleton` rappresenta il _singleton_ della `ConnectionFactory` fornita dalla libreria R2DBC. Essa viene utilizzata per istanziare in maniera univoca durante tutto il processo una _factory_ di connessioni, creabili attraverso il metodo `create()`.
+
+====== Attributi
+- #underline[```java -instance: ConnectionFactory```]: istanza della `ConnectionFactory` che viene creata globalmente per l'intero processo grazie all'implementazione del _pattern Singleton_.
+
+====== Costruttori
+Il costruttore viene reso inutilizzabile attraverso la ridefinizione del costruttore di _default_, ponendo l'accesso privato per implementare il _pattern Singleton_.
+
+====== Metodi
+- #underline[```java +getConnectionFactory(): ConnectionFactory```]: metodo statico che restituisce l'istanza della `ConnectionFactory`. Se l'istanza non è ancora stata creata, viene creata e restituita. Il metodo è _synchronized_ per garantire che venga creata una sola istanza della `ConnectionFactory` durante l'intero processo.
+
+=== Entità
+Questa sezione rappresenta le entità del sistema, ovvero le classi che rappresentano i dati persistenti all'interno del _database_.
+
+==== Struttura delle classi: attributi, costruttori e metodi
+
+===== GPSData
+#figure(
+  image("../assets/img/ST/SystemUML/GPSData.png", width: 55%),
+  caption: [Diagramma della classe `GPSData`],
+)
 La classe `GPSData` rappresenta il dato di localizzazione GPS, pressoché simile al DTO `GPSDataDto`, ma permettere di rappresentare l'attributo `timestamp` tramite l'oggetto `Timestamp` di Java (`java.sql.Timestamp`), facilitando così le operazioni da effettuare tramite il _database_.
 All'interno della _codebase_, l'entità GPSData non è rappresentato tramite una classe, ma tramite i _record_ in Java, che permettono di definire delle classi immutabili, ovvero non modificabili una volta create. Tuttavia, per mantenere la rappresentazione UML, il gruppo ha deciso di rappresentare la classe come un oggetto aventi attributi costanti e metodi _getter_.
 
-==== Attributi
+====== Attributi
 In quanto _record_, gli attributi della classe `GPSData` sotto elencati sono costanti data l'immutabilità della classe per definizione.
 - ```java -rentId: int```: identificativo del noleggio associato al sensore.
 - ```java -latitude: float```: latitudine della posizione GPS.
 - ```java -longitude: float```: longitudine della posizione GPS.
 - ```java -timestamp: Timestamp```: timestamp della posizione GPS.
 
-==== Costruttori
+====== Costruttori
 - ```java +GPSData(rentId: int, latitude: float, longitude: float, timestamp: Timestamp)```: costruttore della classe `GPSData` che inizializza gli attributi `rentId`, `latitude`, `longitude` e `timestamp` con i valori passati come parametro.
 
-==== Metodi
+====== Metodi
 I metodi _getter_, nella reale implementazione della classe, vengono omessi in quanto creati dal _record_.
 - ```java +rentId(): int```: restituisce l'identificativo del noleggio associato al sensore.
 - ```java +latitude(): float```: restituisce la latitudine della posizione GPS.
@@ -480,10 +568,14 @@ I metodi _getter_, nella reale implementazione della classe, vengono omessi in q
 - ```java +equals(o: Object): boolean```: _overriding_ del metodo della classe `Object` di Java, confronta l'uguaglianza tra l'oggetto `GPSData` da cui viene invocato il metodo e l'oggetto posto a parametro e restituisce `true` se sono uguali, `false` altrimenti.
 - ```java +hashCode(): int```: _overriding_ del metodo della classe `Object` di Java, restituisce il codice _hash_ dell'oggetto `GPSData` da cui viene invocato il metodo.
 
-=== PointOfInterest
+===== PointOfInterest
+#figure(
+  image("../assets/img/ST/SystemUML/PointOfInterest.png", width: 70%),
+  caption: [Diagramma della classe `PointOfInterest`],
+)
 La classe `PointOfInterest` rappresenta un qualsiasi punto di interesse presente all'interno del _database_. Come per la classe `GPSData`, anche in questo caso è stato scelto di rappresentare l'entità tramite un _record_ in Java.
 
-==== Attributi
+====== Attributi
 In quanto _record_, gli attributi della classe `PointOfInterest` sotto elencati sono costanti.
 - ```java -latitude: float```: latitudine del punto di interesse.
 - ```java -longitude: float```: longitudine del punto di interesse.
@@ -492,10 +584,10 @@ In quanto _record_, gli attributi della classe `PointOfInterest` sotto elencati 
 - ```java -category: String```: categoria del punto di interesse.
 - ```java -offer: String```: offerta del punto di interesse, ovvero ciò che il punto mette a disposizione per i clienti e che possa essere fondamentale per il contesto degli annunci pubblicitari.
 
-==== Costruttori
+====== Costruttori
 - ```java +PointOfInterest(latitude: float, longitude: float, vat: String, name: String, category: String, offer: String)```: costruttore della classe `PointOfInterest` che inizializza gli attributi `latitude`, `longitude`, `vat`, `name`, `category` e `offer` con i valori passati come parametro.
 
-==== Metodi
+====== Metodi
 I metodi _getter_, nella reale implementazione della classe, vengono omessi in quanto creati dal _record_.
 - ```java +latitude(): float```: restituisce la latitudine del punto di interesse.
 - ```java +longitude(): float```: restituisce la longitudine del punto di interesse.
@@ -506,83 +598,54 @@ I metodi _getter_, nella reale implementazione della classe, vengono omessi in q
 - ```java +equals(o: Object): boolean```: _overriding_ del metodo della classe `Object` di Java, confronta l'uguaglianza tra l'oggetto `PointOfInterest` da cui viene invocato il metodo e l'oggetto posto a parametro e restituisce `true` se sono uguali, `false` altrimenti.
 - ```java +hashCode(): int```: _overriding_ del metodo della classe `Object` di Java, restituisce il codice _hash_ dell'oggetto `PointOfInterest` da cui viene invocato il metodo.
 
-=== NearestPOIRequest
+=== Richieste asincrone
+Questa sezione rappresenta le classi che si occupano di effettuare le richieste asincrone per arricchire i dati al fine di miglirare il _prompt_ da inviare all'LLM. Esse estendono la classe astratta `RichAsyncFunction` della libreria di Flink per eseguire queste richieste su ogni dato dello _stream_.
+
+==== Struttura delle classi: attributi, costruttori e metodi
+
+===== NearestPOIRequest
+#figure(
+  image("../assets/img/ST/SystemUML/NearestPOIRequest.png", width: 90%),
+  caption: [Diagramma della classe `NearestPOIRequest`],
+)
 La classe `NearestPOIRequest` rappresenta la richiesta asincrona di ricerca del punto di interesse più vicino alla posizione del sensore. La classe estende la classe astratta parametrica `RichAsyncFunction<IN, OUT>` fornita dalla libreria di Flink con parametri `IN`:`GPSData` e `OUT`:`Tuple2<GPSData,PointOfInterest>`, che permette di eseguire operazioni asincrone all'interno di un _job_ in Flink. In questo caso, viene fatta una richiesta al _database_ per la ricerca del punto di interesse più vicino, sfruttando le _query_ geospaziali fornite dall'estensione PostGIS. Come menzionato in precedenza, in quanto Flink richiede un _client_ asincrono per le operazioni con il _database_, è stato scelto di utilizzare le libreria R2DBC e Project Reactor per effettuare richieste non bloccanti al _database_.
 
-==== Attributi
+====== Attributi
 - #underline[```java - STMT: String```]: _statement_ SQL da eseguire per la ricerca del punto di interesse più vicino alla posizione del sensore. L'attributo è statico (ovvero condiviso tra tutte le istanze della classe) e costante.
 
-==== Costruttori
+====== Costruttori
 Viene mantenuto il costruttore implicito di _default_ fornito da Java, in quanto non sono necessari costruttori specifici per la classe `NearestPOIRequest`.
 
-==== Metodi
+====== Metodi
 In quanto classe che estende `RichAsyncFunction`, la classe `NearestPOIRequest` ridefinisce solamente il metodo `asyncInvoke`, mantenendo l'implementazione _default_ della classe estesa per i metodi `open()` e `close`.
 - ```java +asyncInvoke(gpsData: GPSData, resultFuture: ResultFuture<Tuple2<GPSData, PointOfInterest>>): void```: metodo che viene invocato in modo asincrono per eseguire la ricerca del punto di interesse più vicino alla posizione del sensore. Il risultato della ricerca viene restituito tramite il parametro `resultFuture`, che rappresenta il risultato della richiesta asincrona.
 
-=== AdvertisementGenerationRequest
+===== AdvertisementGenerationRequest
+#figure(
+  image("../assets/img/ST/SystemUML/AdvertisementGenerationRequest.png", width: 95%),
+  caption: [Diagramma della classe `AdvertisementGenerationRequest`],
+)
 La classe `AdvertisementGenerationRequest` rappresenta la richiesta asincrona di generazione dell'annuncio da inviare alla LLM. Estende la classe astratta `RichAsyncFunction<IN, OUT>` fornita dalla libreria di Flink con parametri `IN`:`Tuple2<GPSData,PointOfInterest>` e `OUT`:`Tuple3<GPSData, PointOfInterest, String>`, che permette di eseguire operazioni asincrone all'interno di un _job_ in Flink. In questo caso viene fatta una richiesta alla LLM per la generazione dell'annuncio, sfruttando le API fornite dalla libreria LangChain4j.
 
-==== Attributi
+====== Attributi
 - ```java -model: ChatLanguageModel```: rappresenta il modello LLM utilizzato per effettuare le richieste di generazione degli annunci.
 
-==== Costruttori
+====== Costruttori
 Viene mantenuto il costruttore implicito di _default_ fornito da Java, in quanto non sono necessari costruttori specifici per la classe `AdvertisementGenerationRequest`.
 
-==== Metodi
+====== Metodi
 In quanto classe che estende `RichAsyncFunction`, la classe `AdvertisementGenerationRequest` ridefinisce solamente il metodo `asyncInvoke`, mantenendo l'implementazione _default_ della classe estesa per i metodi `open()` e `close`.
 - ```java +asyncInvoke(Tuple2<GPSData, PointOfInterest> input, ResultFuture<Tuple3<GPSData, PointOfInterest, String>> resultFuture): void```: metodo che viene invocato in modo asincrono per eseguire la generazione dell'annuncio. Il risultato della generazione viene restituito tramite il parametro `resultFuture`, che rappresenta il risultato della richiesta asincrona.
 
-=== GPSDataDeserializationSchema
-La classe `GPSDataDeserializationSchema` estende la classe astratta parametrica `AbstractDeserializationSchema<T>` di Flink e ridefinisce i metodi `deserialize` e `open`, dove T rappresenta la classe in cui viene deserializzato il JSON. In questo caso, i dati in arrivo sono in formato JSON e vengono deserializzati in un oggetto `GPSDataDto`, nonché parametro della classe estesa.
+=== Classe main
+La classe _main_ del _job_ di Flink si occupa di eseguire il _job_, creando l'_execution environment_ e avviando il processo di _stream processing_. Essa si occupa di organizzare le varie componenti del sistema, creando i _topic_ di Kafka e avviando il processo di _stream processing_.
 
-==== Attributi
-- ```java -objectMapper: ObjectMapper```: oggetto fornito dalla libreria Jackson (interno alla dipendenza di Flink) per la serializzazione e deserializzazione di oggetti in formato JSON.
-
-==== Costruttori
-Viene mantenuto il costruttore di _default_ fornito da Java.
-
-==== Metodi
-- ```java +open(context: InitializationContext): void```: metodo che viene invocato all'avvio del processo di deserializzazione. Viene invocato una tantum per effettuare il _setup_ della classe. In questo caso, viene inizializzato l'oggetto `objectMapper` per la deserializzazione del JSON.
-- ```java +deserialize(message: byte[]): GPSDataDto```: metodo che viene invocato per deserializzare il messaggio in arrivo. In questo caso, il messaggio viene deserializzato in un oggetto `GPSDataDto` tramite l'utilizzo dell'oggetto `objectMapper`.
-
-=== AdvertisementSerializationSchema
-La classe `AdvertisementSerializationSchema` implementa l'interfaccia parametrica `SerializationSchema<T>` di Flink e ridefinisce il metodo `serialize`, dove T rappresenta la classe oggetto della serializzazione. Nel nostro caso, T corrisponde a una classe `Tuple3<GPSData, PointOfInterest, String>`, che rappresenta l'annuncio generato dalla LLM, comprensivo dei dati del punto di interesse e di localizzazione. La classe `AdvertisementSerializationSchema` viene utilizzata per serializzare l'annuncio in un messaggio JSON da inviare al _topic_ `adv-data` di Kafka che simula la comunicazione del messaggio all'utente.
-
-==== Attributi
-- ```java -objectMapper: ObjectMapper```: oggetto fornito dalla libreria Jackson (interno alla dipendenza di Flink) per la serializzazione e deserializzazione di oggetti in formato JSON.
-
-==== Costruttori
-Viene mantenuto il costruttore di _default_ fornito da Java.
-
-==== Metodi
-- ```java +serialize(adv: Tuple3<GPSData, PointOfInterest, String>): byte[]```: metodo che viene invocato per serializzare l'annuncio.
-
-=== DatabaseConnectionSingleton
-La classe `DatabaseConnectionSingleton` rappresenta il _singleton_ della `ConnectionFactory` fornita dalla libreria R2DBC. Essa viene utilizzata per istanziare in maniera univoca durante tutto il processo una _factory_ di connessioni, creabili attraverso il metodo `create()`.
-
-==== Attributi
-- #underline[```java -instance: ConnectionFactory```]
-
-==== Costruttori
-Il costruttore viene reso inutilizzabile attraverso la ridefinizione del costruttore di _default_, ponendo l'accesso privato.
-
-==== Metodi
-- #underline[```java +getConnectionFactory(): ConnectionFactory```]: metodo statico che restituisce l'istanza della `ConnectionFactory`. Se l'istanza non è ancora stata creata, viene creata e restituita. Il metodo è _synchronized_ per garantire che venga creata una sola istanza della `ConnectionFactory` durante l'intero processo.
-
-=== KafkaTopicService
-La classe `KafkaTopicService` rappresenta il servizio di creazione dei _topic_ di Kafka. Viene impiegato dal _job_ per la creazione dei topic _gps-data_ e _adv-data_ se non già creati, utilizzati rispettivamente per la ricezione dei dati di localizzazione e l'invio degli annunci generati dalla LLM.
-
-==== Attributi
-- ```java -admin: Admin```: oggetto fornito dalla libreria Kafka per la gestione dei _topic_. Nel nostro caso è costante per ogni istanza dell'oggetto.
-
-==== Costruttori
-- ```java +KafkaTopicService(admin: Admin)```: costruttore della classe `KafkaTopicService` che inizializza l'attributo `admin` con il valore passato come parametro.
-
-==== Metodi
-- ```java +createTopic(topicName: String, numPartitions: int, replicationFactor: short): void```: metodo che crea un _topic_ di Kafka con il nome e le caratteristiche specificate. Se il _topic_ esiste già, non viene creato nuovamente.
-- ```java +createTopics(topicNames: String*): void```: metodo che crea più _topic_ di Kafka con i nomi specificati all'interno dell'_array_ con numero di partizioni e di _replication factor_ pari a 1. Se i _topic_ esistono già, non vengono creati nuovamente.
-
-=== DataStreamJob
+==== Struttura della classe: attributi, costruttori e metodi
+==== DataStreamJob
+#figure(
+  image("../assets/img/ST/SystemUML/DataStreamJob.png", width: 95%),
+  caption: [Diagramma della classe `DataStreamJob`],
+)
 La classe `DataStreamJob` è la _main class_ del _job_ di Flink. Essa avvia l'esecuzione dello _stream processor_, organizzando le varie componenti di quest'ultimo e gestendo il flusso dei dati tra i vari _layer_ del sistema.
 
 ==== Attributi
@@ -594,7 +657,9 @@ La classe `DataStreamJob` è la _main class_ del _job_ di Flink. Essa avvia l'es
 ==== Costruttori
 - ```java +DataStreamJob(env: StreamExecutionEnvironment, topicService: KafkaTopicService)```: costruttore della classe `DataStreamJob` che inizializza gli attributi `env` e `topicService` con i valori passati come parametro.
 
-====
+==== Metodi
+- ```java +execute(): void```: metodo che avvia l'esecuzione del _job_ di Flink. Inizializza i _topic_ di Kafka, crea il flusso di dati e avvia l'esecuzione del _job_.
+- #underline[```java +main(args: String*)```]: metodo _main_ della classe `DataStreamJob` che avvia l'esecuzione del _job_ di Flink. Inizializza l'_execution environment_, il servizio di creazione dei _topic_ e il _job_ stesso.
 
 == Design pattern adottati
 === Singleton
@@ -1184,39 +1249,39 @@ Per una spiegazione più approfondita si rimanda al documento `analisi_dei_requi
 
   [RFF-1],
   [L'amministratore deve poter visualizzare la sezione dedicata ai grafici all'interno della _dashboard_ del sistema.],
-  [Non soddisfatto],
+  [Soddisfatto],
 
   [RFF-2],
   [L'amministratore deve poter visualizzare un singolo grafico relativo ad una particolare analisi dati.],
-  [Non soddisfatto],
+  [Soddisfatto],
 
   [RFF-3],
   [L'amministratore deve poter visualizzare il titolo di uno specifico grafico a seconda dell'analisi dati che viene rappresentata.],
-  [Non soddisfatto],
+  [Soddisfatto],
 
   [RFF-4],
   [L'amministratore deve poter visualizzare in uno specifico grafico un'etichetta relativa alla tipologia di misura rappresentata sulle assi delle ascisse e delle ordinate e, infine, i relativi valori.],
-  [Non soddisfatto],
+  [Soddisfatto],
 
   [RFF-5],
   [L'amministratore deve poter visualizzare, all'interno di ciascun grafico, la rappresentazione dello specifico _set_ di dati previsti per quel grafico.],
-  [Non soddisfatto],
+  [Soddisfatto],
 
   [RFF-6],
   [L'amministratore deve poter visualizzare un grafico che mostri il numero di annunci generati dal sistema nelle ultime 24 ore, con granularità oraria.],
-  [Non soddisfatto],
+  [Soddisfatto],
 
   [RFF-7],
   [L'amministratore deve poter visualizzare un grafico raffigurante il numero medio di noleggi che vengono effettuati in ciascun mese dell'anno, risultato della media di noleggi effettuati in quel mese nel corso degli anni.],
-  [Non soddisfatto],
+  [Soddisfatto],
 
   [RFF-8],
   [L'amministratore, dalla sezione dedicata ai grafici, deve poter selezionare uno specifico punto di interesse per poter poi visualizzare i grafici delle statistiche ad esso correlate.],
-  [Non soddisfatto],
+  [Soddisfatto],
 
   [RFF-9],
   [L'amministratore deve poter visualizzare un grafico che mette a confronto il numero di annunci generati con il numero di annunci non generati per un certo punto di interesse nell'ultima settimana.],
-  [Non soddisfatto],
+  [Soddisfatto],
 
   [RFF-10],
   [Viene richiesta la creazione di uno strumento di visualizzazione degli annunci in tempo reale per l'utente utilizzatore del servizio.],
