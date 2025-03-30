@@ -3,6 +3,7 @@
     "Apache Airflow": "Orchestratore di flussi di lavoro _open source_ per applicazioni _data-intensive_.",
     "Apache Flink": "_Framework_ di elaborazione dati a flusso _open source_, ottimizzato per applicazioni in tempo reale.",
     "Apache Kafka": "Piattaforma di _broker_ e _data streaming_ che consente di gestire e trasferire _big data_ in tempo reale.",
+    "Apache Maven": "È uno strumento di gestione di progetti _software_ e _build automation_ per Java. Permette di gestire le dipendenze e la configurazione del progetto.",
     "Apache NiFi": "Sistema di integrazione di dati _open source_ per l'elaborazione e la distribuzione di flussi di dati.",
     "Apache Spark": "Elaborazione dati _in-memory_ _open source_, ad alte prestazioni, progettato per eseguire elaborazioni complesse su grandi volumi di dati in modo rapido e scalabile.",
     "Apache Superset": "Piattaforma _open source_ di _business intelligence_ per esplorare e visualizzare dati in modo interattivo.",
@@ -17,25 +18,28 @@
   "C": {
     "ClickHouse": "ClickHouse è un database di analisi _open source_ orientato alle colonne per casi di utilizzo in ambito _big data_.",
     "ClickUp": "Piattaforma di gestione del lavoro che combina strumenti per pianificazione, organizzazione e collaborazione su progetti.",
+    "Code Coverage": "Metrica che misura la percentuale di codice sorgente coperto da _test_, utile per valutare l'efficacia dei _test_ e l'affidabilità del _software_.",
     "Codebase": "Termine che si riferisce all'insieme di tutto il codice sorgente del prodotto _software_ in sviluppo.",
-    "Code Coverage": "Metrica che misura la percentuale di codice sorgente coperto da _test_, utile per valutare l'efficacia dei _test_ e l'affidabilità del _software_."
+    "Connection pooling": "_Cache_ di connessioni riutilizzabili al _database_ che possono essere riutilizzate quando necessarie. È una comune tecnica di ottimizzazione utilizzata da applicazioni che interagiscono con un _database_ per migliorare le prestazioni e gestire l'utilizzo di risorse."
   },
   "D": {
+    "DBMS": "Acronimo di _Database Management System_, è un sistema _software_ che consente la creazione, gestione e manipolazione di database. Fornisce strumenti per organizzare, recuperare e proteggere i dati, garantendo integrità e sicurezza.",
     "Dashboard": "Interfaccia grafica composta da vari elementi che servono all'utente per visualizzare dati o a gestire un sistema.",
-    "Database": "Sistema strutturato per la raccolta, l'archiviazione e la gestione di dati.",
     "Data Broker": "Tipo di tecnologia che facilita la raccolta, l'integrazione e la distribuzione di dati tra diverse fonti e utenti, garantendo accesso sicuro e scalabile per analisi e applicazioni.",
     "Data Generator": "Strumento o _software_ che produce dati sintetici o simulati, utilizzati per testare applicazioni, addestrare modelli di _machine learning_ o simulare scenari realistici.",
     "Data Visualization": "Rappresentazione grafica di dati e informazioni, al fine di facilitarne la comprensione e l'interpretazione.",
-    "DBMS": "Acronimo di _Database Management System_, è un sistema _software_ che consente la creazione, gestione e manipolazione di database. Fornisce strumenti per organizzare, recuperare e proteggere i dati, garantendo integrità e sicurezza.",
+    "Database": "Sistema strutturato per la raccolta, l'archiviazione e la gestione di dati.",
     "Deep dive": "Una sessione di _deep dive_ è un incontro in cui esperti esterni al gruppo si mettono a disposizione per approfondire determinati argomenti. Questi incontri sono progettati per affrontare temi complessi o aree in cui il _team_ destinatario potrebbe non avere esperienza sufficiente o stia incontrando difficoltà.",
     "Diagramma di Gantt": "Strumento di supporto alla gestione di progetti, usato principalmente nelle attività di gestione di progetto. È costruito partendo da un asse orizzontale, che rappresenta l'arco temporale, e da un asse verticale che rappresenta le mansioni o attività che costituiscono il progetto.",
     "Docker": "Piattaforma _software_ _open source_ che consente di sviluppare, distribuire ed eseguire applicazioni in _container_, unità leggere e portatili che includono tutto il necessario per eseguire un'applicazione, garantendo che funzionino in modo coerente su qualsiasi ambiente.",
-    "Docker Compose": "È uno strumento di Docker che permette la creazione e condivisione di applicazioni composte da più _container_. Lo strumento permette di definire i servizi in un file YAML e di avviare l'intera applicazione mediante un singolo comando."
+    "Docker Compose": "È uno strumento di Docker che permette la creazione e condivisione di applicazioni composte da più _container_. Lo strumento permette di definire i servizi in un file YAML e di avviare l'intera applicazione mediante un singolo comando.",
+    "Driver": "Componente _software_ che fornisce un'interfaccia per controllare e gestire interfacce di basso livello che sono collegate a specifiche tipologie di _hardware_ or altri servizi di basso livello."
   },
   "E": {
     "Event-driven Architecture": "È un _design pattern_ che si occupa della produzione e della gestione degli eventi, permettendo di comunicare oppure avviare servizi disaccoppiati tra di loro."
   },
   "F": {
+    "Facade": "È un _design pattern_ che fornisce un'interfaccia semplificata per un insieme complesso di interfacce o classi, nascondendo la complessità sottostante.",
     "Faker": "Libreria Python utilizzata per generare dati fittizi, come nomi, indirizzi, numeri di telefono e altri tipi di informazioni, utili per _test_, sviluppo o simulazioni senza utilizzare dati reali.",
     "Feedback": "Solitamente si intende l'opinione di una persona. Nel nostro caso, il termine trova utilizzo quando il proponente condivide le proprie idee e le proprie opinioni circa l'avanzamento dei lavori e sull'incremento effettuato in una determinata iterazione."
   },
@@ -53,23 +57,25 @@
     "Hive MQ": "_Broker_ MQTT _open source_ ad alte prestazioni per l'IoT.",
     "Hosting": "Servizio che fornisce uno spazio _online_ per archiviare, gestire e condividere dei documenti. Nel contesto attuale viene riferito ad un _hosting_ di _repository_, un ambiente dove versionare codice sorgente e documentazione."
   },
-  "O":{
-    "Open source": "Con open source, si indica un software distribuito, in via gratuita, sotto i termini di una licenza che ne concede lo studio, l'utilizzo, la modifica e la redistribuzione."
-  },
   "K": {
     "Kubernetes": "Sistema _open source_ di orchestrazione di _container_."
   },
   "L": {
     "LangChain": "_Framework open source_ per la creazione di applicazioni basate su LLM, che consente di collegare questi modelli a diverse fonti di dati e API.",
     "Layer": "Nel contesto di grafana, un layer è un uno strato di visualizzazione che mostra uno specifico dato in un pannello della dashboard.",
-    "LLM": "_Large Language Model_, modello di intelligenza artificiale addestrato su grandi quantità di testo per comprendere, generare e rispondere al linguaggio naturale, utilizzato in _chatbot_, traduttori e assistenti virtuali."
+    "LLM": "_Large Language Model_, modello di intelligenza artificiale addestrato su grandi quantità di testo per comprendere, generare e rispondere al linguaggio naturale, utilizzato in _chatbot_, traduttori e assistenti virtuali.",
+    "Log": "Registro di eventi e attività generati da un'applicazione o da un sistema. Viene utilizzato principalmente per diagnosticare il sistema in caso di problemi.",
+    "LTS": "Acronimo di _Long Term Support_, indica una politica di manutenzione del ciclo di vita di un software che assicura manutenzione e supporto per un periodo prolungato, garantendo stabilità per gli utenti finali."
   },
   "M": {
+    "Marker": "Punto di riferimento utilizzato per identificare una posizione specifica all'interno della mappa.",
     "Message-driven Architecture": "È un _design pattern_ che si occupa della produzione, dell'invio e della gestione di messaggi, permettendo di comunicare oppure avviare servizi disaccoppiati tra di loro.",
     "Micro batching": "Tecnica di elaborazione di elevate quantità di dati a latenza ridotta. I dati vengono elaborati in _batch_ (lotti) di piccole dimensioni a intervalli regolari.",
     "Mockup": "Modello o replica di un prodotto o di un sistema (come l'interfaccia utente) utilizzato a scopo di _test_ o presentazione.",
-    "MVP": "Acronimo di _Minimum Viable Product_, rappresenta la versione iniziale di un prodotto con le funzionalità minime indispensabili per essere testato dagli utenti e validato sul mercato.",
-    "Marker": "Punto di riferimento utilizzato per identificare una posizione specifica all'interno della mappa."
+    "MVP": "Acronimo di _Minimum Viable Product_, rappresenta la versione iniziale di un prodotto con le funzionalità minime indispensabili per essere testato dagli utenti e validato sul mercato."
+  },
+  "O": {
+    "Open source": "Con open source, si indica un software distribuito, in via gratuita, sotto i termini di una licenza che ne concede lo studio, l'utilizzo, la modifica e la redistribuzione."
   },
   "P": {
     "Pipeline": "La pipeline indica un insieme di componenti software collegati tra loro in cascata, in modo che il risultato prodotto da uno degli elementi (output) sia l'ingresso di quello immediatamente successivo (input).",
@@ -91,10 +97,12 @@
     "Spring": "_Framework_ Java _open source_ che semplifica lo sviluppo di applicazioni enterprise, fornendo strumenti per gestione di componenti e integrazione.",
     "Sprint": "Periodo di tempo di durata fissa, in questo progetto della durata di 2 settimane, entro il quale il gruppo si impegna a portare a termine una serie di attività prefissate.",
     "Stakeholder": "Conosciuto anche come portatore di interesse, è una persona o un insieme di persone coinvolte all'interno del progetto che hanno degli interessi verso lo stesso.",
+    "Stateful": "Nel nostro caso si riferisce alle operazioni eseguite dallo _stream processor_ che mantengono lo stato tra le elaborazioni. In questo modo, il sistema può tenere traccia delle informazioni e dei risultati precedenti per fornire un contesto alle operazioni successive.",
     "Stream Processing": "Paradigma di programmazione parallela di tipo SIMD che permette ad alcune applicazioni di sfruttare semplicemente una forma limitata di elaborazione parallela di dati in tempo reale, man mano che vengono generati."
   },
   "T": {
     "TimeScale": "_Database_ relazionale basato su PostgreSQL, progettato per gestire e analizzare dati temporali (_time-series_) in modo efficiente, ideale per applicazioni IoT, monitoraggio e analisi di dati in tempo reale.",
+    "Topic": "Letteralmente \"argomento\", è una categoria di dati che organizza i messaggi in Apache Kafka. Ogni _topic_ può avere un numero arbitrario di partizioni.",
     "Trello": "Strumento di gestione progetti basato su bacheche visive, utile per organizzare attività e flussi di lavoro in modo collaborativo.",
     "Typst": "Linguaggio di _markup_ per la formattazione dei documenti e strumento di _typesetting_, simile a LaTeX, progettato per creare documenti complessi con sintassi moderna e funzionalità avanzate."
   },

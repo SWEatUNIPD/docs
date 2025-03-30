@@ -30,6 +30,13 @@
     "Andrea Precoma",
     "Klaudio Merja",
     [
+      - Aggiornate strutture delle _repository_
+    ],
+    "1.3.0",
+    "27/03/2025",
+    "Andrea Precoma",
+    "Klaudio Merja",
+    [
       - Rinominato MPD-ROPS in MPD-RFS
       - Rimosse metriche MPD-SC, #box[MPD-FD], MPD-COC, MPD-SFI, MPD-SFO e MPD-RM
     ],
@@ -273,7 +280,7 @@ Il documento conterrà le seguenti informazioni:
   - *Retrospettiva*: Sezione redatta a fine periodo, contiene una descrizione testuale delle difficoltà riscontrate e consigli utili da adottare per il lavoro futuro. Si struttura nei seguenti paragrafi:
     - *Cosa ha funzionato*: Aspetti positivi del periodo concluso.
     - *Cosa non ha funzionato*: Difficoltà che hanno rallentato il lavoro.
-    - *Cosa fare per migliorare*: Considerazioni migliorative per gli _sprint_ successivi.
+    - *Cosa fare per migliorare*: Considerazioni migliorative per gli _#rifGlossario("sprint")_ successivi.
     - *Rischi riscontrati*: Ricapitolazione dei rischi pianificati, analizzando se ve ne sono verificati di nuovi, e come sono stati affrontati.
     - *Attività future*: Lavori da cominciare nel periodo successivo che derivano da quello appena concluso, utile per guidare la pianificazione successiva.
 
@@ -625,21 +632,34 @@ La _repository_ è strutturata da un unico _branch_ adibito al mantenimento di t
       - `dichiarazione_impegni_preventivo_costi_ver1.1.0.typ`
       - `lettera_di_presentazione_candidatura.typ`
       - `valutazione_capitolati_ver1.2.0.typ`
+  - *`pb`*
+    - *`verbali`*
+      - *`esterni`*: contiene i `.typ` e i `.pdf` dei verbali esterni.
+      - *`interni`*: contiene i `.typ` dei verbali interni.
+      - `analisi_dei_requisiti_ver2.0.0.typ`
+      - `glossario_ver2.0.0.typ`
+      - `manuale_utente_ver1.0.0.typ`
+      - `norme_di_progetto_ver2.0.0.typ`
+      - `piano_di_progetto_ver2.0.0.typ`
+      - `piano_di_qualifica_ver2.0.0.typ`
+      - `specifica_tecnica_ver1.0.0.typ`
   - *`rtb`*
     - *`verbali`*
       - *`esterni`*: contiene i `.typ` e i `.pdf` dei verbali esterni.
       - *`interni`*: contiene i `.typ` dei verbali interni.
-      - `analisi_dei_requisiti_ver1.0.0.typ`
+      - `analisi_dei_requisiti_ver1.0.1.typ`
       - `glossario_ver1.0.0.typ`
-      - `norme_di_progetto_ver1.0.0.typ`
-      - `piano_di_progetto_ver1.0.0.typ`
-      - `piano_di_qualifica_ver1.0.0.typ`
+      - `lettera_di_presentazione_rtb.typ`
+      - `norme_di_progetto_ver1.0.1.typ`
+      - `piano_di_progetto_ver1.0.1.typ`
+      - `piano_di_qualifica_ver1.0.1.typ`
   - *`templates`*
     - `diario_di_bordo.pptx`
     - `template.typ`
   - `.gitignore`
   - `README.md`
   - _File_ `.js` utili per il glossario, per l'Indice di Gulpease e per aggiungere i _file_ al sito.
+  - _File_ `.json` per le configurazioni dell'ambiente JavaScript e per il glossario.
 ]
 
 ==== Struttura della repository sweatunipd.github.io
@@ -668,7 +688,7 @@ La _repository_ è costituita da un unico _branch_ nel quale è caricato tutto i
 ==== Struttura della repository NearYou
 La _repository_ è strutturata da due _branch_: "_main_" e "_dev_".
 Il _branch_ "_main_" contiene la _release_ ufficiale più recente e viene aggiornato ad ogni _milestone_, ovvero nel nostro caso RTB e PB, mentre il _branch_ "_dev_" è adibito allo sviluppo del codice.
-Ad ogni necessità di svolgere azioni dettate da una _issue_ del _backlog_ si crea un _branch_ temporaneo che, successivamente alla verifica, viene riunito al ramo "_dev_" secondo il meccanismo delle _pull request_. //Per la prossima consegna, introdurre il concetto di Git Feature Branch Workflow e magari Conventional Commits (da valutare)
+Ad ogni necessità di svolgere azioni dettate da una _issue_ del _backlog_ si crea un _branch_ temporaneo che, successivamente alla verifica, viene riunito al ramo "_dev_" secondo il meccanismo delle _pull request_.
 La _repository_ è presentata dal `README.md` il quale fornisce anche le istruzioni su come avviare il sistema tramite #rifGlossario("Docker"). La _repository_ contiene anche il _file_ `.gitignore` usato per escludere alcuni _file_ dai _commit_ in _repository_.
 Le cartelle sono strutturate nel seguente modo:
 
@@ -678,29 +698,26 @@ Le cartelle sono strutturate nel seguente modo:
   - *`assets`*
     - *`img`*: contiene le immagini usate all'interno dei _file_.
   - *`client`*
-    - *`sensor_data`*: contiene i _file_ `.txt` relativi alle coordinate #rifGlossario("GPS") utilizzate dal simulatore GPS.
-    - _File_ contenenti il codice sorgente del simulatore di coordinate GPS.
-  - *`data`*:
-    - *`grafana`*:
-      - *`plugins`*: contiene i _plugins_ installati per il corretto funzionamento di #rifGlossario("Grafana").
-    - `grafana.db`: _database_ di Grafana, utilizzato per la _#rifGlossario("dashboard")_ e le informazioni al suo interno.
-  - *`src`*:
-    - *`main`*:
-      - *`resources`*:
-        - `application.properties`: file relativo alla configurazione del sistema.
-      - *`java/io/github/unipd/Nearyou`*:
-        - *`config`*:
-          - `KafkaConsumerConfig.java`
-          - `KafkaTopicConfig.java`
-        - *`entity`*
-        - *`repository`*
-        - `KafkaListeners.java`
-        - `NearYouApplication.java`
-    - *`test/java/io/github/unipd/Nearyou`*:
-      - `NearYouApplicationTests.java`
-  - `README.md`
+    - *`src`*: contiene il codice sorgente del simulatore.
+    - *`test`*
+      - *`unit`*: contiene i _test_ di unità.
+    - `Dockerfile`
+    - _File_ di configurazione dell'ambiente TypeScript.
+  - *`data`*
+    - *`grafana`*
+      - *`plugins`*: contiene i _plugin_ installati per il corretto funzionamento di #rifGlossario("Grafana").
+      - *`kui`*: TODO.
+  - *`job`*
+    - *`src`*
+      - *`main/java/io/github/sweatunipd`*: contiene il codice sorgente del _job_ di Flink.
+      - *`test`*: contiene i _test_ di unità.
+    - `checkstyle.xml`
+    - `pom.xml`
+  - *`mock`*: contiene i _file_ per popolare il _database_ con dati fittizzi.
   - `.gitignore`
-  - _File_ utili alla _build_ e al funzionamento del programma.
+  - `README.md`
+  - `compose.yml`
+  - `create.sql`
 ]
 #pagebreak()
 === Backlog

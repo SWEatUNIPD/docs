@@ -9,6 +9,11 @@
   titolo: "Glossario",
   verificatori: ("Andrea Perozzo", "Andrea Precoma", "Davide Marin", "Davide Picello", "Riccardo Milan"),
   versioni: (
+    "2.0.0",
+    "27/03/2025",
+    "Klaudio Merja",
+    "Andrea Precoma",
+    [- Aggiunto i termini "Apache Maven", "Connection pooling", "driver", #box["facade"], "log", "LTS", "stateful" e "topic"],
     "1.5.0",
     "27/03/2025",
     "Davide Marin",

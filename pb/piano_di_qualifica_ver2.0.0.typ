@@ -494,7 +494,7 @@ I _test_ sono stati sviluppati utilizzando il _framework_ JUnit 5, un efficace e
     // `AdvertisementGenerationRequest`
     [TU-45], [Verificare che la richiesta di generazione di un annuncio tramite il metodo asincrono `asyncInvoke` funzioni correttamente, completando l'oggetto `resultFuture` con la tupla contenente il testo generato dalla #rifGlossario("LLM").], [Verificato],
     [TU-46], [Verificare che nel caso in cui la stringa contenente gli interessi dell'utente nel _#rifGlossario("database")_ sia vuota, la richiesta di generazione dell'annuncio tramite il metodo `asyncInvoke` porti comunque alla generazione di un annuncio.], [Verificato],
-    [TU-47], [Verificare che se durante la preparazione della _query_ tramite la chiamata a `createStatement` nel metodo `asyncInvoke` della classe `AdvertisementGenerationRequest` viene generata un'eccezione, questa venga correttamente gestita e riportata nel _log_.], [Verificato],
+    [TU-47], [Verificare che se durante la preparazione della _query_ tramite la chiamata a `createStatement` nel metodo `asyncInvoke` della classe `AdvertisementGenerationRequest` viene generata un'eccezione, questa venga correttamente gestita e riportata nel _#rifGlossario("log")_.], [Verificato],
     // `NearestPOIRequest`
     [TU-48], [Verificare che la richiesta di ricerca del punto di interesse più vicino all'utente tramite il metodo asincrono `asyncInvoke`, in caso di successo, completi l'oggetto `resultFuture` con la tupla contenente un oggetto del tipo `PointOfInterest`.], [Verificato],
     [TU-49], [Verificare che nel caso in cui il punto di interesse più vicino all'utente sia più lontano di 100 m in linea d'aria la richiesta di ricerca del punto di interesse più vicino tramite il metodo `asyncInvoke` completi la tupla `resultFuture` con un _set_ vuoto.], [Verificato],
@@ -510,7 +510,7 @@ I _test_ sono stati sviluppati utilizzando il _framework_ JUnit 5, un efficace e
     // `KafkaTopicService`
     [TU-56], [Verificare che il metodo `createTopic` della classe `KafkaTopicTest` funzioni correttamente.], [Verificato],
     [TU-57], [Verificare che il metodo `createTopics` della classe `KafkaTopicTest` funzioni correttamente.], [Verificato],
-    [TU-58], [Verificare che il metodo `createTopic` della classe `KafkaTopicTest` gestisca correttamente il tentativo di creare un _topic_ con lo stesso nome di un _topic_ già esistente, riportando nel _log_ un avviso di _topic_ già esistente.], [Verificato],
+    [TU-58], [Verificare che il metodo `createTopic` della classe `KafkaTopicTest` gestisca correttamente il tentativo di creare un _#rifGlossario("topic")_ con lo stesso nome di un _topic_ già esistente, riportando nel _log_ un avviso di _topic_ già esistente.], [Verificato],
   )
 
 == Test di integrazione
@@ -543,7 +543,7 @@ Precedono i _test_ di accettazione e si concentrano sul sistema nel suo compless
     [TS-3], [Verificare che l'amministratore abbia fornito un indirizzo _e-mail_ per procedere con l'autenticazione.], [ROF-3], [Verificato],
     [TS-4], [Verificare che l'amministratore abbia fornito una password per procedere con l'autenticazione.], [ROF-4], [Verificato],
     [TS-5], [Verificare che, se l'amministratore inserisce almeno una credenziale errata, l'autenticazione fallisca e venga ritornato un messaggio di errore.], [ROF-5], [Verificato],
-    [TS-6], [Verificare che l'amministratore possa visualizzare sulla _dashboard_ principale una mappa geografica.], [ROF-6], [Verificato], // dubbio su "dashboard principale"
+    [TS-6], [Verificare che l'amministratore possa visualizzare sulla _dashboard_ principale una mappa geografica.], [ROF-6], [Verificato],
     [TS-7], [Verificare che l'amministratore possa visualizzare, tramite dei _#rifGlossario("marker")_ sulla mappa geografica, la posizione di tutti i punti di interesse.], [ROF-7], [Verificato],
     [TS-8], [Verificare che l'amministratore possa visualizzare sulla mappa il percorso eseguito da ciascun noleggio attivo in quel momento.], [ROF-8], [Verificato],
     [TS-9], [Verificare che l'amministratore possa visualizzare, lungo il percorso di ciascun noleggio attivo, un _marker_ specifico se quella posizione ricevuta dal sensore ha provocato una richiesta di generazione annuncio e questa ha avuto successo, ovvero l'utente è stato ritenuto interessato e quindi ha ricevuto l'annuncio.], [ROF-9], [Verificato],
@@ -650,7 +650,7 @@ Dal grafico si può notare che il valore dell'*EAC* si è avvicinato, per 4 iter
 Questi dati sottolineano il continuo automiglioramento che il team ha sempre cercato di perseguire.
 
 === PB
-Il grafico mostra come, dopo la quinta iterazione, il valore dell'*EAC* è rimasto molto vicino al valore ideale abbassandosi leggermente solo nell'ultimo periodo, risultando quindi leggermente inferiore al *BAC*. Il valore si è leggermente alzato in seguito al colloquio RTB, in concomitanza del quinto _sprint_, a causa di rallentamenti nella produzione dovuti ad alcune correzioni da effettuare. Il gruppo è riuscito tuttavia a recuperare e abbassare nuovamente l'*EAC* durante l'ottavo _sprint_, portandolo al di sotto del *BAC*. 
+Il grafico mostra come, dopo la quinta iterazione, il valore dell'*EAC* è rimasto molto vicino al valore ideale abbassandosi leggermente solo nell'ultimo periodo, risultando quindi leggermente inferiore al *BAC*. Il valore si è leggermente alzato in seguito al colloquio RTB, in concomitanza del quinto _#rifGlossario("sprint")_, a causa di rallentamenti nella produzione dovuti ad alcune correzioni da effettuare. Il gruppo è riuscito tuttavia a recuperare e abbassare nuovamente l'*EAC* durante l'ottavo _sprint_, portandolo al di sotto del *BAC*. 
 
 #pagebreak()
 == Earned Value (MPC-EV) e Planned Value (MPC-PV)
@@ -719,7 +719,7 @@ Dal grafico si può notare come il valore dell'*AC* abbia continuato a crescere 
 Dal grafico si può notare che le variazioni sono sempre state contenute: rientrano sempre ampiamente nei limiti accettabili e non si discostano molto dal valore ottimo. Il *BV* indica che abbiamo sempre speso leggermente oltre il _budget_ pianificato, tuttavia abbiamo una prospettiva positiva come indica il *SV*.
 
 === PB
-Il grafico mostra come dalla quinta iterazione l'*SV* sia sempre stato pressapoco invariato, segnalando di essere leggermente in anticipo rispetto alla pianificazione. Anche il *BV* è rimasto stabile fino la penultimo _sprint_ dopo il quale ha raggiunto il semipiano positivo, indice che i costi sostenuti fino alla conclusione dell'ottavo periodo, e quindi del progetto, sono minori di quelli pianificati.
+Il grafico mostra come dalla quinta iterazione l'*SV* sia sempre stato pressapoco invariato, segnalando di essere leggermente in anticipo rispetto alla pianificazione. Anche il *BV* è rimasto stabile fino al penultimo _sprint_ dopo il quale ha raggiunto il semipiano positivo, indice che i costi sostenuti fino alla conclusione dell'ottavo periodo, e quindi del progetto, sono minori di quelli pianificati.
 
 #pagebreak()
 == Indice di Stabilità dei Requisiti (MPC-ISR)
@@ -755,17 +755,17 @@ Indice che valuta la leggibilità dei documenti scritti in italiano.
   "Valore ottimo",
   ((0, 0), (1, 56), (2, 54), (3, 54), (4, 53), (5, 53), (6, 53), (7, 53)),
   "Analisi dei Requisiti",
-  ((0, 53), (1, 54), (2, 53), (3, 53), (4, 52), (5, 52), (6, 52), (7, 52)),
+  ((0, 53), (1, 54), (2, 53), (3, 53), (4, 52), (5, 52), (6, 52), (7, 53)),
   "Norme di Progetto",
-  ((0, 42), (1, 45), (2, 44), (3, 44), (4, 45), (5, 49), (6, 49), (7, 49)),
+  ((0, 42), (1, 45), (2, 44), (3, 44), (4, 45), (5, 49), (6, 49), (7, 50)),
   "Piano di Progetto",
-  ((0, 0), (1, 50), (2, 50), (3, 50), (4, 56), (5, 48), (6, 48), (7, 48)),
+  ((0, 0), (1, 50), (2, 50), (3, 50), (4, 56), (5, 48), (6, 48), (7, 49)),
   "Piano di Qualifica",
   ((0, 45), (1, 45), (2, 45), (3, 45), (4, 45), (5, 45), (6, 45), (7, 45)),
   "Glossario",
-  ((5, 64), (6, 64), (7, 64)),
+  ((5, 64), (6, 64), (7, 59)),
   "Manuale Utente",
-  ((5, 62), (6, 62), (7, 62)),
+  ((5, 62), (6, 62), (7, 50)),
   "Specifica Tecnica",
   
 )
@@ -776,9 +776,9 @@ Si nota che i valori sono sempre sopra al valore accettabile, anche se ancora be
 Il valore nullo di alcuni documenti alla prima iterazione è dovuto alla stesura tardiva degli stessi. Lo sviluppo della documentazione si è infatti svolta parallelamente alle lezioni di teoria del corso.
 
 === PB
-Il grafico mostra come i valori di tutti i documenti siano sempre stati al di sopra del valore accettabile e con poche variazioni presenti, anche se la maggior parte rimane abbastanza distante dal valore ottimo. La stabilità dell'indice di Gulpease indica che il gruppo si è concentrato più sull'ampliamento e arricchimento dei documenti piuttosto che nel miglioramento della leggibilità, che rimane comunque al di sopra del valore accettabile per tutti gli elaborati.
+Il grafico mostra come i valori di tutti i documenti siano sempre stati al di sopra del valore accettabile e con poche variazioni per la maggior parte di essi, sebbene siano distanti dal valore ottimo. La stabilità dell'indice di Gulpease indica che il gruppo si è concentrato più sull'ampliamento e arricchimento dei documenti piuttosto che nel miglioramento della leggibilità, che rimane comunque al di sopra del valore accettabile per tutti gli elaborati.
 
-Da notare come i valori dei nuovi documenti, quali Manuale Utente e Specifica Tecnica, siano più alti rispetto ai documenti precedenti, dimostrando quindi la maggiore esperienza acquisita dal gruppo nella stesura della documentazione.
+Da notare come i valori dei nuovi documenti, cioè Manuale Utente e Specifica Tecnica, siano tra i più alti. Questo dimostra un'esperienza acquisita dal gruppo nella stesura della documentazione.
 
 #pagebreak()
 == Correttezza Ortografica (MPC-CO)
@@ -807,7 +807,7 @@ Metriche che misurano la presenza di errori ortografici nei documenti, valutando
 )
 
 === RTB
-Da questo grafico si nota che tutti i documenti hanno avuto alcuni difetti ortografici, quasi sempre di battitura. Tuttavia nel quarto _#rifGlossario("sprint")_, con l'introduzione di uno strumento di _spell checking_, siamo riusciti a raggiungere il valore ottimo di zero errori per tutti i documenti.
+Da questo grafico si nota che tutti i documenti hanno avuto alcuni difetti ortografici, quasi sempre di battitura. Tuttavia nel quarto _sprint_, con l'introduzione di uno strumento di _spell checking_, siamo riusciti a raggiungere il valore ottimo di zero errori per tutti i documenti.
 
 === PB
 Dal grafico si può notare come tutti i documenti, compresi quelli nuovi, siano rimasti con il numero ottimo di zero errori per il resto del periodo di lavoro. Questo dimostra che lo strumento di _spell checking_ scelto dal gruppo ha funzionato come desiderato e che il _team_ è stato costante nel suo utilizzo.
@@ -868,7 +868,7 @@ Misura la percentuale di requisiti obbligatori soddisfatti dal prodotto.
 )
 
 === PB
-Dal grafico si può vedere come il _team_ abbia cominciato a lavorare al MVP subito dopo la presentazione del RTB. Partendo da una buona base del PoC il gruppo è andato a migliorare il prodotto andando a soddisfare la maggior parte dei requisiti obbligatori, ai quali era stata data maggiore priorità, entro la settima iterazione. Al termine dell'ottavo _sprint_ sono stati soddisfatti tutti i requisiti obbligatori, anche quelli più onerosi.
+Dal grafico si può vedere come il _team_ abbia cominciato a lavorare al #rifGlossario("MVP") subito dopo la presentazione del RTB. Partendo da una buona base del #rifGlossario("PoC") il gruppo è andato a migliorare il prodotto andando a soddisfare la maggior parte dei requisiti obbligatori, ai quali era stata data maggiore priorità, entro la settima iterazione. Al termine dell'ottavo _sprint_ sono stati soddisfatti tutti i requisiti obbligatori, anche quelli più onerosi.
 
 #pagebreak()
 == Requisiti desiderabili soddisfatti (MPD-RDS)
@@ -888,7 +888,6 @@ Come si può vedere dal grafico diversi requisiti desiderabili, in particolare q
 
 
 #pagebreak()
-// TODO: cambiare in RFS (funzionali)
 == Requisiti opzionali soddisfatti (MPD-RFS)
 Misura la percentuale di requisiti opzionali soddisfatti dal prodotto.
 #plotGrafico3(
@@ -902,7 +901,7 @@ Misura la percentuale di requisiti opzionali soddisfatti dal prodotto.
 )
 
 === PB
-Come si evince dal grafico i requisiti opzionali, avendo priorità più bassa degli altri, sono stati risolti nell'ultima iterazione. Avendo ricevuto riscontri positivi per quanto riguarda le funzionalità obbligatorie e desiderabili, il gruppo ha deciso di concentrare parte delle risorse ai requisiti opzionali in quanto possono dare abbastanza valore al prodotto in rapporto al lavoro per soddisfarli.
+Come si evince dal grafico i requisiti opzionali, avendo priorità più bassa degli altri, sono stati risolti nell'ultima iterazione. Avendo ricevuto riscontri positivi per quanto riguarda le funzionalità obbligatorie e desiderabili, il gruppo ha deciso di concentrare parte delle risorse ai requisiti opzionali in quanto potevano dare abbastanza valore al prodotto in rapporto al lavoro necessario per soddisfarli.
 
 #pagebreak()
 == Code coverage (MPD-CC)
@@ -918,7 +917,7 @@ Misura la percentuale di codice eseguita durante i _test_.
 )
 
 === PB
-Come si può vedere dal grafico, il gruppo iniziato a lavorare sulla copertura del codice nonappena è stata portata a termine la progettazione, parallelamente quindi alla stesura del codice. Ciò ha portato a soddisfare il valore accettabile del $80%$ solo durante l'ottava iterazione superandolo e avvicinandosi al valore ottimo con una copertura del $95%$.
+Come si può vedere dal grafico, il gruppo iniziato a lavorare sulla copertura del codice non appena è stata portata a termine la progettazione, parallelamente quindi alla stesura del codice. Ciò ha portato a soddisfare il valore accettabile del $80%$ solo durante l'ottava iterazione superandolo e avvicinandosi al valore ottimo con una copertura del $95%$.
 
 #pagebreak()
 == Branch coverage (MPD-BC)
@@ -955,7 +954,7 @@ Come si evince dal grafico tutti i _test_ sviluppati sono stati sempre superati.
 
 #pagebreak()
 == Complessità ciclomatica per metodo (MPD-CCM)
-Valuta la complessità per metodo del codice sorgente attraverso la misurazione del numero di cammini indipendenti attraverso il grafo di controllo del flusso.
+Valuta la complessità per metodo del codice sorgente tramite la misurazione del numero di cammini indipendenti attraverso il grafo di controllo del flusso.
 
 #plotGrafico3(
   "Tabella CCM",
@@ -986,4 +985,4 @@ Rileva potenziali problemi di progettazione o codice che potrebbero richiedere m
 )
 
 === PB
-Il prodotto _software_ finale è il risultato dell'incrementazione del PoC, migliorato dalla progettazione. Questo processo si è svolto in maniera graduale durante gli _sprint_ con alcune complicanze durante il penultimo a causa del cambiamento della tecnologia del _backend_. Al termine della _baseline_ tuttavia si è riusciti a portare il valore di *CS* allo zero, in particolare a seguito delle analisi statiche del codice.
+Il prodotto _software_ finale è risultato dell'ulteriore sviluppo del PoC, sostenuto dalla progettazione. Questo processo si è svolto in maniera graduale durante gli _sprint_ con alcune complicanze durante il penultimo a causa di un cambiamento di tecnologia nel _backend_. Al termine della _baseline_ tuttavia si è riusciti a portare il valore di *CS* allo zero, in particolare a seguito delle analisi statiche del codice.
