@@ -287,9 +287,11 @@ Apache Kafka è una piattaforma di _streaming_ di dati. Progettato per essere sc
 Tuttavia non tutte le funzionalità che Apache Kafka fornisce ai programmatori sono state sfruttate all'interno del nostro progetto come la replicazione dei dati su più _broker_. Per la natura dimostrativa del progetto, è stato scelto di utilizzare un singolo _broker_ Kafka, ma ciò non preclude l'utilizzo di questa funzionalità, che può avere impatti positivi sulla tolleranza agli errori del sistema. //TODO: topic a glossario (?)
 
 == Stream processor
-Lo _stream processor_ è il cuore pulsante dell'intero sistema sviluppato dal gruppo. Esso si occupa dell'ingestione dei dati, di arricchirli di informazioni necessarie alla creazione del _prompt_ da inviare all'LLM per generare l'annuncio e di inviare i dati di localizzazione elaborati e gli annunci al _database_ per la persistenza. // TODO-PREK: semplificare la frasona con tanti "e"
+Lo _stream processor_ è il cuore pulsante dell'intero sistema sviluppato dal gruppo. Esso si occupa dell'ingestione dei dati di localizzazione, di arricchirli di informazioni necessarie alla creazione del _prompt_ da inviare all'LLM e di persistere questi ultimi all'interno del _database_.
 === Apache Flink
-Apache Flink è un _framework_ ed _engine_ di _processing_ distribuito che permette di eseguire delle operazioni definite _stateful_ su uno _stream_ di dati in entrata, limitati o meno che siano. È progettato per un funzionamento in modo continuo e con tempi di inattività e di risposta molto bassi. Nel nostro caso, Flink viene utilizzato per elaborare i dati di localizzazione in tempo reale provenienti dai sensori garantendone la persistenza all'interno del _database_ e la generazione degli annunci, a partire da questi ultimi, tramite la LLM. // TODO-PREK: ... e la generazione degli annunci, a partire da questi ultimi, tramite LLM (?)
+Apache Flink è un _framework_ ed _engine_ di _processing_ distribuito che permette di eseguire delle operazioni definite _stateful_ su uno _stream_ di dati in entrata, limitati o meno che siano. È progettato per un funzionamento in modo continuo e con tempi di inattività e di risposta molto bassi.
+
+Nel nostro caso Flink viene utilizzato per elaborare i dati di localizzazione in tempo reale provenienti dai sensori, garantendone la persistenza all'interno del _database_ e, a partire da questi dati, trovare più informazioni possibili al fine di generare l'annuncio più adatto da spedire all'utente finale.
 
 == Generazione annunci
 Il capitolato prevede l'utilizzo di LLM per la generazione degli annunci utilizzando come _prompt_ gli interessi dell'utente finale, la categoria commerciale e l'offerta del punto di interesse più vicino alla posizione del sensore. Si fa notare che il peso maggiore dei dati è risieduto nei campi di testo libero (interessi dell'utente e offerta del punto di interesse) poiché le LLM sono specializzate proprio a interpretare queste tipologie di _input_.
@@ -464,7 +466,7 @@ Nel nostro caso, i _setters_ della classe `GPSDataDto` sono stati implementati p
 #figure(
   image("../assets/img/ST/SystemUML/KafkaTopicService.png", width: 55%),
   caption: [Diagramma della classe `KafkaTopicService`],
-) // TODO-PREK: freccia piena col nome dell'attributo
+)
 La classe `KafkaTopicService` rappresenta il servizio di creazione dei _topic_ di Kafka. Viene impiegato dal _job_ per la creazione dei topic "gps-_data_" e "_adv-data_" se non già creati, utilizzati rispettivamente per la ricezione dei dati di localizzazione e l'invio degli annunci generati dalla LLM.
 
 ====== Attributi
@@ -475,7 +477,7 @@ La classe `KafkaTopicService` rappresenta il servizio di creazione dei _topic_ d
 
 ====== Metodi
 - ```java +createTopic(topicName: String, numPartitions: int, replicationFactor: short): void```: metodo che crea un _topic_ di Kafka con il nome e le caratteristiche specificate. Se il _topic_ esiste già, non viene creato nuovamente.
-- ```java +createTopics(topicNames: String*): void```: metodo che crea più _topic_ di Kafka con i nomi specificati all'interno dell'_array_ con numero di partizioni e di _replication factor_ pari a 1. Se i _topic_ esistono già, non vengono creati nuovamente. // TODO-PREK: partizioni non = 1
+- ```java +createTopics(topicNames: String*): void```: metodo che crea più _topic_ di Kafka con i nomi specificati all'interno dell'_array_ con numero di partizioni e di _replication factor_ pari a 1. Se i _topic_ esistono già, non vengono creati nuovamente.
 
 ===== GPSDataDeserializationSchema
 #figure(
@@ -491,7 +493,7 @@ La classe `GPSDataDeserializationSchema` estende la classe astratta parametrica 
 Viene mantenuto il costruttore di _default_ fornito da Java.
 
 ====== Metodi
-- ```java +open(context: InitializationContext): void```: metodo che viene invocato all'avvio del processo di deserializzazione. Viene invocato una tantum per effettuare il _setup_ della classe. In questo caso, viene inizializzato l'oggetto `objectMapper` per la deserializzazione del JSON. // TODO-PREK: una tantum? in che senso?
+- ```java +open(context: InitializationContext): void```: metodo che viene invocato all'avvio del processo di deserializzazione. Viene invocato per effettuare il _setup_ dell'oggetto. In questo caso, viene inizializzato l'oggetto `objectMapper` per la deserializzazione del JSON.
 - ```java +deserialize(message: byte[]): GPSDataDto```: metodo che viene invocato per deserializzare il messaggio in arrivo. In questo caso, il messaggio viene deserializzato in un oggetto `GPSDataDto` tramite l'utilizzo dell'oggetto `objectMapper`.
 
 ===== AdvertisementSerializationSchema
@@ -538,7 +540,7 @@ Questa sezione rappresenta le entità del sistema, ovvero le classi che rapprese
 #figure(
   image("../assets/img/ST/SystemUML/GPSData.png", width: 55%),
   caption: [Diagramma della classe `GPSData`],
-) // TODO-PREK: quando indichi l'attributo sulla freccia non devi ripeterlo dentro la classe
+)
 La classe `GPSData` rappresenta il dato di localizzazione GPS, pressoché simile al DTO `GPSDataDto`, ma permettere di rappresentare l'attributo `timestamp` tramite l'oggetto `Timestamp` di Java (`java.sql.Timestamp`), facilitando così le operazioni da effettuare tramite il _database_.
 All'interno della _codebase_, l'entità `GPSData` non è rappresentata tramite una classe, ma tramite i _record_ in Java. Questi permettono di definire delle classi immutabili, ovvero non modificabili una volta create. Tuttavia, per mantenere la rappresentazione UML, il gruppo ha deciso di rappresentare la classe come un oggetto aventi attributi costanti e metodi _getter_.
 
@@ -565,7 +567,7 @@ I metodi _getter_, nella reale implementazione della classe, vengono omessi in q
 #figure(
   image("../assets/img/ST/SystemUML/PointOfInterest.png", width: 70%),
   caption: [Diagramma della classe `PointOfInterest`],
-) // TODO-PREK: per coerenza con GPSData mancherebbe <<record>>
+)
 La classe `PointOfInterest` rappresenta un qualsiasi punto di interesse presente all'interno del _database_. Come per la classe `GPSData`, anche in questo caso è stato scelto di rappresentare l'entità tramite un _record_ in Java.
 
 ====== Attributi
