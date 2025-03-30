@@ -106,7 +106,7 @@ Il documento espone una descrizione dettagliata delle tecnologie, delle scelte a
 Il documento riporta inoltre il tracciamento dei requisiti funzionali soddisfatti come conseguenza dello sviluppo del prodotto corredate da grafici che ne attestano la copertura di questi ultimi.
 
 == Scopo del progetto
-Il prodotto NearYou - Smart custom advertising platform è una piattaforma che sfrutta la GenAI per la creazione di pubblicità personalizzate da mostrare a ciascun utente, sfruttando dati come la posizione trasmessi in tempo reale, le informazioni personali e i dati di profilazione, in maniera tale da migliorare l'esperienza finale dell'utente e aumentando contemporaneamente il ROI e l'efficacia delle campagne pubblicitarie.
+Il prodotto NearYou - Smart custom advertising platform è una piattaforma che sfrutta la #rifGlossario("GenAI") per la creazione di pubblicità personalizzate da mostrare a ciascun utente, sfruttando dati come la posizione trasmessi in tempo reale, le informazioni personali e i dati di profilazione, in maniera tale da migliorare l'esperienza finale dell'utente e aumentando contemporaneamente il #rifGlossario("ROI") e l'efficacia delle campagne pubblicitarie.
 
 == Glossario
 Per evitare eventuali ambiguità e incomprensioni sulla terminologia adottata nella documentazione redatta dal gruppo, viene fornito un glossario.
@@ -125,30 +125,30 @@ La prima occorrenza di un termine definito all'interno del glossario presente al
 - Glossario (v2.0.0) \ #formatLink(url: "https://sweatunipd.github.io/docs/pb/glossario_ver2.0.0.pdf")
 
 - Capitolato C4 - Sync Lab S.r.l. (ultimo accesso in data 27/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
-- Guida ufficiale per l'installazione di Docker (ultimo accesso in data 27/03/2025) \ #formatLink(url: "https://docs.docker.com/engine/install")
+- Guida ufficiale per l'installazione di #rifGlossario("Docker") (ultimo accesso in data 27/03/2025) \ #formatLink(url: "https://docs.docker.com/engine/install")
 
-- Apache Flink - Documentazione relativa al supporto di Flink a Java 17 (ultimo accesso in data 27/03/2025) \ #formatLink(url: "https://nightlies.apache.org/flink/flink-docs-release-1.20/docs/deployment/java_compatibility/#java-17")
+- #rifGlossario("Apache Flink") - Documentazione relativa al supporto di Flink a Java 17 (ultimo accesso in data 27/03/2025) \ #formatLink(url: "https://nightlies.apache.org/flink/flink-docs-release-1.20/docs/deployment/java_compatibility/#java-17")
 
 - Apache Flink - Documentazione relativa agli _async_ I/O per l'accesso ai dati esterni (ultimo accesso in data 27/03/2025) \ #formatLink(url: "https://nightlies.apache.org/flink/flink-docs-master/docs/dev/datastream/operators/asyncio/#async-io-api")
 
 - Java _records_ (ultimo accesso in data 27/03/2025) \ #formatLink(url: "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Record.html")
 
-- Apache Kafka (ultimo accesso in data 27/03/2025) \ #formatLink(url: "https://kafka.apache.org")
+- #rifGlossario("Apache Kafka") (ultimo accesso in data 27/03/2025) \ #formatLink(url: "https://kafka.apache.org")
 
 - Documentazione della classe `ConnectionFactory` - R2DBC (ultimo accesso in data 27/03/2025) \ #formatLink(url: "https://javadoc.io/doc/io.r2dbc/r2dbc-spi/latest/index.html")
 
-- Introduzione di LangChain4j - "_What if I don't have an API key_" (ultimo accesso in data 27/03/2025) \ #formatLink(url: "https://docs.langchain4j.dev/get-started")
+- Introduzione di LangChain4j - "_What if I don't have an #rifGlossario("API") key_" (ultimo accesso in data 27/03/2025) \ #formatLink(url: "https://docs.langchain4j.dev/get-started")
 
 #pagebreak(weak: true)
 
 = Tecnologie
-In questa sezione vengono definite le tecnologie e gli strumenti adottati per lo sviluppo del prodotto _sofware_ e le loro funzionalità all'interno del sistema. Per chiarezza, le tecnologie sono state suddivise in base al ruolo che svolgono all'interno del sistema.
+In questa sezione vengono definite le tecnologie e gli strumenti adottati per lo sviluppo del prodotto _software_ e le loro funzionalità all'interno del sistema. Per chiarezza, le tecnologie sono state suddivise in base al ruolo che svolgono all'interno del sistema.
 
 == Infrastruttura del sistema
 === Docker
-Docker è una piattaforma _open source_ che permette di sviluppare, distribuire ed eseguire applicazioni. Mette a disposizione un ambiente isolato e permette di replicare l'ambiente di esecuzione in maniera tale da garantire portabilità e la replicabilità. Porta particolare vantaggio per quanto riguarda il suo utilizzo in ambito _testing_, permettendo di ridurre il tempo tra la codifica e il rilascio in produzione del prodotto.
+Docker è una piattaforma _#rifGlossario("open source")_ che permette di sviluppare, distribuire ed eseguire applicazioni. Mette a disposizione un ambiente isolato e permette di replicare l'ambiente di esecuzione in maniera tale da garantire portabilità e la replicabilità. Porta particolare vantaggio per quanto riguarda il suo utilizzo in ambito _testing_, permettendo di ridurre il tempo tra la codifica e il rilascio in produzione del prodotto.
 === Configurazione di Docker
-La replicabilità del sistema viene resa possibile grazie a Docker Compose. Questo strumento permette di definire e gestire applicazioni _multi-container_. In particolare, Docker Compose semplifica la creazione e la gestione dell'intero sistema, semplificando la configurazione dei servizi, delle reti e dei volumi dei singoli tramite un _file_ di configurazione in YAML.
+La replicabilità del sistema viene resa possibile grazie a #rifGlossario("Docker Compose"). Questo strumento permette di definire e gestire applicazioni _multi-container_. In particolare, Docker Compose semplifica la creazione e la gestione dell'intero sistema, semplificando la configurazione dei servizi, delle reti e dei volumi dei singoli tramite un _file_ di configurazione in YAML.
 
 Nel nostro caso specifico, il file YAML si trova nella _root_ del progetto denominato `compose.yml`. Questo _file_ contiene tutti i servizi necessari a far funzionare il sistema. Ogni servizio è definito da un blocco di configurazione che specifica l'identificativo del servizio e le varie proprietà come l'immagine Docker da utilizzare, il comando da eseguire, porte da mappare e molto altro.
 
@@ -218,38 +218,28 @@ La seguente lista elenca le dipendenze utilizzate nel simulatore. Sono escluse q
   - *Versione*: 2.2.4
   - *Descrizione*: Usata per agevolare le operazioni di produzione e consumo di messaggi attraverso Apache Kafka.
 
-// - *Vitest*
-//   - *Documentazione*: #formatLink(url: "https://vitest.dev/guide/") (ultimo accesso 18/03/2025)
-//   - *Versione*: 3.0.8
-//   - *Descrizione*: _Framework_ utilizzato per i _test_ di unità in TypeScript. Aggiungendo alcune dipendenze è possibile generare anche un _report_ del _code coverage_.
-
-// - *ESLint*
-//   - *Documentazione*: #formatLink(url: "https://eslint.org/docs/latest/") (ultimo accesso 18/03/2025)
-//   - *Versione*: 8.22.0
-//   - *Descrizione*: _Tool_ utilizzato per i _test_ statici in TypeScript. Nel _file_ di configurazione è possibile specificare quali controlli fare, ad esempio stile del codice e complessità ciclomatica.
-
 === Java
 Java è un linguaggio di programmazione orientato agli oggetti che nasce con lo scopo di creare applicazioni indipendenti dalla piattaforma, grazie alla sua capacità di compilare il codice in _bytecode_ ed eseguirlo su una JVM.
 
 ==== Utilizzo nel progetto
-Nel nostro specifico caso, viene adottato per la creazione del servizio di _stream processing_ (denominato anche _job_) per Apache Flink. Questo si occupa di elaborare i dati di localizzazione in tempo reale provenienti dai sensori, garantendone la persistenza all'interno del _database_, e di arricchire tali dati con le informazioni necessarie a creare il _prompt_ da inviare alla LLM per poter generare un annuncio il più personalizzato possibile.
+Nel nostro specifico caso, viene adottato per la creazione del servizio di _#rifGlossario("stream processing")_ (denominato anche _job_) per Apache Flink. Questo si occupa di elaborare i dati di localizzazione in tempo reale provenienti dai sensori, garantendone la persistenza all'interno del _#rifGlossario("database")_, e di arricchire tali dati con le informazioni necessarie a creare il _#rifGlossario("prompt")_ da inviare alla #rifGlossario("LLM") per poter generare un annuncio il più personalizzato possibile.
 
 ==== Versione
-Per soddisfare i requisiti di Apache Flink è stata adottato Java 17 LTS.
+Per soddisfare i requisiti di Apache Flink è stata adottato Java 17 #rifGlossario("LTS").
 
 La documentazione di Apache Flink riporta l'introduzione in maniera sperimentale di Java 17 dalla versione 1.18 di Flink. Tuttavia il prodotto è stato validato e le funzionalità fondamentali che hanno un impatto dovuto a questa scelta, ovvero i _records_ in Java, funzionano correttamente.
 
 ==== Librerie e framework
-Per la gestione del progetto e l'automazione delle operazioni di _build_ e _test_ è stato utilizzato Apache Maven. Per avere una visione nel dettaglio di tutte le librerie utilizzate all'interno del nostro sistema, è possibile visionare il _file_ `pom.xml` presente all'interno della cartella `job` del nostro progetto.
+Per la gestione del progetto e l'automazione delle operazioni di _build_ e _test_ è stato utilizzato #rifGlossario("Apache Maven"). Per avere una visione nel dettaglio di tutte le librerie utilizzate all'interno del nostro sistema, è possibile visionare il _file_ `pom.xml` presente all'interno della cartella `job` del nostro progetto.
 
 La seguente lista rappresenta le dipendenze più rilevanti presenti all'interno del progetto e non vuole essere un mero elenco di tutte le dipendenze e librerie presenti all'interno del nostro progetto.
 
 - *Apache Flink*
   - *Documentazione*: #formatLink(url: "https://nightlies.apache.org/flink/flink-docs-release-1.20") (ultimo accesso in data 27/03/2025)
   - *Versione*: 1.20.1
-  - *Descrizione*: _Framework_ ed _engine_ per effettuare operazioni _stateful_ su un flusso di dati (nel nostro caso dati di localizzazione), elevato o meno che sia, in tempo reale in maniera reattiva, scalabile e affidabile.
+  - *Descrizione*: _Framework_ ed _engine_ per effettuare operazioni _#rifGlossario("stateful")_ su un flusso di dati (nel nostro caso dati di localizzazione), elevato o meno che sia, in tempo reale in maniera reattiva, scalabile e affidabile.
 
-- *PostgreSQL JDBC Driver*
+- *#rifGlossario("PostgreSQL") JDBC #rifGlossario("Driver")*
   - *Documentazione*: #formatLink(url: "https://jdbc.postgresql.org/documentation") (ultimo accesso in data 27/03/2025)
   - *Versione*: 42.7.5
   - *Descrizione*: _Driver_ per la connessione a un _database_ PostgreSQL.
@@ -271,7 +261,7 @@ La seguente lista rappresenta le dipendenze più rilevanti presenti all'interno 
 - *SLF4J*
   - *Documentazione*: #formatLink(url: "https://www.slf4j.org/docs.html")
   - *Versione*: 2.0.17
-  - *Descrizione*: Libreria che serve da astrazione (_facade_) per i vari _framework_ di _log_ in Java, permettendo di cambiare _framework_ senza dover modificare il codice.
+  - *Descrizione*: Libreria che serve da astrazione (_#rifGlossario("facade")_) per i vari _framework_ di _#rifGlossario("log")_ in Java, permettendo di cambiare _framework_ senza dover modificare il codice.
 
 - *LogBack*
   - *Documentazione*: #formatLink(url: "https://logback.qos.ch/documentation.html")
@@ -286,9 +276,9 @@ La seguente lista rappresenta le dipendenze più rilevanti presenti all'interno 
 #pagebreak(weak: true)
 
 == Data broker
-Il _data broker_ svolge un ruolo fondamentale all'interno del nostro sistema in quanto si occupa di ricevere i dati e inoltrarli ai servizi che ne fanno uso in maniera efficiente e scalabile. Nel nostro caso, il _data broker_ riceve i dati di localizzazione dai sensori e li inoltra successivamente al servizio di _stream processing_.
+Il _#rifGlossario("data broker")_ svolge un ruolo fondamentale all'interno del nostro sistema in quanto si occupa di ricevere i dati e inoltrarli ai servizi che ne fanno uso in maniera efficiente e scalabile. Nel nostro caso, il _data broker_ riceve i dati di localizzazione dai sensori e li inoltra successivamente al servizio di _stream processing_.
 === Apache Kafka
-Apache Kafka è una piattaforma di _streaming_ di dati. Progettato per essere scalabile, _fault-tolerant_ e ad avere elevate prestazioni, viene utilizzato per la gestione dei dati in tempo reale. In particolare nel nostro caso, Kafka viene utilizzato per creare le _pipeline_ di dati tra il simulatore e il servizio di _stream processing_.
+Apache Kafka è una piattaforma di _streaming_ di dati. Progettato per essere scalabile, _fault-tolerant_ e ad avere elevate prestazioni, viene utilizzato per la gestione dei dati in tempo reale. In particolare nel nostro caso, Kafka viene utilizzato per creare le _#rifGlossario("pipeline")_ di dati tra il simulatore e il servizio di _stream processing_.
 
 Tuttavia non tutte le funzionalità che Apache Kafka fornisce ai programmatori sono state sfruttate all'interno del nostro progetto come la replicazione dei dati su più _broker_. Per la natura dimostrativa del progetto, è stato scelto di utilizzare un singolo _broker_ Kafka, ma ciò non preclude l'utilizzo di questa funzionalità, che può avere impatti positivi sulla tolleranza agli errori del sistema.
 
@@ -303,7 +293,7 @@ Ogni dato di localizzazione emesso da un sensore (o simulatore nel nostro caso s
 }
 ```
 
-- `rent_id`: ID del noleggio che ha emesso il dato di localizzazione (si rimanda il lettore alla sezione #link(<db>, "Database") per maggiori dettagli riguardo l'entità `Rent`).
+- `rent_id`: ID del noleggio che ha emesso il dato di localizzazione (si rimanda il lettore alla #link(<db>, "sez. 2.6") per maggiori dettagli riguardo l'entità `Rent`).
 - `latitude`: latitudine del noleggio che ha emesso il dato di localizzazione.
 - `longitude`: longitudine del noleggio che ha emesso il dato di localizzazione.
 - `timestamp`: timestamp del dato di localizzazione in millisecondi. Questo campo è fondamentale per la gestione della persistenza dei dati all'interno del _database_ e per la generazione degli annunci, in quanto permette di evitare conflitti tra più dati di localizzazione emessi dallo stesso noleggio.
@@ -320,16 +310,16 @@ Nel nostro caso Flink viene utilizzato per elaborare i dati di localizzazione in
 == Generazione annunci
 Il capitolato prevede l'utilizzo di LLM per la generazione degli annunci utilizzando come _prompt_ gli interessi dell'utente finale, la categoria commerciale e l'offerta del punto di interesse più vicino alla posizione del sensore. Si fa notare che il peso maggiore dei dati è risieduto nei campi di testo libero (interessi dell'utente e offerta del punto di interesse) poiché le LLM sono specializzate proprio a interpretare queste tipologie di _input_.
 === LangChain4j
-LangChain4j è una libreria Java che semplifica l'integrazione di LLM con applicazioni Java. Fornisce una serie di strumenti per lavorare con LLM, tra cui la creazione di _prompt_ e la generazione di risposte tramite la LLM stessa. LangChain4j supporta diversi modelli di LLM: uno tra questi, da noi utilizzato, è GPT-4o-mini di OpenAI. Questo modello è stato utilizzato per un semplice motivo: permettere al gruppo di sviluppare il progetto in locale senza dover pagare l'API _key_ di OpenAI, sfruttando la chiave `demo` fornita da LangChain stessa. Il modello può essere comunque modificato in un secondo momento per permettere l'utilizzo di altri modelli grazie anche in parte alla modularità della libreria.
+LangChain4j è una libreria Java che semplifica l'integrazione di LLM con applicazioni Java. Fornisce una serie di strumenti per lavorare con LLM, tra cui la creazione di _prompt_ e la generazione di risposte tramite la LLM stessa. LangChain4j supporta diversi modelli di LLM: uno tra questi, da noi utilizzato, è GPT-4o-mini di OpenAI. Questo modello è stato utilizzato per un semplice motivo: permettere al gruppo di sviluppare il progetto in locale senza dover pagare l'API _key_ di OpenAI, sfruttando la chiave `demo` fornita da #rifGlossario("LangChain") stessa. Il modello può essere comunque modificato in un secondo momento per permettere l'utilizzo di altri modelli grazie anche in parte alla modularità della libreria.
 
 #pagebreak(weak: true)
 
 == Database <db>
 === PostgreSQL
-Per la gestione dei dati relazionali è stato scelto PostgreSQL, un DBMS che offre affidabilità e una certa flessibilità per l'estensione tramite _plugin_ ed estensioni. Nel nostro contesto, all'avvio viene eseguito automaticamente lo _script_ `create.sql` che crea lo schema del _database_ (tabelle, relazioni, ecc.) secondo le esigenze del progetto e popola le tabelle di dati necessari a provare il funzionamento del nostro sistema.
+Per la gestione dei dati relazionali è stato scelto PostgreSQL, un #rifGlossario("DBMS") che offre affidabilità e una certa flessibilità per l'estensione tramite _plugin_ ed estensioni. Nel nostro contesto, all'avvio viene eseguito automaticamente lo _script_ `create.sql` che crea lo schema del _database_ (tabelle, relazioni, ecc.) secondo le esigenze del progetto e popola le tabelle di dati necessari a provare il funzionamento del nostro sistema.
 
 === PostGIS <2.2.2>
-Per l'elaborazione e l'archiviazione di dati geografici si fa uso dell'estensione PostGIS, la quale aggiunge a PostgreSQL il supporto per tipi, funzioni e indici spaziali.
+Per l'elaborazione e l'archiviazione di dati geografici si fa uso dell'estensione #rifGlossario("PostGIS"), la quale aggiunge a PostgreSQL il supporto per tipi, funzioni e indici spaziali.
 
 In particolare l'immagine Docker utilizzata è postgis/postgis. Oltre a #box[PostgreSQL] questa contiene già la libreria PostGIS e le relative dipendenze. Questo _setup_ permette, nel nostro caso, di:
 
@@ -350,7 +340,7 @@ Di seguito viene mostrata la struttura del _database_:
 
 ==== Scelte progettuali
 
-Alcune scelte progettuali, apparentemente ridondanti, sono state adottate per soddisfare specifiche esigenze, in particolare per strumenti come Grafana.
+Alcune scelte progettuali, apparentemente ridondanti, sono state adottate per soddisfare specifiche esigenze, in particolare per strumenti come #rifGlossario("Grafana").
 
 - *Chiavi primarie composte:* La tabella `positions` utilizza una chiave primaria composta da `time_stamp` e `rent_id`. Questo garantisce l'univocità di ogni posizione registrata per un noleggio. Nella tabella `advertisements`, `position_time_stamp` e `position_rent_id` fungono da chiavi esterne per collegare un annuncio alla posizione di un noleggio.
 
@@ -363,14 +353,9 @@ In conclusione, alcune scelte apparentemente ridondanti sono state adottate con 
 == Interfaccia amministratore
 L'interfaccia fornita dal _software_ deve permettere all'amministratore di visualizzare la mappa con i punti di interesse, i sensori che si muovono e gli eventuali annunci generati. Deve disporre di una visualizzazione per lo storico degli annunci e una per entrare nel dettaglio di un singolo annuncio. Infine si mette a disposizione una sezione dedicata a dei grafici di analisi dei dati, utile all'amministratore per monitorare l'efficienza del servizio di noleggio.
 === Grafana
-// - *Documentazione*: #formatLink(url: "https://grafana.com/docs") (ultimo accesso in data 27/03/2025)
-// - *Versione*: 11.5.2
-// - *Descrizione*: Grafana è una piattaforma _open source_ per la visualizzazione e l'analisi dei dati, con cui è possibile creare _dashboard_ interattive e grafici da diverse fonti.
-
-// ==== Utilizzo nel progetto
 Grafana non è un sistema "reattivo", cioè non reagisce agli eventi, bensì si recupera i dati con delle _query_ indipendentemente da cosa venga aggiornato nel _database_. Per questo motivo non è propriamente corretto parlare di "interfaccia _real time_", tuttavia le _query_ vengono effettuate a intervalli molto ravvicinati simulando quindi con elevata accuratezza il tipo di interfaccia desiderata. Le funzionalità principali di Grafana nel nostro sistema sono:
 - *Monitoraggio in tempo reale*: Grafana raccoglie in tempo reale i dati dei sensori registrati nel sistema, ovvero identificativo del sensore, noleggio associato ad esso, latitudine e longitudine.
-- *Visualizzazione dei dati in tempo reale*: i dati dei sensori raccolti in tempo reale vengono infatti mostrati in una _dashboard_ di tipo _geomap_ interattiva, nella quale le posizioni dei sensori sono rappresentate da _layer_ di tipo _route_ e i punti di interesse e gli annunci con _layer_ di tipo _marker_.
+- *Visualizzazione dei dati in tempo reale*: i dati dei sensori raccolti in tempo reale vengono infatti mostrati in una _#rifGlossario("dashboard")_ di tipo _geomap_ interattiva, nella quale le posizioni dei sensori sono rappresentate da _layer_ di tipo _#rifGlossario("route")_ e i punti di interesse e gli annunci con _#rifGlossario("layer")_ di tipo _#rifGlossario("marker")_.
 - *Visualizzazione dei dati statici*: viene messa a disposizione dell'amministratore una _dashboard_ che raccoglie lo storico degli annunci generati nel tempo; interagendo con i dati nel _database_, Grafana ci permette di mostrare tutti i dati rilevanti legati ad ogni annuncio.
 
 #pagebreak(weak: true)
@@ -382,11 +367,9 @@ L'architettura di _deployment_ definisce come i componenti di un'applicazione ve
 === K-architecture
 La K-_architecture_ è un modello architetturale per l'elaborazione di dati in _streaming_. Derivante dalla #box[λ-_architecture_] la sua particolarità è l'eliminazione del _batching_ mantenendo un flusso costante di dati in _real time_.
 
-// TODO: pro/cons
-
 [IMG ARCH COI LAYER]
 
-- *_Data source_*: la sorgente di dati è costituita dal simulatore che imita l'attivazione dei noleggi e lo spostamento degli utenti sui mezzi. I sensori inviano quindi a intervalli regolari la posizione GPS e ricevono l'eventuale annuncio.
+- *_Data source_*: la sorgente di dati è costituita dal simulatore che imita l'attivazione dei noleggi e lo spostamento degli utenti sui mezzi. I sensori inviano quindi a intervalli regolari la posizione #rifGlossario("GPS") e ricevono l'eventuale annuncio.
 
 - *_Streaming layer_*: questo livello gestisce la trasmissione in tempo reale dei dati che vengono inoltrati al _processing layer_.
 
@@ -394,7 +377,7 @@ La K-_architecture_ è un modello architetturale per l'elaborazione di dati in _
 
 - *_Storage layer_*: la persistenza è gestita da un _database_ relazionale che archivia i dati in arrivo dal _processing layer_. Lo _storage layer_ è costituito da PostgreSQL affiancato da PostGIS, una estensione che facilita l'elaborazione di dati geospaziali.
 
-- *_Data visualization layer_*: i dati archiviati nello _storage layer_ vengono resi disponibile tramite una interfaccia grafica. Costituito da Grafana questo _layer_ recupera le informazioni dal _database_ a intervalli regolari in modo da aggiornare rapidamente l'interfaccia ai nuovi cambiamenti.
+- *_#rifGlossario("Data visualization") layer_*: i dati archiviati nello _storage layer_ vengono resi disponibile tramite una interfaccia grafica. Costituito da Grafana questo _layer_ recupera le informazioni dal _database_ a intervalli regolari in modo da aggiornare rapidamente l'interfaccia ai nuovi cambiamenti.
 
 #pagebreak(weak: true)
 
@@ -428,7 +411,7 @@ Il diagramma sottostante descrive il percorso dei dati tra i _layer_ del sistema
 
 + *Generazione dei dati*: il simulatore genera in tempo reale dei percorsi tramite una chiamata API al servizio OpenStreetMap.
 
-+ *Invio dei dati*: ogni sensore attivo del simulatore invia a intervalli regolari la posizione GPS in un Kafka _topic_.
++ *Invio dei dati*: ogni sensore attivo del simulatore invia a intervalli regolari la posizione GPS in un Kafka _#rifGlossario("topic")_.
 
 + *_Processing_ dei dati*: lo _stream processor_ è iscritto al _topic_ delle posizioni GPS e riceve i messaggi dei sensori. Elabora quindi i dati ricevuti nel seguente modo:
   + *Salvataggio in _database_*: salva le posizioni nel _database_.
@@ -568,7 +551,7 @@ Questa sezione rappresenta le entità del sistema, ovvero le classi che rapprese
   caption: [Diagramma della classe `GPSData`],
 )
 La classe `GPSData` rappresenta il dato di localizzazione GPS, pressoché simile al DTO `GPSDataDto`, ma permettere di rappresentare l'attributo `timestamp` tramite l'oggetto `Timestamp` di Java (`java.sql.Timestamp`), facilitando così le operazioni da effettuare tramite il _database_.
-All'interno della _codebase_, l'entità `GPSData` non è rappresentata tramite una classe, ma tramite i _record_ in Java. Questi permettono di definire delle classi immutabili, ovvero non modificabili una volta create. Tuttavia, per mantenere la rappresentazione UML, il gruppo ha deciso di rappresentare la classe come un oggetto aventi attributi costanti e metodi _getter_.
+All'interno della _#rifGlossario("codebase")_, l'entità `GPSData` non è rappresentata tramite una classe, ma tramite i _record_ in Java. Questi permettono di definire delle classi immutabili, ovvero non modificabili una volta create. Tuttavia, per mantenere la rappresentazione #rifGlossario("UML"), il gruppo ha deciso di rappresentare la classe come un oggetto aventi attributi costanti e metodi _getter_.
 
 ====== Attributi
 In quanto _record_, gli attributi della classe `GPSData` sotto elencati sono costanti data l'immutabilità della classe per definizione.

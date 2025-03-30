@@ -55,6 +55,6 @@ Il gruppo concluderà in settimana le ultime attività rimaste e si preparerà p
 
     link("https://github.com/SWEatUNIPD/NearYou/issues/28")[N0028],
     "Riccardo Milan",
-    [Creazione _dashboard_ dei grafici in Grafana (requisito opzionale)]
+    [Creazione _#rifGlossario("dashboard")_ dei grafici in #rifGlossario("Grafana") (requisito opzionale)]
   ),
 )
