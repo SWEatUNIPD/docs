@@ -196,7 +196,7 @@ TypeScript è stato utilizzato per la realizzazione del simulatore dei sensori, 
 La versione di TypeScript utilizzata per lo sviluppo del simulatore è la 5.7.2.
 
 ==== Librerie e framework
-La seguente lista elenca le dipendenze utilizzate nel simulatore. Sono escluse quelle in ambiente di sviluppo come quelle di _test_.
+La seguente lista elenca le dipendenze utilizzate nel simulatore.
 
 - *\@mapbox/polyline*
   - *Documentazione*: #formatLink(url: "https://www.npmjs.com/package/@mapbox/polyline") (ultimo accesso in data 27/03/2025)
@@ -217,6 +217,10 @@ La seguente lista elenca le dipendenze utilizzate nel simulatore. Sono escluse q
   - *Documentazionee*: #formatLink(url: "https://kafka.js.org/docs/introduction") (ultimo accesso in data 27/03/2025)
   - *Versione*: 2.2.4
   - *Descrizione*: Usata per agevolare le operazioni di produzione e consumo di messaggi attraverso Apache Kafka.
+
+Per effettuare i _test_ e le analisi statiche del codice invece sono state utilizzate le seguenti librerie:
+- *Vitest* per i _test_ di unità
+- *ESLint* per l'analisi statica del codice
 
 === Java
 Java è un linguaggio di programmazione orientato agli oggetti che nasce con lo scopo di creare applicazioni indipendenti dalla piattaforma, grazie alla sua capacità di compilare il codice in _bytecode_ ed eseguirlo su una JVM.
@@ -239,10 +243,10 @@ La seguente lista rappresenta le dipendenze più rilevanti presenti all'interno 
   - *Versione*: 1.20.1
   - *Descrizione*: _Framework_ ed _engine_ per effettuare operazioni _#rifGlossario("stateful")_ su un flusso di dati (nel nostro caso dati di localizzazione), elevato o meno che sia, in tempo reale in maniera reattiva, scalabile e affidabile.
 
-- *#rifGlossario("PostgreSQL") JDBC #rifGlossario("Driver")*
+- *PostgreSQL JDBC Driver*
   - *Documentazione*: #formatLink(url: "https://jdbc.postgresql.org/documentation") (ultimo accesso in data 27/03/2025)
   - *Versione*: 42.7.5
-  - *Descrizione*: _Driver_ per la connessione a un _database_ PostgreSQL.
+  - *Descrizione*: _#rifGlossario("Driver")_ per la connessione a un database PostgreSQL.
 
 - *PostgreSQL R2DBC Driver*
   - *Documentazione*: #formatLink(url: "https://github.com/pgjdbc/r2dbc-postgresql") (ultimo accesso in data 27/03/2025)
@@ -272,6 +276,12 @@ La seguente lista rappresenta le dipendenze più rilevanti presenti all'interno 
   - *Documentazione*: #formatLink(url: "https://docs.langchain4j.dev/intro")
   - *Versione*: 1.0.0-beta1
   - *Descrizione*: Libreria per LLM che permette, nel nostro caso, la generazione di annunci personalizzati in base ai dati di profilazione dell'utente e del punto di interesse.
+
+Per effettuare i _test_ e le analisi statiche del codice invece sono state utilizzate le seguenti librerie:
+- *JUnit* per i _test_ di unità
+- *TestContainers* per i test di _integrazione_
+- *Mockito* per effettuare il _mocking_ delle dipendenze
+- *CheckStyle* per l'analisi statica del codice
 
 #pagebreak(weak: true)
 
@@ -346,10 +356,6 @@ Alcune scelte progettuali, apparentemente ridondanti, sono state adottate per so
 
 - *Scelta delle chiavi primarie:* La tabella `points_of_interest` utilizza `latitude` e `longitude` come chiavi primarie per garantire che ogni punto di interesse sia univocamente identificabile in base alla sua posizione. Questo evita la creazione di ID artificiali e semplifica l'integrazione con strumenti GIS e di analisi spaziale. Tuttavia, in altre tabelle come `rents` o `advertisements`, è stato mantenuto un ID univoco separato per facilitare la visualizzazione e l'interazione con i dati nell'interfaccia di Grafana.
 
-- *Ripetizione di attributi per _performance_ e analisi dati:* Alcuni attributi, come `latitude_poi` e `longitude_poi`, sono replicati in più tabelle (ad esempio, `advertisements` e `poi_hours`) poiché fanno parte della chiave primaria composta della tabella `points_of_interest`. Questa ridondanza è necessaria per mantenere l'integrità referenziale e la coerenza dei dati. Per ottimizzare le _query_ geospaziali, è stato implementato un indice spaziale (`idx_points_of_interest_location`) sulla posizione dei punti di interesse.
-
-In conclusione, alcune scelte apparentemente ridondanti sono state adottate con lo scopo di migliorare la scalabilità, la velocità di interrogazione dei dati e la compatibilità con strumenti di analisi esterni.
-
 == Interfaccia amministratore
 L'interfaccia fornita dal _software_ deve permettere all'amministratore di visualizzare la mappa con i punti di interesse, i sensori che si muovono e gli eventuali annunci generati. Deve disporre di una visualizzazione per lo storico degli annunci e una per entrare nel dettaglio di un singolo annuncio. Infine si mette a disposizione una sezione dedicata a dei grafici di analisi dei dati, utile all'amministratore per monitorare l'efficienza del servizio di noleggio.
 === Grafana
@@ -361,15 +367,14 @@ Grafana non è un sistema "reattivo", cioè non reagisce agli eventi, bensì si 
 #pagebreak(weak: true)
 
 = Architettura del sistema
-== Architettura di deployment
-L'architettura di _deployment_ definisce come i componenti di un'applicazione vengono distribuiti ed eseguiti su diversi ambienti. Nel caso di un sistema in _real time_ si possono individuare separati servizi che comunicano reattivamente per inviare e processare i dati. Nel nostro progetto inoltre è presente un'interfaccia grafica che non agisce in seguito a una notifica, bensì a intervalli piccoli e regolari di tempo recupera i dati dal _database_. Abbiamo quindi optato per la K-_architecture_ in quanto soddisfa tutte le caratteristiche del prodotto.
+L'architettura definisce come i componenti di un'applicazione vengono distribuiti ed eseguiti su diversi ambienti. Nel caso di un sistema in _real time_ si possono individuare separati servizi che comunicano reattivamente per inviare e processare i dati. Nel nostro progetto inoltre è presente un'interfaccia grafica che non agisce in seguito a una notifica, bensì a intervalli piccoli e regolari di tempo recupera i dati dal _database_. Abbiamo quindi optato per la K-_architecture_ in quanto soddisfa tutte le caratteristiche del prodotto.
 
-=== K-architecture
+== K-architecture
 La K-_architecture_ è un modello architetturale per l'elaborazione di dati in _streaming_. Derivante dalla #box[λ-_architecture_] la sua particolarità è l'eliminazione del _batching_ mantenendo un flusso costante di dati in _real time_.
 
 #align(center)[
   #figure(
-    image("../assets/img/ST/KappaArch.png", width: 110%),
+    image("../assets/img/ST/KappaArch.png", width: 100%),
     caption: [K-_architecture_],
   )
 ]
@@ -383,26 +388,6 @@ La K-_architecture_ è un modello architetturale per l'elaborazione di dati in _
 - *_Storage layer_*: la persistenza è gestita da un _database_ relazionale che archivia i dati in arrivo dal _processing layer_. Lo _storage layer_ è costituito da PostgreSQL affiancato da PostGIS, una estensione che facilita l'elaborazione di dati geospaziali.
 
 - *_#rifGlossario("Data visualization") layer_*: i dati archiviati nello _storage layer_ vengono resi disponibile tramite una interfaccia grafica. Costituito da Grafana questo _layer_ recupera le informazioni dal _database_ a intervalli regolari in modo da aggiornare rapidamente l'interfaccia ai nuovi cambiamenti.
-
-#pagebreak(weak: true)
-
-== Architettura logica
-L'architettura logica, a differenza di quella di _deployment_, si concentra sulle componenti da un punto di vista più astratto, descrivendo come funziona il _software_ dal punto di vista della _business logic_ e delle interazioni tra le varie parti ad alto livello.
-
-La scelta della architettura logica adottata è stata influenzata dalle esigenze del progetto e dai requisiti richiesti dall'azienda, in particolare la necessità di un sistema _real time_ in grado di gestire un flusso di dati elevato.
-=== Architettura data streaming
-L'architettura _data streaming_ è una tipologia di architettura che nasce per gestire flussi di dati generati in maniera continua in tempo reale.
-
-Questo tipo di architettura è particolarmente adatto ad applicazioni/sistemi che richiedono il _processing_ di una mole di dati particolarmente elevata con un tempo di risposta molto basso (ovvero in _real time_, o per lo meno _near-real time_), che non possono essere gestiti da un tradizionale _batch processing_. Di fatto, un'architettura _data streaming_ consuma i dati immediatamente alla loro generazione, persistendoli in un _database_ e processandoli in tempo reale.
-
-[IMG ARCH LOGICA]
-
-L'architettura _data streaming_ è composta dai seguenti _layer_:
-- *Sorgente dati*: questa componente rappresenta le fonti di dati in tempo reale, che nel nostro caso provengono dai dispositivi di localizzazione dei noleggi attivi.
-- *_Stream ingestion_*: _layer_ che si occupa di raccogliere i dati in tempo reale provenienti dai sensori, inoltrandoli al _processing layer_. A questo _layer_ viene inoltre demandato il compito di salvare i dati dello _stream_ in memoria per un periodo di tempo limitato per garantire la tolleranza agli errori. Questo compito viene a volte delineato da un altro _layer_ conosciuto anche come _stream storage_.
-- *_Stream processing_*: _layer_ che si occupa di processare i dati in tempo reale, applicando loro delle trasformazioni, filtri oppure operazioni computazionali per estrarne informazioni utili. Nel nostro caso, questo _layer_ si occupa di arricchire i dati di localizzazione con le informazioni necessarie per generare l'annuncio, e inviarli al _database_ per la persistenza.
-- *Data destination*: _layer_ a cui viene demandato il compito di inoltrare i dati verso una determinata destinazione, come può essere un _database_ per la persistenza dei dati, un servizio di notifica per l'invio di messaggi o altro ancora.
-- *Data visualization*: _layer_ che si occupa di visualizzare i dati in maniera comprensibile all'utente finale. Questo _layer_ può essere costituito da un'interfaccia grafica come una _dashboard_ .
 
 #pagebreak(weak: true)
 
@@ -420,18 +405,15 @@ Il diagramma sottostante descrive il percorso dei dati tra i _layer_ del sistema
 
 + *_Processing_ dei dati*: lo _stream processor_ è iscritto al _topic_ delle posizioni GPS e riceve i messaggi dei sensori. Elabora quindi i dati ricevuti nel seguente modo:
   + *Salvataggio in _database_*: salva le posizioni nel _database_.
-  + *Controllo interesse*: viene controllato se almeno una categoria dell'utente coincide con quella del punto di interesse. In caso affermativo è probabile che venga generato l'annuncio, in caso negativo è probabile il contrario quindi non si va nemmeno a effettuare la richiesta alla LLM.
-  + *Recupero dei dati in _database_*: se le categorie combaciano vengono recuperati i dati di profilazione dell'utente e le informazioni del punto di interesse, ovvero:
-    - Il campo di testo libero dove l'utente ha descritto i suoi interessi.
-    - La descrizione del punto di interesse (cosa offre).
-    - La categoria del punto di interesse.
-    - Il nome del punto di interesse.
+  + *Ricerca del punto di interesse*: viene fatta la ricerca del punto di interesse più vicino alla posizione del sensore. Il punto di interesse dovrà soddisfare i seguenti requisiti:
+    - Deve trovarsi entro un raggio di 100 metri dalla posizione del sensore.
+    - La categoria commerciale del punto deve corrispondere a una delle categorie di interesse dell'utente, estratte dalla tabella `user_interests` del _database_.
+    - Il punto di interesse deve essere aperto.
+    Una volta trovato il punto di interesse, vengono estratte tutte le informazioni relative ad esso tra cui, la fondamentale, l'offerta del punto di interesse.
 
-+ *Richiesta alla LLM*: se l'utente è stato considerato potenzialmente interessato viene effettuata la richiesta alla LLM di generare l'annuncio.
+  + *Richiesta di generazione dell'annuncio*: se la ricerca del punto di interesse ha avuto successo, vengono estratti gli interessi dell'utente a cui è destinato l'annuncio, in particolar modo la stringa libera che descrive i suoi interessi. Le informazioni del punto di interesse e dell'utente vengono successivamente utilizzate per costruire il _prompt_ da inviare alla LLM.
 
-+ *_Processing_ della risposta della LLM*: viene processata la risposta della LLM, in particolare:
-  + *Salvataggio in _database_*: viene salvata la risposta in _database_, indipendentemente che sia l'annuncio o la risposta che l'utente non è interessato nonostante le categorie coincidano (quindi non è stato generato l'annuncio).
-  + *Eventuale invio dell'annuncio*: in caso l'annuncio sia stato generato, questo viene inviato al sensore.
+  + *Ricezione della risposta della LLM*: una volta processata la risposta da parte della LLM, il risultato viene inviato a una coda di Kafka denominata _adv-data_ e salva questa generazione all'interno della tabella `advertisements`. Nel caso in cui la LLM ritornasse una stringa vuota, l'annuncio non viene mandato all'utente finale, ma viene gestita la sua persistenza a fini analitici per l'amministratore.
 
 + *Ricezione dell'eventuale annuncio*: il sensore riceve l'annuncio se questo è stato generato. In uno scenario reale l'annuncio verrebbe visualizzato dall'utente, ma il capitolato non prevedeva lo sviluppo dell'applicazione lato _client_.
 
@@ -545,8 +527,6 @@ Il costruttore viene reso inutilizzabile attraverso la ridefinizione del costrut
 ====== Metodi
 - #underline[```java +getConnectionFactory(): ConnectionFactory```]: metodo statico che restituisce l'istanza della `ConnectionFactory`. Se l'istanza non è ancora stata creata, viene creata e restituita. Il metodo è _synchronized_ per garantire che venga creata una sola istanza della `ConnectionFactory` durante l'intero processo.
 
-#pagebreak(weak: true)
-
 === Entità
 Questa sezione rappresenta le entità del sistema, ovvero le classi che rappresentano i dati persistenti all'interno del _database_.
 
@@ -609,8 +589,6 @@ I metodi _getter_, nella reale implementazione della classe, vengono omessi in q
 - ```java +equals(o: Object): boolean```: _overriding_ del metodo della classe `Object` di Java, confronta l'uguaglianza tra l'oggetto `PointOfInterest` da cui viene invocato il metodo e l'oggetto posto a parametro e restituisce `true` se sono uguali, `false` altrimenti.
 - ```java +hashCode(): int```: _overriding_ del metodo della classe `Object` di Java, restituisce il codice _hash_ dell'oggetto `PointOfInterest` da cui viene invocato il metodo.
 
-#pagebreak(weak: true)
-
 === Richieste asincrone
 Questa sezione rappresenta le classi che si occupano di effettuare le richieste asincrone per arricchire i dati al fine di miglirare il _prompt_ da inviare all'LLM. Esse estendono la classe astratta `RichAsyncFunction` della libreria di Flink per eseguire queste richieste su ogni dato dello _stream_.
 
@@ -649,8 +627,6 @@ Viene mantenuto il costruttore implicito di _default_ fornito da Java, in quanto
 ====== Metodi
 In quanto classe che estende `RichAsyncFunction`, la classe `AdvertisementGenerationRequest` ridefinisce solamente il metodo `asyncInvoke`, mantenendo l'implementazione _default_ della classe estesa per i metodi `open` e `close`.
 - ```java +asyncInvoke(Tuple2<GPSData, PointOfInterest> input, ResultFuture<Tuple3<GPSData, PointOfInterest, String>> resultFuture): void```: metodo che viene invocato in modo asincrono per eseguire la generazione dell'annuncio. Il risultato della generazione viene restituito tramite il parametro `resultFuture` che rappresenta il risultato della richiesta asincrona.
-
-#pagebreak(weak: true)
 
 === Classe main
 La classe _main_ del _job_ di Flink si occupa di eseguire il _job_, creando l'_execution environment_ e avviando il processo di _stream processing_. Essa si occupa di organizzare le varie componenti del sistema, creando i _topic_ di Kafka e avviando il processo di _stream processing_.
