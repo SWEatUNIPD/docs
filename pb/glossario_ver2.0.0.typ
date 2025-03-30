@@ -13,7 +13,7 @@
     "27/03/2025",
     "Klaudio Merja",
     "Andrea Precoma",
-    [- Aggiunto il termine "puzzone"],
+    [- Aggiunto i termini "Apache Maven", "Connection pooling", "driver", #box["facade"], "log", "LTS", "stateful" e "topic"],
     "1.5.0",
     "27/03/2025",
     "Davide Marin",

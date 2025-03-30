@@ -45,7 +45,6 @@
     "Klaudio Merja",
     "Andrea Precoma",
     [
-      - Redazione dell'architettura logica
       - Redazione della sezione relativa al linguaggio Java
     ],
     "0.6.0",
@@ -53,7 +52,7 @@
     "Andrea Precoma",
     "Klaudio Merja",
     [
-      - Redazione architetture di _deployment_
+      - Redazione architetture del sistema
     ],
     "0.5.0",
     "22/03/2025",
