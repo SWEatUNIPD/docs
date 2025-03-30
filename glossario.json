@@ -17,20 +17,20 @@
   "C": {
     "ClickHouse": "ClickHouse è un database di analisi _open source_ orientato alle colonne per casi di utilizzo in ambito _big data_.",
     "ClickUp": "Piattaforma di gestione del lavoro che combina strumenti per pianificazione, organizzazione e collaborazione su progetti.",
-    "Codebase": "Termine che si riferisce all'insieme di tutto il codice sorgente del prodotto _software_ in sviluppo.",
-    "Code Coverage": "Metrica che misura la percentuale di codice sorgente coperto da _test_, utile per valutare l'efficacia dei _test_ e l'affidabilità del _software_."
+    "Code Coverage": "Metrica che misura la percentuale di codice sorgente coperto da _test_, utile per valutare l'efficacia dei _test_ e l'affidabilità del _software_.",
+    "Codebase": "Termine che si riferisce all'insieme di tutto il codice sorgente del prodotto _software_ in sviluppo."
   },
   "D": {
+    "DBMS": "Acronimo di _Database Management System_, è un sistema _software_ che consente la creazione, gestione e manipolazione di database. Fornisce strumenti per organizzare, recuperare e proteggere i dati, garantendo integrità e sicurezza.",
     "Dashboard": "Interfaccia grafica composta da vari elementi che servono all'utente per visualizzare dati o a gestire un sistema.",
-    "Database": "Sistema strutturato per la raccolta, l'archiviazione e la gestione di dati.",
     "Data Broker": "Tipo di tecnologia che facilita la raccolta, l'integrazione e la distribuzione di dati tra diverse fonti e utenti, garantendo accesso sicuro e scalabile per analisi e applicazioni.",
     "Data Generator": "Strumento o _software_ che produce dati sintetici o simulati, utilizzati per testare applicazioni, addestrare modelli di _machine learning_ o simulare scenari realistici.",
     "Data Visualization": "Rappresentazione grafica di dati e informazioni, al fine di facilitarne la comprensione e l'interpretazione.",
-    "DBMS": "Acronimo di _Database Management System_, è un sistema _software_ che consente la creazione, gestione e manipolazione di database. Fornisce strumenti per organizzare, recuperare e proteggere i dati, garantendo integrità e sicurezza.",
+    "Database": "Sistema strutturato per la raccolta, l'archiviazione e la gestione di dati.",
     "Deep dive": "Una sessione di _deep dive_ è un incontro in cui esperti esterni al gruppo si mettono a disposizione per approfondire determinati argomenti. Questi incontri sono progettati per affrontare temi complessi o aree in cui il _team_ destinatario potrebbe non avere esperienza sufficiente o stia incontrando difficoltà.",
     "Diagramma di Gantt": "Strumento di supporto alla gestione di progetti, usato principalmente nelle attività di gestione di progetto. È costruito partendo da un asse orizzontale, che rappresenta l'arco temporale, e da un asse verticale che rappresenta le mansioni o attività che costituiscono il progetto.",
-    "Docker": "Piattaforma _software_ _open source_ che consente di sviluppare, distribuire ed eseguire applicazioni in _container_, unità leggere e portatili che includono tutto il necessario per eseguire un'applicazione, garantendo che funzionino in modo coerente su qualsiasi ambiente.",
-    "Docker Compose": "È uno strumento di Docker che permette la creazione e condivisione di applicazioni composte da più _container_. Lo strumento permette di definire i servizi in un file YAML e di avviare l'intera applicazione mediante un singolo comando."
+    "Docker Compose": "È uno strumento di Docker che permette la creazione e condivisione di applicazioni composte da più _container_. Lo strumento permette di definire i servizi in un file YAML e di avviare l'intera applicazione mediante un singolo comando.",
+    "Docker": "Piattaforma _software_ _open source_ che consente di sviluppare, distribuire ed eseguire applicazioni in _container_, unità leggere e portatili che includono tutto il necessario per eseguire un'applicazione, garantendo che funzionino in modo coerente su qualsiasi ambiente."
   },
   "E": {
     "Event-driven Architecture": "È un _design pattern_ che si occupa della produzione e della gestione degli eventi, permettendo di comunicare oppure avviare servizi disaccoppiati tra di loro."
@@ -54,7 +54,7 @@
     "Hosting": "Servizio che fornisce uno spazio _online_ per archiviare, gestire e condividere dei documenti. Nel contesto attuale viene riferito ad un _hosting_ di _repository_, un ambiente dove versionare codice sorgente e documentazione."
   },
   "O":{
-    "Open source": "Con open source, si indica un software distribuito, in via gratuita, sotto i termini di una licenza che ne concede lo studio, l'utilizzo, la modifica e la redistribuzione."
+    "Open source": "Con _open source_, si indica un software distribuito, in via gratuita, sotto i termini di una licenza che ne concede lo studio, l'utilizzo, la modifica e la redistribuzione."
   },
   "K": {
     "Kubernetes": "Sistema _open source_ di orchestrazione di _container_."
@@ -65,11 +65,11 @@
     "LLM": "_Large Language Model_, modello di intelligenza artificiale addestrato su grandi quantità di testo per comprendere, generare e rispondere al linguaggio naturale, utilizzato in _chatbot_, traduttori e assistenti virtuali."
   },
   "M": {
+    "Marker": "Punto di riferimento utilizzato per identificare una posizione specifica all'interno della mappa.",
     "Message-driven Architecture": "È un _design pattern_ che si occupa della produzione, dell'invio e della gestione di messaggi, permettendo di comunicare oppure avviare servizi disaccoppiati tra di loro.",
     "Micro batching": "Tecnica di elaborazione di elevate quantità di dati a latenza ridotta. I dati vengono elaborati in _batch_ (lotti) di piccole dimensioni a intervalli regolari.",
     "Mockup": "Modello o replica di un prodotto o di un sistema (come l'interfaccia utente) utilizzato a scopo di _test_ o presentazione.",
-    "MVP": "Acronimo di _Minimum Viable Product_, rappresenta la versione iniziale di un prodotto con le funzionalità minime indispensabili per essere testato dagli utenti e validato sul mercato.",
-    "Marker": "Punto di riferimento utilizzato per identificare una posizione specifica all'interno della mappa."
+    "MVP": "Acronimo di _Minimum Viable Product_, rappresenta la versione iniziale di un prodotto con le funzionalità minime indispensabili per essere testato dagli utenti e validato sul mercato."
   },
   "P": {
     "Pipeline": "La pipeline indica un insieme di componenti software collegati tra loro in cascata, in modo che il risultato prodotto da uno degli elementi (output) sia l'ingresso di quello immediatamente successivo (input).",
