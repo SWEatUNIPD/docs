@@ -60,7 +60,7 @@ function calcGulpease(filePath) {
   console.log(`Indice di Gulpease di "${filePath}":`, stats.gulpease);
 }
 
-searchFile(".").forEach((path) => {
+searchFile("./pb").forEach((path) => {
   calcGulpease(path);
 });
 

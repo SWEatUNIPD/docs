@@ -3,6 +3,7 @@
     "Apache Airflow": "Orchestratore di flussi di lavoro _open source_ per applicazioni _data-intensive_.",
     "Apache Flink": "_Framework_ di elaborazione dati a flusso _open source_, ottimizzato per applicazioni in tempo reale.",
     "Apache Kafka": "Piattaforma di _broker_ e _data streaming_ che consente di gestire e trasferire _big data_ in tempo reale.",
+    "Apache Maven": "È uno strumento di gestione di progetti _software_ e _build automation_ per Java. Permette di gestire le dipendenze e la configurazione del progetto.",
     "Apache NiFi": "Sistema di integrazione di dati _open source_ per l'elaborazione e la distribuzione di flussi di dati.",
     "Apache Spark": "Elaborazione dati _in-memory_ _open source_, ad alte prestazioni, progettato per eseguire elaborazioni complesse su grandi volumi di dati in modo rapido e scalabile.",
     "Apache Superset": "Piattaforma _open source_ di _business intelligence_ per esplorare e visualizzare dati in modo interattivo.",
@@ -68,7 +69,6 @@
   },
   "M": {
     "Marker": "Punto di riferimento utilizzato per identificare una posizione specifica all'interno della mappa.",
-    "Maven": "È uno strumento di gestione di progetti _software_ e _build automation_ per Java. Permette di gestire le dipendenze e la configurazione del progetto.",
     "Message-driven Architecture": "È un _design pattern_ che si occupa della produzione, dell'invio e della gestione di messaggi, permettendo di comunicare oppure avviare servizi disaccoppiati tra di loro.",
     "Micro batching": "Tecnica di elaborazione di elevate quantità di dati a latenza ridotta. I dati vengono elaborati in _batch_ (lotti) di piccole dimensioni a intervalli regolari.",
     "Mockup": "Modello o replica di un prodotto o di un sistema (come l'interfaccia utente) utilizzato a scopo di _test_ o presentazione.",

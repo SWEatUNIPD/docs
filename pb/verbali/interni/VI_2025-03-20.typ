@@ -48,8 +48,13 @@ Il gruppo concluderà in settimana le ultime attività rimaste e si preparerà p
     link("https://github.com/SWEatUNIPD/docs/issues/193")[D0193],
     [Andrea Perozzo, \ Davide Picello],
     [Modifiche Analisi dei Requisiti],
+    
+    link("https://github.com/SWEatUNIPD/docs/issues/200")[D0200],
+    [Davide Martinelli \ Klaudio Merja],
+    [Aggiunta dei _test_ di integrazione nel PdQ],
+
     link("https://github.com/SWEatUNIPD/NearYou/issues/28")[N0028],
     "Riccardo Milan",
-    [Creazione _dashboard_ dei grafici in Grafana (requisito opzionale)]
+    [Creazione _#rifGlossario("dashboard")_ dei grafici in #rifGlossario("Grafana") (requisito opzionale)]
   ),
 )

@@ -280,7 +280,7 @@ Il documento conterrà le seguenti informazioni:
   - *Retrospettiva*: Sezione redatta a fine periodo, contiene una descrizione testuale delle difficoltà riscontrate e consigli utili da adottare per il lavoro futuro. Si struttura nei seguenti paragrafi:
     - *Cosa ha funzionato*: Aspetti positivi del periodo concluso.
     - *Cosa non ha funzionato*: Difficoltà che hanno rallentato il lavoro.
-    - *Cosa fare per migliorare*: Considerazioni migliorative per gli _sprint_ successivi.
+    - *Cosa fare per migliorare*: Considerazioni migliorative per gli _#rifGlossario("sprint")_ successivi.
     - *Rischi riscontrati*: Ricapitolazione dei rischi pianificati, analizzando se ve ne sono verificati di nuovi, e come sono stati affrontati.
     - *Attività future*: Lavori da cominciare nel periodo successivo che derivano da quello appena concluso, utile per guidare la pianificazione successiva.
 
