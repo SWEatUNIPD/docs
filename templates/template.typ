@@ -756,3 +756,70 @@
     }),
   )
 }
+
+#let plotGrafico7(
+  tabCaption,
+  data1,
+  nomeData1,
+  data2,
+  nomeData2,
+  data3,
+  nomeData3,
+  data4,
+  nomeData4,
+  data5,
+  nomeData5,
+  data6,
+  nomeData6,
+  data7,
+  nomeData7,
+) = {
+  import "@preview/cetz:0.3.2"
+  import "@preview/cetz-plot:0.1.1"
+
+  let default-colors = (blue, red, green, yellow, black, purple, orange, rgb("#2dccbf"), rgb("#ee5cb6"))
+
+  let default-plot-style(i) = {
+    let color = default-colors.at(calc.rem(i, default-colors.len()))
+    return (stroke: color, fill: color.lighten(75%))
+  }
+
+  figure(
+    kind: image,
+    caption: tabCaption,
+    cetz.canvas({
+      import cetz.draw: *
+      import cetz-plot: *
+
+      //set-style(axes: (stroke: .5pt, tick: (stroke: .5pt)), legend: (stroke: none, orientation: ttb, item: (spacing: .3), scale: 80%))
+
+      plot.plot(
+        size: (15, 8),
+        x-tick-step: none,
+        x-ticks: (
+          (0, [Sprint 1]),
+          (1, [Sprint 2]),
+          (2, [Sprint 3]),
+          (3, [Sprint 4]),
+          (4, [Sprint 5]),
+          (5, [Sprint 6]),
+          (6, [Sprint 7]),
+          (7, [Sprint 8]),
+        ),
+        x-grid: true,
+        y-grid: true,
+        legend: "south",
+        plot-style: default-plot-style,
+        {
+          plot.add(data1, label: nomeData1)
+          plot.add(data2, label: nomeData2)
+          plot.add(data3, label: nomeData3)
+          plot.add(data4, label: nomeData4)
+          plot.add(data5, label: nomeData5)
+          plot.add(data6, label: nomeData6)
+          plot.add(data7, label: nomeData7)
+        },
+      )
+    }),
+  )
+}
