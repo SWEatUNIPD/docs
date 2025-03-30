@@ -755,17 +755,17 @@ Indice che valuta la leggibilità dei documenti scritti in italiano.
   "Valore ottimo",
   ((0, 0), (1, 56), (2, 54), (3, 54), (4, 53), (5, 53), (6, 53), (7, 53)),
   "Analisi dei Requisiti",
-  ((0, 53), (1, 54), (2, 53), (3, 53), (4, 52), (5, 52), (6, 52), (7, 52)),
+  ((0, 53), (1, 54), (2, 53), (3, 53), (4, 52), (5, 52), (6, 52), (7, 53)),
   "Norme di Progetto",
-  ((0, 42), (1, 45), (2, 44), (3, 44), (4, 45), (5, 49), (6, 49), (7, 49)),
+  ((0, 42), (1, 45), (2, 44), (3, 44), (4, 45), (5, 49), (6, 49), (7, 50)),
   "Piano di Progetto",
-  ((0, 0), (1, 50), (2, 50), (3, 50), (4, 56), (5, 48), (6, 48), (7, 48)),
+  ((0, 0), (1, 50), (2, 50), (3, 50), (4, 56), (5, 48), (6, 48), (7, 49)),
   "Piano di Qualifica",
   ((0, 45), (1, 45), (2, 45), (3, 45), (4, 45), (5, 45), (6, 45), (7, 45)),
   "Glossario",
-  ((5, 64), (6, 64), (7, 64)),
+  ((5, 64), (6, 64), (7, 59)),
   "Manuale Utente",
-  ((5, 62), (6, 62), (7, 62)),
+  ((5, 62), (6, 62), (7, 50)),
   "Specifica Tecnica",
   
 )
@@ -776,8 +776,9 @@ Si nota che i valori sono sempre sopra al valore accettabile, anche se ancora be
 Il valore nullo di alcuni documenti alla prima iterazione è dovuto alla stesura tardiva degli stessi. Lo sviluppo della documentazione si è infatti svolta parallelamente alle lezioni di teoria del corso.
 
 === PB
-Il grafico mostra come i valori di tutti i documenti siano sempre stati al di sopra del valore accettabile e con poche variazioni presenti, anche se la maggior parte rimane abbastanza distante dal valore ottimo. La stabilità dell'indice di Gulpease indica che il gruppo si è concentrato più sull'ampliamento e arricchimento dei documenti piuttosto che nel miglioramento della leggibilità, che rimane comunque al di sopra del valore accettabile per tutti gli elaborati.
+Il grafico mostra come i valori di tutti i documenti siano sempre stati al di sopra del valore accettabile e con poche variazioni per la maggior parte di essi, sebbene siano distanti dal valore ottimo. La stabilità dell'indice di Gulpease indica che il gruppo si è concentrato più sull'ampliamento e arricchimento dei documenti piuttosto che nel miglioramento della leggibilità, che rimane comunque al di sopra del valore accettabile per tutti gli elaborati.
 
+// TODO: wtf ST?
 Da notare come i valori dei nuovi documenti, quali Manuale Utente e Specifica Tecnica, siano più alti rispetto ai documenti precedenti, dimostrando quindi la maggiore esperienza acquisita dal gruppo nella stesura della documentazione.
 
 #pagebreak()
