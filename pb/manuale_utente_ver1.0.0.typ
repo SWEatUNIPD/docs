@@ -30,7 +30,7 @@
     "Andrea Precoma",
     [
       - Modifiche vecchie sezioni
-      - Aggiunta sezione "Guida all'utilizzo della _dashboard_" 
+      - Aggiunta sezione "Guida all'utilizzo della _dashboard_"
     ],
     "0.1.0",
     "04/03/2025",
@@ -69,22 +69,30 @@ La prima occorrenza di un termine definito all'interno del glossario presente al
 - Capitolato C4 - Sync Lab S.r.l. (ultimo accesso 27/03/2025) \ #formatLink(url: "https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C4.pdf")
 - Guida ufficiale per l'installazione di Docker (ultimo accesso 27/03/2025) \ #formatLink(url: "https://docs.docker.com/engine/install")
 
+#pagebreak()
 
 = Avvio del sistema
 == Requisiti tecnici per avviare il sistema <req>
 
-Al fine di usufruire del prodotto _software_ è richiesta l'installazione di Docker e #rifGlossario("Docker Compose") per la gestione dei _container_. Si mette a disposizione la #formatLink(label: "guida ufficiale", url: "https://docs.docker.com/engine/install/") per l'installazione.
+Al fine di usufruire del prodotto _software_ è richiesta l'installazione del Docker Engine per l'esecuzione e la gestione dei _container_. Si mette a disposizione la #formatLink(label: "guida ufficiale", url: "https://docs.docker.com/engine/install/") per l'installazione.
 
 == Download della repository <download>
-Una volta configurato l'ambiente locale si può procedere al _download_ della _repository_ contenete il codice sorgente. Recandosi alla #formatLink(label: "pagina dedicata", url: "https://github.com/SWEatUNIPD/NearYou") si può scaricare il `.zip` e successivamente decomprimere.
+Una volta configurato l'ambiente locale si può procedere al _download_ della _repository_ contenete il codice sorgente. Recandosi alla #formatLink(label: "pagina dedicata", url: "https://github.com/SWEatUNIPD/NearYou") è possibile scaricare lo `.zip` del progetto, che andrà successivamente decompresso per permetterne l'esplorazione e l'esecuzione dell'ambiente.
 
-In alternativa, se si ha installato #rifGlossario("Git"), è possibile "clonare" la _repository_ posizionandosi sulla destinazione desiderata ed eseguendo il comando \ `git clone https://github.com/SWEatUNIPD/NearYou.git`.
+#align(center)[
+  #figure(
+    image("../assets/img/Manuale/DownloadZip.png", width: 100%),
+    caption: [Download della _repository_ tramite file `.zip`],
+  )
+]
+
+In alternativa, se si ha installato #rifGlossario("Git"), è possibile clonare la _repository_ posizionandosi sulla destinazione desiderata ed eseguendo il comando `git clone https://github.com/SWEatUNIPD/NearYou.git` per la clonazione tramite HTTPS, altrimenti è possibile optare alla clonazione del _repository_ tramite SSH eseguendo il comando `git clone git@github.com:SWEatUNIPD/NearYou.git`.
 
 == Principali file
 === File compose.yml
-_File_ di configurazione utilizzato per definire le proprietà dei servizi. Viene utilizzato per avviare e, nel caso si eseguisse per la prima volta, creare i _container_ contenenti i servizi descritti.
+_File_ di configurazione utilizzato per definire le proprietà dei servizi. Viene utilizzato per avviare i servizi sotto elencati.
 - *kafka*: _#rifGlossario("data broker")_ con immagine `apache/kafka:4.0.0`.
-- *postgis*: _#rifGlossario("database")_ in #rifGlossario("PostgreSQL") con installato l'estensione #rifGlossario("PostGIS") per gli incroci geospaziali con immagine `postgis/postgis:17-3.5`.
+- *postgis*: _#rifGlossario("database")_ in #rifGlossario("PostgreSQL") con installata l'estensione #rifGlossario("PostGIS") `postgis/postgis:17-3.5`.
 - *grafana*: _front-end_ con immagine `rmilan/grafana-rm`.
 - *flink*: _data #rifGlossario("stream processing")_ con immagine `flink:1.20.1-scala_2.12-java17`.
 - *simulator*: simulatore dei sensori con immagine _custom_ `simulator`.
@@ -94,8 +102,16 @@ _File_ di configurazione utilizzato per definire le proprietà dei servizi. Vien
 Prima di proseguire all'avvio del sistema ci si assicuri di aver rispettato i requisiti tecnici (#link(<req>)[sez. 2.1]) e di aver scaricato la _repository_ (#link(<download>)[sez 2.2]).
 
 Di seguito i passi per avviare correttamente il sistema. Le stesse istruzioni sono disponibili nel `README.md` della _#formatLink(label: "repository", url: "https://github.com/SWEatUNIPD/NearYou")_.
-+ Aprire il terminale nella cartella scaricata dalla _repository_.
-+ La prima volta avviare il sistema tramite Docker Compose eseguendo il comando \ `docker compose up -d --build` \ In seguito è sufficiente \ `docker compose up -d` \ Dovrebbero comparire la _network_ seguita dalla scritta "Created" e la lista dei _container_ seguiti dalla scritta "Started".
++ Aprire il terminale, posizionandosi nella cartella del _repository_ precedentemente scaricata.
++ Nel caso del primo avvio avviare il sistema tramite Docker Compose eseguendo il comando \ `docker compose up -d --build` \ Per gli avvii successivi sarà sufficiente eseguire \ `docker compose up -d`
++ Attendere che il sistema venga avviato completamente, attendendo l'avvio dei vari _container_ riportato dal _#rifGlossario("log")_.
+
+#align(center)[
+  #figure(
+    image("../assets/img/Manuale/StartDocker.png", width: 100%),
+    caption: [Avvio del sistema tramite Docker Compose],
+  )
+]
 
 Per maggiori informazioni riguardo ai _container_ e per visualizzare lo stato degli stessi è possibile eseguire il comando \ `docker ps -a`.
 
@@ -105,6 +121,8 @@ Si ricorda che per eseguire qualunque dei seguenti comandi è necessario posizio
 Per interrompere l'esecuzione dell'ambiente avviato secondo le istruzioni descritte nella #link(<avvio>)[sez 2.4] è sufficiente eseguire il comando \ `docker compose down -v` \ Per riavviare il sistema è sufficiente eseguire il comando \ `docker compose up -d`
 
 Se si vuole solo mettere in pausa il sistema in modo da riprenderlo più rapidamente in un secondo momento si può eseguire il comando \ `docker compose stop` \ Per riattivare il sistema è sufficiente eseguire il comando \ `docker compose start`
+
+#pagebreak(weak: true)
 
 = Collegamento ai servizi
 Prima di collegarsi ai servizi è richiesto di aver soddisfatto i requisiti tecnici (#link(<req>)[sez. 2.1]), di aver scaricato la _repository_ (#link(<download>)[sez 2.2]) e di aver avviato correttamente il sistema (#link(<avvio>)[sez 2.4]).
@@ -120,6 +138,8 @@ Collegarsi all'indirizzo `localhost:3000` (oppure `128.0.0.1:3000`) e inserire l
 
 In seguito viene richiesto di cambiare la _password_ perché poco sicura ma si può saltare l'operazione.
 
+#pagebreak(weak: true)
+
 = Guida all'utilizzo della dashboard
 
 == Mappa principale dei noleggi
@@ -127,7 +147,7 @@ Una volta effettuato l'accesso a Grafana tramite opportuna pagina di accesso, si
 
 #figure(
   image("../assets/img/Manuale/grafana-geomap.png", width: 95%),
-  caption: [_Dashboard_ della mappa geografica di Grafana], 
+  caption: [_Dashboard_ della mappa geografica di Grafana],
 )
 #v(5pt)
 
@@ -138,7 +158,7 @@ All'interno della mappa sono visualizzabili immediatamente tutti i punti di inte
 
 #figure(
   image("../assets/img/Manuale/dettaglio-POI-click.png", width: 50%),
-  caption: [Dettaglio del POI selezionato], 
+  caption: [Dettaglio del POI selezionato],
 )
 #v(5pt)
 
@@ -149,7 +169,7 @@ Nel caso un utente di un noleggio passi nelle prossimità di un POI, è possibil
 
 #figure(
   image("../assets/img/Manuale/marker_annuncio_multipli.png", width: 75%),
-  caption: [Mappa con noleggi attivi e _marker_ di annunci generati], 
+  caption: [Mappa con noleggi attivi e _marker_ di annunci generati],
 )
 #v(5pt)
 
@@ -159,7 +179,7 @@ Come per il _popover_ di dettaglio dei POI, è possibile chiudere il _popover_ d
 
 #figure(
   image("../assets/img/Manuale/annuncio_marker_dettaglio.png", width: 85%),
-  caption: [Dettagli dell'annuncio relativo al _marker_ selezionato], 
+  caption: [Dettagli dell'annuncio relativo al _marker_ selezionato],
 )
 #v(5pt)
 
@@ -172,15 +192,15 @@ Per aprire questa pagina, premere la voce _"Dashboards"_ nel menu a sinistra del
 
 #figure(
   image("../assets/img/Manuale/sel_dashboards.png", width: 50%),
-  caption: [Selezione voce "_Dashboards_" dal menu], 
+  caption: [Selezione voce "_Dashboards_" dal menu],
 )
 #v(5pt)
 
-Questo apre una pagina con la lista di tutte le _dashboard_ disponibili. Selezionare la voce "Storico annunci". 
+Questo apre una pagina con la lista di tutte le _dashboard_ disponibili. Selezionare la voce "Storico annunci".
 
 #figure(
   image("../assets/img/Manuale/lista_dashboards.png", width: 85%),
-  caption: [Selezione voce "Storico annunci" dalla lista delle _dashboard_], 
+  caption: [Selezione voce "Storico annunci" dalla lista delle _dashboard_],
 )
 #v(5pt)
 
@@ -188,7 +208,7 @@ Aperta la _dashboard_ ci si trova davanti ad una lista contenente tutti i dati d
 
 #figure(
   image("../assets/img/Manuale/storico_annunci.png", width: 95%),
-  caption: [Storico annunci], 
+  caption: [Storico annunci],
 )
 #v(5pt)
 
@@ -196,7 +216,7 @@ Per ogni voce della lista, inoltre, è possibile premere l'ID dell'annuncio inte
 
 #figure(
   image("../assets/img/Manuale/annuncio_selezionato.png", width: 50%),
-  caption: [Selezione dettaglio tramite ID annuncio], 
+  caption: [Selezione dettaglio tramite ID annuncio],
 )
 #v(5pt)
 
@@ -204,7 +224,7 @@ Questo apre una nuova finestra contenente tutti i dettagli dell'annuncio generat
 
 #figure(
   image("../assets/img/Manuale/dettaglio_annuncio.png", width: 95%),
-  caption: [Dettaglio annuncio selezionato dallo storico], 
+  caption: [Dettaglio annuncio selezionato dallo storico],
 )
 #v(5pt)
 
@@ -216,7 +236,7 @@ Per aprire questa pagina, similmente a come visto nella #link(<lista_dashboard>)
 Questo apre la visualizzazione dei grafici statistici degli annunci.
 #figure(
   image("../assets/img/Manuale/grafici.png", width: 95%),
-  caption: [Pagina dei grafici statistici], 
+  caption: [Pagina dei grafici statistici],
 )
 #v(5pt)
 
@@ -225,7 +245,7 @@ All'interno della pagina sono presenti tre grafici:
 
 #figure(
   image("../assets/img/Manuale/grafici_menu_tendina.png", width: 50%),
-  caption: [Selezione POI da menu a tendina], 
+  caption: [Selezione POI da menu a tendina],
 )
 #v(5pt)
 2. Grafico a linee che mostra il numero di annunci generati dal sistema nelle ultime 24 ore, con granularità oraria. I valori contenuti all'interno di questo grafico fanno riferimento al totale degli annunci generati.
@@ -233,10 +253,10 @@ All'interno della pagina sono presenti tre grafici:
 
 
 
-Per visualizzare le misure esatte di ogni punto dei grafici, è sufficiente effettuare un _hover_ del cursore del _mouse_ al di sopra del punto di interesse. Questo apre un _popover_ contenente il valore preciso di tale punto. L'operazione è possibile su tutti i tipi di grafico. 
+Per visualizzare le misure esatte di ogni punto dei grafici, è sufficiente effettuare un _hover_ del cursore del _mouse_ al di sopra del punto di interesse. Questo apre un _popover_ contenente il valore preciso di tale punto. L'operazione è possibile su tutti i tipi di grafico.
 
 #figure(
   image("../assets/img/Manuale/dettaglio_grafico.png", width: 55%),
-  caption: [Visualizzazione dettaglio del punto di un grafico], 
+  caption: [Visualizzazione dettaglio del punto di un grafico],
 )
 #v(5pt)
