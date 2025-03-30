@@ -367,7 +367,12 @@ L'architettura di _deployment_ definisce come i componenti di un'applicazione ve
 === K-architecture
 La K-_architecture_ è un modello architetturale per l'elaborazione di dati in _streaming_. Derivante dalla #box[λ-_architecture_] la sua particolarità è l'eliminazione del _batching_ mantenendo un flusso costante di dati in _real time_.
 
-[IMG ARCH COI LAYER]
+#align(center)[
+  #figure(
+    image("../assets/img/ST/KappaArch.png", width: 110%),
+    caption: [K-_architecture_],
+  )
+]
 
 - *_Data source_*: la sorgente di dati è costituita dal simulatore che imita l'attivazione dei noleggi e lo spostamento degli utenti sui mezzi. I sensori inviano quindi a intervalli regolari la posizione #rifGlossario("GPS") e ricevono l'eventuale annuncio.
 
