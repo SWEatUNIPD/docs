@@ -778,8 +778,7 @@ Il valore nullo di alcuni documenti alla prima iterazione è dovuto alla stesura
 === PB
 Il grafico mostra come i valori di tutti i documenti siano sempre stati al di sopra del valore accettabile e con poche variazioni per la maggior parte di essi, sebbene siano distanti dal valore ottimo. La stabilità dell'indice di Gulpease indica che il gruppo si è concentrato più sull'ampliamento e arricchimento dei documenti piuttosto che nel miglioramento della leggibilità, che rimane comunque al di sopra del valore accettabile per tutti gli elaborati.
 
-// TODO: wtf ST?
-Da notare come i valori dei nuovi documenti, quali Manuale Utente e Specifica Tecnica, siano più alti rispetto ai documenti precedenti, dimostrando quindi la maggiore esperienza acquisita dal gruppo nella stesura della documentazione.
+Da notare come i valori dei nuovi documenti, cioè Manuale Utente e Specifica Tecnica, siano tra i più alti. Questo dimostra un'esperienza acquisita dal gruppo nella stesura della documentazione.
 
 #pagebreak()
 == Correttezza Ortografica (MPC-CO)
