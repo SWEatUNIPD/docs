@@ -567,7 +567,7 @@
       plot.plot(
         size: (15, 8),
         x-tick-step: none,
-        x-ticks: ((0, [Sprint 1]), (1, [Sprint 2]), (2, [Sprint 3]), (3, [Sprint 4]), (4, [Sprint 5])),
+        x-ticks: ((0, [Sprint 1]), (1, [Sprint 2]), (2, [Sprint 3]), (3, [Sprint 4]), (4, [Sprint 5]), (5, [Sprint 6]), (6, [Sprint 7]), (7, [Sprint 8])),
         x-grid: true,
         y-grid: true,
         legend: "south",
@@ -598,7 +598,7 @@
       plot.plot(
         size: (15, 8),
         x-tick-step: none,
-        x-ticks: ((0, [Sprint 1]), (1, [Sprint 2]), (2, [Sprint 3]), (3, [Sprint 4]), (4, [Sprint 5])),
+        x-ticks: ((0, [Sprint 1]), (1, [Sprint 2]), (2, [Sprint 3]), (3, [Sprint 4]), (4, [Sprint 5]), (5, [Sprint 6]), (6, [Sprint 7]), (7, [Sprint 8])),
         x-grid: true,
         y-grid: true,
         legend: "south",
@@ -641,7 +641,7 @@
       plot.plot(
         size: (15, 8),
         x-tick-step: none,
-        x-ticks: ((0, [Sprint 1]), (1, [Sprint 2]), (2, [Sprint 3]), (3, [Sprint 4]), (4, [Sprint 5])),
+        x-ticks: ((0, [Sprint 1]), (1, [Sprint 2]), (2, [Sprint 3]), (3, [Sprint 4]), (4, [Sprint 5]), (5, [Sprint 6]), (6, [Sprint 7]), (7, [Sprint 8])),
         x-grid: true,
         y-grid: true,
         legend: "south",
@@ -657,7 +657,7 @@
   )
 }
 
-#let plotGrafico7(
+#let plotGrafico9(
   tabCaption,
   data1,
   nomeData1,
@@ -673,11 +673,15 @@
   nomeData6,
   data7,
   nomeData7,
+  data8,
+  nomeData8,
+  data9,
+  nomeData9,
 ) = {
   import "@preview/cetz:0.3.2"
   import "@preview/cetz-plot:0.1.1"
 
-  let default-colors = (blue, red, green, yellow, black, purple, orange)
+  let default-colors = (blue, red, green, yellow, black, purple, orange, rgb("#2dccbf"), rgb("#ee5cb6"))
 
   let default-plot-style(i) = {
     let color = default-colors.at(calc.rem(i, default-colors.len()))
@@ -696,7 +700,7 @@
       plot.plot(
         size: (15, 8),
         x-tick-step: none,
-        x-ticks: ((0, [Sprint 1]), (1, [Sprint 2]), (2, [Sprint 3]), (3, [Sprint 4]), (4, [Sprint 5])),
+        x-ticks: ((0, [Sprint 1]), (1, [Sprint 2]), (2, [Sprint 3]), (3, [Sprint 4]), (4, [Sprint 5]), (5, [Sprint 6]), (6, [Sprint 7]), (7, [Sprint 8])),
         x-grid: true,
         y-grid: true,
         legend: "south",
@@ -709,6 +713,8 @@
           plot.add(data5, label: nomeData5)
           plot.add(data6, label: nomeData6)
           plot.add(data7, label: nomeData7)
+          plot.add(data8, label: nomeData8)
+          plot.add(data9, label: nomeData9)
         },
       )
     }),

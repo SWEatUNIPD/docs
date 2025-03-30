@@ -888,7 +888,6 @@ Come si può vedere dal grafico diversi requisiti desiderabili, in particolare q
 
 
 #pagebreak()
-
 == Requisiti opzionali soddisfatti (MPD-RFS)
 Misura la percentuale di requisiti opzionali soddisfatti dal prodotto.
 #plotGrafico3(
