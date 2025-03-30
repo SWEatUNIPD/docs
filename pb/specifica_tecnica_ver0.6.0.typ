@@ -557,6 +557,8 @@ Il costruttore viene reso inutilizzabile attraverso la ridefinizione del costrut
 ====== Metodi
 - #underline[```java +getConnectionFactory(): ConnectionFactory```]: metodo statico che restituisce l'istanza della `ConnectionFactory`. Se l'istanza non è ancora stata creata, viene creata e restituita. Il metodo è _synchronized_ per garantire che venga creata una sola istanza della `ConnectionFactory` durante l'intero processo.
 
+#pagebreak(weak: true)
+
 === Entità
 Questa sezione rappresenta le entità del sistema, ovvero le classi che rappresentano i dati persistenti all'interno del _database_.
 
@@ -619,6 +621,8 @@ I metodi _getter_, nella reale implementazione della classe, vengono omessi in q
 - ```java +equals(o: Object): boolean```: _overriding_ del metodo della classe `Object` di Java, confronta l'uguaglianza tra l'oggetto `PointOfInterest` da cui viene invocato il metodo e l'oggetto posto a parametro e restituisce `true` se sono uguali, `false` altrimenti.
 - ```java +hashCode(): int```: _overriding_ del metodo della classe `Object` di Java, restituisce il codice _hash_ dell'oggetto `PointOfInterest` da cui viene invocato il metodo.
 
+#pagebreak(weak: true)
+
 === Richieste asincrone
 Questa sezione rappresenta le classi che si occupano di effettuare le richieste asincrone per arricchire i dati al fine di miglirare il _prompt_ da inviare all'LLM. Esse estendono la classe astratta `RichAsyncFunction` della libreria di Flink per eseguire queste richieste su ogni dato dello _stream_.
 
@@ -657,6 +661,8 @@ Viene mantenuto il costruttore implicito di _default_ fornito da Java, in quanto
 ====== Metodi
 In quanto classe che estende `RichAsyncFunction`, la classe `AdvertisementGenerationRequest` ridefinisce solamente il metodo `asyncInvoke`, mantenendo l'implementazione _default_ della classe estesa per i metodi `open` e `close`.
 - ```java +asyncInvoke(Tuple2<GPSData, PointOfInterest> input, ResultFuture<Tuple3<GPSData, PointOfInterest, String>> resultFuture): void```: metodo che viene invocato in modo asincrono per eseguire la generazione dell'annuncio. Il risultato della generazione viene restituito tramite il parametro `resultFuture` che rappresenta il risultato della richiesta asincrona.
+
+#pagebreak(weak: true)
 
 === Classe main
 La classe _main_ del _job_ di Flink si occupa di eseguire il _job_, creando l'_execution environment_ e avviando il processo di _stream processing_. Essa si occupa di organizzare le varie componenti del sistema, creando i _topic_ di Kafka e avviando il processo di _stream processing_.
