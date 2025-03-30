@@ -134,7 +134,10 @@ La prima occorrenza di un termine definito all'interno del glossario presente al
 - Java _records_ (ultimo accesso in data 27/03/2025) \ #formatLink(url: "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Record.html")
 
 - Apache Kafka (ultimo accesso in data 27/03/2025) \ #formatLink(url: "https://kafka.apache.org")
+
 - Documentazione della classe `ConnectionFactory` - R2DBC (ultimo accesso in data 27/03/2025) \ #formatLink(url: "https://javadoc.io/doc/io.r2dbc/r2dbc-spi/latest/index.html")
+
+- Introduzione di LangChain4j - "_What if I don't have an API key_" (ultimo accesso in data 27/03/2025) \ #formatLink(url: "https://docs.langchain4j.dev/get-started")
 
 #pagebreak(weak: true)
 
@@ -181,6 +184,7 @@ Di seguito vengono elencati tutti i servizi che compongono il sistema (le relati
   - *_Path_ del Dockerfile*: `./client` (relativo alla _root_ del progetto)
   - *Riferimento*: #formatLink(url: "https://github.com/SWEatUNIPD/NearYou/tree/main/client")
 
+#pagebreak(weak: true)
 == Linguaggi di sviluppo
 === TypeScript
 TypeScript è un _superset_ di JavaScript che supporta sia la programmazione orientata agli oggetti con classi, interfacce ed ereditarietà, sia la programmazione procedurale basata su funzioni e blocchi di istruzioni.
@@ -225,39 +229,39 @@ La seguente lista elenca le dipendenze utilizzate nel simulatore. Sono escluse q
 //   - *Descrizione*: _Tool_ utilizzato per i _test_ statici in TypeScript. Nel _file_ di configurazione è possibile specificare quali controlli fare, ad esempio stile del codice e complessità ciclomatica.
 
 === Java
-Java è un linguaggio di programmazione orientato agli oggetti che nasce con lo scopo di creare applicazioni indipendenti dalla piattaforma, grazie alla sua capacità di compilare il codice in _bytecode_ ed eseguirlo su una JVM. //TODO: JVM a glossario da mettere
+Java è un linguaggio di programmazione orientato agli oggetti che nasce con lo scopo di creare applicazioni indipendenti dalla piattaforma, grazie alla sua capacità di compilare il codice in _bytecode_ ed eseguirlo su una JVM.
 
 ==== Utilizzo nel progetto
 Nel nostro specifico caso, viene adottato per la creazione del servizio di _stream processing_ (denominato anche _job_) per Apache Flink. Questo si occupa di elaborare i dati di localizzazione in tempo reale provenienti dai sensori, garantendone la persistenza all'interno del _database_, e di arricchire tali dati con le informazioni necessarie a creare il _prompt_ da inviare alla LLM per poter generare un annuncio il più personalizzato possibile.
 
 ==== Versione
-Per soddisfare i requisiti di Apache Flink è stata adottato Java 17 LTS. //TODO: mettere a glossario LTS
+Per soddisfare i requisiti di Apache Flink è stata adottato Java 17 LTS.
 
 La documentazione di Apache Flink riporta l'introduzione in maniera sperimentale di Java 17 dalla versione 1.18 di Flink. Tuttavia il prodotto è stato validato e le funzionalità fondamentali che hanno un impatto dovuto a questa scelta, ovvero i _records_ in Java, funzionano correttamente.
 
 ==== Librerie e framework
 Per la gestione del progetto e l'automazione delle operazioni di _build_ e _test_ è stato utilizzato Apache Maven. Per avere una visione nel dettaglio di tutte le librerie utilizzate all'interno del nostro sistema, è possibile visionare il _file_ `pom.xml` presente all'interno della cartella `job` del nostro progetto.
 
-La seguente lista rappresenta le dipendenze più rilevanti presenti all'interno del progetto e non vuole essere un mero elenco di tutte le dipendenze e librerie presenti all'interno del nostro progetto.//TODO: riportare maven a glossario
+La seguente lista rappresenta le dipendenze più rilevanti presenti all'interno del progetto e non vuole essere un mero elenco di tutte le dipendenze e librerie presenti all'interno del nostro progetto.
 
 - *Apache Flink*
   - *Documentazione*: #formatLink(url: "https://nightlies.apache.org/flink/flink-docs-release-1.20") (ultimo accesso in data 27/03/2025)
   - *Versione*: 1.20.1
-  - *Descrizione*: _Framework_ ed _engine_ per effettuare operazioni _stateful_ su un flusso di dati (nel nostro caso dati di localizzazione), elevato o meno che sia, in tempo reale in maniera reattiva, scalabile e affidabile. //TODO: stateful a glosario
+  - *Descrizione*: _Framework_ ed _engine_ per effettuare operazioni _stateful_ su un flusso di dati (nel nostro caso dati di localizzazione), elevato o meno che sia, in tempo reale in maniera reattiva, scalabile e affidabile.
 
 - *PostgreSQL JDBC Driver*
   - *Documentazione*: #formatLink(url: "https://jdbc.postgresql.org/documentation") (ultimo accesso in data 27/03/2025)
   - *Versione*: 42.7.5
-  - *Descrizione*: _Driver_ per la connessione a un _database_ PostgreSQL. //TODO: mettere JDBC a glossario
+  - *Descrizione*: _Driver_ per la connessione a un _database_ PostgreSQL.
 
 - *PostgreSQL R2DBC Driver*
   - *Documentazione*: #formatLink(url: "https://github.com/pgjdbc/r2dbc-postgresql") (ultimo accesso in data 27/03/2025)
   - *Versione*: 1.0.7.RELEASE
-  - *Descrizione*: _Driver_ per la connessione a un _database_ PostgreSQL, sfruttando l'API della programmazione reattiva (per maggiori informazioni: #formatLink(url: "https://www.reactivemanifesto.org/it", label: "Reactive Manifesto") - ultimo accesso in data 27/03/2025). Permette di effettuare richieste asincrone e non bloccanti al _database_, come richiesto dalla documentazione di Flink per le operazioni di I/O asincrone. //TODO: mettere R2DBC a glossario e programmazione reattiva
+  - *Descrizione*: _Driver_ per la connessione a un _database_ PostgreSQL, sfruttando l'API della programmazione reattiva (per maggiori informazioni: #formatLink(url: "https://www.reactivemanifesto.org/it", label: "Reactive Manifesto") - ultimo accesso in data 27/03/2025). Permette di effettuare richieste asincrone e non bloccanti al _database_, come richiesto dalla documentazione di Flink per le operazioni di I/O asincrone.
 - *R2DBC Pool*
   - *Documentazione*: #formatLink(url: "https://github.com/r2dbc/r2dbc-pool") (ultimo accesso in data 27/03/2025)
   - *Versione*: 1.0.2
-  - *Descrizione*: Implementazione del _connection pooling_ per R2DBC. //TODO: mettere connection pooling a glossario
+  - *Descrizione*: Implementazione della _connection pool_ per R2DBC.
 
 - *Project Reactor*
   - *Documentazione*: #formatLink(url: "https://projectreactor.io/docs/core/release/reference") (ultimo accesso in data 27/03/2025)
@@ -267,7 +271,7 @@ La seguente lista rappresenta le dipendenze più rilevanti presenti all'interno 
 - *SLF4J*
   - *Documentazione*: #formatLink(url: "https://www.slf4j.org/docs.html")
   - *Versione*: 2.0.17
-  - *Descrizione*: Libreria che serve da astrazione (_facade_) per i vari _framework_ di _logging_ in Java, permettendo di cambiare _framework_ senza dover modificare il codice. //TODO: mettere logging e facade a glossario (vedere se c'è framework)
+  - *Descrizione*: Libreria che serve da astrazione (_facade_) per i vari _framework_ di _log_ in Java, permettendo di cambiare _framework_ senza dover modificare il codice.
 
 - *LogBack*
   - *Documentazione*: #formatLink(url: "https://logback.qos.ch/documentation.html")
@@ -279,12 +283,32 @@ La seguente lista rappresenta le dipendenze più rilevanti presenti all'interno 
   - *Versione*: 1.0.0-beta1
   - *Descrizione*: Libreria per LLM che permette, nel nostro caso, la generazione di annunci personalizzati in base ai dati di profilazione dell'utente e del punto di interesse.
 
+#pagebreak(weak: true)
+
 == Data broker
 Il _data broker_ svolge un ruolo fondamentale all'interno del nostro sistema in quanto si occupa di ricevere i dati e inoltrarli ai servizi che ne fanno uso in maniera efficiente e scalabile. Nel nostro caso, il _data broker_ riceve i dati di localizzazione dai sensori e li inoltra successivamente al servizio di _stream processing_.
 === Apache Kafka
 Apache Kafka è una piattaforma di _streaming_ di dati. Progettato per essere scalabile, _fault-tolerant_ e ad avere elevate prestazioni, viene utilizzato per la gestione dei dati in tempo reale. In particolare nel nostro caso, Kafka viene utilizzato per creare le _pipeline_ di dati tra il simulatore e il servizio di _stream processing_.
 
-Tuttavia non tutte le funzionalità che Apache Kafka fornisce ai programmatori sono state sfruttate all'interno del nostro progetto come la replicazione dei dati su più _broker_. Per la natura dimostrativa del progetto, è stato scelto di utilizzare un singolo _broker_ Kafka, ma ciò non preclude l'utilizzo di questa funzionalità, che può avere impatti positivi sulla tolleranza agli errori del sistema. //TODO: topic a glossario (?)
+Tuttavia non tutte le funzionalità che Apache Kafka fornisce ai programmatori sono state sfruttate all'interno del nostro progetto come la replicazione dei dati su più _broker_. Per la natura dimostrativa del progetto, è stato scelto di utilizzare un singolo _broker_ Kafka, ma ciò non preclude l'utilizzo di questa funzionalità, che può avere impatti positivi sulla tolleranza agli errori del sistema.
+
+=== Formato dei dati di localizzazione
+Ogni dato di localizzazione emesso da un sensore (o simulatore nel nostro caso specifico) è composto da un oggetto JSON con le seguenti proprietà:
+```JSON
+{
+  "rent_id": 1,
+  "latitude": 45.123456,
+  "longitude": 11.123456,
+  "timestamp": 12345678910
+}
+```
+
+- `rent_id`: ID del noleggio che ha emesso il dato di localizzazione (si rimanda il lettore alla sezione #link(<db>, "Database") per maggiori dettagli riguardo l'entità `Rent`).
+- `latitude`: latitudine del noleggio che ha emesso il dato di localizzazione.
+- `longitude`: longitudine del noleggio che ha emesso il dato di localizzazione.
+- `timestamp`: timestamp del dato di localizzazione in millisecondi. Questo campo è fondamentale per la gestione della persistenza dei dati all'interno del _database_ e per la generazione degli annunci, in quanto permette di evitare conflitti tra più dati di localizzazione emessi dallo stesso noleggio.
+
+#pagebreak(weak: true)
 
 == Stream processor
 Lo _stream processor_ è il cuore pulsante dell'intero sistema sviluppato dal gruppo. Esso si occupa dell'ingestione dei dati di localizzazione, di arricchirli di informazioni necessarie alla creazione del _prompt_ da inviare all'LLM e di persistere questi ultimi all'interno del _database_.
@@ -296,17 +320,13 @@ Nel nostro caso Flink viene utilizzato per elaborare i dati di localizzazione in
 == Generazione annunci
 Il capitolato prevede l'utilizzo di LLM per la generazione degli annunci utilizzando come _prompt_ gli interessi dell'utente finale, la categoria commerciale e l'offerta del punto di interesse più vicino alla posizione del sensore. Si fa notare che il peso maggiore dei dati è risieduto nei campi di testo libero (interessi dell'utente e offerta del punto di interesse) poiché le LLM sono specializzate proprio a interpretare queste tipologie di _input_.
 === LangChain4j
-LangChain
+LangChain4j è una libreria Java che semplifica l'integrazione di LLM con applicazioni Java. Fornisce una serie di strumenti per lavorare con LLM, tra cui la creazione di _prompt_ e la generazione di risposte tramite la LLM stessa. LangChain4j supporta diversi modelli di LLM: uno tra questi, da noi utilizzato, è GPT-4o-mini di OpenAI. Questo modello è stato utilizzato per un semplice motivo: permettere al gruppo di sviluppare il progetto in locale senza dover pagare l'API _key_ di OpenAI, sfruttando la chiave `demo` fornita da LangChain stessa. Il modello può essere comunque modificato in un secondo momento per permettere l'utilizzo di altri modelli grazie anche in parte alla modularità della libreria.
 
-== Database
+#pagebreak(weak: true)
+
+== Database <db>
 === PostgreSQL
-Per la gestione dei dati relazionali è stato scelto PostgreSQL, un DBMS che offre affidabilità e una certa flessibilità per l'estensione tramite _plugin_ ed estensioni. Nel nostro contesto, all'avvio viene eseguito automaticamente lo _script_ `create.sql` che crea lo schema del _database_ (tabelle, relazioni, ecc.) secondo le esigenze del progetto.
-
-Nel _file_ `create.sql`:
-
-- Vengono definite tutte le relazioni fondamentali del sistema (ad esempio _users_, _rents_, _positions_, _points_of_interest_, ecc.).
-- Vengono impostati i vincoli di integrità referenziale (_primary key_, _foreign key_, _on delete cascade_, ecc.).
-- Ove opportuno, si creano tipi enumerati (ad esempio per le categorie di un punto di interesse), oppure si definiscono relazioni 1:N, 1:1 e N:N necessarie al dominio applicativo.
+Per la gestione dei dati relazionali è stato scelto PostgreSQL, un DBMS che offre affidabilità e una certa flessibilità per l'estensione tramite _plugin_ ed estensioni. Nel nostro contesto, all'avvio viene eseguito automaticamente lo _script_ `create.sql` che crea lo schema del _database_ (tabelle, relazioni, ecc.) secondo le esigenze del progetto e popola le tabelle di dati necessari a provare il funzionamento del nostro sistema.
 
 === PostGIS <2.2.2>
 Per l'elaborazione e l'archiviazione di dati geografici si fa uso dell'estensione PostGIS, la quale aggiunge a PostgreSQL il supporto per tipi, funzioni e indici spaziali.
@@ -375,6 +395,9 @@ La K-_architecture_ è un modello architetturale per l'elaborazione di dati in _
 - *_Storage layer_*: la persistenza è gestita da un _database_ relazionale che archivia i dati in arrivo dal _processing layer_. Lo _storage layer_ è costituito da PostgreSQL affiancato da PostGIS, una estensione che facilita l'elaborazione di dati geospaziali.
 
 - *_Data visualization layer_*: i dati archiviati nello _storage layer_ vengono resi disponibile tramite una interfaccia grafica. Costituito da Grafana questo _layer_ recupera le informazioni dal _database_ a intervalli regolari in modo da aggiornare rapidamente l'interfaccia ai nuovi cambiamenti.
+
+#pagebreak(weak: true)
+
 == Architettura logica
 L'architettura logica, a differenza di quella di _deployment_, si concentra sulle componenti da un punto di vista più astratto, descrivendo come funziona il _software_ dal punto di vista della _business logic_ e delle interazioni tra le varie parti ad alto livello.
 
@@ -392,6 +415,8 @@ L'architettura _data streaming_ è composta dai seguenti _layer_:
 - *_Stream processing_*: _layer_ che si occupa di processare i dati in tempo reale, applicando loro delle trasformazioni, filtri oppure operazioni computazionali per estrarne informazioni utili. Nel nostro caso, questo _layer_ si occupa di arricchire i dati di localizzazione con le informazioni necessarie per generare l'annuncio, e inviarli al _database_ per la persistenza.
 - *Data destination*: _layer_ a cui viene demandato il compito di inoltrare i dati verso una determinata destinazione, come può essere un _database_ per la persistenza dei dati, un servizio di notifica per l'invio di messaggi o altro ancora.
 - *Data visualization*: _layer_ che si occupa di visualizzare i dati in maniera comprensibile all'utente finale. Questo _layer_ può essere costituito da un'interfaccia grafica come una _dashboard_ .
+
+#pagebreak(weak: true)
 
 == Flusso dei dati
 Il diagramma sottostante descrive il percorso dei dati tra i _layer_ del sistema e le relative elaborazioni.
@@ -424,6 +449,7 @@ Il diagramma sottostante descrive il percorso dei dati tra i _layer_ del sistema
 
 + *Visualizzazione grafica*: Grafana recupera le informazioni dal _database_ a intervalli regolari ravvicinati per aggiornare costantemente la visuale dell'amministratore. Se questo richiede informazioni specifiche, ad esempio i dettagli di un annuncio, viene effettuata una _query_ per recuperare i dati.
 
+#pagebreak(weak: true)
 
 == Diagramma delle classi
 Il diagramma delle classi del sistema descrive le classi implementate e le loro relazioni. Vengono riportare tutte le classi di libreria, di cui per la si omettono attributi e metodi per non appesantire il diagramma, fatta eccezione per le classi ereditate o interfacce implementate da altre classi del _job_ appartenenti alle librerie utilizzate.
@@ -656,6 +682,7 @@ La classe `DataStreamJob` è la _main class_ del _job_ di Flink. Essa avvia l'es
 - ```java +execute(): void```: metodo che avvia l'esecuzione del _job_ di Flink. Inizializza i _topic_ di Kafka, crea il flusso di dati e avvia l'esecuzione del _job_.
 - #underline[```java +main(args: String*)```]: metodo _main_ della classe `DataStreamJob` che avvia l'esecuzione del _job_ di Flink. Inizializza l'_execution environment_, il servizio di creazione dei _topic_ e il _job_ stesso.
 
+#pagebreak(weak: true)
 == Design pattern adottati
 === Singleton
 Il _design pattern singleton_ è uno dei _pattern_ creazionali della GoF (_Gang of Four_) che garantisce che una classe abbia una sola istanza e fornisce un punto di accesso globale a tale istanza.
@@ -703,7 +730,7 @@ public class DatabaseConnectionSingleton {
 }
 ```
 
-#pagebreak()
+#pagebreak(weak: true)
 = Struttura del simulatore
 Nonostante il simulatore di posizioni GPS non sia un componente centrale del sistema, ma semplicemente un _mock_ per generare dati di _test_ richiesto dall'azienda proponente nell'ambito del progetto didattico, il gruppo ha comunque intrapreso un approccio progettuale.
 
@@ -843,6 +870,8 @@ container
 
 container.bind(Simulator).toSelf().inSingletonScope();
 ```
+
+#pagebreak(weak: true)
 
 == Design pattern adottati
 === Dependency injection
