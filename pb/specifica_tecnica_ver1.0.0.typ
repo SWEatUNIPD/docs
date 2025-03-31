@@ -210,10 +210,10 @@ La seguente lista elenca le dipendenze utilizzate nel simulatore.
 - *Inversify*
   - *Documentazione*: #formatLink(url: "https://inversify.io") (ultimo accesso in data 27/03/2025)
   - *Versione*: 7.1.0
-  - *Descrizione*: _Tool_ utilizzato per gestire la _dipendency injection_ in applicativi sviluppati in #box[JavaScript] e TypeScript.
+  - *Descrizione*: _Tool_ utilizzato per gestire la _dependency injection_ in applicativi sviluppati in #box[JavaScript] e TypeScript.
 
 - *Kafkajs*
-  - *Documentazionee*: #formatLink(url: "https://kafka.js.org/docs/introduction") (ultimo accesso in data 27/03/2025)
+  - *Documentazione*: #formatLink(url: "https://kafka.js.org/docs/introduction") (ultimo accesso in data 27/03/2025)
   - *Versione*: 2.2.4
   - *Descrizione*: Usata per agevolare le operazioni di produzione e consumo di messaggi attraverso Apache Kafka.
 
@@ -412,7 +412,7 @@ Il diagramma sottostante descrive il percorso dei dati tra i _layer_ del sistema
 
   + *Richiesta di generazione dell'annuncio*: se la ricerca del punto di interesse ha avuto successo, vengono estratti gli interessi dell'utente a cui è destinato l'annuncio, in particolar modo la stringa libera che descrive i suoi interessi. Le informazioni del punto di interesse e dell'utente vengono successivamente utilizzate per costruire il _prompt_ da inviare alla LLM.
 
-  + *Ricezione della risposta della LLM*: una volta processata la risposta da parte della LLM, il risultato viene inviato a una coda di Kafka denominata _adv-data_ e salva questa generazione all'interno della tabella `advertisements`. Nel caso in cui la LLM ritornasse una stringa vuota, l'annuncio non viene mandato all'utente finale, ma viene gestita la sua persistenza a fini analitici per l'amministratore.
+  + *Ricezione della risposta della LLM*: una volta processata la risposta da parte della LLM, il risultato viene inviato a una coda di Kafka denominata _adv-data_ che salva questa generazione all'interno della tabella `advertisements`. Nel caso in cui la LLM ritornasse una stringa vuota, l'annuncio non viene mandato all'utente finale, ma viene gestita la sua persistenza a fini analitici per l'amministratore.
 
 + *Ricezione dell'eventuale annuncio*: il sensore riceve l'annuncio se questo è stato generato. In uno scenario reale l'annuncio verrebbe visualizzato dall'utente, ma il capitolato non prevedeva lo sviluppo dell'applicazione lato _client_.
 
@@ -421,7 +421,7 @@ Il diagramma sottostante descrive il percorso dei dati tra i _layer_ del sistema
 #pagebreak(weak: true)
 
 == Diagramma delle classi
-Il diagramma delle classi del sistema descrive le classi implementate e le loro relazioni. Vengono riportare tutte le classi di libreria, di cui per la si omettono attributi e metodi per non appesantire il diagramma, fatta eccezione per le classi ereditate o interfacce implementate da altre classi del _job_ appartenenti alle librerie utilizzate.
+Il diagramma delle classi del sistema descrive le classi implementate e le loro relazioni. Vengono riportate tutte le classi di libreria, di cui si omettono attributi e metodi per non appesantire il diagramma, fatta eccezione per le classi ereditate o interfacce implementate da altre classi del _job_ appartenenti alle librerie utilizzate.
 
 Per migliorare la leggibilità sono omessi attributi e metodi delle classi di libreria. Inoltre il diagramma è stato diviso per sezioni a seconda del loro ruolo all'interno del sistema.
 
@@ -536,7 +536,7 @@ Questa sezione rappresenta le entità del sistema, ovvero le classi che rapprese
   image("../assets/img/ST/SystemUML/GPSData.png", width: 55%),
   caption: [Diagramma della classe `GPSData`],
 )
-La classe `GPSData` rappresenta il dato di localizzazione GPS, pressoché simile al DTO `GPSDataDto`, ma permettere di rappresentare l'attributo `timestamp` tramite l'oggetto `Timestamp` di Java (`java.sql.Timestamp`), facilitando così le operazioni da effettuare tramite il _database_.
+La classe `GPSData` rappresenta il dato di localizzazione GPS, pressoché simile al DTO `GPSDataDto`, ma permette di rappresentare l'attributo `timestamp` tramite l'oggetto `Timestamp` di Java (`java.sql.Timestamp`), facilitando così le operazioni da effettuare tramite il _database_.
 All'interno della _#rifGlossario("codebase")_, l'entità `GPSData` non è rappresentata tramite una classe, ma tramite i _record_ in Java. Questi permettono di definire delle classi immutabili, ovvero non modificabili una volta create. Tuttavia, per mantenere la rappresentazione #rifGlossario("UML"), il gruppo ha deciso di rappresentare la classe come un oggetto aventi attributi costanti e metodi _getter_.
 
 ====== Attributi
@@ -589,7 +589,7 @@ I metodi _getter_, nella reale implementazione della classe, vengono omessi in q
 - ```java +hashCode(): int```: _overriding_ del metodo della classe `Object` di Java, restituisce il codice _hash_ dell'oggetto `PointOfInterest` da cui viene invocato il metodo.
 
 === Richieste asincrone
-Questa sezione rappresenta le classi che si occupano di effettuare le richieste asincrone per arricchire i dati al fine di miglirare il _prompt_ da inviare all'LLM. Esse estendono la classe astratta `RichAsyncFunction` della libreria di Flink per eseguire queste richieste su ogni dato dello _stream_.
+Questa sezione rappresenta le classi che si occupano di effettuare le richieste asincrone per arricchire i dati al fine di migliorare il _prompt_ da inviare all'LLM. Esse estendono la classe astratta `RichAsyncFunction` della libreria di Flink per eseguire queste richieste su ogni dato dello _stream_.
 
 ==== Struttura delle classi
 
@@ -767,7 +767,7 @@ La classe `TrackFetcher` si occupa di inoltrare una richiesta API al servizio Op
 - ```ts -request(): response```: recupera dalle variabili d'ambiente il centro della mappa e il raggio di generazione. Con l'ausilio della classe `GeoPoint` genera i punti di inizio e fine tracciato, li passa come parametri alla _API request_ e ritorna la risposta.
 
 ==== GeoPoint
-La classe `GeoPoint` rappresenta un punto geospaziale costituito da latitudine e longitudie.
+La classe `GeoPoint` rappresenta un punto geospaziale costituito da latitudine e longitudine.
 
 ===== Attributi
 - ```ts -latitude: double```: il valore della latitudine del punto geospaziale.
@@ -844,7 +844,7 @@ container.bind(Simulator).toSelf().inSingletonScope();
 
 == Design pattern adottati
 === Dependency injection
-Quando un progetto è costituito da un numero considerevole di componenti risulta fondamentale minimizzare le dipendenze. Più si riesce ad evitare debito tecnico e più semplice risulta aggiungere funzionalità perché le parti del sistema non sono fortemente accopiate. L'obiettivo di questo _design pattern_ è quindi quello togliere a un componente la responsabilità della risoluzione delle proprie dipendenze.
+Quando un progetto è costituito da un numero considerevole di componenti risulta fondamentale minimizzare le dipendenze. Più si riesce ad evitare debito tecnico e più semplice risulta aggiungere funzionalità perché le parti del sistema non sono fortemente accoppiate. L'obiettivo di questo _design pattern_ è quindi quello togliere a un componente la responsabilità della risoluzione delle proprie dipendenze.
 
 ==== Implementazione della dependency injection <inversify-1>
 Il gruppo ha deciso di utilizzare la libreria Inversify per gestire la _dependency injection_ nel servizio del simulatore. Possedendo delle annotazioni specifiche lo strumento di *IoC* (_Inversion of Control_) ha agevolato l'implementazione del _design pattern_. È stato infatti sufficiente contrassegnare le dipendenze con delle annotazioni (`@Injectable` e `@Inject`) e definire la risoluzione nel _file_ #box[`client/src/config/Inversify.config.ts`].
@@ -875,7 +875,7 @@ container.bind<Tracker>('Tracker').to(Tracker);
 container.bind(Rent).toSelf();
 ```
 
-Al momento della creazione dell'oggetto di tipo `Rent` è sufficiente la funzione `get()` del _container_ e questa risolverà le dipendenze come specificate.
+Al momento della creazione dell'oggetto di tipo `Rent` è sufficiente la funzione `get()` del _container_ e questa risolverà le dipendenze come specificato.
 
 #codly(header: [*App.ts*])
 ```ts
@@ -987,7 +987,7 @@ Può essere che alcune componenti debbano mantenere un'integrità per tutta l'es
 Il gruppo è consapevole della potenziale fallacità di questo _design pattern_ in quanto due processi potrebbero concorrere alla stessa risorsa e, in particolari situazioni, far generare due istanze. Nel caso del simulatore per minimizzare gli errori è stato scelto di demandare il lavoro alla libreria Inversify (spiegata nel dettaglio nelle #link(<inversify-1>)[sez. 4.2.1.1] e #link(<inversify-2>)[sez. 4.2.1.2]).
 
 ==== Integrazione del design pattern nel progetto
-Come anticipato nella #link(<inversify-3>)[sez. 4.2.1.3] è stata dichiarata la risoluzione della dipendenza nel _file_ `client/src/config/Inversify.config.ts` e le componenti interessate, quindi `KafkaManager` e `Simulator` sono state contrassegnate dalla funzione `inSingletonScope()`.
+Come anticipato nella #link(<inversify-3>)[sez. 4.2.1.3] è stata dichiarata la risoluzione della dipendenza nel _file_ `client/src/config/Inversify.config.ts` e le componenti interessate, quindi `KafkaManager` e `Simulator`, sono state contrassegnate dalla funzione `inSingletonScope()`.
 
 #codly(
   header: [*config/Inversify.config.ts*],
