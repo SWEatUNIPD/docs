@@ -1179,66 +1179,70 @@ Per una spiegazione più approfondita si rimanda al documento `analisi_dei_requi
   [Soddisfatto],
 
   [RDF-2],
-  [L'amministratore deve essere in grado di visualizzare lo storico degli annunci generati dal sistema sotto forma di lista oppure di griglia a seconda delle preferenze dell'amministratore stesso.],
+  [L'amministratore deve essere in grado di visualizzare, nella sezione dedicata allo storico degli annunci, l'elenco degli annunci generati dal sistema.],
   [Soddisfatto],
 
   [RDF-3],
-  [L'amministratore deve essere in grado di visualizzare un singolo elemento con le informazioni degli annunci all'interno dello storico.],
-  [Soddisfatto],
+  [L'amministratore deve essere in grado di visualizzare l'elenco degli annunci nello storico sotto forma di lista oppure di griglia a seconda delle preferenze dell'amministratore stesso.],
+  [Non soddisfatto],
 
   [RDF-4],
-  [L'amministratore deve essere in grado di visualizzare il nome del punto di interesse di ogni singolo elemento presente all'interno dello storico.],
+  [L'amministratore deve essere in grado di visualizzare un singolo elemento con le informazioni dell'annuncio all'interno dello storico.],
   [Soddisfatto],
 
   [RDF-5],
-  [L'amministratore deve essere in grado di visualizzare l'_e-mail_ dell'utente destinatario di ogni singolo elemento all'interno dello storico.],
+  [L'amministratore deve essere in grado di visualizzare il nome del punto di interesse di ogni singolo elemento presente all'interno dello storico.],
   [Soddisfatto],
 
   [RDF-6],
-  [L'amministratore deve essere in grado di visualizzare data e ora relativi al tentativo di generazione di ogni singolo elemento all'interno dello storico.],
+  [L'amministratore deve essere in grado di visualizzare l'_e-mail_ dell'utente destinatario di ogni singolo elemento all'interno dello storico.],
   [Soddisfatto],
 
   [RDF-7],
-  [L'amministratore deve essere in grado di poter visualizzare i dettagli di un singolo elemento all'interno dello storico.],
+  [L'amministratore deve essere in grado di visualizzare data e ora relativi al tentativo di generazione di ogni singolo elemento all'interno dello storico.],
   [Soddisfatto],
 
   [RDF-8],
-  [L'amministratore deve essere in grado di visualizzare il nome del punto di interesse relativo ad un annuncio tramite la visualizzazione dei dettagli dell'elemento nello storico.],
+  [L'amministratore deve essere in grado di poter visualizzare i dettagli di un singolo elemento all'interno dello storico.],
   [Soddisfatto],
 
   [RDF-9],
-  [L'amministratore deve essere in grado di visualizzare l'_e-mail_ dell'utente destinatario di un annuncio tramite la visualizzazione dei dettagli dell'elemento nello storico.],
+  [L'amministratore deve essere in grado di visualizzare il nome del punto di interesse relativo ad un annuncio tramite la visualizzazione dei dettagli dell'elemento nello storico.],
   [Soddisfatto],
 
   [RDF-10],
-  [L'amministratore deve essere in grado di visualizzare data e ora del tentativo di generazione di un annuncio tramite la visualizzazione dei dettagli dell'elemento nello storico.],
+  [L'amministratore deve essere in grado di visualizzare l'_e-mail_ dell'utente destinatario di un annuncio tramite la visualizzazione dei dettagli dell'elemento nello storico.],
   [Soddisfatto],
 
   [RDF-11],
-  [L'amministratore deve essere in grado di visualizzare il corpo dell'annuncio tramite la visualizzazione dei dettagli dell'elemento nello storico.],
+  [L'amministratore deve essere in grado di visualizzare data e ora del tentativo di generazione di un annuncio tramite la visualizzazione dei dettagli dell'elemento nello storico.],
   [Soddisfatto],
 
   [RDF-12],
-  [L'amministratore deve essere in grado di visualizzare la categoria del punto di interesse collegato all'annuncio tramite la visualizzazione dei dettagli dell'elemento nello storico.],
+  [L'amministratore deve essere in grado di visualizzare il corpo dell'annuncio tramite la visualizzazione dei dettagli dell'elemento nello storico.],
   [Soddisfatto],
 
   [RDF-13],
-  [L'amministratore deve essere in grado di chiudere la vista di visualizzazione dei dettagli di un singolo annuncio.],
+  [L'amministratore deve essere in grado di visualizzare la categoria del punto di interesse collegato all'annuncio tramite la visualizzazione dei dettagli dell'elemento nello storico.],
   [Soddisfatto],
 
   [RDF-14],
-  [L'amministratore deve essere in grado, tramite un sistema di filtraggio, di visualizzare gli annunci dello storico per _e-mail_ dell'utente destinatario dell'annuncio.],
+  [L'amministratore deve essere in grado di chiudere la vista di visualizzazione dei dettagli di un singolo annuncio.],
   [Soddisfatto],
 
   [RDF-15],
-  [L'amministratore deve essere in grado, tramite un sistema di filtraggio, di visualizzare gli annunci dello storico per nome del punto di interesse.],
+  [L'amministratore deve essere in grado, tramite un sistema di filtraggio, di visualizzare gli annunci dello storico per _e-mail_ dell'utente destinatario dell'annuncio.],
   [Soddisfatto],
 
   [RDF-16],
-  [L'amministratore deve essere in grado, tramite un sistema di filtraggio, di visualizzare gli annunci dello storico generati in un certo intervallo di date.],
+  [L'amministratore deve essere in grado, tramite un sistema di filtraggio, di visualizzare gli annunci dello storico per nome del punto di interesse.],
   [Soddisfatto],
 
   [RDF-17],
+  [L'amministratore deve essere in grado, tramite un sistema di filtraggio, di visualizzare gli annunci dello storico generati in un certo intervallo di date.],
+  [Soddisfatto],
+
+  [RDF-18],
   [L'amministratore deve essere in grado, tramite un sistema di filtraggio, di visualizzare gli annunci dello storico generati in una determinata fascia oraria.],
   [Soddisfatto],
 
@@ -1316,7 +1320,7 @@ Per una spiegazione più approfondita si rimanda al documento `analisi_dei_requi
       let colors = gradient.linear(red, yellow, green, blue)
 
       chart.piechart(
-        (("Non soddisfatti", 0), ("Soddisfatti", 17)),
+        (("Non soddisfatti", 1), ("Soddisfatti", 17)),
         value-key: 1,
         label-key: 0,
         radius: 3,
@@ -1354,7 +1358,7 @@ Per una spiegazione più approfondita si rimanda al documento `analisi_dei_requi
       let colors = gradient.linear(red, yellow, green, blue)
 
       chart.piechart(
-        (("Non soddisfatti", 1), ("Soddisfatti", 55)),
+        (("Non soddisfatti", 2), ("Soddisfatti", 55)),
         value-key: 1,
         label-key: 0,
         radius: 3,
