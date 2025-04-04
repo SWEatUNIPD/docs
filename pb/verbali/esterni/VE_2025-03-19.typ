@@ -1,7 +1,7 @@
 #import "/templates/template.typ": *
 
 #show: content => verbale(
-  data: "17 Marzo 2025",
+  data: "19 Marzo 2025",
   responsabile: "Andrea Precoma",
   destinatari: (
     "Prof. Tullio Vardanega",
