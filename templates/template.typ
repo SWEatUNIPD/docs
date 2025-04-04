@@ -141,8 +141,8 @@
   titolo: "",
   destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin"),
   mittenti: (
-    "Andrea Precoma",
     "Andrea Perozzo",
+    "Andrea Precoma",
     "Davide Marin",
     "Davide Martinelli",
     "Davide Picello",

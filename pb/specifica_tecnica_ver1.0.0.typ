@@ -245,7 +245,7 @@ La seguente lista rappresenta le dipendenze più rilevanti presenti all'interno 
 - *PostgreSQL JDBC Driver*
   - *Documentazione*: #formatLink(url: "https://jdbc.postgresql.org/documentation") (ultimo accesso in data 27/03/2025)
   - *Versione*: 42.7.5
-  - *Descrizione*: _#rifGlossario("Driver")_ per la connessione a un database PostgreSQL.
+  - *Descrizione*: _#rifGlossario("Driver")_ per la connessione a un database #rifGlossario("PostgreSQL").
 
 - *PostgreSQL R2DBC Driver*
   - *Documentazione*: #formatLink(url: "https://github.com/pgjdbc/r2dbc-postgresql") (ultimo accesso in data 27/03/2025)
@@ -360,7 +360,7 @@ L'interfaccia fornita dal _software_ deve permettere all'amministratore di visua
 === Grafana
 Grafana non è un sistema "reattivo", cioè non reagisce agli eventi, bensì si recupera i dati con delle _query_ indipendentemente da cosa venga aggiornato nel _database_. Per questo motivo non è propriamente corretto parlare di "interfaccia _real time_", tuttavia le _query_ vengono effettuate a intervalli molto ravvicinati simulando quindi con elevata accuratezza il tipo di interfaccia desiderata. Le funzionalità principali di Grafana nel nostro sistema sono:
 - *Monitoraggio in tempo reale*: Grafana raccoglie in tempo reale i dati dei sensori registrati nel sistema, ovvero identificativo del sensore, noleggio associato ad esso, latitudine e longitudine.
-- *Visualizzazione dei dati in tempo reale*: i dati dei sensori raccolti in tempo reale vengono infatti mostrati in una _#rifGlossario("dashboard")_ di tipo _geomap_ interattiva, nella quale le posizioni dei sensori sono rappresentate da _layer_ di tipo _#rifGlossario("route")_ e i punti di interesse e gli annunci con _#rifGlossario("layer")_ di tipo _#rifGlossario("marker")_.
+- *Visualizzazione dei dati in tempo reale*: i dati dei sensori raccolti in tempo reale vengono infatti mostrati in una _#rifGlossario("dashboard")_ di tipo _geomap_ interattiva, nella quale le posizioni dei sensori sono rappresentate da _#rifGlossario("layer")_ di tipo _#rifGlossario("route")_ e i punti di interesse e gli annunci con _layer_ di tipo _#rifGlossario("marker")_.
 - *Visualizzazione dei dati statici*: viene messa a disposizione dell'amministratore una _dashboard_ che raccoglie lo storico degli annunci generati nel tempo; interagendo con i dati nel _database_, Grafana ci permette di mostrare tutti i dati rilevanti legati ad ogni annuncio.
 
 #pagebreak(weak: true)
