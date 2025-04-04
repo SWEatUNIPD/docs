@@ -709,11 +709,11 @@ Le cartelle sono strutturate nel seguente modo:
       - *`kui`*: TODO.
   - *`job`*
     - *`src`*
-      - *`main/java/io/github/sweatunipd`*: contiene il codice sorgente del _job_ di Flink.
-      - *`test`*: contiene i _test_ di unità.
-    - `checkstyle.xml`
-    - `pom.xml`
-  - *`mock`*: contiene i _file_ per popolare il _database_ con dati fittizzi.
+      - *`main`*: contiene il codice sorgente del _job_ di Flink.
+      - *`test`*: contiene i _test_ di unità e di integrazione del _job_.
+    - `checkstyle.xml`: file di configurazione per l'analisi statica del codice.
+    - `pom.xml`: file di configurazione del progetto in #rifGlossario("Apache Maven").
+  - *`mock`*: contiene i _file_ per popolare il _database_ con dati fittizi.
   - `.gitignore`
   - `README.md`
   - `compose.yml`
